@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3]
+[ext_resource type="Texture2D" path="res://assets/sky.png" id="1"]
+[ext_resource type="Texture2D" path="res://assets/far.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/mid.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/front.png" id="4"]
+[node name="DreamBackground" type="Node2D"]
+z_index = -100
+[node name="sky" type="Parallax2D" parent="."]
+scroll_scale=Vector2(0.06,0)
+repeat_size=Vector2(3678.4,0)
+repeat_times=3
+[node name="Image0" type="Sprite2D" parent="sky"]
+texture=ExtResource("1")
+centered=false
+position=Vector2(0.0,-30)
+scale=Vector2(1.1,1.1)
+modulate=Color(1,1,1,1)
+flip_h=false
+[node name="Image1" type="Sprite2D" parent="sky"]
+texture=ExtResource("1")
+centered=false
+position=Vector2(1839.2,-30)
+scale=Vector2(1.1,1.1)
+modulate=Color(1,1,1,1)
+flip_h=true
+[node name="far" type="Parallax2D" parent="."]
+scroll_scale=Vector2(0.18,0)
+repeat_size=Vector2(2173.6,0)
+repeat_times=3
+[node name="Image0" type="Sprite2D" parent="far"]
+texture=ExtResource("2")
+centered=false
+position=Vector2(0.0,80)
+scale=Vector2(0.65,0.65)
+modulate=Color(0.83,0.9,1,1)
+flip_h=false
+[node name="Image1" type="Sprite2D" parent="far"]
+texture=ExtResource("2")
+centered=false
+position=Vector2(1086.8,80)
+scale=Vector2(0.65,0.65)
+modulate=Color(0.83,0.9,1,1)
+flip_h=true
+[node name="mid" type="Parallax2D" parent="."]
+scroll_scale=Vector2(0.38,0)
+repeat_size=Vector2(2842.4,0)
+repeat_times=3
+[node name="Image0" type="Sprite2D" parent="mid"]
+texture=ExtResource("3")
+centered=false
+position=Vector2(0.0,10)
+scale=Vector2(0.85,0.85)
+modulate=Color(1,1,1,1)
+flip_h=false
+[node name="Image1" type="Sprite2D" parent="mid"]
+texture=ExtResource("3")
+centered=false
+position=Vector2(1421.2,10)
+scale=Vector2(0.85,0.85)
+modulate=Color(1,1,1,1)
+flip_h=true
+[node name="front" type="Parallax2D" parent="."]
+scroll_scale=Vector2(0.72,0)
+repeat_size=Vector2(2340.7999999999997,0)
+repeat_times=3
+[node name="Image0" type="Sprite2D" parent="front"]
+texture=ExtResource("4")
+centered=false
+position=Vector2(0.0,620)
+scale=Vector2(0.7,0.7)
+modulate=Color(0.85,0.94,0.92,1)
+flip_h=false
+[node name="Image1" type="Sprite2D" parent="front"]
+texture=ExtResource("4")
+centered=false
+position=Vector2(1170.3999999999999,620)
+scale=Vector2(0.7,0.7)
+modulate=Color(0.85,0.94,0.92,1)
+flip_h=true

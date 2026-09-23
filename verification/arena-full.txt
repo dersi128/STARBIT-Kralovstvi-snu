@@ -1,0 +1,29 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+STEP 1 500 p=(2965.537, 495.0908) d=0
+LEVEL 1 mode=play frames=603 deaths=0 x=3635.03735351562
+STEP 2 500 p=(2975.525, 214.6327) d=0
+LEVEL 2 mode=play frames=695 deaths=0 x=4016.13696289062
+STEP 3 500 p=(2768.115, 445.0908) d=0
+LEVEL 3 mode=play frames=795 deaths=0 x=4258.7275390625
+STEP 4 500 p=(2172.112, 323.7992) d=2
+LEVEL 4 mode=play frames=908 deaths=2 x=4454.56689453125
+STEP 5 500 p=(642.0012, 549.9252) d=2
+STEP 5 1000 p=(3117.614, 549.9252) d=2
+STEP 5 1500 p=(3206.0, 470.549) d=2
+LEVEL 5 mode=play frames=1868 deaths=2 x=4644.0
+STEP 6 500 p=(2963.426, 267.3827) d=0
+LEVEL 6 mode=play frames=590 deaths=0 x=3548.42626953125
+STEP 7 500 p=(2709.426, 549.9252) d=0
+LEVEL 7 mode=play frames=657 deaths=0 x=3585.03662109375
+STEP 8 500 p=(3365.506, -440.0747) d=0
+LEVEL 8 mode=play frames=642 deaths=0 x=4288.50732421875
+STEP 9 500 p=(3228.036, 1143.827) d=0
+LEVEL 9 mode=play frames=865 deaths=0 x=5543.53955078125
+STEP 10 500 p=(2785.834, 329.6325) d=1
+LEVEL 10 mode=win frames=823 deaths=1 x=4885.3359375
+FAILURES 0
+WARNING: 12 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 4 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

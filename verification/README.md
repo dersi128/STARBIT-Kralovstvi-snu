@@ -1,0 +1,1 @@
+Aktuální kontrola: cloud-checks.log (převážení, kamera, pauza); cloud-routes.log (všech 10 hlavních tras); cloud-sky-routes.log (opakování 6–10 po přesunu odboček). Při kontrole tras jsou běžní nepřátelé vypnutí, Brúčoun aktivní. Starší logy popisují předchozí verze. Screenshoty cloud-stage-* jsou aktuální.

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Texture2D" path="res://assets/supplied/pieces/Banner.png" id="texture"]
+[node name="Banner" type="Sprite2D"]
+texture=ExtResource("texture")
+centered=false
+scale=Vector2(0.4470198675496689,0.4470198675496689)
+offset=Vector2(-97.0,-302)

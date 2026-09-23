@@ -1,0 +1,386 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dg2tyh0espq8v"]
+
+[ext_resource type="Texture2D" uid="uid://bpm066i2y1yex" path="res://assets/animations/mracek/angry.png" id="angry"]
+[ext_resource type="Texture2D" uid="uid://bvjckguw1a3nd" path="res://assets/animations/mracek/idle.png" id="idle"]
+[ext_resource type="Texture2D" uid="uid://eved1yjx0vds" path="res://assets/animations/mracek/rain.png" id="rain"]
+[ext_resource type="Texture2D" uid="uid://c05l11knyw8wm" path="res://assets/animations/mracek/recover.png" id="recover"]
+
+[sub_resource type="AtlasTexture" id="angry_0"]
+atlas = ExtResource("angry")
+region = Rect2(7, 200, 359, 289)
+margin = Rect2(12.5, 25, 25, 63)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="angry_1"]
+atlas = ExtResource("angry")
+region = Rect2(369, 200, 357, 287)
+margin = Rect2(13.5, 27, 27, 65)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="angry_2"]
+atlas = ExtResource("angry")
+region = Rect2(724, 200, 356, 287)
+margin = Rect2(14, 27, 28, 65)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="angry_3"]
+atlas = ExtResource("angry")
+region = Rect2(1079, 200, 359, 287)
+margin = Rect2(12.5, 27, 25, 65)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="angry_4"]
+atlas = ExtResource("angry")
+region = Rect2(10, 573, 357, 288)
+margin = Rect2(13.5, 26, 27, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="angry_5"]
+atlas = ExtResource("angry")
+region = Rect2(369, 573, 356, 302)
+margin = Rect2(14, 26, 28, 50)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="angry_6"]
+atlas = ExtResource("angry")
+region = Rect2(722, 573, 359, 308)
+margin = Rect2(12.5, 26, 25, 44)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="angry_7"]
+atlas = ExtResource("angry")
+region = Rect2(1079, 572, 361, 330)
+margin = Rect2(11.5, 26, 23, 22)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="idle_0"]
+atlas = ExtResource("idle")
+region = Rect2(0, 208, 368, 291)
+margin = Rect2(8, 22, 16, 61)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="idle_1"]
+atlas = ExtResource("idle")
+region = Rect2(368, 183, 356, 299)
+margin = Rect2(14, 15, 28, 53)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="idle_2"]
+atlas = ExtResource("idle")
+region = Rect2(724, 210, 362, 290)
+margin = Rect2(11, 24, 22, 62)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="idle_3"]
+atlas = ExtResource("idle")
+region = Rect2(1086, 197, 362, 295)
+margin = Rect2(11, 19, 22, 57)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="idle_4"]
+atlas = ExtResource("idle")
+region = Rect2(0, 580, 366, 294)
+margin = Rect2(9, 20, 18, 58)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="idle_5"]
+atlas = ExtResource("idle")
+region = Rect2(366, 579, 364, 291)
+margin = Rect2(10, 23, 20, 61)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="idle_6"]
+atlas = ExtResource("idle")
+region = Rect2(730, 575, 355, 301)
+margin = Rect2(14.5, 13, 29, 51)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="idle_7"]
+atlas = ExtResource("idle")
+region = Rect2(1085, 580, 363, 297)
+margin = Rect2(10.5, 17, 21, 55)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_0"]
+atlas = ExtResource("rain")
+region = Rect2(4, 8, 354, 248)
+margin = Rect2(15, 74, 30, 104)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_1"]
+atlas = ExtResource("rain")
+region = Rect2(366, 8, 354, 248)
+margin = Rect2(15, 74, 30, 104)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_2"]
+atlas = ExtResource("rain")
+region = Rect2(728, 8, 354, 248)
+margin = Rect2(15, 74, 30, 104)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_3"]
+atlas = ExtResource("rain")
+region = Rect2(1090, 8, 354, 248)
+margin = Rect2(15, 74, 30, 104)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_4"]
+atlas = ExtResource("rain")
+region = Rect2(4, 548, 354, 248)
+margin = Rect2(15, 74, 30, 104)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_5"]
+atlas = ExtResource("rain")
+region = Rect2(366, 548, 354, 248)
+margin = Rect2(15, 74, 30, 104)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_6"]
+atlas = ExtResource("rain")
+region = Rect2(728, 548, 354, 248)
+margin = Rect2(15, 74, 30, 104)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_7"]
+atlas = ExtResource("rain")
+region = Rect2(1090, 548, 354, 248)
+margin = Rect2(15, 74, 30, 104)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_column_0"]
+atlas = ExtResource("rain")
+region = Rect2(6, 244, 350, 284)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_column_1"]
+atlas = ExtResource("rain")
+region = Rect2(368, 244, 350, 279)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_column_2"]
+atlas = ExtResource("rain")
+region = Rect2(730, 244, 350, 280)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_column_3"]
+atlas = ExtResource("rain")
+region = Rect2(1092, 244, 350, 284)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_column_4"]
+atlas = ExtResource("rain")
+region = Rect2(6, 784, 350, 282)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_column_5"]
+atlas = ExtResource("rain")
+region = Rect2(368, 784, 350, 277)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_column_6"]
+atlas = ExtResource("rain")
+region = Rect2(730, 784, 350, 282)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="rain_column_7"]
+atlas = ExtResource("rain")
+region = Rect2(1092, 784, 350, 281)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="recover_0"]
+atlas = ExtResource("recover")
+region = Rect2(17, 135, 347, 266)
+margin = Rect2(18.5, 48, 37, 86)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="recover_1"]
+atlas = ExtResource("recover")
+region = Rect2(375, 136, 350, 270)
+margin = Rect2(17, 44, 34, 82)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="recover_2"]
+atlas = ExtResource("recover")
+region = Rect2(731, 143, 351, 271)
+margin = Rect2(16.5, 43, 33, 81)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="recover_3"]
+atlas = ExtResource("recover")
+region = Rect2(1094, 144, 345, 268)
+margin = Rect2(19.5, 46, 39, 84)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="recover_4"]
+atlas = ExtResource("recover")
+region = Rect2(10, 642, 357, 270)
+margin = Rect2(13.5, 44, 27, 82)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="recover_5"]
+atlas = ExtResource("recover")
+region = Rect2(371, 645, 355, 272)
+margin = Rect2(14.5, 42, 29, 80)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="recover_6"]
+atlas = ExtResource("recover")
+region = Rect2(728, 648, 357, 277)
+margin = Rect2(13.5, 37, 27, 75)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="recover_7"]
+atlas = ExtResource("recover")
+region = Rect2(1088, 657, 358, 276)
+margin = Rect2(13, 38, 26, 76)
+filter_clip = true
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("angry_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("angry_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("angry_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("angry_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("angry_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("angry_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("angry_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("angry_7")
+}],
+"loop": 0,
+"name": &"angry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 2.5,
+"texture": SubResource("idle_0")
+}, {
+"duration": 1.3,
+"texture": SubResource("idle_1")
+}, {
+"duration": 0.24,
+"texture": SubResource("idle_2")
+}, {
+"duration": 1.1,
+"texture": SubResource("idle_3")
+}, {
+"duration": 0.32,
+"texture": SubResource("idle_4")
+}, {
+"duration": 1.4,
+"texture": SubResource("idle_5")
+}, {
+"duration": 0.24,
+"texture": SubResource("idle_6")
+}, {
+"duration": 0.9,
+"texture": SubResource("idle_7")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("rain_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_7")
+}],
+"loop": 1,
+"name": &"rain",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("rain_column_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_column_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_column_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_column_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_column_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_column_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_column_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("rain_column_7")
+}],
+"loop": 1,
+"name": &"rain_column",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("recover_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("recover_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("recover_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("recover_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("recover_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("recover_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("recover_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("recover_7")
+}],
+"loop": 0,
+"name": &"recover",
+"speed": 6.666667
+}]

@@ -1,0 +1,20 @@
+[gd_scene format=4]
+
+[ext_resource type="Texture2D" path="res://assets/worldkit/ground_tiles.png" id="1_g7ba1"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4jyl"]
+texture = ExtResource("1_g7ba1")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_nbk4m"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_n4jyl")
+
+[node name="PaintGround" type="TileMapLayer" unique_id=1896206565]
+tile_map_data = PackedByteArray("AAAAAAAAAAAAAAAAAAABAAAAAAABAAAAAAACAAAAAAAAAAAAAAADAAAAAAABAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAABAAAAAAA=")
+tile_set = SubResource("TileSet_nbk4m")

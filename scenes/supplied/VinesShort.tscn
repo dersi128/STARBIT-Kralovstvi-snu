@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Texture2D" path="res://assets/supplied/pieces/VinesShort.png" id="texture"]
+[node name="VinesShort" type="Sprite2D"]
+texture=ExtResource("texture")
+centered=false
+scale=Vector2(0.5895196506550219,0.5895196506550219)
+offset=Vector2(-111.5,-229)

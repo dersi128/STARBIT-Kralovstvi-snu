@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Texture2D" path="res://assets/worldkit/Lantern.tres" id="1"]
+[node name="Lantern" type="Node2D"]
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+scale = Vector2(0.7142857142857143, 0.7142857142857143)
+position = Vector2(0, -76.07142857142857)

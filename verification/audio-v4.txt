@@ -1,0 +1,19 @@
+Godot Engine v4.4.1.stable.official.49a5bc7b6 - https://godotengine.org
+
+PASS adventure soundtrack
+PASS long music phrase
+PASS pause stops music
+PASS menu keeps music paused
+PASS resume restores music
+PASS boss push triggered
+PASS boss music transition
+PASS push plays bear sound
+PASS mute covers music and effects
+PASS unmute resumes
+PASS victory motif once
+PASS crossfade voices cleaned
+AUDIO FAILURES 0
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+     at: cleanup (core/object/object.cpp:2378)
+ERROR: 8 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:614)

@@ -1,0 +1,46 @@
+[gd_scene load_steps=13 format=3]
+[ext_resource type="Script" path="res://scripts/level.gd" id="script"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/PaintGround.tscn" id="ground"]
+[ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole"]
+[ext_resource type="PackedScene" path="res://scenes/star_key.tscn" id="star"]
+[ext_resource type="PackedScene" path="res://scenes/crystal.tscn" id="crystal"]
+[ext_resource type="PackedScene" path="res://scenes/StarGate.tscn" id="gate"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/IslandWide.tscn" id="platform"]
+[ext_resource type="PackedScene" path="res://scenes/checkpoint.tscn" id="checkpoint"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/Lantern.tscn" id="lamp"]
+[ext_resource type="PackedScene" path="res://scenes/DreamBackground.tscn" id="background"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/PushCrate.tscn" id="push"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/SpringPad.tscn" id="spring"]
+[node name="Level_Template" type="Node2D"]
+script=ExtResource("script")
+number=1
+title="Moje stezka"
+width=2304.0
+spawn=Vector2(140,550)
+[node name="Background" parent="." instance=ExtResource("background")]
+[node name="Ground0" parent="." instance=ExtResource("ground")]
+position=Vector2(0,550)
+[node name="Ground1" parent="." instance=ExtResource("ground")]
+position=Vector2(768,550)
+[node name="Ground2" parent="." instance=ExtResource("ground")]
+position=Vector2(1536,550)
+[node name="Krtecek" parent="." instance=ExtResource("mole")]
+position=Vector2(330,550)
+message="Bednu posuneš tak, že proti ní půjdeš. Dá se na ni vyskočit.\n\nZlatá pružina tě vystřelí výš. Hvězda otevře velkou bránu."
+[node name="Star" parent="." instance=ExtResource("star")]
+position=Vector2(1950,455)
+[node name="Crystal" parent="." instance=ExtResource("crystal")]
+position=Vector2(1000,410)
+[node name="Gate" parent="." instance=ExtResource("gate")]
+position=Vector2(2180,550)
+[node name="Platform" parent="." instance=ExtResource("platform")]
+position=Vector2(1000,460)
+[node name="Checkpoint" parent="." instance=ExtResource("checkpoint")]
+position=Vector2(1450,550)
+[node name="Lantern" parent="." instance=ExtResource("lamp")]
+position=Vector2(1780,550)
+
+[node name="PushCrate" parent="." instance=ExtResource("push")]
+position=Vector2(600,550)
+[node name="SpringPad" parent="." instance=ExtResource("spring")]
+position=Vector2(1250,550)

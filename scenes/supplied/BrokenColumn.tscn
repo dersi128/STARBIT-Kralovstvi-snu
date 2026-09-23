@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Texture2D" path="res://assets/supplied/pieces/BrokenColumn.png" id="texture"]
+[node name="BrokenColumn" type="Sprite2D"]
+texture=ExtResource("texture")
+centered=false
+scale=Vector2(0.8132530120481928,0.8132530120481928)
+offset=Vector2(-71.0,-166)

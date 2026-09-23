@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Texture2D" path="res://assets/supplied/pieces/SignArrow.png" id="texture"]
+[node name="SignArrow" type="Sprite2D"]
+texture=ExtResource("texture")
+centered=false
+scale=Vector2(0.5133079847908745,0.5133079847908745)
+offset=Vector2(-99.0,-263)

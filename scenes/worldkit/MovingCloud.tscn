@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/platform.gd" id="1"]
+[sub_resource type="RectangleShape2D" id="2"]
+size=Vector2(300,45)
+[node name="MovingCloud" type="AnimatableBody2D"]
+script=ExtResource("1")
+style="cloud"
+width=300.0
+depth=60.0
+travel=Vector2(160,0)
+period=7.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape=SubResource("2")
+one_way_collision=true

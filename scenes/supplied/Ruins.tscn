@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Texture2D" path="res://assets/supplied/pieces/Ruins.png" id="texture"]
+[node name="Ruins" type="Sprite2D"]
+texture=ExtResource("texture")
+centered=false
+scale=Vector2(0.6367924528301887,0.6367924528301887)
+offset=Vector2(-109.0,-212)

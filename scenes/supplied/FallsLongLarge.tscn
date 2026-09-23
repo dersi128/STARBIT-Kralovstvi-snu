@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Texture2D" path="res://assets/supplied/pieces/FallsLongLarge.png" id="texture"]
+[ext_resource type="Script" path="res://scripts/sheet_water.gd" id="effect"]
+[node name="FallsLongLarge" type="Sprite2D"]
+texture=ExtResource("texture")
+centered=false
+scale=Vector2(0.7421150278293135,0.7421150278293135)
+offset=Vector2(-96.5,0)
+script=ExtResource("effect")
+z_index=-2

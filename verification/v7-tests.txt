@@ -1,0 +1,27 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS boss starts with exactly three lives
+PASS boss star is absent before rescue
+PASS mole replaces Jiskra by arena
+PASS gate locked before rescue and collection
+PASS boss invulnerable during attack
+PASS stomp removes one life 1
+PASS stomp removes one life 2
+PASS stomp removes one life 3
+PASS third stomp frees bear
+PASS one reward star released
+PASS freed bear remains visible
+PASS shadow shackles disappear
+PASS rescue alone does not unlock gate
+PASS collecting reward opens gate
+PASS portal animation is visible
+PASS opening transitions to portal loop
+PASS restart resets boss and star
+PASS camera follows up into sky
+PASS camera follows down to hiding place
+PASS deep custom level is not killed by old fall boundary
+V7 FAILURES 0
+WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 2 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

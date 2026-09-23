@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1"]
+[ext_resource type="SpriteFrames" path="res://assets/supplied/stinko.tres" id="anim_stinko"]
+[node name="Stinko" type="Node2D"]
+script=ExtResource("1")
+kind="stinko"
+patrol=170.0
+speed=55.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.3, 0.3)
+sprite_frames = ExtResource("anim_stinko")
+animation = &"idle"
+offset = Vector2(0, -168)

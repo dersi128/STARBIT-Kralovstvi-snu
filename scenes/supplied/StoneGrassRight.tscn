@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/sheet_platform.gd" id="script"]
+[ext_resource type="Texture2D" path="res://assets/supplied/pieces/StoneGrassRight.png" id="texture"]
+[node name="StoneGrassRight" type="AnimatableBody2D"]
+script=ExtResource("script")
+texture=ExtResource("texture")
+width=209.1
+height=171.7
+anchor_y=0.2
+surface=PackedVector2Array(0.12, 0.2, 0.88, 0.2)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+one_way_collision=true

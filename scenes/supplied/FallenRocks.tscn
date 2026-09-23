@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Texture2D" path="res://assets/supplied/pieces/FallenRocks.png" id="texture"]
+[node name="FallenRocks" type="Sprite2D"]
+texture=ExtResource("texture")
+centered=false
+scale=Vector2(0.9375,0.9375)
+offset=Vector2(-114.0,-144)

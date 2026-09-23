@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Texture2D" path="res://assets/worldkit/Waterfall.tres" id="1"]
+[node name="Waterfall" type="Node2D"]
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+scale = Vector2(0.8461538461538461, 0.8461538461538461)
+position = Vector2(0, -153.57692307692307)

@@ -1,0 +1,18 @@
+Godot Engine v4.4.1.stable.official.49a5bc7b6 - https://godotengine.org
+WARNING: Could not set V-Sync mode, as changing V-Sync mode is not supported by the graphics driver.
+     at: set_use_vsync (platform/linuxbsd/x11/gl_manager_x11.cpp:360)
+OpenGL API 4.5 (Core Profile) Mesa 22.3.6 - Compatibility - Using Device: Mesa/X.org - llvmpipe (LLVM 15.0.6, 256 bits)
+
+PASS turn rock_enemy
+PASS sprite follows left direction rock_enemy
+PASS animated pose rock_enemy
+PASS hit flash rock_enemy
+PASS defeat removes enemy rock_enemy
+PASS turn cloud_enemy
+PASS sprite follows left direction cloud_enemy
+PASS animated pose cloud_enemy
+PASS hit flash cloud_enemy
+PASS defeat removes enemy cloud_enemy
+ENEMY ANIMATION FAILURES 0
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+     at: cleanup (core/object/object.cpp:2378)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Texture2D" path="res://assets/supplied/pieces/LanternPost.png" id="texture"]
+[node name="LanternPost" type="Sprite2D"]
+texture=ExtResource("texture")
+centered=false
+scale=Vector2(0.6650246305418719,0.6650246305418719)
+offset=Vector2(-70.5,-203)

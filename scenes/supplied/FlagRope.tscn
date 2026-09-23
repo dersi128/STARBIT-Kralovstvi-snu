@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Texture2D" path="res://assets/supplied/pieces/FlagRope.png" id="texture"]
+[node name="FlagRope" type="Sprite2D"]
+texture=ExtResource("texture")
+centered=false
+scale=Vector2(0.4299363057324841,0.4299363057324841)
+offset=Vector2(-153.5,-314)

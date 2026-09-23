@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Texture2D" path="res://assets/worldkit/StoneBlock.tres" id="1"]
+[sub_resource type="RectangleShape2D" id="shape"]
+size = Vector2(90, 88)
+[node name="StoneBlock" type="StaticBody2D"]
+collision_layer = 1
+collision_mask = 0
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+scale = Vector2(0.6834532374100719, 0.6834532374100719)
+position = Vector2(0, 43.60071942446043)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("shape")
+position = Vector2(0, 44.0)

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Texture2D" path="res://assets/worldkit/WaterSurface.tres" id="1"]
+[node name="WaterSurface" type="Node2D"]
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+scale = Vector2(0.8360128617363344, 0.8360128617363344)
+position = Vector2(0, -41.38263665594855)

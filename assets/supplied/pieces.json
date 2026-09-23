@@ -1,0 +1,1382 @@
+[
+  {
+    "scene": "GrassLeft",
+    "source": "terrain.png",
+    "rect": [
+      22,
+      22,
+      200,
+      199
+    ],
+    "kind": "platform",
+    "size": [
+      159,
+      168
+    ]
+  },
+  {
+    "scene": "GrassMiddle",
+    "source": "terrain.png",
+    "rect": [
+      206,
+      38,
+      473,
+      200
+    ],
+    "kind": "platform",
+    "size": [
+      267,
+      149
+    ]
+  },
+  {
+    "scene": "GrassMiddleB",
+    "source": "terrain.png",
+    "rect": [
+      480,
+      36,
+      701,
+      200
+    ],
+    "kind": "platform",
+    "size": [
+      218,
+      144
+    ]
+  },
+  {
+    "scene": "GrassRight",
+    "source": "terrain.png",
+    "rect": [
+      703,
+      26,
+      970,
+      223
+    ],
+    "kind": "platform",
+    "size": [
+      250,
+      192
+    ]
+  },
+  {
+    "scene": "StoneGrassLeft",
+    "source": "terrain.png",
+    "rect": [
+      23,
+      205,
+      198,
+      415
+    ],
+    "kind": "platform",
+    "size": [
+      162,
+      196
+    ]
+  },
+  {
+    "scene": "StoneGrassMiddle",
+    "source": "terrain.png",
+    "rect": [
+      207,
+      210,
+      475,
+      415
+    ],
+    "kind": "platform",
+    "size": [
+      266,
+      200
+    ]
+  },
+  {
+    "scene": "StoneGrassMiddleB",
+    "source": "terrain.png",
+    "rect": [
+      481,
+      214,
+      701,
+      414
+    ],
+    "kind": "platform",
+    "size": [
+      218,
+      196
+    ]
+  },
+  {
+    "scene": "StoneGrassRight",
+    "source": "terrain.png",
+    "rect": [
+      701,
+      211,
+      967,
+      414
+    ],
+    "kind": "platform",
+    "size": [
+      246,
+      202
+    ]
+  },
+  {
+    "scene": "IslandTiny",
+    "source": "terrain.png",
+    "rect": [
+      988,
+      74,
+      1090,
+      187
+    ],
+    "kind": "platform",
+    "size": [
+      89,
+      87
+    ]
+  },
+  {
+    "scene": "IslandRound",
+    "source": "terrain.png",
+    "rect": [
+      1102,
+      39,
+      1263,
+      205
+    ],
+    "kind": "platform",
+    "size": [
+      149,
+      147
+    ]
+  },
+  {
+    "scene": "IslandVines",
+    "source": "terrain.png",
+    "rect": [
+      1263,
+      40,
+      1426,
+      222
+    ],
+    "kind": "platform",
+    "size": [
+      142,
+      174
+    ]
+  },
+  {
+    "scene": "IslandStar",
+    "source": "terrain.png",
+    "rect": [
+      990,
+      211,
+      1248,
+      429
+    ],
+    "kind": "platform",
+    "size": [
+      244,
+      211
+    ]
+  },
+  {
+    "scene": "IslandStone",
+    "source": "terrain.png",
+    "rect": [
+      1248,
+      216,
+      1430,
+      395
+    ],
+    "kind": "platform",
+    "size": [
+      161,
+      172
+    ]
+  },
+  {
+    "scene": "IslandWide",
+    "source": "terrain.png",
+    "rect": [
+      25,
+      430,
+      327,
+      592
+    ],
+    "kind": "platform",
+    "size": [
+      285,
+      150
+    ]
+  },
+  {
+    "scene": "IslandPoint",
+    "source": "terrain.png",
+    "rect": [
+      342,
+      431,
+      590,
+      606
+    ],
+    "kind": "platform",
+    "size": [
+      229,
+      167
+    ]
+  },
+  {
+    "scene": "IslandLow",
+    "source": "terrain.png",
+    "rect": [
+      596,
+      449,
+      790,
+      568
+    ],
+    "kind": "platform",
+    "size": [
+      188,
+      110
+    ]
+  },
+  {
+    "scene": "IslandSmall",
+    "source": "terrain.png",
+    "rect": [
+      790,
+      435,
+      956,
+      586
+    ],
+    "kind": "platform",
+    "size": [
+      141,
+      133
+    ]
+  },
+  {
+    "scene": "StarBlock",
+    "source": "terrain.png",
+    "rect": [
+      965,
+      432,
+      1103,
+      596
+    ],
+    "kind": "platform",
+    "size": [
+      125,
+      144
+    ]
+  },
+  {
+    "scene": "StarBlockWide",
+    "source": "terrain.png",
+    "rect": [
+      1105,
+      436,
+      1414,
+      591
+    ],
+    "kind": "platform",
+    "size": [
+      301,
+      145
+    ]
+  },
+  {
+    "scene": "SlopeDown",
+    "source": "terrain.png",
+    "rect": [
+      30,
+      582,
+      371,
+      761
+    ],
+    "kind": "platform",
+    "size": [
+      331,
+      172
+    ]
+  },
+  {
+    "scene": "SlopeUp",
+    "source": "terrain.png",
+    "rect": [
+      367,
+      639,
+      589,
+      760
+    ],
+    "kind": "platform",
+    "size": [
+      206,
+      117
+    ]
+  },
+  {
+    "scene": "CliffLeft",
+    "source": "terrain.png",
+    "rect": [
+      590,
+      602,
+      832,
+      824
+    ],
+    "kind": "platform",
+    "size": [
+      230,
+      217
+    ]
+  },
+  {
+    "scene": "CliffRight",
+    "source": "terrain.png",
+    "rect": [
+      838,
+      594,
+      1045,
+      827
+    ],
+    "kind": "platform",
+    "size": [
+      191,
+      209
+    ]
+  },
+  {
+    "scene": "CliffVines",
+    "source": "terrain.png",
+    "rect": [
+      1046,
+      627,
+      1204,
+      821
+    ],
+    "kind": "platform",
+    "size": [
+      136,
+      177
+    ]
+  },
+  {
+    "scene": "CliffEnd",
+    "source": "terrain.png",
+    "rect": [
+      1235,
+      600,
+      1430,
+      818
+    ],
+    "kind": "platform",
+    "size": [
+      170,
+      207
+    ]
+  },
+  {
+    "scene": "BridgeLeft",
+    "source": "terrain.png",
+    "rect": [
+      35,
+      789,
+      214,
+      972
+    ],
+    "kind": "platform",
+    "size": [
+      166,
+      165
+    ]
+  },
+  {
+    "scene": "BridgeMiddle",
+    "source": "terrain.png",
+    "rect": [
+      266,
+      789,
+      494,
+      923
+    ],
+    "kind": "platform",
+    "size": [
+      214,
+      123
+    ]
+  },
+  {
+    "scene": "BridgeRight",
+    "source": "terrain.png",
+    "rect": [
+      511,
+      790,
+      726,
+      971
+    ],
+    "kind": "platform",
+    "size": [
+      199,
+      164
+    ]
+  },
+  {
+    "scene": "BridgeSmall",
+    "source": "terrain.png",
+    "rect": [
+      742,
+      836,
+      911,
+      971
+    ],
+    "kind": "platform",
+    "size": [
+      163,
+      116
+    ]
+  },
+  {
+    "scene": "IslandPebbles",
+    "source": "terrain.png",
+    "rect": [
+      940,
+      849,
+      1059,
+      1010
+    ],
+    "kind": "platform",
+    "size": [
+      96,
+      134
+    ]
+  },
+  {
+    "scene": "IslandTall",
+    "source": "terrain.png",
+    "rect": [
+      1164,
+      820,
+      1340,
+      1044
+    ],
+    "kind": "platform",
+    "size": [
+      162,
+      184
+    ]
+  },
+  {
+    "scene": "SignArrow",
+    "source": "props.png",
+    "rect": [
+      18,
+      36,
+      223,
+      307
+    ],
+    "kind": "decor",
+    "size": [
+      198,
+      263
+    ]
+  },
+  {
+    "scene": "SignDouble",
+    "source": "props.png",
+    "rect": [
+      220,
+      9,
+      404,
+      322
+    ],
+    "kind": "decor",
+    "size": [
+      179,
+      304
+    ]
+  },
+  {
+    "scene": "Banner",
+    "source": "props.png",
+    "rect": [
+      377,
+      5,
+      591,
+      324
+    ],
+    "kind": "decor",
+    "size": [
+      194,
+      302
+    ]
+  },
+  {
+    "scene": "FlagRope",
+    "source": "props.png",
+    "rect": [
+      597,
+      5,
+      910,
+      329
+    ],
+    "kind": "decor",
+    "size": [
+      307,
+      314
+    ]
+  },
+  {
+    "scene": "BannerStar",
+    "source": "props.png",
+    "rect": [
+      910,
+      7,
+      1041,
+      335
+    ],
+    "kind": "decor",
+    "size": [
+      119,
+      312
+    ]
+  },
+  {
+    "scene": "Fence",
+    "source": "props.png",
+    "rect": [
+      1041,
+      70,
+      1440,
+      221
+    ],
+    "kind": "decor",
+    "size": [
+      390,
+      142
+    ]
+  },
+  {
+    "scene": "RopeFence",
+    "source": "props.png",
+    "rect": [
+      1070,
+      220,
+      1443,
+      341
+    ],
+    "kind": "decor",
+    "size": [
+      367,
+      119
+    ]
+  },
+  {
+    "scene": "Bush",
+    "source": "props.png",
+    "rect": [
+      19,
+      323,
+      252,
+      485
+    ],
+    "kind": "decor",
+    "size": [
+      221,
+      153
+    ]
+  },
+  {
+    "scene": "BushFlowers",
+    "source": "props.png",
+    "rect": [
+      249,
+      327,
+      493,
+      492
+    ],
+    "kind": "decor",
+    "size": [
+      219,
+      153
+    ]
+  },
+  {
+    "scene": "LeavesWide",
+    "source": "props.png",
+    "rect": [
+      488,
+      345,
+      680,
+      483
+    ],
+    "kind": "decor",
+    "size": [
+      188,
+      130
+    ]
+  },
+  {
+    "scene": "LeavesSmall",
+    "source": "props.png",
+    "rect": [
+      681,
+      343,
+      805,
+      469
+    ],
+    "kind": "decor",
+    "size": [
+      106,
+      95
+    ]
+  },
+  {
+    "scene": "LeavesTall",
+    "source": "props.png",
+    "rect": [
+      802,
+      339,
+      958,
+      483
+    ],
+    "kind": "decor",
+    "size": [
+      128,
+      122
+    ]
+  },
+  {
+    "scene": "VinesShort",
+    "source": "props.png",
+    "rect": [
+      943,
+      334,
+      1173,
+      566
+    ],
+    "kind": "decor",
+    "size": [
+      223,
+      229
+    ]
+  },
+  {
+    "scene": "VinesLong",
+    "source": "props.png",
+    "rect": [
+      1178,
+      328,
+      1447,
+      640
+    ],
+    "kind": "decor",
+    "size": [
+      119,
+      284
+    ]
+  },
+  {
+    "scene": "StoneColumn",
+    "source": "props.png",
+    "rect": [
+      323,
+      483,
+      472,
+      704
+    ],
+    "kind": "decor",
+    "size": [
+      140,
+      199
+    ]
+  },
+  {
+    "scene": "BrokenColumn",
+    "source": "props.png",
+    "rect": [
+      463,
+      534,
+      613,
+      703
+    ],
+    "kind": "decor",
+    "size": [
+      142,
+      166
+    ]
+  },
+  {
+    "scene": "Ruins",
+    "source": "props.png",
+    "rect": [
+      607,
+      482,
+      825,
+      703
+    ],
+    "kind": "decor",
+    "size": [
+      218,
+      212
+    ]
+  },
+  {
+    "scene": "StoneSlab",
+    "source": "props.png",
+    "rect": [
+      828,
+      507,
+      986,
+      704
+    ],
+    "kind": "decor",
+    "size": [
+      145,
+      190
+    ]
+  },
+  {
+    "scene": "FallenRocks",
+    "source": "props.png",
+    "rect": [
+      990,
+      548,
+      1240,
+      704
+    ],
+    "kind": "decor",
+    "size": [
+      228,
+      144
+    ]
+  },
+  {
+    "scene": "LanternPost",
+    "source": "props.png",
+    "rect": [
+      1065,
+      708,
+      1227,
+      915
+    ],
+    "kind": "decor",
+    "size": [
+      141,
+      203
+    ]
+  },
+  {
+    "scene": "LanternHook",
+    "source": "props.png",
+    "rect": [
+      1239,
+      672,
+      1444,
+      909
+    ],
+    "kind": "decor",
+    "size": [
+      187,
+      225
+    ]
+  },
+  {
+    "scene": "MushroomRed",
+    "source": "props.png",
+    "rect": [
+      1108,
+      987,
+      1218,
+      1078
+    ],
+    "kind": "decor",
+    "size": [
+      95,
+      90
+    ]
+  },
+  {
+    "scene": "MushroomSmall",
+    "source": "props.png",
+    "rect": [
+      1208,
+      1007,
+      1297,
+      1082
+    ],
+    "kind": "decor",
+    "size": [
+      65,
+      65
+    ]
+  },
+  {
+    "scene": "MushroomBlue",
+    "source": "props.png",
+    "rect": [
+      1294,
+      1009,
+      1373,
+      1085
+    ],
+    "kind": "decor",
+    "size": [
+      79,
+      68
+    ]
+  },
+  {
+    "scene": "Barrel",
+    "source": "props.png",
+    "rect": [
+      1349,
+      912,
+      1448,
+      1031
+    ],
+    "kind": "decor",
+    "size": [
+      91,
+      112
+    ]
+  },
+  {
+    "scene": "CloudWide",
+    "source": "props.png",
+    "rect": [
+      19,
+      710,
+      330,
+      869
+    ],
+    "kind": "platform",
+    "size": [
+      305,
+      153
+    ]
+  },
+  {
+    "scene": "CloudLong",
+    "source": "props.png",
+    "rect": [
+      310,
+      702,
+      598,
+      812
+    ],
+    "kind": "platform",
+    "size": [
+      285,
+      89
+    ]
+  },
+  {
+    "scene": "CloudSmall",
+    "source": "props.png",
+    "rect": [
+      320,
+      815,
+      455,
+      896
+    ],
+    "kind": "platform",
+    "size": [
+      120,
+      74
+    ]
+  },
+  {
+    "scene": "CloudPair",
+    "source": "props.png",
+    "rect": [
+      780,
+      710,
+      1075,
+      881
+    ],
+    "kind": "platform",
+    "size": [
+      277,
+      144
+    ]
+  },
+  {
+    "scene": "WaterfallWide",
+    "source": "water.png",
+    "rect": [
+      16,
+      216,
+      309,
+      592
+    ],
+    "kind": "water",
+    "size": [
+      269,
+      354
+    ]
+  },
+  {
+    "scene": "WaterfallMedium",
+    "source": "water.png",
+    "rect": [
+      312,
+      214,
+      497,
+      595
+    ],
+    "kind": "water",
+    "size": [
+      169,
+      352
+    ]
+  },
+  {
+    "scene": "WaterfallSlim",
+    "source": "water.png",
+    "rect": [
+      506,
+      217,
+      641,
+      594
+    ],
+    "kind": "water",
+    "size": [
+      122,
+      351
+    ]
+  },
+  {
+    "scene": "WaterfallThin",
+    "source": "water.png",
+    "rect": [
+      646,
+      214,
+      754,
+      594
+    ],
+    "kind": "water",
+    "size": [
+      94,
+      351
+    ]
+  },
+  {
+    "scene": "SplashWide",
+    "source": "water.png",
+    "rect": [
+      858,
+      226,
+      1086,
+      407
+    ],
+    "kind": "water",
+    "size": [
+      184,
+      168
+    ]
+  },
+  {
+    "scene": "SplashSmall",
+    "source": "water.png",
+    "rect": [
+      1090,
+      257,
+      1260,
+      406
+    ],
+    "kind": "water",
+    "size": [
+      117,
+      115
+    ]
+  },
+  {
+    "scene": "Foam",
+    "source": "water.png",
+    "rect": [
+      866,
+      518,
+      1025,
+      608
+    ],
+    "kind": "water",
+    "size": [
+      131,
+      75
+    ]
+  },
+  {
+    "scene": "RiverSurface",
+    "source": "water.png",
+    "rect": [
+      17,
+      600,
+      471,
+      709
+    ],
+    "kind": "water",
+    "size": [
+      439,
+      100
+    ]
+  },
+  {
+    "scene": "RiverLeft",
+    "source": "water.png",
+    "rect": [
+      6,
+      707,
+      286,
+      1022
+    ],
+    "kind": "water",
+    "size": [
+      271,
+      304
+    ]
+  },
+  {
+    "scene": "RiverMiddle",
+    "source": "water.png",
+    "rect": [
+      294,
+      735,
+      651,
+      1027
+    ],
+    "kind": "water",
+    "size": [
+      348,
+      276
+    ]
+  },
+  {
+    "scene": "RiverRight",
+    "source": "water.png",
+    "rect": [
+      656,
+      705,
+      968,
+      1025
+    ],
+    "kind": "water",
+    "size": [
+      299,
+      311
+    ]
+  },
+  {
+    "scene": "FallsLongThin",
+    "source": "falls.png",
+    "rect": [
+      14,
+      280,
+      146,
+      823
+    ],
+    "kind": "water",
+    "size": [
+      123,
+      533
+    ]
+  },
+  {
+    "scene": "FallsLongA",
+    "source": "falls.png",
+    "rect": [
+      154,
+      280,
+      250,
+      823
+    ],
+    "kind": "water",
+    "size": [
+      96,
+      524
+    ]
+  },
+  {
+    "scene": "FallsLongWide",
+    "source": "falls.png",
+    "rect": [
+      252,
+      280,
+      444,
+      831
+    ],
+    "kind": "water",
+    "size": [
+      189,
+      543
+    ]
+  },
+  {
+    "scene": "FallsLongB",
+    "source": "falls.png",
+    "rect": [
+      446,
+      280,
+      598,
+      826
+    ],
+    "kind": "water",
+    "size": [
+      146,
+      534
+    ]
+  },
+  {
+    "scene": "FallsLongLarge",
+    "source": "falls.png",
+    "rect": [
+      591,
+      280,
+      791,
+      827
+    ],
+    "kind": "water",
+    "size": [
+      193,
+      539
+    ]
+  },
+  {
+    "scene": "FallsBodyA",
+    "source": "falls.png",
+    "rect": [
+      796,
+      283,
+      913,
+      659
+    ],
+    "kind": "water",
+    "size": [
+      93,
+      363
+    ]
+  },
+  {
+    "scene": "FallsBodyB",
+    "source": "falls.png",
+    "rect": [
+      923,
+      283,
+      1059,
+      659
+    ],
+    "kind": "water",
+    "size": [
+      108,
+      363
+    ]
+  },
+  {
+    "scene": "FallsBodyC",
+    "source": "falls.png",
+    "rect": [
+      1063,
+      283,
+      1153,
+      659
+    ],
+    "kind": "water",
+    "size": [
+      58,
+      361
+    ]
+  },
+  {
+    "scene": "FallsMist",
+    "source": "falls.png",
+    "rect": [
+      1100,
+      658,
+      1447,
+      835
+    ],
+    "kind": "water",
+    "size": [
+      299,
+      155
+    ]
+  },
+  {
+    "scene": "WaterIslandLeft",
+    "source": "water.png",
+    "rect": [
+      0,
+      0,
+      302,
+      219
+    ],
+    "kind": "platform",
+    "size": [
+      293,
+      201
+    ]
+  },
+  {
+    "scene": "WaterIslandWide",
+    "source": "water.png",
+    "rect": [
+      310,
+      17,
+      565,
+      215
+    ],
+    "kind": "platform",
+    "size": [
+      237,
+      160
+    ]
+  },
+  {
+    "scene": "WaterIslandRight",
+    "source": "water.png",
+    "rect": [
+      565,
+      21,
+      805,
+      217
+    ],
+    "kind": "platform",
+    "size": [
+      240,
+      154
+    ]
+  },
+  {
+    "scene": "WaterIslandSlim",
+    "source": "water.png",
+    "rect": [
+      808,
+      5,
+      1008,
+      222
+    ],
+    "kind": "platform",
+    "size": [
+      187,
+      189
+    ]
+  },
+  {
+    "scene": "FallsIsland",
+    "source": "falls.png",
+    "rect": [
+      17,
+      21,
+      167,
+      249
+    ],
+    "kind": "platform",
+    "size": [
+      133,
+      193
+    ]
+  },
+  {
+    "scene": "FallsTwinIsland",
+    "source": "falls.png",
+    "rect": [
+      171,
+      19,
+      548,
+      280
+    ],
+    "kind": "platform",
+    "size": [
+      365,
+      235
+    ]
+  },
+  {
+    "scene": "FallsWideIsland",
+    "source": "falls.png",
+    "rect": [
+      552,
+      18,
+      855,
+      285
+    ],
+    "kind": "platform",
+    "size": [
+      289,
+      246
+    ]
+  },
+  {
+    "scene": "FallsMossIsland",
+    "source": "falls.png",
+    "rect": [
+      1036,
+      25,
+      1226,
+      293
+    ],
+    "kind": "platform",
+    "size": [
+      184,
+      221
+    ]
+  },
+  {
+    "scene": "FallsStoneIsland",
+    "source": "falls.png",
+    "rect": [
+      1231,
+      47,
+      1448,
+      326
+    ],
+    "kind": "platform",
+    "size": [
+      192,
+      269
+    ]
+  },
+  {
+    "scene": "FallsRock",
+    "source": "falls.png",
+    "rect": [
+      18,
+      853,
+      177,
+      1067
+    ],
+    "kind": "platform",
+    "size": [
+      139,
+      196
+    ]
+  },
+  {
+    "scene": "FallsStarRock",
+    "source": "falls.png",
+    "rect": [
+      381,
+      851,
+      573,
+      1066
+    ],
+    "kind": "platform",
+    "size": [
+      181,
+      213
+    ]
+  },
+  {
+    "scene": "FallsSteps",
+    "source": "falls.png",
+    "rect": [
+      954,
+      850,
+      1151,
+      1064
+    ],
+    "kind": "platform",
+    "size": [
+      181,
+      202
+    ]
+  }
+]

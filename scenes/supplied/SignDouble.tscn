@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+[ext_resource type="Texture2D" path="res://assets/supplied/pieces/SignDouble.png" id="texture"]
+[node name="SignDouble" type="Sprite2D"]
+texture=ExtResource("texture")
+centered=false
+scale=Vector2(0.4440789473684211,0.4440789473684211)
+offset=Vector2(-89.5,-304)

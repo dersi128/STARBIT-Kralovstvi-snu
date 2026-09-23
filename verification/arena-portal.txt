@@ -1,0 +1,18 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS mole faces Bit on left
+PASS mole faces Bit on right
+PASS locked gate does not transition
+PASS fast sweep catches portal
+PASS transition immediately freezes player
+PASS next level loads automatically
+PASS low hideout remains playable
+PASS fall respawns even when invulnerable
+PASS arena locks on entry
+PASS Bit cannot escape left above wall
+PASS Bit cannot escape right
+PASS death resets arena at checkpoint
+PASS heart removed visibly after hit
+PASS arena opens after third hit
+PASS last portal finishes game
+ARENA/PORTAL FAILURES 0

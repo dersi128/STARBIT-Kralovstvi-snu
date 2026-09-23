@@ -1,0 +1,88 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://cwyrapup0q5vx"]
+
+[ext_resource type="Texture2D" uid="uid://cjafmb6pkn83k" path="res://assets/animations/mole.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="F0"]
+atlas = ExtResource("1")
+region = Rect2(24, 9, 415, 420)
+margin = Rect2(48.5, 48, 97, 60)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F1"]
+atlas = ExtResource("1")
+region = Rect2(462, 9, 416, 421)
+margin = Rect2(48, 47, 96, 59)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F2"]
+atlas = ExtResource("1")
+region = Rect2(899, 9, 416, 420)
+margin = Rect2(48, 48, 96, 60)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F3"]
+atlas = ExtResource("1")
+region = Rect2(1337, 9, 416, 421)
+margin = Rect2(48, 47, 96, 59)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F4"]
+atlas = ExtResource("1")
+region = Rect2(23, 448, 415, 425)
+margin = Rect2(48.5, 43, 97, 55)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F5"]
+atlas = ExtResource("1")
+region = Rect2(462, 449, 416, 422)
+margin = Rect2(48, 46, 96, 58)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F6"]
+atlas = ExtResource("1")
+region = Rect2(899, 449, 424, 423)
+margin = Rect2(44, 45, 88, 57)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F7"]
+atlas = ExtResource("1")
+region = Rect2(1337, 451, 414, 420)
+margin = Rect2(49, 48, 98, 60)
+filter_clip = true
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 4.0,
+"texture": SubResource("F0")
+}, {
+"duration": 1.0,
+"texture": SubResource("F1")
+}, {
+"duration": 0.18,
+"texture": SubResource("F2")
+}, {
+"duration": 1.0,
+"texture": SubResource("F3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("F4")
+}, {
+"duration": 1.0,
+"texture": SubResource("F5")
+}, {
+"duration": 1.0,
+"texture": SubResource("F6")
+}, {
+"duration": 1.0,
+"texture": SubResource("F7")
+}],
+"loop": 1,
+"name": &"talk",
+"speed": 7.0
+}]

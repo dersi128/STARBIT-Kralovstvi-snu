@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/object.gd" id="1"]
+[ext_resource type="SpriteFrames" path="res://assets/animations/mole.tres" id="anim_mole"]
+[node name="mole" type="Node2D"]
+script=ExtResource("1")
+kind="mole"
+message="Najdi hvězdu. Odemkne bránu na konci stezky."
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("anim_mole")
+animation = &"idle"
+scale=Vector2(0.22,0.22)
+offset = Vector2(0,-228)

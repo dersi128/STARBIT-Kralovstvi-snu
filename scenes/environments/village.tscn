@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3]
+[ext_resource type="Texture2D" path="res://assets/sky.png" id="1"]
+[ext_resource type="Texture2D" path="res://assets/environments/village.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/pieces/cloud.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/pieces/bush.png" id="4"]
+[node name="village" type="Node2D"]
+z_index=-100
+[node name="sky" type="Parallax2D" parent="."]
+scroll_scale=Vector2(0,0)
+repeat_size=Vector2(5016,0)
+repeat_times=3
+[node name="Image0" type="Sprite2D" parent="sky"]
+texture=ExtResource("1")
+centered=false
+position=Vector2(0,0)
+scale=Vector2(1.5,1.5)
+flip_h=false
+modulate=Color(1,1,1,1)
+[node name="Image1" type="Sprite2D" parent="sky"]
+texture=ExtResource("1")
+centered=false
+position=Vector2(2508,0)
+scale=Vector2(1.5,1.5)
+flip_h=true
+modulate=Color(1,1,1,1)
+[node name="far" type="Parallax2D" parent="."]
+scroll_scale=Vector2(0.1,0)
+repeat_size=Vector2(3344,0)
+repeat_times=3
+[node name="Image0" type="Sprite2D" parent="far"]
+texture=ExtResource("2")
+centered=false
+position=Vector2(0,0)
+scale=Vector2(1,1)
+flip_h=false
+modulate=Color(1,1,1,1)
+[node name="Image1" type="Sprite2D" parent="far"]
+texture=ExtResource("2")
+centered=false
+position=Vector2(1672,0)
+scale=Vector2(1,1)
+flip_h=true
+modulate=Color(1,1,1,1)
+[node name="mid" type="Parallax2D" parent="."]
+scroll_scale=Vector2(0.24,0)
+repeat_size=Vector2(3000,0)
+repeat_times=3
+[node name="Image0" type="Sprite2D" parent="mid"]
+texture=ExtResource("3")
+centered=false
+position=Vector2(100,20)
+scale=Vector2(0.12937384898710866,0.15193370165745856)
+flip_h=false
+modulate=Color(1,1,1,0.2)
+[node name="Image1" type="Sprite2D" parent="mid"]
+texture=ExtResource("3")
+centered=false
+position=Vector2(1600,20)
+scale=Vector2(0.12937384898710866,0.15193370165745856)
+flip_h=true
+modulate=Color(1,1,1,0.2)
+[node name="front" type="Parallax2D" parent="."]
+scroll_scale=Vector2(0.55,0)
+repeat_size=Vector2(3000,0)
+repeat_times=3
+[node name="Image0" type="Sprite2D" parent="front"]
+texture=ExtResource("4")
+centered=false
+position=Vector2(0,600)
+scale=Vector2(1.3,1.3)
+flip_h=false
+modulate=Color(1,1,1,0.35)
+[node name="Image1" type="Sprite2D" parent="front"]
+texture=ExtResource("4")
+centered=false
+position=Vector2(1500,600)
+scale=Vector2(1.3,1.3)
+flip_h=true
+modulate=Color(1,1,1,0.35)

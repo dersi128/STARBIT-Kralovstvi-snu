@@ -1,0 +1,1260 @@
+[gd_scene load_steps=80 format=3]
+[ext_resource type="Script" path="res://scripts/level.gd" id="level"]
+[ext_resource type="Script" path="res://scripts/platform.gd" id="platform"]
+[ext_resource type="Script" path="res://scripts/object.gd" id="object"]
+[ext_resource type="PackedScene" path="res://scenes/environments/forest.tscn" id="bg"]
+[ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole"]
+[ext_resource type="PackedScene" path="res://scenes/Boss.tscn" id="boss"]
+[ext_resource type="PackedScene" path="res://scenes/Enemy_rock_enemy.tscn" id="rock_enemy"]
+[ext_resource type="PackedScene" path="res://scenes/Enemy_cloud_enemy.tscn" id="cloud_enemy"]
+[ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="stinko"]
+[ext_resource type="Script" path="res://scripts/camera_zone.gd" id="camera_zone"]
+[ext_resource type="Script" path="res://scripts/water_feature.gd" id="water"]
+[ext_resource type="Script" path="res://scripts/terrain_body.gd" id="earth"]
+[ext_resource type="Script" path="res://scripts/footbridge.gd" id="footbridge"]
+[ext_resource type="Script" path="res://scripts/river.gd" id="river"]
+[ext_resource type="Script" path="res://scripts/cave_back.gd" id="cave"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/PushCrate.tscn" id="push_box"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/SpringPad.tscn" id="spring"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/BushFlowers.tscn" id="flowers"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/Lantern.tscn" id="lantern"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/StoneBlock.tscn" id="stone_obj"]
+[ext_resource type="Script" path="res://scripts/bridge_rails.gd" id="rails"]
+[ext_resource type="PackedScene" path="res://scenes/animated_water/WaterfallGarden.tscn" id="water_0"]
+[ext_resource type="PackedScene" path="res://scenes/animated_water/WaterfallSide.tscn" id="water_1"]
+[ext_resource type="PackedScene" path="res://scenes/animated_water/WaterfallRuins.tscn" id="water_2"]
+[ext_resource type="PackedScene" path="res://scenes/animated_water/AnimatedPool.tscn" id="water_3"]
+[sub_resource type="RectangleShape2D" id="shape0"]
+size=Vector2(720,100)
+[sub_resource type="RectangleShape2D" id="shape1"]
+size=Vector2(510,100)
+[sub_resource type="RectangleShape2D" id="shape2"]
+size=Vector2(590,100)
+[sub_resource type="RectangleShape2D" id="shape3"]
+size=Vector2(510,100)
+[sub_resource type="RectangleShape2D" id="shape4"]
+size=Vector2(340,100)
+[sub_resource type="RectangleShape2D" id="shape5"]
+size=Vector2(430,100)
+[sub_resource type="RectangleShape2D" id="shape6"]
+size=Vector2(510,100)
+[sub_resource type="RectangleShape2D" id="shape7"]
+size=Vector2(340,100)
+[sub_resource type="RectangleShape2D" id="shape8"]
+size=Vector2(340,100)
+[sub_resource type="RectangleShape2D" id="shape9"]
+size=Vector2(430,100)
+[sub_resource type="RectangleShape2D" id="shape10"]
+size=Vector2(510,100)
+[sub_resource type="RectangleShape2D" id="shape11"]
+size=Vector2(340,100)
+[sub_resource type="RectangleShape2D" id="shape12"]
+size=Vector2(340,100)
+[sub_resource type="RectangleShape2D" id="shape13"]
+size=Vector2(590,100)
+[sub_resource type="RectangleShape2D" id="shape14"]
+size=Vector2(510,100)
+[sub_resource type="RectangleShape2D" id="shape15"]
+size=Vector2(340,100)
+[sub_resource type="RectangleShape2D" id="shape16"]
+size=Vector2(510,100)
+[sub_resource type="RectangleShape2D" id="shape17"]
+size=Vector2(590,100)
+[sub_resource type="RectangleShape2D" id="shape18"]
+size=Vector2(340,100)
+[sub_resource type="RectangleShape2D" id="shape19"]
+size=Vector2(510,100)
+[sub_resource type="RectangleShape2D" id="shape20"]
+size=Vector2(590,100)
+[sub_resource type="RectangleShape2D" id="shape21"]
+size=Vector2(340,100)
+[sub_resource type="RectangleShape2D" id="shape22"]
+size=Vector2(340,100)
+[sub_resource type="RectangleShape2D" id="shape23"]
+size=Vector2(430,100)
+[sub_resource type="RectangleShape2D" id="shape24"]
+size=Vector2(590,100)
+[sub_resource type="RectangleShape2D" id="shape25"]
+size=Vector2(590,100)
+[sub_resource type="RectangleShape2D" id="shape26"]
+size=Vector2(430,100)
+[sub_resource type="RectangleShape2D" id="shape27"]
+size=Vector2(510,100)
+[sub_resource type="RectangleShape2D" id="shape28"]
+size=Vector2(340,100)
+[sub_resource type="RectangleShape2D" id="shape29"]
+size=Vector2(340,100)
+[sub_resource type="RectangleShape2D" id="shape30"]
+size=Vector2(430,100)
+[sub_resource type="RectangleShape2D" id="shape31"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape32"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape33"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape34"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape35"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape36"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape37"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape38"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape39"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape40"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape41"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape42"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape43"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape44"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape45"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape46"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape47"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape48"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape49"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape50"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape51"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape52"]
+size=Vector2(185,27)
+[sub_resource type="RectangleShape2D" id="shape53"]
+size=Vector2(850,100)
+[node name="Level_02" type="Node2D"]
+script=ExtResource("level")
+number=2
+title="Mezi kořeny"
+width=18280
+spawn=Vector2(140,550)
+camera_top=-1800
+camera_bottom=2000
+fall_limit=1320
+fouk_at_start=false
+[node name="Background" parent="." instance=ExtResource("bg")]
+[node name="Platform_1" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(0,550)
+width=720
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_1"]
+position=Vector2(360.0,50)
+shape=SubResource("shape0")
+one_way_collision=true
+[node name="Platform_2" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(820,470)
+width=510
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_2"]
+position=Vector2(255.0,50)
+shape=SubResource("shape1")
+one_way_collision=true
+[node name="Platform_3" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(1430,390)
+width=590
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_3"]
+position=Vector2(295.0,50)
+shape=SubResource("shape2")
+one_way_collision=true
+[node name="Platform_4" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(2120,470)
+width=510
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_4"]
+position=Vector2(255.0,50)
+shape=SubResource("shape3")
+one_way_collision=true
+[node name="Platform_5" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(2730,570)
+width=340
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_5"]
+position=Vector2(170.0,50)
+shape=SubResource("shape4")
+one_way_collision=true
+[node name="Platform_6" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(3170,670)
+width=430
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_6"]
+position=Vector2(215.0,50)
+shape=SubResource("shape5")
+one_way_collision=true
+[node name="Platform_7" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(3720,770)
+width=510
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_7"]
+position=Vector2(255.0,50)
+shape=SubResource("shape6")
+one_way_collision=true
+[node name="Platform_8" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(4330,870)
+width=340
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_8"]
+position=Vector2(170.0,50)
+shape=SubResource("shape7")
+one_way_collision=true
+[node name="Platform_9" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(4770,870)
+width=340
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_9"]
+position=Vector2(170.0,50)
+shape=SubResource("shape8")
+one_way_collision=true
+[node name="Platform_10" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(5230,780)
+width=430
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_10"]
+position=Vector2(215.0,50)
+shape=SubResource("shape9")
+one_way_collision=true
+[node name="Platform_11" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(5780,690)
+width=510
+depth=115
+style="bridge"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_11"]
+position=Vector2(255.0,50)
+shape=SubResource("shape10")
+one_way_collision=true
+[node name="Platform_12" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(6390,600)
+width=340
+depth=115
+style="bridge"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_12"]
+position=Vector2(170.0,50)
+shape=SubResource("shape11")
+one_way_collision=true
+[node name="Platform_13" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(6830,510)
+width=340
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_13"]
+position=Vector2(170.0,50)
+shape=SubResource("shape12")
+one_way_collision=true
+[node name="Platform_14" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(7270,420)
+width=590
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_14"]
+position=Vector2(295.0,50)
+shape=SubResource("shape13")
+one_way_collision=true
+[node name="Platform_15" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(7960,330)
+width=510
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_15"]
+position=Vector2(255.0,50)
+shape=SubResource("shape14")
+one_way_collision=true
+[node name="Platform_16" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(8590,240)
+width=340
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_16"]
+position=Vector2(170.0,50)
+shape=SubResource("shape15")
+one_way_collision=true
+[node name="Platform_17" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(9030,150)
+width=510
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_17"]
+position=Vector2(255.0,50)
+shape=SubResource("shape16")
+one_way_collision=true
+[node name="Platform_18" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(9660,150)
+width=590
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_18"]
+position=Vector2(295.0,50)
+shape=SubResource("shape17")
+one_way_collision=true
+[node name="Platform_19" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(10350,240)
+width=340
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_19"]
+position=Vector2(170.0,50)
+shape=SubResource("shape18")
+one_way_collision=true
+[node name="Platform_20" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(10790,330)
+width=510
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_20"]
+position=Vector2(255.0,50)
+shape=SubResource("shape19")
+one_way_collision=true
+[node name="Platform_21" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(11420,420)
+width=590
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_21"]
+position=Vector2(295.0,50)
+shape=SubResource("shape20")
+one_way_collision=true
+[node name="Platform_22" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(12110,500)
+width=340
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_22"]
+position=Vector2(170.0,50)
+shape=SubResource("shape21")
+one_way_collision=true
+[node name="Platform_23" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(12570,580)
+width=340
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_23"]
+position=Vector2(170.0,50)
+shape=SubResource("shape22")
+one_way_collision=true
+[node name="Platform_24" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(13030,500)
+width=430
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_24"]
+position=Vector2(215.0,50)
+shape=SubResource("shape23")
+one_way_collision=true
+[node name="Platform_25" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(13560,420)
+width=590
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_25"]
+position=Vector2(295.0,50)
+shape=SubResource("shape24")
+one_way_collision=true
+[node name="Platform_26" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(14270,500)
+width=590
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_26"]
+position=Vector2(295.0,50)
+shape=SubResource("shape25")
+one_way_collision=true
+[node name="Platform_27" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(14980,580)
+width=430
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_27"]
+position=Vector2(215.0,50)
+shape=SubResource("shape26")
+one_way_collision=true
+[node name="Platform_28" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(15510,500)
+width=510
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_28"]
+position=Vector2(255.0,50)
+shape=SubResource("shape27")
+one_way_collision=true
+[node name="Platform_29" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(16120,420)
+width=340
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_29"]
+position=Vector2(170.0,50)
+shape=SubResource("shape28")
+one_way_collision=true
+[node name="Platform_30" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(16560,510)
+width=340
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_30"]
+position=Vector2(170.0,50)
+shape=SubResource("shape29")
+one_way_collision=true
+[node name="Platform_31" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(17000,550)
+width=430
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_31"]
+position=Vector2(215.0,50)
+shape=SubResource("shape30")
+one_way_collision=true
+[node name="high_01" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(3440,623)
+width=185
+depth=42
+style="bridge"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="high_01"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape31")
+one_way_collision=true
+[node name="high_02" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(3610,576)
+width=185
+depth=42
+style="bridge"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="high_02"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape32")
+one_way_collision=true
+[node name="high_03" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(3780,530)
+width=185
+depth=42
+style="bridge"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="high_03"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape33")
+one_way_collision=true
+[node name="high_04" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(3950,483)
+width=185
+depth=42
+style="bridge"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="high_04"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape34")
+one_way_collision=true
+[node name="high_05" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(4120,436)
+width=185
+depth=42
+style="bridge"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="high_05"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape35")
+one_way_collision=true
+[node name="high_06" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(4290,445)
+width=185
+depth=42
+style="bridge"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="high_06"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape36")
+one_way_collision=true
+[node name="high_07" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(4460,454)
+width=185
+depth=42
+style="bridge"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="high_07"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape37")
+one_way_collision=true
+[node name="high_08" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(4630,519)
+width=185
+depth=42
+style="bridge"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="high_08"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape38")
+one_way_collision=true
+[node name="high_09" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(4800,584)
+width=185
+depth=42
+style="bridge"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="high_09"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape39")
+one_way_collision=true
+[node name="high_10" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(4970,650)
+width=185
+depth=42
+style="bridge"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="high_10"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape40")
+one_way_collision=true
+[node name="high_11" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(5140,715)
+width=185
+depth=42
+style="bridge"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="high_11"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape41")
+one_way_collision=true
+[node name="low_01" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(8872,308)
+width=185
+depth=42
+style="island"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="low_01"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape42")
+one_way_collision=true
+[node name="low_02" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(9053,375)
+width=185
+depth=42
+style="island"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="low_02"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape43")
+one_way_collision=true
+[node name="low_03" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(9235,442)
+width=185
+depth=42
+style="island"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="low_03"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape44")
+one_way_collision=true
+[node name="low_04" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(9417,510)
+width=185
+depth=42
+style="island"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="low_04"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape45")
+one_way_collision=true
+[node name="low_05" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(9598,578)
+width=185
+depth=42
+style="island"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="low_05"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape46")
+one_way_collision=true
+[node name="low_06" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(9780,585)
+width=185
+depth=42
+style="island"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="low_06"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape47")
+one_way_collision=true
+[node name="low_07" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(9962,592)
+width=185
+depth=42
+style="island"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="low_07"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape48")
+one_way_collision=true
+[node name="low_08" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(10143,540)
+width=185
+depth=42
+style="island"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="low_08"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape49")
+one_way_collision=true
+[node name="low_09" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(10325,488)
+width=185
+depth=42
+style="island"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="low_09"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape50")
+one_way_collision=true
+[node name="low_10" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(10507,435)
+width=185
+depth=42
+style="island"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="low_10"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape51")
+one_way_collision=true
+[node name="low_11" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(10688,382)
+width=185
+depth=42
+style="island"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="low_11"]
+position=Vector2(92.5,13.5)
+shape=SubResource("shape52")
+one_way_collision=true
+[node name="Finish" type="AnimatableBody2D" parent="."]
+script=ExtResource("platform")
+position=Vector2(17430,550)
+width=850
+depth=115
+style="ground"
+travel=Vector2(0,0)
+period=4.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
+position=Vector2(425.0,50)
+shape=SubResource("shape53")
+one_way_collision=true
+[node name="crystal_0" type="Node2D" parent="."]
+position=Vector2(1713.2,335)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_1" type="Node2D" parent="."]
+position=Vector2(2893.2,515)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_2" type="Node2D" parent="."]
+position=Vector2(3964.8,715)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_3" type="Node2D" parent="."]
+position=Vector2(4933.2,815)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_4" type="Node2D" parent="."]
+position=Vector2(6024.8,635)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_5" type="Node2D" parent="."]
+position=Vector2(6993.2,455)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_6" type="Node2D" parent="."]
+position=Vector2(8204.8,275)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_7" type="Node2D" parent="."]
+position=Vector2(9274.8,95)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_8" type="Node2D" parent="."]
+position=Vector2(10513.2,185)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_9" type="Node2D" parent="."]
+position=Vector2(11703.2,365)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_10" type="Node2D" parent="."]
+position=Vector2(12733.2,525)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_11" type="Node2D" parent="."]
+position=Vector2(13843.2,365)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_12" type="Node2D" parent="."]
+position=Vector2(15186.4,525)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_13" type="Node2D" parent="."]
+position=Vector2(16283.2,365)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_14" type="Node2D" parent="."]
+position=Vector2(17206.4,495)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_15" type="Node2D" parent="."]
+position=Vector2(3700.0,528)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_16" type="Node2D" parent="."]
+position=Vector2(4040.0,435)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_17" type="Node2D" parent="."]
+position=Vector2(4380.0,397)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_18" type="Node2D" parent="."]
+position=Vector2(4720.0,471)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_19" type="Node2D" parent="."]
+position=Vector2(5060.0,602)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_20" type="Node2D" parent="."]
+position=Vector2(9143.333333333334,327)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_21" type="Node2D" parent="."]
+position=Vector2(9506.666666666666,462)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_22" type="Node2D" parent="."]
+position=Vector2(9870.0,537)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_23" type="Node2D" parent="."]
+position=Vector2(10233.333333333334,492)
+script=ExtResource("object")
+kind="crystal"
+[node name="crystal_24" type="Node2D" parent="."]
+position=Vector2(10596.666666666666,387)
+script=ExtResource("object")
+kind="crystal"
+[node name="star_key_25" type="Node2D" parent="."]
+position=Vector2(17720,468)
+script=ExtResource("object")
+kind="star_key"
+[node name="goal_26" type="Node2D" parent="."]
+position=Vector2(18060,550)
+script=ExtResource("object")
+kind="goal"
+[node name="checkpoint_27" type="Node2D" parent="."]
+position=Vector2(5870,690)
+script=ExtResource("object")
+kind="checkpoint"
+[node name="checkpoint_28" type="Node2D" parent="."]
+position=Vector2(12660,580)
+script=ExtResource("object")
+kind="checkpoint"
+[node name="Enemy_0" parent="." instance=ExtResource("rock_enemy")]
+position=Vector2(2245,470)
+patrol=275
+speed=68
+[node name="Enemy_1" parent="." instance=ExtResource("rock_enemy")]
+position=Vector2(6955,510)
+patrol=105
+speed=68
+[node name="Enemy_2" parent="." instance=ExtResource("rock_enemy")]
+position=Vector2(12235,500)
+patrol=105
+speed=68
+[node name="CameraDescent_00" type="Node2D" parent="."]
+script=ExtResource("camera_zone")
+position=Vector2(9420,105)
+
+[node name="CaveBackdrop" type="Node2D" parent="."]
+script=ExtResource("cave")
+position=Vector2(8772,193)
+size=Vector2(2201,549)
+
+[node name="Earth_0" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(0,550)
+width=720
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_1" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(820,470)
+width=510
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_2" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(1430,390)
+width=590
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_3" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(2120,470)
+width=510
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_4" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(2730,570)
+width=340
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_5" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(3170,670)
+width=430
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_6" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(3720,770)
+width=510
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_7" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(4330,870)
+width=340
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_8" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(4770,870)
+width=340
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_9" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(5230,780)
+width=430
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_12" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(6830,510)
+width=340
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_13" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(7270,420)
+width=590
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_14" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(7960,330)
+width=510
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_15" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(8590,240)
+width=340
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_16" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(9030,150)
+width=510
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_17" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(9660,150)
+width=590
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_18" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(10350,240)
+width=340
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_19" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(10790,330)
+width=510
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_20" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(11420,420)
+width=590
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_21" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(12110,500)
+width=340
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_22" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(12570,580)
+width=340
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_23" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(13030,500)
+width=430
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_24" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(13560,420)
+width=590
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_25" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(14270,500)
+width=590
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_26" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(14980,580)
+width=430
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_27" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(15510,500)
+width=510
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_28" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(16120,420)
+width=340
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_29" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(16560,510)
+width=340
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_30" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(17000,550)
+width=430
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="Earth_31" type="Node2D" parent="."]
+script=ExtResource("earth")
+position=Vector2(17430,550)
+width=850
+bottom=1800
+cave=Rect2(8772,193,2201,549)
+
+[node name="RiverBetweenBanks" parent="." instance=ExtResource("water_3")]
+position=Vector2(5656,970)
+width=1178.0
+depth=830.0
+
+[node name="BankBridge_1" type="AnimatableBody2D" parent="."]
+script=ExtResource("footbridge")
+position=Vector2(1322,470)
+end_offset=Vector2(116,-80)
+
+[node name="BankBridge_4" type="AnimatableBody2D" parent="."]
+script=ExtResource("footbridge")
+position=Vector2(3062,570)
+end_offset=Vector2(116,100)
+
+[node name="BankBridge_9" type="AnimatableBody2D" parent="."]
+script=ExtResource("footbridge")
+position=Vector2(5652,780)
+end_offset=Vector2(136,-90)
+
+[node name="BankBridge_10" type="AnimatableBody2D" parent="."]
+script=ExtResource("footbridge")
+position=Vector2(6282,690)
+end_offset=Vector2(116,-90)
+
+[node name="BankBridge_11" type="AnimatableBody2D" parent="."]
+script=ExtResource("footbridge")
+position=Vector2(6722,600)
+end_offset=Vector2(116,-90)
+
+[node name="BankBridge_13" type="AnimatableBody2D" parent="."]
+script=ExtResource("footbridge")
+position=Vector2(7852,420)
+end_offset=Vector2(116,-90)
+
+[node name="BankBridge_18" type="AnimatableBody2D" parent="."]
+script=ExtResource("footbridge")
+position=Vector2(10682,240)
+end_offset=Vector2(116,90)
+
+[node name="BankBridge_23" type="AnimatableBody2D" parent="."]
+script=ExtResource("footbridge")
+position=Vector2(13452,500)
+end_offset=Vector2(116,-80)
+
+[node name="PushCrateBank" parent="." instance=ExtResource("push_box")]
+position=Vector2(1736.8,390)
+
+[node name="OptionalSpring" parent="." instance=ExtResource("spring")]
+position=Vector2(3471.0,670)
+
+[node name="BankFlowers_0" parent="." instance=ExtResource("flowers")]
+position=Vector2(35,552)
+z_index=-1
+scale=Vector2(0.65,0.65)
+
+[node name="BankFlowers_3" parent="." instance=ExtResource("flowers")]
+position=Vector2(2155,472)
+z_index=-1
+scale=Vector2(0.65,0.65)
+
+[node name="BankFlowers_7" parent="." instance=ExtResource("flowers")]
+position=Vector2(4365,872)
+z_index=-1
+scale=Vector2(0.65,0.65)
+
+[node name="BankFlowers_12" parent="." instance=ExtResource("flowers")]
+position=Vector2(6865,512)
+z_index=-1
+scale=Vector2(0.65,0.65)
+
+[node name="BankFlowers_17" parent="." instance=ExtResource("flowers")]
+position=Vector2(9695,152)
+z_index=-1
+scale=Vector2(0.65,0.65)
+
+[node name="BankFlowers_22" parent="." instance=ExtResource("flowers")]
+position=Vector2(12605,582)
+z_index=-1
+scale=Vector2(0.65,0.65)
+
+[node name="CaveLantern_0" parent="." instance=ExtResource("lantern")]
+position=Vector2(8892,308)
+scale=Vector2(0.7,0.7)
+
+[node name="CaveLantern_5" parent="." instance=ExtResource("lantern")]
+position=Vector2(9800,585)
+scale=Vector2(0.7,0.7)
+
+[node name="CaveLantern_10" parent="." instance=ExtResource("lantern")]
+position=Vector2(10708,382)
+scale=Vector2(0.7,0.7)
+
+[node name="BankStone" parent="." instance=ExtResource("stone_obj")]
+position=Vector2(16605,510)
+scale=Vector2(0.55,0.55)
+
+[node name="RiverBridgeRails" type="Node2D" parent="."]
+script=ExtResource("rails")
+position=Vector2(5645,780)
+end_offset=Vector2(1200,-270)
+
+[node name="Vodopady_Nove" type="Node2D" parent="."]
+
+[node name="Vodopad_Kvetiny" parent="Vodopady_Nove" instance=ExtResource("water_0")]
+position = Vector2(330, 357)
+width = 192.0
+
+[node name="Vodopad_Bocni" parent="Vodopady_Nove" instance=ExtResource("water_1")]
+position = Vector2(620, 372)
+width = 192.0
+phase_offset = 0.25
+
+[node name="Vodopad_Ruiny" parent="Vodopady_Nove" instance=ExtResource("water_2")]
+position = Vector2(970, 286)
+width = 192.0
+phase_offset = 0.50
+
+[node name="Naslapny_Kamen" parent="Vodopady_Nove" instance=ExtResource("stone_obj")]
+position = Vector2(230, 462)

@@ -1,0 +1,211 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://b7vdbcgf7em0"]
+
+[ext_resource type="Texture2D" uid="uid://dtg8gvjqu32vp" path="res://assets/animations/cloud_enemy.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="F8"]
+atlas = ExtResource("1")
+region = Rect2(10, 638, 304, 312)
+margin = Rect2(48, 36, 96, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F9"]
+atlas = ExtResource("1")
+region = Rect2(314, 638, 312, 312)
+margin = Rect2(44, 36, 88, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F10"]
+atlas = ExtResource("1")
+region = Rect2(627, 638, 313, 312)
+margin = Rect2(43.5, 36, 87, 48)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F11"]
+atlas = ExtResource("1")
+region = Rect2(940, 638, 308, 308)
+margin = Rect2(46, 40, 92, 52)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F4"]
+atlas = ExtResource("1")
+region = Rect2(8, 320, 306, 317)
+margin = Rect2(47, 31, 94, 43)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F6"]
+atlas = ExtResource("1")
+region = Rect2(627, 320, 313, 316)
+margin = Rect2(43.5, 32, 87, 44)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F13"]
+atlas = ExtResource("1")
+region = Rect2(314, 950, 312, 302)
+margin = Rect2(44, 46, 88, 58)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F14"]
+atlas = ExtResource("1")
+region = Rect2(627, 950, 309, 296)
+margin = Rect2(45.5, 52, 91, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F15"]
+atlas = ExtResource("1")
+region = Rect2(943, 954, 311, 298)
+margin = Rect2(44.5, 50, 89, 62)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F12"]
+atlas = ExtResource("1")
+region = Rect2(0, 950, 314, 302)
+margin = Rect2(43, 46, 86, 58)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F0"]
+atlas = ExtResource("1")
+region = Rect2(4, 0, 310, 318)
+margin = Rect2(45, 30, 90, 42)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F1"]
+atlas = ExtResource("1")
+region = Rect2(314, 0, 312, 319)
+margin = Rect2(44, 29, 88, 41)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F2"]
+atlas = ExtResource("1")
+region = Rect2(627, 0, 313, 318)
+margin = Rect2(43.5, 30, 87, 42)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F3"]
+atlas = ExtResource("1")
+region = Rect2(940, 0, 314, 318)
+margin = Rect2(43, 30, 86, 42)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F5"]
+atlas = ExtResource("1")
+region = Rect2(314, 320, 312, 317)
+margin = Rect2(44, 31, 88, 43)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F7"]
+atlas = ExtResource("1")
+region = Rect2(940, 320, 311, 317)
+margin = Rect2(44.5, 31, 89, 43)
+filter_clip = true
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("F8")
+}, {
+"duration": 1.0,
+"texture": SubResource("F9")
+}, {
+"duration": 1.0,
+"texture": SubResource("F10")
+}, {
+"duration": 1.0,
+"texture": SubResource("F11")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("F9")
+}, {
+"duration": 1.0,
+"texture": SubResource("F10")
+}, {
+"duration": 1.0,
+"texture": SubResource("F4")
+}, {
+"duration": 1.0,
+"texture": SubResource("F6")
+}],
+"loop": 1,
+"name": &"charge",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("F13")
+}, {
+"duration": 1.0,
+"texture": SubResource("F14")
+}, {
+"duration": 1.0,
+"texture": SubResource("F15")
+}],
+"loop": 0,
+"name": &"defeat",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("F12")
+}],
+"loop": 0,
+"name": &"hit",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("F0")
+}, {
+"duration": 1.0,
+"texture": SubResource("F1")
+}, {
+"duration": 1.0,
+"texture": SubResource("F2")
+}, {
+"duration": 1.0,
+"texture": SubResource("F3")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("F13")
+}],
+"loop": 1,
+"name": &"rest",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("F4")
+}, {
+"duration": 1.0,
+"texture": SubResource("F5")
+}, {
+"duration": 1.0,
+"texture": SubResource("F6")
+}, {
+"duration": 1.0,
+"texture": SubResource("F7")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("F8")
+}, {
+"duration": 1.0,
+"texture": SubResource("F9")
+}],
+"loop": 0,
+"name": &"warn",
+"speed": 3.0
+}]

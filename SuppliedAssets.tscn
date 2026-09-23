@@ -1,0 +1,923 @@
+[gd_scene load_steps=93 format=3]
+[ext_resource type="PackedScene" path="res://scenes/supplied/GrassLeft.tscn" id="P0"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/GrassMiddle.tscn" id="P1"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/GrassMiddleB.tscn" id="P2"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/GrassRight.tscn" id="P3"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/StoneGrassLeft.tscn" id="P4"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/StoneGrassMiddle.tscn" id="P5"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/StoneGrassMiddleB.tscn" id="P6"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/StoneGrassRight.tscn" id="P7"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/IslandTiny.tscn" id="P8"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/IslandRound.tscn" id="P9"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/IslandVines.tscn" id="P10"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/IslandStar.tscn" id="P11"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/IslandStone.tscn" id="P12"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/IslandWide.tscn" id="P13"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/IslandPoint.tscn" id="P14"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/IslandLow.tscn" id="P15"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/IslandSmall.tscn" id="P16"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/StarBlock.tscn" id="P17"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/StarBlockWide.tscn" id="P18"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/SlopeDown.tscn" id="P19"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/SlopeUp.tscn" id="P20"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/CliffLeft.tscn" id="P21"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/CliffRight.tscn" id="P22"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/CliffVines.tscn" id="P23"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/CliffEnd.tscn" id="P24"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/BridgeLeft.tscn" id="P25"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/BridgeMiddle.tscn" id="P26"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/BridgeRight.tscn" id="P27"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/BridgeSmall.tscn" id="P28"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/IslandPebbles.tscn" id="P29"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/IslandTall.tscn" id="P30"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/SignArrow.tscn" id="P31"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/SignDouble.tscn" id="P32"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/Banner.tscn" id="P33"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FlagRope.tscn" id="P34"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/BannerStar.tscn" id="P35"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/Fence.tscn" id="P36"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/RopeFence.tscn" id="P37"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/Bush.tscn" id="P38"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/BushFlowers.tscn" id="P39"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/LeavesWide.tscn" id="P40"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/LeavesSmall.tscn" id="P41"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/LeavesTall.tscn" id="P42"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/VinesShort.tscn" id="P43"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/VinesLong.tscn" id="P44"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/StoneColumn.tscn" id="P45"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/BrokenColumn.tscn" id="P46"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/Ruins.tscn" id="P47"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/StoneSlab.tscn" id="P48"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallenRocks.tscn" id="P49"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/LanternPost.tscn" id="P50"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/LanternHook.tscn" id="P51"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/MushroomRed.tscn" id="P52"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/MushroomSmall.tscn" id="P53"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/MushroomBlue.tscn" id="P54"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/Barrel.tscn" id="P55"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/CloudWide.tscn" id="P56"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/CloudLong.tscn" id="P57"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/CloudSmall.tscn" id="P58"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/CloudPair.tscn" id="P59"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/WaterfallWide.tscn" id="P60"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/WaterfallMedium.tscn" id="P61"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/WaterfallSlim.tscn" id="P62"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/WaterfallThin.tscn" id="P63"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/SplashWide.tscn" id="P64"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/SplashSmall.tscn" id="P65"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/Foam.tscn" id="P66"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/RiverSurface.tscn" id="P67"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/RiverLeft.tscn" id="P68"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/RiverMiddle.tscn" id="P69"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/RiverRight.tscn" id="P70"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsLongThin.tscn" id="P71"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsLongA.tscn" id="P72"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsLongWide.tscn" id="P73"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsLongB.tscn" id="P74"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsLongLarge.tscn" id="P75"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsBodyA.tscn" id="P76"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsBodyB.tscn" id="P77"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsBodyC.tscn" id="P78"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsMist.tscn" id="P79"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/WaterIslandLeft.tscn" id="P80"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/WaterIslandWide.tscn" id="P81"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/WaterIslandRight.tscn" id="P82"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/WaterIslandSlim.tscn" id="P83"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsIsland.tscn" id="P84"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsTwinIsland.tscn" id="P85"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsWideIsland.tscn" id="P86"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsMossIsland.tscn" id="P87"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsStoneIsland.tscn" id="P88"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsRock.tscn" id="P89"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsStarRock.tscn" id="P90"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/FallsSteps.tscn" id="P91"]
+
+[node name="SuppliedAssets" type="Node2D"]
+
+[node name="GrassLeft" parent="." instance=ExtResource("P0")]
+position=Vector2(0,180)
+
+[node name="Label_0" type="Label" parent="."]
+offset_left=-140.0
+offset_top=-10.0
+text="GrassLeft / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="GrassMiddle" parent="." instance=ExtResource("P1")]
+position=Vector2(410,180)
+
+[node name="Label_1" type="Label" parent="."]
+offset_left=270.0
+offset_top=-10.0
+text="GrassMiddle / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="GrassMiddleB" parent="." instance=ExtResource("P2")]
+position=Vector2(820,180)
+
+[node name="Label_2" type="Label" parent="."]
+offset_left=680.0
+offset_top=-10.0
+text="GrassMiddleB / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="GrassRight" parent="." instance=ExtResource("P3")]
+position=Vector2(1230,180)
+
+[node name="Label_3" type="Label" parent="."]
+offset_left=1090.0
+offset_top=-10.0
+text="GrassRight / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="StoneGrassLeft" parent="." instance=ExtResource("P4")]
+position=Vector2(1640,180)
+
+[node name="Label_4" type="Label" parent="."]
+offset_left=1500.0
+offset_top=-10.0
+text="StoneGrassLeft / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="StoneGrassMiddle" parent="." instance=ExtResource("P5")]
+position=Vector2(2050,180)
+
+[node name="Label_5" type="Label" parent="."]
+offset_left=1910.0
+offset_top=-10.0
+text="StoneGrassMiddle / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="StoneGrassMiddleB" parent="." instance=ExtResource("P6")]
+position=Vector2(2460,180)
+
+[node name="Label_6" type="Label" parent="."]
+offset_left=2320.0
+offset_top=-10.0
+text="StoneGrassMiddleB / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="StoneGrassRight" parent="." instance=ExtResource("P7")]
+position=Vector2(2870,180)
+
+[node name="Label_7" type="Label" parent="."]
+offset_left=2730.0
+offset_top=-10.0
+text="StoneGrassRight / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="IslandTiny" parent="." instance=ExtResource("P8")]
+position=Vector2(0,700)
+
+[node name="Label_8" type="Label" parent="."]
+offset_left=-140.0
+offset_top=510.0
+text="IslandTiny / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="IslandRound" parent="." instance=ExtResource("P9")]
+position=Vector2(410,700)
+
+[node name="Label_9" type="Label" parent="."]
+offset_left=270.0
+offset_top=510.0
+text="IslandRound / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="IslandVines" parent="." instance=ExtResource("P10")]
+position=Vector2(820,700)
+
+[node name="Label_10" type="Label" parent="."]
+offset_left=680.0
+offset_top=510.0
+text="IslandVines / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="IslandStar" parent="." instance=ExtResource("P11")]
+position=Vector2(1230,700)
+
+[node name="Label_11" type="Label" parent="."]
+offset_left=1090.0
+offset_top=510.0
+text="IslandStar / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="IslandStone" parent="." instance=ExtResource("P12")]
+position=Vector2(1640,700)
+
+[node name="Label_12" type="Label" parent="."]
+offset_left=1500.0
+offset_top=510.0
+text="IslandStone / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="IslandWide" parent="." instance=ExtResource("P13")]
+position=Vector2(2050,700)
+
+[node name="Label_13" type="Label" parent="."]
+offset_left=1910.0
+offset_top=510.0
+text="IslandWide / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="IslandPoint" parent="." instance=ExtResource("P14")]
+position=Vector2(2460,700)
+
+[node name="Label_14" type="Label" parent="."]
+offset_left=2320.0
+offset_top=510.0
+text="IslandPoint / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="IslandLow" parent="." instance=ExtResource("P15")]
+position=Vector2(2870,700)
+
+[node name="Label_15" type="Label" parent="."]
+offset_left=2730.0
+offset_top=510.0
+text="IslandLow / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="IslandSmall" parent="." instance=ExtResource("P16")]
+position=Vector2(0,1220)
+
+[node name="Label_16" type="Label" parent="."]
+offset_left=-140.0
+offset_top=1030.0
+text="IslandSmall / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="StarBlock" parent="." instance=ExtResource("P17")]
+position=Vector2(410,1220)
+
+[node name="Label_17" type="Label" parent="."]
+offset_left=270.0
+offset_top=1030.0
+text="StarBlock / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="StarBlockWide" parent="." instance=ExtResource("P18")]
+position=Vector2(820,1220)
+
+[node name="Label_18" type="Label" parent="."]
+offset_left=680.0
+offset_top=1030.0
+text="StarBlockWide / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="SlopeDown" parent="." instance=ExtResource("P19")]
+position=Vector2(1230,1220)
+
+[node name="Label_19" type="Label" parent="."]
+offset_left=1090.0
+offset_top=1030.0
+text="SlopeDown / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="SlopeUp" parent="." instance=ExtResource("P20")]
+position=Vector2(1640,1220)
+
+[node name="Label_20" type="Label" parent="."]
+offset_left=1500.0
+offset_top=1030.0
+text="SlopeUp / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="CliffLeft" parent="." instance=ExtResource("P21")]
+position=Vector2(2050,1220)
+
+[node name="Label_21" type="Label" parent="."]
+offset_left=1910.0
+offset_top=1030.0
+text="CliffLeft / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="CliffRight" parent="." instance=ExtResource("P22")]
+position=Vector2(2460,1220)
+
+[node name="Label_22" type="Label" parent="."]
+offset_left=2320.0
+offset_top=1030.0
+text="CliffRight / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="CliffVines" parent="." instance=ExtResource("P23")]
+position=Vector2(2870,1220)
+
+[node name="Label_23" type="Label" parent="."]
+offset_left=2730.0
+offset_top=1030.0
+text="CliffVines / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="CliffEnd" parent="." instance=ExtResource("P24")]
+position=Vector2(0,1740)
+
+[node name="Label_24" type="Label" parent="."]
+offset_left=-140.0
+offset_top=1550.0
+text="CliffEnd / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="BridgeLeft" parent="." instance=ExtResource("P25")]
+position=Vector2(410,1740)
+
+[node name="Label_25" type="Label" parent="."]
+offset_left=270.0
+offset_top=1550.0
+text="BridgeLeft / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="BridgeMiddle" parent="." instance=ExtResource("P26")]
+position=Vector2(820,1740)
+
+[node name="Label_26" type="Label" parent="."]
+offset_left=680.0
+offset_top=1550.0
+text="BridgeMiddle / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="BridgeRight" parent="." instance=ExtResource("P27")]
+position=Vector2(1230,1740)
+
+[node name="Label_27" type="Label" parent="."]
+offset_left=1090.0
+offset_top=1550.0
+text="BridgeRight / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="BridgeSmall" parent="." instance=ExtResource("P28")]
+position=Vector2(1640,1740)
+
+[node name="Label_28" type="Label" parent="."]
+offset_left=1500.0
+offset_top=1550.0
+text="BridgeSmall / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="IslandPebbles" parent="." instance=ExtResource("P29")]
+position=Vector2(2050,1740)
+
+[node name="Label_29" type="Label" parent="."]
+offset_left=1910.0
+offset_top=1550.0
+text="IslandPebbles / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="IslandTall" parent="." instance=ExtResource("P30")]
+position=Vector2(2460,1740)
+
+[node name="Label_30" type="Label" parent="."]
+offset_left=2320.0
+offset_top=1550.0
+text="IslandTall / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="SignArrow" parent="." instance=ExtResource("P31")]
+position=Vector2(2870,1740)
+
+[node name="Label_31" type="Label" parent="."]
+offset_left=2730.0
+offset_top=1550.0
+text="SignArrow / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="SignDouble" parent="." instance=ExtResource("P32")]
+position=Vector2(0,2260)
+
+[node name="Label_32" type="Label" parent="."]
+offset_left=-140.0
+offset_top=2070.0
+text="SignDouble / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="Banner" parent="." instance=ExtResource("P33")]
+position=Vector2(410,2260)
+
+[node name="Label_33" type="Label" parent="."]
+offset_left=270.0
+offset_top=2070.0
+text="Banner / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="FlagRope" parent="." instance=ExtResource("P34")]
+position=Vector2(820,2260)
+
+[node name="Label_34" type="Label" parent="."]
+offset_left=680.0
+offset_top=2070.0
+text="FlagRope / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="BannerStar" parent="." instance=ExtResource("P35")]
+position=Vector2(1230,2260)
+
+[node name="Label_35" type="Label" parent="."]
+offset_left=1090.0
+offset_top=2070.0
+text="BannerStar / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="Fence" parent="." instance=ExtResource("P36")]
+position=Vector2(1640,2260)
+
+[node name="Label_36" type="Label" parent="."]
+offset_left=1500.0
+offset_top=2070.0
+text="Fence / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="RopeFence" parent="." instance=ExtResource("P37")]
+position=Vector2(2050,2260)
+
+[node name="Label_37" type="Label" parent="."]
+offset_left=1910.0
+offset_top=2070.0
+text="RopeFence / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="Bush" parent="." instance=ExtResource("P38")]
+position=Vector2(2460,2260)
+
+[node name="Label_38" type="Label" parent="."]
+offset_left=2320.0
+offset_top=2070.0
+text="Bush / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="BushFlowers" parent="." instance=ExtResource("P39")]
+position=Vector2(2870,2260)
+
+[node name="Label_39" type="Label" parent="."]
+offset_left=2730.0
+offset_top=2070.0
+text="BushFlowers / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="LeavesWide" parent="." instance=ExtResource("P40")]
+position=Vector2(0,2780)
+
+[node name="Label_40" type="Label" parent="."]
+offset_left=-140.0
+offset_top=2590.0
+text="LeavesWide / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="LeavesSmall" parent="." instance=ExtResource("P41")]
+position=Vector2(410,2780)
+
+[node name="Label_41" type="Label" parent="."]
+offset_left=270.0
+offset_top=2590.0
+text="LeavesSmall / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="LeavesTall" parent="." instance=ExtResource("P42")]
+position=Vector2(820,2780)
+
+[node name="Label_42" type="Label" parent="."]
+offset_left=680.0
+offset_top=2590.0
+text="LeavesTall / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="VinesShort" parent="." instance=ExtResource("P43")]
+position=Vector2(1230,2780)
+
+[node name="Label_43" type="Label" parent="."]
+offset_left=1090.0
+offset_top=2590.0
+text="VinesShort / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="VinesLong" parent="." instance=ExtResource("P44")]
+position=Vector2(1640,2780)
+
+[node name="Label_44" type="Label" parent="."]
+offset_left=1500.0
+offset_top=2590.0
+text="VinesLong / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="StoneColumn" parent="." instance=ExtResource("P45")]
+position=Vector2(2050,2780)
+
+[node name="Label_45" type="Label" parent="."]
+offset_left=1910.0
+offset_top=2590.0
+text="StoneColumn / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="BrokenColumn" parent="." instance=ExtResource("P46")]
+position=Vector2(2460,2780)
+
+[node name="Label_46" type="Label" parent="."]
+offset_left=2320.0
+offset_top=2590.0
+text="BrokenColumn / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="Ruins" parent="." instance=ExtResource("P47")]
+position=Vector2(2870,2780)
+
+[node name="Label_47" type="Label" parent="."]
+offset_left=2730.0
+offset_top=2590.0
+text="Ruins / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="StoneSlab" parent="." instance=ExtResource("P48")]
+position=Vector2(0,3300)
+
+[node name="Label_48" type="Label" parent="."]
+offset_left=-140.0
+offset_top=3110.0
+text="StoneSlab / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="FallenRocks" parent="." instance=ExtResource("P49")]
+position=Vector2(410,3300)
+
+[node name="Label_49" type="Label" parent="."]
+offset_left=270.0
+offset_top=3110.0
+text="FallenRocks / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="LanternPost" parent="." instance=ExtResource("P50")]
+position=Vector2(820,3300)
+
+[node name="Label_50" type="Label" parent="."]
+offset_left=680.0
+offset_top=3110.0
+text="LanternPost / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="LanternHook" parent="." instance=ExtResource("P51")]
+position=Vector2(1230,3300)
+
+[node name="Label_51" type="Label" parent="."]
+offset_left=1090.0
+offset_top=3110.0
+text="LanternHook / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="MushroomRed" parent="." instance=ExtResource("P52")]
+position=Vector2(1640,3300)
+
+[node name="Label_52" type="Label" parent="."]
+offset_left=1500.0
+offset_top=3110.0
+text="MushroomRed / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="MushroomSmall" parent="." instance=ExtResource("P53")]
+position=Vector2(2050,3300)
+
+[node name="Label_53" type="Label" parent="."]
+offset_left=1910.0
+offset_top=3110.0
+text="MushroomSmall / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="MushroomBlue" parent="." instance=ExtResource("P54")]
+position=Vector2(2460,3300)
+
+[node name="Label_54" type="Label" parent="."]
+offset_left=2320.0
+offset_top=3110.0
+text="MushroomBlue / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="Barrel" parent="." instance=ExtResource("P55")]
+position=Vector2(2870,3300)
+
+[node name="Label_55" type="Label" parent="."]
+offset_left=2730.0
+offset_top=3110.0
+text="Barrel / decor"
+theme_override_font_sizes/font_size=18
+
+[node name="CloudWide" parent="." instance=ExtResource("P56")]
+position=Vector2(0,3820)
+
+[node name="Label_56" type="Label" parent="."]
+offset_left=-140.0
+offset_top=3630.0
+text="CloudWide / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="CloudLong" parent="." instance=ExtResource("P57")]
+position=Vector2(410,3820)
+
+[node name="Label_57" type="Label" parent="."]
+offset_left=270.0
+offset_top=3630.0
+text="CloudLong / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="CloudSmall" parent="." instance=ExtResource("P58")]
+position=Vector2(820,3820)
+
+[node name="Label_58" type="Label" parent="."]
+offset_left=680.0
+offset_top=3630.0
+text="CloudSmall / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="CloudPair" parent="." instance=ExtResource("P59")]
+position=Vector2(1230,3820)
+
+[node name="Label_59" type="Label" parent="."]
+offset_left=1090.0
+offset_top=3630.0
+text="CloudPair / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="WaterfallWide" parent="." instance=ExtResource("P60")]
+position=Vector2(1640,3820)
+
+[node name="Label_60" type="Label" parent="."]
+offset_left=1500.0
+offset_top=3630.0
+text="WaterfallWide / water"
+theme_override_font_sizes/font_size=18
+
+[node name="WaterfallMedium" parent="." instance=ExtResource("P61")]
+position=Vector2(2050,3820)
+
+[node name="Label_61" type="Label" parent="."]
+offset_left=1910.0
+offset_top=3630.0
+text="WaterfallMedium / water"
+theme_override_font_sizes/font_size=18
+
+[node name="WaterfallSlim" parent="." instance=ExtResource("P62")]
+position=Vector2(2460,3820)
+
+[node name="Label_62" type="Label" parent="."]
+offset_left=2320.0
+offset_top=3630.0
+text="WaterfallSlim / water"
+theme_override_font_sizes/font_size=18
+
+[node name="WaterfallThin" parent="." instance=ExtResource("P63")]
+position=Vector2(2870,3820)
+
+[node name="Label_63" type="Label" parent="."]
+offset_left=2730.0
+offset_top=3630.0
+text="WaterfallThin / water"
+theme_override_font_sizes/font_size=18
+
+[node name="SplashWide" parent="." instance=ExtResource("P64")]
+position=Vector2(0,4340)
+
+[node name="Label_64" type="Label" parent="."]
+offset_left=-140.0
+offset_top=4150.0
+text="SplashWide / water"
+theme_override_font_sizes/font_size=18
+
+[node name="SplashSmall" parent="." instance=ExtResource("P65")]
+position=Vector2(410,4340)
+
+[node name="Label_65" type="Label" parent="."]
+offset_left=270.0
+offset_top=4150.0
+text="SplashSmall / water"
+theme_override_font_sizes/font_size=18
+
+[node name="Foam" parent="." instance=ExtResource("P66")]
+position=Vector2(820,4340)
+
+[node name="Label_66" type="Label" parent="."]
+offset_left=680.0
+offset_top=4150.0
+text="Foam / water"
+theme_override_font_sizes/font_size=18
+
+[node name="RiverSurface" parent="." instance=ExtResource("P67")]
+position=Vector2(1230,4340)
+
+[node name="Label_67" type="Label" parent="."]
+offset_left=1090.0
+offset_top=4150.0
+text="RiverSurface / water"
+theme_override_font_sizes/font_size=18
+
+[node name="RiverLeft" parent="." instance=ExtResource("P68")]
+position=Vector2(1640,4340)
+
+[node name="Label_68" type="Label" parent="."]
+offset_left=1500.0
+offset_top=4150.0
+text="RiverLeft / water"
+theme_override_font_sizes/font_size=18
+
+[node name="RiverMiddle" parent="." instance=ExtResource("P69")]
+position=Vector2(2050,4340)
+
+[node name="Label_69" type="Label" parent="."]
+offset_left=1910.0
+offset_top=4150.0
+text="RiverMiddle / water"
+theme_override_font_sizes/font_size=18
+
+[node name="RiverRight" parent="." instance=ExtResource("P70")]
+position=Vector2(2460,4340)
+
+[node name="Label_70" type="Label" parent="."]
+offset_left=2320.0
+offset_top=4150.0
+text="RiverRight / water"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsLongThin" parent="." instance=ExtResource("P71")]
+position=Vector2(2870,4340)
+
+[node name="Label_71" type="Label" parent="."]
+offset_left=2730.0
+offset_top=4150.0
+text="FallsLongThin / water"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsLongA" parent="." instance=ExtResource("P72")]
+position=Vector2(0,4860)
+
+[node name="Label_72" type="Label" parent="."]
+offset_left=-140.0
+offset_top=4670.0
+text="FallsLongA / water"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsLongWide" parent="." instance=ExtResource("P73")]
+position=Vector2(410,4860)
+
+[node name="Label_73" type="Label" parent="."]
+offset_left=270.0
+offset_top=4670.0
+text="FallsLongWide / water"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsLongB" parent="." instance=ExtResource("P74")]
+position=Vector2(820,4860)
+
+[node name="Label_74" type="Label" parent="."]
+offset_left=680.0
+offset_top=4670.0
+text="FallsLongB / water"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsLongLarge" parent="." instance=ExtResource("P75")]
+position=Vector2(1230,4860)
+
+[node name="Label_75" type="Label" parent="."]
+offset_left=1090.0
+offset_top=4670.0
+text="FallsLongLarge / water"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsBodyA" parent="." instance=ExtResource("P76")]
+position=Vector2(1640,4860)
+
+[node name="Label_76" type="Label" parent="."]
+offset_left=1500.0
+offset_top=4670.0
+text="FallsBodyA / water"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsBodyB" parent="." instance=ExtResource("P77")]
+position=Vector2(2050,4860)
+
+[node name="Label_77" type="Label" parent="."]
+offset_left=1910.0
+offset_top=4670.0
+text="FallsBodyB / water"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsBodyC" parent="." instance=ExtResource("P78")]
+position=Vector2(2460,4860)
+
+[node name="Label_78" type="Label" parent="."]
+offset_left=2320.0
+offset_top=4670.0
+text="FallsBodyC / water"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsMist" parent="." instance=ExtResource("P79")]
+position=Vector2(2870,4860)
+
+[node name="Label_79" type="Label" parent="."]
+offset_left=2730.0
+offset_top=4670.0
+text="FallsMist / water"
+theme_override_font_sizes/font_size=18
+
+[node name="WaterIslandLeft" parent="." instance=ExtResource("P80")]
+position=Vector2(0,5380)
+
+[node name="Label_80" type="Label" parent="."]
+offset_left=-140.0
+offset_top=5190.0
+text="WaterIslandLeft / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="WaterIslandWide" parent="." instance=ExtResource("P81")]
+position=Vector2(410,5380)
+
+[node name="Label_81" type="Label" parent="."]
+offset_left=270.0
+offset_top=5190.0
+text="WaterIslandWide / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="WaterIslandRight" parent="." instance=ExtResource("P82")]
+position=Vector2(820,5380)
+
+[node name="Label_82" type="Label" parent="."]
+offset_left=680.0
+offset_top=5190.0
+text="WaterIslandRight / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="WaterIslandSlim" parent="." instance=ExtResource("P83")]
+position=Vector2(1230,5380)
+
+[node name="Label_83" type="Label" parent="."]
+offset_left=1090.0
+offset_top=5190.0
+text="WaterIslandSlim / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsIsland" parent="." instance=ExtResource("P84")]
+position=Vector2(1640,5380)
+
+[node name="Label_84" type="Label" parent="."]
+offset_left=1500.0
+offset_top=5190.0
+text="FallsIsland / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsTwinIsland" parent="." instance=ExtResource("P85")]
+position=Vector2(2050,5380)
+
+[node name="Label_85" type="Label" parent="."]
+offset_left=1910.0
+offset_top=5190.0
+text="FallsTwinIsland / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsWideIsland" parent="." instance=ExtResource("P86")]
+position=Vector2(2460,5380)
+
+[node name="Label_86" type="Label" parent="."]
+offset_left=2320.0
+offset_top=5190.0
+text="FallsWideIsland / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsMossIsland" parent="." instance=ExtResource("P87")]
+position=Vector2(2870,5380)
+
+[node name="Label_87" type="Label" parent="."]
+offset_left=2730.0
+offset_top=5190.0
+text="FallsMossIsland / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsStoneIsland" parent="." instance=ExtResource("P88")]
+position=Vector2(0,5900)
+
+[node name="Label_88" type="Label" parent="."]
+offset_left=-140.0
+offset_top=5710.0
+text="FallsStoneIsland / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsRock" parent="." instance=ExtResource("P89")]
+position=Vector2(410,5900)
+
+[node name="Label_89" type="Label" parent="."]
+offset_left=270.0
+offset_top=5710.0
+text="FallsRock / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsStarRock" parent="." instance=ExtResource("P90")]
+position=Vector2(820,5900)
+
+[node name="Label_90" type="Label" parent="."]
+offset_left=680.0
+offset_top=5710.0
+text="FallsStarRock / platform"
+theme_override_font_sizes/font_size=18
+
+[node name="FallsSteps" parent="." instance=ExtResource("P91")]
+position=Vector2(1230,5900)
+
+[node name="Label_91" type="Label" parent="."]
+offset_left=1090.0
+offset_top=5710.0
+text="FallsSteps / platform"
+theme_override_font_sizes/font_size=18

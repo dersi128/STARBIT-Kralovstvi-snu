@@ -1,0 +1,31 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+PASS diamonds replace all screws level 1
+PASS large reversed gate 1
+PASS diamonds replace all screws level 2
+PASS no repeated gate guide level 2
+PASS large reversed gate 2
+PASS diamonds replace all screws level 3
+PASS no repeated gate guide level 3
+PASS large reversed gate 3
+PASS diamonds replace all screws level 4
+PASS no repeated gate guide level 4
+PASS large reversed gate 4
+PASS diamonds replace all screws level 5
+PASS no repeated gate guide level 5
+PASS large reversed gate 5
+PASS diamond counts once
+PASS diamond cannot duplicate
+PASS three lives, no added shackles
+PASS three stomps free bear
+PASS purple coloration healed
+PASS wrist star shines
+PASS bear thanks player in speech bubble
+PASS bear throws exactly one star
+PASS walking pushes crate
+PASS Bit uses pushing pose
+PASS wall stops crate without penetration
+PASS Bit can stand on crate
+PASS spring launches Bit
+PASS restart resets crate and diamonds
+V8 FAILURES 0

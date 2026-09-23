@@ -1,0 +1,4 @@
+Asset: assets/worldkit/earth_interior.png
+Generated with imagegen using the existing grass/earth tile as style reference. Output 1254 x 1254.
+Prompt:
+Create one seamless tileable square 2D game terrain material for STARBIT, using the attached grass-and-earth tile ONLY as reference for the hand-painted style and warm rock colors. The output must contain ONLY the underground rock interior: warm ochre, terracotta, honey brown, softly beveled rounded rocks, gentle painterly shading, pleasing child-friendly fantasy game look. Medium-size irregular interlocking rocks, nonuniform natural organic shapes, no grid. Fill edge to edge completely with opaque rock. Absolutely NO grass, leaves, roots, plants, sky, text, borders, UI or objects. Seamless wrapping on all four edges. Match the rocks visible in the bottom of the reference. This will fill tall river banks below existing grass tiles. 1024x1024.

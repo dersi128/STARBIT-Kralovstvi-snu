@@ -1,0 +1,19 @@
+Godot Engine v4.4.1.stable.official.49a5bc7b6 - https://godotengine.org
+
+PASS level 1 has no enemies
+PASS pause freezes simulation
+PASS menu / resume keeps exact position
+PASS restart resets collectibles and enemies
+PASS new game preserves unlocked levels
+PASS checkpoint activation
+PASS respawn uses checkpoint
+PASS Fouk repair completes without screws
+PASS second press activates Fouk
+PASS landing restores Fouk
+PASS pause stops sound
+PASS mute suppresses sound
+STATE FAILURES 0
+WARNING: ObjectDB instances leaked at exit (run with --verbose for details).
+     at: cleanup (core/object/object.cpp:2378)
+ERROR: 2 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:614)

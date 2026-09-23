@@ -1,0 +1,17 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+STEP 1 500 p=(2965.537, 495.0908) d=0
+LEVEL 1 mode=win frames=619 deaths=0 x=3745.53735351562 fouk=false
+STEP 2 500 p=(2974.542, 214.6327) d=0
+LEVEL 2 mode=win frames=711 deaths=0 x=4125.65380859375 fouk=false
+STEP 3 500 p=(2768.115, 445.0908) d=0
+LEVEL 3 mode=win frames=811 deaths=0 x=4369.2275390625 fouk=true
+STEP 4 500 p=(2172.112, 323.7992) d=2
+LEVEL 4 mode=win frames=915 deaths=2 x=4506.322265625 fouk=true
+STEP 5 500 p=(1558.502, 477.7577) d=1
+STEP 5 1000 p=(1045.002, 512.4938) d=3
+STEP 5 1500 p=(3223.114, 549.9252) d=3
+STEP 5 2000 p=(3302.171, 415.924) d=3
+STEP 5 2500 p=(4551.672, 440.5493) d=3
+LEVEL 5 mode=win frames=2531 deaths=3 x=4759.671875 fouk=true
+FAILURES 0

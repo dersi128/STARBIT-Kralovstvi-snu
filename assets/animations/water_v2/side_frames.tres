@@ -1,0 +1,83 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://sxm7hgcwf7wr"]
+
+[ext_resource type="Texture2D" uid="uid://dtug6hwbcvw1h" path="res://assets/animations/water_v2/side.png" id="sheet"]
+
+[sub_resource type="AtlasTexture" id="frame_0"]
+atlas = ExtResource("sheet")
+region = Rect2(9, 47, 346, 440)
+margin = Rect2(19, 12, 38, 72)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame_1"]
+atlas = ExtResource("sheet")
+region = Rect2(370, 46, 347, 439)
+margin = Rect2(18.5, 12, 37, 73)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame_2"]
+atlas = ExtResource("sheet")
+region = Rect2(731, 46, 347, 440)
+margin = Rect2(18.5, 12, 37, 72)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame_3"]
+atlas = ExtResource("sheet")
+region = Rect2(1092, 46, 347, 439)
+margin = Rect2(18.5, 12, 37, 73)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame_4"]
+atlas = ExtResource("sheet")
+region = Rect2(10, 555, 345, 440)
+margin = Rect2(19.5, 12, 39, 72)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame_5"]
+atlas = ExtResource("sheet")
+region = Rect2(370, 555, 347, 439)
+margin = Rect2(18.5, 12, 37, 73)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame_6"]
+atlas = ExtResource("sheet")
+region = Rect2(732, 555, 346, 440)
+margin = Rect2(19, 12, 38, 72)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame_7"]
+atlas = ExtResource("sheet")
+region = Rect2(1093, 555, 346, 440)
+margin = Rect2(19, 12, 38, 72)
+filter_clip = true
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("frame_0")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame_1")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame_2")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame_3")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame_4")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame_5")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame_6")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame_7")
+}],
+"loop": 1,
+"name": &"flow",
+"speed": 10.0
+}]

@@ -1,0 +1,28 @@
+[gd_resource type="SpriteFrames" load_steps=15 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/00.png" id="F0"]
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/01.png" id="F1"]
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/02.png" id="F2"]
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/04.png" id="F4"]
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/05.png" id="F5"]
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/06.png" id="F6"]
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/07.png" id="F7"]
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/08.png" id="F8"]
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/09.png" id="F9"]
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/11.png" id="F11"]
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/12.png" id="F12"]
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/13.png" id="F13"]
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/14.png" id="F14"]
+[ext_resource type="Texture2D" path="res://assets/supplied/stinko_frames/15.png" id="F15"]
+
+[resource]
+animations = [
+{"name": &"idle", "speed": 4, "loop": true, "frames": [{"duration": 1.0, "texture": ExtResource("F0")}, {"duration": 1.0, "texture": ExtResource("F0")}, {"duration": 1.0, "texture": ExtResource("F0")}, {"duration": 1.0, "texture": ExtResource("F0")}, {"duration": 1.0, "texture": ExtResource("F0")}, {"duration": 1.0, "texture": ExtResource("F0")}, {"duration": 1.0, "texture": ExtResource("F1")}, {"duration": 1.0, "texture": ExtResource("F0")}, {"duration": 1.0, "texture": ExtResource("F2")}, {"duration": 1.0, "texture": ExtResource("F0")}]},
+{"name": &"walk", "speed": 9, "loop": true, "frames": [{"duration": 1.0, "texture": ExtResource("F4")}, {"duration": 1.0, "texture": ExtResource("F5")}, {"duration": 1.0, "texture": ExtResource("F6")}, {"duration": 1.0, "texture": ExtResource("F7")}]},
+{"name": &"attack", "speed": 8, "loop": false, "frames": [{"duration": 1.0, "texture": ExtResource("F8")}, {"duration": 1.0, "texture": ExtResource("F9")}, {"duration": 1.0, "texture": ExtResource("F11")}]},
+{"name": &"warn", "speed": 3, "loop": false, "frames": [{"duration": 1.0, "texture": ExtResource("F8")}, {"duration": 1.0, "texture": ExtResource("F9")}]},
+{"name": &"charge", "speed": 10, "loop": true, "frames": [{"duration": 1.0, "texture": ExtResource("F9")}, {"duration": 1.0, "texture": ExtResource("F11")}, {"duration": 1.0, "texture": ExtResource("F4")}, {"duration": 1.0, "texture": ExtResource("F6")}]},
+{"name": &"rest", "speed": 1, "loop": true, "frames": [{"duration": 1.0, "texture": ExtResource("F13")}]},
+{"name": &"hit", "speed": 8, "loop": false, "frames": [{"duration": 1.0, "texture": ExtResource("F12")}]},
+{"name": &"defeat", "speed": 8, "loop": false, "frames": [{"duration": 1.0, "texture": ExtResource("F13")}, {"duration": 1.0, "texture": ExtResource("F14")}, {"duration": 1.0, "texture": ExtResource("F15")}]}
+]

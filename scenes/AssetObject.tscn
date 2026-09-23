@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/object.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/supplied/BridgeMiddle.tscn" id="piece"]
+[node name="AssetObject" type="Node2D"]
+script=ExtResource("1")
+kind="asset_piece"
+asset_scene=ExtResource("piece")

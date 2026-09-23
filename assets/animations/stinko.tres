@@ -1,0 +1,111 @@
+[gd_resource type="SpriteFrames" load_steps=18 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/animations/stinko.png" id="1"]
+
+[sub_resource type="AtlasTexture" id="F0"]
+atlas = ExtResource("1")
+region = Rect2(33, 91, 272, 205)
+margin = Rect2(64.0, 143, 128, 155)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F1"]
+atlas = ExtResource("1")
+region = Rect2(343, 94, 270, 202)
+margin = Rect2(65.0, 146, 130, 158)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F2"]
+atlas = ExtResource("1")
+region = Rect2(647, 91, 282, 215)
+margin = Rect2(59.0, 133, 118, 145)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F3"]
+atlas = ExtResource("1")
+region = Rect2(960, 98, 269, 197)
+margin = Rect2(65.5, 151, 131, 163)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F4"]
+atlas = ExtResource("1")
+region = Rect2(29, 390, 276, 198)
+margin = Rect2(62.0, 150, 124, 162)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F5"]
+atlas = ExtResource("1")
+region = Rect2(347, 394, 257, 194)
+margin = Rect2(71.5, 154, 143, 166)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F6"]
+atlas = ExtResource("1")
+region = Rect2(647, 388, 276, 199)
+margin = Rect2(62.0, 149, 124, 161)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F7"]
+atlas = ExtResource("1")
+region = Rect2(964, 389, 259, 192)
+margin = Rect2(70.5, 156, 141, 168)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F8"]
+atlas = ExtResource("1")
+region = Rect2(29, 715, 285, 170)
+margin = Rect2(57.5, 178, 115, 190)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F9"]
+atlas = ExtResource("1")
+region = Rect2(314, 696, 295, 189)
+margin = Rect2(52.5, 159, 105, 171)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F10"]
+atlas = ExtResource("1")
+region = Rect2(642, 702, 289, 176)
+margin = Rect2(55.5, 172, 111, 184)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F11"]
+atlas = ExtResource("1")
+region = Rect2(961, 689, 269, 197)
+margin = Rect2(65.5, 151, 131, 163)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F12"]
+atlas = ExtResource("1")
+region = Rect2(34, 983, 258, 271)
+margin = Rect2(71.0, 77, 142, 89)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F13"]
+atlas = ExtResource("1")
+region = Rect2(346, 962, 272, 232)
+margin = Rect2(64.0, 116, 128, 128)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F14"]
+atlas = ExtResource("1")
+region = Rect2(645, 1041, 271, 148)
+margin = Rect2(64.5, 200, 129, 212)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F15"]
+atlas = ExtResource("1")
+region = Rect2(953, 978, 261, 214)
+margin = Rect2(69.5, 134, 139, 146)
+filter_clip = true
+
+[resource]
+animations = [
+{"frames": [{"duration": 1.0, "texture": SubResource("F0")}, {"duration": 1.0, "texture": SubResource("F1")}, {"duration": 1.0, "texture": SubResource("F2")}, {"duration": 1.0, "texture": SubResource("F3")}], "loop": true, "name": &"idle", "speed": 3.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("F4")}, {"duration": 1.0, "texture": SubResource("F5")}, {"duration": 1.0, "texture": SubResource("F6")}, {"duration": 1.0, "texture": SubResource("F7")}], "loop": true, "name": &"walk", "speed": 9.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("F8")}, {"duration": 1.0, "texture": SubResource("F9")}, {"duration": 1.0, "texture": SubResource("F10")}, {"duration": 1.0, "texture": SubResource("F11")}], "loop": false, "name": &"attack", "speed": 8.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("F8")}, {"duration": 1.0, "texture": SubResource("F9")}], "loop": false, "name": &"warn", "speed": 3.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("F9")}, {"duration": 1.0, "texture": SubResource("F10")}, {"duration": 1.0, "texture": SubResource("F4")}, {"duration": 1.0, "texture": SubResource("F6")}], "loop": true, "name": &"charge", "speed": 10.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("F13")}], "loop": true, "name": &"rest", "speed": 1.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("F12")}], "loop": false, "name": &"hit", "speed": 8.0},
+{"frames": [{"duration": 1.0, "texture": SubResource("F13")}, {"duration": 1.0, "texture": SubResource("F14")}, {"duration": 1.0, "texture": SubResource("F15")}], "loop": false, "name": &"defeat", "speed": 8.0}
+]

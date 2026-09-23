@@ -1,0 +1,133 @@
+[gd_scene load_steps=16 format=3]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/IslandWide.tscn" id="0"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/IslandSmall.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/StoneBlock.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/Crate.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/WoodBridge.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/Sign.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/Fence.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/Lantern.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/BushFlowers.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/Vines.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/Waterfall.tscn" id="10"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/WaterSurface.tscn" id="11"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/FarMountains.tscn" id="12"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/MidCastleIsland.tscn" id="13"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/PaintGround.tscn" id="14"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/PushCrate.tscn" id="push"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/SpringPad.tscn" id="spring"]
+[node name="WorldKit_Showcase" type="Node2D"]
+[node name="IslandWide" parent="." instance=ExtResource("0")]
+position=Vector2(0,0)
+[node name="Label0" type="Label" parent="."]
+offset_left=-100.0
+offset_top=190.0
+text="IslandWide"
+theme_override_font_sizes/font_size=20
+[node name="IslandSmall" parent="." instance=ExtResource("1")]
+position=Vector2(360,0)
+[node name="Label1" type="Label" parent="."]
+offset_left=260.0
+offset_top=190.0
+text="IslandSmall"
+theme_override_font_sizes/font_size=20
+[node name="StoneBlock" parent="." instance=ExtResource("2")]
+position=Vector2(720,0)
+[node name="Label2" type="Label" parent="."]
+offset_left=620.0
+offset_top=190.0
+text="StoneBlock"
+theme_override_font_sizes/font_size=20
+[node name="Crate" parent="." instance=ExtResource("3")]
+position=Vector2(1080,0)
+[node name="Label3" type="Label" parent="."]
+offset_left=980.0
+offset_top=190.0
+text="Crate"
+theme_override_font_sizes/font_size=20
+[node name="WoodBridge" parent="." instance=ExtResource("4")]
+position=Vector2(0,360)
+[node name="Label4" type="Label" parent="."]
+offset_left=-100.0
+offset_top=550.0
+text="WoodBridge"
+theme_override_font_sizes/font_size=20
+[node name="Sign" parent="." instance=ExtResource("5")]
+position=Vector2(360,360)
+[node name="Label5" type="Label" parent="."]
+offset_left=260.0
+offset_top=550.0
+text="Sign"
+theme_override_font_sizes/font_size=20
+[node name="Fence" parent="." instance=ExtResource("6")]
+position=Vector2(720,360)
+[node name="Label6" type="Label" parent="."]
+offset_left=620.0
+offset_top=550.0
+text="Fence"
+theme_override_font_sizes/font_size=20
+[node name="Lantern" parent="." instance=ExtResource("7")]
+position=Vector2(1080,360)
+[node name="Label7" type="Label" parent="."]
+offset_left=980.0
+offset_top=550.0
+text="Lantern"
+theme_override_font_sizes/font_size=20
+[node name="BushFlowers" parent="." instance=ExtResource("8")]
+position=Vector2(0,720)
+[node name="Label8" type="Label" parent="."]
+offset_left=-100.0
+offset_top=910.0
+text="BushFlowers"
+theme_override_font_sizes/font_size=20
+[node name="Vines" parent="." instance=ExtResource("9")]
+position=Vector2(360,720)
+[node name="Label9" type="Label" parent="."]
+offset_left=260.0
+offset_top=910.0
+text="Vines"
+theme_override_font_sizes/font_size=20
+[node name="Waterfall" parent="." instance=ExtResource("10")]
+position=Vector2(720,720)
+[node name="Label10" type="Label" parent="."]
+offset_left=620.0
+offset_top=910.0
+text="Waterfall"
+theme_override_font_sizes/font_size=20
+[node name="WaterSurface" parent="." instance=ExtResource("11")]
+position=Vector2(1080,720)
+[node name="Label11" type="Label" parent="."]
+offset_left=980.0
+offset_top=910.0
+text="WaterSurface"
+theme_override_font_sizes/font_size=20
+[node name="FarMountains" parent="." instance=ExtResource("12")]
+position=Vector2(0,1080)
+[node name="Label12" type="Label" parent="."]
+offset_left=-100.0
+offset_top=1270.0
+text="FarMountains"
+theme_override_font_sizes/font_size=20
+[node name="MidCastleIsland" parent="." instance=ExtResource("13")]
+position=Vector2(360,1080)
+[node name="Label13" type="Label" parent="."]
+offset_left=260.0
+offset_top=1270.0
+text="MidCastleIsland"
+theme_override_font_sizes/font_size=20
+[node name="PaintGround" parent="." instance=ExtResource("14")]
+position=Vector2(720,1080)
+[node name="Label14" type="Label" parent="."]
+offset_left=620.0
+offset_top=1270.0
+text="PaintGround"
+theme_override_font_sizes/font_size=20
+
+[node name="PushCrate" parent="." instance=ExtResource("push")]
+position=Vector2(150,1350)
+[node name="SpringPad" parent="." instance=ExtResource("spring")]
+position=Vector2(460,1350)
+[node name="NewObjectsLabel" type="Label" parent="."]
+offset_left=70.0
+offset_top=1400.0
+text="PushCrate – posouvatelná bedna       SpringPad – pružina"

@@ -1,0 +1,133 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="SpriteFrames" path="res://assets/animations/bit_v2/bit_frames.tres" id="1"]
+[ext_resource type="Script" path="res://scripts/bit_sheets_preview.gd" id="2"]
+[node name="BitSheetsPreview" type="Node2D"]
+script = ExtResource("2")
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.88, 0.96, 0.94, 1)
+mouse_filter = 2
+[node name="Heading" type="Label" parent="."]
+offset_left = 28.0
+offset_top = 14.0
+theme_override_colors/font_color = Color(0.08, 0.22, 0.25, 1)
+theme_override_font_sizes/font_size = 25
+text = "STARBIT · nové sheety Bita · 48 snímků"
+[node name="Instruction" type="Label" parent="."]
+offset_left = 830.0
+offset_top = 24.0
+theme_override_colors/font_color = Color(0.08, 0.22, 0.25, 1)
+text = "Mezerník: přehrát znovu"
+[node name="idle" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 220)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("1")
+animation = &"idle"
+autoplay = "idle"
+[node name="Label_idle" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 75.0
+offset_right = 305.0
+theme_override_colors/font_color = Color(0.08, 0.22, 0.25, 1)
+theme_override_font_sizes/font_size = 23
+text = "Klid a mrkání"
+horizontal_alignment = 1
+[node name="run" type="AnimatedSprite2D" parent="."]
+position = Vector2(480, 220)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("1")
+animation = &"run"
+autoplay = "run"
+[node name="Label_run" type="Label" parent="."]
+offset_left = 335.0
+offset_top = 75.0
+offset_right = 625.0
+theme_override_colors/font_color = Color(0.08, 0.22, 0.25, 1)
+theme_override_font_sizes/font_size = 23
+text = "Běh"
+horizontal_alignment = 1
+[node name="takeoff" type="AnimatedSprite2D" parent="."]
+position = Vector2(800, 220)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("1")
+animation = &"takeoff"
+autoplay = "takeoff"
+[node name="Label_takeoff" type="Label" parent="."]
+offset_left = 655.0
+offset_top = 75.0
+offset_right = 945.0
+theme_override_colors/font_color = Color(0.08, 0.22, 0.25, 1)
+theme_override_font_sizes/font_size = 23
+text = "Odraz"
+horizontal_alignment = 1
+[node name="rise" type="AnimatedSprite2D" parent="."]
+position = Vector2(1120, 220)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("1")
+animation = &"rise"
+autoplay = "rise"
+[node name="Label_rise" type="Label" parent="."]
+offset_left = 975.0
+offset_top = 75.0
+offset_right = 1265.0
+theme_override_colors/font_color = Color(0.08, 0.22, 0.25, 1)
+theme_override_font_sizes/font_size = 23
+text = "Stoupání"
+horizontal_alignment = 1
+[node name="fall" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 545)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("1")
+animation = &"fall"
+autoplay = "fall"
+[node name="Label_fall" type="Label" parent="."]
+offset_left = 15.0
+offset_top = 400.0
+offset_right = 305.0
+theme_override_colors/font_color = Color(0.08, 0.22, 0.25, 1)
+theme_override_font_sizes/font_size = 23
+text = "Pád"
+horizontal_alignment = 1
+[node name="land" type="AnimatedSprite2D" parent="."]
+position = Vector2(480, 545)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("1")
+animation = &"land"
+autoplay = "land"
+[node name="Label_land" type="Label" parent="."]
+offset_left = 335.0
+offset_top = 400.0
+offset_right = 625.0
+theme_override_colors/font_color = Color(0.08, 0.22, 0.25, 1)
+theme_override_font_sizes/font_size = 23
+text = "Dopad"
+horizontal_alignment = 1
+[node name="collect_diamond" type="AnimatedSprite2D" parent="."]
+position = Vector2(800, 545)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("1")
+animation = &"collect_diamond"
+autoplay = "collect_diamond"
+[node name="Label_collect_diamond" type="Label" parent="."]
+offset_left = 655.0
+offset_top = 400.0
+offset_right = 945.0
+theme_override_colors/font_color = Color(0.08, 0.22, 0.25, 1)
+theme_override_font_sizes/font_size = 23
+text = "Radost z diamantu"
+horizontal_alignment = 1
+[node name="collect_star" type="AnimatedSprite2D" parent="."]
+position = Vector2(1120, 545)
+scale = Vector2(0.6, 0.6)
+sprite_frames = ExtResource("1")
+animation = &"collect_star"
+autoplay = "collect_star"
+[node name="Label_collect_star" type="Label" parent="."]
+offset_left = 975.0
+offset_top = 400.0
+offset_right = 1265.0
+theme_override_colors/font_color = Color(0.08, 0.22, 0.25, 1)
+theme_override_font_sizes/font_size = 23
+text = "Oslava hvězdy"
+horizontal_alignment = 1
