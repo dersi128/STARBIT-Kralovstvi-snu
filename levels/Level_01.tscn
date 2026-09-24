@@ -34503,7 +34503,7 @@ size = Vector2(850, 100)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qih66"]
 size = Vector2(178, 345)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ctdx4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4bgdj"]
 shader = ExtResource("20_4bgdj")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4xxy5"]
@@ -38728,12 +38728,12 @@ cave = Rect2(6757, 332, 2511, 562)
 position = Vector2(5047.0005, 834)
 scale = Vector2(0.7, 0.7)
 width = 1178.0
-depth = 830.0
+depth = 1370.0
 preview_in_editor = true
 
 [node name="OptionalSpring" parent="." unique_id=1483155136 instance=ExtResource("spring")]
 texture_filter = 4
-material = SubResource("ShaderMaterial_ctdx4")
+material = SubResource("ShaderMaterial_4bgdj")
 position = Vector2(3372, 479)
 
 [node name="BankFlowers_0" parent="." unique_id=829069281 instance=ExtResource("flowers")]
