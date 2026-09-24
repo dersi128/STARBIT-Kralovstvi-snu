@@ -1,4 +1,5 @@
 extends Node
+const ILLUSTRATED_MENU=preload("res://scripts/illustrated_menu.gd")
 var preview_number := 0
 var level: Node2D
 var current := 1
@@ -29,7 +30,6 @@ var speech_last_sound:=-1
 var speech_content:=""
 var speech_voice:="voice_mole"
 var hero:TextureRect
-var menu_clock:=0.0
 const TITLES=["Lesní probuzení", "Mezi kořeny", "Světélka vesničky", "Nad střechami", "Brúčounova svatyně", "První ostrovy", "Vodopády v oblacích", "Hrad na dosah", "Královské zahrady", "Nebeské nádvoří"]
 const LEVEL_COUNT=10
 func _ready() -> void:
@@ -91,27 +91,19 @@ func menu() -> void:
  mode="menu";Progress.silence();release_input()
  Progress.play_music("menu_adventure")
  if level:level.process_mode=Node.PROCESS_MODE_DISABLED
- clear_ui();background()
- title_label("STAR",Vector2(410,28),78,Color("ffdb58"))
- title_label("BIT",Vector2(635,28),78,Color("63d2ff"))
- var sub:=title_label("KRÁLOVSTVÍ SNŮ",Vector2(510,124),21,Color.WHITE)
- sub.add_theme_constant_override("outline_size",4)
- hero=TextureRect.new();hero.texture=DreamArt.texture("happy");hero.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;hero.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;hero.position=Vector2(70,266);hero.size=Vector2(300,300);hero.mouse_filter=Control.MOUSE_FILTER_IGNORE;screen.add_child(hero)
- var star:=TextureRect.new();star.texture=DreamArt.texture("jiskra");star.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;star.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED;star.position=Vector2(976,270);star.size=Vector2(154,154);star.mouse_filter=Control.MOUSE_FILTER_IGNORE;screen.add_child(star)
- var v:=VBoxContainer.new();v.position=Vector2(430,184);v.size=Vector2(420,405);v.add_theme_constant_override("separation",14);screen.add_child(v)
- v.add_child(button("✦  Nová hra  ✦",func():start_level(1),Color("ffda64")))
- var cont:=button("Pokračovat",func():
-  if is_instance_valid(level):resume()
-  else:start_level(Progress.unlocked)
- ,Color("78d4f8"))
- cont.disabled=not is_instance_valid(level) and Progress.unlocked==1
- v.add_child(cont)
- v.add_child(button("Výběr levelu",selection,Color("a4efbe")))
- v.add_child(button("Nastavení",settings,Color("d2b0f7")))
- v.add_child(button("Autoři",credits,Color("f6abc9")))
- var footer:=title_label("A game by  Velora",Vector2(535,620),23,Color.WHITE);footer.add_theme_constant_override("outline_size",3)
- var keys:=title_label("← → / A D · Pohyb     Mezerník · Skok",Vector2(440,659),17,Color.WHITE);keys.add_theme_constant_override("outline_size",2)
- v.modulate.a=0;v.create_tween().tween_property(v,"modulate:a",1.0,0.22)
+ clear_ui()
+ var presentation:=ILLUSTRATED_MENU.new()
+ screen.add_child(presentation)
+ presentation.setup({
+  "new":func():start_level(1),
+  "continue":_continue_from_menu,
+  "settings":settings,
+  "credits":credits,
+  "quit":func():get_tree().quit()
+ },is_instance_valid(level) or Progress.unlocked>1)
+func _continue_from_menu() -> void:
+ if is_instance_valid(level):resume()
+ else:start_level(Progress.unlocked)
 func settings() -> void:
  var v:=centered_panel("Nastavení")
  if mode=="menu":
@@ -186,6 +178,7 @@ func pause_game() -> void:
  var v:=centered_panel("Chvilka oddechu")
  v.add_child(button("Pokračovat",resume,Color("a0eebb")))
  v.add_child(button("Restartovat level",func():start_level(current,current_scene_path),Color("ffdb72")))
+ v.add_child(button("Výběr levelu",selection,Color("a4efbe")))
  v.add_child(button("Hlavní menu",menu))
 func resume() -> void:
  mode="play";level.process_mode=Node.PROCESS_MODE_INHERIT;game_ui()
@@ -220,10 +213,6 @@ func _process(delta:float) -> void:
  if Input.is_action_just_pressed("ui_cancel"):
   if mode=="play":pause_game()
   elif mode=="pause":resume()
- menu_clock+=delta
- if mode=="menu" and is_instance_valid(hero):
-  hero.position.y=266+sin(menu_clock*2.2)*7
-  hero.rotation=sin(menu_clock*1.4)*0.015
  if mode!="play":return
  update_speech(delta)
  tip_time-=delta
@@ -277,3 +266,4 @@ func update_speech(delta:float) -> void:
 func _notification(what:int) -> void:
  if what==NOTIFICATION_APPLICATION_PAUSED or what==NOTIFICATION_WM_GO_BACK_REQUEST:
   if mode=="play":pause_game()
+
