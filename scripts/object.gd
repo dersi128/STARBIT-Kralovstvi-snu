@@ -275,7 +275,7 @@ func _draw() -> void:
 	if used and kind in ["fouk","star_key","crystal"]: return
 	match kind:
 		"checkpoint":
-			draw_texture_rect(DreamArt.texture("flag"),Rect2(-29,-116,72,116),false,Color("ffffff") if used else Color("b4c8df"))
+			_draw_clean_prop("flag",Rect2(-29,-116,72,116),Color("ffffff") if used else Color("b4c8df"))
 			if used: draw_circle(Vector2(5,-120),7,Color("fff49b"))
 		"star_key","crystal":
 			var texture:Texture2D=COLLECTIBLE_TEXTURES[kind]
@@ -284,7 +284,7 @@ func _draw() -> void:
 		"goal":
 			draw_set_transform(Vector2.ZERO,0,Vector2(-gate_scale if gate_flip else gate_scale,gate_scale))
 			var color:=Color.WHITE if gate_open else Color(0.62,0.67,0.78)
-			draw_texture_rect(DreamArt.texture("arch"),Rect2(-60,-125,150,125),false,color)
+			_draw_clean_prop("arch",Rect2(-60,-125,150,125),color)
 			draw_set_transform(Vector2.ZERO)
 		"mole":
 			pass # Native AnimatedSprite2D renders the narrator.
@@ -299,9 +299,23 @@ func _draw() -> void:
 				for i in range(3):
 					var a:=time*6+i*TAU/3
 					draw_texture_rect(DreamArt.texture("star"),Rect2(cos(a)*42-8,-45+sin(a)*24,16,16),false)
-		"arch": draw_texture_rect(DreamArt.texture("arch"),Rect2(-75,-120,150,120),false)
+		"arch": _draw_clean_prop("arch",Rect2(-75,-120,150,120))
 		"bush": draw_texture_rect(DreamArt.texture("bush"),Rect2(-60,-65,120,75),false)
 
+
+# Disjoint source rectangles omit neighbouring props without moving or
+# stretching the retained artwork. Coordinates use the original PNG canvas.
+const CLEAN_PROP_REGIONS={
+	"flag":[Rect2(28,0,189,136),Rect2(0,136,217,108),Rect2(0,244,184,79)],
+	"arch":[Rect2(0,5,305,221)]
+}
+func _draw_clean_prop(key:String,target:Rect2,tint:Color=Color.WHITE) -> void:
+	var texture:Texture2D=DreamArt.texture(key)
+	var ratio:=target.size/texture.get_size()
+	for region:Rect2 in CLEAN_PROP_REGIONS[key]:
+		var destination:=Rect2(target.position+region.position*ratio,region.size*ratio)
+		# Sample across internal strip edges so bilinear filtering has no seams.
+		draw_texture_rect_region(texture,destination,region,tint,false,false)
 
 func touches_portal(from_feet:Vector2,to_feet:Vector2) -> bool:
 	if kind!="goal" or portal==null:return false

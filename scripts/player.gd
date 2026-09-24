@@ -2,6 +2,11 @@ extends CharacterBody2D
 @export var speed := 390.0
 @export var jump_speed := 650.0
 @export var use_new_sheets := true
+@export_range(0.5,2.0,0.05) var hurt_animation_duration:=0.95
+const GROUND_ACCELERATION:=2800.0
+const GROUND_BRAKING:=4200.0
+const RUN_CYCLE_DISTANCE:=156.0
+const TAKEOFF_DURATION:=0.10
 var sheet_frames:SpriteFrames
 var sheet_animation:=""
 var sheet_frame:=0
@@ -22,10 +27,18 @@ var deaths := 0
 var sprite: Sprite2D
 var drone: Sprite2D
 var run_phase:=0.0
-var step_clock:=0.0
 var land_time:=0.0
 var hurt_time:=0.0
 var boost_flash:=0.0
+var air_time:=0.0
+var state_age:=0.0
+var idle_time:=0.0
+var ground_distance:=0.0
+var ground_speed:=0.0
+var acceleration_lean:=0.0
+var turn_time:=0.0
+var stop_time:=0.0
+var pickup_pose_active:=false
 const LAND_DURATION:=0.32
 const EXTRA_POSES={
  "land":Rect2(696,464,402,250),
@@ -50,6 +63,7 @@ func _ready() -> void:
  collision_layer=2
  collision_mask=5
  sprite=$Visual
+ sprite.position=Vector2.ZERO
  if use_new_sheets and ResourceLoader.exists("res://assets/animations/bit_v2/bit_frames.tres"):
   sheet_frames=load("res://assets/animations/bit_v2/bit_frames.tres")
  drone=Sprite2D.new();add_child(drone)
@@ -58,6 +72,8 @@ func _ready() -> void:
   var pose:=AtlasTexture.new();pose.atlas=load("res://assets/bit.png");pose.region=EXTRA_POSES[key];pose.filter_clip=true;pose_cache[key]=pose
 func _physics_process(delta: float) -> void:
  var previous_position:=global_position
+ var previous_speed:=velocity.x
+ ground_distance=0.0;ground_speed=0.0
  previous_bottom=global_position.y
  invulnerable=maxf(0,invulnerable-delta)
  happy=maxf(0,happy-delta)
@@ -66,8 +82,12 @@ func _physics_process(delta: float) -> void:
  hurt_time=maxf(0,hurt_time-delta)
  boost_flash=maxf(0,boost_flash-delta)
  takeoff_time=maxf(0,takeoff_time-delta)
+ turn_time=maxf(0,turn_time-delta)
+ stop_time=maxf(0,stop_time-delta)
+ air_time=0.0 if is_on_floor() else air_time+delta
  if happy>previous_happy+0.01:
   celebration_age=0.0;celebration_duration=happy
+  pickup_pose_active=is_on_floor() and absf(velocity.x)<8
  celebration_age+=delta
  previous_happy=happy
  update_visual_effects(delta)
@@ -77,23 +97,40 @@ func _physics_process(delta: float) -> void:
   return
  var axis:=Input.get_axis("left","right")
  movement_multiplier=rain_movement_factor()
- velocity.x=move_toward(velocity.x,axis*speed*movement_multiplier,(3600.0 if axis else 5000.0)*delta)
- if axis: facing=signf(axis)
+ var acceleration:=3600.0 if axis else 5000.0
+ if is_on_floor():
+  acceleration=GROUND_ACCELERATION if axis else GROUND_BRAKING
+  if axis*velocity.x<0:acceleration=3600.0
+ velocity.x=move_toward(velocity.x,axis*speed*movement_multiplier,acceleration*delta)
+ acceleration_lean=clampf((velocity.x-previous_speed)/maxf(delta*GROUND_ACCELERATION,0.01),-1,1)
+ # Finish braking before facing the other way, rather than skating backwards.
+ var next_facing:=facing
+ if absf(velocity.x)>8:next_facing=signf(velocity.x)
+ elif axis:next_facing=signf(axis)
+ if next_facing!=facing:turn_time=0.12
+ facing=next_facing
+ if is_on_floor() and absf(previous_speed)>8 and absf(velocity.x)<=8:stop_time=0.16
  if is_on_floor(): coyote=0.12;boost_used=false
  else: coyote-=delta
  if Input.is_action_just_pressed("jump"):
   buffer=0.13
   if coyote<=0 and has_fouk and not boost_used:
-   velocity.y=-jump_speed*0.92;boost_used=true;buffer=0;boost_flash=0.3;takeoff_time=0.14;Progress.sfx("boost")
+   velocity.y=-jump_speed*0.92;boost_used=true;buffer=0;boost_flash=0.3;begin_jump();Progress.sfx("boost")
  else: buffer-=delta
  if buffer>0 and coyote>0:
-  velocity.y=-jump_speed;coyote=0;buffer=0;takeoff_time=0.14;Progress.sfx("jump")
+  velocity.y=-jump_speed;coyote=0;buffer=0;begin_jump();Progress.sfx("jump")
  if Input.is_action_just_released("jump") and velocity.y< -260: velocity.y=-260
  velocity.y=minf(velocity.y+1450*delta,1000)
  var was_floor:=is_on_floor()
  var falling_speed:=velocity.y
  pushing=false
  move_and_slide()
+ if is_on_floor():
+  # Count actual travel, excluding a moving platform carrying a standing Bit.
+  var travel:float=global_position.x-previous_position.x-get_platform_velocity().x*delta
+  ground_distance=absf(travel)
+  ground_speed=ground_distance/maxf(delta,0.001)
+ if is_on_ceiling():takeoff_time=0.0;boost_flash=0.0
  if axis and is_on_floor():
   for i in get_slide_collision_count():
    var hit:=get_slide_collision(i)
@@ -110,6 +147,10 @@ func _physics_process(delta: float) -> void:
   if global_position.y>current_level.fall_limit or global_position.x< -150 or global_position.x>current_level.width+150:
    hurt(true)
  animate(delta)
+
+func begin_jump() -> void:
+ takeoff_time=TAKEOFF_DURATION;air_time=0.0;land_time=0.0;stop_time=0.0
+ pickup_pose_active=false
 
 func rain_movement_factor() -> float:
  # Query the actual body position every physics tick, including immediately
@@ -129,22 +170,36 @@ func rain_movement_factor() -> float:
    # Overlapping rain clouds use the strongest slow, rather than multiplying.
    factor=minf(factor,zone.movement_factor())
  return factor
-# These states only transform the Visual sprite. The CharacterBody2D and its
-# collision shape retain their original movement and dimensions.
+# Animation affects only Visual; input and collision geometry are independent
+# of the pose, so landing and collecting never delay a jump or a direction change.
 var pose_offsets:Dictionary={}
 var visual_stretch:=Vector2.ONE
 func animate(delta: float) -> void:
+ var previous_state:=visual_state
  var key:="idle"
  var height:=98.0
  var stretch:=Vector2.ONE
  var offset:=Vector2.ZERO
  var tilt:=0.0
- var moving:=absf(velocity.x)>20
  var grounded:=is_on_floor()
- var running_phase:=0.0
+ var moving:=ground_speed>8.0 if grounded else absf(velocity.x)>8.0
+ var speed_ratio:=clampf(ground_speed/maxf(speed,1.0),0.0,1.0)
+ var hurt_age:=hurt_animation_duration-hurt_time
+ var show_hurt_pose:=hurt_time>0 and (hurt_age<0.18 or (grounded and not moving and not pushing))
  visual_state="idle"
- if hurt_time>0:
-  key="hurt";visual_state="hurt"
+
+ # One gait cycle is two steps. Slow rain, braking and a blocked wall cannot
+ # leave the feet running at full speed; platform motion does not count.
+ if grounded and moving and not pushing:
+  var next_phase:=run_phase+ground_distance/RUN_CYCLE_DISTANCE
+  if int(next_phase*2.0)>int(run_phase*2.0) and not show_hurt_pose:
+   Progress.sfx("step")
+  run_phase=fposmod(next_phase,1.0)
+ elif grounded and not moving:
+  run_phase=0.0
+
+ if show_hurt_pose:
+  key="hurt";visual_state="hurt";height=86.0
  elif pushing:
   key="push"+str(1+int(push_clock*7)%4);visual_state="push"
   offset.x=facing*9
@@ -152,79 +207,104 @@ func animate(delta: float) -> void:
   if boost_flash>0:
    key="jump";visual_state="boost"
    var power:=sin(clampf(boost_flash/0.3,0,1)*PI)
-   stretch=Vector2(1.0-0.065*power,1.0+0.10*power)
+   stretch=Vector2(1.0-0.045*power,1.0+0.07*power)
   elif takeoff_time>0:
    key="jump";visual_state="takeoff"
-   var power:=sin(takeoff_time/0.14*PI)
-   stretch=Vector2(1.0-0.055*power,1.0+0.09*power)
+   var power:=sin(clampf(takeoff_time/TAKEOFF_DURATION,0,1)*PI)
+   stretch=Vector2(1.0-0.04*power,1.0+0.065*power)
   elif velocity.y < -110:
    key="jump";visual_state="rise"
-   stretch=Vector2(0.98,1.035)
+   stretch=Vector2(0.985,1.025)
   elif velocity.y<110:
    key="jump";visual_state="apex"
-   stretch=Vector2(1.025,0.985)
+   stretch=Vector2(1.015,0.99)
   else:
    key="fall";visual_state="fall"
    var fall_amount:=clampf(velocity.y/1000.0,0,1)
-   stretch=Vector2(1.0-0.025*fall_amount,1.0+0.045*fall_amount)
-  tilt=facing*clampf(velocity.x*facing/speed,0,1)*(-0.035 if visual_state=="fall" else 0.055)
-  step_clock=0
+   stretch=Vector2(1.0-0.022*fall_amount,1.0+0.04*fall_amount)
+   # A held falling pose still has a little movement in the air.
+   tilt=sin(air_time*7.0)*0.012*fall_amount
+  tilt+=clampf(velocity.x/maxf(speed,1.0),-1,1)*(-0.025 if visual_state=="fall" else 0.04)
  elif moving:
-  run_phase+=absf(velocity.x)*delta*0.035
-  key="run"+str(1+int(run_phase)%4);visual_state="run"
-  running_phase=run_phase*PI*0.5
-  offset.y=-absf(sin(running_phase))*1.8
-  tilt=facing*(0.025+sin(running_phase)*0.012)
-  step_clock+=delta*absf(velocity.x)/speed
-  if step_clock>0.23:step_clock=0;Progress.sfx("step")
+  key="run"+str(1+int(run_phase*4.0)%4);visual_state="run"
+  tilt=facing*0.025*speed_ratio+acceleration_lean*0.045
  else:
-  step_clock=0
-  stretch=Vector2(1.0-sin(anim_time*3)*0.005,1.0+sin(anim_time*3)*0.008)
+  var breath:=sin(idle_time*2.4)
+  stretch=Vector2(1.0-breath*0.007,1.0+breath*0.012)
+  tilt=sin(idle_time*1.2)*0.008
+  if stop_time>0:
+   var settle:=sin((1.0-stop_time/0.16)*PI)
+   stretch*=Vector2(1.0+settle*0.025,1.0-settle*0.025)
+   tilt-=facing*settle*0.022
 
- if grounded and hurt_time<=0 and not pushing and land_time>0:
+ if grounded and not show_hurt_pose and not pushing and land_time>0:
   visual_state="land"
   var t:=1.0-land_time/LAND_DURATION
-  var squash:=sin(t*PI)*(0.06+0.11*landing_strength)
-  stretch=Vector2(1.0+squash*0.55,1.0-squash)
+  var squash:=sin(t*PI)*(0.025+0.065*landing_strength)
+  stretch=Vector2(1.0+squash*0.5,1.0-squash)
   offset.y=0.0
-  if not moving and t<0.45:
+  # Both a running and a standing landing show contact and compression.
+  # The running stride returns after 0.13 s; controls never wait for a pose.
+  if not moving or LAND_DURATION-land_time<0.13:
    key="land";height=74.0
 
- # A running or airborne pickup never replaces the locomotion pose.
+ if moving or not grounded or pushing or hurt_time>0:
+  pickup_pose_active=false
  if happy>0 and hurt_time<=0 and not pushing:
   var u:=clampf(celebration_age/maxf(celebration_duration,0.01),0,1)
   var joy:=sin(u*PI)
-  tilt+=sin(u*TAU*1.5)*joy*0.055
-  if grounded and not moving and land_time<=0:
+  if pickup_pose_active and land_time<=0:
    visual_state="celebrate"
    if u<0.15:key="surprised";height=90.0
    elif u<0.78:key="happy";height=88.0
    else:key="front"
-   var strength:=1.35 if celebration_kind=="star_key" else 1.0
-   offset.y=-sin(u*PI)*4.5*strength
-   stretch=Vector2(1.0-joy*0.025,1.0+joy*0.04)
+   offset.y=-joy*1.5
+   tilt+=sin(u*TAU)*joy*0.035
+  else:
+   # A little happy bounce remains visible during a run/jump. The legs
+   # retain their stride and a late stop cannot replay half a celebration.
+   var pulse:=sin(clampf(celebration_age/0.5,0,1)*PI)
+   stretch*=Vector2(1.0-pulse*0.02,1.0+pulse*0.035)
+   tilt+=sin(celebration_age*TAU*2.0)*pulse*0.05
+   if grounded:offset.y-=pulse*3.0
 
- var texture:Texture2D=pose_cache[key] if pose_cache.has(key) else DreamArt.texture(key)
- var sheet_texture:=get_sheet_texture()
- if sheet_texture:
-  texture=sheet_texture;height=124.0
-  # All new frames share a 384px virtual canvas and a foot pivot at y=356.
-  # Do not auto-trim each frame: that would erase the little celebration hop.
+ if turn_time>0:
+  stretch.x*=1.0-sin((1.0-turn_time/0.12)*PI)*0.09
+ if hurt_time>0:
+  var recoil:=exp(-hurt_age*8.0)
+  tilt-=facing*0.16*recoil
+  tilt+=sin(hurt_age*24.0)*0.028*(hurt_time/hurt_animation_duration)
+  offset.x-=facing*sin(minf(hurt_age/0.22,1.0)*PI)*6.0
+  stretch*=Vector2(1.0+recoil*0.065,1.0-recoil*0.06)
+
+ if visual_state!=previous_state:state_age=0.0
+ else:state_age+=delta
+ if visual_state=="idle":idle_time+=delta
+ else:idle_time=0.0
+ var texture:Texture2D=get_sheet_texture()
+ if texture:
+  height=124.0
+  # Fixed 384px virtual canvas: every pose shares a foot pivot at y=356.
   sprite.offset=Vector2(0,-164)
  else:
+  texture=pose_cache[key] if pose_cache.has(key) else DreamArt.texture(key)
   if not pose_offsets.has(key):
    var visible_rect:=texture.get_image().get_used_rect()
    pose_offsets[key]=Vector2(texture.get_width()*0.5-visible_rect.get_center().x,texture.get_height()*0.5-visible_rect.end.y)
   sprite.offset=pose_offsets[key]
  sprite.texture=texture
- visual_stretch=visual_stretch.lerp(stretch,1.0-exp(-30.0*delta))
+ visual_stretch=visual_stretch.lerp(stretch,1.0-exp(-26.0*delta))
  sprite.scale=Vector2.ONE*(height/texture.get_height())*visual_stretch
  sprite.flip_h=facing<0
- sprite.rotation=lerpf(sprite.rotation,tilt,1.0-exp(-22.0*delta))
- sprite.position=offset
- var warmth:=sin(clampf(celebration_age/maxf(celebration_duration,0.01),0,1)*PI)*0.065 if happy>0 else 0.0
+ sprite.rotation=lerpf(sprite.rotation,tilt,1.0-exp(-20.0*delta))
+ sprite.position=sprite.position.lerp(offset,1.0-exp(-26.0*delta))
+ var warmth:=sin(clampf(celebration_age/maxf(celebration_duration,0.01),0,1)*PI)*0.08 if happy>0 else 0.0
  sprite.modulate=Color(1.0+warmth,1.0+warmth,1.0+warmth)
- sprite.modulate.a=0.4 if invulnerable>0 and int(anim_time*14)%2==0 else 1.0
+ if hurt_time>0:
+  var flash:=exp(-hurt_age*12.0)
+  sprite.modulate=Color(1.0+flash*0.15,1.0-flash*0.3,1.0-flash*0.3)
+ if invulnerable>0 and not (hurt_time>0 and hurt_age<0.18):
+  sprite.modulate.a=0.7+0.3*(0.5+0.5*cos(invulnerable*TAU*5.0))
  drone.visible=has_fouk
  drone.position=Vector2(-facing*40,-100+sin(anim_time*4)*5)
  if boost_used and velocity.y<0:drone.position=Vector2(0,-114)
@@ -237,30 +317,38 @@ func get_sheet_texture() -> Texture2D:
  if not use_new_sheets or sheet_frames==null:return null
  match visual_state:
   "idle":
-   sheet_animation="idle";sheet_frame=sheet_frame_at("idle",anim_time,true)
+   sheet_animation="idle";sheet_frame=sheet_frame_at("idle",idle_time,true)
   "run":
-   sheet_animation="run";sheet_frame=int(run_phase*1.2)%8
-  "takeoff":
-   sheet_animation="takeoff";sheet_frame=clampi(int((1.0-takeoff_time/0.14)*4.0),0,3)
-  "rise":
-   sheet_animation="rise";sheet_frame=clampi(int((velocity.y+jump_speed)/(jump_speed-110.0)*3.0),0,2)
-  "apex":
-   sheet_animation="rise";sheet_frame=3
-  "fall":
-   sheet_animation="fall";sheet_frame=clampi(int((velocity.y-110.0)/540.0*4.0),0,3)
-  "land":
-   if absf(velocity.x)>20:
-    sheet_animation="run";sheet_frame=int(run_phase*1.2)%8
+   sheet_animation="run";sheet_frame=int(run_phase*sheet_frames.get_frame_count("run"))
+  "takeoff","boost":
+   if air_time<TAKEOFF_DURATION:
+    sheet_animation="takeoff";sheet_frame=sheet_frame_at("takeoff",air_time)
    else:
-    sheet_animation="land";sheet_frame=clampi(int((1.0-land_time/LAND_DURATION)*4.0),0,3)
-  "boost":
-   sheet_animation="rise";sheet_frame=clampi(int((1.0-boost_flash/0.3)*4.0),0,3)
+    sheet_animation="rise";sheet_frame=sheet_frame_at("rise",air_time-TAKEOFF_DURATION)
+  "rise":
+   # Continue from takeoff, not from a velocity-derived frame halfway through.
+   sheet_animation="rise";sheet_frame=sheet_frame_at("rise",maxf(0.0,air_time-TAKEOFF_DURATION))
+  "apex":
+   sheet_animation="rise";sheet_frame=sheet_frames.get_frame_count("rise")-1
+  "fall":
+   sheet_animation="fall";sheet_frame=sheet_frame_at("fall",state_age)
+  "land":
+   if ground_speed>8.0 and LAND_DURATION-land_time>=0.13:
+    sheet_animation="run";sheet_frame=int(run_phase*sheet_frames.get_frame_count("run"))
+   else:
+    sheet_animation="land";sheet_frame=sheet_frame_at("land",LAND_DURATION-land_time)
+  "hurt":
+   if not sheet_frames.has_animation("hurt"):return null
+   sheet_animation="hurt"
+   var progress:=1.0-hurt_time/maxf(hurt_animation_duration,0.01)
+   sheet_frame=sheet_frame_at("hurt",progress*sheet_duration("hurt"))
   "celebrate":
    sheet_animation="collect_star" if celebration_kind=="star_key" else "collect_diamond"
    var progress:=celebration_age/maxf(celebration_duration,0.01)
    sheet_frame=sheet_frame_at(sheet_animation,progress*sheet_duration(sheet_animation))
  if sheet_animation.is_empty():return null
  return sheet_frames.get_frame_texture(sheet_animation,sheet_frame)
+
 
 func sheet_duration(animation:String) -> float:
  var units:=0.0
@@ -285,6 +373,7 @@ func celebrate_collect(kind:String,world_origin:Vector2) -> void:
  if use_new_sheets and sheet_frames:
   celebration_duration=sheet_duration("collect_star" if kind=="star_key" else "collect_diamond")
  celebration_age=0.0;happy=celebration_duration;previous_happy=happy
+ pickup_pose_active=is_on_floor() and absf(velocity.x)<8 and land_time<=0
  if PICKUP_TEXTURES.has(kind):
   pickup_echoes.append({"kind":kind,"origin":world_origin,"age":0.0})
   if pickup_echoes.size()>4:pickup_echoes.pop_front()
@@ -318,9 +407,9 @@ func _draw() -> void:
   draw_set_transform(Vector2.ZERO)
  for echo in pickup_echoes:
   var t:float=clampf(echo.age/0.42,0,1)
-  var ease:=1.0-pow(1.0-t,3)
-  var center:Vector2=to_local(echo.origin).lerp(Vector2(0,-55),ease)+Vector2(0,-sin(t*PI)*22)
-  var size:=lerpf(30,8,ease)
+  var eased:=1.0-pow(1.0-t,3)
+  var center:Vector2=to_local(echo.origin).lerp(Vector2(0,-55),eased)+Vector2(0,-sin(t*PI)*22)
+  var size:=lerpf(30,8,eased)
   draw_texture_rect(PICKUP_TEXTURES[echo.kind],Rect2(center-Vector2.ONE*size*0.5,Vector2.ONE*size),false,Color(1,1,1,1.0-t))
  for particle in sparkles:
   var t:float=particle.age/particle.life
@@ -333,6 +422,16 @@ func _draw() -> void:
    var angle:float=float(i)*PI/4+particle.age*1.6
    points.append(center+Vector2(cos(angle),sin(angle))*radius*(1.0 if i%2==0 else 0.3))
   draw_colored_polygon(points,color)
+ if hurt_time>0 and visual_state!="hurt":
+  var hurt_age:=hurt_animation_duration-hurt_time
+  for i in 3:
+   var angle:=hurt_age*6.0+float(i)*TAU/3.0
+   var center:=Vector2(cos(angle)*22,-110+sin(angle)*6)
+   var points:=PackedVector2Array()
+   for point in 10:
+    var direction:=float(point)*PI/5.0-PI*0.5
+    points.append(center+Vector2(cos(direction),sin(direction))*(4.2 if point%2==0 else 1.9))
+   draw_colored_polygon(points,Color(1.0,0.86,0.4,clampf(hurt_time/0.2,0,1)))
  if has_fouk and is_instance_valid(drone):
   var rotor:=drone.position+Vector2(0,-31)
   var span:=27*cos(anim_time*65)
@@ -343,6 +442,8 @@ func hurt(force:bool=false) -> void:
  if not force and (invulnerable>0 or frozen): return
  deaths+=1
  happy=0;previous_happy=0;land_time=0;takeoff_time=0;sparkles.clear();pickup_echoes.clear()
- Progress.sfx("hurt");hurt_time=0.3
+ pickup_pose_active=false;air_time=0.0;boost_flash=0.0;ground_distance=0.0;ground_speed=0.0
+ run_phase=0.0;idle_time=0.0;stop_time=0.0;turn_time=0.0;buffer=0.0;coyote=0.0
+ Progress.sfx("hurt");hurt_time=hurt_animation_duration
  get_tree().call_group("level","respawn_player")
  invulnerable=1.3

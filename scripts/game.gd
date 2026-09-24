@@ -1,4 +1,7 @@
 extends Node
+const DREAM_SCREENS=preload("res://scripts/dream_screens.gd")
+const COLLECTIBLE_HUD=preload("res://scripts/collectible_hud.gd")
+const PAUSE_THEME=preload("res://scripts/pause_menu_theme.gd")
 const ILLUSTRATED_MENU=preload("res://scripts/illustrated_menu.gd")
 var preview_number := 0
 var level: Node2D
@@ -8,12 +11,14 @@ var selected_level:=1
 var screws := 0
 var gold := 0
 var crystals:=0
+var total_crystals:=0
+var run_finished:=false
 var preview_scene_path:=""
 var current_scene_path:=""
 var mode := "menu"
 var ui:CanvasLayer
 var screen:Control
-var hud:Label
+var hud:COLLECTIBLE_HUD
 var tip:Label
 var tip_time:=0.0
 var music_time:=0.0
@@ -102,8 +107,10 @@ func menu() -> void:
   "quit":func():get_tree().quit()
  },is_instance_valid(level) or Progress.unlocked>1)
 func _continue_from_menu() -> void:
- if is_instance_valid(level):resume()
- else:start_level(Progress.unlocked)
+ if run_finished:selection()
+ elif is_instance_valid(level):resume()
+ else:
+  selected_level=Progress.unlocked;selected_region=floori((selected_level-1)/5.0);selection()
 func settings() -> void:
  var v:=centered_panel("Nastavení")
  if mode=="menu":
@@ -118,42 +125,36 @@ func credits() -> void:
  var l:=Label.new();l.text="STARBIT · Království snů\nBit, Jiskra, Fouk a jejich dobrodružství.\nVytvořeno podle dodaných výtvarných předloh.";l.add_theme_color_override("font_color",Color("143458"));l.add_theme_font_size_override("font_size",20);v.add_child(l)
  v.add_child(button("Zpět",menu,Color("f6abc9")))
 func selection() -> void:
- clear_ui();background()
- var regions=["Kouzelný les a vesnička", "Cesta v oblacích", "Vrchol Království snů"]
- title_label("STARBIT",Vector2(440,20),70,Color("ffda64"))
- title_label("Výběr levelu",Vector2(470,112),35,Color.WHITE)
- var heading:=Label.new();heading.text=regions[selected_region];heading.position=Vector2(300,190);heading.size=Vector2(680,45);heading.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;heading.add_theme_font_size_override("font_size",30);heading.add_theme_color_override("font_color",Color("143458"));screen.add_child(heading)
- for dir in [-1,1]:
-  var d:int=dir
-  var arrow:=button("‹" if d<0 else "›",func():selected_region=clampi(selected_region+d,0,2);selected_level=selected_region*5+1;selection(),Color("78d4f8"))
-  arrow.position=Vector2(190 if d<0 else 1010,184);arrow.custom_minimum_size=Vector2(70,60);arrow.size=Vector2(70,60);arrow.disabled=selected_region+d<0 or selected_region+d>2;screen.add_child(arrow);arrow.set_deferred("size",Vector2(70,60))
- for i in 5:
-  var n:int=selected_region*5+i+1
-  var available:bool=n<=LEVEL_COUNT
-  var unlocked:bool=available and n<=Progress.unlocked
-  var card:=button("",func():selected_level=n;selection(),Color("ffd968") if n==selected_level else Color("92d9fa"))
-  card.name="LevelCard%d"%n;card.position=Vector2(110+i*216,286);card.custom_minimum_size=Vector2(198,244);card.size=Vector2(198,244);card.disabled=not unlocked;screen.add_child(card);card.set_deferred("size",Vector2(198,244))
-  var art:=TextureRect.new();art.position=Vector2(10,12);art.size=Vector2(178,145);art.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;art.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED;art.mouse_filter=Control.MOUSE_FILTER_IGNORE
-  var backgrounds=["forest","forest","village","village","guardian","distant_castle","distant_castle","near_castle","near_castle","castle_court"]
-  art.texture=load("res://assets/environments/"+(backgrounds[n-1] if available else "castle_court")+".png");card.add_child(art)
-  if not unlocked:art.modulate=Color(0.55,0.6,0.7)
-  var label:=Label.new();label.position=Vector2(5,164);label.size=Vector2(188,74);label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;label.add_theme_color_override("font_color",Color("143458"));label.add_theme_font_size_override("font_size",16);label.mouse_filter=Control.MOUSE_FILTER_IGNORE
-  label.text="%d · %s\n%s"%[n,TITLES[n-1] if available else "Připravujeme",("✓ Dokončeno" if n<Progress.unlocked else "Odemčeno") if unlocked else ("Zamčeno" if available else "Brzy")];label.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;card.add_child(label)
- var back:=button("← Zpět",menu,Color("f6abc9"));back.position=Vector2(300,590);back.custom_minimum_size=Vector2(270,66);screen.add_child(back)
- var play:=button("▶ Hrát",func():start_level(selected_level),Color("a4efbe"));play.position=Vector2(690,590);play.custom_minimum_size=Vector2(290,66);play.disabled=selected_level>LEVEL_COUNT or selected_level>Progress.unlocked;screen.add_child(play)
+ mode="selection";release_input()
+ if is_instance_valid(level):level.process_mode=Node.PROCESS_MODE_DISABLED
+ clear_ui()
+ selected_region=clampi(selected_region,0,ceili(LEVEL_COUNT/5.0)-1)
+ var first:=selected_region*5+1
+ if selected_level<first or selected_level>=first+5:selected_level=first
+ var view:=DREAM_SCREENS.new();screen.add_child(view)
+ view.show_selection(TITLES,selected_region,selected_level,{
+  "select":func(n:int):selected_level=n;selection(),
+  "page":func(direction:int):selected_region+=direction;selected_level=selected_region*5+1;selection(),
+  "play":func():start_level(selected_level),
+  "back":menu
+ })
 func start_level(n:int,custom_scene:String="") -> void:
  if level:remove_child(level);level.queue_free()
  release_input()
- current=n;screws=0;gold=0;crystals=0;mode="play"
+ current=n;screws=0;gold=0;crystals=0;total_crystals=0;run_finished=false;mode="play"
  current_scene_path=custom_scene if not custom_scene.is_empty() else "res://levels/Level_%02d.tscn"%n
  level=load(current_scene_path).instantiate()
  add_child(level)
+ # Count only this instance: the previous level can still be queued for deletion.
+ for object in get_tree().get_nodes_in_group("objects"):
+  if level.is_ancestor_of(object) and object.kind=="crystal":total_crystals+=1
  game_ui()
 func release_input() -> void:
  for a in ["left","right","jump"]:Input.action_release(a)
 func game_ui() -> void:
  clear_ui()
- hud=Label.new();hud.position=Vector2(24,18);hud.add_theme_font_size_override("font_size",25);hud.add_theme_color_override("font_color",Color("143458"));hud.add_theme_color_override("font_outline_color",Color(1,1,1,0.85));hud.add_theme_constant_override("outline_size",4);screen.add_child(hud)
+ hud=COLLECTIBLE_HUD.new();hud.position=Vector2(22,16);screen.add_child(hud)
+ hud.update_values(crystals,level.star_collected,total_crystals,false)
  var pause_button:=button("Ⅱ",pause_game);pause_button.custom_minimum_size=Vector2(64,50);pause_button.position=Vector2(1188,16);screen.add_child(pause_button)
  build_bubble()
  touch=Control.new();screen.add_child(touch)
@@ -176,11 +177,12 @@ func pause_game() -> void:
  if mode!="play":return
  mode="pause";level.process_mode=Node.PROCESS_MODE_DISABLED;release_input();Progress.silence()
  var v:=centered_panel("Chvilka oddechu")
- v.add_child(button("Pokračovat",resume,Color("a0eebb")))
- v.add_child(button("Restartovat level",func():start_level(current,current_scene_path),Color("ffdb72")))
- v.add_child(button("Výběr levelu",selection,Color("a4efbe")))
- v.add_child(button("Hlavní menu",menu))
+ v.add_child(PAUSE_THEME.button("Pokračovat",resume,"blue"))
+ v.add_child(PAUSE_THEME.button("Restartovat level",func():start_level(current,current_scene_path),"yellow"))
+ v.add_child(PAUSE_THEME.button("Výběr levelu",selection,"green"))
+ v.add_child(PAUSE_THEME.button("Hlavní menu",menu,"purple"))
 func resume() -> void:
+ if run_finished:selection();return
  mode="play";level.process_mode=Node.PROCESS_MODE_INHERIT;game_ui()
 func hint(_text:String) -> void:
  pass # All guidance is delivered by Krtecek in speech bubbles.
@@ -188,37 +190,36 @@ func collect_crystal() -> void:
  crystals+=1
 func enter_portal() -> void:
  if mode!="play":return
- if current>=LEVEL_COUNT:
-  win();return
- mode="transition"
+ mode="transition";run_finished=true
  level.process_mode=Node.PROCESS_MODE_DISABLED
  level.player.frozen=true
  release_input()
- Progress.unlocked=maxi(Progress.unlocked,current+1);Progress.save()
- Progress.sfx("repair")
- call_deferred("start_level",current+1)
+ call_deferred("_show_level_result")
+func _show_level_result() -> void:
+ if mode!="transition":return
+ var result:Dictionary=Progress.record_level_result(current,crystals,total_crystals)
+ mode="result";Progress.silence();Progress.play_music("victory")
+ clear_ui()
+ var view:=DREAM_SCREENS.new();screen.add_child(view)
+ view.show_result(current,level.title,crystals,total_crystals,result,{
+  "next":func():start_level(current+1),
+  "replay":func():start_level(current,current_scene_path),
+  "menu":menu,
+  "selection":func():selected_level=current;selected_region=floori((current-1)/5.0);selection()
+ })
 func win() -> void:
- if mode!="play":return
- mode="win";level.process_mode=Node.PROCESS_MODE_DISABLED;release_input()
- Progress.unlocked=maxi(Progress.unlocked,mini(LEVEL_COUNT,current+1));Progress.save();Progress.play_music("victory")
- var v:=centered_panel("Stezka opravena!" if current<LEVEL_COUNT else "Dorazili jsme k hradu!")
- var l:=Label.new();l.text="Diamanty: %d   ·   Body: %d"%[crystals,crystals*5]
- l.add_theme_color_override("font_color",Color("143458"));v.add_child(l)
- if current<LEVEL_COUNT:v.add_child(button("Další stezka",func():start_level(current+1),Color("ffdb72")))
- else:
-  var end:=Label.new();end.text="Bit a Fouk dorazili na nebeské nádvoří.\nDalší souboj se teprve připravuje.";end.add_theme_color_override("font_color",Color("143458"));v.add_child(end)
- v.add_child(button("Hrát znovu",func():start_level(current,current_scene_path)))
- v.add_child(button("Hlavní menu",menu))
+ enter_portal()
 func _process(delta:float) -> void:
  if Input.is_action_just_pressed("ui_cancel"):
   if mode=="play":pause_game()
   elif mode=="pause":resume()
+  elif mode=="selection":menu()
  if mode!="play":return
  update_speech(delta)
  tip_time-=delta
  if tip_time<=0 and is_instance_valid(tip):tip.text=""
  if is_instance_valid(hud):
-  hud.text="%d / 10 · %s   ◇ %d   %s"%[current,level.title,crystals,"★" if level.star_collected else "☆"]
+  hud.update_values(crystals,level.star_collected,total_crystals)
  var boss=get_tree().get_first_node_in_group("boss")
  var track:="adventure"
  if boss and boss.defeated:track="victory"
@@ -266,4 +267,3 @@ func update_speech(delta:float) -> void:
 func _notification(what:int) -> void:
  if what==NOTIFICATION_APPLICATION_PAUSED or what==NOTIFICATION_WM_GO_BACK_REQUEST:
   if mode=="play":pause_game()
-

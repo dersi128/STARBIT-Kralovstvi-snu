@@ -111,6 +111,11 @@ func _frame_changed() -> void:
 	_material.set_shader_parameter("sheet_size", atlas.atlas.get_size())
 	_material.set_shader_parameter("frame_origin", atlas.region.position - atlas.margin.position)
 	_material.set_shader_parameter("content_rect", Vector4(atlas.margin.position.x, atlas.margin.position.y, atlas.region.size.x, atlas.region.size.y))
+	# Every animation phase uses the same island silhouette, stones and foliage.
+	# Only the falling water is sampled from the advancing frame.
+	var reference := visual.sprite_frames.get_frame_texture(visual.animation, 0) as AtlasTexture
+	_material.set_shader_parameter("reference_frame_origin", reference.region.position - reference.margin.position)
+	_material.set_shader_parameter("reference_content_rect", Vector4(reference.margin.position.x, reference.margin.position.y, reference.region.size.x, reference.region.size.y))
 	# Existing asset paths identify the variation; old placements need no edits.
 	var path := atlas.atlas.resource_path
 	var side := path.get_file() == "side.png"
@@ -125,6 +130,7 @@ func _frame_changed() -> void:
 		left = [143.5, 143.0, 144.0, 145.0, 143.0, 144.0, 143.0, 144.0]
 		right = [247.0, 248.0, 248.0, 248.0, 247.5, 249.0, 247.0, 249.0]
 	_material.set_shader_parameter("stream_core", Vector2(left[visual.frame % 8], right[visual.frame % 8]))
+	_material.set_shader_parameter("reference_stream_core", Vector2(left[0], right[0]))
 	_material.set_shader_parameter("splash_start", 325.0 if side else (330.0 if ruins else 350.0))
 
 func waterfall_drop() -> float:

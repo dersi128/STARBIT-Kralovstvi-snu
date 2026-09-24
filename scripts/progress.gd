@@ -1,6 +1,8 @@
 extends Node
+const LEVEL_COUNT := 10
 var unlocked := 1
 var muted := false
+var level_stars: Dictionary = {}
 var tones: Array[AudioStreamPlayer] = []
 func _ready() -> void:
  process_mode = Node.PROCESS_MODE_ALWAYS
@@ -8,11 +10,39 @@ func _ready() -> void:
  if c.load("user://dreambit.cfg") == OK:
   unlocked = clampi(int(c.get_value("save", "unlocked", 1)), 1, 10)
   muted = bool(c.get_value("save", "muted", false))
+  var stored = c.get_value("save", "level_stars", {})
+  var legacy := not c.has_section_key("save", "level_stars")
+  for n in range(1, LEVEL_COUNT + 1):
+   var value = stored.get(str(n), 0) if stored is Dictionary else 0
+   if legacy and n < unlocked:value = 1
+   level_stars[str(n)] = clampi(value, 0, 3) if value is int else 0
 func save() -> void:
  var c := ConfigFile.new()
+ c.load("user://dreambit.cfg")
  c.set_value("save", "unlocked", unlocked)
  c.set_value("save", "muted", muted)
+ c.set_value("save", "level_stars", level_stars)
  c.save("user://dreambit.cfg")
+func stars_for_run(diamonds:int,total:int) -> int:
+ # A level without diamonds awards completion only. Half must be exceeded.
+ if total <= 0:return 1
+ if diamonds >= total:return 3
+ return 2 if diamonds * 2 > total else 1
+func best_stars(n:int) -> int:
+ return clampi(int(level_stars.get(str(n),0)),0,3)
+func total_stars() -> int:
+ var total := 0
+ for n in range(1,LEVEL_COUNT+1):total += best_stars(n)
+ return total
+func record_level_result(n:int,diamonds:int,total:int) -> Dictionary:
+ if n < 1 or n > LEVEL_COUNT:return {}
+ var earned := stars_for_run(diamonds,total)
+ var previous := best_stars(n)
+ var best := maxi(previous,earned)
+ level_stars[str(n)] = best
+ unlocked = maxi(unlocked,mini(LEVEL_COUNT,n+1))
+ save()
+ return {"earned":earned,"best":best,"added":best-previous,"total":total_stars()}
 func sound(freq: float, length: float = 0.12) -> void:
  if muted or tones.size() > 6: return
  var stream := AudioStreamWAV.new()
@@ -98,10 +128,17 @@ func play_music(track:String) -> void:
  if music_track==track and is_instance_valid(music):
   music.stream_paused=false
   return
+ var path:="res://assets/audio/"+track+".ogg"
+ if not ResourceLoader.exists(path):
+  push_warning("Music resource missing or not imported: "+path)
+  return
+ var stream:=load(path) as AudioStreamOggVorbis
+ if stream==null:
+  push_warning("Music could not be loaded: "+path)
+  return
+ stream.loop=track!="victory"
  var old:=music
  music=AudioStreamPlayer.new()
- var stream:=load("res://assets/audio/"+track+".ogg") as AudioStreamOggVorbis
- stream.loop=track!="victory"
  music.stream=stream;music.volume_db=-50;add_child(music);music.play()
  music_track=track
  create_tween().tween_property(music,"volume_db",-12.0 if track=="menu_adventure" else -15.0,0.65)
