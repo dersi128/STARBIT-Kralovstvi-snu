@@ -1,4 +1,4 @@
-[gd_scene load_steps=81 format=3]
+[gd_scene load_steps=65 format=3]
 [ext_resource type="Script" path="res://scripts/level.gd" id="level"]
 [ext_resource type="Script" path="res://scripts/platform.gd" id="platform"]
 [ext_resource type="Script" path="res://scripts/object.gd" id="object"]
@@ -11,7 +11,6 @@
 [ext_resource type="Script" path="res://scripts/camera_zone.gd" id="camera_zone"]
 [ext_resource type="Script" path="res://scripts/water_feature.gd" id="water"]
 [ext_resource type="Script" path="res://scripts/terrain_body.gd" id="earth"]
-[ext_resource type="Script" path="res://scripts/footbridge.gd" id="footbridge"]
 [ext_resource type="Script" path="res://scripts/river.gd" id="river"]
 [ext_resource type="Script" path="res://scripts/cave_back.gd" id="cave"]
 [ext_resource type="PackedScene" path="res://scenes/worldkit/PushCrate.tscn" id="push_box"]
@@ -19,7 +18,7 @@
 [ext_resource type="PackedScene" path="res://scenes/worldkit/BushFlowers.tscn" id="flowers"]
 [ext_resource type="PackedScene" path="res://scenes/worldkit/Lantern.tscn" id="lantern"]
 [ext_resource type="PackedScene" path="res://scenes/worldkit/StoneBlock.tscn" id="stone_obj"]
-[ext_resource type="Script" path="res://scripts/bridge_rails.gd" id="rails"]
+[ext_resource type="Script" path="res://scripts/starbit_rope_bridge.gd" id="starbit_bridge"]
 [sub_resource type="RectangleShape2D" id="shape0"]
 size=Vector2(720,100)
 [sub_resource type="RectangleShape2D" id="shape1"]
@@ -36,8 +35,6 @@ size=Vector2(510,100)
 size=Vector2(590,100)
 [sub_resource type="RectangleShape2D" id="shape7"]
 size=Vector2(340,100)
-[sub_resource type="RectangleShape2D" id="shape8"]
-size=Vector2(430,100)
 [sub_resource type="RectangleShape2D" id="shape9"]
 size=Vector2(340,100)
 [sub_resource type="RectangleShape2D" id="shape10"]
@@ -82,34 +79,6 @@ size=Vector2(510,100)
 size=Vector2(430,100)
 [sub_resource type="RectangleShape2D" id="shape30"]
 size=Vector2(340,100)
-[sub_resource type="RectangleShape2D" id="shape31"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape32"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape33"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape34"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape35"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape36"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape37"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape38"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape39"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape40"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape41"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape42"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape43"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape44"]
-size=Vector2(185,27)
 [sub_resource type="RectangleShape2D" id="shape45"]
 size=Vector2(185,27)
 [sub_resource type="RectangleShape2D" id="shape46"]
@@ -244,18 +213,6 @@ period=4.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_8"]
 position=Vector2(170.0,50)
 shape=SubResource("shape7")
-one_way_collision=true
-[node name="Platform_9" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(5150,660)
-width=430
-depth=115
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_9"]
-position=Vector2(215.0,50)
-shape=SubResource("shape8")
 one_way_collision=true
 [node name="Platform_10" type="AnimatableBody2D" parent="."]
 script=ExtResource("platform")
@@ -522,173 +479,119 @@ position=Vector2(170.0,50)
 shape=SubResource("shape30")
 one_way_collision=true
 [node name="high_01" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(2277,346)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_01"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape31")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(2277, 346)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 1
+rail_height = 70.0
+
 [node name="high_02" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(2453,302)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_02"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape32")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(2453, 302)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 0
+rail_height = 70.0
+
 [node name="high_03" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(2630,258)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_03"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape33")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(2630, 258)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 0
+rail_height = 70.0
+
 [node name="high_04" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(2807,214)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_04"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape34")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(2807, 214)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 0
+rail_height = 70.0
+
 [node name="high_05" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(2983,170)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_05"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape35")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(2983, 170)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 0
+rail_height = 70.0
+
 [node name="high_06" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(3160,182)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_06"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape36")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(3160, 182)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 0
+rail_height = 70.0
+gaps = PackedVector2Array(72, 118)
+
 [node name="high_07" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(3337,194)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_07"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape37")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(3337, 194)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 0
+rail_height = 70.0
+
 [node name="high_08" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(3513,206)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_08"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape38")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(3513, 206)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 0
+rail_height = 70.0
+
 [node name="high_09" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(3690,218)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_09"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape39")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(3690, 218)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 0
+rail_height = 70.0
+
 [node name="high_10" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(3867,230)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_10"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape40")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(3867, 230)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 0
+rail_height = 70.0
+
 [node name="high_11" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(4043,298)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_11"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape41")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(4043, 298)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 0
+rail_height = 70.0
+
 [node name="high_12" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(4220,366)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_12"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape42")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(4220, 366)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 0
+rail_height = 70.0
+gaps = PackedVector2Array(90, 140)
+
 [node name="high_13" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(4397,434)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_13"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape43")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(4397, 434)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 0
+rail_height = 70.0
+
 [node name="high_14" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(4573,502)
-width=185
-depth=42
-style="bridge"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_14"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape44")
-one_way_collision=true
+script = ExtResource("starbit_bridge")
+position = Vector2(4573, 502)
+end_offset = Vector2(185, 0)
+show_rails = false
+end_posts = 2
+rail_height = 70.0
+
 [node name="low_01" type="AnimatableBody2D" parent="."]
 script=ExtResource("platform")
 position=Vector2(8982,294)
@@ -870,7 +773,7 @@ position=Vector2(4253.2,425)
 script=ExtResource("object")
 kind="crystal"
 [node name="crystal_3" type="Node2D" parent="."]
-position=Vector2(5356.4,605)
+position = Vector2(5356.4, 558.9339)
 script=ExtResource("object")
 kind="crystal"
 [node name="crystal_4" type="Node2D" parent="."]
@@ -1241,39 +1144,35 @@ width=718
 depth=950
 
 [node name="BankBridge_1" type="AnimatableBody2D" parent="."]
-script=ExtResource("footbridge")
-position=Vector2(1152,550)
-end_offset=Vector2(126,-80)
+script = ExtResource("starbit_bridge")
+position = Vector2(1152, 550)
+end_offset = Vector2(126, -80)
+rail_height = 75.0
 
 [node name="BankBridge_4" type="AnimatableBody2D" parent="."]
-script=ExtResource("footbridge")
-position=Vector2(3232,310)
-end_offset=Vector2(126,80)
-
-[node name="BankBridge_7" type="AnimatableBody2D" parent="."]
-script=ExtResource("footbridge")
-position=Vector2(5002,570)
-end_offset=Vector2(156,90)
-
-[node name="BankBridge_8" type="AnimatableBody2D" parent="."]
-script=ExtResource("footbridge")
-position=Vector2(5572,660)
-end_offset=Vector2(156,0)
+script = ExtResource("starbit_bridge")
+position = Vector2(3232, 310)
+end_offset = Vector2(126, 80)
+rail_height = 75.0
 
 [node name="BankBridge_13" type="AnimatableBody2D" parent="."]
-script=ExtResource("footbridge")
-position=Vector2(8082,300)
-end_offset=Vector2(156,-90)
+script = ExtResource("starbit_bridge")
+position = Vector2(8082, 300)
+end_offset = Vector2(156, -90)
+rail_height = 75.0
 
 [node name="BankBridge_18" type="AnimatableBody2D" parent="."]
-script=ExtResource("footbridge")
-position=Vector2(10992,480)
-end_offset=Vector2(156,70)
+script = ExtResource("starbit_bridge")
+position = Vector2(10992, 480)
+end_offset = Vector2(156, 70)
+rail_height = 75.0
 
 [node name="BankBridge_23" type="AnimatableBody2D" parent="."]
-script=ExtResource("footbridge")
-position=Vector2(14342,480)
-end_offset=Vector2(156,70)
+script = ExtResource("starbit_bridge")
+position = Vector2(14342, 480)
+end_offset = Vector2(156, 70)
+rail_height = 75.0
+gaps = PackedVector2Array(62, 102)
 
 [node name="PushCrateBank" parent="." instance=ExtResource("push_box")]
 position=Vector2(1576.8,470)
@@ -1327,7 +1226,10 @@ scale=Vector2(0.7,0.7)
 position=Vector2(17275,470)
 scale=Vector2(0.55,0.55)
 
-[node name="RiverBridgeRails" type="Node2D" parent="."]
-script=ExtResource("rails")
-position=Vector2(4995,570)
-end_offset=Vector2(740,90)
+[node name="RiverBridge" type="AnimatableBody2D" parent="."]
+script = ExtResource("starbit_bridge")
+position = Vector2(5002, 570)
+end_offset = Vector2(726, 90)
+rail_height = 100.0
+gaps = PackedVector2Array(180, 250)
+

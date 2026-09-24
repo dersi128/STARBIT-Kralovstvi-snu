@@ -1,4 +1,5 @@
 extends Node
+const MOLE_DIALOGUE=preload("res://scripts/mole_dialogue.gd")
 const DREAM_SCREENS=preload("res://scripts/dream_screens.gd")
 const COLLECTIBLE_HUD=preload("res://scripts/collectible_hud.gd")
 const PAUSE_THEME=preload("res://scripts/pause_menu_theme.gd")
@@ -35,6 +36,8 @@ var speech_last_sound:=-1
 var speech_content:=""
 var speech_voice:="voice_mole"
 var hero:TextureRect
+var mole_dialogue:Control
+var dialogue_session:=0
 const TITLES=["Lesní probuzení", "Mezi kořeny", "Světélka vesničky", "Nad střechami", "Brúčounova svatyně", "První ostrovy", "Vodopády v oblacích", "Hrad na dosah", "Královské zahrady", "Nebeské nádvoří"]
 const LEVEL_COUNT=10
 func _ready() -> void:
@@ -50,6 +53,8 @@ func _ready() -> void:
  if preview_number>0:start_level(preview_number,preview_scene_path)
  else:menu()
 func clear_ui() -> void:
+ dialogue_session+=1
+ mole_dialogue=null
  speaker=null
  speech_content=""
  bubble=null
@@ -236,6 +241,10 @@ func build_bubble() -> void:
  bubble.visible=false
 func speak(source:Node2D,text:String,voice:String="voice_mole") -> void:
  if mode!="play" or not is_instance_valid(bubble) or text.is_empty():return
+ if current==1 and source.get("kind")=="mole":
+  if source.get_meta("story_read",false):return
+  _begin_mole_dialogue(source)
+  return
  if is_instance_valid(speaker) and speaker!=source:
   var player=get_tree().get_first_node_in_group("player")
   if player and speaker.global_position.distance_to(player.global_position)<source.global_position.distance_to(player.global_position):return
@@ -246,6 +255,38 @@ func speak(source:Node2D,text:String,voice:String="voice_mole") -> void:
   bubble_text.visible_characters=0
   bubble_name.text="Brúčoun" if voice=="voice_bear" else ("Krteček" if voice=="voice_mole" else "Jiskra")
  bubble.visible=true
+func _begin_mole_dialogue(source:Node2D) -> void:
+ if source.message.strip_edges().is_empty():return
+ mode="dialogue";dialogue_session+=1
+ var session:=dialogue_session
+ var paused_level:=level
+ var previous_process_mode:=level.process_mode
+ var touch_was_visible:=touch.visible
+ var previous_touch_mode:=touch.process_mode
+ level.process_mode=Node.PROCESS_MODE_DISABLED
+ touch.hide();touch.process_mode=Node.PROCESS_MODE_DISABLED
+ release_input()
+ level.player.buffer=0.0
+ bubble.hide();speaker=null;speech_content=""
+ mole_dialogue=MOLE_DIALOGUE.new()
+ screen.add_child(mole_dialogue)
+ mole_dialogue.setup(source.message)
+ mole_dialogue.finished.connect(func():_finish_mole_dialogue(source,paused_level,session,previous_process_mode,touch_was_visible,previous_touch_mode))
+func _finish_mole_dialogue(source:Node2D,paused_level:Node2D,session:int,previous_process_mode:int,touch_was_visible:bool,previous_touch_mode:int) -> void:
+ if session!=dialogue_session or mode!="dialogue":return
+ if is_instance_valid(source):source.set_meta("story_read",true)
+ release_input()
+ # Wait beyond the confirming input frame before physics is allowed to run.
+ await get_tree().process_frame
+ await get_tree().physics_frame
+ if session!=dialogue_session or mode!="dialogue" or not is_instance_valid(paused_level) or level!=paused_level:return
+ release_input()
+ level.player.buffer=0.0
+ if is_instance_valid(mole_dialogue):mole_dialogue.queue_free()
+ mole_dialogue=null
+ touch.visible=touch_was_visible;touch.process_mode=previous_touch_mode
+ mode="play";level.process_mode=previous_process_mode
+
 func update_speech(delta:float) -> void:
  if not is_instance_valid(bubble):return
  speech_age+=delta
