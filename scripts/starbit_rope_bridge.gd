@@ -9,6 +9,7 @@ const ROPE = Rect2(146, 963, 78, 55)
 const HANGER = Rect2(1050, 775, 64, 405)
 const SNAP_OWNER = &"starbit_bridge_snap_owner"
 const SNAP_ORIGINAL = &"starbit_bridge_snap_original"
+const BANK_LANDING_LENGTH := 8.0
 
 @export var end_offset := Vector2(1186, -270):
 	set(value):
@@ -107,6 +108,28 @@ func get_solid_spans() -> Array[Vector2]:
 func _deck_point(x: float) -> Vector2:
 	return end_offset * (x / end_offset.x)
 
+func _collision_deck_polygon(span: Vector2) -> PackedVector2Array:
+	# Banks overlap the bridge by 8 px. Reach the upper bank's height before
+	# its vertical edge; otherwise the capsule catches that tiny exposed lip.
+	# The landing stays inside each solid span, so broken planks remain holes.
+	var inset := minf(BANK_LANDING_LENGTH, end_offset.x * 0.25)
+	var slope_start := inset if end_offset.y > 0.0 else 0.0
+	var slope_end := end_offset.x - inset if end_offset.y < 0.0 else end_offset.x
+	var samples: Array[float] = [span.x]
+	for x in [slope_start, slope_end]:
+		if x > span.x and x < span.y:
+			samples.append(x)
+	samples.append(span.y)
+	var polygon := PackedVector2Array()
+	for x in samples:
+		var t := clampf((x - slope_start) / (slope_end - slope_start), 0.0, 1.0)
+		polygon.append(Vector2(x, end_offset.y * t))
+	var first := polygon[0]
+	var last := polygon[polygon.size() - 1]
+	polygon.append(last + Vector2(0, 22))
+	polygon.append(first + Vector2(0, 22))
+	return polygon
+
 func _refresh() -> void:
 	queue_redraw()
 	if not is_inside_tree():return
@@ -123,9 +146,7 @@ func _refresh() -> void:
 			deck = CollisionPolygon2D.new()
 			deck.name = "DeckCollision" if i == 0 else "DeckCollision%d" % (i + 1)
 			add_child(deck, false, Node.INTERNAL_MODE_BACK)
-		var start := _deck_point(spans[i].x)
-		var finish := _deck_point(spans[i].y)
-		deck.polygon = PackedVector2Array([start, finish, finish + Vector2(0, 22), start + Vector2(0, 22)])
+		deck.polygon = _collision_deck_polygon(spans[i])
 		deck.one_way_collision = true
 		deck.one_way_collision_margin = 5.0
 	for i in range(spans.size(), old_shapes.size()):

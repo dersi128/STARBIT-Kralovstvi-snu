@@ -1,5 +1,7 @@
 extends Node
 const SFX_BANK_PATH := "res://scripts/starbit_sfx.gd"
+# Extra gain for all effects; music keeps its own volume. More negative = quieter.
+const SFX_VOLUME_DB := -8.0
 const LEVEL_COUNT := 10
 var unlocked := 1
 var muted := false
@@ -64,7 +66,7 @@ func sound(freq: float, length: float = 0.12) -> void:
  stream.data = bytes
  var p := AudioStreamPlayer.new()
  p.stream = stream
- p.volume_db = -8
+ p.volume_db = -8.0 + SFX_VOLUME_DB
  add_child(p)
  tones.append(p)
  p.finished.connect(func(): tones.erase(p);p.queue_free())
@@ -116,7 +118,7 @@ func sfx(event:String) -> void:
    var v:=0.55*env*(sin(phase)+0.18*sin(phase*2.0)+0.08*sin(phase*3.0))
    data.encode_s16(i*2,int(clampf(v,-0.9,0.9)*32767))
   stream.data=data;clip_cache[event]=stream
- var p:=AudioStreamPlayer.new();p.stream=clip_cache[event];p.volume_db=spec[3];add_child(p);tones.append(p)
+ var p:=AudioStreamPlayer.new();p.stream=clip_cache[event];p.volume_db=float(spec[3])+SFX_VOLUME_DB;add_child(p);tones.append(p)
  p.finished.connect(func():tones.erase(p);p.queue_free());p.play()
 
 func _play_designed_sfx(event:String) -> void:
@@ -138,7 +140,7 @@ func _play_designed_sfx(event:String) -> void:
  var clips:Array=spec.clips
  var voice:=AudioStreamPlayer.new()
  voice.stream=clips[index%clips.size()]
- voice.volume_db=float(spec.db)
+ voice.volume_db=float(spec.db)+SFX_VOLUME_DB
  voice.set_meta("sfx_event",event)
  add_child(voice);tones.append(voice)
  _sfx_sequence[event]=index+1

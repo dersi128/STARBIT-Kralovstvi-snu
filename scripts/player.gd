@@ -5,7 +5,13 @@ extends CharacterBody2D
 @export_range(0.5,2.0,0.05) var hurt_animation_duration:=0.95
 const GROUND_ACCELERATION:=2800.0
 const GROUND_BRAKING:=4200.0
-const RUN_CYCLE_DISTANCE:=156.0
+const RUN_CYCLE_DISTANCE:=168.0
+# Contact -> compression -> passing foot -> extension, twice per stride.
+# The source sheet puts extension before passing; playing it in file order
+# repeatedly kicks the foot forward before pulling it back.
+const RUN_FRAME_ORDER:=[0,1,3,2,4,5,7,6]
+const RUN_FRAME_HOLDS:=[1.15,0.9,1.1,0.85,1.15,0.9,1.1,0.85]
+const RUN_POSE_HEIGHTS:=[298.0,276.0,296.0,292.0,299.0,279.0,300.0,290.0]
 const TAKEOFF_DURATION:=0.10
 var sheet_frames:SpriteFrames
 var sheet_animation:=""
@@ -42,6 +48,7 @@ var turn_time:=0.0
 var stop_time:=0.0
 var pickup_pose_active:=false
 const LAND_DURATION:=0.32
+const LAND_RUN_RECOVERY:=0.18
 const EXTRA_POSES={
  "land":Rect2(696,464,402,250),
  "surprised":Rect2(600,748,250,276)
@@ -231,19 +238,20 @@ func animate(delta: float) -> void:
   elif velocity.y < -110:
    key="jump";visual_state="rise"
    stretch=Vector2(0.985,1.025)
-  elif velocity.y<110:
+  elif velocity.y<30:
    key="jump";visual_state="apex"
    stretch=Vector2(1.015,0.99)
   else:
    key="fall";visual_state="fall"
    var fall_amount:=clampf(velocity.y/1000.0,0,1)
    stretch=Vector2(1.0-0.022*fall_amount,1.0+0.04*fall_amount)
-   # A held falling pose still has a little movement in the air.
-   tilt=sin(air_time*7.0)*0.012*fall_amount
+   # Arms and bent legs keep moving throughout the descent, even vertically.
+   tilt=facing*0.025*fall_amount+sin(air_time*7.0)*0.018*fall_amount
   tilt+=clampf(velocity.x/maxf(speed,1.0),-1,1)*(-0.025 if visual_state=="fall" else 0.04)
  elif moving:
   key="run"+str(1+int(run_phase*4.0)%4);visual_state="run"
-  tilt=facing*0.025*speed_ratio+acceleration_lean*0.045
+  # A small alternating weight shift; acceleration adds a gentle forward lean.
+  tilt=facing*(0.025+sin(run_phase*TAU)*0.008)*speed_ratio+acceleration_lean*0.03
  else:
   var breath:=sin(idle_time*2.4)
   stretch=Vector2(1.0-breath*0.007,1.0+breath*0.012)
@@ -256,12 +264,15 @@ func animate(delta: float) -> void:
  if grounded and not show_hurt_pose and not pushing and land_time>0:
   visual_state="land"
   var t:=1.0-land_time/LAND_DURATION
-  var squash:=sin(t*PI)*(0.025+0.065*landing_strength)
+  # Absorb the impact early, then ease out while the knees straighten.
+  var compression:=1.0-pow(1.0-clampf(t/0.25,0,1),2.0)
+  if t>0.25:compression=1.0-smoothstep(0.25,1.0,t)
+  var squash:=compression*(0.025+0.065*landing_strength)
   stretch=Vector2(1.0+squash*0.5,1.0-squash)
   offset.y=0.0
   # Both a running and a standing landing show contact and compression.
-  # The running stride returns after 0.13 s; controls never wait for a pose.
-  if not moving or LAND_DURATION-land_time<0.13:
+  # Show the knee recovery before resuming the stride; input stays immediate.
+  if not moving or LAND_DURATION-land_time<LAND_RUN_RECOVERY:
    key="land";height=74.0
 
  if moving or not grounded or pushing or hurt_time>0:
@@ -300,6 +311,10 @@ func animate(delta: float) -> void:
  var texture:Texture2D=get_sheet_texture()
  if texture:
   height=124.0
+  if sheet_animation=="run" and sheet_frames.get_frame_count("run")==8:
+   # Keep the soles at the existing pivot and reduce the height jump between
+   # the compressed and extended drawings, retaining a little knee bend.
+   height*=lerpf(1.0,297.0/RUN_POSE_HEIGHTS[sheet_frame],0.7)
   # Fixed 384px virtual canvas: every pose shares a foot pivot at y=356.
   sprite.offset=Vector2(0,-164)
  else:
@@ -336,7 +351,7 @@ func get_sheet_texture() -> Texture2D:
   "idle":
    sheet_animation="idle";sheet_frame=sheet_frame_at("idle",idle_time,true)
   "run":
-   sheet_animation="run";sheet_frame=int(run_phase*sheet_frames.get_frame_count("run"))
+   sheet_animation="run";sheet_frame=run_sheet_frame()
   "takeoff","boost":
    if air_time<TAKEOFF_DURATION:
     sheet_animation="takeoff";sheet_frame=sheet_frame_at("takeoff",air_time)
@@ -348,10 +363,10 @@ func get_sheet_texture() -> Texture2D:
   "apex":
    sheet_animation="rise";sheet_frame=sheet_frames.get_frame_count("rise")-1
   "fall":
-   sheet_animation="fall";sheet_frame=sheet_frame_at("fall",state_age)
+   sheet_animation="fall";sheet_frame=sheet_frame_at("fall",state_age,true)
   "land":
-   if ground_speed>8.0 and LAND_DURATION-land_time>=0.13:
-    sheet_animation="run";sheet_frame=int(run_phase*sheet_frames.get_frame_count("run"))
+   if ground_speed>8.0 and LAND_DURATION-land_time>=LAND_RUN_RECOVERY:
+    sheet_animation="run";sheet_frame=run_sheet_frame()
    else:
     sheet_animation="land";sheet_frame=sheet_frame_at("land",LAND_DURATION-land_time)
   "hurt":
@@ -366,6 +381,15 @@ func get_sheet_texture() -> Texture2D:
  if sheet_animation.is_empty():return null
  return sheet_frames.get_frame_texture(sheet_animation,sheet_frame)
 
+
+func run_sheet_frame() -> int:
+ var count:=sheet_frames.get_frame_count("run")
+ if count!=8:return mini(int(run_phase*count),maxi(0,count-1))
+ var progress:=fposmod(run_phase,1.0)*8.0
+ for i in RUN_FRAME_ORDER.size():
+  if progress<RUN_FRAME_HOLDS[i]:return RUN_FRAME_ORDER[i]
+  progress-=RUN_FRAME_HOLDS[i]
+ return RUN_FRAME_ORDER[-1]
 
 func sheet_duration(animation:String) -> float:
  var units:=0.0

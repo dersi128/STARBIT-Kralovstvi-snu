@@ -17106,50 +17106,62 @@ one_way_collision = true
 [node name="crystal_0" type="Node2D" parent="." unique_id=1699962221]
 position = Vector2(1713.2, 335)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_1" type="Node2D" parent="." unique_id=1267242082]
 position = Vector2(2893.2, 515)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_2" type="Node2D" parent="." unique_id=1710585556]
 position = Vector2(3351, 617)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_3" type="Node2D" parent="." unique_id=422394945]
 position = Vector2(4906, 789)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_4" type="Node2D" parent="." unique_id=1043596465]
 position = Vector2(5860, 686)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_5" type="Node2D" parent="." unique_id=1758938513]
 position = Vector2(6993.2, 455)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_6" type="Node2D" parent="." unique_id=439056941]
 position = Vector2(8204.8, 275)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_7" type="Node2D" parent="." unique_id=1396756924]
 position = Vector2(9274.8, 95)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_8" type="Node2D" parent="." unique_id=530789706]
 position = Vector2(10513.2, 185)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_9" type="Node2D" parent="." unique_id=566437529]
 position = Vector2(11703.2, 365)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_10" type="Node2D" parent="." unique_id=979182136]
 position = Vector2(12737, 404)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_10" type="Node2D" parent="crystal_10" unique_id=75308463]
 position = Vector2(3113, 10)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="Vodopad_Ruiny" parent="." unique_id=939736338 instance=ExtResource("water_2")]
 position = Vector2(12741.999, 490.00006)
@@ -17178,78 +17190,96 @@ preview_in_editor = true
 [node name="crystal_11" type="Node2D" parent="." unique_id=1326858594]
 position = Vector2(13843.2, 365)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_12" type="Node2D" parent="." unique_id=1346065900]
 position = Vector2(14426, 438)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_13" type="Node2D" parent="." unique_id=1917399864]
 position = Vector2(16283.2, 365)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_14" type="Node2D" parent="." unique_id=569887580]
 position = Vector2(17206.4, 495)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_15" type="Node2D" parent="." unique_id=1835762274]
 position = Vector2(3784, 418)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_16" type="Node2D" parent="." unique_id=1844298643]
 position = Vector2(4144, 446)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_17" type="Node2D" parent="." unique_id=99039185]
 position = Vector2(4351, 514)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_18" type="Node2D" parent="." unique_id=40541132]
 position = Vector2(6388, 564)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_19" type="Node2D" parent="." unique_id=640798677]
 position = Vector2(5151, 684)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_20" type="Node2D" parent="." unique_id=1282205962]
 position = Vector2(9122, 366)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_21" type="Node2D" parent="." unique_id=264000224]
 position = Vector2(9572, 548)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_22" type="Node2D" parent="." unique_id=93984112]
 position = Vector2(10674, 478)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_23" type="Node2D" parent="." unique_id=932657475]
 position = Vector2(10233, 555)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="crystal_24" type="Node2D" parent="." unique_id=1106468320]
 position = Vector2(10899, 420)
 script = ExtResource("object")
+fouk_on_ground = null
 
 [node name="star_key_25" type="Node2D" parent="." unique_id=1569155943]
 position = Vector2(17098, 170)
 script = ExtResource("object")
 kind = "star_key"
+fouk_on_ground = null
 
 [node name="goal_26" type="Node2D" parent="." unique_id=1523471175]
 position = Vector2(18060, 550)
 script = ExtResource("object")
 kind = "goal"
+fouk_on_ground = null
 
 [node name="checkpoint_27" type="Node2D" parent="." unique_id=1146326788]
 position = Vector2(7440, 423)
 script = ExtResource("object")
 kind = "checkpoint"
+fouk_on_ground = null
 
 [node name="checkpoint_28" type="Node2D" parent="." unique_id=1988919884]
 position = Vector2(13959, 424)
 script = ExtResource("object")
 kind = "checkpoint"
+fouk_on_ground = null
 
 [node name="Enemy_0" parent="." unique_id=1768574362 instance=ExtResource("rock_enemy")]
 position = Vector2(2244, 475)
@@ -17473,6 +17503,11 @@ position = Vector2(5656, 970)
 width = 1178.0
 depth = 830.0
 
+[node name="RiverBetweenBanks" parent="RiverBetweenBanks" unique_id=436623878 instance=ExtResource("water_3")]
+position = Vector2(-2078, 44)
+width = 1178.0
+depth = 830.0
+
 [node name="RiverBetweenBanks2" parent="." unique_id=947116219 instance=ExtResource("water_3")]
 position = Vector2(12179, 879)
 width = 1178.0
@@ -17575,6 +17610,7 @@ shape = SubResource("SegmentShape2D_iwi02")
 [node name="MoleWarning" parent="." unique_id=1084286218 instance=ExtResource("mole_warning")]
 position = Vector2(450, 550)
 message = "Bite, i kameny tu ožily! Říkám jim Šutříci. Blokují cestu k Jiskře, tak buď opatrný."
+fouk_on_ground = null
 
 [node name="Tutorials" type="Node2D" parent="." unique_id=387594636]
 

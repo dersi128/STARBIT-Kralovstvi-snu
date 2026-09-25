@@ -13,6 +13,8 @@ extends Node2D
 @export var gate_flip := true:
 	set(v): gate_flip=v;queue_redraw()
 @export_multiline var message := ""
+@export var fouk_on_ground := false:
+	set(v): fouk_on_ground=v;queue_redraw()
 const KIT_SCENES = {
 	"crate": "res://scenes/worldkit/Crate.tscn",
 	"push_crate": "res://scenes/worldkit/PushCrate.tscn",
@@ -185,6 +187,7 @@ var kit_instance:Node2D
 var used := false
 var time := 0.0
 var repair := 0.0
+var _fouk_support_height := -1.0
 var label: Label
 var talking:=false
 var dialogue_time:=0.0
@@ -260,7 +263,7 @@ func _process(delta: float) -> void:
 			var game=get_tree().get_first_node_in_group("game")
 			talking=game!=null and game.speaker==self and game.speech_progress<page.length()
 	elif kind=="mole":dialogue_time=0.0
-	elif kind=="fouk" and not used and d<110:
+	elif kind=="fouk" and not used and d<110 and (not fouk_on_ground or player.is_on_floor()):
 		repair+=delta;player.frozen=true
 		get_tree().call_group("game","hint","Bit opravuje Fouka… ✦")
 		if repair>2.0:
@@ -273,6 +276,9 @@ func _process(delta: float) -> void:
 			narrator.flip_h=player.global_position.x<global_position.x
 func _draw() -> void:
 	if used and kind in ["fouk","star_key","crystal"]: return
+	if kind=="fouk" and fouk_on_ground:
+		_draw_grounded_fouk()
+		return
 	match kind:
 		"checkpoint":
 			_draw_clean_prop("flag",Rect2(-29,-116,72,116),Color("ffffff") if used else Color("b4c8df"))
@@ -301,6 +307,28 @@ func _draw() -> void:
 					draw_texture_rect(DreamArt.texture("star"),Rect2(cos(a)*42-8,-45+sin(a)*24,16,16),false)
 		"arch": _draw_clean_prop("arch",Rect2(-75,-120,150,120))
 		"bush": draw_texture_rect(DreamArt.texture("bush"),Rect2(-60,-65,120,75),false)
+
+func _draw_grounded_fouk() -> void:
+	# The node marks the ground. Keep the broken drone resting on its side,
+	# with no hover or spinning rotor, until the existing repair completes.
+	var texture:Texture2D=DreamArt.texture("fouk")
+	var art_scale:=90.0/maxf(texture.get_width(),texture.get_height())
+	var size:=texture.get_size()*art_scale
+	var angle:=-PI*0.5
+	if _fouk_support_height<0.0:
+		# Cache the visible edge, not transparent padding, so he touches ground.
+		var bounds:=texture.get_image().get_used_rect()
+		_fouk_support_height=(texture.get_width()*0.5-bounds.position.x)*art_scale
+	var support_height:=_fouk_support_height
+	draw_set_transform(Vector2(0,1),0,Vector2(1,0.16))
+	draw_circle(Vector2.ZERO,31,Color(0.1,0.18,0.24,0.2))
+	draw_set_transform(Vector2(0,-support_height),angle)
+	draw_texture_rect(texture,Rect2(-size*0.5,size),false,Color(0.70,0.76,0.82))
+	draw_set_transform(Vector2.ZERO)
+	if repair>0:
+		for i in 3:
+			var a:=time*6.0+float(i)*TAU/3.0
+			draw_texture_rect(DreamArt.texture("star"),Rect2(cos(a)*42-8,-support_height+sin(a)*24-8,16,16),false)
 
 
 # Disjoint source rectangles omit neighbouring props without moving or

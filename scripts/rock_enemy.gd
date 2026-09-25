@@ -90,7 +90,7 @@ func _ground_ahead(delta: float) -> bool:
 
 func _turn_around() -> void:
 	direction *= -1.0
-	turn_time = 0.18
+	turn_time = WalkVisual.TURN_DURATION
 
 func _walking_speed() -> float:
 	return _actual_speed
@@ -106,11 +106,12 @@ func _animate() -> void:
 	var use_walk := grounded and not defeated and attack_cooldown <= 0.0
 	_walk_visual.visible = use_walk
 	anim.visible = not use_walk
-	if use_walk:
+	if grounded and not defeated:
 		var normal := global_transform.basis_xform_inv(_floor_normal).normalized()
 		_walk_visual.position.y = _floor_offset
 		_walk_visual.update_pose(_walk_phase, _actual_speed > 0.1, direction,
 			normal.x / maxf(-normal.y, 0.01), _step_delta)
+	if use_walk:
 		anim.pause()
 
 func _draw() -> void:
