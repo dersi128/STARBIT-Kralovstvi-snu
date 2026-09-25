@@ -4,6 +4,8 @@ const DREAM_SCREENS=preload("res://scripts/dream_screens.gd")
 const COLLECTIBLE_HUD=preload("res://scripts/collectible_hud.gd")
 const PAUSE_THEME=preload("res://scripts/pause_menu_theme.gd")
 const ILLUSTRATED_MENU=preload("res://scripts/illustrated_menu.gd")
+const LEVEL_LOADER=preload("res://scripts/level_loader.gd")
+var level_loader:CanvasLayer
 var preview_number := 0
 var level: Node2D
 var current := 1
@@ -50,6 +52,7 @@ func _ready() -> void:
   for key in keys[a]:
    var e:=InputEventKey.new();e.physical_keycode=key;InputMap.action_add_event(a,e)
  ui=CanvasLayer.new();add_child(ui)
+ level_loader=LEVEL_LOADER.new();add_child(level_loader)
  if preview_number>0:start_level(preview_number,preview_scene_path)
  else:menu()
 func clear_ui() -> void:
@@ -111,6 +114,7 @@ func menu() -> void:
   "credits":credits,
   "quit":func():get_tree().quit()
  },is_instance_valid(level) or Progress.unlocked>1)
+ level_loader.prefetch.call_deferred("res://levels/Level_01.tscn")
 func _continue_from_menu() -> void:
  if run_finished:selection()
  elif is_instance_valid(level):resume()
@@ -144,16 +148,49 @@ func selection() -> void:
   "back":menu
  })
 func start_level(n:int,custom_scene:String="") -> void:
- if level:remove_child(level);level.queue_free()
+ if mode=="loading":return
+ mode="loading"
  release_input()
- current=n;screws=0;gold=0;crystals=0;total_crystals=0;run_finished=false;mode="play"
- current_scene_path=custom_scene if not custom_scene.is_empty() else "res://levels/Level_%02d.tscn"%n
- level=load(current_scene_path).instantiate()
+ if is_instance_valid(level):level.process_mode=Node.PROCESS_MODE_DISABLED
+ if is_instance_valid(touch):
+  touch.hide();touch.process_mode=Node.PROCESS_MODE_DISABLED
+ var path:=custom_scene if not custom_scene.is_empty() else "res://levels/Level_%02d.tscn"%n
+ var packed:PackedScene=await level_loader.prepare_level(path)
+ if packed==null:
+  level_loader.hide_loading()
+  mode="load_error"
+  var message:=centered_panel("Cesta se nepodařila načíst")
+  var explanation:=Label.new();explanation.text="Zkus se vrátit do menu a otevřít ji znovu."
+  explanation.add_theme_color_override("font_color",Color("205080"))
+  message.add_child(explanation)
+  message.add_child(PAUSE_THEME.button("Zpět do menu",menu,"blue"))
+  return
+ if is_instance_valid(level):
+  remove_child(level);level.queue_free();level=null
+ # Let the old scene release its nodes before instantiating the new one.
+ await get_tree().process_frame
+ current=n;screws=0;gold=0;crystals=0;total_crystals=0;run_finished=false
+ current_scene_path=path
+ level=packed.instantiate()
+ level.process_mode=Node.PROCESS_MODE_DISABLED
  add_child(level)
  # Count only this instance: the previous level can still be queued for deletion.
  for object in get_tree().get_nodes_in_group("objects"):
   if level.is_ancestor_of(object) and object.kind=="crystal":total_crystals+=1
  game_ui()
+ touch.hide();touch.process_mode=Node.PROCESS_MODE_DISABLED
+ # Prepare Bit's first pose and draw the scene behind the loading card.
+ level.player.animate(0.0)
+ Progress.play_music("adventure")
+ level_loader.finish_progress()
+ await get_tree().process_frame
+ await get_tree().process_frame
+ await level_loader.reveal_level()
+ release_input()
+ level.player.buffer=0.0
+ touch.show();touch.process_mode=Node.PROCESS_MODE_INHERIT
+ level.process_mode=Node.PROCESS_MODE_INHERIT
+ mode="play"
 func release_input() -> void:
  for a in ["left","right","jump"]:Input.action_release(a)
 func game_ui() -> void:
@@ -241,7 +278,7 @@ func build_bubble() -> void:
  bubble.visible=false
 func speak(source:Node2D,text:String,voice:String="voice_mole") -> void:
  if mode!="play" or not is_instance_valid(bubble) or text.is_empty():return
- if current==1 and source.get("kind")=="mole":
+ if current in [1,2] and source.get("kind")=="mole":
   if source.get_meta("story_read",false):return
   _begin_mole_dialogue(source)
   return

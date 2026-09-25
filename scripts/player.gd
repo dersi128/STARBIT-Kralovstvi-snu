@@ -35,6 +35,8 @@ var state_age:=0.0
 var idle_time:=0.0
 var ground_distance:=0.0
 var ground_speed:=0.0
+var floor_motion_y:=0.0
+var floor_visual_offset:=0.0
 var acceleration_lean:=0.0
 var turn_time:=0.0
 var stop_time:=0.0
@@ -62,6 +64,8 @@ func _ready() -> void:
  add_to_group("player")
  collision_layer=2
  collision_mask=5
+ floor_snap_length=8.0
+ floor_constant_speed=true
  sprite=$Visual
  sprite.position=Vector2.ZERO
  if use_new_sheets and ResourceLoader.exists("res://assets/animations/bit_v2/bit_frames.tres"):
@@ -95,6 +99,9 @@ func _physics_process(delta: float) -> void:
   velocity=Vector2.ZERO
   animate(delta)
   return
+ # Discard vertical motion left by walking up/down a slope, while keeping
+ # impulses applied by a spring, enemy bounce or other game object.
+ if is_on_floor() and is_equal_approx(velocity.y,floor_motion_y):velocity.y=0.0
  var axis:=Input.get_axis("left","right")
  movement_multiplier=rain_movement_factor()
  var acceleration:=3600.0 if axis else 5000.0
@@ -125,11 +132,20 @@ func _physics_process(delta: float) -> void:
  var falling_speed:=velocity.y
  pushing=false
  move_and_slide()
+ floor_motion_y=velocity.y
+ floor_visual_offset=0.0
  if is_on_floor():
   # Count actual travel, excluding a moving platform carrying a standing Bit.
   var travel:float=global_position.x-previous_position.x-get_platform_velocity().x*delta
-  ground_distance=absf(travel)
+  # Use distance along the surface, so strides match uphill/downhill travel.
+  var floor_up:=maxf(-get_floor_normal().y,0.01)
+  ground_distance=absf(travel)/floor_up
   ground_speed=ground_distance/maxf(delta,0.001)
+  # A rounded foot touches the slope beside its lowest point. Move only the
+  # drawing to the surface beneath its centre; collision stays upright.
+  var body_shape:Shape2D=$Collision.shape
+  if body_shape is CapsuleShape2D:
+   floor_visual_offset=body_shape.radius*(1.0/floor_up-1.0)
  if is_on_ceiling():takeoff_time=0.0;boost_flash=0.0
  if axis and is_on_floor():
   for i in get_slide_collision_count():
@@ -297,6 +313,7 @@ func animate(delta: float) -> void:
  sprite.scale=Vector2.ONE*(height/texture.get_height())*visual_stretch
  sprite.flip_h=facing<0
  sprite.rotation=lerpf(sprite.rotation,tilt,1.0-exp(-20.0*delta))
+ if grounded:offset.y+=floor_visual_offset
  sprite.position=sprite.position.lerp(offset,1.0-exp(-26.0*delta))
  var warmth:=sin(clampf(celebration_age/maxf(celebration_duration,0.01),0,1)*PI)*0.08 if happy>0 else 0.0
  sprite.modulate=Color(1.0+warmth,1.0+warmth,1.0+warmth)
@@ -399,7 +416,7 @@ func update_visual_effects(delta:float) -> void:
 
 func _draw() -> void:
  if is_on_floor():
-  draw_set_transform(Vector2(0,1),0,Vector2(1,0.2))
+  draw_set_transform(Vector2(0,floor_visual_offset+1),get_floor_normal().angle()+PI*0.5,Vector2(1,0.2))
   draw_circle(Vector2.ZERO,19,Color(0.15,0.3,0.32,0.13))
   if land_time>0:
    var t:=1.0-land_time/LAND_DURATION
@@ -444,6 +461,7 @@ func hurt(force:bool=false) -> void:
  happy=0;previous_happy=0;land_time=0;takeoff_time=0;sparkles.clear();pickup_echoes.clear()
  pickup_pose_active=false;air_time=0.0;boost_flash=0.0;ground_distance=0.0;ground_speed=0.0
  run_phase=0.0;idle_time=0.0;stop_time=0.0;turn_time=0.0;buffer=0.0;coyote=0.0
+ floor_motion_y=0.0;floor_visual_offset=0.0
  Progress.sfx("hurt");hurt_time=hurt_animation_duration
  get_tree().call_group("level","respawn_player")
  invulnerable=1.3

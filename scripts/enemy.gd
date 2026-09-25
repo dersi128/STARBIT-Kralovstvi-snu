@@ -25,10 +25,7 @@ func _physics_process(delta:float) -> void:
   _animate()
   if fade<=0:queue_free()
   queue_redraw();return
- position.x+=direction*speed*delta
- if position.x>origin.x+patrol:position.x=origin.x+patrol;direction=-1;turn_time=0.18
- if position.x<origin.x:position.x=origin.x;direction=1;turn_time=0.18
- position.y=origin.y+(sin(time*2.5)*26 if kind=="cloud_enemy" else (sin(time*2.0)*7.0 if kind=="stinko" else 0.0))
+ _move_patrol(delta)
  var p=get_tree().get_first_node_in_group("player")
  if p and absf(p.global_position.x-global_position.x)<45 and absf(p.global_position.y-(global_position.y-35))<65:
   if p.velocity.y>0 and p.previous_bottom<global_position.y-45:
@@ -39,6 +36,15 @@ func _physics_process(delta:float) -> void:
  attack_cooldown=maxf(0,attack_cooldown-delta)
  _animate()
  queue_redraw()
+func _move_patrol(delta:float) -> void:
+ position.x+=direction*speed*delta
+ if position.x>origin.x+patrol:position.x=origin.x+patrol;direction=-1;turn_time=0.18
+ if position.x<origin.x:position.x=origin.x;direction=1;turn_time=0.18
+ position.y=origin.y+(sin(time*2.5)*26 if kind=="cloud_enemy" else (sin(time*2.0)*7.0 if kind=="stinko" else 0.0))
+
+func _walking_speed() -> float:
+ return absf(speed)
+
 func _setup_sprite() -> void:
  anim=get_node_or_null("AnimatedSprite2D") as AnimatedSprite2D
  if anim==null:
@@ -55,9 +61,9 @@ func _animate() -> void:
   anim.modulate.a=minf(1,fade*3)
  elif attack_cooldown>0:anim.play("attack")
  elif turn_time>0.10:anim.play("idle")
- elif absf(speed)<0.1:anim.play("idle")
+ elif _walking_speed()<0.1:anim.play("idle")
  else:
-  anim.play("walk");anim.speed_scale=clampf(absf(speed)/65.0,0.5,2.0)
+  anim.play("walk");anim.speed_scale=clampf(_walking_speed()/65.0,0.5,2.0)
 func _draw() -> void:
  if kind!="cloud_enemy" and not defeated:
   draw_set_transform(Vector2(0,1),0,Vector2(1,0.14))

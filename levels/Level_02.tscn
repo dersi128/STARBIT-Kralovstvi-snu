@@ -12,8 +12,10 @@
 [ext_resource type="Script" uid="uid://bd4fkdbvhf54y" path="res://scripts/camera_zone.gd" id="camera_zone"]
 [ext_resource type="Script" uid="uid://bxhwbssdynno" path="res://scripts/cave_back.gd" id="cave"]
 [ext_resource type="Script" uid="uid://ciwlchegnl2mc" path="res://scripts/terrain_body.gd" id="earth"]
+[ext_resource type="Script" uid="uid://c2svy4eaj02wn" path="res://scripts/tutorial_trigger.gd" id="enemy_tutorial"]
 [ext_resource type="PackedScene" path="res://scenes/worldkit/BushFlowers.tscn" id="flowers"]
 [ext_resource type="Script" uid="uid://cuod8udlqrmt6" path="res://scripts/level.gd" id="level"]
+[ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole_warning"]
 [ext_resource type="Script" uid="uid://cueha53tp0240" path="res://scripts/object.gd" id="object"]
 [ext_resource type="Script" uid="uid://ditxeivjyujmd" path="res://scripts/platform.gd" id="platform"]
 [ext_resource type="PackedScene" path="res://scenes/worldkit/PushCrate.tscn" id="push_box"]
@@ -16764,16 +16766,16 @@ size = Vector2(430, 100)
 [sub_resource type="RectangleShape2D" id="shape53"]
 size = Vector2(850, 100)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y8oym"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4u1wj"]
 shader = ExtResource("13_catbm")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l8qdf"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dmgje"]
 shader = ExtResource("13_catbm")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8dgo1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0vcif"]
 shader = ExtResource("13_catbm")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_078j4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ypvxm"]
 shader = ExtResource("21_dtamd")
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_iwi02"]
@@ -17250,7 +17252,7 @@ script = ExtResource("object")
 kind = "checkpoint"
 
 [node name="Enemy_0" parent="." unique_id=1768574362 instance=ExtResource("rock_enemy")]
-position = Vector2(2245, 470)
+position = Vector2(2244, 475)
 patrol = 275.0
 speed = 68.0
 
@@ -17487,18 +17489,18 @@ position = Vector2(1736.8, 390)
 
 [node name="OptionalSpring" parent="." unique_id=934212557 instance=ExtResource("spring")]
 texture_filter = 4
-material = SubResource("ShaderMaterial_y8oym")
+material = SubResource("ShaderMaterial_4u1wj")
 position = Vector2(3471, 670)
 
 [node name="OptionalSpring2" parent="." unique_id=1257340951 instance=ExtResource("spring")]
 texture_filter = 4
-material = SubResource("ShaderMaterial_l8qdf")
+material = SubResource("ShaderMaterial_dmgje")
 position = Vector2(8994, 423)
 
 [node name="OptionalSpring2" parent="OptionalSpring2" unique_id=162616762 instance=ExtResource("spring")]
 texture_filter = 4
-material = SubResource("ShaderMaterial_8dgo1")
-position = Vector2(5950, 148)
+material = SubResource("ShaderMaterial_0vcif")
+position = Vector2(6028, 154)
 
 [node name="BankFlowers_0" parent="." unique_id=405498104 instance=ExtResource("flowers")]
 z_index = -1
@@ -17534,7 +17536,7 @@ scale = Vector2(0.65, 0.65)
 
 [node name="RiverBridge" parent="." unique_id=432298574 instance=ExtResource("starbit_rope_bridge")]
 texture_filter = 4
-material = SubResource("ShaderMaterial_078j4")
+material = SubResource("ShaderMaterial_ypvxm")
 position = Vector2(5652, 780)
 gaps = PackedVector2Array()
 
@@ -17569,3 +17571,17 @@ texture = ExtResource("22_dmgje")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Most2" unique_id=1784766255]
 shape = SubResource("SegmentShape2D_iwi02")
+
+[node name="MoleWarning" parent="." unique_id=1084286218 instance=ExtResource("mole_warning")]
+position = Vector2(450, 550)
+message = "Bite, i kameny tu ožily! Říkám jim Šutříci. Blokují cestu k Jiskře, tak buď opatrný."
+
+[node name="Tutorials" type="Node2D" parent="." unique_id=387594636]
+
+[node name="StompEnemy" type="Marker2D" parent="Tutorials" unique_id=1560876789]
+position = Vector2(1800, 330)
+script = ExtResource("enemy_tutorial")
+title = "Šutřík – oživlý kámen"
+message = "Skoč Šutříkovi na hlavu.
+Pozor, dotyk ze strany tě zraní."
+activation_size = Vector2(500, 420)

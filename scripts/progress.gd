@@ -1,11 +1,17 @@
 extends Node
+const SFX_BANK_PATH := "res://scripts/starbit_sfx.gd"
 const LEVEL_COUNT := 10
 var unlocked := 1
 var muted := false
 var level_stars: Dictionary = {}
 var tones: Array[AudioStreamPlayer] = []
+var _sfx_last_at: Dictionary = {}
+var _sfx_sequence: Dictionary = {}
+var _sfx_effects: Dictionary = {}
 func _ready() -> void:
  process_mode = Node.PROCESS_MODE_ALWAYS
+ # Warm the effects at game startup, after Godot has imported new audio files.
+ _sfx_effects=load(SFX_BANK_PATH).EFFECTS
  var c := ConfigFile.new()
  if c.load("user://dreambit.cfg") == OK:
   unlocked = clampi(int(c.get_value("save", "unlocked", 1)), 1, 10)
@@ -68,28 +74,23 @@ func silence() -> void:
  for old in fading_music:
   if is_instance_valid(old):old.stop();old.queue_free()
  fading_music.clear()
- for p in tones: p.queue_free()
+ for p in tones:p.stop();p.queue_free()
  tones.clear()
+ _sfx_last_at.clear()
 
 var clip_cache:Dictionary = {}
 func sfx(event:String) -> void:
- if muted or tones.size()>=9:return
- if event=="boss_push":
-  var p:=AudioStreamPlayer.new();p.stream=load("res://assets/audio/bear_push.ogg");p.volume_db=-10;add_child(p);tones.append(p)
-  p.finished.connect(func():tones.erase(p);p.queue_free());p.play();return
+ if muted:return
+ var selected := "gold" if event=="collect" else event
+ if _sfx_effects.has(selected):
+  _play_designed_sfx(selected)
+  return
+ if tones.size()>=9:return
  var profiles={
   "step":[95.0,65.0,0.055,-26.0],
-  "jump":[350.0,780.0,0.14,-17.0],
-  "land":[150.0,65.0,0.085,-23.0],
-  "boost":[450.0,1100.0,0.28,-20.0],
-  "collect":[880.0,1320.0,0.16,-17.0],
-  "gold":[1050.0,1760.0,0.28,-16.0],
   "hurt":[290.0,115.0,0.23,-17.0],
   "enemy":[410.0,720.0,0.17,-20.0],
   "turn":[180.0,240.0,0.075,-30.0],
-  "boss_warn":[150.0,210.0,0.3,-18.0],
-  "boss_push":[150.0,65.0,0.26,-15.0],
-  "boss_hit":[310.0,640.0,0.22,-16.0],
   "voice_mole":[220.0,290.0,0.07,-23.0],
   "voice_star":[640.0,780.0,0.06,-26.0],
   "repair":[530.0,1060.0,0.35,-18.0],
@@ -117,6 +118,33 @@ func sfx(event:String) -> void:
   stream.data=data;clip_cache[event]=stream
  var p:=AudioStreamPlayer.new();p.stream=clip_cache[event];p.volume_db=spec[3];add_child(p);tones.append(p)
  p.finished.connect(func():tones.erase(p);p.queue_free());p.play()
+
+func _play_designed_sfx(event:String) -> void:
+ var spec:Dictionary=_sfx_effects[event]
+ var now:=Time.get_ticks_msec()
+ if now-int(_sfx_last_at.get(event,-10000))<int(spec.gap_ms):return
+ var matches:Array[AudioStreamPlayer]=[]
+ for tone in tones:
+  if tone.get_meta("sfx_event","")==event:matches.append(tone)
+ if matches.size()>=int(spec.voices):
+  var oldest:AudioStreamPlayer=matches[0]
+  oldest.stop();tones.erase(oldest);oldest.queue_free()
+ if tones.size()>=9:
+  if not spec.get("priority",false):return
+  # Keep the bear's warning audible even during a string of pickups.
+  var oldest:AudioStreamPlayer=tones[0]
+  oldest.stop();tones.erase(oldest);oldest.queue_free()
+ var index:=int(_sfx_sequence.get(event,0))
+ var clips:Array=spec.clips
+ var voice:=AudioStreamPlayer.new()
+ voice.stream=clips[index%clips.size()]
+ voice.volume_db=float(spec.db)
+ voice.set_meta("sfx_event",event)
+ add_child(voice);tones.append(voice)
+ _sfx_sequence[event]=index+1
+ _sfx_last_at[event]=now
+ voice.finished.connect(func():tones.erase(voice);voice.queue_free())
+ voice.play()
 
 var music:AudioStreamPlayer
 var music_track:=""

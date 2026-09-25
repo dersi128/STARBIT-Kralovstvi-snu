@@ -16,6 +16,7 @@ var star_released:=false
 func free_bear() -> void:
  if star_released:return
  star_released=true
+ Progress.sfx("boss_free")
  get_tree().get_first_node_in_group("level").boss_alive=false
  var star=preload("res://scenes/star_key.tscn").instantiate()
  star.position=position+Vector2(55*direction,-73)
@@ -38,7 +39,11 @@ func _ready() -> void:
  wrist_star=Sprite2D.new();wrist_star.texture=DreamArt.texture("star")
  wrist_star.scale=Vector2(0.28,0.28);wrist_star.z_index=2;wrist_star.visible=false;add_child(wrist_star)
  if Engine.is_editor_hint():return
+ sprite.frame_changed.connect(_on_animation_frame_changed)
  add_to_group("boss")
+func _on_animation_frame_changed() -> void:
+ if state=="charge" and sprite.animation==&"charge" and sprite.frame in [0,2]:
+  Progress.sfx("boss_step")
 func _physics_process(delta:float) -> void:
  if Engine.is_editor_hint():queue_redraw();return
  var p=get_tree().get_first_node_in_group("player")
@@ -51,9 +56,9 @@ func _physics_process(delta:float) -> void:
   state="charge";timer=0;Progress.sfx("boss_push")
  elif state=="charge":
   position.x=clampf(position.x+direction*(360 if hp<=2 else 250)*delta,left,right)
-  if timer>1.5 or position.x in [left,right]:state="rest";timer=0
+  if timer>1.5 or position.x in [left,right]:state="rest";timer=0;Progress.sfx("boss_rest")
  elif state=="rest" and timer>3.5:state="warn";timer=0;Progress.sfx("boss_warn")
- elif state=="hurt" and timer>0.7:state="warn";timer=0
+ elif state=="hurt" and timer>0.7:state="warn";timer=0;Progress.sfx("boss_warn")
  elif state=="defeated" and timer>1.5:
   free_bear()
   queue_redraw()

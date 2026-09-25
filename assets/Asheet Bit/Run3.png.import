@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://q58b7gf4obi1"
-path="res://.godot/imported/rock_enemy.png-60d5ba53367f37b22c0cb6a1192c4572.ctex"
+uid="uid://chch371k1wy81"
+path="res://.godot/imported/Run3.png-6e9ed0da095e4142d3c4136488dd4741.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animations/rock_enemy.png"
-dest_files=["res://.godot/imported/rock_enemy.png-60d5ba53367f37b22c0cb6a1192c4572.ctex"]
+source_file="res://assets/Asheet Bit/Run3.png"
+dest_files=["res://.godot/imported/Run3.png-6e9ed0da095e4142d3c4136488dd4741.ctex"]
 
 [params]
 
@@ -23,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
