@@ -278,7 +278,7 @@ func build_bubble() -> void:
  bubble.visible=false
 func speak(source:Node2D,text:String,voice:String="voice_mole") -> void:
  if mode!="play" or not is_instance_valid(bubble) or text.is_empty():return
- if current in [1,2,3] and source.get("kind")=="mole":
+ if current in [1,2,3,5] and source.get("kind")=="mole":
   if source.get_meta("story_read",false):return
   _begin_mole_dialogue(source)
   return
