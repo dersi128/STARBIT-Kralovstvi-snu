@@ -19,6 +19,7 @@ func _ready() -> void:
 		_walk_visual = WalkVisual.new()
 		_walk_visual.name = "GroundedWalk"
 		_walk_visual.texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR_WITH_MIPMAPS
+		_walk_visual.reset_facing(direction)
 		add_child(_walk_visual)
 
 func _move_patrol(delta: float) -> void:
@@ -30,13 +31,14 @@ func _move_patrol(delta: float) -> void:
 	var grounded := _body.is_on_floor()
 	_body.velocity.y = 0.0 if grounded else minf(_body.velocity.y + 1450.0 * delta, 1000.0)
 	var walking := patrol > 0.0 and absf(speed) > 0.1
+	var bounds := _patrol_bounds()
 	if walking and turn_time <= 0.0:
-		var at_end := position.x >= origin.x + patrol if direction > 0 else position.x <= origin.x
+		var at_end := position.x >= bounds.y if direction > 0 else position.x <= bounds.x
 		if at_end or (grounded and not _ground_ahead(delta)):
 			_turn_around()
 	_body.velocity.x = 0.0
 	if walking and turn_time <= 0.0:
-		var remaining := origin.x + patrol - position.x if direction > 0 else position.x - origin.x
+		var remaining := bounds.y - position.x if direction > 0 else position.x - bounds.x
 		_body.velocity.x = direction * minf(absf(speed), maxf(remaining, 0.0) / maxf(delta, 0.001))
 	_body.move_and_slide()
 	if _body.is_on_wall() and turn_time <= 0.0:

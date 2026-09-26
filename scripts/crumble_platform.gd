@@ -1,15 +1,10 @@
 @tool
-extends "res://scripts/platform.gd"
-## Cracks after Bit lands; returns automatically so a retry is always possible.
+extends "res://scripts/dream_platform.gd"
+## Three warning frames, then falling debris. Collision disappears exactly when the surface splits.
 @export_range(0.5, 3.0, 0.1) var crumble_delay := 1.1
 @export_range(1.5, 8.0, 0.1) var return_delay := 3.2
 var countdown := -1.0
 var absent := false
-var resting_tint := Color.WHITE
-
-func _ready() -> void:
-	super()
-	resting_tint = modulate
 
 func _physics_process(delta: float) -> void:
 	super(delta)
@@ -21,30 +16,28 @@ func _physics_process(delta: float) -> void:
 				if player.get_slide_collision(i).get_collider() == self:
 					countdown = crumble_delay
 					break
-		return
-	countdown -= delta
-	if absent:
-		modulate = Color(resting_tint, 0.18 * clampf(1.0 - countdown / return_delay, 0.0, 1.0))
-		if countdown <= 0.0:
-			absent = false
-			countdown = -1.0
-			$CollisionShape2D.set_deferred("disabled", false)
-			modulate = resting_tint
 	else:
-		var warning := 1.0 - clampf(countdown / crumble_delay, 0.0, 1.0)
-		modulate = resting_tint.lerp(Color(1.0, 0.68, 0.35), warning * 0.65)
+		countdown -= delta
 		if countdown <= 0.0:
-			absent = true
-			countdown = return_delay
-			$CollisionShape2D.set_deferred("disabled", true)
-			modulate.a = 0.0
+			if absent:
+				absent = false
+				countdown = -1.0
+				$CollisionShape2D.set_deferred("disabled", false)
+			else:
+				absent = true
+				countdown = return_delay
+				$CollisionShape2D.set_deferred("disabled", true)
 	queue_redraw()
 
 func _draw() -> void:
-	super()
-	# A permanent crack distinguishes these surfaces before the first landing.
-	var mid := width * 0.5
-	var depth_hint := 18.0
-	if countdown >= 0.0 and not absent:
-		depth_hint += 16.0 * (1.0 - clampf(countdown / crumble_delay, 0.0, 1.0))
-	draw_polyline(PackedVector2Array([Vector2(mid - 10, -5), Vector2(mid + 2, 3), Vector2(mid - 6, 12), Vector2(mid + 8, depth_hint)]), Color(0.25, 0.16, 0.13, 0.9), 3.0, true)
+	if absent:
+		var elapsed := return_delay - countdown
+		if elapsed < 0.55:draw_frame(4 + mini(3, int(elapsed / 0.14)))
+		elif countdown < 0.7:
+			draw_line(Vector2(8, 0), Vector2(width - 8, 0), Color(0.7, 0.95, 1.0, 0.5), 3, true)
+		return
+	var frame := 0 if countdown < 0.0 else mini(3, 1 + int((1.0 - countdown / crumble_delay) * 3.0))
+	draw_frame(frame)
+	# A small crack identifies a fragile platform even before stepping onto it.
+	if frame == 0:
+		draw_polyline(PackedVector2Array([Vector2(width * 0.52, -5), Vector2(width * 0.48, 2), Vector2(width * 0.53, 9)]), Color(0.24, 0.17, 0.12, 0.8), 2, true)

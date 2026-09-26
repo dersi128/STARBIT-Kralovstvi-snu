@@ -3,12 +3,15 @@ extends Control
 
 const ARTWORK = preload("res://assets/menu/starbit_illustrated_menu.png")
 const FEEDBACK_SHADER = preload("res://shaders/menu_button_feedback.gdshader")
+const REWARDS_BUTTON = preload("res://assets/menu/pause/purple.svg")
+const REWARDS_FONT = preload("res://assets/menu/pause/Nunito.ttf")
+const REWARDS_STAR = preload("res://assets/menu/pause/star.svg")
 const DESIGN_SIZE = Vector2(1672.0, 941.0)
 const BUTTONS = [
 	["new", "NewButton", "Nová hra", Rect2(630, 311, 414, 95)],
 	["continue", "ContinueButton", "Pokračovat", Rect2(630, 417, 414, 92)],
 	["settings", "SettingsButton", "Nastavení", Rect2(637, 523, 398, 88)],
-	["credits", "CreditsButton", "Autoři", Rect2(651, 622, 370, 83)],
+	["rewards", "RewardsButton", "Odměny", Rect2(651, 622, 370, 83)],
 	["quit", "QuitButton", "Konec", Rect2(657, 711, 360, 80)],
 ]
 
@@ -47,7 +50,7 @@ func setup(actions: Dictionary, can_continue: bool) -> void:
 		item.disabled = spec[0] == "continue" and not can_continue
 		item.tooltip_text = "Nejprve začni novou hru." if item.disabled else ""
 		canvas.add_child(item)
-		item.prepare(FEEDBACK_SHADER)
+		item.prepare(FEEDBACK_SHADER, spec[0] == "rewards")
 		var action: Callable = actions[spec[0]]
 		item.pressed.connect(_activate.bind(item, action))
 		buttons.append(item)
@@ -103,7 +106,7 @@ class ArtButton extends Button:
 			if feedback:
 				feedback.set_shader_parameter("sweep", value)
 
-	func prepare(shader: Shader) -> void:
+	func prepare(shader: Shader, show_caption := false) -> void:
 		mouse_default_cursor_shape = Control.CURSOR_ARROW if disabled else Control.CURSOR_POINTING_HAND
 		focus_mode = Control.FOCUS_NONE if disabled else Control.FOCUS_ALL
 		# Caption remains available to accessibility; the illustration supplies visible text.
@@ -112,6 +115,30 @@ class ArtButton extends Button:
 		for key in ["font_color", "font_hover_color", "font_pressed_color", "font_hover_pressed_color", "font_disabled_color", "font_focus_color", "font_outline_color"]:
 			add_theme_color_override(key, Color.TRANSPARENT)
 		add_theme_constant_override("outline_size", 0)
+		if show_caption:
+			# Cover the old baked-in Autoři caption with the existing glossy skin.
+			var style := StyleBoxTexture.new()
+			style.texture = REWARDS_BUTTON
+			style.set_texture_margin(SIDE_LEFT, 44)
+			style.set_texture_margin(SIDE_RIGHT, 44)
+			style.content_margin_bottom = 6
+			for state in ["normal", "hover", "pressed", "hover_pressed", "disabled"]:
+				add_theme_stylebox_override(state, style)
+			var typeface := FontVariation.new()
+			typeface.base_font = REWARDS_FONT
+			typeface.variation_opentype = {0x77676874: 950.0}
+			add_theme_font_override("font", typeface)
+			add_theme_font_size_override("font_size", 43)
+			for key in ["font_color", "font_hover_color", "font_pressed_color", "font_hover_pressed_color", "font_focus_color"]:
+				add_theme_color_override(key, Color("421070"))
+			for i in 2:
+				var star := TextureRect.new()
+				star.texture = REWARDS_STAR
+				star.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
+				star.size = Vector2(29,29)
+				star.position = Vector2(24 if i == 0 else size.x-53, (size.y-29)*0.5-3)
+				star.mouse_filter = Control.MOUSE_FILTER_IGNORE
+				add_child(star)
 		feedback = ShaderMaterial.new()
 		feedback.shader = shader
 		feedback.set_shader_parameter("button_size", size)

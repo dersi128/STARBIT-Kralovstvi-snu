@@ -1,4 +1,5 @@
 extends CharacterBody2D
+const WARDROBE = preload("res://scripts/starbit_wardrobe.gd")
 @export var speed := 390.0
 @export var jump_speed := 650.0
 @export var use_new_sheets := true
@@ -13,6 +14,12 @@ const RUN_FRAME_ORDER:=[0,1,3,2,4,5,7,6]
 const RUN_FRAME_HOLDS:=[1.15,0.9,1.1,0.85,1.15,0.9,1.1,0.85]
 const RUN_POSE_HEIGHTS:=[298.0,276.0,296.0,292.0,299.0,279.0,300.0,290.0]
 const TAKEOFF_DURATION:=0.10
+const PUSH_TEXTURES:=[
+ preload("res://assets/animations/push1.tres"),
+ preload("res://assets/animations/push2.tres"),
+ preload("res://assets/animations/push3.tres"),
+ preload("res://assets/animations/push4.tres")
+]
 var sheet_frames:SpriteFrames
 var sheet_animation:=""
 var sheet_frame:=0
@@ -79,8 +86,20 @@ func _ready() -> void:
   sheet_frames=load("res://assets/animations/bit_v2/bit_frames.tres")
  drone=Sprite2D.new();add_child(drone)
  DreamArt.set_sprite(drone,"fouk",76)
+ apply_selected_looks()
  for key in EXTRA_POSES:
   var pose:=AtlasTexture.new();pose.atlas=load("res://assets/bit.png");pose.region=EXTRA_POSES[key];pose.filter_clip=true;pose_cache[key]=pose
+ # Prepare the four push poses before play, not during the first contact.
+ for i in PUSH_TEXTURES.size():
+  var key:="push"+str(i+1)
+  var texture:Texture2D=PUSH_TEXTURES[i]
+  var visible_rect:=texture.get_image().get_used_rect()
+  pose_cache[key]=texture
+  pose_offsets[key]=Vector2(texture.get_width()*0.5-visible_rect.get_center().x,texture.get_height()*0.5-visible_rect.end.y)
+func apply_selected_looks() -> void:
+ if is_instance_valid(sprite):WARDROBE.apply_to(sprite,"bit")
+ if is_instance_valid(drone):WARDROBE.apply_to(drone,"fouk")
+
 func _physics_process(delta: float) -> void:
  var previous_position:=global_position
  var previous_speed:=velocity.x
@@ -139,6 +158,19 @@ func _physics_process(delta: float) -> void:
  var falling_speed:=velocity.y
  pushing=false
  move_and_slide()
+ if axis and is_on_floor():
+  for i in get_slide_collision_count():
+   var hit:=get_slide_collision(i)
+   var body=hit.get_collider()
+   if body is Node and body.is_in_group("push_crates") and hit.get_normal().x*axis< -0.8:
+    # One push per tick, even if move_and_slide reports the same crate twice.
+    var pushed_distance:float=body.push(axis,delta)
+    # move_and_slide zeroes the horizontal velocity at the crate. Keep its
+    # actual speed for the next tick, so Bit keeps contact instead of having
+    # to accelerate from rest across the small gap after every push.
+    velocity.x=pushed_distance/maxf(delta,0.001)
+    pushing=true;push_clock+=delta
+    break
  floor_motion_y=velocity.y
  floor_visual_offset=0.0
  if is_on_floor():
@@ -154,14 +186,6 @@ func _physics_process(delta: float) -> void:
   if body_shape is CapsuleShape2D:
    floor_visual_offset=body_shape.radius*(1.0/floor_up-1.0)
  if is_on_ceiling():takeoff_time=0.0;boost_flash=0.0
- if axis and is_on_floor():
-  for i in get_slide_collision_count():
-   var hit:=get_slide_collision(i)
-   var body=hit.get_collider()
-   if body is Node and body.is_in_group("push_crates") and absf(hit.get_normal().x)>0.8:
-    body.push(axis,delta)
-    pushing=true;push_clock+=delta
-
  if not was_floor and is_on_floor() and falling_speed>140:
   land_time=LAND_DURATION;landing_strength=clampf(falling_speed/1000.0,0.2,1.0);Progress.sfx("land")
  var current_level=get_tree().get_first_node_in_group("level")

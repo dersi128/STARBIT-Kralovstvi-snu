@@ -2,12 +2,16 @@
 
 [ext_resource type="Shader" uid="uid://c23ovxxc4jskq" path="res://shaders/spring_pad_alpha.gdshader" id="16_8y2x1"]
 [ext_resource type="Shader" uid="uid://rty78wrj2h2g" path="res://shaders/bridge_alpha.gdshader" id="18_fbfu1"]
+[ext_resource type="PackedScene" path="res://scenes/animated_water/AnimatedPool.tscn" id="35_qlv1n"]
 [ext_resource type="Texture2D" uid="uid://qewbl8bk3en6" path="res://assets/pieces/arch.png" id="arch"]
 [ext_resource type="PackedScene" path="res://scenes/environments/guardian.tscn" id="bg"]
 [ext_resource type="PackedScene" path="res://scenes/Boss.tscn" id="boss"]
+[ext_resource type="Script" uid="uid://omhuvl2kva4w" path="res://scripts/boss_refuge.gd" id="boss_refuge"]
 [ext_resource type="Script" uid="uid://d307bkgfu80so" path="res://scripts/starbit_rope_bridge.gd" id="bridge"]
 [ext_resource type="Texture2D" uid="uid://b5ai8pwnhva83" path="res://assets/supplied/pieces/StoneColumn.png" id="column"]
-[ext_resource type="Script" uid="uid://d3py4h5karcy0" path="res://scripts/crumble_platform.gd" id="crumble"]
+[ext_resource type="Script" uid="uid://d3py4h5karcy0" path="res://scripts/crumble_platform.gd" id="dream_fragile"]
+[ext_resource type="Script" uid="uid://ceiw84lj8dah4" path="res://scripts/dream_platform.gd" id="dream_platform"]
+[ext_resource type="Script" uid="uid://pwukvyaplygo" path="res://scripts/rhythm_platform.gd" id="dream_rhythm"]
 [ext_resource type="Script" uid="uid://ciwlchegnl2mc" path="res://scripts/terrain_body.gd" id="earth"]
 [ext_resource type="PackedScene" path="res://scenes/Enemy_rock_enemy.tscn" id="enemy"]
 [ext_resource type="Texture2D" uid="uid://i64xv2d3bwvq" path="res://assets/supplied/pieces/Fence.png" id="fence"]
@@ -17,10 +21,19 @@
 [ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole"]
 [ext_resource type="Script" uid="uid://cueha53tp0240" path="res://scripts/object.gd" id="object"]
 [ext_resource type="Script" uid="uid://ditxeivjyujmd" path="res://scripts/platform.gd" id="platform"]
-[ext_resource type="Script" uid="uid://draqw824v3x8v" path="res://scripts/river.gd" id="river"]
 [ext_resource type="Texture2D" uid="uid://dtmt5wnq88lb1" path="res://assets/supplied/pieces/Ruins.png" id="ruin"]
-[ext_resource type="PackedScene" path="res://scenes/worldkit/SpringPad.tscn" id="spring"]
-[ext_resource type="Script" uid="uid://c2svy4eaj02wn" path="res://scripts/tutorial_trigger.gd" id="tutorial"]
+[ext_resource type="Texture2D" path="res://assets/world_scenery/Arch.tres" id="scenery_Arch"]
+[ext_resource type="Texture2D" path="res://assets/world_scenery/Columns.tres" id="scenery_Columns"]
+[ext_resource type="Texture2D" path="res://assets/world_scenery/Conifers.tres" id="scenery_Conifers"]
+[ext_resource type="Texture2D" path="res://assets/world_scenery/FarIsland.tres" id="scenery_FarIsland"]
+[ext_resource type="Texture2D" path="res://assets/world_scenery/Ferns.tres" id="scenery_Ferns"]
+[ext_resource type="Texture2D" path="res://assets/world_scenery/Log.tres" id="scenery_Log"]
+[ext_resource type="Texture2D" path="res://assets/world_scenery/Lookout.tres" id="scenery_Lookout"]
+[ext_resource type="Texture2D" path="res://assets/world_scenery/Tree.tres" id="scenery_Tree"]
+[ext_resource type="Script" uid="uid://c80yqfr10rsnr" path="res://scripts/world_landmark.gd" id="world_art"]
+[ext_resource type="Script" uid="uid://cvhfow2h3bkln" path="res://scripts/world_depth.gd" id="world_depth"]
+[ext_resource type="Script" uid="uid://c2svy4eaj02wn" path="res://scripts/tutorial_trigger.gd" id="world_hint"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/SpringPad.tscn" id="world_spring"]
 [ext_resource type="Script" uid="uid://bd4fkdbvhf54y" path="res://scripts/camera_zone.gd" id="zone"]
 
 [sub_resource type="RectangleShape2D" id="shape_Arrival"]
@@ -77,7 +90,7 @@ size = Vector2(210, 100)
 [sub_resource type="RectangleShape2D" id="shape_HighRuinExit"]
 size = Vector2(390, 100)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_innra"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrys1"]
 shader = ExtResource("16_8y2x1")
 
 [sub_resource type="RectangleShape2D" id="shape_HighPassStart"]
@@ -98,7 +111,7 @@ size = Vector2(650, 100)
 [sub_resource type="RectangleShape2D" id="shape_LowerTreasure"]
 size = Vector2(560, 100)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nrgym"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5y74u"]
 shader = ExtResource("16_8y2x1")
 
 [sub_resource type="RectangleShape2D" id="shape_ForestRest"]
@@ -116,7 +129,7 @@ size = Vector2(210, 40)
 [sub_resource type="RectangleShape2D" id="shape_GuardianLookout"]
 size = Vector2(490, 100)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_s476l"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d3xv1"]
 shader = ExtResource("18_fbfu1")
 
 [sub_resource type="RectangleShape2D" id="shape_GuardianCourtyard"]
@@ -125,11 +138,44 @@ size = Vector2(2200, 100)
 [sub_resource type="RectangleShape2D" id="shape_GuardianCourtyard_wall"]
 size = Vector2(2200, 385)
 
+[sub_resource type="RectangleShape2D" id="Expansion_RuneCourt"]
+size = Vector2(600, 100)
+
+[sub_resource type="RectangleShape2D" id="Expansion_RuneA"]
+size = Vector2(190, 48)
+
+[sub_resource type="RectangleShape2D" id="Expansion_RuneB"]
+size = Vector2(190, 48)
+
+[sub_resource type="RectangleShape2D" id="Expansion_RuneRest"]
+size = Vector2(250, 48)
+
+[sub_resource type="RectangleShape2D" id="Expansion_RuneFerry"]
+size = Vector2(180, 48)
+
+[sub_resource type="RectangleShape2D" id="Expansion_RuneOverlook"]
+size = Vector2(260, 48)
+
+[sub_resource type="RectangleShape2D" id="Expansion_SanctuaryShaleA"]
+size = Vector2(210, 48)
+
+[sub_resource type="RectangleShape2D" id="Expansion_SanctuaryShaleB"]
+size = Vector2(210, 48)
+
+[sub_resource type="RectangleShape2D" id="Expansion_SanctuaryStep"]
+size = Vector2(230, 48)
+
+[sub_resource type="RectangleShape2D" id="Expansion_SanctuaryEntry"]
+size = Vector2(310, 100)
+
+[sub_resource type="RectangleShape2D" id="BossRefugeShape"]
+size = Vector2(240, 36)
+
 [node name="Level_05" type="Node2D" unique_id=1871261897]
 script = ExtResource("level")
 number = 5
 title = "Brúčounova svatyně"
-width = 16600.0
+width = 20700.0
 camera_top = -950
 camera_bottom = 1800
 fall_limit = 1320.0
@@ -159,7 +205,7 @@ bottom = 1700.0
 [node name="ForestStep" type="AnimatableBody2D" parent="." unique_id=652558349]
 position = Vector2(1130, 420)
 collision_mask = 0
-script = ExtResource("platform")
+script = ExtResource("dream_platform")
 style = "island"
 width = 260.0
 depth = 120.0
@@ -173,7 +219,7 @@ one_way_collision = true
 [node name="ForestCrown" type="AnimatableBody2D" parent="." unique_id=193849621]
 position = Vector2(1560, 290)
 collision_mask = 0
-script = ExtResource("platform")
+script = ExtResource("dream_platform")
 style = "island"
 width = 290.0
 depth = 130.0
@@ -204,6 +250,7 @@ width = 600.0
 bottom = 1700.0
 
 [node name="ArrivalArch" type="Sprite2D" parent="." unique_id=1711659924]
+visible = false
 modulate = Color(0.84, 0.92, 0.96, 0.86)
 z_index = -4
 position = Vector2(560, 425.7)
@@ -211,6 +258,7 @@ scale = Vector2(1.1, 1.1)
 texture = ExtResource("arch")
 
 [node name="QuayFence" type="Sprite2D" parent="." unique_id=127291098]
+visible = false
 modulate = Color(0.84, 0.92, 0.96, 0.86)
 z_index = -4
 position = Vector2(2320, 423.85)
@@ -219,7 +267,7 @@ texture = ExtResource("fence")
 
 [node name="FragileHint" type="Marker2D" parent="." unique_id=1151285099]
 position = Vector2(2450, 420)
-script = ExtResource("tutorial")
+script = ExtResource("world_hint")
 title = "Praskající plošiny"
 message = "Plošina pod tebou praská! Skoč dál. Za chvíli se znovu objeví."
 activation_size = Vector2(480, 260)
@@ -227,8 +275,9 @@ activation_size = Vector2(480, 260)
 [node name="FragileA" type="AnimatableBody2D" parent="." unique_id=608870186]
 position = Vector2(2760, 450)
 collision_mask = 0
-script = ExtResource("crumble")
+script = ExtResource("dream_fragile")
 crumble_delay = 1.25
+surface_art = "wood"
 style = "bridge"
 width = 175.0
 depth = 55.0
@@ -242,8 +291,9 @@ one_way_collision = true
 [node name="FragileB" type="AnimatableBody2D" parent="." unique_id=916423646]
 position = Vector2(3080, 350)
 collision_mask = 0
-script = ExtResource("crumble")
+script = ExtResource("dream_fragile")
 crumble_delay = 1.25
+surface_art = "wood"
 style = "bridge"
 width = 175.0
 depth = 55.0
@@ -257,8 +307,9 @@ one_way_collision = true
 [node name="FragileC" type="AnimatableBody2D" parent="." unique_id=993567795]
 position = Vector2(3410, 410)
 collision_mask = 0
-script = ExtResource("crumble")
+script = ExtResource("dream_fragile")
 crumble_delay = 1.25
+surface_art = "wood"
 style = "bridge"
 width = 190.0
 depth = 55.0
@@ -301,17 +352,11 @@ kind = "checkpoint"
 [node name="QuarryLantern" parent="." unique_id=1155823897 instance=ExtResource("lantern")]
 position = Vector2(4060, 400)
 
-[node name="RiverUnderQuarry" type="Node2D" parent="." unique_id=444614094]
-z_index = -2
-position = Vector2(2620, 990)
-script = ExtResource("river")
-width = 1200.0
-depth = 800.0
-
 [node name="QuarryLowerPillar" type="AnimatableBody2D" parent="." unique_id=784221016]
 position = Vector2(4610, 250)
 collision_mask = 0
-script = ExtResource("platform")
+script = ExtResource("dream_platform")
+surface_art = "stone"
 style = "stone"
 width = 230.0
 depth = 160.0
@@ -325,7 +370,8 @@ one_way_collision = true
 [node name="QuarryUpperPillar" type="AnimatableBody2D" parent="." unique_id=1839993903]
 position = Vector2(4960, 120)
 collision_mask = 0
-script = ExtResource("platform")
+script = ExtResource("dream_platform")
+surface_art = "stone"
 style = "stone"
 width = 190.0
 depth = 160.0
@@ -339,7 +385,8 @@ one_way_collision = true
 [node name="QuarryCarrier" type="AnimatableBody2D" parent="." unique_id=6139198]
 position = Vector2(5320, 220)
 collision_mask = 0
-script = ExtResource("platform")
+script = ExtResource("dream_platform")
+surface_art = "stone"
 style = "island"
 width = 185.0
 depth = 110.0
@@ -376,6 +423,7 @@ script = ExtResource("object")
 kind = "checkpoint"
 
 [node name="EntranceColumn" type="Sprite2D" parent="." unique_id=2072997038]
+visible = false
 modulate = Color(0.84, 0.92, 0.96, 0.86)
 z_index = -4
 position = Vector2(6040, 185.525)
@@ -411,7 +459,8 @@ bottom = 1700.0
 [node name="GalleryStep" type="AnimatableBody2D" parent="." unique_id=2123041597]
 position = Vector2(6730, 505)
 collision_mask = 0
-script = ExtResource("platform")
+script = ExtResource("dream_platform")
+surface_art = "stone"
 style = "island"
 width = 190.0
 depth = 110.0
@@ -425,7 +474,8 @@ one_way_collision = true
 [node name="GalleryLedge" type="AnimatableBody2D" parent="." unique_id=2023183251]
 position = Vector2(7040, 370)
 collision_mask = 0
-script = ExtResource("platform")
+script = ExtResource("dream_platform")
+surface_art = "stone"
 style = "island"
 width = 200.0
 depth = 105.0
@@ -452,7 +502,7 @@ one_way_collision = true
 [node name="SpringExitLedge" type="AnimatableBody2D" parent="." unique_id=1284741642]
 position = Vector2(7860, 330)
 collision_mask = 0
-script = ExtResource("platform")
+script = ExtResource("dream_platform")
 style = "island"
 width = 210.0
 depth = 115.0
@@ -476,9 +526,9 @@ position = Vector2(195, 50)
 shape = SubResource("shape_HighRuinExit")
 one_way_collision = true
 
-[node name="CourtyardSpring" parent="." unique_id=515613970 instance=ExtResource("spring")]
+[node name="CourtyardSpring" parent="." unique_id=515613970 instance=ExtResource("world_spring")]
 texture_filter = 4
-material = SubResource("ShaderMaterial_innra")
+material = SubResource("ShaderMaterial_yrys1")
 position = Vector2(7740, 650)
 launch_speed = 990.0
 
@@ -486,7 +536,13 @@ launch_speed = 990.0
 position = Vector2(7100, 650)
 speed = 90.0
 
+[node name="CourtGuard2" parent="." unique_id=739847983 instance=ExtResource("enemy")]
+position = Vector2(7659, 205)
+speed = 90.0
+obraceni = true
+
 [node name="CourtRuins" type="Sprite2D" parent="." unique_id=924355987]
+visible = false
 modulate = Color(0.84, 0.92, 0.96, 0.86)
 z_index = -4
 position = Vector2(6990, 522.8)
@@ -500,15 +556,11 @@ position = Vector2(8430, 125.8)
 scale = Vector2(0.7, 0.7)
 texture = ExtResource("ruin")
 
-[node name="Checkpoint_HighPass" type="Node2D" parent="." unique_id=989010169]
-position = Vector2(8410, 200)
-script = ExtResource("object")
-kind = "checkpoint"
-
 [node name="HighPassStart" type="AnimatableBody2D" parent="." unique_id=671746768]
 position = Vector2(8760, 120)
 collision_mask = 0
-script = ExtResource("platform")
+script = ExtResource("dream_platform")
+surface_art = "stone"
 style = "island"
 width = 210.0
 depth = 115.0
@@ -522,7 +574,8 @@ one_way_collision = true
 [node name="FragileHighPass" type="AnimatableBody2D" parent="." unique_id=127128768]
 position = Vector2(9110, 60)
 collision_mask = 0
-script = ExtResource("crumble")
+script = ExtResource("dream_fragile")
+surface_art = "stone"
 style = "bridge"
 width = 180.0
 depth = 55.0
@@ -536,7 +589,8 @@ one_way_collision = true
 [node name="HighPassRest" type="AnimatableBody2D" parent="." unique_id=2102098635]
 position = Vector2(9480, -70)
 collision_mask = 0
-script = ExtResource("platform")
+script = ExtResource("dream_platform")
+surface_art = "stone"
 style = "island"
 width = 210.0
 depth = 115.0
@@ -550,7 +604,8 @@ one_way_collision = true
 [node name="HighPassCarrier" type="AnimatableBody2D" parent="." unique_id=458480938]
 position = Vector2(9830, -10)
 collision_mask = 0
-script = ExtResource("platform")
+script = ExtResource("dream_platform")
+surface_art = "stone"
 style = "island"
 width = 180.0
 depth = 105.0
@@ -599,9 +654,9 @@ position = Vector2(280, 50)
 shape = SubResource("shape_LowerTreasure")
 one_way_collision = true
 
-[node name="TreasureReturnSpring" parent="." unique_id=435511271 instance=ExtResource("spring")]
+[node name="TreasureReturnSpring" parent="." unique_id=435511271 instance=ExtResource("world_spring")]
 texture_filter = 4
-material = SubResource("ShaderMaterial_nrgym")
+material = SubResource("ShaderMaterial_5y74u")
 position = Vector2(10210, 430)
 launch_speed = 1000.0
 
@@ -643,6 +698,12 @@ position = Vector2(11400, 300)
 patrol = 190.0
 speed = 90.0
 
+[node name="ForestGuard2" parent="." unique_id=1103815610 instance=ExtResource("enemy")]
+position = Vector2(11718, 300)
+patrol = 190.0
+speed = 90.0
+obraceni = true
+
 [node name="Checkpoint_FinalGaps" type="Node2D" parent="." unique_id=982025931]
 position = Vector2(11910, 300)
 script = ExtResource("object")
@@ -654,8 +715,9 @@ position = Vector2(12020, 300)
 [node name="FinalFragileA" type="AnimatableBody2D" parent="." unique_id=718330936]
 position = Vector2(12300, 220)
 collision_mask = 0
-script = ExtResource("crumble")
+script = ExtResource("dream_fragile")
 crumble_delay = 1.05
+surface_art = "stone"
 style = "bridge"
 width = 190.0
 depth = 55.0
@@ -669,8 +731,9 @@ one_way_collision = true
 [node name="FinalFragileB" type="AnimatableBody2D" parent="." unique_id=1953632518]
 position = Vector2(12630, 100)
 collision_mask = 0
-script = ExtResource("crumble")
+script = ExtResource("dream_fragile")
 crumble_delay = 1.05
+surface_art = "stone"
 style = "bridge"
 width = 185.0
 depth = 55.0
@@ -684,8 +747,9 @@ one_way_collision = true
 [node name="FinalFragileC" type="AnimatableBody2D" parent="." unique_id=1050518367]
 position = Vector2(12970, 220)
 collision_mask = 0
-script = ExtResource("crumble")
+script = ExtResource("dream_fragile")
 crumble_delay = 1.05
+surface_art = "stone"
 style = "bridge"
 width = 210.0
 depth = 55.0
@@ -717,7 +781,7 @@ bottom = 1700.0
 
 [node name="GuardianApproach" type="AnimatableBody2D" parent="." unique_id=56058980]
 texture_filter = 4
-material = SubResource("ShaderMaterial_s476l")
+material = SubResource("ShaderMaterial_d3xv1")
 position = Vector2(13882, 330)
 collision_mask = 0
 script = ExtResource("bridge")
@@ -726,7 +790,7 @@ rail_height = 85.0
 gaps = PackedVector2Array()
 
 [node name="GuardianCourtyard" type="AnimatableBody2D" parent="." unique_id=879712778]
-position = Vector2(14400, 550)
+position = Vector2(18500, 550)
 collision_mask = 0
 script = ExtResource("platform")
 width = 2200.0
@@ -743,7 +807,7 @@ shape = SubResource("shape_GuardianCourtyard_wall")
 
 [node name="GuardianCourtyard_Earth" type="Node2D" parent="." unique_id=51566466]
 z_index = -1
-position = Vector2(14400, 550)
+position = Vector2(18500, 550)
 script = ExtResource("earth")
 width = 2200.0
 bottom = 1700.0
@@ -756,43 +820,43 @@ look_offset = Vector2(80, 115)
 priority = 2
 
 [node name="MoleWarning" parent="." unique_id=813554392 instance=ExtResource("mole")]
-position = Vector2(14520, 550)
+position = Vector2(18620, 550)
 message = "Bite, Brúčouna ovládla temnota. Pomoz mu, ať může zase chránit stezku."
 
 [node name="Checkpoint_Boss" type="Node2D" parent="." unique_id=149587387]
-position = Vector2(14700, 550)
+position = Vector2(18800, 550)
 script = ExtResource("object")
 kind = "checkpoint"
 
-[node name="BossLantern" parent="." unique_id=1816985598 instance=ExtResource("lantern")]
-position = Vector2(14780, 550)
-
 [node name="BossHint" type="Marker2D" parent="." unique_id=1232109609]
-position = Vector2(14800, 500)
-script = ExtResource("tutorial")
+position = Vector2(18900, 500)
+script = ExtResource("world_hint")
 title = "Pomoz Brúčounovi"
-message = "Uhni jeho rozběhu. Až se mu nad hlavou točí hvězdy, skoč na něj."
+message = "Uhni rozběhu, při odpočinku skoč na hlavu. Od 3 srdcí přijdou vlny, při 1 dvě za sebou. Dřevo praská!"
 activation_size = Vector2(360, 260)
 
 [node name="Boss" parent="." unique_id=1446203197 instance=ExtResource("boss")]
-position = Vector2(16000, 550)
-left = 15100.0
-right = 16100.0
+z_index = 2
+position = Vector2(20100, 550)
+varied_attacks = true
+guardian_outro = true
+left = 19200.0
+right = 20200.0
 
 [node name="CourtyardColumn" type="Sprite2D" parent="." unique_id=1005532067]
 modulate = Color(0.84, 0.92, 0.96, 0.86)
 z_index = -4
-position = Vector2(16330, 445.525)
+position = Vector2(20430, 445.525)
 scale = Vector2(1.05, 1.05)
 texture = ExtResource("column")
 
 [node name="Goal" type="Node2D" parent="." unique_id=1789243818]
-position = Vector2(16430, 550)
+position = Vector2(20530, 550)
 script = ExtResource("object")
 kind = "goal"
 
 [node name="EndFlowers" parent="." unique_id=1098130728 instance=ExtResource("flowers")]
-position = Vector2(16510, 550)
+position = Vector2(20610, 550)
 scale = Vector2(0.7, 0.7)
 
 [node name="Crystal_01" type="Node2D" parent="." unique_id=432387139]
@@ -856,11 +920,11 @@ position = Vector2(7135, 305)
 script = ExtResource("object")
 
 [node name="Crystal_16" type="Node2D" parent="." unique_id=1677785608]
-position = Vector2(7420, 140)
+position = Vector2(7427, 165)
 script = ExtResource("object")
 
 [node name="Crystal_17" type="Node2D" parent="." unique_id=1297817794]
-position = Vector2(7580, 140)
+position = Vector2(7580, 155)
 script = ExtResource("object")
 
 [node name="Crystal_18" type="Node2D" parent="." unique_id=40015629]
@@ -868,19 +932,19 @@ position = Vector2(6880, 595)
 script = ExtResource("object")
 
 [node name="Crystal_19" type="Node2D" parent="." unique_id=405291061]
-position = Vector2(7450, 595)
+position = Vector2(7453, 608)
 script = ExtResource("object")
 
 [node name="Crystal_20" type="Node2D" parent="." unique_id=135419265]
-position = Vector2(7960, 265)
+position = Vector2(7965, 280)
 script = ExtResource("object")
 
 [node name="Crystal_21" type="Node2D" parent="." unique_id=1729639976]
-position = Vector2(8310, 135)
+position = Vector2(8313, 150)
 script = ExtResource("object")
 
 [node name="Crystal_22" type="Node2D" parent="." unique_id=1993947692]
-position = Vector2(8860, 55)
+position = Vector2(8865, 74)
 script = ExtResource("object")
 
 [node name="Crystal_23" type="Node2D" parent="." unique_id=1328686527]
@@ -888,11 +952,11 @@ position = Vector2(9195, 5)
 script = ExtResource("object")
 
 [node name="Crystal_24" type="Node2D" parent="." unique_id=461720370]
-position = Vector2(9580, -135)
+position = Vector2(9585, -120)
 script = ExtResource("object")
 
 [node name="Crystal_25" type="Node2D" parent="." unique_id=1767970637]
-position = Vector2(9920, -75)
+position = Vector2(9920, -70)
 script = ExtResource("object")
 
 [node name="Crystal_26" type="Node2D" parent="." unique_id=2084303272]
@@ -900,57 +964,411 @@ position = Vector2(10210, -15)
 script = ExtResource("object")
 
 [node name="Crystal_27" type="Node2D" parent="." unique_id=485428619]
-position = Vector2(10560, 35)
+position = Vector2(10559, 58)
 script = ExtResource("object")
 
 [node name="Crystal_28" type="Node2D" parent="." unique_id=2132013898]
-position = Vector2(10000, 375)
+position = Vector2(10210, 305)
 script = ExtResource("object")
 
 [node name="Crystal_29" type="Node2D" parent="." unique_id=1569233987]
-position = Vector2(10140, 375)
+position = Vector2(10210, 130)
 script = ExtResource("object")
 
 [node name="Crystal_30" type="Node2D" parent="." unique_id=1428937910]
-position = Vector2(10380, 375)
+position = Vector2(10376, 388)
 script = ExtResource("object")
 
 [node name="Crystal_31" type="Node2D" parent="." unique_id=1373361834]
-position = Vector2(11340, 235)
+position = Vector2(11340, 257)
 script = ExtResource("object")
 
 [node name="Crystal_32" type="Node2D" parent="." unique_id=242070893]
-position = Vector2(11640, 235)
+position = Vector2(11645, 257)
 script = ExtResource("object")
 
 [node name="Crystal_33" type="Node2D" parent="." unique_id=1303979646]
-position = Vector2(12100, 235)
+position = Vector2(12106, 254)
 script = ExtResource("object")
 
 [node name="Crystal_34" type="Node2D" parent="." unique_id=1291973255]
-position = Vector2(12390, 165)
+position = Vector2(12395, 173)
 script = ExtResource("object")
 
 [node name="Crystal_35" type="Node2D" parent="." unique_id=1440206845]
-position = Vector2(12715, 45)
+position = Vector2(12723, 55)
 script = ExtResource("object")
 
 [node name="Crystal_36" type="Node2D" parent="." unique_id=568304882]
-position = Vector2(13070, 165)
+position = Vector2(13075, 170)
 script = ExtResource("object")
 
 [node name="Crystal_37" type="Node2D" parent="." unique_id=414050735]
-position = Vector2(13520, 265)
+position = Vector2(13507, 295)
 script = ExtResource("object")
 
 [node name="Crystal_38" type="Node2D" parent="." unique_id=640318766]
-position = Vector2(13730, 265)
+position = Vector2(13747, 290)
 script = ExtResource("object")
 
 [node name="Crystal_39" type="Node2D" parent="." unique_id=105983548]
-position = Vector2(14260, 420)
+position = Vector2(14249, 450)
 script = ExtResource("object")
 
 [node name="Crystal_40" type="Node2D" parent="." unique_id=1746540584]
-position = Vector2(14490, 485)
+position = Vector2(19656, 250)
 script = ExtResource("object")
+
+[node name="Checkpoint_OldQuay" type="Node2D" parent="." unique_id=303395795]
+position = Vector2(2390, 470)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="RuneCourt" type="AnimatableBody2D" parent="." unique_id=1358323863]
+position = Vector2(14400, 550)
+collision_mask = 0
+script = ExtResource("platform")
+width = 600.0
+depth = 115.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RuneCourt" unique_id=474597226]
+position = Vector2(300, 50)
+shape = SubResource("Expansion_RuneCourt")
+
+[node name="RuneCourt_Earth" type="Node2D" parent="." unique_id=854945475]
+z_index = -1
+position = Vector2(14400, 550)
+script = ExtResource("earth")
+width = 600.0
+bottom = 1500.0
+
+[node name="Hint_Runes" type="Marker2D" parent="." unique_id=920305827]
+position = Vector2(14840, 500)
+script = ExtResource("world_hint")
+title = "Živé runy"
+message = "Svítící kámen tě unese. Když bliká, skoč dál; obrys značí, že zmizel."
+activation_size = Vector2(250, 220)
+display_seconds = 5.0
+
+[node name="RuneA" type="AnimatableBody2D" parent="." unique_id=1513915210]
+position = Vector2(15160, 400)
+collision_mask = 0
+script = ExtResource("dream_rhythm")
+surface_art = "stone"
+width = 190.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RuneA" unique_id=2129077515]
+position = Vector2(95, 24)
+shape = SubResource("Expansion_RuneA")
+one_way_collision = true
+
+[node name="RuneB" type="AnimatableBody2D" parent="." unique_id=1416918908]
+position = Vector2(15520, 230)
+collision_mask = 0
+script = ExtResource("dream_rhythm")
+phase_offset = 0.6
+surface_art = "stone"
+width = 190.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RuneB" unique_id=1134860710]
+position = Vector2(95, 24)
+shape = SubResource("Expansion_RuneB")
+one_way_collision = true
+
+[node name="RuneRest" type="AnimatableBody2D" parent="." unique_id=1688559398]
+position = Vector2(15880, 100)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "stone"
+width = 250.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RuneRest" unique_id=149053793]
+position = Vector2(125, 24)
+shape = SubResource("Expansion_RuneRest")
+one_way_collision = true
+
+[node name="RuneFerry" type="AnimatableBody2D" parent="." unique_id=1729029209]
+position = Vector2(16230, 120)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "stone"
+width = 180.0
+depth = 63.0
+travel = Vector2(180, -180)
+period = 5.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RuneFerry" unique_id=126214156]
+position = Vector2(90, 24)
+shape = SubResource("Expansion_RuneFerry")
+one_way_collision = true
+
+[node name="RuneFerry2" type="AnimatableBody2D" parent="." unique_id=674057098]
+position = Vector2(16230, 120)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "stone"
+width = 180.0
+depth = 63.0
+travel = Vector2(180, -180)
+period = 5.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RuneFerry2" unique_id=959001851]
+position = Vector2(90, 24)
+shape = SubResource("Expansion_RuneFerry")
+one_way_collision = true
+
+[node name="RuneOverlook" type="AnimatableBody2D" parent="." unique_id=1351215201]
+position = Vector2(16690, -120)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "stone"
+width = 260.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RuneOverlook" unique_id=1124428239]
+position = Vector2(130, 24)
+shape = SubResource("Expansion_RuneOverlook")
+one_way_collision = true
+
+[node name="SanctuaryShaleA" type="AnimatableBody2D" parent="." unique_id=53543271]
+position = Vector2(17090, 50)
+collision_mask = 0
+script = ExtResource("dream_fragile")
+crumble_delay = 1.25
+surface_art = "stone"
+width = 210.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SanctuaryShaleA" unique_id=589189367]
+position = Vector2(105, 24)
+shape = SubResource("Expansion_SanctuaryShaleA")
+one_way_collision = true
+
+[node name="SanctuaryShaleB" type="AnimatableBody2D" parent="." unique_id=1313321060]
+position = Vector2(17430, 220)
+collision_mask = 0
+script = ExtResource("dream_fragile")
+crumble_delay = 1.25
+surface_art = "stone"
+width = 210.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SanctuaryShaleB" unique_id=1465739234]
+position = Vector2(105, 24)
+shape = SubResource("Expansion_SanctuaryShaleB")
+one_way_collision = true
+
+[node name="SanctuaryStep" type="AnimatableBody2D" parent="." unique_id=1116383764]
+position = Vector2(17790, 400)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "stone"
+width = 230.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SanctuaryStep" unique_id=1563042188]
+position = Vector2(115, 24)
+shape = SubResource("Expansion_SanctuaryStep")
+one_way_collision = true
+
+[node name="SanctuaryEntry" type="AnimatableBody2D" parent="." unique_id=1936493456]
+position = Vector2(18190, 550)
+collision_mask = 0
+script = ExtResource("platform")
+width = 310.0
+depth = 115.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SanctuaryEntry" unique_id=2076772093]
+position = Vector2(155, 50)
+shape = SubResource("Expansion_SanctuaryEntry")
+
+[node name="SanctuaryEntry_Earth" type="Node2D" parent="." unique_id=13984235]
+z_index = -1
+position = Vector2(18190, 550)
+script = ExtResource("earth")
+width = 310.0
+bottom = 1500.0
+
+[node name="WorldCrystal_0" type="Node2D" parent="." unique_id=1843245093]
+position = Vector2(14566, 500)
+script = ExtResource("object")
+
+[node name="WorldCrystal_1" type="Node2D" parent="." unique_id=731320072]
+position = Vector2(15255, 357)
+script = ExtResource("object")
+
+[node name="WorldCrystal_2" type="Node2D" parent="." unique_id=447387248]
+position = Vector2(15615, 185)
+script = ExtResource("object")
+
+[node name="WorldCrystal_3" type="Node2D" parent="." unique_id=26869645]
+position = Vector2(16005, 45)
+script = ExtResource("object")
+
+[node name="WorldCrystal_4" type="Node2D" parent="." unique_id=347497642]
+position = Vector2(16820, -172)
+script = ExtResource("object")
+
+[node name="WorldCrystal_5" type="Node2D" parent="." unique_id=1755127999]
+position = Vector2(17195, 5)
+script = ExtResource("object")
+
+[node name="WorldCrystal_6" type="Node2D" parent="." unique_id=90857778]
+position = Vector2(17535, 170)
+script = ExtResource("object")
+
+[node name="WorldCrystal_7" type="Node2D" parent="." unique_id=233378977]
+position = Vector2(17905, 353)
+script = ExtResource("object")
+
+[node name="WorldCrystal_8" type="Node2D" parent="." unique_id=102396599]
+position = Vector2(18283, 505)
+script = ExtResource("object")
+
+[node name="Scenery_Pass" type="Node2D" parent="." unique_id=621501520]
+modulate = Color(0.9, 0.96, 1, 1)
+z_index = -6
+position = Vector2(10680, 100)
+script = ExtResource("world_art")
+piece = "banner"
+art_height = 165.0
+
+[node name="WorldDepth" type="Node" parent="." unique_id=685998178]
+script = ExtResource("world_depth")
+distant_motion = 0.025
+atmosphere = Color(0.85, 0.9, 1, 1)
+
+[node name="WorldScenery" type="Node2D" parent="." unique_id=1686474282]
+
+[node name="Conifers_01" type="Sprite2D" parent="WorldScenery" unique_id=72776800]
+modulate = Color(0.94, 0.98, 1, 0.92)
+z_index = -6
+position = Vector2(730, 553)
+scale = Vector2(0.7286432, 0.7286432)
+texture = ExtResource("scenery_Conifers")
+offset = Vector2(0, -199)
+
+[node name="Log_02" type="Sprite2D" parent="WorldScenery" unique_id=1462189488]
+modulate = Color(0.94, 0.98, 1, 0.92)
+z_index = -6
+position = Vector2(2240, 473)
+scale = Vector2(0.4296875, 0.4296875)
+texture = ExtResource("scenery_Log")
+offset = Vector2(0, -128)
+
+[node name="Columns_03" type="Sprite2D" parent="WorldScenery" unique_id=684814349]
+modulate = Color(0.94, 0.98, 1, 0.92)
+z_index = -6
+position = Vector2(4310, 403)
+scale = Vector2(0.5475504, 0.5475504)
+texture = ExtResource("scenery_Columns")
+offset = Vector2(0, -173.5)
+
+[node name="Arch_04" type="Sprite2D" parent="WorldScenery" unique_id=1325622129]
+modulate = Color(0.94, 0.98, 1, 0.92)
+z_index = -6
+position = Vector2(6080, 293)
+scale = Vector2(0.6851312, 0.6851312)
+texture = ExtResource("scenery_Arch")
+offset = Vector2(0, -171.5)
+
+[node name="Ferns_05" type="Sprite2D" parent="WorldScenery" unique_id=2099348723]
+modulate = Color(0.94, 0.98, 1, 0.92)
+z_index = -6
+position = Vector2(7170, 653)
+scale = Vector2(0.3492647, 0.3492647)
+texture = ExtResource("scenery_Ferns")
+offset = Vector2(0, -136)
+
+[node name="Tree_06" type="Sprite2D" parent="WorldScenery" unique_id=1053991446]
+modulate = Color(0.94, 0.98, 1, 0.92)
+z_index = -6
+position = Vector2(11756.001, 296)
+scale = Vector2(0.6691919, 0.6691919)
+texture = ExtResource("scenery_Tree")
+offset = Vector2(0, -198)
+
+[node name="Lookout_07" type="Sprite2D" parent="WorldScenery" unique_id=1437047722]
+modulate = Color(0.94, 0.98, 1, 0.92)
+z_index = -6
+position = Vector2(13630, 333)
+scale = Vector2(0.5722071, 0.5722071)
+texture = ExtResource("scenery_Lookout")
+offset = Vector2(0, -183.5)
+
+[node name="Columns_08" type="Sprite2D" parent="WorldScenery" unique_id=1448564295]
+modulate = Color(0.94, 0.98, 1, 0.92)
+z_index = -6
+position = Vector2(14676, 546.00006)
+scale = Vector2(0.5763689, 0.5763689)
+texture = ExtResource("scenery_Columns")
+offset = Vector2(0, -173.5)
+flip_h = true
+
+[node name="FarIsland_10" type="Sprite2D" parent="WorldScenery" unique_id=1178016339]
+modulate = Color(0.76, 0.85, 1, 0.38)
+z_index = -45
+position = Vector2(11500, -55)
+scale = Vector2(0.4373178, 0.4373178)
+texture = ExtResource("scenery_FarIsland")
+offset = Vector2(0, -171.5)
+
+[node name="BossRefuge" type="AnimatableBody2D" parent="." unique_id=828698142]
+z_index = -1
+position = Vector2(19536, 300)
+collision_mask = 0
+script = ExtResource("boss_refuge")
+crumble_delay = 1.8
+return_delay = 4.0
+surface_art = "wood"
+width = 240.0
+depth = 51.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossRefuge" unique_id=725083427]
+position = Vector2(120, 18)
+shape = SubResource("BossRefugeShape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="CourtGuard3" parent="." unique_id=197501473 instance=ExtResource("enemy")]
+position = Vector2(10915, 100)
+speed = 90.0
+obraceni = true
+
+[node name="RiverBetweenBanks2" parent="." unique_id=960148665 instance=ExtResource("35_qlv1n")]
+position = Vector2(999, 693)
+scale = Vector2(0.7, 0.7)
+width = 6000.0
+depth = 1440.0
+preview_in_editor = true
+
+[node name="RiverBetweenBanks3" parent="." unique_id=82666626 instance=ExtResource("35_qlv1n")]
+position = Vector2(5187.9995, 689)
+scale = Vector2(0.7, 0.7)
+width = 6000.0
+depth = 1440.0
+preview_in_editor = true
+
+[node name="RiverBetweenBanks4" parent="." unique_id=1304205554 instance=ExtResource("35_qlv1n")]
+position = Vector2(9388, 700)
+scale = Vector2(0.7, 0.7)
+width = 6000.0
+depth = 1440.0
+preview_in_editor = true
+
+[node name="RiverBetweenBanks5" parent="." unique_id=899969219 instance=ExtResource("35_qlv1n")]
+position = Vector2(13882, 645)
+scale = Vector2(0.7, 0.7)
+width = 6000.0
+depth = 1500.0
+preview_in_editor = true
+
+[node name="RiverBetweenBanks6" parent="." unique_id=884797693 instance=ExtResource("35_qlv1n")]
+position = Vector2(14400, 650)
+scale = Vector2(0.7, 0.7)
+width = 6000.0
+depth = 1500.0
+preview_in_editor = true

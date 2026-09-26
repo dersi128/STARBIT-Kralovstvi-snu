@@ -3,6 +3,14 @@ extends Node2D
 @export_enum("rock_enemy","cloud_enemy","stinko") var kind := "rock_enemy"
 @export var patrol := 240.0
 @export var speed := 65.0
+## Zaškrtnutím nepřítel vyrazí doleva a jeho trasa povede doleva od výchozí pozice.
+@export var obraceni := false:
+ set(value):
+  obraceni=value
+  if is_node_ready():
+   direction=-1.0 if obraceni else 1.0
+   if is_instance_valid(anim):anim.flip_h=direction<0
+   queue_redraw()
 var origin := Vector2.ZERO
 var direction := 1.0
 var time := 0.0
@@ -12,6 +20,7 @@ var turn_time:=0.0
 var anim:AnimatedSprite2D
 var attack_cooldown:=0.0
 func _ready() -> void:
+ direction=-1.0 if obraceni else 1.0
  _setup_sprite()
  if Engine.is_editor_hint(): return
  origin=position
@@ -37,10 +46,15 @@ func _physics_process(delta:float) -> void:
  _animate()
  queue_redraw()
 func _move_patrol(delta:float) -> void:
+ var bounds:=_patrol_bounds()
  position.x+=direction*speed*delta
- if position.x>origin.x+patrol:position.x=origin.x+patrol;direction=-1;turn_time=0.18
- if position.x<origin.x:position.x=origin.x;direction=1;turn_time=0.18
+ if position.x>bounds.y:position.x=bounds.y;direction=-1;turn_time=0.18
+ if position.x<bounds.x:position.x=bounds.x;direction=1;turn_time=0.18
  position.y=origin.y+(sin(time*2.5)*26 if kind=="cloud_enemy" else (sin(time*2.0)*7.0 if kind=="stinko" else 0.0))
+
+func _patrol_bounds() -> Vector2:
+ var distance:=maxf(patrol,0.0)
+ return Vector2(origin.x-distance,origin.x) if obraceni else Vector2(origin.x,origin.x+distance)
 
 func _walking_speed() -> float:
  return absf(speed)
@@ -51,6 +65,7 @@ func _setup_sprite() -> void:
   anim=AnimatedSprite2D.new();anim.name="AnimatedSprite2D";add_child(anim)
   anim.sprite_frames=load("res://assets/supplied/stinko.tres" if kind=="stinko" else "res://assets/animations/"+kind+".tres")
   anim.scale=Vector2.ONE*0.30;anim.offset=Vector2(0,-168)
+ anim.flip_h=direction<0
  if not Engine.is_editor_hint():anim.play("idle")
 func _animate() -> void:
  if anim==null:return
@@ -68,4 +83,6 @@ func _draw() -> void:
  if kind!="cloud_enemy" and not defeated:
   draw_set_transform(Vector2(0,1),0,Vector2(1,0.14))
   draw_circle(Vector2.ZERO,26,Color(0.1,0.1,0.25,0.15));draw_set_transform(Vector2.ZERO)
- if Engine.is_editor_hint():draw_line(Vector2(0,-20),Vector2(patrol,-20),Color.ORANGE,2)
+ if Engine.is_editor_hint():
+  var end_x:=maxf(patrol,0.0)*(-1.0 if obraceni else 1.0)
+  draw_line(Vector2(0,-20),Vector2(end_x,-20),Color.ORANGE,2)

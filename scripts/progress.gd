@@ -5,6 +5,11 @@ const SFX_VOLUME_DB := -8.0
 const LEVEL_COUNT := 10
 var unlocked := 1
 var muted := false
+var music_volume := 1.0
+var effects_volume := 0.65
+var audio_save_timer: Timer
+const MUSIC_BUS := "StarbitMusic"
+const EFFECTS_BUS := "StarbitEffects"
 var level_stars: Dictionary = {}
 var tones: Array[AudioStreamPlayer] = []
 var _sfx_last_at: Dictionary = {}
@@ -12,24 +17,58 @@ var _sfx_sequence: Dictionary = {}
 var _sfx_effects: Dictionary = {}
 func _ready() -> void:
  process_mode = Node.PROCESS_MODE_ALWAYS
+ _ensure_audio_buses()
+ audio_save_timer = Timer.new()
+ audio_save_timer.one_shot = true
+ audio_save_timer.wait_time = 0.3
+ audio_save_timer.timeout.connect(save)
+ add_child(audio_save_timer)
  # Warm the effects at game startup, after Godot has imported new audio files.
  _sfx_effects=load(SFX_BANK_PATH).EFFECTS
  var c := ConfigFile.new()
  if c.load("user://dreambit.cfg") == OK:
   unlocked = clampi(int(c.get_value("save", "unlocked", 1)), 1, 10)
   muted = bool(c.get_value("save", "muted", false))
+  music_volume = clampf(float(c.get_value("audio", "music", 1.0)), 0.0, 1.0)
+  effects_volume = clampf(float(c.get_value("audio", "effects", 0.65)), 0.0, 1.0)
   var stored = c.get_value("save", "level_stars", {})
   var legacy := not c.has_section_key("save", "level_stars")
   for n in range(1, LEVEL_COUNT + 1):
    var value = stored.get(str(n), 0) if stored is Dictionary else 0
    if legacy and n < unlocked:value = 1
    level_stars[str(n)] = clampi(value, 0, 3) if value is int else 0
+ apply_audio_volumes()
+
+func _ensure_audio_buses() -> void:
+ for bus_name in [MUSIC_BUS, EFFECTS_BUS]:
+  if AudioServer.get_bus_index(bus_name) < 0:
+   AudioServer.add_bus()
+   var index := AudioServer.bus_count - 1
+   AudioServer.set_bus_name(index, bus_name)
+   AudioServer.set_bus_send(index, "Master")
+
+func apply_audio_volumes() -> void:
+ for pair in [[MUSIC_BUS, music_volume], [EFFECTS_BUS, effects_volume]]:
+  var index := AudioServer.get_bus_index(pair[0])
+  if index < 0:continue
+  var gain := float(pair[1])
+  AudioServer.set_bus_volume_db(index, linear_to_db(maxf(0.0001, gain)))
+  AudioServer.set_bus_mute(index, muted or gain <= 0.0)
+
+func set_audio_volume(channel: String, value: float) -> void:
+ if channel == "music":music_volume = clampf(value, 0.0, 1.0)
+ elif channel == "effects":effects_volume = clampf(value, 0.0, 1.0)
+ apply_audio_volumes()
+ audio_save_timer.start()
+
 func save() -> void:
  var c := ConfigFile.new()
  c.load("user://dreambit.cfg")
  c.set_value("save", "unlocked", unlocked)
  c.set_value("save", "muted", muted)
  c.set_value("save", "level_stars", level_stars)
+ c.set_value("audio", "music", music_volume)
+ c.set_value("audio", "effects", effects_volume)
  c.save("user://dreambit.cfg")
 func stars_for_run(diamonds:int,total:int) -> int:
  # A level without diamonds awards completion only. Half must be exceeded.
@@ -65,6 +104,7 @@ func sound(freq: float, length: float = 0.12) -> void:
   bytes.encode_s16(i*2,v)
  stream.data = bytes
  var p := AudioStreamPlayer.new()
+ p.bus = EFFECTS_BUS
  p.stream = stream
  p.volume_db = -8.0 + SFX_VOLUME_DB
  add_child(p)
@@ -118,7 +158,7 @@ func sfx(event:String) -> void:
    var v:=0.55*env*(sin(phase)+0.18*sin(phase*2.0)+0.08*sin(phase*3.0))
    data.encode_s16(i*2,int(clampf(v,-0.9,0.9)*32767))
   stream.data=data;clip_cache[event]=stream
- var p:=AudioStreamPlayer.new();p.stream=clip_cache[event];p.volume_db=float(spec[3])+SFX_VOLUME_DB;add_child(p);tones.append(p)
+ var p:=AudioStreamPlayer.new();p.bus=EFFECTS_BUS;p.stream=clip_cache[event];p.volume_db=float(spec[3])+SFX_VOLUME_DB;add_child(p);tones.append(p)
  p.finished.connect(func():tones.erase(p);p.queue_free());p.play()
 
 func _play_designed_sfx(event:String) -> void:
@@ -139,6 +179,7 @@ func _play_designed_sfx(event:String) -> void:
  var index:=int(_sfx_sequence.get(event,0))
  var clips:Array=spec.clips
  var voice:=AudioStreamPlayer.new()
+ voice.bus=EFFECTS_BUS
  voice.stream=clips[index%clips.size()]
  voice.volume_db=float(spec.db)+SFX_VOLUME_DB
  voice.set_meta("sfx_event",event)
@@ -169,6 +210,7 @@ func play_music(track:String) -> void:
  stream.loop=track!="victory"
  var old:=music
  music=AudioStreamPlayer.new()
+ music.bus=MUSIC_BUS
  music.stream=stream;music.volume_db=-50;add_child(music);music.play()
  music_track=track
  create_tween().tween_property(music,"volume_db",-12.0 if track=="menu_adventure" else -15.0,0.65)

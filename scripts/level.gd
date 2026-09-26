@@ -51,7 +51,7 @@ func respawn_player() -> void:
  player.get_node("Camera2D").reset_follow()
  var boss=get_node_or_null("Boss")
  if boss and not boss.defeated:
-  boss.hp=3;boss.state="sleep";boss.timer=0;boss.position.x=boss.right-100
+  boss.reset_encounter()
 
 func check_portal_contact(previous:Vector2,current:Vector2) -> bool:
  if not star_collected or boss_alive:return false

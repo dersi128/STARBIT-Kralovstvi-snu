@@ -4,6 +4,7 @@ const DREAM_SCREENS=preload("res://scripts/dream_screens.gd")
 const COLLECTIBLE_HUD=preload("res://scripts/collectible_hud.gd")
 const PAUSE_THEME=preload("res://scripts/pause_menu_theme.gd")
 const ILLUSTRATED_MENU=preload("res://scripts/illustrated_menu.gd")
+const REWARDS_SCREEN=preload("res://scripts/rewards_screen.gd")
 const LEVEL_LOADER=preload("res://scripts/level_loader.gd")
 var level_loader:CanvasLayer
 var preview_number := 0
@@ -111,7 +112,7 @@ func menu() -> void:
   "new":func():start_level(1),
   "continue":_continue_from_menu,
   "settings":settings,
-  "credits":credits,
+  "rewards":rewards,
   "quit":func():get_tree().quit()
  },is_instance_valid(level) or Progress.unlocked>1)
  level_loader.prefetch.call_deferred("res://levels/Level_01.tscn")
@@ -120,19 +121,65 @@ func _continue_from_menu() -> void:
  elif is_instance_valid(level):resume()
  else:
   selected_level=Progress.unlocked;selected_region=floori((selected_level-1)/5.0);selection()
+func audio_slider(parent: VBoxContainer, caption: String, channel: String, initial: float) -> void:
+ var row := VBoxContainer.new()
+ var label := Label.new()
+ label.add_theme_font_size_override("font_size", 22)
+ label.add_theme_color_override("font_color", Color("143458"))
+ label.text = "%s  %d %%" % [caption, roundi(initial * 100)]
+ row.add_child(label)
+ var slider := HSlider.new()
+ slider.name = "MusicVolume" if channel == "music" else "EffectsVolume"
+ slider.custom_minimum_size = Vector2(390, 40)
+ slider.min_value = 0
+ slider.max_value = 100
+ slider.step = 1
+ slider.value = roundi(initial * 100)
+ slider.add_theme_stylebox_override("slider", box_style(Color("c8e1f0")))
+ slider.add_theme_stylebox_override("grabber_area", box_style(Color("71cdf0")))
+ slider.value_changed.connect(func(value: float):
+  label.text = "%s  %d %%" % [caption, roundi(value)]
+  Progress.set_audio_volume(channel, value / 100.0)
+ )
+ slider.drag_ended.connect(func(changed: bool):
+  if changed and channel == "effects":Progress.sfx("gold")
+  Progress.save()
+ )
+ row.add_child(slider)
+ parent.add_child(row)
+
 func settings() -> void:
+ mode="settings"
  var v:=centered_panel("Nastavení")
- if mode=="menu":
-  background()
-  Progress.play_music("menu_adventure")
- v.add_child(button("Zvuk: "+("vypnutý" if Progress.muted else "zapnutý"),func():Progress.muted=not Progress.muted;Progress.silence();Progress.save();settings(),Color("d2b0f7")))
+ background()
+ Progress.play_music("menu_adventure")
+ v.add_child(button("Zvuk: "+("vypnutý" if Progress.muted else "zapnutý"),func():Progress.muted=not Progress.muted;Progress.apply_audio_volumes();Progress.silence();Progress.save();settings(),Color("d2b0f7")))
+ audio_slider(v, "Hudba", "music", Progress.music_volume)
+ audio_slider(v, "Zvukové efekty", "effects", Progress.effects_volume)
  var l:=Label.new();l.text="Pohyb: ← → nebo A/D\nSkok: mezerník nebo ↑\nPauza: Escape\nFouk: druhý stisk skoku ve vzduchu";l.add_theme_color_override("font_color",Color("143458"));l.add_theme_font_size_override("font_size",20);v.add_child(l)
- v.add_child(button("Zpět",menu,Color("78d4f8")))
+ var navigation:=HBoxContainer.new();navigation.add_theme_constant_override("separation",12);v.add_child(navigation)
+ for spec in [["Autoři",credits,"purple"],["Zpět",menu,"blue"]]:
+  var item:=PAUSE_THEME.button(spec[0],spec[1],spec[2])
+  item.custom_minimum_size=Vector2(208,60);item.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+  item.add_theme_font_size_override("font_size",22);navigation.add_child(item)
 func credits() -> void:
+ mode="credits"
  var v:=centered_panel("Velora")
- if mode=="menu":background()
+ background()
  var l:=Label.new();l.text="STARBIT · Království snů\nBit, Jiskra, Fouk a jejich dobrodružství.\nVytvořeno podle dodaných výtvarných předloh.";l.add_theme_color_override("font_color",Color("143458"));l.add_theme_font_size_override("font_size",20);v.add_child(l)
- v.add_child(button("Zpět",menu,Color("f6abc9")))
+ v.add_child(button("Zpět",settings,Color("f6abc9")))
+func rewards() -> void:
+ mode="rewards";release_input()
+ if is_instance_valid(level):level.process_mode=Node.PROCESS_MODE_DISABLED
+ clear_ui()
+ var view:=REWARDS_SCREEN.new()
+ screen.add_child(view)
+ view.setup(menu,_apply_selected_looks)
+
+func _apply_selected_looks() -> void:
+ if is_instance_valid(level) and is_instance_valid(level.player):
+  level.player.apply_selected_looks()
+
 func selection() -> void:
  mode="selection";release_input()
  if is_instance_valid(level):level.process_mode=Node.PROCESS_MODE_DISABLED
@@ -225,6 +272,7 @@ func pause_game() -> void:
  v.add_child(PAUSE_THEME.button("Hlavní menu",menu,"purple"))
 func resume() -> void:
  if run_finished:selection();return
+ _apply_selected_looks()
  mode="play";level.process_mode=Node.PROCESS_MODE_INHERIT;game_ui()
 func hint(_text:String) -> void:
  pass # All guidance is delivered by Krtecek in speech bubbles.
@@ -255,7 +303,8 @@ func _process(delta:float) -> void:
  if Input.is_action_just_pressed("ui_cancel"):
   if mode=="play":pause_game()
   elif mode=="pause":resume()
-  elif mode=="selection":menu()
+  elif mode in ["selection","rewards","settings"]:menu()
+  elif mode=="credits":settings()
  if mode!="play":return
  update_speech(delta)
  tip_time-=delta
@@ -293,7 +342,19 @@ func speak(source:Node2D,text:String,voice:String="voice_mole") -> void:
   bubble_name.text="Brúčoun" if voice=="voice_bear" else ("Krteček" if voice=="voice_mole" else "Jiskra")
  bubble.visible=true
 func _begin_mole_dialogue(source:Node2D) -> void:
- if source.message.strip_edges().is_empty():return
+ _begin_story_dialogue(source,source.message)
+
+func begin_guardian_dialogue(source:Node2D) -> bool:
+ if mode!="play" or not is_instance_valid(level) or not is_instance_valid(source):return false
+ if not level.is_ancestor_of(source) or not source.defeated or source.dialogue_started:return false
+ var healed:=source.healing.duplicate() as ShaderMaterial
+ healed.set_shader_parameter("freed",1.0)
+ healed.set_shader_parameter("hit_flash",0.0)
+ _begin_story_dialogue(source,source.OUTRO_TEXT,"Brúčoun – strážce stezky",source.sprite.sprite_frames,healed,"Převzít hvězdu",Callable(source,"finish_guardian_dialogue"))
+ return true
+
+func _begin_story_dialogue(source:Node2D,message:String,speaker_name:String="Krteček",frames:SpriteFrames=null,portrait_material:Material=null,finish_text:String="Vyrazit!",after_dialogue:Callable=Callable()) -> void:
+ if message.strip_edges().is_empty():return
  mode="dialogue";dialogue_session+=1
  var session:=dialogue_session
  var paused_level:=level
@@ -307,9 +368,9 @@ func _begin_mole_dialogue(source:Node2D) -> void:
  bubble.hide();speaker=null;speech_content=""
  mole_dialogue=MOLE_DIALOGUE.new()
  screen.add_child(mole_dialogue)
- mole_dialogue.setup(source.message)
- mole_dialogue.finished.connect(func():_finish_mole_dialogue(source,paused_level,session,previous_process_mode,touch_was_visible,previous_touch_mode))
-func _finish_mole_dialogue(source:Node2D,paused_level:Node2D,session:int,previous_process_mode:int,touch_was_visible:bool,previous_touch_mode:int) -> void:
+ mole_dialogue.setup(message,speaker_name,frames,portrait_material,finish_text)
+ mole_dialogue.finished.connect(func():_finish_story_dialogue(source,paused_level,session,previous_process_mode,touch_was_visible,previous_touch_mode,after_dialogue))
+func _finish_story_dialogue(source:Node2D,paused_level:Node2D,session:int,previous_process_mode:int,touch_was_visible:bool,previous_touch_mode:int,after_dialogue:Callable=Callable()) -> void:
  if session!=dialogue_session or mode!="dialogue":return
  if is_instance_valid(source):source.set_meta("story_read",true)
  release_input()
@@ -323,6 +384,7 @@ func _finish_mole_dialogue(source:Node2D,paused_level:Node2D,session:int,previou
  mole_dialogue=null
  touch.visible=touch_was_visible;touch.process_mode=previous_touch_mode
  mode="play";level.process_mode=previous_process_mode
+ if after_dialogue.is_valid():after_dialogue.call()
 
 func update_speech(delta:float) -> void:
  if not is_instance_valid(bubble):return
@@ -345,3 +407,6 @@ func update_speech(delta:float) -> void:
 func _notification(what:int) -> void:
  if what==NOTIFICATION_APPLICATION_PAUSED or what==NOTIFICATION_WM_GO_BACK_REQUEST:
   if mode=="play":pause_game()
+  elif what==NOTIFICATION_WM_GO_BACK_REQUEST:
+   if mode=="credits":settings()
+   elif mode in ["rewards","settings","selection"]:menu()

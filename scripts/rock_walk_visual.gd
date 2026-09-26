@@ -18,6 +18,13 @@ var _turn_from := 1.0
 var _turn_to := 1.0
 var _turn_feet: Array[Vector2] = [Vector2.ZERO, Vector2.ZERO]
 
+func reset_facing(direction: float) -> void:
+	facing = direction
+	_turn_from = direction
+	_turn_to = direction
+	_turn_age = TURN_DURATION
+	queue_redraw()
+
 func update_pose(walk_phase: float, moving: bool, direction: float, slope: float, delta: float) -> void:
 	if direction != _turn_to:
 		# Capture the planted feet before shifting weight. No interpolation of

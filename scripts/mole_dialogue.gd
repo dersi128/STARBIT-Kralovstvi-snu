@@ -21,9 +21,11 @@ var closing := false
 var press_guard := 0.18
 var last_sound := -1
 var motion: Tween
+var last_button_text := "Vyrazit!"
 
-func setup(message: String) -> void:
+func setup(message: String, speaker_name: String = "Krteček", frames: SpriteFrames = null, portrait_material: Material = null, finish_text: String = "Vyrazit!") -> void:
 	name = "MoleDialogue"
+	last_button_text = finish_text
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	mouse_filter = Control.MOUSE_FILTER_STOP
@@ -42,11 +44,12 @@ func setup(message: String) -> void:
 	_panel(Rect2(96, 397, 1088, 299), Color("fff8e7"))
 	_panel(Rect2(119, 431, 166, 220), Color("d7f3e8"))
 	portrait = AnimatedSprite2D.new()
-	portrait.sprite_frames = MOLE
+	portrait.sprite_frames = frames if frames != null else MOLE
+	portrait.material = portrait_material
 	portrait.position = Vector2(202, 539)
 	portrait.scale = Vector2.ONE * 0.34
 	canvas.add_child(portrait)
-	_label("Krteček", Rect2(316, 415, 450, 44), 30, Color("26745d"))
+	_label(speaker_name, Rect2(316, 415, 690, 44), 30, Color("26745d"))
 	page_label = _label("", Rect2(1050, 420, 104, 34), 20, Color("527186"))
 	page_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 	content = _label("", Rect2(316, 468, 834, 136), 28, Color("203e57"))
@@ -130,7 +133,7 @@ func _show_page() -> void:
 	content.visible_characters = 0
 	page_label.text = "%d / %d" % [page_index + 1, pages.size()]
 	confirm.text = "Zobrazit vše"
-	portrait.play("talk")
+	portrait.play("talk" if portrait.sprite_frames.has_animation("talk") else "idle")
 
 func _process(delta: float) -> void:
 	press_guard = maxf(0.0, press_guard - delta)
@@ -147,7 +150,7 @@ func _process(delta: float) -> void:
 
 func _reveal() -> void:
 	content.visible_characters = -1
-	confirm.text = "Vyrazit!" if page_index == pages.size() - 1 else "Další"
+	confirm.text = last_button_text if page_index == pages.size() - 1 else "Další"
 	portrait.play("idle")
 
 func _advance() -> void:

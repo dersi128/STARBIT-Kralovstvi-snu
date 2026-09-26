@@ -16,26 +16,38 @@ filter_clip = true
 
 [sub_resource type="AtlasTexture" id="F10"]
 atlas = ExtResource("1")
-region = Rect2(633, 636, 307, 271)
-margin = Rect2(46.5, 77, 93, 89)
+region = Rect2(631, 634, 349, 275)
+margin = Rect2(44.5, 75, 51, 85)
 filter_clip = true
 
 [sub_resource type="AtlasTexture" id="F11"]
 atlas = ExtResource("1")
-region = Rect2(940, 638, 303, 268)
-margin = Rect2(48.5, 80, 97, 92)
+region = Rect2(980, 635, 266, 274)
+margin = Rect2(88.5, 77, 134, 86)
 filter_clip = true
 
 [sub_resource type="AtlasTexture" id="F4"]
 atlas = ExtResource("1")
-region = Rect2(9, 334, 305, 288)
-margin = Rect2(47.5, 60, 95, 72)
+region = Rect2(6, 331, 328, 296)
+margin = Rect2(44.5, 57, 72, 64)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F5"]
+atlas = ExtResource("1")
+region = Rect2(348, 323, 271, 304)
+margin = Rect2(83, 47, 129, 56)
 filter_clip = true
 
 [sub_resource type="AtlasTexture" id="F6"]
 atlas = ExtResource("1")
-region = Rect2(644, 327, 296, 299)
-margin = Rect2(52, 49, 104, 61)
+region = Rect2(641, 324, 304, 306)
+margin = Rect2(49, 46, 96, 54)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="F7"]
+atlas = ExtResource("1")
+region = Rect2(971, 328, 276, 298)
+margin = Rect2(79, 54, 124, 62)
 filter_clip = true
 
 [sub_resource type="AtlasTexture" id="F13"]
@@ -86,18 +98,6 @@ region = Rect2(951, 23, 292, 290)
 margin = Rect2(54, 58, 108, 70)
 filter_clip = true
 
-[sub_resource type="AtlasTexture" id="F5"]
-atlas = ExtResource("1")
-region = Rect2(314, 326, 302, 298)
-margin = Rect2(49, 50, 98, 62)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="F7"]
-atlas = ExtResource("1")
-region = Rect2(940, 331, 304, 291)
-margin = Rect2(48, 57, 96, 69)
-filter_clip = true
-
 [resource]
 animations = [{
 "frames": [{
@@ -119,16 +119,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("F9")
-}, {
-"duration": 1.0,
-"texture": SubResource("F10")
-}, {
-"duration": 1.0,
 "texture": SubResource("F4")
 }, {
 "duration": 1.0,
+"texture": SubResource("F5")
+}, {
+"duration": 1.0,
 "texture": SubResource("F6")
+}, {
+"duration": 1.0,
+"texture": SubResource("F7")
 }],
 "loop": 1,
 "name": &"charge",
