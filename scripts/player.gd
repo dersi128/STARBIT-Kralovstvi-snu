@@ -34,6 +34,9 @@ var anim_time := 0.0
 var happy := 0.0
 var invulnerable := 0.0
 var frozen := false
+var repair_active := false
+var repair_target: Node2D
+var repair_clock := 0.0
 var has_fouk := false
 var previous_bottom := 0.0
 var deaths := 0
@@ -100,6 +103,20 @@ func apply_selected_looks() -> void:
  if is_instance_valid(sprite):WARDROBE.apply_to(sprite,"bit")
  if is_instance_valid(drone):WARDROBE.apply_to(drone,"fouk")
 
+func begin_repair(target:Node2D) -> bool:
+ if frozen and repair_target!=target:return false
+ if repair_target!=target:
+  repair_target=target;repair_clock=0.0
+  happy=0.0;previous_happy=0.0;land_time=0.0;turn_time=0.0
+  pickup_pose_active=false;pushing=false
+  if absf(target.global_position.x-global_position.x)>4:facing=signf(target.global_position.x-global_position.x)
+ repair_active=true;frozen=true;velocity=Vector2.ZERO
+ return true
+
+func end_repair() -> void:
+ if not repair_active:return
+ repair_active=false;repair_target=null;repair_clock=0.0;frozen=false
+
 func _physics_process(delta: float) -> void:
  var previous_position:=global_position
  var previous_speed:=velocity.x
@@ -121,6 +138,9 @@ func _physics_process(delta: float) -> void:
  celebration_age+=delta
  previous_happy=happy
  update_visual_effects(delta)
+ if repair_active:
+  if is_instance_valid(repair_target):repair_clock+=delta
+  else:end_repair()
  if frozen:
   velocity=Vector2.ZERO
   animate(delta)
@@ -247,6 +267,12 @@ func animate(delta: float) -> void:
 
  if show_hurt_pose:
   key="hurt";visual_state="hurt";height=86.0
+ elif repair_active:
+  var pose_index:int=[1,2,3,2][int(repair_clock*6.0)%4]
+  key="push"+str(pose_index);visual_state="repair";height=90.0
+  tilt=facing*(0.10+sin(repair_clock*TAU*3.0)*0.025)
+  offset.x=facing*7.0
+  stretch=Vector2(1.025,0.96+sin(repair_clock*TAU*3.0)*0.012)
  elif pushing:
   key="push"+str(1+int(push_clock*7)%4);visual_state="push"
   offset.x=facing*9
@@ -285,7 +311,7 @@ func animate(delta: float) -> void:
    stretch*=Vector2(1.0+settle*0.025,1.0-settle*0.025)
    tilt-=facing*settle*0.022
 
- if grounded and not show_hurt_pose and not pushing and land_time>0:
+ if grounded and not show_hurt_pose and not pushing and not repair_active and land_time>0:
   visual_state="land"
   var t:=1.0-land_time/LAND_DURATION
   # Absorb the impact early, then ease out while the knees straighten.
@@ -299,9 +325,9 @@ func animate(delta: float) -> void:
   if not moving or LAND_DURATION-land_time<LAND_RUN_RECOVERY:
    key="land";height=74.0
 
- if moving or not grounded or pushing or hurt_time>0:
+ if moving or not grounded or pushing or hurt_time>0 or repair_active:
   pickup_pose_active=false
- if happy>0 and hurt_time<=0 and not pushing:
+ if happy>0 and hurt_time<=0 and not pushing and not repair_active:
   var u:=clampf(celebration_age/maxf(celebration_duration,0.01),0,1)
   var joy:=sin(u*PI)
   if pickup_pose_active and land_time<=0:
@@ -463,6 +489,13 @@ func update_visual_effects(delta:float) -> void:
   if pickup_echoes[i].age>=0.42:pickup_echoes.remove_at(i)
 
 func _draw() -> void:
+ if repair_active:
+  # A small moving spanner accompanies the existing working-hand poses.
+  var hand:=Vector2(facing*29,-43)
+  draw_set_transform(hand,facing*(0.65+sin(repair_clock*TAU*3.0)*0.22))
+  draw_line(Vector2.ZERO,Vector2(0,-20),Color("a0d8e9"),5,true)
+  draw_arc(Vector2(0,-23),6,PI*0.15,PI*1.85,14,Color("e2fbff"),4,true)
+  draw_set_transform(Vector2.ZERO)
  if is_on_floor():
   draw_set_transform(Vector2(0,floor_visual_offset+1),get_floor_normal().angle()+PI*0.5,Vector2(1,0.2))
   draw_circle(Vector2.ZERO,19,Color(0.15,0.3,0.32,0.13))
@@ -505,6 +538,7 @@ func _draw() -> void:
    draw_arc(Vector2(0,-72),30+(0.3-boost_flash)*70,0,TAU,32,Color(0.55,0.9,1,boost_flash*2),3,true)
 func hurt(force:bool=false) -> void:
  if not force and (invulnerable>0 or frozen): return
+ end_repair()
  deaths+=1
  happy=0;previous_happy=0;land_time=0;takeoff_time=0;sparkles.clear();pickup_echoes.clear()
  pickup_pose_active=false;air_time=0.0;boost_flash=0.0;ground_distance=0.0;ground_speed=0.0

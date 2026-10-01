@@ -15861,10 +15861,6 @@ script = ExtResource("object")
 position = Vector2(2888, 1040)
 script = ExtResource("object")
 
-[node name="crystal_2" type="Node2D" parent="." unique_id=1279569043]
-position = Vector2(4253.2, 425)
-script = ExtResource("object")
-
 [node name="crystal_3" type="Node2D" parent="." unique_id=1982375845]
 position = Vector2(5385, 573)
 script = ExtResource("object")
@@ -15881,24 +15877,12 @@ script = ExtResource("object")
 position = Vector2(8393.2, 155)
 script = ExtResource("object")
 
-[node name="crystal_7" type="Node2D" parent="." unique_id=942220473]
-position = Vector2(9314, 300)
-script = ExtResource("object")
-
-[node name="crystal_8" type="Node2D" parent="." unique_id=52691489]
-position = Vector2(10768, 216)
-script = ExtResource("object")
-
 [node name="crystal_9" type="Node2D" parent="." unique_id=1454569546]
 position = Vector2(12000, 484)
 script = ExtResource("object")
 
 [node name="crystal_10" type="Node2D" parent="." unique_id=1084775000]
-position = Vector2(13396, 389)
-script = ExtResource("object")
-
-[node name="crystal_11" type="Node2D" parent="." unique_id=1109856421]
-position = Vector2(14798, 509)
+position = Vector2(13396, 447.0)
 script = ExtResource("object")
 
 [node name="crystal_12" type="Node2D" parent="." unique_id=282677194]
@@ -15909,60 +15893,12 @@ script = ExtResource("object")
 position = Vector2(17321, 190)
 script = ExtResource("object")
 
-[node name="crystal_14" type="Node2D" parent="." unique_id=644024257]
-position = Vector2(17975, 313)
-script = ExtResource("object")
-
-[node name="crystal_15" type="Node2D" parent="." unique_id=957278733]
-position = Vector2(1900, 555)
-script = ExtResource("object")
-
-[node name="crystal_16" type="Node2D" parent="." unique_id=2091611480]
-position = Vector2(3181, 110)
-script = ExtResource("object")
-
-[node name="crystal_17" type="Node2D" parent="." unique_id=1742461752]
-position = Vector2(2417, 847)
-script = ExtResource("object")
-
 [node name="crystal_18" type="Node2D" parent="." unique_id=1927043249]
 position = Vector2(3458, 849)
 script = ExtResource("object")
 
-[node name="crystal_19" type="Node2D" parent="." unique_id=704550261]
-position = Vector2(3590, 1040)
-script = ExtResource("object")
-
-[node name="crystal_20" type="Node2D" parent="." unique_id=603843760]
-position = Vector2(3510, 520)
-script = ExtResource("object")
-
-[node name="crystal_21" type="Node2D" parent="." unique_id=160860155]
-position = Vector2(3590, 345)
-script = ExtResource("object")
-
-[node name="crystal_22" type="Node2D" parent="." unique_id=41016933]
-position = Vector2(9114, 520)
-script = ExtResource("object")
-
-[node name="crystal_23" type="Node2D" parent="." unique_id=1058859696]
-position = Vector2(9375, 597)
-script = ExtResource("object")
-
 [node name="crystal_24" type="Node2D" parent="." unique_id=1192259439]
-position = Vector2(10035, 664)
-script = ExtResource("object")
-
-[node name="crystal_25" type="Node2D" parent="." unique_id=1795668170]
-position = Vector2(10287, 570)
-script = ExtResource("object")
-
-[node name="crystal_26" type="Node2D" parent="." unique_id=1130021538]
-position = Vector2(10591, 710)
-script = ExtResource("object")
-
-[node name="crystal_27" type="Node2D" parent="." unique_id=1167489455]
-position = Vector2(11359, 495)
+position = Vector2(10035, 749.0)
 script = ExtResource("object")
 
 [node name="star_key_28" type="Node2D" parent="." unique_id=480739478]
@@ -15977,12 +15913,11 @@ kind = "goal"
 
 [node name="mole_30" parent="." unique_id=1806859812 instance=ExtResource("mole")]
 position = Vector2(529, 549)
-message = "Bite, náš kamarád Fouk je rozbitý! Najdi ho v tajné místnosti pod skálou. Potřebuje tvou pomoc."
+message = "Bite, Fouk je rozbitý a čeká v jeskyni pod skálou. Sleduj diamanty a lucerny, dovedou tě k němu!"
 
 [node name="fouk_31" type="Node2D" parent="." unique_id=442231306]
-position = Vector2(3670, 1007.99994)
-rotation = 3.1192453
-scale = Vector2(0.8000586, 0.8125586)
+position = Vector2(3670, 1080)
+scale = Vector2(0.8, 0.8)
 script = ExtResource("object")
 kind = "fouk"
 fouk_on_ground = true
@@ -16706,20 +16641,12 @@ bottom = 1500.0
 position = Vector2(19190, 320)
 script = ExtResource("object")
 
-[node name="WorldCrystal_1" type="Node2D" parent="." unique_id=776908209]
-position = Vector2(19590, 160)
-script = ExtResource("object")
-
 [node name="WorldCrystal_2" type="Node2D" parent="." unique_id=1075525952]
 position = Vector2(19980, 0)
 script = ExtResource("object")
 
 [node name="WorldCrystal_3" type="Node2D" parent="." unique_id=582111803]
 position = Vector2(19480, 851)
-script = ExtResource("object")
-
-[node name="WorldCrystal_4" type="Node2D" parent="." unique_id=962880247]
-position = Vector2(20071, 849)
 script = ExtResource("object")
 
 [node name="WorldCrystal_5" type="Node2D" parent="." unique_id=419335549]
@@ -16730,16 +16657,8 @@ script = ExtResource("object")
 position = Vector2(21130, -232)
 script = ExtResource("object")
 
-[node name="WorldCrystal_7" type="Node2D" parent="." unique_id=1137927779]
-position = Vector2(21505, -94)
-script = ExtResource("object")
-
 [node name="WorldCrystal_8" type="Node2D" parent="." unique_id=483997574]
 position = Vector2(21970, 130)
-script = ExtResource("object")
-
-[node name="WorldCrystal_9" type="Node2D" parent="." unique_id=1252684955]
-position = Vector2(22405, 313)
 script = ExtResource("object")
 
 [node name="WorldCrystal_10" type="Node2D" parent="." unique_id=1031962245]
@@ -16872,3 +16791,39 @@ position = Vector2(10400, -140)
 scale = Vector2(0.393586, 0.393586)
 texture = ExtResource("scenery_FarIsland")
 offset = Vector2(0, -171.5)
+
+[node name="Hint_FoukTrail" type="Marker2D" parent="."]
+position = Vector2(1830, 570)
+script = ExtResource("world_hint")
+title = "Cesta k Foukovi"
+message = "Fouk je dole pod skálou. Sleduj diamanty a světlo luceren."
+activation_size = Vector2(240, 260)
+
+[node name="Hint_FoukDoubleJump" type="Marker2D" parent="."]
+position = Vector2(3570, 1020)
+script = ExtResource("world_hint")
+title = "Fouk je zpátky!"
+message = "Ve vzduchu stiskni skok ještě jednou.\nZkus tak vyskočit na kamenný schod vlevo."
+touch_message = "Ve vzduchu klepni na tlačítko skoku znovu.\nZkus tak vyskočit na kamenný schod vlevo."
+activation_size = Vector2(640, 460)
+display_seconds = 10.0
+require_fouk = true
+
+[node name="FoukTrailCrystal_1" type="Node2D" parent="."]
+position = Vector2(1920, 700)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="FoukTrailCrystal_2" type="Node2D" parent="."]
+position = Vector2(2100, 880)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="FoukTrailCrystal_4" type="Node2D" parent="."]
+position = Vector2(3420, 1025)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="FoukTrailLantern" parent="." instance=ExtResource("lantern")]
+position = Vector2(2180, 1080)
+scale = Vector2(0.65, 0.65)

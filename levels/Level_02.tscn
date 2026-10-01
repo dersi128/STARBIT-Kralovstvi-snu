@@ -24920,10 +24920,6 @@ script = ExtResource("object")
 position = Vector2(4883, 734)
 script = ExtResource("object")
 
-[node name="crystal_4" type="Node2D" parent="." unique_id=1043596465]
-position = Vector2(5860, 686)
-script = ExtResource("object")
-
 [node name="crystal_5" type="Node2D" parent="." unique_id=1758938513]
 position = Vector2(6993.2, 455)
 script = ExtResource("object")
@@ -24946,10 +24942,6 @@ script = ExtResource("object")
 
 [node name="crystal_10" type="Node2D" parent="." unique_id=979182136]
 position = Vector2(12742, 435)
-script = ExtResource("object")
-
-[node name="crystal_10" type="Node2D" parent="crystal_10" unique_id=75308463]
-position = Vector2(3104, 51)
 script = ExtResource("object")
 
 [node name="Vodopad_Ruiny" parent="." unique_id=939736338 instance=ExtResource("water_2")]
@@ -24980,10 +24972,6 @@ preview_in_editor = true
 position = Vector2(13843.2, 365)
 script = ExtResource("object")
 
-[node name="crystal_12" type="Node2D" parent="." unique_id=1346065900]
-position = Vector2(14434, 470)
-script = ExtResource("object")
-
 [node name="crystal_13" type="Node2D" parent="." unique_id=1917399864]
 position = Vector2(16283.2, 365)
 script = ExtResource("object")
@@ -24996,40 +24984,12 @@ script = ExtResource("object")
 position = Vector2(3787, 430)
 script = ExtResource("object")
 
-[node name="crystal_16" type="Node2D" parent="." unique_id=1844298643]
-position = Vector2(4138, 473)
-script = ExtResource("object")
-
-[node name="crystal_17" type="Node2D" parent="." unique_id=99039185]
-position = Vector2(4399, 600)
-script = ExtResource("object")
-
 [node name="crystal_18" type="Node2D" parent="." unique_id=40541132]
 position = Vector2(6388, 564)
 script = ExtResource("object")
 
-[node name="crystal_19" type="Node2D" parent="." unique_id=640798677]
-position = Vector2(5146, 684)
-script = ExtResource("object")
-
-[node name="crystal_20" type="Node2D" parent="." unique_id=1282205962]
-position = Vector2(9100, 380)
-script = ExtResource("object")
-
-[node name="crystal_21" type="Node2D" parent="." unique_id=264000224]
-position = Vector2(9578, 590)
-script = ExtResource("object")
-
-[node name="crystal_22" type="Node2D" parent="." unique_id=93984112]
-position = Vector2(10689, 480)
-script = ExtResource("object")
-
 [node name="crystal_23" type="Node2D" parent="." unique_id=932657475]
 position = Vector2(10231, 570)
-script = ExtResource("object")
-
-[node name="crystal_24" type="Node2D" parent="." unique_id=1106468320]
-position = Vector2(10890, 435)
 script = ExtResource("object")
 
 [node name="star_key_25" type="Node2D" parent="." unique_id=1569155943]
@@ -25406,12 +25366,12 @@ message = "Bite, i kameny tu ožily! Říkám jim Šutříci. Blokují cestu k J
 [node name="Tutorials" type="Node2D" parent="." unique_id=387594636]
 
 [node name="StompEnemy" type="Marker2D" parent="Tutorials" unique_id=1560876789]
-position = Vector2(1863, 325)
+position = Vector2(2160, 380)
 script = ExtResource("world_hint")
 title = "Šutřík – oživlý kámen"
 message = "Skoč Šutříkovi na hlavu.
 Pozor, dotyk ze strany tě zraní."
-activation_size = Vector2(500, 420)
+activation_size = Vector2(620, 440)
 
 [node name="Checkpoint_Canopy" type="Node2D" parent="." unique_id=1478572014]
 position = Vector2(17950, 550)
@@ -25606,14 +25566,6 @@ bottom = 1500.0
 position = Vector2(18495, 440)
 script = ExtResource("object")
 
-[node name="WorldCrystal_1" type="Node2D" parent="." unique_id=1754361824]
-position = Vector2(18800, 385)
-script = ExtResource("object")
-
-[node name="WorldCrystal_2" type="Node2D" parent="." unique_id=6685636]
-position = Vector2(19115, 430)
-script = ExtResource("object")
-
 [node name="WorldCrystal_3" type="Node2D" parent="." unique_id=1787298081]
 position = Vector2(19752, 532)
 script = ExtResource("object")
@@ -25622,24 +25574,12 @@ script = ExtResource("object")
 position = Vector2(20730, 450)
 script = ExtResource("object")
 
-[node name="WorldCrystal_5" type="Node2D" parent="." unique_id=260052520]
-position = Vector2(21105, 365)
-script = ExtResource("object")
-
 [node name="WorldCrystal_6" type="Node2D" parent="." unique_id=1475434415]
 position = Vector2(21445, 275)
 script = ExtResource("object")
 
-[node name="WorldCrystal_7" type="Node2D" parent="." unique_id=656362790]
-position = Vector2(21956, 406)
-script = ExtResource("object")
-
 [node name="WorldCrystal_8" type="Node2D" parent="." unique_id=643618716]
 position = Vector2(22505, 335)
-script = ExtResource("object")
-
-[node name="WorldCrystal_9" type="Node2D" parent="." unique_id=612198106]
-position = Vector2(22815, 262)
 script = ExtResource("object")
 
 [node name="WorldCrystal_10" type="Node2D" parent="." unique_id=552643779]
@@ -25778,3 +25718,14 @@ offset = Vector2(0, -171.5)
 position = Vector2(3578, 965)
 width = 6000.0
 depth = 830.0
+
+[node name="Hint_FirstCrate" type="Marker2D" parent="."]
+position = Vector2(1300, 420)
+script = ExtResource("world_hint")
+title = "Bedna jako schůdek"
+message = "Jdi proti bedně a posuneš ji.
+Vyskoč na ni, když potřebuješ dosáhnout výš."
+touch_message = "Drž šipku směrem k bedně a posuneš ji.
+Vyskoč na ni, když potřebuješ dosáhnout výš."
+activation_size = Vector2(640, 440)
+display_seconds = 8.0

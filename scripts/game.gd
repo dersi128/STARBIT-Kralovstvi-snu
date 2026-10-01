@@ -44,6 +44,7 @@ var dialogue_session:=0
 const TITLES=["Lesní probuzení", "Mezi kořeny", "Světélka vesničky", "Nad střechami", "Brúčounova svatyně", "První ostrovy", "Vodopády v oblacích", "Hrad na dosah", "Královské zahrady", "Nebeské nádvoří"]
 const LEVEL_COUNT=10
 func _ready() -> void:
+ get_tree().quit_on_go_back=false
  process_mode=Node.PROCESS_MODE_ALWAYS
  add_to_group("game")
  for action in ["left","right","jump"]:
@@ -408,5 +409,6 @@ func _notification(what:int) -> void:
  if what==NOTIFICATION_APPLICATION_PAUSED or what==NOTIFICATION_WM_GO_BACK_REQUEST:
   if mode=="play":pause_game()
   elif what==NOTIFICATION_WM_GO_BACK_REQUEST:
-   if mode=="credits":settings()
+   if mode=="pause":resume()
+   elif mode=="credits":settings()
    elif mode in ["rewards","settings","selection"]:menu()

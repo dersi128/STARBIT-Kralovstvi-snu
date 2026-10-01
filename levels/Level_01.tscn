@@ -42535,59 +42535,31 @@ position = Vector2(9755, 500)
 script = ExtResource("object")
 
 [node name="crystal_8" type="Node2D" parent="." unique_id=1702582909]
-position = Vector2(10943.2, 405)
+position = Vector2(10943.2, 493.0)
 script = ExtResource("object")
 
 [node name="crystal_9" type="Node2D" parent="." unique_id=2126753007]
 position = Vector2(12243.2, 405)
 script = ExtResource("object")
 
-[node name="crystal_10" type="Node2D" parent="." unique_id=1838690798]
-position = Vector2(3265.7144, 276)
-script = ExtResource("object")
-
 [node name="crystal_11" type="Node2D" parent="." unique_id=1714681674]
 position = Vector2(3621, 210)
-script = ExtResource("object")
-
-[node name="crystal_12" type="Node2D" parent="." unique_id=853807053]
-position = Vector2(4033, 65)
 script = ExtResource("object")
 
 [node name="crystal_13" type="Node2D" parent="." unique_id=1890838886]
 position = Vector2(4317, 93)
 script = ExtResource("object")
 
-[node name="crystal_14" type="Node2D" parent="." unique_id=500618094]
-position = Vector2(4667, 319)
-script = ExtResource("object")
-
-[node name="crystal_15" type="Node2D" parent="." unique_id=1735119121]
-position = Vector2(4687, 606)
-script = ExtResource("object")
-
 [node name="crystal_16" type="Node2D" parent="." unique_id=1215262820]
 position = Vector2(6804, 567)
-script = ExtResource("object")
-
-[node name="crystal_17" type="Node2D" parent="." unique_id=1801914379]
-position = Vector2(7362, 763)
 script = ExtResource("object")
 
 [node name="crystal_18" type="Node2D" parent="." unique_id=143246400]
 position = Vector2(7380, 591)
 script = ExtResource("object")
 
-[node name="crystal_19" type="Node2D" parent="." unique_id=1410198725]
-position = Vector2(8175, 763)
-script = ExtResource("object")
-
 [node name="crystal_20" type="Node2D" parent="." unique_id=1076285191]
 position = Vector2(8660, 749)
-script = ExtResource("object")
-
-[node name="crystal_21" type="Node2D" parent="." unique_id=794022613]
-position = Vector2(8883, 511)
 script = ExtResource("object")
 
 [node name="star_key_22" type="Node2D" parent="." unique_id=644902888]
@@ -42932,7 +42904,7 @@ message = "Dotkni se vlaječky. Po pádu se vrátíš k ní."
 activation_size = Vector2(620, 440)
 
 [node name="StarKey" type="Marker2D" parent="Tutorials" unique_id=761015647]
-position = Vector2(13130, 450)
+position = Vector2(17480, 310)
 script = ExtResource("world_hint")
 title = "Hvězda a brána"
 message = "Seber zlatou hvězdu. Odemkne bránu na konci stezky."
@@ -43118,10 +43090,6 @@ bottom = 1500.0
 position = Vector2(14400, 160)
 script = ExtResource("object")
 
-[node name="WorldCrystal_1" type="Node2D" parent="." unique_id=723179174]
-position = Vector2(14740, 80)
-script = ExtResource("object")
-
 [node name="WorldCrystal_2" type="Node2D" parent="." unique_id=580108157]
 position = Vector2(15093, 175)
 script = ExtResource("object")
@@ -43132,10 +43100,6 @@ script = ExtResource("object")
 
 [node name="WorldCrystal_4" type="Node2D" parent="." unique_id=369972652]
 position = Vector2(16380, 190)
-script = ExtResource("object")
-
-[node name="WorldCrystal_5" type="Node2D" parent="." unique_id=389183133]
-position = Vector2(16720, 115)
 script = ExtResource("object")
 
 [node name="WorldCrystal_6" type="Node2D" parent="." unique_id=237577938]

@@ -36,6 +36,8 @@
 [ext_resource type="PackedScene" path="res://scenes/worldkit/SpringPad.tscn" id="world_spring"]
 [ext_resource type="Script" uid="uid://bd4fkdbvhf54y" path="res://scripts/camera_zone.gd" id="zone"]
 
+[ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="polish_stinko"]
+
 [sub_resource type="RectangleShape2D" id="shape_Arrival"]
 size = Vector2(1000, 100)
 
@@ -532,9 +534,9 @@ material = SubResource("ShaderMaterial_yrys1")
 position = Vector2(7740, 650)
 launch_speed = 990.0
 
-[node name="CourtGuard" parent="." unique_id=2035846130 instance=ExtResource("enemy")]
+[node name="CourtGuard" parent="." unique_id=2035846130 instance=ExtResource("polish_stinko")]
 position = Vector2(7100, 650)
-speed = 90.0
+speed = 65.0
 
 [node name="CourtGuard2" parent="." unique_id=739847983 instance=ExtResource("enemy")]
 position = Vector2(7659, 205)
@@ -863,160 +865,68 @@ scale = Vector2(0.7, 0.7)
 position = Vector2(450, 485)
 script = ExtResource("object")
 
-[node name="Crystal_02" type="Node2D" parent="." unique_id=973523717]
-position = Vector2(1240, 355)
-script = ExtResource("object")
-
 [node name="Crystal_03" type="Node2D" parent="." unique_id=2095351858]
 position = Vector2(1690, 225)
-script = ExtResource("object")
-
-[node name="Crystal_04" type="Node2D" parent="." unique_id=186587547]
-position = Vector2(2230, 405)
 script = ExtResource("object")
 
 [node name="Crystal_05" type="Node2D" parent="." unique_id=981240355]
 position = Vector2(2835, 395)
 script = ExtResource("object")
 
-[node name="Crystal_06" type="Node2D" parent="." unique_id=1961433918]
-position = Vector2(3160, 295)
-script = ExtResource("object")
-
-[node name="Crystal_07" type="Node2D" parent="." unique_id=1304189038]
-position = Vector2(3500, 355)
-script = ExtResource("object")
-
 [node name="Crystal_08" type="Node2D" parent="." unique_id=889203624]
 position = Vector2(3900, 335)
-script = ExtResource("object")
-
-[node name="Crystal_09" type="Node2D" parent="." unique_id=1094246674]
-position = Vector2(4720, 185)
 script = ExtResource("object")
 
 [node name="Crystal_10" type="Node2D" parent="." unique_id=2112842200]
 position = Vector2(5050, 55)
 script = ExtResource("object")
 
-[node name="Crystal_11" type="Node2D" parent="." unique_id=460896619]
-position = Vector2(5410, 155)
-script = ExtResource("object")
-
 [node name="Crystal_12" type="Node2D" parent="." unique_id=594786596]
 position = Vector2(5990, 225)
-script = ExtResource("object")
-
-[node name="Crystal_13" type="Node2D" parent="." unique_id=286366969]
-position = Vector2(6210, 225)
-script = ExtResource("object")
-
-[node name="Crystal_14" type="Node2D" parent="." unique_id=1078688424]
-position = Vector2(6790, 440)
 script = ExtResource("object")
 
 [node name="Crystal_15" type="Node2D" parent="." unique_id=106471197]
 position = Vector2(7135, 305)
 script = ExtResource("object")
 
-[node name="Crystal_16" type="Node2D" parent="." unique_id=1677785608]
-position = Vector2(7427, 165)
-script = ExtResource("object")
-
-[node name="Crystal_17" type="Node2D" parent="." unique_id=1297817794]
-position = Vector2(7580, 155)
-script = ExtResource("object")
-
 [node name="Crystal_18" type="Node2D" parent="." unique_id=40015629]
 position = Vector2(6880, 595)
-script = ExtResource("object")
-
-[node name="Crystal_19" type="Node2D" parent="." unique_id=405291061]
-position = Vector2(7453, 608)
 script = ExtResource("object")
 
 [node name="Crystal_20" type="Node2D" parent="." unique_id=135419265]
 position = Vector2(7965, 280)
 script = ExtResource("object")
 
-[node name="Crystal_21" type="Node2D" parent="." unique_id=1729639976]
-position = Vector2(8313, 150)
-script = ExtResource("object")
-
 [node name="Crystal_22" type="Node2D" parent="." unique_id=1993947692]
 position = Vector2(8865, 74)
-script = ExtResource("object")
-
-[node name="Crystal_23" type="Node2D" parent="." unique_id=1328686527]
-position = Vector2(9195, 5)
 script = ExtResource("object")
 
 [node name="Crystal_24" type="Node2D" parent="." unique_id=461720370]
 position = Vector2(9585, -120)
 script = ExtResource("object")
 
-[node name="Crystal_25" type="Node2D" parent="." unique_id=1767970637]
-position = Vector2(9920, -70)
-script = ExtResource("object")
-
 [node name="Crystal_26" type="Node2D" parent="." unique_id=2084303272]
 position = Vector2(10210, -15)
 script = ExtResource("object")
 
-[node name="Crystal_27" type="Node2D" parent="." unique_id=485428619]
-position = Vector2(10559, 58)
-script = ExtResource("object")
-
 [node name="Crystal_28" type="Node2D" parent="." unique_id=2132013898]
-position = Vector2(10210, 305)
-script = ExtResource("object")
-
-[node name="Crystal_29" type="Node2D" parent="." unique_id=1569233987]
-position = Vector2(10210, 130)
-script = ExtResource("object")
-
-[node name="Crystal_30" type="Node2D" parent="." unique_id=1428937910]
-position = Vector2(10376, 388)
+position = Vector2(10210, 382.0)
 script = ExtResource("object")
 
 [node name="Crystal_31" type="Node2D" parent="." unique_id=1373361834]
 position = Vector2(11340, 257)
 script = ExtResource("object")
 
-[node name="Crystal_32" type="Node2D" parent="." unique_id=242070893]
-position = Vector2(11645, 257)
-script = ExtResource("object")
-
 [node name="Crystal_33" type="Node2D" parent="." unique_id=1303979646]
 position = Vector2(12106, 254)
-script = ExtResource("object")
-
-[node name="Crystal_34" type="Node2D" parent="." unique_id=1291973255]
-position = Vector2(12395, 173)
 script = ExtResource("object")
 
 [node name="Crystal_35" type="Node2D" parent="." unique_id=1440206845]
 position = Vector2(12723, 55)
 script = ExtResource("object")
 
-[node name="Crystal_36" type="Node2D" parent="." unique_id=568304882]
-position = Vector2(13075, 170)
-script = ExtResource("object")
-
 [node name="Crystal_37" type="Node2D" parent="." unique_id=414050735]
 position = Vector2(13507, 295)
-script = ExtResource("object")
-
-[node name="Crystal_38" type="Node2D" parent="." unique_id=640318766]
-position = Vector2(13747, 290)
-script = ExtResource("object")
-
-[node name="Crystal_39" type="Node2D" parent="." unique_id=105983548]
-position = Vector2(14249, 450)
-script = ExtResource("object")
-
-[node name="Crystal_40" type="Node2D" parent="." unique_id=1746540584]
-position = Vector2(19656, 250)
 script = ExtResource("object")
 
 [node name="Checkpoint_OldQuay" type="Node2D" parent="." unique_id=303395795]
@@ -1196,32 +1106,16 @@ bottom = 1500.0
 position = Vector2(14566, 500)
 script = ExtResource("object")
 
-[node name="WorldCrystal_1" type="Node2D" parent="." unique_id=731320072]
-position = Vector2(15255, 357)
-script = ExtResource("object")
-
 [node name="WorldCrystal_2" type="Node2D" parent="." unique_id=447387248]
 position = Vector2(15615, 185)
-script = ExtResource("object")
-
-[node name="WorldCrystal_3" type="Node2D" parent="." unique_id=26869645]
-position = Vector2(16005, 45)
 script = ExtResource("object")
 
 [node name="WorldCrystal_4" type="Node2D" parent="." unique_id=347497642]
 position = Vector2(16820, -172)
 script = ExtResource("object")
 
-[node name="WorldCrystal_5" type="Node2D" parent="." unique_id=1755127999]
-position = Vector2(17195, 5)
-script = ExtResource("object")
-
 [node name="WorldCrystal_6" type="Node2D" parent="." unique_id=90857778]
 position = Vector2(17535, 170)
-script = ExtResource("object")
-
-[node name="WorldCrystal_7" type="Node2D" parent="." unique_id=233378977]
-position = Vector2(17905, 353)
 script = ExtResource("object")
 
 [node name="WorldCrystal_8" type="Node2D" parent="." unique_id=102396599]
@@ -1372,3 +1266,8 @@ scale = Vector2(0.7, 0.7)
 width = 6000.0
 depth = 1500.0
 preview_in_editor = true
+
+[node name="Checkpoint_RuneCourt" type="Node2D" parent="."]
+position = Vector2(14740, 550)
+script = ExtResource("object")
+kind = "checkpoint"

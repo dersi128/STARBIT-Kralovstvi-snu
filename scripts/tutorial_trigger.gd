@@ -9,6 +9,8 @@ extends Marker2D
 		activation_size = value
 		queue_redraw()
 @export_range(3.0, 12.0, 0.5) var display_seconds := 7.0
+## Use for the double-jump lesson, which becomes relevant only after the repair.
+@export var require_fouk := false
 
 var completed := false
 var card: Control
@@ -18,6 +20,7 @@ func _process(_delta: float) -> void:
 	var game = get_tree().get_first_node_in_group("game")
 	if game == null or game.mode != "play" or not is_instance_valid(game.level):return
 	if not game.level.is_ancestor_of(self) or not contains_player(game.level.player):return
+	if require_fouk and not game.level.player.has_fouk:return
 	# A nearby hint waits for the previous card instead of covering it.
 	if game.screen.has_node("TutorialHint"):return
 	var text := touch_message if DisplayServer.is_touchscreen_available() and not touch_message.is_empty() else message

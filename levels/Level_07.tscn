@@ -1,1087 +1,1112 @@
-[gd_scene load_steps=74 format=3]
-[ext_resource type="Script" path="res://scripts/level.gd" id="level"]
-[ext_resource type="Script" path="res://scripts/platform.gd" id="platform"]
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/sky_adventure.gd" id="level"]
+[ext_resource type="Script" path="res://scripts/cloud_step.gd" id="cloud"]
+[ext_resource type="Script" path="res://scripts/sky_island.gd" id="platform"]
 [ext_resource type="Script" path="res://scripts/object.gd" id="object"]
-[ext_resource type="PackedScene" path="res://scenes/environments/distant_castle.tscn" id="bg"]
-[ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole"]
-[ext_resource type="PackedScene" path="res://scenes/Boss.tscn" id="boss"]
-[ext_resource type="PackedScene" path="res://scenes/Enemy_rock_enemy.tscn" id="rock_enemy"]
-[ext_resource type="PackedScene" path="res://scenes/Enemy_cloud_enemy.tscn" id="cloud_enemy"]
-[ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="stinko"]
-[ext_resource type="Script" path="res://scripts/camera_zone.gd" id="camera_zone"]
+[ext_resource type="Script" path="res://scripts/tutorial_trigger.gd" id="hint"]
+[ext_resource type="Script" path="res://scripts/world_landmark.gd" id="landmark"]
+[ext_resource type="Script" path="res://scripts/camera_zone.gd" id="camera"]
+[ext_resource type="Script" path="res://scripts/dream_switch.gd" id="switch"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/RainCloud.tscn" id="rain"]
 [ext_resource type="Script" path="res://scripts/water_feature.gd" id="water"]
-[sub_resource type="RectangleShape2D" id="shape0"]
-size=Vector2(720,100)
-[sub_resource type="RectangleShape2D" id="shape1"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape2"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape3"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape4"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape5"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape6"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape7"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape8"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape9"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape10"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape11"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape12"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape13"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape14"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape15"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape16"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape17"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape18"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape19"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape20"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape21"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape22"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape23"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape24"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape25"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape26"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape27"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape28"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape29"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape30"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape31"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape32"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape33"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape34"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape35"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape36"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape37"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape38"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape39"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape40"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape41"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape42"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape43"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape44"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape45"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape46"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape47"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape48"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape49"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape50"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape51"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape52"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape53"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape54"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape55"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape56"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape57"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape58"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape59"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape60"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape61"]
-size=Vector2(850,100)
+[ext_resource type="Script" path="res://scripts/world_depth.gd" id="depth"]
+[ext_resource type="Script" path="res://scripts/sky_backdrop.gd" id="bg"]
+[ext_resource type="Texture2D" path="res://assets/environments/near_castle.png" id="skyart"]
+[ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="enemy"]
+
+[ext_resource type="Script" path="res://scripts/sky_station.gd" id="station"]
+[ext_resource type="Script" path="res://scripts/sky_router.gd" id="router"]
+[ext_resource type="Script" path="res://scripts/sky_escape.gd" id="escape"]
+
+[ext_resource type="Script" path="res://scripts/sky_wind_gate.gd" id="wind_gate"]
+[ext_resource type="Script" path="res://scripts/sky_chime.gd" id="chime"]
+[ext_resource type="Script" path="res://scripts/sky_chime_puzzle.gd" id="chimes"]
+
+[ext_resource type="Script" path="res://scripts/sky_water_ledge.gd" id="water_ledge"]
+
+[ext_resource type="Script" path="res://scripts/sky_discovery.gd" id="discovery"]
+
+[sub_resource type="RectangleShape2D" id="Shape_Arrival"]
+size = Vector2(700.00, 80.00)
+
+[sub_resource type="RectangleShape2D" id="Shape_FirstWindHub"]
+size = Vector2(780.00, 80.00)
+
+[sub_resource type="RectangleShape2D" id="Shape_FirstAnchorBank"]
+size = Vector2(680.00, 80.00)
+
+[sub_resource type="RectangleShape2D" id="Shape_WaterfallShelter"]
+size = Vector2(650.00, 80.00)
+
+[sub_resource type="RectangleShape2D" id="Shape_BellAtrium"]
+size = Vector2(820.00, 80.00)
+
+[sub_resource type="RectangleShape2D" id="Shape_HighBellBalcony"]
+size = Vector2(480.00, 80.00)
+
+[sub_resource type="RectangleShape2D" id="Shape_FarBellBalcony"]
+size = Vector2(600.00, 80.00)
+
+[sub_resource type="RectangleShape2D" id="Shape_QuietGarden"]
+size = Vector2(650.00, 80.00)
+
+[sub_resource type="RectangleShape2D" id="Shape_EscapeCheckpoint"]
+size = Vector2(760.00, 80.00)
+
+[sub_resource type="RectangleShape2D" id="Shape_ExitGarden"]
+size = Vector2(850.00, 80.00)
+
 [node name="Level_07" type="Node2D"]
-script=ExtResource("level")
-number=7
-title="Vodopády v oblacích"
-width=23340
-spawn=Vector2(140,550)
-camera_top=-1800
-camera_bottom=2000
-fall_limit=1100
-fouk_at_start=true
-[node name="Background" parent="." instance=ExtResource("bg")]
-[node name="Platform_1" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(0,550)
-width=720
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_1"]
-position=Vector2(360.0,50)
-shape=SubResource("shape0")
-one_way_collision=true
-[node name="Platform_2" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(820,450)
-width=280
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_2"]
-position=Vector2(140.0,50)
-shape=SubResource("shape1")
-one_way_collision=true
-[node name="Platform_3" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(1260,350)
-width=280
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_3"]
-position=Vector2(140.0,50)
-shape=SubResource("shape2")
-one_way_collision=true
-[node name="Platform_4" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(1725,250)
-width=510
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_4"]
-position=Vector2(255.0,50)
-shape=SubResource("shape3")
-one_way_collision=true
-[node name="Platform_5" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(2420,250)
-width=430
-depth=75
-style="cloud"
-travel=Vector2(0,-110)
-period=9.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_5"]
-position=Vector2(215.0,50)
-shape=SubResource("shape4")
-one_way_collision=true
-[node name="Platform_6" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(3010,350)
-width=510
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_6"]
-position=Vector2(255.0,50)
-shape=SubResource("shape5")
-one_way_collision=true
-[node name="Platform_7" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(3705,450)
-width=430
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_7"]
-position=Vector2(215.0,50)
-shape=SubResource("shape6")
-one_way_collision=true
-[node name="Platform_8" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(4295,550)
-width=510
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_8"]
-position=Vector2(255.0,50)
-shape=SubResource("shape7")
-one_way_collision=true
-[node name="Platform_9" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(4990,650)
-width=430
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_9"]
-position=Vector2(215.0,50)
-shape=SubResource("shape8")
-one_way_collision=true
-[node name="Platform_10" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(5580,650)
-width=280
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_10"]
-position=Vector2(140.0,50)
-shape=SubResource("shape9")
-one_way_collision=true
-[node name="Platform_11" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(6020,550)
-width=280
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_11"]
-position=Vector2(140.0,50)
-shape=SubResource("shape10")
-one_way_collision=true
-[node name="Platform_12" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(6460,450)
-width=350
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_12"]
-position=Vector2(175.0,50)
-shape=SubResource("shape11")
-one_way_collision=true
-[node name="Platform_13" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(6970,350)
-width=430
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_13"]
-position=Vector2(215.0,50)
-shape=SubResource("shape12")
-one_way_collision=true
-[node name="Platform_14" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(7560,250)
-width=350
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_14"]
-position=Vector2(175.0,50)
-shape=SubResource("shape13")
-one_way_collision=true
-[node name="Platform_15" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(8095,150)
-width=280
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_15"]
-position=Vector2(140.0,50)
-shape=SubResource("shape14")
-one_way_collision=true
-[node name="Platform_16" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(8560,50)
-width=510
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_16"]
-position=Vector2(255.0,50)
-shape=SubResource("shape15")
-one_way_collision=true
-[node name="Platform_17" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(9230,-50)
-width=510
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_17"]
-position=Vector2(255.0,50)
-shape=SubResource("shape16")
-one_way_collision=true
-[node name="Platform_18" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(9900,-150)
-width=350
-depth=75
-style="cloud"
-travel=Vector2(0,-130)
-period=10.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_18"]
-position=Vector2(175.0,50)
-shape=SubResource("shape17")
-one_way_collision=true
-[node name="Platform_19" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(10410,-250)
-width=430
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_19"]
-position=Vector2(215.0,50)
-shape=SubResource("shape18")
-one_way_collision=true
-[node name="Platform_20" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(11025,-250)
-width=280
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_20"]
-position=Vector2(140.0,50)
-shape=SubResource("shape19")
-one_way_collision=true
-[node name="Platform_21" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(11490,-150)
-width=350
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_21"]
-position=Vector2(175.0,50)
-shape=SubResource("shape20")
-one_way_collision=true
-[node name="Platform_22" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(12000,-50)
-width=510
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_22"]
-position=Vector2(255.0,50)
-shape=SubResource("shape21")
-one_way_collision=true
-[node name="Platform_23" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(12670,50)
-width=430
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_23"]
-position=Vector2(215.0,50)
-shape=SubResource("shape22")
-one_way_collision=true
-[node name="Platform_24" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(13285,-50)
-width=510
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_24"]
-position=Vector2(255.0,50)
-shape=SubResource("shape23")
-one_way_collision=true
-[node name="Platform_25" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(13955,-150)
-width=350
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_25"]
-position=Vector2(175.0,50)
-shape=SubResource("shape24")
-one_way_collision=true
-[node name="Platform_26" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(14490,-50)
-width=430
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_26"]
-position=Vector2(215.0,50)
-shape=SubResource("shape25")
-one_way_collision=true
-[node name="Platform_27" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(15105,50)
-width=350
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_27"]
-position=Vector2(175.0,50)
-shape=SubResource("shape26")
-one_way_collision=true
-[node name="Platform_28" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(15615,-50)
-width=430
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_28"]
-position=Vector2(215.0,50)
-shape=SubResource("shape27")
-one_way_collision=true
-[node name="Platform_29" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(16230,-150)
-width=280
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_29"]
-position=Vector2(140.0,50)
-shape=SubResource("shape28")
-one_way_collision=true
-[node name="Platform_30" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(16695,-50)
-width=430
-depth=75
-style="cloud"
-travel=Vector2(0,-100)
-period=10.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_30"]
-position=Vector2(215.0,50)
-shape=SubResource("shape29")
-one_way_collision=true
-[node name="Platform_31" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(17310,50)
-width=430
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_31"]
-position=Vector2(215.0,50)
-shape=SubResource("shape30")
-one_way_collision=true
-[node name="Platform_32" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(17925,-50)
-width=350
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_32"]
-position=Vector2(175.0,50)
-shape=SubResource("shape31")
-one_way_collision=true
-[node name="Platform_33" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(18460,-150)
-width=510
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_33"]
-position=Vector2(255.0,50)
-shape=SubResource("shape32")
-one_way_collision=true
-[node name="Platform_34" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(19155,-50)
-width=510
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_34"]
-position=Vector2(255.0,50)
-shape=SubResource("shape33")
-one_way_collision=true
-[node name="Platform_35" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(19825,50)
-width=430
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_35"]
-position=Vector2(215.0,50)
-shape=SubResource("shape34")
-one_way_collision=true
-[node name="Platform_36" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(20415,-50)
-width=510
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_36"]
-position=Vector2(255.0,50)
-shape=SubResource("shape35")
-one_way_collision=true
-[node name="Platform_37" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(21085,-150)
-width=280
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_37"]
-position=Vector2(140.0,50)
-shape=SubResource("shape36")
-one_way_collision=true
-[node name="Platform_38" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(21550,-50)
-width=430
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_38"]
-position=Vector2(215.0,50)
-shape=SubResource("shape37")
-one_way_collision=true
-[node name="Platform_39" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(22140,50)
-width=350
-depth=115
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_39"]
-position=Vector2(175.0,50)
-shape=SubResource("shape38")
-one_way_collision=true
-[node name="high_01" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(5858,558)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_01"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape39")
-one_way_collision=true
-[node name="high_02" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(6036,465)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_02"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape40")
-one_way_collision=true
-[node name="high_03" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(6215,373)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_03"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape41")
-one_way_collision=true
-[node name="high_04" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(6393,281)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_04"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape42")
-one_way_collision=true
-[node name="high_05" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(6571,188)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_05"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape43")
-one_way_collision=true
-[node name="high_06" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(6749,152)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_06"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape44")
-one_way_collision=true
-[node name="high_07" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(6927,171)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_07"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape45")
-one_way_collision=true
-[node name="high_08" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(7105,191)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_08"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape46")
-one_way_collision=true
-[node name="high_09" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(7284,211)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_09"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape47")
-one_way_collision=true
-[node name="high_10" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(7462,230)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_10"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape48")
-one_way_collision=true
-[node name="low_01" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(11297,-175)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_01"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape49")
-one_way_collision=true
-[node name="low_02" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(11470,-99)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_02"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape50")
-one_way_collision=true
-[node name="low_03" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(11642,-24)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_03"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape51")
-one_way_collision=true
-[node name="low_04" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(11814,52)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_04"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape52")
-one_way_collision=true
-[node name="low_05" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(11987,127)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_05"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape53")
-one_way_collision=true
-[node name="low_06" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(12159,142)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_06"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape54")
-one_way_collision=true
-[node name="low_07" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(12331,158)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_07"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape55")
-one_way_collision=true
-[node name="low_08" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(12503,173)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_08"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape56")
-one_way_collision=true
-[node name="low_09" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(12676,128)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_09"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape57")
-one_way_collision=true
-[node name="low_10" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(12848,84)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_10"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape58")
-one_way_collision=true
-[node name="low_11" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(13020,39)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_11"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape59")
-one_way_collision=true
-[node name="low_12" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(13193,-5)
-width=185
-depth=42
-style="island"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_12"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape60")
-one_way_collision=true
-[node name="Finish" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(22490,50)
-width=850
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
-position=Vector2(425.0,50)
-shape=SubResource("shape61")
-one_way_collision=true
-[node name="crystal_0" type="Node2D" parent="."]
-position=Vector2(1394.4,295)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_1" type="Node2D" parent="Platform_5"]
-position=Vector2(206.4000000000001,-55)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_2" type="Node2D" parent="."]
-position=Vector2(3911.4,395)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_3" type="Node2D" parent="."]
-position=Vector2(5196.4,595)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_4" type="Node2D" parent="."]
-position=Vector2(6154.4,495)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_5" type="Node2D" parent="."]
-position=Vector2(7176.4,295)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_6" type="Node2D" parent="."]
-position=Vector2(8229.4,95)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_7" type="Node2D" parent="."]
-position=Vector2(9474.8,-105)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_8" type="Node2D" parent="."]
-position=Vector2(10616.4,-305)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_9" type="Node2D" parent="."]
-position=Vector2(11658.0,-205)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_10" type="Node2D" parent="."]
-position=Vector2(12876.4,-5)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_11" type="Node2D" parent="."]
-position=Vector2(14123.0,-205)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_12" type="Node2D" parent="."]
-position=Vector2(15273.0,-5)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_13" type="Node2D" parent="."]
-position=Vector2(16364.4,-205)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_14" type="Node2D" parent="."]
-position=Vector2(17516.4,-5)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_15" type="Node2D" parent="."]
-position=Vector2(18704.8,-205)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_16" type="Node2D" parent="."]
-position=Vector2(20031.4,-5)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_17" type="Node2D" parent="."]
-position=Vector2(21219.4,-205)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_18" type="Node2D" parent="."]
-position=Vector2(22308.0,-5)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_19" type="Node2D" parent="."]
-position=Vector2(6126.363636363636,417)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_20" type="Node2D" parent="."]
-position=Vector2(6482.727272727273,233)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_21" type="Node2D" parent="."]
-position=Vector2(6839.090909090909,104)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_22" type="Node2D" parent="."]
-position=Vector2(7195.454545454546,143)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_23" type="Node2D" parent="."]
-position=Vector2(7551.818181818182,182)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_24" type="Node2D" parent="."]
-position=Vector2(11559.615384615385,-147)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_25" type="Node2D" parent="."]
-position=Vector2(11904.23076923077,4)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_26" type="Node2D" parent="."]
-position=Vector2(12248.846153846154,94)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_27" type="Node2D" parent="."]
-position=Vector2(12593.461538461539,125)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_28" type="Node2D" parent="."]
-position=Vector2(12938.076923076924,36)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_29" type="Node2D" parent="."]
-position=Vector2(13282.692307692309,-53)
-script=ExtResource("object")
-kind="crystal"
-[node name="star_key_30" type="Node2D" parent="."]
-position=Vector2(22780,-32)
-script=ExtResource("object")
-kind="star_key"
-[node name="goal_31" type="Node2D" parent="."]
-position=Vector2(23120,50)
-script=ExtResource("object")
-kind="goal"
-[node name="checkpoint_32" type="Node2D" parent="."]
-position=Vector2(7650,250)
-script=ExtResource("object")
-kind="checkpoint"
-[node name="checkpoint_33" type="Node2D" parent="."]
-position=Vector2(15705,-50)
-script=ExtResource("object")
-kind="checkpoint"
-[node name="mole_34"  parent="." instance=ExtResource("mole")]
-position=Vector2(350,550)
-message="Tyhle mraky jezdí nahoru a dolů. Počkej na nižší polohu, naskoč a nech se vyvézt. Fouk ti pomůže doskočit na další ostrov."
-[node name="Enemy_0" parent="." instance=ExtResource("cloud_enemy")]
-position=Vector2(1850,250)
-patrol=275
-speed=88
-[node name="Enemy_1" parent="." instance=ExtResource("rock_enemy")]
-position=Vector2(3830,450)
-patrol=195
-speed=88
-[node name="Enemy_2" parent="." instance=ExtResource("stinko")]
-position=Vector2(6585,450)
-patrol=115
-speed=88
-[node name="Enemy_3" parent="." instance=ExtResource("cloud_enemy")]
-position=Vector2(9355,-50)
-patrol=275
-speed=88
-[node name="Enemy_4" parent="." instance=ExtResource("rock_enemy")]
-position=Vector2(12125,-50)
-patrol=275
-speed=88
-[node name="Enemy_5" parent="." instance=ExtResource("stinko")]
-position=Vector2(13410,-50)
-patrol=275
-speed=88
-[node name="Enemy_6" parent="." instance=ExtResource("cloud_enemy")]
-position=Vector2(15230,50)
-patrol=115
-speed=88
-[node name="Enemy_7" parent="." instance=ExtResource("rock_enemy")]
-position=Vector2(18585,-150)
-patrol=275
-speed=88
-[node name="Enemy_8" parent="." instance=ExtResource("stinko")]
-position=Vector2(20540,-50)
-patrol=275
-speed=88
-[node name="CameraDescent_00" type="Node2D" parent="."]
-script=ExtResource("camera_zone")
-position=Vector2(11720,-195)
+script = ExtResource("level")
+objectives = Array[NodePath]([NodePath("FirstAnchor"), NodePath("BellChoir")])
+objective_caption = "Obnovené proudy"
+number = 7
+title = "Zvony nad bouří"
+spawn = Vector2(140,550)
+width = 20500
+camera_top = -2200
+camera_bottom = 1500
+fall_limit = 1250.0
+fouk_at_start = true
 
-[node name="IslandFall_1" type="Node2D" parent="."]
-script=ExtResource("water")
-kind="waterfall"
-position=Vector2(4085,550)
-size=Vector2(95,600)
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -100
+script = ExtResource("bg")
+landscape = ExtResource("skyart")
 
-[node name="IslandFall_3" type="Node2D" parent="."]
-script=ExtResource("water")
-kind="waterfall"
-position=Vector2(11255,-150)
-size=Vector2(95,600)
+[node name="Arrival" parent="." type="AnimatableBody2D"]
+position = Vector2(0.00, 550.00)
+collision_mask = 0
+script = ExtResource("platform")
+width = 700.0
+depth = 95.0
 
-[node name="IslandFall_5" type="Node2D" parent="."]
-script=ExtResource("water")
-kind="waterfall"
-position=Vector2(18225,50)
-size=Vector2(95,600)
+[node name="CollisionShape2D" parent="Arrival" type="CollisionShape2D"]
+position = Vector2(350.00, 40.00)
+shape = SubResource("Shape_Arrival")
+one_way_collision = true
+
+[node name="Hint_1" parent="." type="Marker2D"]
+position = Vector2(250.00, 550.00)
+script = ExtResource("hint")
+title = "Oblačná stezka"
+message = "Fouk ti pomůže druhým skokem. Rozhlédni se, kam doskočíš."
+touch_message = "Fouk ti pomůže druhým skokem. Rozhlédni se, kam doskočíš."
+activation_size = Vector2(560, 330)
+display_seconds = 7.0
+
+[node name="StormArrival0" parent="." type="AnimatableBody2D"]
+position = Vector2(945.00, 420.00)
+collision_mask = 0
+script = ExtResource("water_ledge")
+width = 210.0
+behaviour = "steady"
+art_variant = 1
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+waterfall_style = "side"
+waterfall_length = 390.0
+water_mirrored = false
+
+[node name="StormArrival1" parent="." type="AnimatableBody2D"]
+position = Vector2(1375.00, 260.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 210.0
+behaviour = "pulse"
+art_variant = 2
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="StormArrival2" parent="." type="AnimatableBody2D"]
+position = Vector2(1815.00, 410.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 210.0
+behaviour = "orbit"
+art_variant = 3
+travel = Vector2(55.00, 35.00)
+period = 5.2
+phase_offset = 0.0
+powered = true
+
+[node name="ArrivalRain" parent="." instance=ExtResource("rain")]
+position = Vector2(1700.00, 40.00)
+rain_width = 180.0
+rain_height = 310.0
+slow_multiplier = 0.5
+calm_duration = 3.0
+warning_duration = 1.2
+rain_duration = 2.0
+recovery_duration = 0.8
+start_offset = 6.0
+
+[node name="FirstWindHub" parent="." type="AnimatableBody2D"]
+position = Vector2(2240.00, 470.00)
+collision_mask = 0
+script = ExtResource("platform")
+width = 780.0
+depth = 95.0
+
+[node name="CollisionShape2D" parent="FirstWindHub" type="CollisionShape2D"]
+position = Vector2(390.00, 40.00)
+shape = SubResource("Shape_FirstWindHub")
+one_way_collision = true
+
+[node name="Checkpoint_FirstWindHub" parent="." type="Node2D"]
+position = Vector2(2335.00, 470.00)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="FirstWindHub_Art" parent="." type="Node2D"]
+position = Vector2(2747.00, 470.00)
+script = ExtResource("landmark")
+piece = "tower"
+art_height = 165.0
+
+[node name="Hint_2" parent="." type="Marker2D"]
+position = Vector2(2550.00, 470.00)
+script = ExtResource("hint")
+title = "Rozcestí větru"
+message = "Najdi jádro nahoře. Pak na ostrově přepni na dolní cestu."
+touch_message = "Najdi jádro nahoře. Pak na ostrově přepni na dolní cestu."
+activation_size = Vector2(560, 330)
+display_seconds = 7.0
+
+[node name="FirstRoute_Upper_1" parent="." type="AnimatableBody2D"]
+position = Vector2(2450.00, 260.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 220.0
+behaviour = "steady"
+art_variant = 0
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="FirstRoute_Upper_2" parent="." type="AnimatableBody2D"]
+position = Vector2(2830.00, 70.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 220.0
+behaviour = "orbit"
+art_variant = 1
+travel = Vector2(50.00, 25.00)
+period = 5.2
+phase_offset = 0.0
+powered = true
+
+[node name="FirstRoute_Upper_3" parent="." type="AnimatableBody2D"]
+position = Vector2(3220.00, -100.00)
+collision_mask = 0
+script = ExtResource("water_ledge")
+width = 220.0
+behaviour = "steady"
+art_variant = 2
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+waterfall_style = "ruins"
+waterfall_length = 560.0
+water_mirrored = true
+
+[node name="FirstRoute_Core" parent="." type="Node2D"]
+position = Vector2(3330.00, -100.00)
+script = ExtResource("station")
+kind = "core"
+caption = "Opravit mlýn"
+targets = Array[NodePath]([])
+wind_travel = Vector2(1000.00, -180.00)
+requires = NodePath("")
+router = NodePath("")
+route_index = 0
+done_caption = "Proud obnoven"
+
+[node name="FirstRoute_Lower_1" parent="." type="AnimatableBody2D"]
+position = Vector2(3250.00, 480.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 220.0
+behaviour = "steady"
+art_variant = 3
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = false
+
+[node name="FirstRoute_Lower_2" parent="." type="AnimatableBody2D"]
+position = Vector2(3700.00, 360.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 220.0
+behaviour = "drift"
+art_variant = 0
+travel = Vector2(65.00, 0.00)
+period = 5.2
+phase_offset = 0.0
+powered = false
+
+[node name="FirstRoute_Lower_3" parent="." type="AnimatableBody2D"]
+position = Vector2(4150.00, 460.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 220.0
+behaviour = "pulse"
+art_variant = 1
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = false
+
+[node name="FirstRoute_Lower_4" parent="." type="AnimatableBody2D"]
+position = Vector2(4600.00, 350.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 220.0
+behaviour = "steady"
+art_variant = 2
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = false
+
+[node name="RouteRainA" parent="." instance=ExtResource("rain")]
+position = Vector2(3135.00, -300.00)
+rain_width = 210.0
+rain_height = 310.0
+slow_multiplier = 0.5
+calm_duration = 3.0
+warning_duration = 1.2
+rain_duration = 2.0
+recovery_duration = 0.8
+start_offset = 1.2
+
+[node name="RouteRainB" parent="." instance=ExtResource("rain")]
+position = Vector2(4470.00, 80.00)
+rain_width = 210.0
+rain_height = 310.0
+slow_multiplier = 0.5
+calm_duration = 3.0
+warning_duration = 1.2
+rain_duration = 2.0
+recovery_duration = 0.8
+start_offset = 1.4
+
+[node name="FirstRoute_Router" parent="." type="Node"]
+script = ExtResource("router")
+upper = Array[NodePath]([NodePath("../FirstRoute_Upper_1"), NodePath("../FirstRoute_Upper_2"), NodePath("../FirstRoute_Upper_3")])
+lower = Array[NodePath]([NodePath("../FirstRoute_Lower_1"), NodePath("../FirstRoute_Lower_2"), NodePath("../FirstRoute_Lower_3"), NodePath("../FirstRoute_Lower_4")])
+upper_rain = Array[NodePath]([NodePath("../RouteRainA")])
+lower_rain = Array[NodePath]([NodePath("../RouteRainB")])
+
+[node name="FirstRoute_UpperPlate" parent="." type="Node2D"]
+position = Vector2(2460.00, 470.00)
+script = ExtResource("station")
+kind = "selector"
+caption = "Horní proud"
+targets = Array[NodePath]([])
+wind_travel = Vector2(1000.00, -180.00)
+requires = NodePath("")
+router = NodePath("../FirstRoute_Router")
+route_index = 0
+done_caption = "Proud obnoven"
+
+[node name="FirstRoute_LowerPlate" parent="." type="Node2D"]
+position = Vector2(2700.00, 470.00)
+script = ExtResource("station")
+kind = "selector"
+caption = "Dolní proud"
+targets = Array[NodePath]([])
+wind_travel = Vector2(1000.00, -180.00)
+requires = NodePath("")
+router = NodePath("../FirstRoute_Router")
+route_index = 1
+done_caption = "Proud obnoven"
+
+[node name="FirstAnchorBank" parent="." type="AnimatableBody2D"]
+position = Vector2(5030.00, 420.00)
+collision_mask = 0
+script = ExtResource("platform")
+width = 680.0
+depth = 95.0
+
+[node name="CollisionShape2D" parent="FirstAnchorBank" type="CollisionShape2D"]
+position = Vector2(340.00, 40.00)
+shape = SubResource("Shape_FirstAnchorBank")
+one_way_collision = true
+
+[node name="Checkpoint_FirstAnchorBank" parent="." type="Node2D"]
+position = Vector2(5125.00, 420.00)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="FirstAnchorBank_Art" parent="." type="Node2D"]
+position = Vector2(5472.00, 420.00)
+script = ExtResource("landmark")
+piece = "pavilion"
+art_height = 165.0
+
+[node name="AnchorCarrier" parent="." type="AnimatableBody2D"]
+position = Vector2(5865.00, 400.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 270.0
+behaviour = "drift"
+art_variant = 4
+travel = Vector2(-100.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="FirstAnchor" parent="." type="Node2D"]
+position = Vector2(5460.00, 420.00)
+script = ExtResource("station")
+kind = "repair"
+caption = "Obnovit kotvu"
+targets = Array[NodePath]([NodePath("../AnchorCarrier")])
+wind_travel = Vector2(1050.00, -160.00)
+requires = NodePath("../FirstRoute_Core")
+router = NodePath("")
+route_index = 0
+done_caption = "Proud obnoven"
+
+[node name="FirstAnchorGuard" parent="." instance=ExtResource("enemy")]
+position = Vector2(5250.00, 420.00)
+patrol = 125.0
+speed = 48.0
+
+[node name="WaterfallShelter" parent="." type="AnimatableBody2D"]
+position = Vector2(7300.00, 240.00)
+collision_mask = 0
+script = ExtResource("platform")
+width = 650.0
+depth = 95.0
+
+[node name="CollisionShape2D" parent="WaterfallShelter" type="CollisionShape2D"]
+position = Vector2(325.00, 40.00)
+shape = SubResource("Shape_WaterfallShelter")
+one_way_collision = true
+
+[node name="Checkpoint_WaterfallShelter" parent="." type="Node2D"]
+position = Vector2(7395.00, 240.00)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="WaterfallShelter_Art" parent="." type="Node2D"]
+position = Vector2(7722.50, 240.00)
+script = ExtResource("landmark")
+piece = "fountain"
+art_height = 165.0
+
+[node name="WaterfallGuard" parent="." instance=ExtResource("enemy")]
+position = Vector2(7650.00, 240.00)
+patrol = 125.0
+speed = 48.0
+
+[node name="FarWaterfall" parent="." type="Node2D"]
+position = Vector2(7570.00, 290.00)
+script = ExtResource("water")
+kind = "waterfall"
+size = Vector2(74.00, 850.00)
+modulate = Color(0.85, 0.94, 1, 0.6)
+
+[node name="FallsCloudA" parent="." type="AnimatableBody2D"]
+position = Vector2(8145.00, 100.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 210.0
+behaviour = "drift"
+art_variant = 0
+travel = Vector2(-70.00, 0.00)
+period = 5.2
+phase_offset = 0.0
+powered = true
+
+[node name="FallsCloudB" parent="." type="AnimatableBody2D"]
+position = Vector2(8605.00, 240.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 210.0
+behaviour = "fragile"
+art_variant = 1
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="FallsRain" parent="." instance=ExtResource("rain")]
+position = Vector2(8490.00, -80.00)
+rain_width = 180.0
+rain_height = 310.0
+slow_multiplier = 0.5
+calm_duration = 3.0
+warning_duration = 1.2
+rain_duration = 2.0
+recovery_duration = 0.8
+start_offset = 3.4
+
+[node name="BellAtrium" parent="." type="AnimatableBody2D"]
+position = Vector2(9030.00, 390.00)
+collision_mask = 0
+script = ExtResource("platform")
+width = 820.0
+depth = 95.0
+
+[node name="CollisionShape2D" parent="BellAtrium" type="CollisionShape2D"]
+position = Vector2(410.00, 40.00)
+shape = SubResource("Shape_BellAtrium")
+one_way_collision = true
+
+[node name="Checkpoint_BellAtrium" parent="." type="Node2D"]
+position = Vector2(9125.00, 390.00)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="BellAtrium_Art" parent="." type="Node2D"]
+position = Vector2(9563.00, 390.00)
+script = ExtResource("landmark")
+piece = "arch"
+art_height = 165.0
+
+[node name="Hint_3" parent="." type="Marker2D"]
+position = Vector2(9400.00, 390.00)
+script = ExtResource("hint")
+title = "Tři světelné zvonky"
+message = "Najdi tři zvonky. Nahoru vede výtah i rychlejší cesta po žlutých mracích."
+touch_message = "Najdi tři zvonky. Nahoru vede výtah i rychlejší cesta po žlutých mracích."
+activation_size = Vector2(560, 330)
+display_seconds = 7.0
+
+[node name="LowerBellShelf" parent="." type="AnimatableBody2D"]
+position = Vector2(9405.00, 650.00)
+collision_mask = 0
+script = ExtResource("water_ledge")
+width = 350.0
+behaviour = "steady"
+art_variant = 4
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+waterfall_style = "garden"
+waterfall_length = 450.0
+water_mirrored = false
+
+[node name="LowBell" parent="." type="Node2D"]
+position = Vector2(9640.00, 650.00)
+script = ExtResource("chime")
+tone = Color(0.54, 0.9, 1.0, 1)
+
+[node name="LowerReturnLift" parent="." type="AnimatableBody2D"]
+position = Vector2(9805.00, 650.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 250.0
+behaviour = "ferry"
+art_variant = 3
+travel = Vector2(0.00, -330.00)
+period = 2.4
+phase_offset = 0.0
+powered = true
+return_period = 1.8
+
+[node name="BellSkyStep1" parent="." type="AnimatableBody2D"]
+position = Vector2(9475.0, 180)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 170.0
+behaviour = "fragile"
+art_variant = 2
+crumble_seconds = 1.5
+travel = Vector2(0, 0)
+period = 3.8
+powered = true
+
+[node name="BellSkyStep2" parent="." type="AnimatableBody2D"]
+position = Vector2(9735.0, -20)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 170.0
+behaviour = "fragile"
+art_variant = 2
+crumble_seconds = 1.5
+travel = Vector2(0, 0)
+period = 3.8
+powered = true
+
+[node name="BellSkyStep3" parent="." type="AnimatableBody2D"]
+position = Vector2(10015.0, -210)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 170.0
+behaviour = "fragile"
+art_variant = 2
+crumble_seconds = 1.5
+travel = Vector2(0, 0)
+period = 3.8
+powered = true
+
+[node name="BellLift" parent="." type="AnimatableBody2D"]
+position = Vector2(9965.00, 350.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 270.0
+behaviour = "ferry"
+art_variant = 4
+travel = Vector2(0.00, -430.00)
+period = 2.4
+phase_offset = 0.0
+powered = true
+return_period = 1.8
+
+[node name="HighBellBalcony" parent="." type="AnimatableBody2D"]
+position = Vector2(10350.00, -240.00)
+collision_mask = 0
+script = ExtResource("platform")
+width = 480.0
+depth = 95.0
+
+[node name="CollisionShape2D" parent="HighBellBalcony" type="CollisionShape2D"]
+position = Vector2(240.00, 40.00)
+shape = SubResource("Shape_HighBellBalcony")
+one_way_collision = true
+
+[node name="Checkpoint_HighBellBalcony" parent="." type="Node2D"]
+position = Vector2(10445.00, -240.00)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="HighBellBalcony_Art" parent="." type="Node2D"]
+position = Vector2(10662.00, -240.00)
+script = ExtResource("landmark")
+piece = "birdhouse"
+art_height = 165.0
+
+[node name="HighBell" parent="." type="Node2D"]
+position = Vector2(10610.00, -240.00)
+script = ExtResource("chime")
+tone = Color(1, 0.81, 0.4, 1)
+
+[node name="BellCrossingA" parent="." type="AnimatableBody2D"]
+position = Vector2(10995.00, -60.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 230.0
+behaviour = "fragile"
+art_variant = 1
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="BellCrossingB" parent="." type="AnimatableBody2D"]
+position = Vector2(11365.00, 100.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 230.0
+behaviour = "drift"
+art_variant = 2
+travel = Vector2(70.00, 0.00)
+period = 5.2
+phase_offset = 0.0
+powered = true
+
+[node name="BellCrossingRain" parent="." instance=ExtResource("rain")]
+position = Vector2(11260.00, -170.00)
+rain_width = 150.0
+rain_height = 310.0
+slow_multiplier = 0.5
+calm_duration = 3.0
+warning_duration = 1.2
+rain_duration = 2.0
+recovery_duration = 0.8
+start_offset = 1.4
+
+[node name="FarBellBalcony" parent="." type="AnimatableBody2D"]
+position = Vector2(11700.00, 300.00)
+collision_mask = 0
+script = ExtResource("platform")
+width = 600.0
+depth = 95.0
+
+[node name="CollisionShape2D" parent="FarBellBalcony" type="CollisionShape2D"]
+position = Vector2(300.00, 40.00)
+shape = SubResource("Shape_FarBellBalcony")
+one_way_collision = true
+
+[node name="Checkpoint_FarBellBalcony" parent="." type="Node2D"]
+position = Vector2(11795.00, 300.00)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="FarBellBalcony_Art" parent="." type="Node2D"]
+position = Vector2(12090.00, 300.00)
+script = ExtResource("landmark")
+piece = "planter"
+art_height = 165.0
+
+[node name="FarBell" parent="." type="Node2D"]
+position = Vector2(12120.00, 300.00)
+script = ExtResource("chime")
+tone = Color(1, 0.65, 0.84, 1)
+
+[node name="BellReturn_1" parent="." type="AnimatableBody2D"]
+position = Vector2(11340.00, 560.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 220.0
+behaviour = "steady"
+art_variant = 3
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="BellReturn_2" parent="." type="AnimatableBody2D"]
+position = Vector2(10890.00, 650.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 220.0
+behaviour = "steady"
+art_variant = 0
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="BellReturn_3" parent="." type="AnimatableBody2D"]
+position = Vector2(10440.00, 650.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 220.0
+behaviour = "steady"
+art_variant = 1
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="FinalCarrier" parent="." type="AnimatableBody2D"]
+position = Vector2(12465.00, 390.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 270.0
+behaviour = "ferry"
+art_variant = 4
+travel = Vector2(1050.00, -50.00)
+period = 3.8
+phase_offset = 0.0
+powered = false
+
+[node name="BellChoir" parent="." type="Node2D"]
+position = Vector2(12000.00, 300.00)
+script = ExtResource("chimes")
+bells = Array[NodePath]([NodePath("../LowBell"), NodePath("../HighBell"), NodePath("../FarBell")])
+carrier = NodePath("../FinalCarrier")
+wind_travel = Vector2(1050.00, -50.00)
+
+[node name="QuietGarden" parent="." type="AnimatableBody2D"]
+position = Vector2(14100.00, 340.00)
+collision_mask = 0
+script = ExtResource("platform")
+width = 650.0
+depth = 95.0
+
+[node name="CollisionShape2D" parent="QuietGarden" type="CollisionShape2D"]
+position = Vector2(325.00, 40.00)
+shape = SubResource("Shape_QuietGarden")
+one_way_collision = true
+
+[node name="Checkpoint_QuietGarden" parent="." type="Node2D"]
+position = Vector2(14195.00, 340.00)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="QuietGarden_Art" parent="." type="Node2D"]
+position = Vector2(14522.50, 340.00)
+script = ExtResource("landmark")
+piece = "treehouse"
+art_height = 165.0
+
+[node name="QuietGardenGuard" parent="." instance=ExtResource("enemy")]
+position = Vector2(14440.00, 340.00)
+patrol = 125.0
+speed = 48.0
+
+[node name="GardenStormRain" parent="." instance=ExtResource("rain")]
+position = Vector2(14860.00, 30.00)
+rain_width = 180.0
+rain_height = 310.0
+slow_multiplier = 0.5
+calm_duration = 3.0
+warning_duration = 1.2
+rain_duration = 2.0
+recovery_duration = 0.8
+start_offset = 3.0
+
+[node name="MoonGarden_1" parent="." type="AnimatableBody2D"]
+position = Vector2(14220.00, 140.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 220.0
+behaviour = "steady"
+art_variant = 3
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="MoonGarden_2" parent="." type="AnimatableBody2D"]
+position = Vector2(14530.00, -50.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 220.0
+behaviour = "steady"
+art_variant = 0
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="MoonGarden_3" parent="." type="AnimatableBody2D"]
+position = Vector2(14260.00, -250.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 220.0
+behaviour = "steady"
+art_variant = 1
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="MoonGarden_HiddenGarden" parent="." type="AnimatableBody2D"]
+position = Vector2(14500.00, -360.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 360.0
+behaviour = "steady"
+art_variant = 4
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="MoonGarden_Shrine" parent="." type="Node2D"]
+position = Vector2(14680.00, -360.00)
+script = ExtResource("landmark")
+piece = "crystal_shrine"
+art_height = 125.0
+
+[node name="BeforeFinaleA" parent="." type="AnimatableBody2D"]
+position = Vector2(14955.00, 210.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 210.0
+behaviour = "orbit"
+art_variant = 3
+travel = Vector2(60.00, 30.00)
+period = 5.2
+phase_offset = 0.0
+powered = true
+
+[node name="BeforeFinaleB" parent="." type="AnimatableBody2D"]
+position = Vector2(15395.00, 340.00)
+collision_mask = 0
+script = ExtResource("water_ledge")
+width = 210.0
+behaviour = "steady"
+art_variant = 0
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+waterfall_style = "ruins"
+waterfall_length = 540.0
+water_mirrored = false
+
+[node name="LastStormRain" parent="." instance=ExtResource("rain")]
+position = Vector2(15270.00, 30.00)
+rain_width = 180.0
+rain_height = 310.0
+slow_multiplier = 0.5
+calm_duration = 3.0
+warning_duration = 1.2
+rain_duration = 2.0
+recovery_duration = 0.8
+start_offset = 0.2
+
+[node name="EscapeCheckpoint" parent="." type="AnimatableBody2D"]
+position = Vector2(15830.00, 380.00)
+collision_mask = 0
+script = ExtResource("platform")
+width = 760.0
+depth = 95.0
+
+[node name="CollisionShape2D" parent="EscapeCheckpoint" type="CollisionShape2D"]
+position = Vector2(380.00, 40.00)
+shape = SubResource("Shape_EscapeCheckpoint")
+one_way_collision = true
+
+[node name="Checkpoint_EscapeCheckpoint" parent="." type="Node2D"]
+position = Vector2(15925.00, 380.00)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="EscapeCheckpoint_Art" parent="." type="Node2D"]
+position = Vector2(16324.00, 380.00)
+script = ExtResource("landmark")
+piece = "bench"
+art_height = 165.0
+
+[node name="Hint_4" parent="." type="Marker2D"]
+position = Vector2(16200.00, 380.00)
+script = ExtResource("hint")
+title = "Poslední vlna"
+message = "Mraky se rozpadají za tebou. Pokračuj vpřed — checkpoint je tady."
+touch_message = "Mraky se rozpadají za tebou. Pokračuj vpřed — checkpoint je tady."
+activation_size = Vector2(560, 330)
+display_seconds = 7.0
+
+[node name="EscapeCloud0" parent="." type="AnimatableBody2D"]
+position = Vector2(16755.00, 320.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 230.0
+behaviour = "fragile"
+art_variant = 1
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="EscapeCloud1" parent="." type="AnimatableBody2D"]
+position = Vector2(17135.00, 260.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 230.0
+behaviour = "fragile"
+art_variant = 2
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="EscapeCloud2" parent="." type="AnimatableBody2D"]
+position = Vector2(17535.00, 340.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 230.0
+behaviour = "fragile"
+art_variant = 3
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="EscapeCloud3" parent="." type="AnimatableBody2D"]
+position = Vector2(17935.00, 270.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 230.0
+behaviour = "fragile"
+art_variant = 0
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="EscapeCloud4" parent="." type="AnimatableBody2D"]
+position = Vector2(18325.00, 370.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 230.0
+behaviour = "fragile"
+art_variant = 1
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="EscapeCloud5" parent="." type="AnimatableBody2D"]
+position = Vector2(18715.00, 300.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 230.0
+behaviour = "fragile"
+art_variant = 2
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="EscapeCloud6" parent="." type="AnimatableBody2D"]
+position = Vector2(19105.00, 370.00)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 230.0
+behaviour = "fragile"
+art_variant = 3
+travel = Vector2(0.00, 0.00)
+period = 3.8
+phase_offset = 0.0
+powered = true
+
+[node name="CloudEscape" parent="." type="Node"]
+script = ExtResource("escape")
+clouds = Array[NodePath]([NodePath("../EscapeCloud0"), NodePath("../EscapeCloud1"), NodePath("../EscapeCloud2"), NodePath("../EscapeCloud3"), NodePath("../EscapeCloud4"), NodePath("../EscapeCloud5"), NodePath("../EscapeCloud6")])
+start_x = 16730.0
+end_x = 19430.0
+first_delay = 3.8
+interval = 1.6
+
+[node name="ExitGarden" parent="." type="AnimatableBody2D"]
+position = Vector2(19470.00, 430.00)
+collision_mask = 0
+script = ExtResource("platform")
+width = 850.0
+depth = 95.0
+
+[node name="CollisionShape2D" parent="ExitGarden" type="CollisionShape2D"]
+position = Vector2(425.00, 40.00)
+shape = SubResource("Shape_ExitGarden")
+one_way_collision = true
+
+[node name="ExitGarden_Art" parent="." type="Node2D"]
+position = Vector2(20022.50, 430.00)
+script = ExtResource("landmark")
+piece = "ruin_arch"
+art_height = 165.0
+
+[node name="SkyKey" parent="." type="Node2D"]
+position = Vector2(19800.00, 382.00)
+script = ExtResource("object")
+kind = "star_key"
+
+[node name="Goal" parent="." type="Node2D"]
+position = Vector2(20070.00, 430.00)
+script = ExtResource("object")
+kind = "goal"
+
+[node name="Diamond_01" parent="StormArrival0" type="Node2D"]
+position = Vector2(105.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_02" parent="StormArrival1" type="Node2D"]
+position = Vector2(105.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_03" parent="StormArrival2" type="Node2D"]
+position = Vector2(105.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_04" parent="FirstRoute_Upper_2" type="Node2D"]
+position = Vector2(110.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_05" parent="FirstRoute_Lower_2" type="Node2D"]
+position = Vector2(110.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_06" parent="FirstRoute_Lower_4" type="Node2D"]
+position = Vector2(110.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_07" parent="AnchorCarrier" type="Node2D"]
+position = Vector2(135.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_08" parent="WaterfallShelter" type="Node2D"]
+position = Vector2(160.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_09" parent="FallsCloudA" type="Node2D"]
+position = Vector2(105.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_10" parent="FallsCloudB" type="Node2D"]
+position = Vector2(105.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_11" parent="LowerBellShelf" type="Node2D"]
+position = Vector2(75.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_12" parent="BellSkyStep3" type="Node2D"]
+position = Vector2(85, -48)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_13" parent="HighBellBalcony" type="Node2D"]
+position = Vector2(80.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_14" parent="BellCrossingA" type="Node2D"]
+position = Vector2(115.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_15" parent="FarBellBalcony" type="Node2D"]
+position = Vector2(90.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_16" parent="MoonGarden_HiddenGarden" type="Node2D"]
+position = Vector2(70.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_17" parent="MoonGarden_HiddenGarden" type="Node2D"]
+position = Vector2(180.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_18" parent="MoonGarden_HiddenGarden" type="Node2D"]
+position = Vector2(290.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_19" parent="BeforeFinaleA" type="Node2D"]
+position = Vector2(105.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_20" parent="BeforeFinaleB" type="Node2D"]
+position = Vector2(105.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_21" parent="EscapeCloud1" type="Node2D"]
+position = Vector2(115.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond_22" parent="EscapeCloud4" type="Node2D"]
+position = Vector2(115.00, -48.00)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="SecretGardenReward" parent="." type="Node2D"]
+position = Vector2(14680, -360)
+script = ExtResource("discovery")
+area_size = Vector2(330, 60)
+rain_targets = Array[NodePath]([NodePath("../GardenStormRain"), NodePath("../LastStormRain")])

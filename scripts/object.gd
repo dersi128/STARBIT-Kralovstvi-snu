@@ -187,7 +187,8 @@ var kit_instance:Node2D
 var used := false
 var time := 0.0
 var repair := 0.0
-var _fouk_support_height := -1.0
+var repair_actor: Node2D
+const FOUK_REPAIR_ART = preload("res://scripts/fouk_repair_art.gd")
 var label: Label
 var talking:=false
 var dialogue_time:=0.0
@@ -213,6 +214,7 @@ func _refresh_kit() -> void:
 		elif kind=="stone_block":kit_instance.position.y=-88
 	if narrator:narrator.visible=kind=="mole"
 func _ready() -> void:
+	if kind=="fouk":FOUK_REPAIR_ART.prepare()
 	_refresh_kit()
 	if kind=="goal":
 		portal=AnimatedSprite2D.new()
@@ -244,7 +246,7 @@ func _process(delta: float) -> void:
 	if kind=="checkpoint" and not used and d<90:
 		used=true;get_tree().call_group("level","set_checkpoint",global_position)
 		Progress.sfx("checkpoint")
-	elif kind in ["star_key","crystal"] and not used and d<62:
+	elif kind in ["star_key","crystal"] and not used and _touches_collectible(player):
 		used=true
 		if player.has_method("celebrate_collect"):player.celebrate_collect(kind,global_position)
 		else:player.happy=0.65
@@ -263,20 +265,40 @@ func _process(delta: float) -> void:
 			var game=get_tree().get_first_node_in_group("game")
 			talking=game!=null and game.speaker==self and game.speech_progress<page.length()
 	elif kind=="mole":dialogue_time=0.0
-	elif kind=="fouk" and not used and d<110 and (not fouk_on_ground or player.is_on_floor()):
-		repair+=delta;player.frozen=true
-		get_tree().call_group("game","hint","Bit opravuje Fouka… ✦")
-		if repair>2.0:
-			used=true;player.frozen=false;player.has_fouk=true;player.happy=1.0
-			get_tree().call_group("game","hint","Fouk je zpátky! Ve vzduchu stiskni skok ještě jednou.")
-			Progress.sfx("repair")
+	elif kind=="fouk" and not used:
+		if repair>0 and (not is_instance_valid(repair_actor) or repair_actor.repair_target!=self):
+			repair=0.0;repair_actor=null
+		if not player.has_fouk and d<110 and (not fouk_on_ground or player.is_on_floor()):
+			if player.begin_repair(self):
+				repair_actor=player;repair+=delta
+				if repair>=FOUK_REPAIR_ART.DURATION:
+					used=true;player.end_repair();player.has_fouk=true;player.happy=1.0
+					repair_actor=null
+					Progress.sfx("repair")
+		elif is_instance_valid(repair_actor):
+			repair_actor.end_repair();repair_actor=null;repair=0.0
 	if narrator:
 		narrator.play("talk" if talking else "idle")
 		if kind=="mole" and absf(player.global_position.x-global_position.x)>12:
 			narrator.flip_h=player.global_position.x<global_position.x
+
+func _touches_collectible(player:Node2D) -> bool:
+	# Bit's origin is at his feet. Test the whole capsule against the visible gem.
+	var body:=player.get_node_or_null("Collision") as CollisionShape2D
+	if body==null or not body.shape is CapsuleShape2D:return false
+	var capsule:=body.shape as CapsuleShape2D
+	var half_line:=maxf(0.0,capsule.height*0.5-capsule.radius)
+	var center:=to_global(Vector2(0,sin(time*3.0)*3.0))
+	var closest:=Geometry2D.get_closest_point_to_segment(center,body.to_global(Vector2(0,-half_line)),body.to_global(Vector2(0,half_line)))
+	var reach:=capsule.radius*absf(body.global_scale.x)+22.0*maxf(absf(global_scale.x),absf(global_scale.y))
+	return center.distance_squared_to(closest)<=reach*reach
+
+func _exit_tree() -> void:
+	if is_instance_valid(repair_actor) and repair_actor.repair_target==self:repair_actor.end_repair()
+
 func _draw() -> void:
 	if used and kind in ["fouk","star_key","crystal"]: return
-	if kind=="fouk" and fouk_on_ground:
+	if kind=="fouk":
 		_draw_grounded_fouk()
 		return
 	match kind:
@@ -309,26 +331,25 @@ func _draw() -> void:
 		"bush": draw_texture_rect(DreamArt.texture("bush"),Rect2(-60,-65,120,75),false)
 
 func _draw_grounded_fouk() -> void:
-	# The node marks the ground. Keep the broken drone resting on its side,
-	# with no hover or spinning rotor, until the existing repair completes.
-	var texture:Texture2D=DreamArt.texture("fouk")
-	var art_scale:=90.0/maxf(texture.get_width(),texture.get_height())
-	var size:=texture.get_size()*art_scale
-	var angle:=-PI*0.5
-	if _fouk_support_height<0.0:
-		# Cache the visible edge, not transparent padding, so he touches ground.
-		var bounds:=texture.get_image().get_used_rect()
-		_fouk_support_height=(texture.get_width()*0.5-bounds.position.x)*art_scale
-	var support_height:=_fouk_support_height
-	draw_set_transform(Vector2(0,1),0,Vector2(1,0.16))
-	draw_circle(Vector2.ZERO,31,Color(0.1,0.18,0.24,0.2))
-	draw_set_transform(Vector2(0,-support_height),angle)
-	draw_texture_rect(texture,Rect2(-size*0.5,size),false,Color(0.70,0.76,0.82))
+	var progress:=clampf(repair/FOUK_REPAIR_ART.DURATION,0.0,1.0)
+	var waking:=smoothstep(0.12,0.70,progress)
+	var takeoff:=smoothstep(0.76,1.0,progress)
+	var angle:=lerpf(-0.85,0.0,waking) if fouk_on_ground else 0.0
+	var center:=Vector2(0,-lerpf(54.1,51.0,waking))
+	var visual_size:=FOUK_REPAIR_ART.frame(0).get_size()
+	visual_size*=112.0/maxf(visual_size.x,visual_size.y)*lerpf(1.0,0.82,takeoff)
+	if is_instance_valid(repair_actor):
+		# The final pose travels to the companion's real follow position.
+		var destination:=to_local(repair_actor.to_global(Vector2(-repair_actor.facing*40,-100+sin(repair_actor.anim_time*4)*5)))
+		center=center.lerp(destination,takeoff)
+	if fouk_on_ground:
+		draw_set_transform(Vector2(0,1),0,Vector2(1,0.16))
+		draw_circle(Vector2.ZERO,31,Color(0.1,0.18,0.24,0.2*(1.0-takeoff)))
+	draw_set_transform(center,angle)
+	FOUK_REPAIR_ART.draw_pose(self,progress,Rect2(-visual_size*0.5,visual_size))
 	draw_set_transform(Vector2.ZERO)
-	if repair>0:
-		for i in 3:
-			var a:=time*6.0+float(i)*TAU/3.0
-			draw_texture_rect(DreamArt.texture("star"),Rect2(cos(a)*42-8,-support_height+sin(a)*24-8,16,16),false)
+	if repair>0.0 and takeoff<1.0:
+		draw_arc(center,48,-PI*0.5,-PI*0.5+TAU*progress,32,Color(0.64,0.96,0.83,1.0-takeoff),2,true)
 
 
 # Disjoint source rectangles omit neighbouring props without moving or
