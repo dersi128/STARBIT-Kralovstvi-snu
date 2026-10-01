@@ -2,7 +2,7 @@
 extends AnimatableBody2D
 ## Only used by levels 6–7. Art keeps its proportions and its grassy walk line.
 @export var width := 570.0:
-	set(value):width=maxf(value,120);queue_redraw();_refresh_water()
+	set(value):width=maxf(value,120);queue_redraw();_refresh_water();_sync_deck()
 @export var depth := 95.0
 ## Automatic styles apply only to selected existing islands in levels 6–7.
 ## Explicit choices also work on renamed/copied islands.
@@ -25,8 +25,19 @@ var _water_pending := false
 func _ready() -> void:
 	collision_layer=1
 	collision_mask=0
+	_sync_deck()
 	_sync_water()
 	if not renamed.is_connected(_refresh_water):renamed.connect(_refresh_water)
+func _sync_deck() -> void:
+	if not is_inside_tree():return
+	var deck:=get_node_or_null("CollisionShape2D") as CollisionShape2D
+	if deck==null:
+		deck=CollisionShape2D.new();deck.name="CollisionShape2D"
+		add_child(deck,false,Node.INTERNAL_MODE_BACK)
+	var shape:=RectangleShape2D.new()
+	shape.size=Vector2(width,24)
+	deck.shape=shape;deck.position=Vector2(width/2,12)
+	deck.one_way_collision=true;deck.one_way_collision_margin=6
 func _water_variant() -> int:
 	if waterfall_art==1:return -1
 	if waterfall_art>=2:return waterfall_art-2
@@ -48,6 +59,19 @@ func _sync_water() -> void:
 	queue_redraw()
 func _draw() -> void:
 	if _water_variant()>=0:return
-	var scale_factor:float=(width+36)/282.0
-	# Exclude the stray fragment along the bottom of the original atlas piece.
-	draw_texture_rect_region(ART,Rect2(-18,-34*scale_factor,282*scale_factor,145*scale_factor),Rect2(8,0,282,145))
+	# Extend the rock shelf, not its leaves and flowers. Alternating centre
+	# slices share identical seam pixels; an odd count also matches both caps.
+	var detail_scale:=minf(1.05,(width+36.0)/282.0)
+	var cap:=90.0*detail_scale
+	var middle:=width+36.0-cap*2.0
+	var count:=maxi(1,roundi((middle/(102.0*detail_scale)-1.0)/2.0)*2+1)
+	var segment:=middle/count
+	var top:=-34.0*detail_scale
+	var height:=145.0*detail_scale
+	draw_texture_rect_region(ART,Rect2(-18,top,cap,height),Rect2(8,0,90,145))
+	for i in count:
+		var x:=-18.0+cap+i*segment
+		draw_set_transform(Vector2(x+segment if i%2 else x,0),0,Vector2(-1 if i%2 else 1,1))
+		draw_texture_rect_region(ART,Rect2(0,top,segment,height),Rect2(98,0,102,145))
+	draw_set_transform(Vector2.ZERO)
+	draw_texture_rect_region(ART,Rect2(width+18-cap,top,cap,height),Rect2(200,0,90,145))

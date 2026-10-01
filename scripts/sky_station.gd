@@ -30,11 +30,10 @@ func _physics_process(delta:float) -> void:
 			active=true;Progress.sfx("crystal")
 	elif kind=="selector":
 		var control:=get_node_or_null(router)
-		if near and not occupied_before and control:control.select_route(route_index)
+		if near and not occupied_before and control and _requirement_met():control.select_route(route_index)
 		active=control!=null and control.selected==route_index
 	else:
-		var requirement:=get_node_or_null(requires) if not requires.is_empty() else null
-		var allowed:bool=requires.is_empty() or (requirement!=null and requirement.active)
+		var allowed:=_requirement_met()
 		if not active:
 			if near and allowed and absf(player.velocity.x)<35:
 				progress=minf(1,progress+delta/maxf(repair_seconds,0.1))
@@ -46,6 +45,10 @@ func _physics_process(delta:float) -> void:
 					if target and target.has_method("configure_wind"):target.configure_wind(wind_travel)
 	occupied_before=near
 	queue_redraw()
+func _requirement_met() -> bool:
+	if requires.is_empty():return true
+	var requirement:=get_node_or_null(requires)
+	return requirement!=null and requirement.active
 func _draw() -> void:
 	if kind=="core":
 		if active:return
@@ -54,6 +57,7 @@ func _draw() -> void:
 	var colour:=Color("a8f4cb") if active else Color("ffd978")
 	draw_texture_rect_region(SHEET,Rect2(-45,-26,90,45),Rect2(724 if active else 0,640,362,202))
 	var text:=caption
+	if kind=="selector" and not _requirement_met():text="Nejprve horní jádro"
 	if kind=="repair":
 		text=done_caption if active else caption
 		if not active and progress>0:

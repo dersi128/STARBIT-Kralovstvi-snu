@@ -63,7 +63,7 @@ objectives = Array[NodePath]([NodePath("FirstAnchor"), NodePath("BellChoir")])
 objective_caption = "Obnovené proudy"
 number = 7
 title = "Zvony nad bouří"
-spawn = Vector2(140,550)
+spawn = Vector2(140, 540)
 width = 20500
 camera_top = -2200
 camera_bottom = 1500
@@ -167,14 +167,14 @@ kind = "checkpoint"
 position = Vector2(2747.00, 470.00)
 script = ExtResource("landmark")
 piece = "tower"
-art_height = 165.0
+art_height = 205.0
 
 [node name="Hint_2" parent="." type="Marker2D"]
 position = Vector2(2550.00, 470.00)
 script = ExtResource("hint")
 title = "Rozcestí větru"
-message = "Najdi jádro nahoře. Pak na ostrově přepni na dolní cestu."
-touch_message = "Najdi jádro nahoře. Pak na ostrově přepni na dolní cestu."
+message = "Nahoře vezmi jádro. Vrať se k dolnímu přepínači a otevři cestu dál."
+touch_message = "Nahoře vezmi jádro. Vrať se k dolnímu přepínači a otevři cestu dál."
 activation_size = Vector2(560, 330)
 display_seconds = 7.0
 
@@ -325,7 +325,7 @@ kind = "selector"
 caption = "Dolní proud"
 targets = Array[NodePath]([])
 wind_travel = Vector2(1000.00, -180.00)
-requires = NodePath("")
+requires = NodePath("../FirstRoute_Core")
 router = NodePath("../FirstRoute_Router")
 route_index = 1
 done_caption = "Proud obnoven"
@@ -403,7 +403,7 @@ kind = "checkpoint"
 position = Vector2(7722.50, 240.00)
 script = ExtResource("landmark")
 piece = "fountain"
-art_height = 165.0
+art_height = 112.0
 
 [node name="WaterfallGuard" parent="." instance=ExtResource("enemy")]
 position = Vector2(7650.00, 240.00)
@@ -488,7 +488,7 @@ display_seconds = 7.0
 position = Vector2(9405.00, 650.00)
 collision_mask = 0
 script = ExtResource("water_ledge")
-width = 350.0
+width = 300.0
 behaviour = "steady"
 art_variant = 4
 travel = Vector2(0.00, 0.00)
@@ -505,7 +505,7 @@ script = ExtResource("chime")
 tone = Color(0.54, 0.9, 1.0, 1)
 
 [node name="LowerReturnLift" parent="." type="AnimatableBody2D"]
-position = Vector2(9805.00, 650.00)
+position = Vector2(9780, 650)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 250.0
@@ -587,7 +587,7 @@ kind = "checkpoint"
 position = Vector2(10662.00, -240.00)
 script = ExtResource("landmark")
 piece = "birdhouse"
-art_height = 165.0
+art_height = 100.0
 
 [node name="HighBell" parent="." type="Node2D"]
 position = Vector2(10610.00, -240.00)
@@ -650,7 +650,7 @@ kind = "checkpoint"
 position = Vector2(12090.00, 300.00)
 script = ExtResource("landmark")
 piece = "planter"
-art_height = 165.0
+art_height = 70.0
 
 [node name="FarBell" parent="." type="Node2D"]
 position = Vector2(12120.00, 300.00)
@@ -682,7 +682,7 @@ phase_offset = 0.0
 powered = true
 
 [node name="BellReturn_3" parent="." type="AnimatableBody2D"]
-position = Vector2(10440.00, 650.00)
+position = Vector2(10370, 650)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 220.0
@@ -733,7 +733,7 @@ kind = "checkpoint"
 position = Vector2(14522.50, 340.00)
 script = ExtResource("landmark")
 piece = "treehouse"
-art_height = 165.0
+art_height = 205.0
 
 [node name="QuietGardenGuard" parent="." instance=ExtResource("enemy")]
 position = Vector2(14440.00, 340.00)
@@ -864,7 +864,7 @@ kind = "checkpoint"
 position = Vector2(16324.00, 380.00)
 script = ExtResource("landmark")
 piece = "bench"
-art_height = 165.0
+art_height = 62.0
 
 [node name="Hint_4" parent="." type="Marker2D"]
 position = Vector2(16200.00, 380.00)
@@ -983,7 +983,7 @@ one_way_collision = true
 position = Vector2(20022.50, 430.00)
 script = ExtResource("landmark")
 piece = "ruin_arch"
-art_height = 165.0
+art_height = 180.0
 
 [node name="SkyKey" parent="." type="Node2D"]
 position = Vector2(19800.00, 382.00)

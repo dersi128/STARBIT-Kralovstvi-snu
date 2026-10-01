@@ -1,15 +1,42 @@
 @tool
 extends Node2D
-## A repeatable 10-second wind switch, local to level 6; no global player changes.
+## Páka vypne mlýn na omezenou dobu. Proud i jeho účinek sledují stejnou dráhu.
+@export_group("Vypnutí")
 @export_range(1,30,0.5) var off_seconds := 10.0
-@export var wind_area := Rect2(250,-1120,1660,1900)
+# Read old scene overrides without exposing a second, conflicting wind control.
+@export_storage var wind_area:Rect2:
+	get:return Rect2(wind_origin-Vector2(wind_length,wind_width*0.5),Vector2(wind_length,wind_width))
+	set(value):
+		wind_origin=Vector2(value.end.x,value.get_center().y)
+		wind_length=value.size.x
+		wind_width=value.size.y
+@export_group("Vítr")
+## Začátek proudu vůči páce. V editoru jej označuje modrý bod.
+@export var wind_origin := Vector2(1910,-170):
+	set(value):wind_origin=value;queue_redraw()
+## Dosah od začátku ke konci proudu, v pixelech.
+@export_range(32,6000,1,"or_greater","suffix:px") var wind_length := 1660.0:
+	set(value):wind_length=maxf(32,value);queue_redraw()
+## Celá šířka pásu větru, v pixelech.
+@export_range(16,3000,1,"or_greater","suffix:px") var wind_width := 1900.0:
+	set(value):wind_width=maxf(16,value);queue_redraw()
+## 0° doprava, 90° dolů, 180° doleva, -90° nahoru. Lze foukat i šikmo.
+@export_range(-180,180,1,"degrees") var wind_angle_degrees := 180.0:
+	set(value):wind_angle_degrees=value;queue_redraw()
+## Prohnutí středu proudu do oblouku. Nula = rovný proud, znaménko mění stranu.
+@export_range(-1500,1500,1,"suffix:px") var wind_curve := 0.0:
+	set(value):wind_curve=value;queue_redraw()
+@export_range(0,1500,10,"or_greater","suffix:px/s") var wind_force := 620.0
+## Pomocný obrys a šipky se zobrazují pouze v editoru.
+@export var show_wind_preview := true:
+	set(value):show_wind_preview=value;queue_redraw()
+@export_group("Vzhled mlýna")
 @export var mill_offset := Vector2(2030,-140):
 	set(value):mill_offset=value;_redraw_mill()
 @export var mill_height := 235.0:
 	set(value):mill_height=value;_redraw_mill()
 @export var mill_mirrored := true:
 	set(value):mill_mirrored=value;_redraw_mill()
-@export var wind_force := 620.0
 var remaining := 0.0
 var occupied_before := false
 var previous_position := Vector2.ZERO
@@ -68,13 +95,45 @@ func _physics_process(delta:float) -> void:
 	# Standing on the lever cannot keep extending the ten-second window.
 	if occupied and not occupied_before:disable_wind()
 	occupied_before=occupied
-	if wind_is_on() and wind_area.has_point(feet) and not player.frozen:
-		# Run after Bit: opposing input and a moving cloud cannot carry him through.
-		if previous_valid and absf(player.global_position.x-previous_position.x)<80:
-			player.global_position.x=minf(player.global_position.x,previous_position.x)
-		player.velocity.x=minf(player.velocity.x,-wind_force)
+	var local_direction:=wind_direction_at(feet)
+	if wind_is_on() and wind_force>0 and local_direction!=Vector2.ZERO and not player.frozen:
+		var direction:Vector2=(to_global(feet+local_direction)-player.global_position).normalized()
+		# Stop travel against the stream, including a moving cloud carrying Bit.
+		# Use collision-aware motion instead of teleporting through nearby terrain.
+		var motion:Vector2=player.global_position-previous_position
+		if previous_valid and motion.length()<80:
+			var against:=minf(motion.dot(direction),0.0)
+			if against<0:player.move_and_collide(-direction*against)
+		player.velocity+=direction*maxf(0,wind_force-player.velocity.dot(direction))
 	previous_position=player.global_position;previous_valid=true
 	_update_counter();queue_redraw()
+func _wind_point(t:float,lateral:float=0.0) -> Vector2:
+	return wind_origin+Vector2(wind_length*t,4.0*wind_curve*t*(1.0-t)+lateral).rotated(deg_to_rad(wind_angle_degrees))
+func _wind_tangent(t:float) -> Vector2:
+	return Vector2(wind_length,4.0*wind_curve*(1.0-2.0*t)).normalized().rotated(deg_to_rad(wind_angle_degrees))
+func wind_direction_at(point:Vector2) -> Vector2:
+	# The same cross-sections define gameplay, gusts and the inspector preview.
+	var local:Vector2=(point-wind_origin).rotated(-deg_to_rad(wind_angle_degrees))
+	if local.x<0 or local.x>wind_length:return Vector2.ZERO
+	var t:=local.x/wind_length
+	if absf(local.y-4.0*wind_curve*t*(1.0-t))>wind_width*0.5:return Vector2.ZERO
+	return _wind_tangent(t)
+func _draw_wind_preview() -> void:
+	var outline:=PackedVector2Array()
+	for i in 25:outline.append(_wind_point(float(i)/24,-wind_width*0.5))
+	for i in range(24,-1,-1):outline.append(_wind_point(float(i)/24,wind_width*0.5))
+	draw_colored_polygon(outline,Color(0.4,0.8,1,0.08))
+	outline.append(outline[0])
+	draw_polyline(outline,Color(0.4,0.8,1,0.65),2,true)
+	var center:=PackedVector2Array()
+	for i in 25:center.append(_wind_point(float(i)/24))
+	draw_polyline(center,Color(0.7,0.95,1,0.8),2,true)
+	draw_circle(wind_origin,6,Color(0.5,0.9,1))
+	for t in [0.2,0.5,0.8]:
+		var point:=_wind_point(t)
+		var direction:=_wind_tangent(t)
+		draw_line(point-direction.rotated(0.5)*20,point,Color(0.7,0.95,1),3,true)
+		draw_line(point-direction.rotated(-0.5)*20,point,Color(0.7,0.95,1),3,true)
 func _update_counter() -> void:
 	if not is_instance_valid(countdown):return
 	countdown.visible=remaining>0
@@ -114,19 +173,22 @@ func _draw() -> void:
 		var anchor:Vector2=LEVER_ANCHORS[pose]
 		draw_texture_rect_region(LEVER,Rect2((lever_rect.position-anchor)*0.26,lever_rect.size*0.26),_source(lever_rect,LEVER),Color(1,1,1,lowered if pose==2 else 1.0-lowered))
 	if visual_wind>0:
-		# Each gust keeps its shape and fades at the ends instead of swapping frames.
-		var stream_y:=mill_offset.y-70
-		for i in 6:
-			var t:=fposmod(float(i)/6.0-visual_clock*300/wind_area.size.x,1.0)
-			var x:=wind_area.position.x+t*wind_area.size.x
-			var y:=lerpf(-50,stream_y,t)+sin(visual_clock*2+i)*22
-			var source:Rect2=GUST_RECTS[i%GUST_RECTS.size()]
-			var size:=Vector2(250,250*source.size.y/source.size.x)
-			draw_texture_rect_region(GUST,Rect2(Vector2(x,y)-size*0.5,size),_source(source,GUST),Color(1,1,1,0.55*visual_wind*sin(PI*t)))
+		# Registered sprites flow continuously along the actual wind direction.
+		var lanes:=clampi(ceili(wind_width/350.0),1,3)
+		for lane in lanes:
+			var lateral:=((float(lane)+0.5)/lanes-0.5)*wind_width
+			for i in 6:
+				var t:=fposmod(float(i)/6.0+lane*0.17+visual_clock*300/wind_length,1.0)
+				var source:Rect2=GUST_RECTS[(i+lane)%GUST_RECTS.size()]
+				var width:=minf(250,minf(wind_length*0.45,wind_width/lanes*0.8))
+				var size:=Vector2(width,width*source.size.y/source.size.x)
+				draw_set_transform(_wind_point(t,lateral),_wind_tangent(t).angle()-PI)
+				draw_texture_rect_region(GUST,Rect2(-size*0.5,size),_source(source,GUST),Color(1,1,1,0.45*visual_wind*sin(PI*t)))
+		draw_set_transform(Vector2.ZERO)
 	var text:="Vypnout vítr" if on else "Vítr vypnutý"
 	var text_size:=FONT.get_string_size(text,HORIZONTAL_ALIGNMENT_LEFT,-1,18)
 	draw_string(FONT,Vector2(-text_size.x/2,-132),text,HORIZONTAL_ALIGNMENT_LEFT,-1,18,Color("fff2ca"))
-	if Engine.is_editor_hint():draw_rect(wind_area,Color(0.4,0.8,1,0.08))
+	if Engine.is_editor_hint() and show_wind_preview:_draw_wind_preview()
 
 class MillArtwork extends Node2D:
 	var gate:Node2D

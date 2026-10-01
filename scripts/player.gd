@@ -515,11 +515,15 @@ func _draw() -> void:
   if radius<0.1:continue
   var color:Color=particle.color;color.a=(1.0-t)*0.9
   var center:Vector2=to_local(particle.position)
+  # Triangulate tiny sparkles around zero. Large local coordinates after a
+  # respawn/long crossing can otherwise collapse their points numerically.
+  draw_set_transform(center)
   var points:=PackedVector2Array()
   for i in 8:
    var angle:float=float(i)*PI/4+particle.age*1.6
-   points.append(center+Vector2(cos(angle),sin(angle))*radius*(1.0 if i%2==0 else 0.3))
+   points.append(Vector2(cos(angle),sin(angle))*radius*(1.0 if i%2==0 else 0.3))
   draw_colored_polygon(points,color)
+  draw_set_transform(Vector2.ZERO)
  if hurt_time>0 and visual_state!="hurt":
   var hurt_age:=hurt_animation_duration-hurt_time
   for i in 3:
