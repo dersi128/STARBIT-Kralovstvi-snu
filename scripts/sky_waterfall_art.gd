@@ -12,6 +12,7 @@ var _clock := 0.0
 var _speed := 1.0
 var _effects := 0.7
 var _preview := false
+var _free_fall := false
 var _ratio := 1.0
 var _walk_y := 320.0
 var _foam := Vector2(557.0,770.0)
@@ -29,9 +30,9 @@ func _ensure_render() -> void:
 	_render.material=_water_material
 	add_child(_render,false,Node.INTERNAL_MODE_BACK)
 
-func configure(deck_width:float,variant:int,drop:float,speed:float,effects:float,preview:bool) -> void:
+func configure(deck_width:float,variant:int,drop:float,speed:float,effects:float,preview:bool,free_fall:bool=false) -> void:
 	_ensure_render()
-	_speed=speed;_effects=effects;_preview=preview
+	_speed=speed;_effects=effects;_preview=preview;_free_fall=free_fall
 	var centered:=variant==1
 	_walk_y=350.0 if centered else 320.0
 	_ratio=(deck_width+24.0)/1572.0
@@ -53,6 +54,7 @@ func configure(deck_width:float,variant:int,drop:float,speed:float,effects:float
 	_water_material.set_shader_parameter("spray_bounds",Vector2(596,1080) if centered else Vector2(363,740))
 	_water_material.set_shader_parameter("head_y",head)
 	_water_material.set_shader_parameter("target_bottom",bottom)
+	_water_material.set_shader_parameter("free_fall",free_fall)
 	_water_material.set_shader_parameter("matte_color",Vector3(11,17,30)/255.0 if centered else Vector3(12,19,34)/255.0)
 	_water_material.set_shader_parameter("effect_strength",effects)
 	_water_material.set_shader_parameter("clock",_clock)
@@ -66,7 +68,7 @@ func _process(delta:float) -> void:
 	queue_redraw()
 
 func _draw() -> void:
-	if _effects<=0.0:return
+	if _effects<=0.0 or _free_fall:return
 	# Small ballistic droplets, with smooth birth/death instead of popping loops.
 	for i in 12:
 		var age:=fposmod(_clock*0.72+float(i)*0.61803399,1.0)

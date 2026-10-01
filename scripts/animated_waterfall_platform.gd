@@ -12,6 +12,9 @@ extends StaticBody2D
 	set(value):
 		waterfall_length = maxf(value, 0.0)
 		_refresh_later()
+## Enable only for a fall into empty sky; no splash basin is drawn.
+@export var free_fall := false:
+	set(value):free_fall=value;_refresh_later()
 ## Remove the dark fringe caused by the original black image background.
 @export_range(0.0, 1.0, 0.05) var edge_cleanup := 1.0:
 	set(value):
@@ -38,6 +41,12 @@ const WATERFALL_SHADER := preload("res://shaders/adjustable_waterfall.gdshader")
 var _render: Polygon2D
 var _material: ShaderMaterial
 var _sync_pending := false
+var _flow_clock := 0.0
+
+func _process(delta:float) -> void:
+	if not free_fall or not is_visible_in_tree() or (Engine.is_editor_hint() and not preview_in_editor):return
+	_flow_clock+=delta*animation_speed
+	if _material!=null:_material.set_shader_parameter("flow_clock",_flow_clock)
 
 func _ready() -> void:
 	collision_layer = 1
@@ -85,6 +94,8 @@ func _sync() -> void:
 	_material.set_shader_parameter("original_bottom", puddle_y)
 	_material.set_shader_parameter("target_bottom", end_y)
 	_material.set_shader_parameter("edge_cleanup", edge_cleanup)
+	_material.set_shader_parameter("free_fall", free_fall)
+	_material.set_shader_parameter("flow_clock", _flow_clock)
 	_frame_changed()
 	if not Engine.is_editor_hint() or preview_in_editor:
 		visual.play(&"flow")

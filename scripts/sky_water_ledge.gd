@@ -5,10 +5,14 @@ extends "res://scripts/cloud_step.gd"
 	set(value):
 		waterfall_style=value
 		if is_inside_tree():call_deferred("_rebuild_water")
-@export_range(160,1200,10) var waterfall_length:=420.0:
+@export_range(160,2400,10,"or_greater","suffix:px") var waterfall_length:=1400.0:
 	set(value):
 		waterfall_length=value
 		if is_instance_valid(water_art):water_art.waterfall_length=value
+@export var waterfall_free_fall:=true:
+	set(value):
+		waterfall_free_fall=value
+		if is_instance_valid(water_art):water_art.free_fall=value
 @export var water_mirrored:=false:
 	set(value):
 		water_mirrored=value
@@ -29,6 +33,7 @@ func _rebuild_water() -> void:
 	water_art.name="WaterfallArt"
 	water_art.width=(width-20.0)/0.8
 	water_art.waterfall_length=waterfall_length
+	water_art.free_fall=waterfall_free_fall
 	water_art.animation_speed=0.85
 	water_art.phase_offset=fposmod(position.x*0.001,0.79)
 	water_art.position=Vector2(width/2.0,0)

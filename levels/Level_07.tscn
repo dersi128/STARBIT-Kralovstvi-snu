@@ -1,286 +1,406 @@
-[gd_scene format=3]
+[gd_scene format=3 uid="uid://b4774mrr0suo4"]
 
-[ext_resource type="Script" path="res://scripts/sky_adventure.gd" id="level"]
-[ext_resource type="Script" path="res://scripts/cloud_step.gd" id="cloud"]
-[ext_resource type="Script" path="res://scripts/sky_island.gd" id="platform"]
-[ext_resource type="Script" path="res://scripts/object.gd" id="object"]
-[ext_resource type="Script" path="res://scripts/tutorial_trigger.gd" id="hint"]
-[ext_resource type="Script" path="res://scripts/world_landmark.gd" id="landmark"]
-[ext_resource type="Script" path="res://scripts/camera_zone.gd" id="camera"]
-[ext_resource type="Script" path="res://scripts/dream_switch.gd" id="switch"]
-[ext_resource type="PackedScene" path="res://scenes/worldkit/RainCloud.tscn" id="rain"]
-[ext_resource type="Script" path="res://scripts/water_feature.gd" id="water"]
-[ext_resource type="Script" path="res://scripts/world_depth.gd" id="depth"]
-[ext_resource type="Script" path="res://scripts/sky_backdrop.gd" id="bg"]
-[ext_resource type="Texture2D" path="res://assets/environments/near_castle.png" id="skyart"]
+[ext_resource type="Shader" uid="uid://dtiajredopi3u" path="res://shaders/cloud_edge_cleanup.gdshader" id="5_orsa8"]
+[ext_resource type="Script" uid="uid://bd4fkdbvhf54y" path="res://scripts/camera_zone.gd" id="19_ve2xj"]
+[ext_resource type="Script" uid="uid://cx8o1oku7o2i2" path="res://scripts/sky_backdrop.gd" id="bg"]
+[ext_resource type="Script" uid="uid://dfuckkkt4vqte" path="res://scripts/sky_chime.gd" id="chime"]
+[ext_resource type="Script" uid="uid://dxn47ji82pby2" path="res://scripts/sky_chime_puzzle.gd" id="chimes"]
+[ext_resource type="Script" uid="uid://bohuc0h15slyw" path="res://scripts/cloud_step.gd" id="cloud"]
+[ext_resource type="Script" uid="uid://cfgfcfchjekph" path="res://scripts/sky_discovery.gd" id="discovery"]
 [ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="enemy"]
+[ext_resource type="Script" uid="uid://bgem3m4f8r3n" path="res://scripts/sky_escape.gd" id="escape"]
+[ext_resource type="Script" uid="uid://c2svy4eaj02wn" path="res://scripts/tutorial_trigger.gd" id="hint"]
+[ext_resource type="Script" uid="uid://detg52t2f6hmm" path="res://scripts/sky_adventure.gd" id="level"]
+[ext_resource type="Script" uid="uid://cueha53tp0240" path="res://scripts/object.gd" id="object"]
+[ext_resource type="Script" uid="uid://cx0dp1hsus65h" path="res://scripts/sky_island.gd" id="platform"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/RainCloud.tscn" id="rain"]
+[ext_resource type="Script" uid="uid://bgnpcva3gqg04" path="res://scripts/sky_router.gd" id="router"]
+[ext_resource type="Texture2D" uid="uid://ct4p76bw3lne3" path="res://assets/environments/near_castle.png" id="skyart"]
+[ext_resource type="Script" uid="uid://kwwfevc6c0ip" path="res://scripts/sky_station.gd" id="station"]
+[ext_resource type="Script" uid="uid://chktnke30ql3h" path="res://scripts/sky_water_ledge.gd" id="water_ledge"]
+[ext_resource type="Script" uid="uid://d0yba4cdevhyd" path="res://scripts/sky_wind_gate.gd" id="wind_gate"]
 
-[ext_resource type="Script" path="res://scripts/sky_station.gd" id="station"]
-[ext_resource type="Script" path="res://scripts/sky_router.gd" id="router"]
-[ext_resource type="Script" path="res://scripts/sky_escape.gd" id="escape"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ve2xj"]
+size = Vector2(700, 24)
 
-[ext_resource type="Script" path="res://scripts/sky_wind_gate.gd" id="wind_gate"]
-[ext_resource type="Script" path="res://scripts/sky_chime.gd" id="chime"]
-[ext_resource type="Script" path="res://scripts/sky_chime_puzzle.gd" id="chimes"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f2urh"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
 
-[ext_resource type="Script" path="res://scripts/sky_water_ledge.gd" id="water_ledge"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2grvn"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
 
-[ext_resource type="Script" path="res://scripts/sky_discovery.gd" id="discovery"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oyq8b"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
 
-[sub_resource type="RectangleShape2D" id="Shape_Arrival"]
-size = Vector2(700.00, 80.00)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_apj4m"]
+size = Vector2(780, 24)
 
-[sub_resource type="RectangleShape2D" id="Shape_FirstWindHub"]
-size = Vector2(780.00, 80.00)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4318k"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
 
-[sub_resource type="RectangleShape2D" id="Shape_FirstAnchorBank"]
-size = Vector2(680.00, 80.00)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ve2xj"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
 
-[sub_resource type="RectangleShape2D" id="Shape_WaterfallShelter"]
-size = Vector2(650.00, 80.00)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l2ee0"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
 
-[sub_resource type="RectangleShape2D" id="Shape_BellAtrium"]
-size = Vector2(820.00, 80.00)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_010pr"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
 
-[sub_resource type="RectangleShape2D" id="Shape_HighBellBalcony"]
-size = Vector2(480.00, 80.00)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qg3wq"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
 
-[sub_resource type="RectangleShape2D" id="Shape_FarBellBalcony"]
-size = Vector2(600.00, 80.00)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a71lg"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
 
-[sub_resource type="RectangleShape2D" id="Shape_QuietGarden"]
-size = Vector2(650.00, 80.00)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_voadn"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
 
-[sub_resource type="RectangleShape2D" id="Shape_EscapeCheckpoint"]
-size = Vector2(760.00, 80.00)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8pi0d"]
+size = Vector2(680, 24)
 
-[sub_resource type="RectangleShape2D" id="Shape_ExitGarden"]
-size = Vector2(850.00, 80.00)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eh2j6"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
 
-[node name="Level_07" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4u2bi"]
+size = Vector2(650, 24)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ioil"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_orsa8"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7jq08"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygceq"]
+size = Vector2(820, 24)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_anybf"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ld8o0"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yw5h5"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_apj4m"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_krj6g"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_disau"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7hho1"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kevl1"]
+size = Vector2(480, 24)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v88ok"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3657k"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xv4mq"]
+size = Vector2(600, 24)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l3gdj"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxqjw"]
+size = Vector2(650, 24)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s4hcg"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8wttd"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v6hdg"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bpsmk"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j3ggi"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fnjtq"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i5eab"]
+size = Vector2(760, 24)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_otf1x"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hc5o5"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dd6jv"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sfrkp"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cq844"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hwxed"]
+shader = ExtResource("5_orsa8")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grwot"]
+size = Vector2(850, 24)
+
+[node name="Level_07" type="Node2D" unique_id=263867923]
 script = ExtResource("level")
 objectives = Array[NodePath]([NodePath("FirstAnchor"), NodePath("BellChoir")])
 objective_caption = "Obnovené proudy"
 number = 7
 title = "Zvony nad bouří"
 spawn = Vector2(140, 540)
-width = 20500
+width = 20500.0
 camera_top = -2200
 camera_bottom = 1500
 fall_limit = 1250.0
 fouk_at_start = true
 
-[node name="Background" type="CanvasLayer" parent="."]
+[node name="Background" type="CanvasLayer" parent="." unique_id=1317660778]
 layer = -100
 script = ExtResource("bg")
 landscape = ExtResource("skyart")
 
-[node name="Arrival" parent="." type="AnimatableBody2D"]
-position = Vector2(0.00, 550.00)
+[node name="Arrival" type="AnimatableBody2D" parent="." unique_id=495289177]
+position = Vector2(0, 550)
 collision_mask = 0
 script = ExtResource("platform")
 width = 700.0
-depth = 95.0
 
-[node name="CollisionShape2D" parent="Arrival" type="CollisionShape2D"]
-position = Vector2(350.00, 40.00)
-shape = SubResource("Shape_Arrival")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrival" unique_id=128535868]
+position = Vector2(350, 12)
+shape = SubResource("RectangleShape2D_ve2xj")
 one_way_collision = true
+one_way_collision_margin = 6.0
 
-[node name="Hint_1" parent="." type="Marker2D"]
-position = Vector2(250.00, 550.00)
-script = ExtResource("hint")
-title = "Oblačná stezka"
-message = "Fouk ti pomůže druhým skokem. Rozhlédni se, kam doskočíš."
-touch_message = "Fouk ti pomůže druhým skokem. Rozhlédni se, kam doskočíš."
-activation_size = Vector2(560, 330)
-display_seconds = 7.0
-
-[node name="StormArrival0" parent="." type="AnimatableBody2D"]
-position = Vector2(945.00, 420.00)
+[node name="StormArrival0" type="AnimatableBody2D" parent="." unique_id=1393119832]
+material = SubResource("ShaderMaterial_f2urh")
+position = Vector2(945, 420)
 collision_mask = 0
 script = ExtResource("water_ledge")
-width = 210.0
-behaviour = "steady"
-art_variant = 1
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
 waterfall_style = "side"
-waterfall_length = 390.0
-water_mirrored = false
-
-[node name="StormArrival1" parent="." type="AnimatableBody2D"]
-position = Vector2(1375.00, 260.00)
-collision_mask = 0
-script = ExtResource("cloud")
-width = 210.0
-behaviour = "pulse"
-art_variant = 2
-travel = Vector2(0.00, 0.00)
+waterfall_length = 1280.0
 period = 3.8
-phase_offset = 0.0
-powered = true
+art_variant = 1
 
-[node name="StormArrival2" parent="." type="AnimatableBody2D"]
-position = Vector2(1815.00, 410.00)
+[node name="Diamond_01" type="Node2D" parent="StormArrival0" unique_id=1779178594]
+position = Vector2(105, -48)
+script = ExtResource("object")
+
+[node name="StormArrival1" type="AnimatableBody2D" parent="." unique_id=131665971]
+material = SubResource("ShaderMaterial_2grvn")
+position = Vector2(1375, 260)
 collision_mask = 0
 script = ExtResource("cloud")
-width = 210.0
+behaviour = "pulse"
+period = 3.8
+art_variant = 2
+
+[node name="Diamond_02" type="Node2D" parent="StormArrival1" unique_id=260144623]
+position = Vector2(105, -48)
+script = ExtResource("object")
+
+[node name="StormArrival2" type="AnimatableBody2D" parent="." unique_id=1485632174]
+material = SubResource("ShaderMaterial_oyq8b")
+position = Vector2(1815, 410)
+collision_mask = 0
+script = ExtResource("cloud")
 behaviour = "orbit"
-art_variant = 3
-travel = Vector2(55.00, 35.00)
+travel = Vector2(55, 35)
 period = 5.2
-phase_offset = 0.0
-powered = true
+art_variant = 3
 
-[node name="ArrivalRain" parent="." instance=ExtResource("rain")]
-position = Vector2(1700.00, 40.00)
+[node name="Diamond_03" type="Node2D" parent="StormArrival2" unique_id=507979768]
+position = Vector2(105, -48)
+script = ExtResource("object")
+
+[node name="ArrivalRain" parent="." unique_id=1217192223 instance=ExtResource("rain")]
+process_physics_priority = -10
+position = Vector2(1700, 40)
 rain_width = 180.0
-rain_height = 310.0
+rain_height = 860.0
 slow_multiplier = 0.5
-calm_duration = 3.0
+calm_duration = 1.9
 warning_duration = 1.2
-rain_duration = 2.0
+rain_duration = 2.3
 recovery_duration = 0.8
-start_offset = 6.0
+start_offset = 4.3
 
-[node name="FirstWindHub" parent="." type="AnimatableBody2D"]
-position = Vector2(2240.00, 470.00)
+[node name="FirstWindHub" type="AnimatableBody2D" parent="." unique_id=109231631]
+position = Vector2(2240, 470)
 collision_mask = 0
 script = ExtResource("platform")
 width = 780.0
-depth = 95.0
 
-[node name="CollisionShape2D" parent="FirstWindHub" type="CollisionShape2D"]
-position = Vector2(390.00, 40.00)
-shape = SubResource("Shape_FirstWindHub")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstWindHub" unique_id=1300753244]
+position = Vector2(390, 12)
+shape = SubResource("RectangleShape2D_apj4m")
 one_way_collision = true
+one_way_collision_margin = 6.0
 
-[node name="Checkpoint_FirstWindHub" parent="." type="Node2D"]
-position = Vector2(2335.00, 470.00)
-script = ExtResource("object")
-kind = "checkpoint"
-
-[node name="FirstWindHub_Art" parent="." type="Node2D"]
-position = Vector2(2747.00, 470.00)
-script = ExtResource("landmark")
-piece = "tower"
-art_height = 205.0
-
-[node name="Hint_2" parent="." type="Marker2D"]
-position = Vector2(2550.00, 470.00)
+[node name="Hint_2" type="Marker2D" parent="." unique_id=1118323997]
+position = Vector2(2550, 470)
 script = ExtResource("hint")
-title = "Rozcestí větru"
-message = "Nahoře vezmi jádro. Vrať se k dolnímu přepínači a otevři cestu dál."
-touch_message = "Nahoře vezmi jádro. Vrať se k dolnímu přepínači a otevři cestu dál."
+title = "Srdce větru"
+message = "Vezmi červené jádro nahoře. Přepni dolní cestu a odnes ho ke stojánku."
+touch_message = "Vezmi červené jádro nahoře. Přepni dolní cestu a odnes ho ke stojánku."
 activation_size = Vector2(560, 330)
-display_seconds = 7.0
+display_seconds = 5.0
 
-[node name="FirstRoute_Upper_1" parent="." type="AnimatableBody2D"]
-position = Vector2(2450.00, 260.00)
-collision_mask = 0
-script = ExtResource("cloud")
-width = 220.0
-behaviour = "steady"
-art_variant = 0
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
-
-[node name="FirstRoute_Upper_2" parent="." type="AnimatableBody2D"]
-position = Vector2(2830.00, 70.00)
+[node name="FirstRoute_Upper_2" type="AnimatableBody2D" parent="." unique_id=606472557]
+material = SubResource("ShaderMaterial_4318k")
+position = Vector2(2830, 70)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 220.0
 behaviour = "orbit"
+travel = Vector2(75, 75)
+period = 4.8
 art_variant = 1
-travel = Vector2(50.00, 25.00)
-period = 5.2
-phase_offset = 0.0
-powered = true
 
-[node name="FirstRoute_Upper_3" parent="." type="AnimatableBody2D"]
-position = Vector2(3220.00, -100.00)
+[node name="Diamond_04" type="Node2D" parent="FirstRoute_Upper_2" unique_id=151045665]
+position = Vector2(110, -48)
+script = ExtResource("object")
+
+[node name="FirstRoute_Upper_4" type="AnimatableBody2D" parent="." unique_id=179321874]
+material = SubResource("ShaderMaterial_ve2xj")
+position = Vector2(2449, 204)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 190.0
+behaviour = "orbit"
+travel = Vector2(75, 55)
+art_variant = 1
+
+[node name="Diamond_04" type="Node2D" parent="FirstRoute_Upper_4" unique_id=786247214]
+position = Vector2(110, -48)
+script = ExtResource("object")
+
+[node name="FirstRoute_Upper_3" type="AnimatableBody2D" parent="." unique_id=1817655005]
+material = SubResource("ShaderMaterial_l2ee0")
+position = Vector2(3220, -100)
 collision_mask = 0
 script = ExtResource("water_ledge")
-width = 220.0
-behaviour = "steady"
-art_variant = 2
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
 waterfall_style = "ruins"
-waterfall_length = 560.0
+waterfall_length = 1800.0
 water_mirrored = true
+width = 220.0
+period = 3.8
+art_variant = 2
 
-[node name="FirstRoute_Core" parent="." type="Node2D"]
-position = Vector2(3330.00, -100.00)
+[node name="FirstRoute_Core" type="Node2D" parent="." unique_id=680930819]
+z_index = 2
+position = Vector2(3330, -100)
 script = ExtResource("station")
 kind = "core"
 caption = "Opravit mlýn"
-targets = Array[NodePath]([])
-wind_travel = Vector2(1000.00, -180.00)
-requires = NodePath("")
-router = NodePath("")
-route_index = 0
-done_caption = "Proud obnoven"
 
-[node name="FirstRoute_Lower_1" parent="." type="AnimatableBody2D"]
-position = Vector2(3250.00, 480.00)
+[node name="FirstRoute_Lower_1" type="AnimatableBody2D" parent="." unique_id=881224648]
+material = SubResource("ShaderMaterial_010pr")
+position = Vector2(3250, 480)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 220.0
-behaviour = "steady"
-art_variant = 3
-travel = Vector2(0.00, 0.00)
 period = 3.8
-phase_offset = 0.0
 powered = false
+art_variant = 3
 
-[node name="FirstRoute_Lower_2" parent="." type="AnimatableBody2D"]
-position = Vector2(3700.00, 360.00)
+[node name="FirstRoute_Lower_2" type="AnimatableBody2D" parent="." unique_id=783810329]
+material = SubResource("ShaderMaterial_qg3wq")
+position = Vector2(3700, 360)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 220.0
 behaviour = "drift"
-art_variant = 0
-travel = Vector2(65.00, 0.00)
+travel = Vector2(65, 0)
 period = 5.2
-phase_offset = 0.0
 powered = false
 
-[node name="FirstRoute_Lower_3" parent="." type="AnimatableBody2D"]
-position = Vector2(4150.00, 460.00)
+[node name="Diamond_05" type="Node2D" parent="FirstRoute_Lower_2" unique_id=2044307146]
+position = Vector2(110, -48)
+script = ExtResource("object")
+
+[node name="FirstRoute_Lower_3" type="AnimatableBody2D" parent="." unique_id=710557139]
+material = SubResource("ShaderMaterial_a71lg")
+position = Vector2(4150, 460)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 220.0
 behaviour = "pulse"
-art_variant = 1
-travel = Vector2(0.00, 0.00)
 period = 3.8
-phase_offset = 0.0
 powered = false
+art_variant = 1
 
-[node name="FirstRoute_Lower_4" parent="." type="AnimatableBody2D"]
-position = Vector2(4600.00, 350.00)
+[node name="FirstRoute_Lower_4" type="AnimatableBody2D" parent="." unique_id=105007513]
+material = SubResource("ShaderMaterial_voadn")
+position = Vector2(4600, 350)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 220.0
-behaviour = "steady"
-art_variant = 2
-travel = Vector2(0.00, 0.00)
 period = 3.8
-phase_offset = 0.0
 powered = false
+art_variant = 2
 
-[node name="RouteRainA" parent="." instance=ExtResource("rain")]
-position = Vector2(3135.00, -300.00)
-rain_width = 210.0
-rain_height = 310.0
+[node name="Diamond_06" type="Node2D" parent="FirstRoute_Lower_4" unique_id=1323191378]
+position = Vector2(110, -48)
+script = ExtResource("object")
+
+[node name="RouteRainA" parent="." unique_id=862737180 instance=ExtResource("rain")]
+process_physics_priority = -10
+position = Vector2(3135, -300)
+rain_width = 300.0
+rain_height = 1510.0
 slow_multiplier = 0.5
 calm_duration = 3.0
 warning_duration = 1.2
@@ -288,163 +408,157 @@ rain_duration = 2.0
 recovery_duration = 0.8
 start_offset = 1.2
 
-[node name="RouteRainB" parent="." instance=ExtResource("rain")]
-position = Vector2(4470.00, 80.00)
-rain_width = 210.0
-rain_height = 310.0
+[node name="RouteRainB" parent="." unique_id=854001304 instance=ExtResource("rain")]
+process_physics_priority = -10
+position = Vector2(4470, 80)
+rain_height = 1130.0
 slow_multiplier = 0.5
-calm_duration = 3.0
+calm_duration = 2.4
 warning_duration = 1.2
 rain_duration = 2.0
 recovery_duration = 0.8
 start_offset = 1.4
 
-[node name="FirstRoute_Router" parent="." type="Node"]
+[node name="FirstRoute_Router" type="Node" parent="." unique_id=1247685324]
 script = ExtResource("router")
-upper = Array[NodePath]([NodePath("../FirstRoute_Upper_1"), NodePath("../FirstRoute_Upper_2"), NodePath("../FirstRoute_Upper_3")])
+upper = Array[NodePath]([NodePath(""), NodePath("../FirstRoute_Upper_2"), NodePath("../FirstRoute_Upper_3")])
 lower = Array[NodePath]([NodePath("../FirstRoute_Lower_1"), NodePath("../FirstRoute_Lower_2"), NodePath("../FirstRoute_Lower_3"), NodePath("../FirstRoute_Lower_4")])
 upper_rain = Array[NodePath]([NodePath("../RouteRainA")])
 lower_rain = Array[NodePath]([NodePath("../RouteRainB")])
 
-[node name="FirstRoute_UpperPlate" parent="." type="Node2D"]
-position = Vector2(2460.00, 470.00)
-script = ExtResource("station")
-kind = "selector"
-caption = "Horní proud"
-targets = Array[NodePath]([])
-wind_travel = Vector2(1000.00, -180.00)
-requires = NodePath("")
-router = NodePath("../FirstRoute_Router")
-route_index = 0
-done_caption = "Proud obnoven"
-
-[node name="FirstRoute_LowerPlate" parent="." type="Node2D"]
-position = Vector2(2700.00, 470.00)
+[node name="FirstRoute_LowerPlate" type="Node2D" parent="." unique_id=1731162165]
+z_index = 2
+position = Vector2(2781, 469)
 script = ExtResource("station")
 kind = "selector"
 caption = "Dolní proud"
-targets = Array[NodePath]([])
-wind_travel = Vector2(1000.00, -180.00)
 requires = NodePath("../FirstRoute_Core")
 router = NodePath("../FirstRoute_Router")
 route_index = 1
-done_caption = "Proud obnoven"
 
-[node name="FirstAnchorBank" parent="." type="AnimatableBody2D"]
-position = Vector2(5030.00, 420.00)
+[node name="FirstAnchorBank" type="AnimatableBody2D" parent="." unique_id=590752794]
+position = Vector2(5030, 420)
 collision_mask = 0
 script = ExtResource("platform")
 width = 680.0
-depth = 95.0
 
-[node name="CollisionShape2D" parent="FirstAnchorBank" type="CollisionShape2D"]
-position = Vector2(340.00, 40.00)
-shape = SubResource("Shape_FirstAnchorBank")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstAnchorBank" unique_id=470073977]
+position = Vector2(340, 12)
+shape = SubResource("RectangleShape2D_8pi0d")
 one_way_collision = true
+one_way_collision_margin = 6.0
 
-[node name="Checkpoint_FirstAnchorBank" parent="." type="Node2D"]
-position = Vector2(5125.00, 420.00)
+[node name="Checkpoint_FirstAnchorBank" type="Node2D" parent="." unique_id=927545860]
+position = Vector2(5594, 429)
 script = ExtResource("object")
 kind = "checkpoint"
 
-[node name="FirstAnchorBank_Art" parent="." type="Node2D"]
-position = Vector2(5472.00, 420.00)
-script = ExtResource("landmark")
-piece = "pavilion"
-art_height = 165.0
-
-[node name="AnchorCarrier" parent="." type="AnimatableBody2D"]
-position = Vector2(5865.00, 400.00)
+[node name="AnchorCarrier" type="AnimatableBody2D" parent="." unique_id=1139315760]
+material = SubResource("ShaderMaterial_eh2j6")
+position = Vector2(5865, 400)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 270.0
 behaviour = "drift"
-art_variant = 4
-travel = Vector2(-100.00, 0.00)
+travel = Vector2(-100, 0)
 period = 3.8
-phase_offset = 0.0
-powered = true
+art_variant = 4
 
-[node name="FirstAnchor" parent="." type="Node2D"]
-position = Vector2(5460.00, 420.00)
+[node name="Diamond_07" type="Node2D" parent="AnchorCarrier" unique_id=959311227]
+position = Vector2(135, -48)
+script = ExtResource("object")
+
+[node name="FirstAnchor" type="Node2D" parent="." unique_id=585066015]
+z_index = -2
+position = Vector2(5460, 420)
 script = ExtResource("station")
-kind = "repair"
-caption = "Obnovit kotvu"
-targets = Array[NodePath]([NodePath("../AnchorCarrier")])
-wind_travel = Vector2(1050.00, -160.00)
+caption = "Vlož červené jádro"
 requires = NodePath("../FirstRoute_Core")
-router = NodePath("")
-route_index = 0
-done_caption = "Proud obnoven"
+targets = Array[NodePath]([NodePath("../AnchorCarrier")])
+wind_travel = Vector2(1050, -160)
 
-[node name="FirstAnchorGuard" parent="." instance=ExtResource("enemy")]
-position = Vector2(5250.00, 420.00)
-patrol = 125.0
+[node name="FirstAnchorGuard" parent="." unique_id=2143685026 instance=ExtResource("enemy")]
+position = Vector2(5250, 420)
+patrol = 95.0
 speed = 48.0
 
-[node name="WaterfallShelter" parent="." type="AnimatableBody2D"]
-position = Vector2(7300.00, 240.00)
+[node name="WaterfallShelter" type="AnimatableBody2D" parent="." unique_id=1263380737]
+position = Vector2(7300, 240)
 collision_mask = 0
 script = ExtResource("platform")
 width = 650.0
-depth = 95.0
+waterfall_length = 1460.0
 
-[node name="CollisionShape2D" parent="WaterfallShelter" type="CollisionShape2D"]
-position = Vector2(325.00, 40.00)
-shape = SubResource("Shape_WaterfallShelter")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WaterfallShelter" unique_id=599750416]
+position = Vector2(325, 12)
+shape = SubResource("RectangleShape2D_4u2bi")
 one_way_collision = true
+one_way_collision_margin = 6.0
 
-[node name="Checkpoint_WaterfallShelter" parent="." type="Node2D"]
-position = Vector2(7395.00, 240.00)
+[node name="Diamond_08" type="Node2D" parent="WaterfallShelter" unique_id=1767036568]
+position = Vector2(160, -48)
 script = ExtResource("object")
-kind = "checkpoint"
 
-[node name="WaterfallShelter_Art" parent="." type="Node2D"]
-position = Vector2(7722.50, 240.00)
-script = ExtResource("landmark")
-piece = "fountain"
-art_height = 112.0
-
-[node name="WaterfallGuard" parent="." instance=ExtResource("enemy")]
-position = Vector2(7650.00, 240.00)
+[node name="WaterfallGuard" parent="." unique_id=1802580152 instance=ExtResource("enemy")]
+position = Vector2(7650, 240)
 patrol = 125.0
 speed = 48.0
 
-[node name="FarWaterfall" parent="." type="Node2D"]
-position = Vector2(7570.00, 290.00)
-script = ExtResource("water")
-kind = "waterfall"
-size = Vector2(74.00, 850.00)
-modulate = Color(0.85, 0.94, 1, 0.6)
+[node name="FallsMill" type="Node2D" parent="." unique_id=891261148]
+process_physics_priority = 5
+position = Vector2(7634, 51)
+script = ExtResource("wind_gate")
+off_seconds = 8.0
+wind_area = Rect2(363, -94.5, 1187, 589)
+wind_origin = Vector2(1550, 200)
+wind_length = 1187.0
+wind_width = 589.0
+mill_offset = Vector2(1530, 335)
+mill_height = 215.0
 
-[node name="FallsCloudA" parent="." type="AnimatableBody2D"]
-position = Vector2(8145.00, 100.00)
+[node name="FallsCloudA" type="AnimatableBody2D" parent="." unique_id=988630720]
+material = SubResource("ShaderMaterial_2ioil")
+position = Vector2(8145, 100)
 collision_mask = 0
 script = ExtResource("cloud")
-width = 210.0
 behaviour = "drift"
-art_variant = 0
-travel = Vector2(-70.00, 0.00)
+travel = Vector2(-70, 0)
 period = 5.2
-phase_offset = 0.0
-powered = true
 
-[node name="FallsCloudB" parent="." type="AnimatableBody2D"]
-position = Vector2(8605.00, 240.00)
+[node name="Diamond_09" type="Node2D" parent="FallsCloudA" unique_id=228768949]
+position = Vector2(105, -48)
+script = ExtResource("object")
+
+[node name="FallsCloudA2" type="AnimatableBody2D" parent="." unique_id=641743141]
+material = SubResource("ShaderMaterial_orsa8")
+position = Vector2(7539, 40)
 collision_mask = 0
 script = ExtResource("cloud")
-width = 210.0
-behaviour = "fragile"
-art_variant = 1
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
+behaviour = "drift"
+period = 5.2
 
-[node name="FallsRain" parent="." instance=ExtResource("rain")]
-position = Vector2(8490.00, -80.00)
-rain_width = 180.0
-rain_height = 310.0
+[node name="Diamond_09" type="Node2D" parent="FallsCloudA2" unique_id=868286483]
+position = Vector2(243, 139)
+script = ExtResource("object")
+
+[node name="FallsCloudB" type="AnimatableBody2D" parent="." unique_id=1279267367]
+material = SubResource("ShaderMaterial_7jq08")
+position = Vector2(8605, 240)
+collision_mask = 0
+script = ExtResource("cloud")
+behaviour = "fragile"
+period = 3.8
+art_variant = 1
+
+[node name="Diamond_10" type="Node2D" parent="FallsCloudB" unique_id=213440537]
+position = Vector2(105, -48)
+script = ExtResource("object")
+
+[node name="FallsRain" parent="." unique_id=1654554109 instance=ExtResource("rain")]
+process_physics_priority = -10
+position = Vector2(8490, -80)
+rain_width = 330.0
+rain_height = 1600.0
 slow_multiplier = 0.5
 calm_duration = 3.0
 warning_duration = 1.2
@@ -452,176 +566,179 @@ rain_duration = 2.0
 recovery_duration = 0.8
 start_offset = 3.4
 
-[node name="BellAtrium" parent="." type="AnimatableBody2D"]
-position = Vector2(9030.00, 390.00)
+[node name="BellAtrium" type="AnimatableBody2D" parent="." unique_id=702632281]
+position = Vector2(9030, 390)
 collision_mask = 0
 script = ExtResource("platform")
 width = 820.0
-depth = 95.0
 
-[node name="CollisionShape2D" parent="BellAtrium" type="CollisionShape2D"]
-position = Vector2(410.00, 40.00)
-shape = SubResource("Shape_BellAtrium")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BellAtrium" unique_id=1183267407]
+position = Vector2(410, 12)
+shape = SubResource("RectangleShape2D_ygceq")
 one_way_collision = true
+one_way_collision_margin = 6.0
 
-[node name="Checkpoint_BellAtrium" parent="." type="Node2D"]
-position = Vector2(9125.00, 390.00)
+[node name="Checkpoint_BellAtrium" type="Node2D" parent="." unique_id=1467056537]
+position = Vector2(9720, 408)
 script = ExtResource("object")
 kind = "checkpoint"
 
-[node name="BellAtrium_Art" parent="." type="Node2D"]
-position = Vector2(9563.00, 390.00)
-script = ExtResource("landmark")
-piece = "arch"
-art_height = 165.0
-
-[node name="Hint_3" parent="." type="Marker2D"]
-position = Vector2(9400.00, 390.00)
+[node name="Hint_3" type="Marker2D" parent="." unique_id=797071170]
+position = Vector2(9424, 341)
 script = ExtResource("hint")
-title = "Tři světelné zvonky"
-message = "Najdi tři zvonky. Nahoru vede výtah i rychlejší cesta po žlutých mracích."
-touch_message = "Najdi tři zvonky. Nahoru vede výtah i rychlejší cesta po žlutých mracích."
+title = "Píseň oblak"
+message = "Rozezvoň zvonky pod ostrovem, nahoře a vpravo. Jejich píseň probudí cestu dál."
+touch_message = "Rozezvoň zvonky pod ostrovem, nahoře a vpravo. Jejich píseň probudí cestu dál."
 activation_size = Vector2(560, 330)
-display_seconds = 7.0
+display_seconds = 5.0
 
-[node name="LowerBellShelf" parent="." type="AnimatableBody2D"]
-position = Vector2(9405.00, 650.00)
+[node name="LowBell" type="Node2D" parent="." unique_id=882221784]
+z_index = -2
+position = Vector2(9613, 684)
+script = ExtResource("chime")
+tone = Color(0.54, 0.9, 1, 1)
+
+[node name="LowerBellShelf" type="AnimatableBody2D" parent="." unique_id=1888635605]
+material = SubResource("ShaderMaterial_anybf")
+position = Vector2(9417, 697)
 collision_mask = 0
 script = ExtResource("water_ledge")
+waterfall_length = 1050.0
 width = 300.0
-behaviour = "steady"
-art_variant = 4
-travel = Vector2(0.00, 0.00)
 period = 3.8
-phase_offset = 0.0
-powered = true
-waterfall_style = "garden"
-waterfall_length = 450.0
-water_mirrored = false
+art_variant = 4
 
-[node name="LowBell" parent="." type="Node2D"]
-position = Vector2(9640.00, 650.00)
-script = ExtResource("chime")
-tone = Color(0.54, 0.9, 1.0, 1)
+[node name="Diamond_11" type="Node2D" parent="LowerBellShelf" unique_id=1838829698]
+position = Vector2(75, -48)
+script = ExtResource("object")
 
-[node name="LowerReturnLift" parent="." type="AnimatableBody2D"]
-position = Vector2(9780, 650)
+[node name="LowerReturnLift" type="AnimatableBody2D" parent="." unique_id=158241258]
+material = SubResource("ShaderMaterial_ld8o0")
+position = Vector2(10265, 855)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 250.0
 behaviour = "ferry"
-art_variant = 3
-travel = Vector2(0.00, -330.00)
+travel = Vector2(0, -330)
 period = 2.4
-phase_offset = 0.0
-powered = true
 return_period = 1.8
+art_variant = 3
 
-[node name="BellSkyStep1" parent="." type="AnimatableBody2D"]
-position = Vector2(9475.0, 180)
+[node name="BellSkyStep2" type="AnimatableBody2D" parent="." unique_id=1115753743]
+material = SubResource("ShaderMaterial_yw5h5")
+position = Vector2(10192, 79)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 170.0
 behaviour = "fragile"
-art_variant = 2
-crumble_seconds = 1.5
-travel = Vector2(0, 0)
 period = 3.8
-powered = true
+crumble_seconds = 1.5
+art_variant = 2
 
-[node name="BellSkyStep2" parent="." type="AnimatableBody2D"]
-position = Vector2(9735.0, -20)
+[node name="BellSkyStep4" type="AnimatableBody2D" parent="." unique_id=565482236]
+material = SubResource("ShaderMaterial_apj4m")
+position = Vector2(10012, 489)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 170.0
 behaviour = "fragile"
-art_variant = 2
-crumble_seconds = 1.5
-travel = Vector2(0, 0)
 period = 3.8
-powered = true
+crumble_seconds = 1.5
+art_variant = 2
 
-[node name="BellSkyStep3" parent="." type="AnimatableBody2D"]
-position = Vector2(10015.0, -210)
+[node name="BellSkyStep5" type="AnimatableBody2D" parent="." unique_id=1390893967]
+material = SubResource("ShaderMaterial_krj6g")
+position = Vector2(9877, 720)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 170.0
 behaviour = "fragile"
-art_variant = 2
-crumble_seconds = 1.5
-travel = Vector2(0, 0)
 period = 3.8
-powered = true
+crumble_seconds = 1.5
+art_variant = 2
 
-[node name="BellLift" parent="." type="AnimatableBody2D"]
-position = Vector2(9965.00, 350.00)
+[node name="BellSkyStep3" type="AnimatableBody2D" parent="." unique_id=1611077426]
+material = SubResource("ShaderMaterial_disau")
+position = Vector2(10012, -137)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 170.0
+behaviour = "fragile"
+period = 3.8
+crumble_seconds = 1.5
+art_variant = 2
+
+[node name="Diamond_12" type="Node2D" parent="BellSkyStep3" unique_id=1844677022]
+position = Vector2(85, -48)
+script = ExtResource("object")
+
+[node name="BellLift" type="AnimatableBody2D" parent="." unique_id=617227269]
+material = SubResource("ShaderMaterial_7hho1")
+position = Vector2(10562, 392)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 270.0
 behaviour = "ferry"
-art_variant = 4
-travel = Vector2(0.00, -430.00)
-period = 2.4
-phase_offset = 0.0
-powered = true
+travel = Vector2(0, -300)
+period = 2.0
 return_period = 1.8
+crumble_seconds = 1.9000000000000001
+empty_seconds = 0.7
+art_variant = 4
 
-[node name="HighBellBalcony" parent="." type="AnimatableBody2D"]
-position = Vector2(10350.00, -240.00)
+[node name="HighBellBalcony" type="AnimatableBody2D" parent="." unique_id=540329487]
+position = Vector2(10350, -240)
 collision_mask = 0
 script = ExtResource("platform")
 width = 480.0
-depth = 95.0
+waterfall_length = 1940.0
 
-[node name="CollisionShape2D" parent="HighBellBalcony" type="CollisionShape2D"]
-position = Vector2(240.00, 40.00)
-shape = SubResource("Shape_HighBellBalcony")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HighBellBalcony" unique_id=1526893437]
+position = Vector2(240, 12)
+shape = SubResource("RectangleShape2D_kevl1")
 one_way_collision = true
+one_way_collision_margin = 6.0
 
-[node name="Checkpoint_HighBellBalcony" parent="." type="Node2D"]
-position = Vector2(10445.00, -240.00)
+[node name="Diamond_13" type="Node2D" parent="HighBellBalcony" unique_id=2067528498]
+position = Vector2(80, -48)
 script = ExtResource("object")
-kind = "checkpoint"
 
-[node name="HighBellBalcony_Art" parent="." type="Node2D"]
-position = Vector2(10662.00, -240.00)
-script = ExtResource("landmark")
-piece = "birdhouse"
-art_height = 100.0
-
-[node name="HighBell" parent="." type="Node2D"]
-position = Vector2(10610.00, -240.00)
+[node name="HighBell" type="Node2D" parent="." unique_id=1985891653]
+z_index = -2
+position = Vector2(10610, -240)
 script = ExtResource("chime")
 tone = Color(1, 0.81, 0.4, 1)
 
-[node name="BellCrossingA" parent="." type="AnimatableBody2D"]
-position = Vector2(10995.00, -60.00)
+[node name="BellCrossingA" type="AnimatableBody2D" parent="." unique_id=1295945211]
+material = SubResource("ShaderMaterial_v88ok")
+position = Vector2(11043, -170)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
 behaviour = "fragile"
-art_variant = 1
-travel = Vector2(0.00, 0.00)
 period = 3.8
-phase_offset = 0.0
-powered = true
+art_variant = 1
 
-[node name="BellCrossingB" parent="." type="AnimatableBody2D"]
-position = Vector2(11365.00, 100.00)
+[node name="Diamond_14" type="Node2D" parent="BellCrossingA" unique_id=344370073]
+position = Vector2(115, -48)
+script = ExtResource("object")
+
+[node name="BellCrossingB" type="AnimatableBody2D" parent="." unique_id=1656781614]
+material = SubResource("ShaderMaterial_3657k")
+position = Vector2(11365, 100)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
 behaviour = "drift"
-art_variant = 2
-travel = Vector2(70.00, 0.00)
+travel = Vector2(70, 0)
 period = 5.2
-phase_offset = 0.0
-powered = true
+art_variant = 2
 
-[node name="BellCrossingRain" parent="." instance=ExtResource("rain")]
-position = Vector2(11260.00, -170.00)
-rain_width = 150.0
-rain_height = 310.0
+[node name="BellCrossingRain" parent="." unique_id=1614834243 instance=ExtResource("rain")]
+process_physics_priority = -10
+position = Vector2(11335, -503)
+rain_width = 290.0
+rain_height = 1600.0
 slow_multiplier = 0.5
 calm_duration = 3.0
 warning_duration = 1.2
@@ -629,121 +746,76 @@ rain_duration = 2.0
 recovery_duration = 0.8
 start_offset = 1.4
 
-[node name="FarBellBalcony" parent="." type="AnimatableBody2D"]
-position = Vector2(11700.00, 300.00)
+[node name="FarBellBalcony" type="AnimatableBody2D" parent="." unique_id=6816874]
+position = Vector2(11700, 300)
 collision_mask = 0
 script = ExtResource("platform")
 width = 600.0
-depth = 95.0
 
-[node name="CollisionShape2D" parent="FarBellBalcony" type="CollisionShape2D"]
-position = Vector2(300.00, 40.00)
-shape = SubResource("Shape_FarBellBalcony")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FarBellBalcony" unique_id=588425549]
+position = Vector2(300, 12)
+shape = SubResource("RectangleShape2D_xv4mq")
 one_way_collision = true
+one_way_collision_margin = 6.0
 
-[node name="Checkpoint_FarBellBalcony" parent="." type="Node2D"]
-position = Vector2(11795.00, 300.00)
+[node name="Diamond_15" type="Node2D" parent="FarBellBalcony" unique_id=788183382]
+position = Vector2(90, -48)
 script = ExtResource("object")
-kind = "checkpoint"
 
-[node name="FarBellBalcony_Art" parent="." type="Node2D"]
-position = Vector2(12090.00, 300.00)
-script = ExtResource("landmark")
-piece = "planter"
-art_height = 70.0
-
-[node name="FarBell" parent="." type="Node2D"]
-position = Vector2(12120.00, 300.00)
+[node name="FarBell" type="Node2D" parent="." unique_id=894930465]
+z_index = -2
+position = Vector2(12120, 300)
 script = ExtResource("chime")
 tone = Color(1, 0.65, 0.84, 1)
 
-[node name="BellReturn_1" parent="." type="AnimatableBody2D"]
-position = Vector2(11340.00, 560.00)
-collision_mask = 0
-script = ExtResource("cloud")
-width = 220.0
-behaviour = "steady"
-art_variant = 3
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
-
-[node name="BellReturn_2" parent="." type="AnimatableBody2D"]
-position = Vector2(10890.00, 650.00)
-collision_mask = 0
-script = ExtResource("cloud")
-width = 220.0
-behaviour = "steady"
-art_variant = 0
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
-
-[node name="BellReturn_3" parent="." type="AnimatableBody2D"]
-position = Vector2(10370, 650)
-collision_mask = 0
-script = ExtResource("cloud")
-width = 220.0
-behaviour = "steady"
-art_variant = 1
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
-
-[node name="FinalCarrier" parent="." type="AnimatableBody2D"]
-position = Vector2(12465.00, 390.00)
+[node name="FinalCarrier" type="AnimatableBody2D" parent="." unique_id=1041464403]
+material = SubResource("ShaderMaterial_l3gdj")
+position = Vector2(12465, 390)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 270.0
 behaviour = "ferry"
-art_variant = 4
-travel = Vector2(1050.00, -50.00)
+travel = Vector2(1050, -50)
 period = 3.8
-phase_offset = 0.0
 powered = false
+art_variant = 4
 
-[node name="BellChoir" parent="." type="Node2D"]
-position = Vector2(12000.00, 300.00)
+[node name="BellChoir" type="Node2D" parent="." unique_id=966383306]
+z_index = 2
+position = Vector2(12000, 300)
 script = ExtResource("chimes")
 bells = Array[NodePath]([NodePath("../LowBell"), NodePath("../HighBell"), NodePath("../FarBell")])
 carrier = NodePath("../FinalCarrier")
-wind_travel = Vector2(1050.00, -50.00)
+wind_travel = Vector2(1050, -50)
 
-[node name="QuietGarden" parent="." type="AnimatableBody2D"]
-position = Vector2(14100.00, 340.00)
+[node name="QuietGarden" type="AnimatableBody2D" parent="." unique_id=1043614557]
+position = Vector2(14100, 340)
 collision_mask = 0
 script = ExtResource("platform")
 width = 650.0
-depth = 95.0
+waterfall_length = 1360.0
 
-[node name="CollisionShape2D" parent="QuietGarden" type="CollisionShape2D"]
-position = Vector2(325.00, 40.00)
-shape = SubResource("Shape_QuietGarden")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QuietGarden" unique_id=90078806]
+position = Vector2(325, 12)
+shape = SubResource("RectangleShape2D_bxqjw")
 one_way_collision = true
+one_way_collision_margin = 6.0
 
-[node name="Checkpoint_QuietGarden" parent="." type="Node2D"]
-position = Vector2(14195.00, 340.00)
+[node name="Checkpoint_QuietGarden" type="Node2D" parent="." unique_id=1923700617]
+position = Vector2(14662, 349)
 script = ExtResource("object")
 kind = "checkpoint"
 
-[node name="QuietGarden_Art" parent="." type="Node2D"]
-position = Vector2(14522.50, 340.00)
-script = ExtResource("landmark")
-piece = "treehouse"
-art_height = 205.0
-
-[node name="QuietGardenGuard" parent="." instance=ExtResource("enemy")]
-position = Vector2(14440.00, 340.00)
+[node name="QuietGardenGuard" parent="." unique_id=59243247 instance=ExtResource("enemy")]
+position = Vector2(14440, 340)
 patrol = 125.0
 speed = 48.0
 
-[node name="GardenStormRain" parent="." instance=ExtResource("rain")]
-position = Vector2(14860.00, 30.00)
-rain_width = 180.0
-rain_height = 310.0
+[node name="GardenStormRain" parent="." unique_id=2095490863 instance=ExtResource("rain")]
+process_physics_priority = -10
+position = Vector2(14977, -351)
+rain_width = 210.0
+rain_height = 1600.0
 slow_multiplier = 0.5
 calm_duration = 3.0
 warning_duration = 1.2
@@ -751,91 +823,85 @@ rain_duration = 2.0
 recovery_duration = 0.8
 start_offset = 3.0
 
-[node name="MoonGarden_1" parent="." type="AnimatableBody2D"]
-position = Vector2(14220.00, 140.00)
+[node name="MoonGarden_1" type="AnimatableBody2D" parent="." unique_id=549457258]
+material = SubResource("ShaderMaterial_s4hcg")
+position = Vector2(14220, 140)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 220.0
-behaviour = "steady"
+period = 3.8
 art_variant = 3
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
 
-[node name="MoonGarden_2" parent="." type="AnimatableBody2D"]
-position = Vector2(14530.00, -50.00)
+[node name="MoonGarden_2" type="AnimatableBody2D" parent="." unique_id=1556557609]
+material = SubResource("ShaderMaterial_8wttd")
+position = Vector2(14530, -50)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 220.0
-behaviour = "steady"
-art_variant = 0
-travel = Vector2(0.00, 0.00)
 period = 3.8
-phase_offset = 0.0
-powered = true
 
-[node name="MoonGarden_3" parent="." type="AnimatableBody2D"]
-position = Vector2(14260.00, -250.00)
+[node name="MoonGarden_3" type="AnimatableBody2D" parent="." unique_id=733721807]
+material = SubResource("ShaderMaterial_v6hdg")
+position = Vector2(14260, -250)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 220.0
-behaviour = "steady"
+period = 3.8
 art_variant = 1
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
 
-[node name="MoonGarden_HiddenGarden" parent="." type="AnimatableBody2D"]
-position = Vector2(14500.00, -360.00)
+[node name="MoonGarden_HiddenGarden" type="AnimatableBody2D" parent="." unique_id=803524326]
+material = SubResource("ShaderMaterial_bpsmk")
+position = Vector2(14500, -360)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 360.0
-behaviour = "steady"
-art_variant = 4
-travel = Vector2(0.00, 0.00)
 period = 3.8
-phase_offset = 0.0
-powered = true
+art_variant = 4
 
-[node name="MoonGarden_Shrine" parent="." type="Node2D"]
-position = Vector2(14680.00, -360.00)
-script = ExtResource("landmark")
-piece = "crystal_shrine"
-art_height = 125.0
+[node name="Diamond_16" type="Node2D" parent="MoonGarden_HiddenGarden" unique_id=389706464]
+position = Vector2(70, -48)
+script = ExtResource("object")
 
-[node name="BeforeFinaleA" parent="." type="AnimatableBody2D"]
-position = Vector2(14955.00, 210.00)
+[node name="Diamond_17" type="Node2D" parent="MoonGarden_HiddenGarden" unique_id=896402005]
+position = Vector2(180, -48)
+script = ExtResource("object")
+
+[node name="Diamond_18" type="Node2D" parent="MoonGarden_HiddenGarden" unique_id=1524796643]
+position = Vector2(290, -48)
+script = ExtResource("object")
+
+[node name="BeforeFinaleA" type="AnimatableBody2D" parent="." unique_id=1293813976]
+material = SubResource("ShaderMaterial_j3ggi")
+position = Vector2(14955, 210)
 collision_mask = 0
 script = ExtResource("cloud")
-width = 210.0
 behaviour = "orbit"
-art_variant = 3
-travel = Vector2(60.00, 30.00)
+travel = Vector2(55, 55)
 period = 5.2
-phase_offset = 0.0
-powered = true
+art_variant = 3
 
-[node name="BeforeFinaleB" parent="." type="AnimatableBody2D"]
-position = Vector2(15395.00, 340.00)
+[node name="Diamond_19" type="Node2D" parent="BeforeFinaleA" unique_id=1342907998]
+position = Vector2(105, -48)
+script = ExtResource("object")
+
+[node name="BeforeFinaleB" type="AnimatableBody2D" parent="." unique_id=285176861]
+material = SubResource("ShaderMaterial_fnjtq")
+position = Vector2(15395, 340)
 collision_mask = 0
 script = ExtResource("water_ledge")
-width = 210.0
-behaviour = "steady"
-art_variant = 0
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
 waterfall_style = "ruins"
-waterfall_length = 540.0
-water_mirrored = false
+waterfall_length = 1360.0
+period = 3.8
 
-[node name="LastStormRain" parent="." instance=ExtResource("rain")]
-position = Vector2(15270.00, 30.00)
+[node name="Diamond_20" type="Node2D" parent="BeforeFinaleB" unique_id=1064651095]
+position = Vector2(105, -48)
+script = ExtResource("object")
+
+[node name="LastStormRain" parent="." unique_id=1564113724 instance=ExtResource("rain")]
+process_physics_priority = -10
+position = Vector2(15674, -326)
 rain_width = 180.0
-rain_height = 310.0
+rain_height = 1250.0
 slow_multiplier = 0.5
 calm_duration = 3.0
 warning_duration = 1.2
@@ -843,270 +909,133 @@ rain_duration = 2.0
 recovery_duration = 0.8
 start_offset = 0.2
 
-[node name="EscapeCheckpoint" parent="." type="AnimatableBody2D"]
-position = Vector2(15830.00, 380.00)
+[node name="EscapeCheckpoint" type="AnimatableBody2D" parent="." unique_id=1042102882]
+position = Vector2(15830, 380)
 collision_mask = 0
 script = ExtResource("platform")
 width = 760.0
-depth = 95.0
 
-[node name="CollisionShape2D" parent="EscapeCheckpoint" type="CollisionShape2D"]
-position = Vector2(380.00, 40.00)
-shape = SubResource("Shape_EscapeCheckpoint")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EscapeCheckpoint" unique_id=989647554]
+position = Vector2(380, 12)
+shape = SubResource("RectangleShape2D_i5eab")
 one_way_collision = true
+one_way_collision_margin = 6.0
 
-[node name="Checkpoint_EscapeCheckpoint" parent="." type="Node2D"]
-position = Vector2(15925.00, 380.00)
-script = ExtResource("object")
-kind = "checkpoint"
-
-[node name="EscapeCheckpoint_Art" parent="." type="Node2D"]
-position = Vector2(16324.00, 380.00)
-script = ExtResource("landmark")
-piece = "bench"
-art_height = 62.0
-
-[node name="Hint_4" parent="." type="Marker2D"]
-position = Vector2(16200.00, 380.00)
+[node name="Hint_4" type="Marker2D" parent="." unique_id=124615803]
+position = Vector2(16200, 380)
 script = ExtResource("hint")
-title = "Poslední vlna"
-message = "Mraky se rozpadají za tebou. Pokračuj vpřed — checkpoint je tady."
-touch_message = "Mraky se rozpadají za tebou. Pokračuj vpřed — checkpoint je tady."
+title = "Mizející stezka"
+message = "Za tebou mraky mizí. Doskoč na další a pokračuj dál."
+touch_message = "Za tebou mraky mizí. Doskoč na další a pokračuj dál."
 activation_size = Vector2(560, 330)
-display_seconds = 7.0
+display_seconds = 5.0
 
-[node name="EscapeCloud0" parent="." type="AnimatableBody2D"]
-position = Vector2(16755.00, 320.00)
+[node name="EscapeCloud0" type="AnimatableBody2D" parent="." unique_id=822227770]
+material = SubResource("ShaderMaterial_otf1x")
+position = Vector2(16755, 320)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
 behaviour = "fragile"
+period = 3.8
 art_variant = 1
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
 
-[node name="EscapeCloud1" parent="." type="AnimatableBody2D"]
-position = Vector2(17135.00, 260.00)
+[node name="EscapeCloud1" type="AnimatableBody2D" parent="." unique_id=145853282]
+material = SubResource("ShaderMaterial_hc5o5")
+position = Vector2(17151, 166)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
 behaviour = "fragile"
+period = 3.8
 art_variant = 2
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
 
-[node name="EscapeCloud2" parent="." type="AnimatableBody2D"]
-position = Vector2(17535.00, 340.00)
+[node name="Diamond_21" type="Node2D" parent="EscapeCloud1" unique_id=1989493156]
+position = Vector2(115, -48)
+script = ExtResource("object")
+
+[node name="EscapeCloud2" type="AnimatableBody2D" parent="." unique_id=1182084981]
+material = SubResource("ShaderMaterial_dd6jv")
+position = Vector2(17510, 405)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
 behaviour = "fragile"
+period = 3.8
 art_variant = 3
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
 
-[node name="EscapeCloud3" parent="." type="AnimatableBody2D"]
-position = Vector2(17935.00, 270.00)
+[node name="EscapeCloud3" type="AnimatableBody2D" parent="." unique_id=789838526]
+material = SubResource("ShaderMaterial_sfrkp")
+position = Vector2(17935, 270)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
 behaviour = "fragile"
-art_variant = 0
-travel = Vector2(0.00, 0.00)
 period = 3.8
-phase_offset = 0.0
-powered = true
 
-[node name="EscapeCloud4" parent="." type="AnimatableBody2D"]
-position = Vector2(18325.00, 370.00)
+[node name="EscapeCloud4" type="AnimatableBody2D" parent="." unique_id=1451953242]
+material = SubResource("ShaderMaterial_cq844")
+position = Vector2(18337, 99)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
 behaviour = "fragile"
+period = 3.8
 art_variant = 1
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
 
-[node name="EscapeCloud5" parent="." type="AnimatableBody2D"]
-position = Vector2(18715.00, 300.00)
+[node name="Diamond_22" type="Node2D" parent="EscapeCloud4" unique_id=2069118345]
+position = Vector2(115, -48)
+script = ExtResource("object")
+
+[node name="EscapeCloud5" type="AnimatableBody2D" parent="." unique_id=1635206636]
+material = SubResource("ShaderMaterial_hwxed")
+position = Vector2(18885, 239)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
 behaviour = "fragile"
+period = 3.8
 art_variant = 2
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
 
-[node name="EscapeCloud6" parent="." type="AnimatableBody2D"]
-position = Vector2(19105.00, 370.00)
-collision_mask = 0
-script = ExtResource("cloud")
-width = 230.0
-behaviour = "fragile"
-art_variant = 3
-travel = Vector2(0.00, 0.00)
-period = 3.8
-phase_offset = 0.0
-powered = true
-
-[node name="CloudEscape" parent="." type="Node"]
+[node name="CloudEscape" type="Node" parent="." unique_id=1088050619]
 script = ExtResource("escape")
-clouds = Array[NodePath]([NodePath("../EscapeCloud0"), NodePath("../EscapeCloud1"), NodePath("../EscapeCloud2"), NodePath("../EscapeCloud3"), NodePath("../EscapeCloud4"), NodePath("../EscapeCloud5"), NodePath("../EscapeCloud6")])
+clouds = Array[NodePath]([NodePath("../EscapeCloud0"), NodePath("../EscapeCloud1"), NodePath("../EscapeCloud2"), NodePath("../EscapeCloud3"), NodePath("../EscapeCloud4"), NodePath("../EscapeCloud5"), NodePath("")])
 start_x = 16730.0
 end_x = 19430.0
 first_delay = 3.8
 interval = 1.6
 
-[node name="ExitGarden" parent="." type="AnimatableBody2D"]
-position = Vector2(19470.00, 430.00)
+[node name="ExitGarden" type="AnimatableBody2D" parent="." unique_id=706450902]
+position = Vector2(19470, 430)
 collision_mask = 0
 script = ExtResource("platform")
 width = 850.0
-depth = 95.0
 
-[node name="CollisionShape2D" parent="ExitGarden" type="CollisionShape2D"]
-position = Vector2(425.00, 40.00)
-shape = SubResource("Shape_ExitGarden")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGarden" unique_id=563355285]
+position = Vector2(425, 12)
+shape = SubResource("RectangleShape2D_grwot")
 one_way_collision = true
+one_way_collision_margin = 6.0
 
-[node name="ExitGarden_Art" parent="." type="Node2D"]
-position = Vector2(20022.50, 430.00)
-script = ExtResource("landmark")
-piece = "ruin_arch"
-art_height = 180.0
-
-[node name="SkyKey" parent="." type="Node2D"]
-position = Vector2(19800.00, 382.00)
+[node name="SkyKey" type="Node2D" parent="." unique_id=343057561]
+position = Vector2(19800, 382)
 script = ExtResource("object")
 kind = "star_key"
 
-[node name="Goal" parent="." type="Node2D"]
-position = Vector2(20070.00, 430.00)
+[node name="Goal" type="Node2D" parent="." unique_id=215966723]
+position = Vector2(20070, 430)
 script = ExtResource("object")
 kind = "goal"
 
-[node name="Diamond_01" parent="StormArrival0" type="Node2D"]
-position = Vector2(105.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_02" parent="StormArrival1" type="Node2D"]
-position = Vector2(105.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_03" parent="StormArrival2" type="Node2D"]
-position = Vector2(105.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_04" parent="FirstRoute_Upper_2" type="Node2D"]
-position = Vector2(110.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_05" parent="FirstRoute_Lower_2" type="Node2D"]
-position = Vector2(110.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_06" parent="FirstRoute_Lower_4" type="Node2D"]
-position = Vector2(110.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_07" parent="AnchorCarrier" type="Node2D"]
-position = Vector2(135.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_08" parent="WaterfallShelter" type="Node2D"]
-position = Vector2(160.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_09" parent="FallsCloudA" type="Node2D"]
-position = Vector2(105.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_10" parent="FallsCloudB" type="Node2D"]
-position = Vector2(105.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_11" parent="LowerBellShelf" type="Node2D"]
-position = Vector2(75.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_12" parent="BellSkyStep3" type="Node2D"]
-position = Vector2(85, -48)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_13" parent="HighBellBalcony" type="Node2D"]
-position = Vector2(80.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_14" parent="BellCrossingA" type="Node2D"]
-position = Vector2(115.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_15" parent="FarBellBalcony" type="Node2D"]
-position = Vector2(90.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_16" parent="MoonGarden_HiddenGarden" type="Node2D"]
-position = Vector2(70.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_17" parent="MoonGarden_HiddenGarden" type="Node2D"]
-position = Vector2(180.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_18" parent="MoonGarden_HiddenGarden" type="Node2D"]
-position = Vector2(290.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_19" parent="BeforeFinaleA" type="Node2D"]
-position = Vector2(105.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_20" parent="BeforeFinaleB" type="Node2D"]
-position = Vector2(105.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_21" parent="EscapeCloud1" type="Node2D"]
-position = Vector2(115.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond_22" parent="EscapeCloud4" type="Node2D"]
-position = Vector2(115.00, -48.00)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="SecretGardenReward" parent="." type="Node2D"]
+[node name="SecretGardenReward" type="Node2D" parent="." unique_id=1856954391]
+z_index = 2
 position = Vector2(14680, -360)
 script = ExtResource("discovery")
 area_size = Vector2(330, 60)
 rain_targets = Array[NodePath]([NodePath("../GardenStormRain"), NodePath("../LastStormRain")])
+
+[node name="Kamera" type="Node2D" parent="." unique_id=854269827]
+position = Vector2(9877, 419)
+script = ExtResource("19_ve2xj")
+area_size = Vector2(700, 600)
+look_offset = Vector2(0, 180)

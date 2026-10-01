@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://dwm7gtlkk26jx"]
 
+[ext_resource type="Shader" uid="uid://dtiajredopi3u" path="res://shaders/cloud_edge_cleanup.gdshader" id="5_eychw"]
+[ext_resource type="Script" uid="uid://bd4fkdbvhf54y" path="res://scripts/camera_zone.gd" id="13_rw43v"]
 [ext_resource type="Script" uid="uid://cx8o1oku7o2i2" path="res://scripts/sky_backdrop.gd" id="bg"]
 [ext_resource type="Script" uid="uid://bohuc0h15slyw" path="res://scripts/cloud_step.gd" id="cloud"]
 [ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="enemy"]
 [ext_resource type="Script" uid="uid://c2svy4eaj02wn" path="res://scripts/tutorial_trigger.gd" id="hint"]
-[ext_resource type="Script" uid="uid://c80yqfr10rsnr" path="res://scripts/world_landmark.gd" id="landmark"]
 [ext_resource type="Script" uid="uid://detg52t2f6hmm" path="res://scripts/sky_adventure.gd" id="level"]
 [ext_resource type="Script" uid="uid://cueha53tp0240" path="res://scripts/object.gd" id="object"]
 [ext_resource type="Script" uid="uid://cx0dp1hsus65h" path="res://scripts/sky_island.gd" id="platform"]
@@ -14,19 +15,143 @@
 [ext_resource type="Script" uid="uid://chktnke30ql3h" path="res://scripts/sky_water_ledge.gd" id="water_ledge"]
 [ext_resource type="Script" uid="uid://d0yba4cdevhyd" path="res://scripts/sky_wind_gate.gd" id="wind_gate"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eychw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rw43v"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o70xg"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aivvy"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lw346"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yr1au"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0mntf"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_myy1d"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vo45s"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eychw"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3up57"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w8rv0"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cprx1"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rcsma"]
 size = Vector2(580, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rw43v"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ttlt6"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jbd3a"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_26gg3"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5i5m2"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uqjl1"]
 size = Vector2(800, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o70xg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ocbkt"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dr8yd"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2k0s1"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g5fsw"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uah6g"]
 size = Vector2(650, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aivvy"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_knrgy"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_syath"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2aj0w"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cngpg"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s4t84"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ruo0"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jxg13"]
 size = Vector2(680, 24)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lw346"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hps61"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hosok"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sd5oe"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ehgs2"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_38qvv"]
+shader = ExtResource("5_eychw")
+shader_parameter/edge_pixels = 6.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_id2vw"]
 size = Vector2(750, 24)
 
 [node name="Level_06" type="Node2D" unique_id=1479985699]
@@ -41,6 +166,11 @@ fall_limit = 1250.0
 fouk_at_start = true
 metadata/_edit_lock_ = true
 
+[node name="Background" type="CanvasLayer" parent="." unique_id=1766288311]
+layer = -100
+script = ExtResource("bg")
+landscape = ExtResource("skyart")
+
 [node name="Arrival" type="AnimatableBody2D" parent="." unique_id=504126865]
 position = Vector2(0, 460)
 collision_mask = 0
@@ -48,7 +178,7 @@ script = ExtResource("platform")
 width = 700.0
 
 [node name="FirstWindBank" type="AnimatableBody2D" parent="." unique_id=1140081203]
-position = Vector2(2240, 400)
+position = Vector2(2620, 472)
 collision_mask = 0
 script = ExtResource("platform")
 width = 520.0
@@ -59,24 +189,12 @@ collision_mask = 0
 script = ExtResource("platform")
 width = 780.0
 
-[node name="Background" type="CanvasLayer" parent="." unique_id=556341829]
-layer = -100
-script = ExtResource("bg")
-landscape = ExtResource("skyart")
-
-[node name="Hint_1" type="Marker2D" parent="." unique_id=1736379299]
-position = Vector2(300, 460)
-script = ExtResource("hint")
-title = "Oblačná stezka"
-message = "Fouk ti pomůže druhým skokem. Rozhlédni se, kam doskočíš."
-touch_message = "Fouk ti pomůže druhým skokem. Rozhlédni se, kam doskočíš."
-activation_size = Vector2(560, 330)
-
 [node name="ArrivalCloud0" type="AnimatableBody2D" parent="." unique_id=1125816019]
+material = SubResource("ShaderMaterial_rw43v")
 position = Vector2(945, 440)
 collision_mask = 0
 script = ExtResource("water_ledge")
-waterfall_length = 480.0
+waterfall_length = 1260.0
 width = 230.0
 period = 3.8
 art_variant = 1
@@ -86,6 +204,7 @@ position = Vector2(105, -48)
 script = ExtResource("object")
 
 [node name="ArrivalCloud1" type="AnimatableBody2D" parent="." unique_id=795002581]
+material = SubResource("ShaderMaterial_o70xg")
 position = Vector2(1385, 290)
 collision_mask = 0
 script = ExtResource("cloud")
@@ -99,26 +218,53 @@ position = Vector2(105, -48)
 script = ExtResource("object")
 
 [node name="ArrivalCloud2" type="AnimatableBody2D" parent="." unique_id=1312232737]
-position = Vector2(1825, 420)
+material = SubResource("ShaderMaterial_aivvy")
+position = Vector2(3126, 323)
 collision_mask = 0
 script = ExtResource("cloud")
 period = 3.8
 art_variant = 3
 
 [node name="Diamond_03" type="Node2D" parent="ArrivalCloud2" unique_id=2055613668]
+position = Vector2(-211, 101)
+script = ExtResource("object")
+
+[node name="ArrivalCloud4" type="AnimatableBody2D" parent="." unique_id=1430851125]
+material = SubResource("ShaderMaterial_lw346")
+position = Vector2(2062, 698)
+collision_mask = 0
+script = ExtResource("cloud")
+period = 3.8
+art_variant = 3
+
+[node name="Diamond_03" type="Node2D" parent="ArrivalCloud4" unique_id=1544590088]
 position = Vector2(105, -48)
 script = ExtResource("object")
 
+[node name="ArrivalCloud3" type="AnimatableBody2D" parent="." unique_id=104895428]
+material = SubResource("ShaderMaterial_yr1au")
+position = Vector2(2515, 656)
+collision_mask = 0
+script = ExtResource("cloud")
+period = 3.8
+art_variant = 3
+
+[node name="Diamond_03" type="Node2D" parent="ArrivalCloud3" unique_id=1124070961]
+position = Vector2(-715, -196)
+script = ExtResource("object")
+
 [node name="Hint_2" type="Marker2D" parent="." unique_id=1103802477]
-position = Vector2(2420, 400)
+position = Vector2(2643, 533)
 script = ExtResource("hint")
-title = "Silný protivítr"
-message = "Páka vypne vítr na 10 sekund. Zvol modrý převoz, nebo rychlejší žluté mraky."
-touch_message = "Páka vypne vítr na 10 sekund. Zvol modrý převoz, nebo rychlejší žluté mraky."
+title = "Mlýn v oblacích"
+message = "Stoupni k páce. Vítr na 8,5 sekund utichne."
+touch_message = "Stoupni k páce. Vítr na 8,5 sekund utichne."
 activation_size = Vector2(560, 330)
+display_seconds = 5.0
 
 [node name="WindShortcut1" type="AnimatableBody2D" parent="." unique_id=990262962]
-position = Vector2(2700, 195)
+material = SubResource("ShaderMaterial_0mntf")
+position = Vector2(1707, 498)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 185.0
@@ -128,7 +274,8 @@ crumble_seconds = 1.5
 art_variant = 2
 
 [node name="WindShortcut2" type="AnimatableBody2D" parent="." unique_id=563402406]
-position = Vector2(3330, 60)
+material = SubResource("ShaderMaterial_myy1d")
+position = Vector2(3450, 199)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 180.0
@@ -142,7 +289,19 @@ position = Vector2(90, -48)
 script = ExtResource("object")
 
 [node name="WindShortcut3" type="AnimatableBody2D" parent="." unique_id=719694975]
-position = Vector2(3770, 150)
+material = SubResource("ShaderMaterial_vo45s")
+position = Vector2(4135, 184)
+collision_mask = 0
+script = ExtResource("cloud")
+width = 185.0
+behaviour = "fragile"
+period = 3.8
+crumble_seconds = 1.5
+art_variant = 2
+
+[node name="WindShortcut5" type="AnimatableBody2D" parent="." unique_id=1314305797]
+material = SubResource("ShaderMaterial_eychw")
+position = Vector2(3795, 320)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 185.0
@@ -152,6 +311,7 @@ crumble_seconds = 1.5
 art_variant = 2
 
 [node name="WindShortcut4" type="AnimatableBody2D" parent="." unique_id=39833928]
+material = SubResource("ShaderMaterial_3up57")
 position = Vector2(5977, 289)
 collision_mask = 0
 script = ExtResource("cloud")
@@ -161,27 +321,16 @@ period = 3.8
 crumble_seconds = 1.5
 art_variant = 2
 
-[node name="FirstCarrier" type="AnimatableBody2D" parent="." unique_id=2075663763]
-position = Vector2(3035, 489)
-collision_mask = 0
-script = ExtResource("cloud")
-width = 270.0
-behaviour = "ferry"
-travel = Vector2(1150, -120)
-art_variant = 4
-
 [node name="FirstMill" type="Node2D" parent="." unique_id=871639414]
 process_physics_priority = 5
-position = Vector2(2520, 400)
+position = Vector2(2620, 656)
 script = ExtResource("wind_gate")
-wind_area = Rect2(250, -595, 1660, 850)
-wind_width = 850.0
-mill_offset = Vector2(2030, -120)
-
-[node name="Checkpoint_WindLanding" type="Node2D" parent="." unique_id=644875610]
-position = Vector2(4745, 280)
-script = ExtResource("object")
-kind = "checkpoint"
+off_seconds = 8.5
+wind_area = Rect2(391, -780.5, 1519, 661)
+wind_origin = Vector2(1910, -450)
+wind_length = 1519.0
+wind_width = 661.0
+mill_offset = Vector2(2000, -370)
 
 [node name="LandingGuard" parent="." unique_id=335426164 instance=ExtResource("enemy")]
 position = Vector2(4980, 280)
@@ -189,6 +338,7 @@ patrol = 125.0
 speed = 48.0
 
 [node name="RainHopA0" type="AnimatableBody2D" parent="." unique_id=1229199945]
+material = SubResource("ShaderMaterial_w8rv0")
 position = Vector2(5485, 140)
 collision_mask = 0
 script = ExtResource("cloud")
@@ -200,7 +350,8 @@ position = Vector2(105, -48)
 script = ExtResource("object")
 
 [node name="RainHopA1" type="AnimatableBody2D" parent="." unique_id=901324157]
-position = Vector2(6294, 73)
+material = SubResource("ShaderMaterial_cprx1")
+position = Vector2(6498, 155)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
@@ -215,8 +366,8 @@ script = ExtResource("object")
 [node name="GardenRainA" parent="." unique_id=655938415 instance=ExtResource("rain")]
 process_physics_priority = -10
 position = Vector2(5820, -100)
-rain_width = 180.0
-rain_height = 810.0
+rain_width = 330.0
+rain_height = 1410.0
 slow_multiplier = 0.5
 calm_duration = 3.0
 warning_duration = 1.2
@@ -229,10 +380,11 @@ position = Vector2(6330, 350)
 collision_mask = 0
 script = ExtResource("platform")
 width = 580.0
+waterfall_length = 1350.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DryPavilion" unique_id=2137433419]
 position = Vector2(290, 12)
-shape = SubResource("RectangleShape2D_eychw")
+shape = SubResource("RectangleShape2D_rcsma")
 one_way_collision = true
 one_way_collision_margin = 6.0
 
@@ -245,38 +397,31 @@ position = Vector2(6425, 350)
 script = ExtResource("object")
 kind = "checkpoint"
 
-[node name="DryPavilion_Art" type="Node2D" parent="." unique_id=1729440012]
-z_index = -6
-position = Vector2(6707, 350)
-script = ExtResource("landmark")
-piece = "pavilion"
-art_height = 165.0
-
-[node name="Hint_3" type="Marker2D" parent="." unique_id=588053452]
-position = Vector2(6580, 350)
-script = ExtResource("hint")
-title = "Nad deštěm"
-message = "Dolní cestou počkej na klid. Modrý výtah tě vezme nad déšť."
-touch_message = "Dolní cestou počkej na klid. Modrý výtah tě vezme nad déšť."
-activation_size = Vector2(560, 330)
-
 [node name="LookoutLift" type="AnimatableBody2D" parent="." unique_id=1607523019]
-position = Vector2(6655, -20)
+material = SubResource("ShaderMaterial_ttlt6")
+position = Vector2(6833, 0)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 270.0
 behaviour = "ferry"
-travel = Vector2(0, -360)
+travel = Vector2(0, -300)
 period = 2.4
 return_period = 1.8
 art_variant = 4
 
+[node name="Kamera" type="Node2D" parent="LookoutLift" unique_id=121951387]
+position = Vector2(468, -292)
+script = ExtResource("13_rw43v")
+area_size = Vector2(400, 400)
+look_offset = Vector2(0, 180)
+
 [node name="SunLookout" type="AnimatableBody2D" parent="." unique_id=1726447122]
+material = SubResource("ShaderMaterial_jbd3a")
 position = Vector2(7182, -338)
 collision_mask = 0
 script = ExtResource("water_ledge")
 waterfall_style = "ruins"
-waterfall_length = 1200.0
+waterfall_length = 2038.0
 width = 300.0
 period = 3.8
 art_variant = 4
@@ -293,29 +438,11 @@ script = ExtResource("object")
 position = Vector2(260, -48)
 script = ExtResource("object")
 
-[node name="LookoutDescent_1" type="AnimatableBody2D" parent="." unique_id=292986415]
-position = Vector2(7558, -210)
-collision_mask = 0
-script = ExtResource("cloud")
-width = 220.0
-period = 3.8
-art_variant = 1
-
-[node name="LookoutDescent_2" type="AnimatableBody2D" parent="." unique_id=860054984]
-position = Vector2(7932, 71)
-collision_mask = 0
-script = ExtResource("cloud")
-width = 220.0
-behaviour = "drift"
-travel = Vector2(0, 50)
-period = 5.2
-art_variant = 2
-
 [node name="GardenRainB" parent="." unique_id=1693144899 instance=ExtResource("rain")]
 process_physics_priority = -10
-position = Vector2(7250, 80)
+position = Vector2(7507, -457)
 rain_width = 200.0
-rain_height = 310.0
+rain_height = 1600.0
 slow_multiplier = 0.5
 calm_duration = 3.0
 warning_duration = 1.2
@@ -324,6 +451,7 @@ recovery_duration = 0.8
 start_offset = 0.6
 
 [node name="RainHopB" type="AnimatableBody2D" parent="." unique_id=790310446]
+material = SubResource("ShaderMaterial_26gg3")
 position = Vector2(7155, 350)
 collision_mask = 0
 script = ExtResource("cloud")
@@ -337,6 +465,7 @@ position = Vector2(105, -48)
 script = ExtResource("object")
 
 [node name="RoseStep" type="AnimatableBody2D" parent="." unique_id=1981671687]
+material = SubResource("ShaderMaterial_5i5m2")
 position = Vector2(7615, 210)
 collision_mask = 0
 script = ExtResource("cloud")
@@ -355,22 +484,9 @@ width = 800.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SecondMillBank" unique_id=1783015336]
 position = Vector2(400, 12)
-shape = SubResource("RectangleShape2D_rw43v")
+shape = SubResource("RectangleShape2D_uqjl1")
 one_way_collision = true
 one_way_collision_margin = 6.0
-
-[node name="Checkpoint_SecondMillBank" type="Node2D" parent="." unique_id=1115474209]
-position = Vector2(8488, 410)
-script = ExtResource("object")
-kind = "checkpoint"
-
-[node name="Hint_4" type="Marker2D" parent="." unique_id=945354951]
-position = Vector2(8390, 400)
-script = ExtResource("hint")
-title = "Deset sekund odvahy"
-message = "Vypni vítr a přeskoč čtyři mraky. Na žlutých se nezdržuj."
-touch_message = "Vypni vítr a přeskoč čtyři mraky. Na žlutých se nezdržuj."
-activation_size = Vector2(560, 330)
 
 [node name="SecondMill" type="Node2D" parent="." unique_id=1044742219]
 process_physics_priority = 5
@@ -380,10 +496,11 @@ wind_area = Rect2(285, -645, 1735, 950)
 wind_origin = Vector2(2020, -170)
 wind_length = 1735.0
 wind_width = 950.0
-mill_offset = Vector2(2170, -160)
+mill_offset = Vector2(2170, -165)
 
 [node name="WindStep0" type="AnimatableBody2D" parent="." unique_id=1548642586]
-position = Vector2(9005, 390)
+material = SubResource("ShaderMaterial_ocbkt")
+position = Vector2(8962, 412)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
@@ -391,11 +508,12 @@ period = 3.8
 art_variant = 1
 
 [node name="Diamond_13" type="Node2D" parent="WindStep0" unique_id=1660807499]
-position = Vector2(115, -48)
+position = Vector2(490, -228)
 script = ExtResource("object")
 
 [node name="WindStep1" type="AnimatableBody2D" parent="." unique_id=930021604]
-position = Vector2(9415, 230)
+material = SubResource("ShaderMaterial_dr8yd")
+position = Vector2(9337, 231)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
@@ -404,7 +522,8 @@ period = 3.8
 art_variant = 2
 
 [node name="WindStep2" type="AnimatableBody2D" parent="." unique_id=1455173408]
-position = Vector2(9825, 350)
+material = SubResource("ShaderMaterial_2k0s1")
+position = Vector2(9754, 359)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
@@ -416,28 +535,30 @@ position = Vector2(115, -48)
 script = ExtResource("object")
 
 [node name="WindStep3" type="AnimatableBody2D" parent="." unique_id=1819886627]
-position = Vector2(10225, 210)
+material = SubResource("ShaderMaterial_g5fsw")
+position = Vector2(10259, 256)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
 behaviour = "drift"
 travel = Vector2(0, 45)
-period = 5.2
+period = 5.8
 
 [node name="OrchardLanding" type="AnimatableBody2D" parent="." unique_id=612196224]
 position = Vector2(10613, 235)
 collision_mask = 0
 script = ExtResource("platform")
 width = 650.0
+waterfall_length = 1465.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="OrchardLanding" unique_id=1783596327]
 position = Vector2(325, 12)
-shape = SubResource("RectangleShape2D_o70xg")
+shape = SubResource("RectangleShape2D_uah6g")
 one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="Checkpoint_OrchardLanding" type="Node2D" parent="." unique_id=471596077]
-position = Vector2(10911, 244)
+position = Vector2(10911, 235)
 script = ExtResource("object")
 kind = "checkpoint"
 
@@ -450,11 +571,13 @@ speed = 48.0
 position = Vector2(11160, 240)
 script = ExtResource("hint")
 title = "Zahradní rozcestí"
-message = "Dole tě sveze modrý mrak. Nahoře krystal otevře zkratku přes vodopád."
-touch_message = "Dole tě sveze modrý mrak. Nahoře krystal otevře zkratku přes vodopád."
+message = "Krystal nahoře probudí zkratku. Dole tě sveze modrý mrak."
+touch_message = "Krystal nahoře probudí zkratku. Dole tě sveze modrý mrak."
 activation_size = Vector2(520, 300)
+display_seconds = 5.0
 
 [node name="PuzzlePad" type="AnimatableBody2D" parent="." unique_id=1053036496]
+material = SubResource("ShaderMaterial_knrgy")
 position = Vector2(11340, 155)
 collision_mask = 0
 script = ExtResource("cloud")
@@ -462,14 +585,15 @@ art_variant = 1
 
 [node name="PuzzleCrystal" type="Node2D" parent="." unique_id=1768982846]
 z_index = 1
-position = Vector2(11555, 359)
+position = Vector2(12075, -166)
 script = ExtResource("switch")
 targets = Array[NodePath]([NodePath("../ShortcutDrift")])
 plate_width = 110.0
 appearance = "crystal"
 
 [node name="ShortcutDrift" type="AnimatableBody2D" parent="." unique_id=1220033364]
-position = Vector2(11642, 39)
+material = SubResource("ShaderMaterial_syath")
+position = Vector2(11516, 362)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 240.0
@@ -484,10 +608,11 @@ position = Vector2(120, -39)
 script = ExtResource("object")
 
 [node name="HighFalls" type="AnimatableBody2D" parent="." unique_id=800025584]
+material = SubResource("ShaderMaterial_2aj0w")
 position = Vector2(11930, -155)
 collision_mask = 0
 script = ExtResource("water_ledge")
-waterfall_length = 1200.0
+waterfall_length = 1855.0
 water_mirrored = true
 art_variant = 4
 
@@ -496,12 +621,14 @@ position = Vector2(90, -46)
 script = ExtResource("object")
 
 [node name="SafeHop" type="AnimatableBody2D" parent="." unique_id=169484667]
-position = Vector2(11460, 370)
+material = SubResource("ShaderMaterial_cngpg")
+position = Vector2(11667, 0)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 190.0
 
 [node name="SafeFerry" type="AnimatableBody2D" parent="." unique_id=1329742359]
+material = SubResource("ShaderMaterial_s4t84")
 position = Vector2(11873, 489)
 collision_mask = 0
 script = ExtResource("cloud")
@@ -517,23 +644,17 @@ position = Vector2(135, -48)
 script = ExtResource("object")
 
 [node name="SafeExit" type="AnimatableBody2D" parent="." unique_id=54101980]
-position = Vector2(12382, 0)
+material = SubResource("ShaderMaterial_3ruo0")
+position = Vector2(12693, 140)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 270.0
 art_variant = 3
 
-[node name="ExitBanner" type="Node2D" parent="." unique_id=2012904167]
-z_index = -6
-position = Vector2(12991, 302)
-script = ExtResource("landmark")
-piece = "banner"
-art_height = 70.0
-
 [node name="OrchardRain" parent="." unique_id=763779085 instance=ExtResource("rain")]
 process_physics_priority = -10
-position = Vector2(12760, -146)
-rain_width = 220.0
+position = Vector2(12597, -394)
+rain_width = 280.0
 rain_height = 850.0
 slow_multiplier = 0.5
 calm_duration = 2.4
@@ -543,46 +664,43 @@ recovery_duration = 0.8
 start_offset = 0.6
 
 [node name="LastRest" type="AnimatableBody2D" parent="." unique_id=81282348]
-position = Vector2(12760, 310)
+position = Vector2(13078, 43)
 collision_mask = 0
 script = ExtResource("platform")
 width = 680.0
+waterfall_length = 1390.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LastRest" unique_id=221124817]
 position = Vector2(340, 12)
-shape = SubResource("RectangleShape2D_aivvy")
+shape = SubResource("RectangleShape2D_jxg13")
 one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="Checkpoint_LastRest" type="Node2D" parent="." unique_id=748944978]
-position = Vector2(12855, 310)
+position = Vector2(13418, 55)
 script = ExtResource("object")
 kind = "checkpoint"
 
-[node name="LastRest_Art" type="Node2D" parent="." unique_id=115420483]
-z_index = -6
-position = Vector2(13202, 310)
-script = ExtResource("landmark")
-piece = "fountain"
-art_height = 112.0
-
 [node name="Hint_5" type="Marker2D" parent="." unique_id=1972147562]
-position = Vector2(13100, 310)
+position = Vector2(13418, -40)
 script = ExtResource("hint")
-title = "Probuď cestu"
-message = "Hvězda čeká nahoře. Stoupni ke krystalu a probudíš cestu k bráně."
-touch_message = "Hvězda čeká nahoře. Stoupni ke krystalu a probudíš cestu k bráně."
+title = "Světelná cesta"
+message = "Vezmi hvězdu a stoupni ke krystalu. Probudíš cestu k bráně."
+touch_message = "Vezmi hvězdu a stoupni ke krystalu. Probudíš cestu k bráně."
 activation_size = Vector2(560, 330)
+display_seconds = 5.0
 
 [node name="LanternStep" type="AnimatableBody2D" parent="." unique_id=1811665751]
-position = Vector2(13585, 140)
+material = SubResource("ShaderMaterial_hps61")
+position = Vector2(13679, 392)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 230.0
 period = 3.8
 
 [node name="StarBalcony" type="AnimatableBody2D" parent="." unique_id=1455990789]
-position = Vector2(13960, -40)
+material = SubResource("ShaderMaterial_hosok")
+position = Vector2(13953, -30)
 collision_mask = 0
 script = ExtResource("cloud")
 width = 280.0
@@ -590,10 +708,11 @@ period = 3.8
 art_variant = 4
 
 [node name="Diamond_18" type="Node2D" parent="StarBalcony" unique_id=969968623]
-position = Vector2(60, -48)
+position = Vector2(-159, 389)
 script = ExtResource("object")
 
 [node name="LightBridge0" type="AnimatableBody2D" parent="." unique_id=1401262470]
+material = SubResource("ShaderMaterial_sd5oe")
 position = Vector2(14020, 279)
 collision_mask = 0
 script = ExtResource("cloud")
@@ -608,6 +727,7 @@ position = Vector2(115, -48)
 script = ExtResource("object")
 
 [node name="LightBridge1" type="AnimatableBody2D" parent="." unique_id=1427510719]
+material = SubResource("ShaderMaterial_ehgs2")
 position = Vector2(14473, 322)
 collision_mask = 0
 script = ExtResource("cloud")
@@ -622,6 +742,7 @@ position = Vector2(115, -30)
 script = ExtResource("object")
 
 [node name="LightBridge2" type="AnimatableBody2D" parent="." unique_id=1845304462]
+material = SubResource("ShaderMaterial_38qvv")
 position = Vector2(15021, 247)
 collision_mask = 0
 script = ExtResource("cloud")
@@ -645,8 +766,8 @@ appearance = "crystal"
 
 [node name="LastRain" parent="." unique_id=395619720 instance=ExtResource("rain")]
 process_physics_priority = -10
-position = Vector2(14780, -70)
-rain_width = 160.0
+position = Vector2(14852, -76)
+rain_width = 320.0
 rain_height = 890.0
 slow_multiplier = 0.5
 calm_duration = 3.0
@@ -663,7 +784,7 @@ width = 750.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ExitGarden" unique_id=1745515948]
 position = Vector2(375, 12)
-shape = SubResource("RectangleShape2D_lw346")
+shape = SubResource("RectangleShape2D_id2vw")
 one_way_collision = true
 one_way_collision_margin = 6.0
 
@@ -671,14 +792,8 @@ one_way_collision_margin = 6.0
 position = Vector2(170, -48)
 script = ExtResource("object")
 
-[node name="ExitGarden_Art" type="Node2D" parent="." unique_id=638337098]
-z_index = -6
-position = Vector2(15947.5, 350)
-script = ExtResource("landmark")
-piece = "ruin_arch"
-
 [node name="SkyKey" type="Node2D" parent="." unique_id=504334153]
-position = Vector2(14090, -88)
+position = Vector2(14064, -67)
 script = ExtResource("object")
 kind = "star_key"
 
@@ -686,3 +801,15 @@ kind = "star_key"
 position = Vector2(16020, 350)
 script = ExtResource("object")
 kind = "goal"
+
+[node name="Kamera" type="Node2D" parent="." unique_id=1783866525]
+position = Vector2(14232, 107)
+script = ExtResource("13_rw43v")
+area_size = Vector2(700, 600)
+look_offset = Vector2(0, 180)
+
+[node name="Kamera2" type="Node2D" parent="." unique_id=118112226]
+position = Vector2(11697, 250)
+script = ExtResource("13_rw43v")
+area_size = Vector2(400, 400)
+look_offset = Vector2(0, 180)

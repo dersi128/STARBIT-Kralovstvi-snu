@@ -22,6 +22,11 @@ extends AnimatableBody2D
 const CLOUDS = [preload("res://assets/cloud_paths/cloud_1.png"), preload("res://assets/cloud_paths/cloud_2.png"), preload("res://assets/cloud_paths/cloud_3.png"), preload("res://assets/cloud_paths/cloud_4.png"), preload("res://assets/cloud_paths/cloud_5.png")]
 # Atlas regions discard empty margins without modifying the supplied images.
 const REGIONS = [Rect2(145,465,970,395),Rect2(225,388,1000,440),Rect2(180,350,1165,470),Rect2(18,245,1638,560),Rect2(15,248,1887,390)]
+# Source-pixel height of the broad walking shelf, not the highest side puff.
+# Scale this with the artwork: a fixed screen offset left a gap under Bit.
+const WALK_SURFACE_Y = [481.0,449.0,410.0,363.0,340.0]
+const CLOUD_EDGE_SHADER = preload("res://shaders/cloud_edge_cleanup.gdshader")
+const EDGE_PIXELS := 6.0
 var escape_hold := false
 var settle_left := 0.0
 var settle_from := Vector2.ZERO
@@ -40,6 +45,10 @@ var visual_alpha := 1.0
 
 func _ready() -> void:
 	origin=position
+	var cloud_material:=ShaderMaterial.new()
+	cloud_material.shader=CLOUD_EDGE_SHADER
+	cloud_material.set_shader_parameter("edge_pixels",EDGE_PIXELS)
+	material=cloud_material
 	collision_layer=1;collision_mask=0
 	_shape()
 	_set_solid(powered)
@@ -146,8 +155,9 @@ func _draw() -> void:
 	var region:Rect2=REGIONS[art_variant]
 	var art_width:=width+20.0
 	var art_scale:=art_width/region.size.x
-	# Keep the original proportions; the upper cloud shelf follows the walk line.
-	var top:float=[12.0,14.0,12.0,16.0,10.0][art_variant]
+	# The cleaned upper shelf sits just inside the unchanged collision surface.
+	# Rounded side puffs and the original proportions remain intact.
+	var top:float=(WALK_SURFACE_Y[art_variant]-region.position.y+EDGE_PIXELS)*art_scale+1.5
 	draw_texture_rect_region(CLOUDS[art_variant],Rect2(-10,-top,art_width,region.size.y*art_scale),region,tint)
 	if Engine.is_editor_hint() and behaviour=="orbit":
 		var points:=PackedVector2Array()

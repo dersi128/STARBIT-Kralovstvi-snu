@@ -10,6 +10,9 @@ extends AnimatableBody2D
 	set(value):waterfall_art=value;queue_redraw();_refresh_water()
 @export_range(0.0, 2400.0, 10.0, "or_greater", "suffix:px") var waterfall_length := 0.0:
 	set(value):waterfall_length=maxf(value,0.0);_refresh_water()
+## Volně padající voda bez jezírka a pěny ve vzduchu.
+@export var waterfall_free_fall := true:
+	set(value):waterfall_free_fall=value;_refresh_water()
 @export_range(0.0, 2.0, 0.05) var waterfall_speed := 1.0:
 	set(value):waterfall_speed=value;_refresh_water()
 @export_range(0.0, 1.0, 0.05) var waterfall_effects := 0.7:
@@ -55,7 +58,7 @@ func _sync_water() -> void:
 		_water_art=WATER_ART.new();_water_art.name="SkyWaterfallArt"
 		add_child(_water_art,false,Node.INTERNAL_MODE_BACK)
 	_water_art.visible=true
-	_water_art.configure(width,variant,waterfall_length,waterfall_speed,waterfall_effects,preview_waterfall)
+	_water_art.configure(width,variant,waterfall_length,waterfall_speed,waterfall_effects,preview_waterfall,waterfall_free_fall)
 	queue_redraw()
 func _draw() -> void:
 	if _water_variant()>=0:return

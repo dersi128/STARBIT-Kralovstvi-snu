@@ -14,6 +14,8 @@ uniform float splash_start = 350.0;
 uniform float original_bottom = 480.0;
 uniform float target_bottom = 480.0;
 uniform float edge_cleanup : hint_range(0.0, 1.0) = 1.0;
+uniform bool free_fall = false;
+uniform float flow_clock = 0.0;
 varying vec2 art_position;
 varying vec4 item_color;
 
@@ -86,6 +88,21 @@ void fragment() {
 	if (p.y > 94.0) {
 		vec4 island = result;
 		island.a *= 1.0 - water_mask(p, island, reference_stream_core) * ribbon_mask(p, reference_stream_core);
+		if (free_fall) {
+			float phase=fract((p.y-122.0-flow_clock*190.0)/164.0);
+			vec2 a=vec2(p.x,122.0+phase*164.0);
+			vec2 b=vec2(p.x,122.0+fract(phase+0.5)*164.0);
+			vec4 ca=clean_pixel(a,true);ca.a*=water_mask(a,ca,reference_stream_core)*ribbon_mask(a,reference_stream_core);
+			vec4 cb=clean_pixel(b,true);cb.a*=water_mask(b,cb,reference_stream_core)*ribbon_mask(b,reference_stream_core);
+			vec4 flowing=mix(cb,ca,pow(sin(phase*3.14159265),2.0));
+			vec4 head=clean_pixel(p,true);head.a*=water_mask(p,head,reference_stream_core)*ribbon_mask(p,reference_stream_core);
+			flowing=mix(head,flowing,smoothstep(94.0,132.0,p.y));
+			float streak=pow(max(0.0,sin(p.y*0.08-flow_clock*9.0+sin(p.x*0.17))),8.0);
+			flowing.rgb=clamp(flowing.rgb+vec3(0.65,0.88,1.0)*streak*0.18,vec3(0.0),vec3(1.0));
+			flowing.a*=1.0-smoothstep(target_bottom-140.0,target_bottom,p.y);
+			float alpha=island.a+flowing.a*(1.0-island.a);
+			result=vec4((island.rgb*island.a+flowing.rgb*flowing.a*(1.0-island.a))/max(alpha,0.001),alpha);
+		} else {
 		float drop = max(target_bottom - 94.0, 0.001);
 		float foam_height = max(original_bottom - splash_start, 1.0);
 		float foam_scale = min(1.0, drop * 0.45 / foam_height);
@@ -110,6 +127,7 @@ void fragment() {
 		float alpha = island.a + water.a * (1.0 - island.a);
 		vec3 rgb = (island.rgb * island.a + water.rgb * water.a * (1.0 - island.a)) / max(alpha, 0.001);
 		result = vec4(rgb, alpha);
+		}
 	}
 	COLOR = result * item_color;
 }

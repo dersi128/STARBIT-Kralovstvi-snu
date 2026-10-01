@@ -9,6 +9,7 @@ uniform float head_y = 350.0;
 uniform float target_bottom = 820.0;
 uniform float effect_strength : hint_range(0.0,1.0) = 0.7;
 uniform float clock = 0.0;
+uniform bool free_fall = false;
 varying vec2 art_position;
 varying vec4 item_color;
 
@@ -57,7 +58,32 @@ void vertex() {art_position=VERTEX;item_color=COLOR;}
 void fragment() {
 	vec2 p=art_position;
 	vec4 result=moving_water(p);
-	if (abs(target_bottom-820.0)>0.01 && p.y>head_y) {
+	if (free_fall && p.y>head_y) {
+		vec4 island=pixel(p);island.a*=1.0-water(p,island);
+		// The original painted mist includes dark, low-saturation pixels that
+		// are not water-coloured. Remove the old splash region as a whole.
+		if (p.x>spray_bounds.x-20.0 && p.x<spray_bounds.y+20.0) {
+			island.a*=1.0-smoothstep(630.0,665.0,p.y);
+		}
+		// Two staggered samples hide the wrap. The pattern travels DOWN,
+		// independent of the waterfall length; only water pixels are replaced.
+		float start=head_y+28.0;
+		float span=640.0-start;
+		float phase=fract((p.y-start-clock*180.0)/span);
+		vec2 a=vec2(p.x,start+phase*span);
+		vec2 b=vec2(p.x,start+fract(phase+0.5)*span);
+		vec4 ca=pixel(a);ca.a*=water(a,ca);
+		vec4 cb=pixel(b);cb.a*=water(b,cb);
+		float blend=pow(sin(phase*3.14159265),2.0);
+		vec4 flowing=mix(cb,ca,blend);
+		vec4 head=moving_water(p);head.a*=water(p,head);
+		flowing=mix(head,flowing,smoothstep(head_y,head_y+48.0,p.y));
+		float streak=pow(max(0.0,sin(p.y*0.065-clock*8.0+sin(p.x*0.12))),8.0);
+		flowing.rgb=clamp(flowing.rgb+vec3(0.65,0.88,1.0)*streak*0.18*effect_strength,vec3(0.0),vec3(1.0));
+		flowing.a*=1.0-smoothstep(target_bottom-180.0,target_bottom,p.y);
+		float alpha=island.a+flowing.a*(1.0-island.a);
+		result=vec4((island.rgb*island.a+flowing.rgb*flowing.a*(1.0-island.a))/max(alpha,0.001),alpha);
+	} else if (abs(target_bottom-820.0)>0.01 && p.y>head_y) {
 		vec4 island=pixel(p);island.a*=1.0-water(p,island);
 		float foam_scale=min(1.0,(target_bottom-head_y)*0.4/130.0);
 		float target_foam=target_bottom-130.0*foam_scale;
