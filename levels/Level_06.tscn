@@ -16954,104 +16954,56 @@ position = Vector2(11050, 240)
 patrol = 125.0
 speed = 48.0
 
-[node name="ForkHint" type="Marker2D" parent="."]
-position = Vector2(11160, 240)
-script = ExtResource("hint")
-title = "Zahradní rozcestí"
-message = "Dole naskoč na modrý mrak, vyveze tě z deště. Nahoře stoupni na krystal a dvojskokem vezmi zkratku."
-touch_message = "Dole naskoč na modrý mrak, vyveze tě z deště. Nahoře stoupni na krystal a dvojskokem vezmi zkratku."
-activation_size = Vector2(520, 300)
-
-[node name="PuzzlePad" type="AnimatableBody2D" parent="."]
-position = Vector2(11340, 155)
+[node name="OrbitLift" type="AnimatableBody2D" parent="." unique_id=1329742359]
+position = Vector2(11465, 70)
 collision_mask = 0
 script = ExtResource("cloud")
-width = 210.0
+behaviour = "orbit"
+travel = Vector2(70, 45)
+period = 5.2
 art_variant = 1
 
-[node name="PuzzleCrystal" type="Node2D" parent="."]
-z_index = 1
-position = Vector2(11445, 155)
-script = ExtResource("switch")
-targets = Array[NodePath]([NodePath("../ShortcutDrift")])
-latch = true
-plate_width = 110.0
-appearance = "crystal"
-
-[node name="ShortcutDrift" type="AnimatableBody2D" parent="." unique_id=1220033364]
-position = Vector2(11610, 30)
-collision_mask = 0
-script = ExtResource("cloud")
-width = 240.0
-behaviour = "drift"
-travel = Vector2(0, -60)
-period = 2.6
-powered = false
-art_variant = 2
-
-[node name="Diamond_17" type="Node2D" parent="ShortcutDrift" unique_id=571009495]
-position = Vector2(120, -48)
+[node name="Diamond_15" type="Node2D" parent="OrbitLift" unique_id=910816940]
+position = Vector2(105, -48)
 script = ExtResource("object")
 
-[node name="HighFalls" type="AnimatableBody2D" parent="." unique_id=800025584]
-position = Vector2(11930, -155)
+[node name="UpperBalcony" type="AnimatableBody2D" parent="." unique_id=800025584]
+position = Vector2(11905, -80)
 collision_mask = 0
 script = ExtResource("water_ledge")
-waterfall_style = "garden"
-waterfall_length = 160.0
-width = 420.0
-art_variant = 4
+waterfall_style = "side"
+waterfall_length = 450.0
+water_mirrored = true
+period = 3.8
+art_variant = 2
 
-[node name="Diamond_16" type="Node2D" parent="HighFalls" unique_id=1475951321]
-position = Vector2(210, -48)
+[node name="Diamond_16" type="Node2D" parent="UpperBalcony" unique_id=1475951321]
+position = Vector2(105, -48)
 script = ExtResource("object")
 
-[node name="SafeHop" type="AnimatableBody2D" parent="."]
-position = Vector2(11460, 370)
+[node name="SoftDescent" type="AnimatableBody2D" parent="." unique_id=1220033364]
+position = Vector2(12365, 100)
 collision_mask = 0
 script = ExtResource("cloud")
-width = 190.0
-
-[node name="SafeFerry" type="AnimatableBody2D" parent="." unique_id=1329742359]
-position = Vector2(11790, 480)
-collision_mask = 0
-script = ExtResource("cloud")
-width = 270.0
-behaviour = "ferry"
-travel = Vector2(520, -300)
-period = 2.3
-return_period = 1.5
-art_variant = 4
-
-[node name="Diamond_15" type="Node2D" parent="SafeFerry" unique_id=910816940]
-position = Vector2(135, -48)
-script = ExtResource("object")
-
-[node name="SafeExit" type="AnimatableBody2D" parent="."]
-position = Vector2(12410, 180)
-collision_mask = 0
-script = ExtResource("cloud")
-width = 270.0
+behaviour = "fragile"
+period = 3.8
 art_variant = 3
 
-[node name="ExitBanner" type="Node2D" parent="."]
-z_index = -6
-position = Vector2(12540, 300)
-script = ExtResource("landmark")
-piece = "banner"
-art_height = 70.0
+[node name="Diamond_17" type="Node2D" parent="SoftDescent" unique_id=571009495]
+position = Vector2(105, -48)
+script = ExtResource("object")
 
 [node name="OrchardRain" parent="." unique_id=763779085 instance=ExtResource("rain")]
 process_physics_priority = -10
-position = Vector2(12170, 260)
-rain_width = 220.0
-rain_height = 270.0
+position = Vector2(12260, -150)
+rain_width = 180.0
+rain_height = 310.0
 slow_multiplier = 0.5
-calm_duration = 2.4
-warning_duration = 1.0
-rain_duration = 2.2
+calm_duration = 3.0
+warning_duration = 1.2
+rain_duration = 2.0
 recovery_duration = 0.8
-start_offset = 0.6
+start_offset = 3.2
 
 [node name="LastRest" type="AnimatableBody2D" parent="." unique_id=81282348]
 position = Vector2(12760, 310)
