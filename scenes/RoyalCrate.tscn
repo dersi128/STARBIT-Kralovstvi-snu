@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/worldkit/PushCrate.tscn" id="base"]
+[ext_resource type="Texture2D" path="res://assets/royal/expansion/level08_atlas.png" id="sheet"]
+
+[sub_resource type="AtlasTexture" id="crate_art"]
+atlas = ExtResource("sheet")
+region = Rect2(83, 497, 305, 277)
+filter_clip = true
+
+[node name="RoyalCrate" instance=ExtResource("base")]
+
+[node name="Visual" parent="." index="0"]
+position = Vector2(0, -40.7251)
+scale = Vector2(0.302789, 0.302789)
+texture = SubResource("crate_art")

@@ -31,13 +31,17 @@ func _physics_process(delta:float) -> void:
  fall_age=fall_age+delta if target_player.velocity.y>180 else 0.0
  var wanted_y:=fall_lookahead*clampf((fall_age-0.2)/0.6,0,1)
  var zone_x:=0.0
+ var zone_y:=0.0
+ var zone_weight:=0.0
  var priority:=-1000
  for zone in get_tree().get_nodes_in_group("camera_zones"):
   var weight:float=zone.weight_at(p)
   if weight>0 and zone.priority>priority:
    priority=zone.priority
-   wanted_y=maxf(wanted_y,zone.look_offset.y*weight)
+   zone_y=zone.look_offset.y
+   zone_weight=weight
    zone_x=zone.look_offset.x*weight
+ wanted_y=lerpf(wanted_y,zone_y,zone_weight)
  look_y=move_toward(look_y,wanted_y,100*delta)
  var target:=Vector2(p.x+look_x+zone_x,feet_anchor-60+look_y)
  target.y=clampf(target.y,p.y-205,p.y+150)

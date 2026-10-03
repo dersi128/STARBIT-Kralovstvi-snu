@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/owl_boss.gd" id="script"]
+
+[ext_resource type="Texture2D" path="res://assets/royal/owl_keeper.png" id="art"]
+
+[node name="Boss" type="Node2D"]
+script = ExtResource("script")
+hp = 5
+keeper_art = ExtResource("art")

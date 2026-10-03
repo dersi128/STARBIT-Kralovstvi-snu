@@ -1,0 +1,784 @@
+{
+  "schema_version": 1,
+  "coordinate_notes": "All region and alpha_bounds arrays are source-pixel [x,y,width,height]. Regions normally have4px padding (L9 platform right edge2px) around alpha>=8 major connected components. No pixels were edited. Sprite-local contact coordinates are relative to region top-left. Walk contacts are visual estimates. Use draw_regions_source when provided to exclude neighboring artwork while preserving all own visible pixels.",
+  "image_size": [
+    1254,
+    1254
+  ],
+  "levels": {
+    "08": {
+      "atlas": "res://assets/royal/expansion/level08_atlas.png",
+      "original_source": "/workspace/scratch/da61f4566f80/generated_images/exec-bdb720b9-e018-42f5-a21a-7550223b67f7.png",
+      "sprites": {
+        "platform": {
+          "region": [
+            15,
+            128,
+            421,
+            249
+          ],
+          "alpha_bounds": [
+            19,
+            132,
+            413,
+            241
+          ],
+          "floor_anchor_source": [
+            225.5,
+            373
+          ],
+          "floor_anchor": [
+            210.5,
+            245
+          ],
+          "walk_y_source": 195,
+          "walk_y": 67,
+          "walk_span_source": [
+            29,
+            422
+          ],
+          "walk_span": [
+            14,
+            407
+          ]
+        },
+        "bridge": {
+          "region": [
+            440,
+            154,
+            410,
+            205
+          ],
+          "alpha_bounds": [
+            444,
+            158,
+            402,
+            197
+          ],
+          "floor_anchor_source": [
+            645.0,
+            355
+          ],
+          "floor_anchor": [
+            205.0,
+            201
+          ],
+          "walk_y_source": 207,
+          "walk_y": 53,
+          "walk_span_source": [
+            481,
+            802
+          ],
+          "walk_span": [
+            41,
+            362
+          ]
+        },
+        "aqueduct": {
+          "region": [
+            862,
+            76,
+            373,
+            320
+          ],
+          "alpha_bounds": [
+            866,
+            80,
+            365,
+            312
+          ],
+          "floor_anchor_source": [
+            1048.5,
+            392
+          ],
+          "floor_anchor": [
+            186.5,
+            316
+          ]
+        },
+        "crate": {
+          "region": [
+            83,
+            497,
+            305,
+            277
+          ],
+          "alpha_bounds": [
+            87,
+            501,
+            297,
+            269
+          ],
+          "floor_anchor_source": [
+            235.5,
+            770
+          ],
+          "floor_anchor": [
+            152.5,
+            273
+          ],
+          "walk_y_source": 519,
+          "walk_y": 22,
+          "walk_span_source": [
+            99,
+            344
+          ],
+          "walk_span": [
+            16,
+            261
+          ]
+        },
+        "mirror": {
+          "region": [
+            473,
+            417,
+            311,
+            366
+          ],
+          "alpha_bounds": [
+            477,
+            421,
+            303,
+            358
+          ],
+          "floor_anchor_source": [
+            628.5,
+            779
+          ],
+          "floor_anchor": [
+            155.5,
+            362
+          ]
+        },
+        "receiver": {
+          "region": [
+            880,
+            484,
+            330,
+            294
+          ],
+          "alpha_bounds": [
+            884,
+            488,
+            322,
+            286
+          ],
+          "floor_anchor_source": [
+            1045.0,
+            774
+          ],
+          "floor_anchor": [
+            165.0,
+            290
+          ]
+        },
+        "lift": {
+          "region": [
+            15,
+            938,
+            460,
+            179
+          ],
+          "alpha_bounds": [
+            19,
+            942,
+            452,
+            171
+          ],
+          "floor_anchor_source": [
+            245.0,
+            1113
+          ],
+          "floor_anchor": [
+            230.0,
+            175
+          ],
+          "walk_y_source": 988,
+          "walk_y": 50,
+          "walk_span_source": [
+            46,
+            447
+          ],
+          "walk_span": [
+            31,
+            432
+          ]
+        },
+        "lantern": {
+          "region": [
+            524,
+            826,
+            236,
+            349
+          ],
+          "alpha_bounds": [
+            528,
+            830,
+            228,
+            341
+          ],
+          "floor_anchor_source": [
+            642.0,
+            1171
+          ],
+          "floor_anchor": [
+            118.0,
+            345
+          ]
+        },
+        "window": {
+          "region": [
+            866,
+            810,
+            363,
+            373
+          ],
+          "alpha_bounds": [
+            870,
+            814,
+            355,
+            365
+          ],
+          "floor_anchor_source": [
+            1047.5,
+            1179
+          ],
+          "floor_anchor": [
+            181.5,
+            369
+          ]
+        }
+      }
+    },
+    "09": {
+      "atlas": "res://assets/royal/expansion/level09_atlas.png",
+      "original_source": "/workspace/scratch/da61f4566f80/generated_images/exec-73461896-6915-462f-8cf1-846db41cd563.png",
+      "sprites": {
+        "platform": {
+          "region": [
+            12,
+            174,
+            448,
+            241
+          ],
+          "alpha_bounds": [
+            16,
+            178,
+            442,
+            233
+          ],
+          "floor_anchor_source": [
+            237.0,
+            411
+          ],
+          "floor_anchor": [
+            225.0,
+            237
+          ],
+          "walk_y_source": 214,
+          "walk_y": 40,
+          "walk_span_source": [
+            35,
+            437
+          ],
+          "walk_span": [
+            23,
+            425
+          ],
+          "padding_note": "Right padding2px (other edges4px) excludes7 low-alpha flower fringe pixels."
+        },
+        "flower_open": {
+          "region": [
+            450,
+            78,
+            454,
+            332
+          ],
+          "alpha_bounds": [
+            454,
+            82,
+            446,
+            324
+          ],
+          "floor_anchor_source": [
+            677.0,
+            406
+          ],
+          "floor_anchor": [
+            227.0,
+            328
+          ],
+          "walk_y_source": 193,
+          "walk_y": 115,
+          "walk_span_source": [
+            486,
+            868
+          ],
+          "walk_span": [
+            36,
+            418
+          ],
+          "petal_stem_split_y_source": 244,
+          "petal_stem_split_y": 166,
+          "exclude_regions_source": [
+            [
+              450,
+              216,
+              16,
+              194
+            ]
+          ],
+          "draw_regions_source": [
+            [
+              450,
+              78,
+              454,
+              138
+            ],
+            [
+              466,
+              216,
+              438,
+              194
+            ]
+          ],
+          "neighbor_note": "Left lower edge of main bounding rectangle contains platform leaves. These 2 draw regions exclude them and preserve the flower."
+        },
+        "flower_closed": {
+          "region": [
+            948,
+            42,
+            287,
+            368
+          ],
+          "alpha_bounds": [
+            952,
+            46,
+            279,
+            360
+          ],
+          "floor_anchor_source": [
+            1091.5,
+            406
+          ],
+          "floor_anchor": [
+            143.5,
+            364
+          ],
+          "petal_stem_split_y_source": 267,
+          "petal_stem_split_y": 225
+        },
+        "sun_fountain": {
+          "region": [
+            27,
+            437,
+            388,
+            377
+          ],
+          "alpha_bounds": [
+            31,
+            441,
+            380,
+            369
+          ],
+          "floor_anchor_source": [
+            221.0,
+            810
+          ],
+          "floor_anchor": [
+            194.0,
+            373
+          ],
+          "exclude_regions_source": [
+            [
+              190,
+              790,
+              48,
+              24
+            ]
+          ],
+          "draw_regions_source": [
+            [
+              27,
+              437,
+              388,
+              353
+            ],
+            [
+              27,
+              790,
+              163,
+              24
+            ],
+            [
+              238,
+              790,
+              177,
+              24
+            ]
+          ],
+          "neighbor_note": "Small bottom-centre notch removes the arch finial. Verified no fountain alpha>=4 pixels lie in the excluded rectangle."
+        },
+        "moon_fountain": {
+          "region": [
+            445,
+            448,
+            375,
+            366
+          ],
+          "alpha_bounds": [
+            449,
+            452,
+            367,
+            358
+          ],
+          "floor_anchor_source": [
+            632.5,
+            810
+          ],
+          "floor_anchor": [
+            187.5,
+            362
+          ]
+        },
+        "tree": {
+          "region": [
+            829,
+            433,
+            416,
+            394
+          ],
+          "alpha_bounds": [
+            833,
+            437,
+            408,
+            386
+          ],
+          "floor_anchor_source": [
+            1037.0,
+            823
+          ],
+          "floor_anchor": [
+            208.0,
+            390
+          ]
+        },
+        "arch": {
+          "region": [
+            14,
+            793,
+            394,
+            422
+          ],
+          "alpha_bounds": [
+            18,
+            797,
+            386,
+            414
+          ],
+          "floor_anchor_source": [
+            211.0,
+            1211
+          ],
+          "floor_anchor": [
+            197.0,
+            418
+          ],
+          "draw_regions_source": [
+            [
+              190,
+              793,
+              48,
+              29
+            ],
+            [
+              14,
+              822,
+              394,
+              393
+            ]
+          ],
+          "neighbor_note": "Draw upper finial only in the centre for first29px; full arch width below y822. This excludes sun-fountain feet. All own alpha>=4 pixels preserved."
+        },
+        "planter_dry": {
+          "region": [
+            430,
+            1011,
+            388,
+            202
+          ],
+          "alpha_bounds": [
+            434,
+            1015,
+            380,
+            194
+          ],
+          "floor_anchor_source": [
+            624.0,
+            1209
+          ],
+          "floor_anchor": [
+            194.0,
+            198
+          ]
+        },
+        "planter_lush": {
+          "region": [
+            852,
+            977,
+            390,
+            250
+          ],
+          "alpha_bounds": [
+            856,
+            981,
+            382,
+            242
+          ],
+          "floor_anchor_source": [
+            1047.0,
+            1223
+          ],
+          "floor_anchor": [
+            195.0,
+            246
+          ]
+        }
+      }
+    },
+    "10": {
+      "atlas": "res://assets/royal/expansion/level10_atlas.png",
+      "original_source": "/workspace/scratch/da61f4566f80/generated_images/exec-90fbbb08-c08b-4c3a-9d1c-12243c4d85af.png",
+      "sprites": {
+        "platform": {
+          "region": [
+            29,
+            211,
+            393,
+            191
+          ],
+          "alpha_bounds": [
+            33,
+            215,
+            385,
+            183
+          ],
+          "floor_anchor_source": [
+            225.5,
+            398
+          ],
+          "floor_anchor": [
+            196.5,
+            187
+          ],
+          "walk_y_source": 270,
+          "walk_y": 59,
+          "walk_span_source": [
+            43,
+            408
+          ],
+          "walk_span": [
+            14,
+            379
+          ]
+        },
+        "platform_dark": {
+          "region": [
+            439,
+            211,
+            394,
+            197
+          ],
+          "alpha_bounds": [
+            443,
+            215,
+            386,
+            189
+          ],
+          "floor_anchor_source": [
+            636.0,
+            404
+          ],
+          "floor_anchor": [
+            197.0,
+            193
+          ],
+          "walk_y_source": 270,
+          "walk_y": 59,
+          "walk_span_source": [
+            453,
+            819
+          ],
+          "walk_span": [
+            14,
+            380
+          ]
+        },
+        "gate": {
+          "region": [
+            861,
+            7,
+            374,
+            413
+          ],
+          "alpha_bounds": [
+            865,
+            11,
+            366,
+            405
+          ],
+          "floor_anchor_source": [
+            1048.0,
+            416
+          ],
+          "floor_anchor": [
+            187.0,
+            409
+          ]
+        },
+        "sun_seal": {
+          "region": [
+            54,
+            488,
+            347,
+            323
+          ],
+          "alpha_bounds": [
+            58,
+            492,
+            339,
+            315
+          ],
+          "floor_anchor_source": [
+            227.5,
+            807
+          ],
+          "floor_anchor": [
+            173.5,
+            319
+          ]
+        },
+        "moon_seal": {
+          "region": [
+            461,
+            501,
+            346,
+            309
+          ],
+          "alpha_bounds": [
+            465,
+            505,
+            338,
+            301
+          ],
+          "floor_anchor_source": [
+            634.0,
+            806
+          ],
+          "floor_anchor": [
+            173.0,
+            305
+          ]
+        },
+        "star_seal": {
+          "region": [
+            876,
+            492,
+            341,
+            320
+          ],
+          "alpha_bounds": [
+            880,
+            496,
+            333,
+            312
+          ],
+          "floor_anchor_source": [
+            1046.5,
+            808
+          ],
+          "floor_anchor": [
+            170.5,
+            316
+          ]
+        },
+        "lift": {
+          "region": [
+            10,
+            1004,
+            470,
+            188
+          ],
+          "alpha_bounds": [
+            14,
+            1008,
+            462,
+            180
+          ],
+          "floor_anchor_source": [
+            245.0,
+            1188
+          ],
+          "floor_anchor": [
+            235.0,
+            184
+          ],
+          "walk_y_source": 1093,
+          "walk_y": 89,
+          "walk_span_source": [
+            51,
+            438
+          ],
+          "walk_span": [
+            41,
+            428
+          ]
+        },
+        "column": {
+          "region": [
+            514,
+            809,
+            240,
+            426
+          ],
+          "alpha_bounds": [
+            518,
+            813,
+            232,
+            418
+          ],
+          "floor_anchor_source": [
+            634.0,
+            1231
+          ],
+          "floor_anchor": [
+            120.0,
+            422
+          ]
+        },
+        "banner": {
+          "region": [
+            874,
+            831,
+            341,
+            380
+          ],
+          "alpha_bounds": [
+            878,
+            835,
+            333,
+            372
+          ],
+          "floor_anchor_source": [
+            1044.5,
+            1207
+          ],
+          "floor_anchor": [
+            170.5,
+            376
+          ]
+        }
+      }
+    }
+  }
+}

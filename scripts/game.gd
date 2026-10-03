@@ -6,7 +6,9 @@ const PAUSE_THEME=preload("res://scripts/pause_menu_theme.gd")
 const ILLUSTRATED_MENU=preload("res://scripts/illustrated_menu.gd")
 const REWARDS_SCREEN=preload("res://scripts/rewards_screen.gd")
 const LEVEL_LOADER=preload("res://scripts/level_loader.gd")
+const DREAM_INTRO=preload("res://scenes/DreamIntro.tscn")
 var level_loader:CanvasLayer
+var intro_view:Control
 var preview_number := 0
 var level: Node2D
 var current := 1
@@ -59,6 +61,7 @@ func _ready() -> void:
  else:menu()
 func clear_ui() -> void:
  dialogue_session+=1
+ intro_view=null
  mole_dialogue=null
  speaker=null
  speech_content=""
@@ -110,13 +113,31 @@ func menu() -> void:
  var presentation:=ILLUSTRATED_MENU.new()
  screen.add_child(presentation)
  presentation.setup({
-  "new":func():start_level(1),
+  "new":new_game,
   "continue":_continue_from_menu,
   "settings":settings,
   "rewards":rewards,
   "quit":func():get_tree().quit()
  },is_instance_valid(level) or Progress.unlocked>1)
  level_loader.prefetch.call_deferred("res://levels/Level_01.tscn")
+func new_game() -> void:
+ if mode!="menu":return
+ mode="intro"
+ release_input()
+ if is_instance_valid(level):level.process_mode=Node.PROCESS_MODE_DISABLED
+ clear_ui()
+ intro_view=DREAM_INTRO.instantiate()
+ intro_view.finished.connect(_finish_intro,CONNECT_ONE_SHOT)
+ screen.add_child(intro_view)
+ # Prepare the forest during the cinematic without displaying the loading card.
+ level_loader.prefetch("res://levels/Level_01.tscn")
+func _finish_intro() -> void:
+ # Defer UI removal so neither a skip-button callback nor its animation is freed mid-call.
+ _start_after_intro.call_deferred()
+func _start_after_intro() -> void:
+ if mode!="intro" or not is_instance_valid(intro_view):return
+ release_input()
+ start_level(1)
 func _continue_from_menu() -> void:
  if run_finished:selection()
  elif is_instance_valid(level):resume()
@@ -328,9 +349,16 @@ func build_bubble() -> void:
  bubble.visible=false
 func speak(source:Node2D,text:String,voice:String="voice_mole") -> void:
  if mode!="play" or not is_instance_valid(bubble) or text.is_empty():return
- if current in [1,2,3,5] and source.get("kind")=="mole":
+ if current in [1,2,3,5,6,8,9,10] and source.get("kind")=="mole":
   if source.get_meta("story_read",false):return
   _begin_mole_dialogue(source)
+  return
+ if current==9 and source.get("kind")=="jiskra":
+  if source.get_meta("story_read",false):return
+  var portrait:=SpriteFrames.new()
+  portrait.add_frame("default",preload("res://scripts/art.gd").texture("jiskra"))
+  portrait.rename_animation("default","idle")
+  _begin_story_dialogue(source,text,"Jiskra",portrait)
   return
  if is_instance_valid(speaker) and speaker!=source:
   var player=get_tree().get_first_node_in_group("player")
@@ -344,6 +372,12 @@ func speak(source:Node2D,text:String,voice:String="voice_mole") -> void:
  bubble.visible=true
 func _begin_mole_dialogue(source:Node2D) -> void:
  _begin_story_dialogue(source,source.message)
+
+func begin_owl_dialogue(source:Node2D) -> bool:
+ if mode!="play" or not is_instance_valid(level) or not is_instance_valid(source):return false
+ if not level.is_ancestor_of(source) or not source.defeated or source.dialogue_started:return false
+ _begin_story_dialogue(source,source.OUTRO_TEXT,"Soví strážce",source.get_dialogue_frames(),null,"Převzít hvězdu",Callable(source,"finish_guardian_dialogue"))
+ return true
 
 func begin_guardian_dialogue(source:Node2D) -> bool:
  if mode!="play" or not is_instance_valid(level) or not is_instance_valid(source):return false
@@ -406,8 +440,13 @@ func update_speech(delta:float) -> void:
  bubble_tail.polygon=PackedVector2Array([Vector2(tail_x-17,by-2),Vector2(tail_x,by+18),Vector2(tail_x+17,by-2)])
 
 func _notification(what:int) -> void:
+ if what==NOTIFICATION_APPLICATION_RESUMED:
+  if mode=="intro" and is_instance_valid(intro_view):intro_view.set_process(true)
  if what==NOTIFICATION_APPLICATION_PAUSED or what==NOTIFICATION_WM_GO_BACK_REQUEST:
-  if mode=="play":pause_game()
+  if mode=="intro" and is_instance_valid(intro_view):
+   if what==NOTIFICATION_WM_GO_BACK_REQUEST:intro_view.skip()
+   else:intro_view.set_process(false)
+  elif mode=="play":pause_game()
   elif what==NOTIFICATION_WM_GO_BACK_REQUEST:
    if mode=="pause":resume()
    elif mode=="credits":settings()

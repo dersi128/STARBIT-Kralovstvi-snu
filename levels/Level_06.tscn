@@ -5,6 +5,8 @@
 [ext_resource type="Script" uid="uid://cx8o1oku7o2i2" path="res://scripts/sky_backdrop.gd" id="bg"]
 [ext_resource type="Script" uid="uid://bohuc0h15slyw" path="res://scripts/cloud_step.gd" id="cloud"]
 [ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="enemy"]
+[ext_resource type="PackedScene" path="res://scenes/Enemy_cloud_enemy.tscn" id="cloud_enemy"]
+[ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole"]
 [ext_resource type="Script" uid="uid://c2svy4eaj02wn" path="res://scripts/tutorial_trigger.gd" id="hint"]
 [ext_resource type="Script" uid="uid://detg52t2f6hmm" path="res://scripts/sky_adventure.gd" id="level"]
 [ext_resource type="Script" uid="uid://cueha53tp0240" path="res://scripts/object.gd" id="object"]
@@ -813,3 +815,23 @@ position = Vector2(11697, 250)
 script = ExtResource("13_rw43v")
 area_size = Vector2(400, 400)
 look_offset = Vector2(0, 180)
+
+[node name="MoleSkyWarning" parent="." instance=ExtResource("mole")]
+position = Vector2(430, 460)
+message = "Bite, vydej se přes oblaka ke Království snů. Pozor na temné mráčky! Pod dešťovými mraky tě kapky zpomalí."
+
+[node name="CloudGuard_ArrivalFalls" parent="." instance=ExtResource("cloud_enemy")]
+position = Vector2(1010, 375)
+patrol = 70.0
+speed = 42.0
+
+[node name="CloudGuard_MillApproach" parent="." instance=ExtResource("cloud_enemy")]
+position = Vector2(8170, 330)
+patrol = 190.0
+speed = 50.0
+
+[node name="CloudGuard_LastRest" parent="." instance=ExtResource("cloud_enemy")]
+position = Vector2(13265, -22)
+patrol = 100.0
+speed = 52.0
+obraceni = true

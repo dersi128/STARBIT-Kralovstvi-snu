@@ -1,1149 +1,1663 @@
-[gd_scene load_steps=78 format=3]
+[gd_scene load_steps=79 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/worldkit/BushFlowers.tscn" id="bush"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/Vines.tscn" id="vines"]
 [ext_resource type="Script" path="res://scripts/level.gd" id="level"]
-[ext_resource type="Script" path="res://scripts/platform.gd" id="platform"]
+[ext_resource type="Script" path="res://scripts/castle_platform.gd" id="stone"]
+[ext_resource type="Script" path="res://scripts/castle_lift.gd" id="lift"]
+[ext_resource type="Script" path="res://scripts/castle_mirror.gd" id="mirror"]
+[ext_resource type="Script" path="res://scripts/royal_backwall.gd" id="backwall"]
+[ext_resource type="Script" path="res://scripts/sky_backdrop.gd" id="bg"]
+[ext_resource type="Texture2D" path="res://assets/environments/near_castle.png" id="landscape"]
 [ext_resource type="Script" path="res://scripts/object.gd" id="object"]
-[ext_resource type="PackedScene" path="res://scenes/environments/near_castle.tscn" id="bg"]
 [ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole"]
-[ext_resource type="PackedScene" path="res://scenes/Boss.tscn" id="boss"]
-[ext_resource type="PackedScene" path="res://scenes/Enemy_rock_enemy.tscn" id="rock_enemy"]
-[ext_resource type="PackedScene" path="res://scenes/Enemy_cloud_enemy.tscn" id="cloud_enemy"]
+[ext_resource type="Script" path="res://scripts/starbit_rope_bridge.gd" id="bridge"]
+[ext_resource type="Script" path="res://scripts/crumble_platform.gd" id="crumble"]
+[ext_resource type="PackedScene" path="res://scenes/RoyalCrate.tscn" id="crate"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/SpringPad.tscn" id="spring"]
+[ext_resource type="Script" path="res://scripts/tutorial_trigger.gd" id="hint"]
+[ext_resource type="Script" path="res://scripts/camera_zone.gd" id="camera"]
+[ext_resource type="PackedScene" path="res://scenes/Enemy_rock_enemy.tscn" id="rock"]
+[ext_resource type="PackedScene" path="res://scenes/Enemy_cloud_enemy.tscn" id="cloud"]
 [ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="stinko"]
-[ext_resource type="Script" path="res://scripts/camera_zone.gd" id="camera_zone"]
-[ext_resource type="Script" path="res://scripts/water_feature.gd" id="water"]
-[sub_resource type="RectangleShape2D" id="shape0"]
-size=Vector2(720,100)
-[sub_resource type="RectangleShape2D" id="shape1"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape2"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape3"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape4"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape5"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape6"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape7"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape8"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape9"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape10"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape11"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape12"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape13"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape14"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape15"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape16"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape17"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape18"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape19"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape20"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape21"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape22"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape23"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape24"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape25"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape26"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape27"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape28"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape29"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape30"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape31"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape32"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape33"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape34"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape35"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape36"]
-size=Vector2(350,100)
-[sub_resource type="RectangleShape2D" id="shape37"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape38"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape39"]
-size=Vector2(280,100)
-[sub_resource type="RectangleShape2D" id="shape40"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape41"]
-size=Vector2(510,100)
-[sub_resource type="RectangleShape2D" id="shape42"]
-size=Vector2(430,100)
-[sub_resource type="RectangleShape2D" id="shape43"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape44"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape45"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape46"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape47"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape48"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape49"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape50"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape51"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape52"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape53"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape54"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape55"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape56"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape57"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape58"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape59"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape60"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape61"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape62"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape63"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape64"]
-size=Vector2(185,27)
-[sub_resource type="RectangleShape2D" id="shape65"]
-size=Vector2(850,100)
+[ext_resource type="Script" path="res://scripts/dream_switch.gd" id="switch"]
+[ext_resource type="Script" path="res://scripts/royal_lock.gd" id="lock"]
+[ext_resource type="Script" path="res://scripts/cloud_step.gd" id="cloudstep"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/RainCloud.tscn" id="rain"]
+[ext_resource type="Script" path="res://scripts/dream_platform.gd" id="wood"]
+[ext_resource type="Script" path="res://scripts/linked_platform.gd" id="linked"]
+[ext_resource type="Texture2D" path="res://assets/royal/expansion/level08_atlas.png" id="royal8_atlas"]
+
+[sub_resource type="AtlasTexture" id="royal8_platform"]
+atlas = ExtResource("royal8_atlas")
+region = Rect2(15, 128, 421, 249)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="royal8_bridge"]
+atlas = ExtResource("royal8_atlas")
+region = Rect2(440, 154, 410, 205)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="royal8_aqueduct"]
+atlas = ExtResource("royal8_atlas")
+region = Rect2(862, 76, 373, 320)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="royal8_mirror"]
+atlas = ExtResource("royal8_atlas")
+region = Rect2(473, 417, 311, 366)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="royal8_receiver"]
+atlas = ExtResource("royal8_atlas")
+region = Rect2(880, 484, 330, 294)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="royal8_lift"]
+atlas = ExtResource("royal8_atlas")
+region = Rect2(15, 938, 460, 179)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="royal8_lantern"]
+atlas = ExtResource("royal8_atlas")
+region = Rect2(524, 826, 236, 349)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="royal8_window"]
+atlas = ExtResource("royal8_atlas")
+region = Rect2(866, 810, 363, 373)
+filter_clip = true
+
+[sub_resource type="RectangleShape2D" id="ArrivalBank_shape"]
+resource_local_to_scene = true
+size = Vector2(720, 885)
+
+[sub_resource type="RectangleShape2D" id="ViaductPier_shape"]
+resource_local_to_scene = true
+size = Vector2(460, 995)
+
+[sub_resource type="RectangleShape2D" id="OuterWatchtower_shape"]
+resource_local_to_scene = true
+size = Vector2(520, 70)
+
+[sub_resource type="RectangleShape2D" id="CourtApproach_shape"]
+resource_local_to_scene = true
+size = Vector2(1060, 985)
+
+[sub_resource type="RectangleShape2D" id="SecretRepairGallery_shape"]
+resource_local_to_scene = true
+size = Vector2(1240, 80)
+
+[sub_resource type="RectangleShape2D" id="RepairGalleryReturn_shape"]
+resource_local_to_scene = true
+size = Vector2(200, 60)
+
+[sub_resource type="RectangleShape2D" id="RepairGalleryExit_shape"]
+resource_local_to_scene = true
+size = Vector2(240, 70)
+
+[sub_resource type="RectangleShape2D" id="CrateCourtFloor_shape"]
+resource_local_to_scene = true
+size = Vector2(1380, 985)
+
+[sub_resource type="RectangleShape2D" id="CourtyardLowerWalk_shape"]
+resource_local_to_scene = true
+size = Vector2(650, 895)
+
+[sub_resource type="RectangleShape2D" id="CourtRearWalk_shape"]
+resource_local_to_scene = true
+size = Vector2(1180, 985)
+
+[sub_resource type="RectangleShape2D" id="LookoutFirstStep_shape"]
+resource_local_to_scene = true
+size = Vector2(360, 70)
+
+[sub_resource type="RectangleShape2D" id="LookoutSecondStep_shape"]
+resource_local_to_scene = true
+size = Vector2(330, 70)
+
+[sub_resource type="RectangleShape2D" id="LookoutSealBalcony_shape"]
+resource_local_to_scene = true
+size = Vector2(400, 70)
+
+[sub_resource type="RectangleShape2D" id="LookoutEastBalcony_shape"]
+resource_local_to_scene = true
+size = Vector2(390, 70)
+
+[sub_resource type="RectangleShape2D" id="TowerEntranceFloor_shape"]
+resource_local_to_scene = true
+size = Vector2(830, 1085)
+
+[sub_resource type="RectangleShape2D" id="TowerLightLift_shape"]
+resource_local_to_scene = true
+size = Vector2(240, 60)
+
+[sub_resource type="RectangleShape2D" id="UpperWestGallery_shape"]
+resource_local_to_scene = true
+size = Vector2(560, 70)
+
+[sub_resource type="RectangleShape2D" id="UpperEastGallery_shape"]
+resource_local_to_scene = true
+size = Vector2(2010, 70)
+
+[sub_resource type="RectangleShape2D" id="RoofMirrorBalcony_shape"]
+resource_local_to_scene = true
+size = Vector2(480, 70)
+
+[sub_resource type="RectangleShape2D" id="TowerExitLanding_shape"]
+resource_local_to_scene = true
+size = Vector2(910, 1665)
+
+[sub_resource type="RectangleShape2D" id="AqueductWestShelter_shape"]
+resource_local_to_scene = true
+size = Vector2(1020, 1495)
+
+[sub_resource type="RectangleShape2D" id="AqueductMiddleShelter_shape"]
+resource_local_to_scene = true
+size = Vector2(760, 1375)
+
+[sub_resource type="RectangleShape2D" id="AqueductWestCanopy_shape"]
+resource_local_to_scene = true
+size = Vector2(500, 70)
+
+[sub_resource type="RectangleShape2D" id="AqueductMiddleCanopy_shape"]
+resource_local_to_scene = true
+size = Vector2(350, 70)
+
+[sub_resource type="RectangleShape2D" id="AqueductEastAbutment_shape"]
+resource_local_to_scene = true
+size = Vector2(1360, 1515)
+
+[sub_resource type="RectangleShape2D" id="BattlementDeparture_shape"]
+resource_local_to_scene = true
+size = Vector2(150, 1515)
+
+[sub_resource type="RectangleShape2D" id="CrumblingWestTimbers_shape"]
+resource_local_to_scene = true
+size = Vector2(240, 67)
+
+[sub_resource type="RectangleShape2D" id="BattlementSealTower_shape"]
+resource_local_to_scene = true
+size = Vector2(350, 70)
+
+[sub_resource type="RectangleShape2D" id="CrumblingEastTimbers_shape"]
+resource_local_to_scene = true
+size = Vector2(260, 67)
+
+[sub_resource type="RectangleShape2D" id="BattlementFarTower_shape"]
+resource_local_to_scene = true
+size = Vector2(490, 70)
+
+[sub_resource type="RectangleShape2D" id="BattlementRepairWalk_shape"]
+resource_local_to_scene = true
+size = Vector2(2680, 85)
+
+[sub_resource type="RectangleShape2D" id="BattlementShortcutLift_shape"]
+resource_local_to_scene = true
+size = Vector2(220, 60)
+
+[sub_resource type="RectangleShape2D" id="UndercroftReturnLift_shape"]
+resource_local_to_scene = true
+size = Vector2(180, 60)
+
+[sub_resource type="RectangleShape2D" id="BattlementExitLanding_shape"]
+resource_local_to_scene = true
+size = Vector2(920, 1495)
+
+[sub_resource type="RectangleShape2D" id="RaisedShortcutTimber_shape"]
+resource_local_to_scene = true
+size = Vector2(310, 65)
+
+[sub_resource type="RectangleShape2D" id="GardenCourtWestFloor_shape"]
+resource_local_to_scene = true
+size = Vector2(850, 1495)
+
+[sub_resource type="RectangleShape2D" id="TwinLightLowerCourt_shape"]
+resource_local_to_scene = true
+size = Vector2(1850, 1315)
+
+[sub_resource type="RectangleShape2D" id="GardenFirstBalcony_shape"]
+resource_local_to_scene = true
+size = Vector2(360, 70)
+
+[sub_resource type="RectangleShape2D" id="GardenJunctionBalcony_shape"]
+resource_local_to_scene = true
+size = Vector2(340, 70)
+
+[sub_resource type="RectangleShape2D" id="WestLightBalcony_shape"]
+resource_local_to_scene = true
+size = Vector2(440, 70)
+
+[sub_resource type="RectangleShape2D" id="EastGardenBalcony_shape"]
+resource_local_to_scene = true
+size = Vector2(420, 70)
+
+[sub_resource type="RectangleShape2D" id="EastLightBalcony_shape"]
+resource_local_to_scene = true
+size = Vector2(420, 70)
+
+[sub_resource type="RectangleShape2D" id="GardenEntranceFloor_shape"]
+resource_local_to_scene = true
+size = Vector2(850, 1315)
+
 [node name="Level_08" type="Node2D"]
-script=ExtResource("level")
-number=8
-title="Hrad na dosah"
-width=26395
-spawn=Vector2(140,550)
-camera_top=-1800
-camera_bottom=2000
-fall_limit=1000
-fouk_at_start=true
-[node name="Background" parent="." instance=ExtResource("bg")]
-[node name="Platform_1" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(0,550)
-width=720
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_1"]
-position=Vector2(360.0,50)
-shape=SubResource("shape0")
-one_way_collision=true
-[node name="Platform_2" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(820,450)
-width=510
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_2"]
-position=Vector2(255.0,50)
-shape=SubResource("shape1")
-one_way_collision=true
-[node name="Platform_3" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(1505,350)
-width=350
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_3"]
-position=Vector2(175.0,50)
-shape=SubResource("shape2")
-one_way_collision=true
-[node name="Platform_4" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(2050,250)
-width=280
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_4"]
-position=Vector2(140.0,50)
-shape=SubResource("shape3")
-one_way_collision=true
-[node name="Platform_5" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(2525,150)
-width=280
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_5"]
-position=Vector2(140.0,50)
-shape=SubResource("shape4")
-one_way_collision=true
-[node name="Platform_6" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(3000,50)
-width=510
-depth=75
-style="cloud"
-travel=Vector2(85,-90)
-period=10.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_6"]
-position=Vector2(255.0,50)
-shape=SubResource("shape5")
-one_way_collision=true
-[node name="Platform_7" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(3705,-50)
-width=510
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_7"]
-position=Vector2(255.0,50)
-shape=SubResource("shape6")
-one_way_collision=true
-[node name="Platform_8" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(4390,-150)
-width=510
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_8"]
-position=Vector2(255.0,50)
-shape=SubResource("shape7")
-one_way_collision=true
-[node name="Platform_9" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(5075,-250)
-width=430
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_9"]
-position=Vector2(215.0,50)
-shape=SubResource("shape8")
-one_way_collision=true
-[node name="Platform_10" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(5700,-350)
-width=510
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_10"]
-position=Vector2(255.0,50)
-shape=SubResource("shape9")
-one_way_collision=true
-[node name="Platform_11" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(6405,-350)
-width=350
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_11"]
-position=Vector2(175.0,50)
-shape=SubResource("shape10")
-one_way_collision=true
-[node name="Platform_12" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(6930,-250)
-width=280
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_12"]
-position=Vector2(140.0,50)
-shape=SubResource("shape11")
-one_way_collision=true
-[node name="Platform_13" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(7405,-150)
-width=280
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_13"]
-position=Vector2(140.0,50)
-shape=SubResource("shape12")
-one_way_collision=true
-[node name="Platform_14" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(7860,-50)
-width=280
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_14"]
-position=Vector2(140.0,50)
-shape=SubResource("shape13")
-one_way_collision=true
-[node name="Platform_15" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(8315,50)
-width=510
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_15"]
-position=Vector2(255.0,50)
-shape=SubResource("shape14")
-one_way_collision=true
-[node name="Platform_16" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(9020,50)
-width=510
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_16"]
-position=Vector2(255.0,50)
-shape=SubResource("shape15")
-one_way_collision=true
-[node name="Platform_17" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(9705,-50)
-width=510
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_17"]
-position=Vector2(255.0,50)
-shape=SubResource("shape16")
-one_way_collision=true
-[node name="Platform_18" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(10390,-150)
-width=430
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_18"]
-position=Vector2(215.0,50)
-shape=SubResource("shape17")
-one_way_collision=true
-[node name="Platform_19" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(11015,-250)
-width=510
-depth=75
-style="cloud"
-travel=Vector2(110,-100)
-period=8.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_19"]
-position=Vector2(255.0,50)
-shape=SubResource("shape18")
-one_way_collision=true
-[node name="Platform_20" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(11700,-350)
-width=510
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_20"]
-position=Vector2(255.0,50)
-shape=SubResource("shape19")
-one_way_collision=true
-[node name="Platform_21" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(12405,-450)
-width=350
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_21"]
-position=Vector2(175.0,50)
-shape=SubResource("shape20")
-one_way_collision=true
-[node name="Platform_22" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(12950,-570)
-width=280
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_22"]
-position=Vector2(140.0,50)
-shape=SubResource("shape21")
-one_way_collision=true
-[node name="Platform_23" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(13425,-690)
-width=430
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_23"]
-position=Vector2(215.0,50)
-shape=SubResource("shape22")
-one_way_collision=true
-[node name="Platform_24" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(14050,-570)
-width=510
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_24"]
-position=Vector2(255.0,50)
-shape=SubResource("shape23")
-one_way_collision=true
-[node name="Platform_25" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(14735,-450)
-width=430
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_25"]
-position=Vector2(215.0,50)
-shape=SubResource("shape24")
-one_way_collision=true
-[node name="Platform_26" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(15340,-570)
-width=430
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_26"]
-position=Vector2(215.0,50)
-shape=SubResource("shape25")
-one_way_collision=true
-[node name="Platform_27" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(15965,-690)
-width=430
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_27"]
-position=Vector2(215.0,50)
-shape=SubResource("shape26")
-one_way_collision=true
-[node name="Platform_28" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(16570,-570)
-width=510
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_28"]
-position=Vector2(255.0,50)
-shape=SubResource("shape27")
-one_way_collision=true
-[node name="Platform_29" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(17275,-450)
-width=350
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_29"]
-position=Vector2(175.0,50)
-shape=SubResource("shape28")
-one_way_collision=true
-[node name="Platform_30" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(17800,-570)
-width=350
-depth=75
-style="cloud"
-travel=Vector2(90,-110)
-period=10.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_30"]
-position=Vector2(175.0,50)
-shape=SubResource("shape29")
-one_way_collision=true
-[node name="Platform_31" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(18345,-690)
-width=280
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_31"]
-position=Vector2(140.0,50)
-shape=SubResource("shape30")
-one_way_collision=true
-[node name="Platform_32" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(18820,-570)
-width=350
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_32"]
-position=Vector2(175.0,50)
-shape=SubResource("shape31")
-one_way_collision=true
-[node name="Platform_33" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(19365,-450)
-width=350
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_33"]
-position=Vector2(175.0,50)
-shape=SubResource("shape32")
-one_way_collision=true
-[node name="Platform_34" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(19910,-570)
-width=280
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_34"]
-position=Vector2(140.0,50)
-shape=SubResource("shape33")
-one_way_collision=true
-[node name="Platform_35" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(20365,-690)
-width=430
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_35"]
-position=Vector2(215.0,50)
-shape=SubResource("shape34")
-one_way_collision=true
-[node name="Platform_36" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(20970,-570)
-width=350
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_36"]
-position=Vector2(175.0,50)
-shape=SubResource("shape35")
-one_way_collision=true
-[node name="Platform_37" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(21495,-450)
-width=350
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_37"]
-position=Vector2(175.0,50)
-shape=SubResource("shape36")
-one_way_collision=true
-[node name="Platform_38" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(22020,-570)
-width=430
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_38"]
-position=Vector2(215.0,50)
-shape=SubResource("shape37")
-one_way_collision=true
-[node name="Platform_39" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(22645,-690)
-width=430
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_39"]
-position=Vector2(215.0,50)
-shape=SubResource("shape38")
-one_way_collision=true
-[node name="Platform_40" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(23250,-570)
-width=280
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_40"]
-position=Vector2(140.0,50)
-shape=SubResource("shape39")
-one_way_collision=true
-[node name="Platform_41" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(23725,-450)
-width=510
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_41"]
-position=Vector2(255.0,50)
-shape=SubResource("shape40")
-one_way_collision=true
-[node name="Platform_42" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(24410,-550)
-width=510
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_42"]
-position=Vector2(255.0,50)
-shape=SubResource("shape41")
-one_way_collision=true
-[node name="Platform_43" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(25115,-550)
-width=430
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_43"]
-position=Vector2(215.0,50)
-shape=SubResource("shape42")
-one_way_collision=true
-[node name="high_01" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(6677,-370)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_01"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape43")
-one_way_collision=true
-[node name="high_02" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(6849,-389)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_02"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape44")
-one_way_collision=true
-[node name="high_03" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(7020,-409)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_03"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape45")
-one_way_collision=true
-[node name="high_04" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(7192,-429)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_04"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape46")
-one_way_collision=true
-[node name="high_05" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(7364,-448)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_05"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape47")
-one_way_collision=true
-[node name="high_06" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(7536,-412)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_06"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape48")
-one_way_collision=true
-[node name="high_07" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(7708,-319)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_07"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape49")
-one_way_collision=true
-[node name="high_08" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(7880,-227)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_08"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape50")
-one_way_collision=true
-[node name="high_09" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(8051,-135)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_09"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape51")
-one_way_collision=true
-[node name="high_10" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(8223,-42)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="high_10"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape52")
-one_way_collision=true
-[node name="low_01" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(13232,-510)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_01"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape53")
-one_way_collision=true
-[node name="low_02" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(13415,-450)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_02"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape54")
-one_way_collision=true
-[node name="low_03" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(13597,-390)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_03"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape55")
-one_way_collision=true
-[node name="low_04" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(13779,-330)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_04"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape56")
-one_way_collision=true
-[node name="low_05" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(13962,-270)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_05"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape57")
-one_way_collision=true
-[node name="low_06" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(14144,-270)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_06"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape58")
-one_way_collision=true
-[node name="low_07" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(14326,-270)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_07"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape59")
-one_way_collision=true
-[node name="low_08" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(14508,-270)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_08"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape60")
-one_way_collision=true
-[node name="low_09" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(14691,-330)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_09"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape61")
-one_way_collision=true
-[node name="low_10" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(14873,-390)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_10"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape62")
-one_way_collision=true
-[node name="low_11" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(15055,-450)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_11"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape63")
-one_way_collision=true
-[node name="low_12" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(15238,-510)
-width=185
-depth=42
-style="stone"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="low_12"]
-position=Vector2(92.5,13.5)
-shape=SubResource("shape64")
-one_way_collision=true
-[node name="Finish" type="AnimatableBody2D" parent="."]
-script=ExtResource("platform")
-position=Vector2(25545,-550)
-width=850
-depth=115
-style="ground"
-travel=Vector2(0,0)
-period=4.0
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
-position=Vector2(425.0,50)
-shape=SubResource("shape65")
-one_way_collision=true
-[node name="crystal_0" type="Node2D" parent="."]
-position=Vector2(1673.0,295)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_1" type="Node2D" parent="."]
-position=Vector2(2659.4,95)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_2" type="Node2D" parent="."]
-position=Vector2(3949.8,-105)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_3" type="Node2D" parent="."]
-position=Vector2(5281.4,-305)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_4" type="Node2D" parent="."]
-position=Vector2(6573.0,-405)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_5" type="Node2D" parent="."]
-position=Vector2(7539.4,-205)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_6" type="Node2D" parent="."]
-position=Vector2(8559.8,-5)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_7" type="Node2D" parent="."]
-position=Vector2(9949.8,-105)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_8" type="Node2D" parent="Platform_19"]
-position=Vector2(244.79999999999927,-55)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_9" type="Node2D" parent="."]
-position=Vector2(12573.0,-505)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_10" type="Node2D" parent="."]
-position=Vector2(13631.4,-745)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_11" type="Node2D" parent="."]
-position=Vector2(14941.4,-505)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_12" type="Node2D" parent="."]
-position=Vector2(16171.4,-745)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_13" type="Node2D" parent="."]
-position=Vector2(17443.0,-505)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_14" type="Node2D" parent="."]
-position=Vector2(18479.4,-745)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_15" type="Node2D" parent="."]
-position=Vector2(19533.0,-505)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_16" type="Node2D" parent="."]
-position=Vector2(20571.4,-745)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_17" type="Node2D" parent="."]
-position=Vector2(21663.0,-505)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_18" type="Node2D" parent="."]
-position=Vector2(22851.4,-745)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_19" type="Node2D" parent="."]
-position=Vector2(23969.8,-505)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_20" type="Node2D" parent="."]
-position=Vector2(25321.4,-605)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_21" type="Node2D" parent="."]
-position=Vector2(6938.636363636364,-437)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_22" type="Node2D" parent="."]
-position=Vector2(7282.272727272727,-477)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_23" type="Node2D" parent="."]
-position=Vector2(7625.909090909091,-460)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_24" type="Node2D" parent="."]
-position=Vector2(7969.545454545454,-275)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_25" type="Node2D" parent="."]
-position=Vector2(8313.181818181818,-90)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_26" type="Node2D" parent="."]
-position=Vector2(13504.615384615385,-498)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_27" type="Node2D" parent="."]
-position=Vector2(13869.23076923077,-378)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_28" type="Node2D" parent="."]
-position=Vector2(14233.846153846154,-318)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_29" type="Node2D" parent="."]
-position=Vector2(14598.461538461539,-318)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_30" type="Node2D" parent="."]
-position=Vector2(14963.076923076924,-438)
-script=ExtResource("object")
-kind="crystal"
-[node name="crystal_31" type="Node2D" parent="."]
-position=Vector2(15327.692307692309,-558)
-script=ExtResource("object")
-kind="crystal"
-[node name="star_key_32" type="Node2D" parent="."]
-position=Vector2(25835,-632)
-script=ExtResource("object")
-kind="star_key"
-[node name="goal_33" type="Node2D" parent="."]
-position=Vector2(26175,-550)
-script=ExtResource("object")
-kind="goal"
-[node name="checkpoint_34" type="Node2D" parent="."]
-position=Vector2(8405,50)
-script=ExtResource("object")
-kind="checkpoint"
-[node name="checkpoint_35" type="Node2D" parent="."]
-position=Vector2(18435,-690)
-script=ExtResource("object")
-kind="checkpoint"
-[node name="mole_36"  parent="." instance=ExtResource("mole")]
-position=Vector2(350,550)
-message="Tady mraky putují šikmo. Sleduj je chvilku a skoč, až budou blíž. Na pevném ostrůvku si můžeš odpočinout."
-[node name="Enemy_0" parent="." instance=ExtResource("cloud_enemy")]
-position=Vector2(3830,-50)
-patrol=275
-speed=92
-[node name="Enemy_1" parent="." instance=ExtResource("rock_enemy")]
-position=Vector2(5200,-250)
-patrol=195
-speed=92
-[node name="Enemy_2" parent="." instance=ExtResource("stinko")]
-position=Vector2(9145,50)
-patrol=275
-speed=92
-[node name="Enemy_3" parent="." instance=ExtResource("cloud_enemy")]
-position=Vector2(11825,-350)
-patrol=275
-speed=92
-[node name="Enemy_4" parent="." instance=ExtResource("rock_enemy")]
-position=Vector2(13550,-690)
-patrol=195
-speed=92
-[node name="Enemy_5" parent="." instance=ExtResource("stinko")]
-position=Vector2(15465,-570)
-patrol=195
-speed=92
-[node name="Enemy_6" parent="." instance=ExtResource("cloud_enemy")]
-position=Vector2(17400,-450)
-patrol=115
-speed=92
-[node name="Enemy_7" parent="." instance=ExtResource("rock_enemy")]
-position=Vector2(19490,-450)
-patrol=115
-speed=92
-[node name="Enemy_8" parent="." instance=ExtResource("stinko")]
-position=Vector2(21620,-450)
-patrol=115
-speed=92
-[node name="Enemy_9" parent="." instance=ExtResource("cloud_enemy")]
-position=Vector2(23850,-450)
-patrol=275
-speed=92
-[node name="CameraDescent_00" type="Node2D" parent="."]
-script=ExtResource("camera_zone")
-position=Vector2(13735,-735)
+script = ExtResource("level")
+number = 8
+title = "Světlo nad hradbami"
+width = 25200.0
+spawn = Vector2(140, 550)
+camera_top = -1550
+camera_bottom = 1740
+fall_limit = 1560.0
+fouk_at_start = true
 
-[node name="IslandFall_1" type="Node2D" parent="."]
-script=ExtResource("water")
-kind="waterfall"
-position=Vector2(6705,-250)
-size=Vector2(95,600)
+[node name="Background" type="CanvasLayer" parent="."]
+script = ExtResource("bg")
+landscape = ExtResource("landscape")
 
-[node name="IslandFall_3" type="Node2D" parent="."]
-script=ExtResource("water")
-kind="waterfall"
-position=Vector2(15115,-350)
-size=Vector2(95,600)
+[node name="01_BreachedViaduct" type="Marker2D" parent="."]
+position = Vector2(0, 550)
+
+[node name="02_PortcullisCourt" type="Marker2D" parent="."]
+position = Vector2(3920, 450)
+
+[node name="03_TwoStoreyMirrorTower" type="Marker2D" parent="."]
+position = Vector2(7600, 350)
+
+[node name="04_ShelteredAqueduct" type="Marker2D" parent="."]
+position = Vector2(12200, -60)
+
+[node name="05_CrumblingBattlements" type="Marker2D" parent="."]
+position = Vector2(16900, -80)
+
+[node name="06_TwinLightGardenCourt" type="Marker2D" parent="."]
+position = Vector2(21180, -60)
+
+[node name="ArrivalBank" type="AnimatableBody2D" parent="."]
+position = Vector2(0, 550)
+script = ExtResource("stone")
+width = 720
+depth = 900
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrivalBank"]
+position = Vector2(360.0, 442.5)
+shape = SubResource("ArrivalBank_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="BreachedApproach" type="AnimatableBody2D" parent="."]
+position = Vector2(710, 550)
+script = ExtResource("bridge")
+end_offset = Vector2(450, -110)
+rail_height = 78.0
+broken_ropes = true
+gaps = PackedVector2Array(170, 300)
+
+[node name="ViaductPier" type="AnimatableBody2D" parent="."]
+position = Vector2(1150, 440)
+script = ExtResource("stone")
+width = 460
+depth = 1010
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ViaductPier"]
+position = Vector2(230.0, 497.5)
+shape = SubResource("ViaductPier_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="OuterWatchtower" type="AnimatableBody2D" parent="."]
+position = Vector2(1910, 285)
+script = ExtResource("stone")
+width = 520
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OuterWatchtower"]
+position = Vector2(260.0, 35.0)
+shape = SubResource("OuterWatchtower_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="WatchtowerDescent" type="AnimatableBody2D" parent="."]
+position = Vector2(2420, 285)
+script = ExtResource("bridge")
+end_offset = Vector2(580, 165)
+rail_height = 78.0
+broken_ropes = true
+gaps = PackedVector2Array(255, 415)
+
+[node name="CourtApproach" type="AnimatableBody2D" parent="."]
+position = Vector2(2990, 450)
+script = ExtResource("stone")
+width = 1060
+depth = 1000
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CourtApproach"]
+position = Vector2(530.0, 492.5)
+shape = SubResource("CourtApproach_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="ViaductBackArches" type="Node2D" parent="."]
+position = Vector2(1110, 100)
+script = ExtResource("backwall")
+size = Vector2(1930, 1350)
+crenellated = true
+openings = Array[Rect2]([Rect2(65, 430, 560, 740), Rect2(930, 390, 660, 840)])
+
+[node name="SecretRepairGallery" type="AnimatableBody2D" parent="."]
+position = Vector2(1610, 820)
+script = ExtResource("stone")
+width = 1240
+depth = 95
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretRepairGallery"]
+position = Vector2(620.0, 40.0)
+shape = SubResource("SecretRepairGallery_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Secret01_RepairGallery" type="Marker2D" parent="."]
+position = Vector2(1620, 820)
+
+[node name="RepairGalleryReturn" type="AnimatableBody2D" parent="."]
+position = Vector2(2590, 820)
+script = ExtResource("lift")
+width = 200
+depth = 75
+powered = true
+travel = Vector2(0, -510)
+period = 3.4
+return_seconds = 2.4
+surface_texture = SubResource("royal8_lift")
+surface_walk_y = 50.0
+surface_height = 62.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RepairGalleryReturn"]
+position = Vector2(100.0, 30.0)
+shape = SubResource("RepairGalleryReturn_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="RepairGalleryReturnRail0" type="Line2D" parent="."]
+z_index = -12
+points = PackedVector2Array(2604, 310, 2604, 820)
+width = 5.0
+default_color = Color(0.40, 0.37, 0.52, 0.8)
+
+[node name="RepairGalleryReturnRail1" type="Line2D" parent="."]
+z_index = -12
+points = PackedVector2Array(2776, 310, 2776, 820)
+width = 5.0
+default_color = Color(0.40, 0.37, 0.52, 0.8)
+
+[node name="RepairGalleryExit" type="AnimatableBody2D" parent="."]
+position = Vector2(2830, 310)
+script = ExtResource("stone")
+width = 240
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RepairGalleryExit"]
+position = Vector2(120.0, 35.0)
+shape = SubResource("RepairGalleryExit_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="CourtyardCheckpoint" type="Node2D" parent="."]
+position = Vector2(3770, 450)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="GatehouseMole" parent="." instance=ExtResource("mole")]
+position = Vector2(370, 550)
+message = "Za branami spí zahrady. Bedna otevře nádvoří; světla odemknou věže. Každá cesta se umí vrátit."
+
+[node name="ViaductStoneGuard" parent="." instance=ExtResource("rock")]
+position = Vector2(1270, 440)
+patrol = 170.0
+speed = 48.0
+
+[node name="ApproachStoneGuard" parent="." instance=ExtResource("rock")]
+position = Vector2(3160, 450)
+patrol = 170.0
+speed = 52.0
+
+[node name="RepairGalleryCamera" type="Node2D" parent="."]
+position = Vector2(2090, 650)
+script = ExtResource("camera")
+area_size = Vector2(1630, 590)
+look_offset = Vector2(50, 125)
+priority = 3
+
+[node name="CrateCourtFloor" type="AnimatableBody2D" parent="."]
+position = Vector2(4050, 450)
+script = ExtResource("stone")
+width = 1380
+depth = 1000
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrateCourtFloor"]
+position = Vector2(690.0, 492.5)
+shape = SubResource("CrateCourtFloor_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="GateCrate" parent="." instance=ExtResource("crate")]
+position = Vector2(4540, 450)
+
+[node name="CratePressureSeal" type="Node2D" parent="."]
+position = Vector2(4840, 450)
+script = ExtResource("switch")
+latch = true
+require_crate = true
+plate_width = 110.0
+targets = Array[NodePath]([])
+
+[node name="CratePortcullis" type="StaticBody2D" parent="."]
+position = Vector2(5270, 450)
+script = ExtResource("lock")
+gate_size = Vector2(80, 1700)
+sources = Array[NodePath]([NodePath("../CratePressureSeal")])
+latched = true
+
+[node name="CrateCourtRear" type="Node2D" parent="."]
+position = Vector2(4050, -100)
+script = ExtResource("backwall")
+size = Vector2(1450, 1550)
+crenellated = true
+openings = Array[Rect2]([Rect2(100, 210, 960, 330)])
+
+[node name="CourtDrainCrossing" type="AnimatableBody2D" parent="."]
+position = Vector2(5420, 450)
+script = ExtResource("bridge")
+end_offset = Vector2(280, 90)
+rail_height = 78.0
+broken_ropes = false
+
+[node name="CourtyardLowerWalk" type="AnimatableBody2D" parent="."]
+position = Vector2(5690, 540)
+script = ExtResource("stone")
+width = 650
+depth = 910
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CourtyardLowerWalk"]
+position = Vector2(325.0, 447.5)
+shape = SubResource("CourtyardLowerWalk_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="CourtRearWalk" type="AnimatableBody2D" parent="."]
+position = Vector2(6440, 450)
+script = ExtResource("stone")
+width = 1180
+depth = 1000
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CourtRearWalk"]
+position = Vector2(590.0, 492.5)
+shape = SubResource("CourtRearWalk_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="LookoutFirstStep" type="AnimatableBody2D" parent="."]
+position = Vector2(5610, 300)
+script = ExtResource("stone")
+width = 360
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LookoutFirstStep"]
+position = Vector2(180.0, 35.0)
+shape = SubResource("LookoutFirstStep_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="LookoutSecondStep" type="AnimatableBody2D" parent="."]
+position = Vector2(6100, 140)
+script = ExtResource("stone")
+width = 330
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LookoutSecondStep"]
+position = Vector2(165.0, 35.0)
+shape = SubResource("LookoutSecondStep_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="LookoutSealBalcony" type="AnimatableBody2D" parent="."]
+position = Vector2(6570, -30)
+script = ExtResource("stone")
+width = 400
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LookoutSealBalcony"]
+position = Vector2(200.0, 35.0)
+shape = SubResource("LookoutSealBalcony_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="LookoutEastBalcony" type="AnimatableBody2D" parent="."]
+position = Vector2(7170, 140)
+script = ExtResource("stone")
+width = 390
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LookoutEastBalcony"]
+position = Vector2(195.0, 35.0)
+shape = SubResource("LookoutEastBalcony_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="CourtyardHighSeal" type="Node2D" parent="."]
+position = Vector2(6780, -30)
+script = ExtResource("switch")
+latch = true
+require_crate = false
+plate_width = 110.0
+targets = Array[NodePath]([])
+
+[node name="CourtyardExitPortcullis" type="StaticBody2D" parent="."]
+position = Vector2(7460, 450)
+script = ExtResource("lock")
+gate_size = Vector2(80, 1750)
+sources = Array[NodePath]([NodePath("../CratePressureSeal"), NodePath("../CourtyardHighSeal")])
+latched = true
+
+[node name="CourtyardLookoutRear" type="Node2D" parent="."]
+position = Vector2(5620, -350)
+script = ExtResource("backwall")
+size = Vector2(1930, 1800)
+crenellated = true
+openings = Array[Rect2]([Rect2(30, 500, 720, 300), Rect2(890, 580, 770, 330), Rect2(1040, 80, 340, 220)])
+
+[node name="CourtShadowGuard" parent="." instance=ExtResource("stinko")]
+position = Vector2(5860, 540)
+patrol = 190.0
+speed = 44.0
+shadow_range = 480.0
+shadow_cooldown = 3.8
+shadow_warning = 1.05
+shadow_speed = 210.0
+
+[node name="LookoutCloudGuard" parent="." instance=ExtResource("cloud")]
+position = Vector2(6610, -90)
+patrol = 105.0
+speed = 43.0
+
+[node name="CratePressureTip" type="Marker2D" parent="."]
+position = Vector2(4540, 390)
+script = ExtResource("hint")
+title = "Těžká pečeť"
+message = "Dotlač bednu na destičku. Horní pečeť otevře druhou bránu."
+activation_size = Vector2(420, 220)
+display_seconds = 5.0
+
+[node name="TowerEntranceFloor" type="AnimatableBody2D" parent="."]
+position = Vector2(7600, 350)
+script = ExtResource("stone")
+width = 830
+depth = 1100
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerEntranceFloor"]
+position = Vector2(415.0, 542.5)
+shape = SubResource("TowerEntranceFloor_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="MirrorTowerCheckpoint" type="Node2D" parent="."]
+position = Vector2(7760, 350)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="LowerTowerMirror" type="Node2D" parent="."]
+position = Vector2(8080, 350)
+script = ExtResource("mirror")
+receiver_offset = Vector2(990, -637)
+plate_offset = Vector2(-90, 0)
+targets = Array[NodePath]([NodePath("../TowerLightLift")])
+mirror_art = SubResource("royal8_mirror")
+receiver_art = SubResource("royal8_receiver")
+
+[node name="TowerLightLift" type="AnimatableBody2D" parent="."]
+position = Vector2(8580, 350)
+script = ExtResource("lift")
+width = 240
+depth = 75
+powered = false
+travel = Vector2(0, -580)
+period = 3.4
+return_seconds = 2.4
+surface_texture = SubResource("royal8_lift")
+surface_walk_y = 50.0
+surface_height = 62.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerLightLift"]
+position = Vector2(120.0, 30.0)
+shape = SubResource("TowerLightLift_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="TowerLightLiftRail0" type="Line2D" parent="."]
+z_index = -12
+points = PackedVector2Array(8594, -230, 8594, 350)
+width = 5.0
+default_color = Color(0.40, 0.37, 0.52, 0.8)
+
+[node name="TowerLightLiftRail1" type="Line2D" parent="."]
+z_index = -12
+points = PackedVector2Array(8806, -230, 8806, 350)
+width = 5.0
+default_color = Color(0.40, 0.37, 0.52, 0.8)
+
+[node name="UpperWestGallery" type="AnimatableBody2D" parent="."]
+position = Vector2(7930, -230)
+script = ExtResource("stone")
+width = 560
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperWestGallery"]
+position = Vector2(280.0, 35.0)
+shape = SubResource("UpperWestGallery_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="UpperGalleryCrossing" type="AnimatableBody2D" parent="."]
+position = Vector2(8480, -230)
+script = ExtResource("bridge")
+end_offset = Vector2(520, 0)
+rail_height = 78.0
+broken_ropes = true
+gaps = PackedVector2Array(100, 340)
+
+[node name="WestGallerySeal" type="Node2D" parent="."]
+position = Vector2(8120, -230)
+script = ExtResource("switch")
+latch = true
+require_crate = false
+plate_width = 110.0
+targets = Array[NodePath]([])
+
+[node name="UpperEastGallery" type="AnimatableBody2D" parent="."]
+position = Vector2(8980, -230)
+script = ExtResource("stone")
+width = 2010
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperEastGallery"]
+position = Vector2(1005.0, 35.0)
+shape = SubResource("UpperEastGallery_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="RoofMirrorBalcony" type="AnimatableBody2D" parent="."]
+position = Vector2(10400, -400)
+script = ExtResource("stone")
+width = 480
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RoofMirrorBalcony"]
+position = Vector2(240.0, 35.0)
+shape = SubResource("RoofMirrorBalcony_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="RoofTowerMirror" type="Node2D" parent="."]
+position = Vector2(10620, -400)
+script = ExtResource("mirror")
+receiver_offset = Vector2(1040, 113)
+plate_offset = Vector2(-90, 0)
+targets = Array[NodePath]([])
+mirror_art = SubResource("royal8_mirror")
+receiver_art = SubResource("royal8_receiver")
+
+[node name="TowerExitLanding" type="AnimatableBody2D" parent="."]
+position = Vector2(10980, -230)
+script = ExtResource("stone")
+width = 910
+depth = 1680
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerExitLanding"]
+position = Vector2(455.0, 832.5)
+shape = SubResource("TowerExitLanding_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="TowerThreeLightGate" type="StaticBody2D" parent="."]
+position = Vector2(11470, -230)
+script = ExtResource("lock")
+gate_size = Vector2(80, 1500)
+sources = Array[NodePath]([NodePath("../LowerTowerMirror"), NodePath("../WestGallerySeal"), NodePath("../RoofTowerMirror")])
+latched = true
+
+[node name="MirrorTowerLowerRear" type="Node2D" parent="."]
+position = Vector2(7540, -690)
+script = ExtResource("backwall")
+size = Vector2(3490, 2140)
+crenellated = true
+openings = Array[Rect2]([Rect2(95, 815, 720, 245), Rect2(1030, 235, 300, 825), Rect2(1420, 630, 1610, 300), Rect2(430, 80, 370, 230), Rect2(1640, 80, 1170, 290)])
+
+[node name="TowerExitRear" type="Node2D" parent="."]
+position = Vector2(10980, -740)
+script = ExtResource("backwall")
+size = Vector2(920, 2190)
+crenellated = true
+openings = Array[Rect2]([Rect2(105, 85, 670, 355), Rect2(100, 730, 620, 610)])
+
+[node name="TowerLoopTip" type="Marker2D" parent="."]
+position = Vector2(8020, 290)
+script = ExtResource("hint")
+title = "Světelný okruh"
+message = "Dolní zrcadlo probudí výtah. Nahoře rozsvěť západní pečeť i střešní zrcadlo."
+activation_size = Vector2(420, 220)
+display_seconds = 5.0
+
+[node name="TowerLowerStoneGuard" parent="." instance=ExtResource("rock")]
+position = Vector2(8230, 350)
+patrol = 120.0
+speed = 49.0
+
+[node name="TowerUpperShadowGuard" parent="." instance=ExtResource("stinko")]
+position = Vector2(9700, -230)
+patrol = 160.0
+speed = 43.0
+shadow_range = 480.0
+shadow_cooldown = 3.8
+shadow_warning = 1.05
+shadow_speed = 210.0
+
+[node name="TowerLiftCamera" type="Node2D" parent="."]
+position = Vector2(8370, 110)
+script = ExtResource("camera")
+area_size = Vector2(1400, 1040)
+look_offset = Vector2(150, -150)
+priority = 3
+
+[node name="UpperWestLoopCamera" type="Node2D" parent="."]
+position = Vector2(8170, -330)
+script = ExtResource("camera")
+area_size = Vector2(920, 430)
+look_offset = Vector2(50, -70)
+priority = 3
+
+[node name="AqueductWestShelter" type="AnimatableBody2D" parent="."]
+position = Vector2(12200, -60)
+script = ExtResource("stone")
+width = 1020
+depth = 1510
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductWestShelter"]
+position = Vector2(510.0, 747.5)
+shape = SubResource("AqueductWestShelter_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="AqueductCheckpoint" type="Node2D" parent="."]
+position = Vector2(12400, -60)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="RainAqueductSpan" type="AnimatableBody2D" parent="."]
+position = Vector2(13210, -60)
+script = ExtResource("bridge")
+end_offset = Vector2(910, 120)
+rail_height = 78.0
+broken_ropes = false
+
+[node name="AqueductMiddleShelter" type="AnimatableBody2D" parent="."]
+position = Vector2(14110, 60)
+script = ExtResource("stone")
+width = 760
+depth = 1390
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductMiddleShelter"]
+position = Vector2(380.0, 687.5)
+shape = SubResource("AqueductMiddleShelter_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="AqueductWestCanopy" type="AnimatableBody2D" parent="."]
+position = Vector2(12610, -270)
+script = ExtResource("stone")
+width = 500
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductWestCanopy"]
+position = Vector2(250.0, 35.0)
+shape = SubResource("AqueductWestCanopy_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="AqueductMiddleCanopy" type="AnimatableBody2D" parent="."]
+position = Vector2(14500, -150)
+script = ExtResource("stone")
+width = 350
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductMiddleCanopy"]
+position = Vector2(175.0, 35.0)
+shape = SubResource("AqueductMiddleCanopy_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="AqueductWestArcade" type="Node2D" parent="."]
+position = Vector2(12160, -460)
+script = ExtResource("backwall")
+size = Vector2(1090, 1910)
+crenellated = true
+openings = Array[Rect2]([Rect2(120, 200, 780, 310), Rect2(200, 720, 590, 790)])
+
+[node name="AqueductMiddleArcade" type="Node2D" parent="."]
+position = Vector2(14070, -350)
+script = ExtResource("backwall")
+size = Vector2(840, 1800)
+crenellated = true
+openings = Array[Rect2]([Rect2(75, 110, 660, 335), Rect2(135, 700, 525, 850)])
+
+[node name="AqueductRainWest" parent="." instance=ExtResource("rain")]
+position = Vector2(13550, -380)
+rain_width = 280.0
+rain_height = 420.0
+calm_duration = 4.8
+warning_duration = 1.6
+rain_duration = 3.8
+start_offset = 0.0
+slow_multiplier = 0.38
+
+[node name="AqueductRainEast" parent="." instance=ExtResource("rain")]
+position = Vector2(14320, -270)
+rain_width = 250.0
+rain_height = 330.0
+calm_duration = 4.8
+warning_duration = 1.6
+rain_duration = 3.8
+start_offset = 4.2
+slow_multiplier = 0.38
+
+[node name="AqueductCloudFerry" type="AnimatableBody2D" parent="."]
+position = Vector2(15090, 20)
+script = ExtResource("cloudstep")
+width = 310.0
+behaviour = "ferry"
+travel = Vector2(600, -100)
+period = 3.8
+return_period = 2.9
+art_variant = 1
+
+[node name="AqueductEastAbutment" type="AnimatableBody2D" parent="."]
+position = Vector2(16070, -80)
+script = ExtResource("stone")
+width = 1360
+depth = 1530
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductEastAbutment"]
+position = Vector2(680.0, 757.5)
+shape = SubResource("AqueductEastAbutment_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="AqueductEastArches" type="Node2D" parent="."]
+position = Vector2(16040, -410)
+script = ExtResource("backwall")
+size = Vector2(1420, 1860)
+crenellated = true
+openings = Array[Rect2]([Rect2(120, 485, 460, 1180), Rect2(780, 485, 510, 1180)])
+
+[node name="AqueductCloudGuard" parent="." instance=ExtResource("cloud")]
+position = Vector2(12960, -120)
+patrol = 100.0
+speed = 46.0
+
+[node name="AqueductEastStoneGuard" parent="." instance=ExtResource("rock")]
+position = Vector2(16220, -80)
+patrol = 80.0
+speed = 52.0
+
+[node name="CloudFerryCamera" type="Node2D" parent="."]
+position = Vector2(15280, -110)
+script = ExtResource("camera")
+area_size = Vector2(1540, 680)
+look_offset = Vector2(150, -30)
+priority = 3
+
+[node name="BattlementCheckpoint" type="Node2D" parent="."]
+position = Vector2(16720, -80)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="BattlementShadowGuard" parent="." instance=ExtResource("stinko")]
+position = Vector2(17390, -80)
+patrol = 80.0
+speed = 42.0
+shadow_range = 480.0
+shadow_cooldown = 3.8
+shadow_warning = 1.05
+shadow_speed = 210.0
+
+[node name="BattlementDeparture" type="AnimatableBody2D" parent="."]
+position = Vector2(17420, -80)
+script = ExtResource("stone")
+width = 150
+depth = 1530
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattlementDeparture"]
+position = Vector2(75.0, 757.5)
+shape = SubResource("BattlementDeparture_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="CrumblingWestTimbers" type="AnimatableBody2D" parent="."]
+position = Vector2(17850, -180)
+script = ExtResource("crumble")
+width = 240
+depth = 82
+surface_art = "wood"
+crumble_delay = 1.25
+return_delay = 3.4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrumblingWestTimbers"]
+position = Vector2(120.0, 33.5)
+shape = SubResource("CrumblingWestTimbers_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="BattlementSealTower" type="AnimatableBody2D" parent="."]
+position = Vector2(18360, -280)
+script = ExtResource("stone")
+width = 350
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattlementSealTower"]
+position = Vector2(175.0, 35.0)
+shape = SubResource("BattlementSealTower_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="CrumblingEastTimbers" type="AnimatableBody2D" parent="."]
+position = Vector2(19020, -180)
+script = ExtResource("crumble")
+width = 260
+depth = 82
+surface_art = "wood"
+crumble_delay = 1.1
+return_delay = 3.4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrumblingEastTimbers"]
+position = Vector2(130.0, 33.5)
+shape = SubResource("CrumblingEastTimbers_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="BattlementFarTower" type="AnimatableBody2D" parent="."]
+position = Vector2(19590, -60)
+script = ExtResource("stone")
+width = 490
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattlementFarTower"]
+position = Vector2(245.0, 35.0)
+shape = SubResource("BattlementFarTower_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="BattlementRepairWalk" type="AnimatableBody2D" parent="."]
+position = Vector2(17620, 480)
+script = ExtResource("stone")
+width = 2680
+depth = 100
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattlementRepairWalk"]
+position = Vector2(1340.0, 42.5)
+shape = SubResource("BattlementRepairWalk_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="Secret02_BattlementUndercroft" type="Marker2D" parent="."]
+position = Vector2(18900, 480)
+
+[node name="BattlementShortcutSeal" type="Node2D" parent="."]
+position = Vector2(18530, -280)
+script = ExtResource("switch")
+latch = true
+require_crate = false
+plate_width = 110.0
+targets = Array[NodePath]([NodePath("../BattlementShortcutLift"), NodePath("../RaisedShortcutTimber")])
+
+[node name="BattlementShortcutLift" type="AnimatableBody2D" parent="."]
+position = Vector2(18070, 480)
+script = ExtResource("lift")
+width = 220
+depth = 75
+powered = false
+travel = Vector2(0, -760)
+period = 3.4
+return_seconds = 2.4
+surface_texture = SubResource("royal8_lift")
+surface_walk_y = 50.0
+surface_height = 62.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattlementShortcutLift"]
+position = Vector2(110.0, 30.0)
+shape = SubResource("BattlementShortcutLift_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="BattlementShortcutLiftRail0" type="Line2D" parent="."]
+z_index = -12
+points = PackedVector2Array(18084, -280, 18084, 480)
+width = 5.0
+default_color = Color(0.40, 0.37, 0.52, 0.8)
+
+[node name="BattlementShortcutLiftRail1" type="Line2D" parent="."]
+z_index = -12
+points = PackedVector2Array(18276, -280, 18276, 480)
+width = 5.0
+default_color = Color(0.40, 0.37, 0.52, 0.8)
+
+[node name="UndercroftReturnLift" type="AnimatableBody2D" parent="."]
+position = Vector2(20100, 480)
+script = ExtResource("lift")
+width = 180
+depth = 75
+powered = true
+travel = Vector2(0, -540)
+period = 3.4
+return_seconds = 2.4
+surface_texture = SubResource("royal8_lift")
+surface_walk_y = 50.0
+surface_height = 62.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UndercroftReturnLift"]
+position = Vector2(90.0, 30.0)
+shape = SubResource("UndercroftReturnLift_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="UndercroftReturnLiftRail0" type="Line2D" parent="."]
+z_index = -12
+points = PackedVector2Array(20114, -60, 20114, 480)
+width = 5.0
+default_color = Color(0.40, 0.37, 0.52, 0.8)
+
+[node name="UndercroftReturnLiftRail1" type="Line2D" parent="."]
+z_index = -12
+points = PackedVector2Array(20266, -60, 20266, 480)
+width = 5.0
+default_color = Color(0.40, 0.37, 0.52, 0.8)
+
+[node name="BattlementExitLanding" type="AnimatableBody2D" parent="."]
+position = Vector2(20400, -60)
+script = ExtResource("stone")
+width = 920
+depth = 1510
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BattlementExitLanding"]
+position = Vector2(460.0, 747.5)
+shape = SubResource("BattlementExitLanding_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="BattlementSealGate" type="StaticBody2D" parent="."]
+position = Vector2(20880, -60)
+script = ExtResource("lock")
+gate_size = Vector2(80, 1600)
+sources = Array[NodePath]([NodePath("../BattlementShortcutSeal")])
+latched = true
+
+[node name="BrokenBattlementBack" type="Node2D" parent="."]
+position = Vector2(17480, -660)
+script = ExtResource("backwall")
+size = Vector2(2920, 2110)
+crenellated = true
+openings = Array[Rect2]([Rect2(40, 275, 690, 530), Rect2(1040, 600, 1410, 420), Rect2(1410, 120, 650, 235)])
+
+[node name="BattlementFarStoneGuard" parent="." instance=ExtResource("rock")]
+position = Vector2(19640, -60)
+patrol = 145.0
+speed = 54.0
+
+[node name="RaisedShortcutTimber" type="AnimatableBody2D" parent="."]
+position = Vector2(18660, 480)
+script = ExtResource("linked")
+width = 310
+depth = 80
+surface_art = "wood"
+travel = Vector2(0, -560)
+move_seconds = 2.4
+powered = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RaisedShortcutTimber"]
+position = Vector2(155.0, 32.5)
+shape = SubResource("RaisedShortcutTimber_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="GardenCourtCheckpoint" type="Node2D" parent="."]
+position = Vector2(21210, -60)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="GardenCourtWestFloor" type="AnimatableBody2D" parent="."]
+position = Vector2(21320, -60)
+script = ExtResource("stone")
+width = 850
+depth = 1510
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GardenCourtWestFloor"]
+position = Vector2(425.0, 747.5)
+shape = SubResource("GardenCourtWestFloor_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="GardenCourtDescent" type="AnimatableBody2D" parent="."]
+position = Vector2(22160, -60)
+script = ExtResource("bridge")
+end_offset = Vector2(330, 180)
+rail_height = 78.0
+broken_ropes = false
+
+[node name="TwinLightLowerCourt" type="AnimatableBody2D" parent="."]
+position = Vector2(22480, 120)
+script = ExtResource("stone")
+width = 1850
+depth = 1330
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TwinLightLowerCourt"]
+position = Vector2(925.0, 657.5)
+shape = SubResource("TwinLightLowerCourt_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="GardenFirstBalcony" type="AnimatableBody2D" parent="."]
+position = Vector2(22600, -30)
+script = ExtResource("stone")
+width = 360
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GardenFirstBalcony"]
+position = Vector2(180.0, 35.0)
+shape = SubResource("GardenFirstBalcony_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="GardenJunctionBalcony" type="AnimatableBody2D" parent="."]
+position = Vector2(22840, -180)
+script = ExtResource("stone")
+width = 340
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GardenJunctionBalcony"]
+position = Vector2(170.0, 35.0)
+shape = SubResource("GardenJunctionBalcony_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="WestLightBalcony" type="AnimatableBody2D" parent="."]
+position = Vector2(22120, -350)
+script = ExtResource("stone")
+width = 440
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WestLightBalcony"]
+position = Vector2(220.0, 35.0)
+shape = SubResource("WestLightBalcony_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="EastGardenBalcony" type="AnimatableBody2D" parent="."]
+position = Vector2(23380, -190)
+script = ExtResource("stone")
+width = 420
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EastGardenBalcony"]
+position = Vector2(210.0, 35.0)
+shape = SubResource("EastGardenBalcony_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="EastLightBalcony" type="AnimatableBody2D" parent="."]
+position = Vector2(23960, -350)
+script = ExtResource("stone")
+width = 420
+depth = 85
+wall_body = false
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EastLightBalcony"]
+position = Vector2(210.0, 35.0)
+shape = SubResource("EastLightBalcony_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="GardenWestLight" type="Node2D" parent="."]
+position = Vector2(22410, -350)
+script = ExtResource("mirror")
+receiver_offset = Vector2(1970, 413)
+plate_offset = Vector2(-90, 0)
+targets = Array[NodePath]([])
+mirror_art = SubResource("royal8_mirror")
+receiver_art = SubResource("royal8_receiver")
+
+[node name="GardenEastLight" type="Node2D" parent="."]
+position = Vector2(24210, -350)
+script = ExtResource("mirror")
+receiver_offset = Vector2(410, 413)
+plate_offset = Vector2(-90, 0)
+targets = Array[NodePath]([])
+mirror_art = SubResource("royal8_mirror")
+receiver_art = SubResource("royal8_receiver")
+
+[node name="GardenEntranceFloor" type="AnimatableBody2D" parent="."]
+position = Vector2(24320, 120)
+script = ExtResource("stone")
+width = 850
+depth = 1330
+wall_body = true
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GardenEntranceFloor"]
+position = Vector2(425.0, 657.5)
+shape = SubResource("GardenEntranceFloor_shape")
+one_way_collision = false
+one_way_collision_margin = 6.0
+
+[node name="TwinLightGardenGate" type="StaticBody2D" parent="."]
+position = Vector2(24500, 120)
+script = ExtResource("lock")
+gate_size = Vector2(80, 1700)
+sources = Array[NodePath]([NodePath("../GardenWestLight"), NodePath("../GardenEastLight")])
+latched = true
+
+[node name="TwinLightCourtRear" type="Node2D" parent="."]
+position = Vector2(22050, -770)
+script = ExtResource("backwall")
+size = Vector2(2380, 2220)
+crenellated = true
+openings = Array[Rect2]([Rect2(75, 145, 510, 340), Rect2(875, 160, 430, 620), Rect2(1600, 145, 600, 350), Rect2(260, 810, 1500, 420)])
+
+[node name="GardenGateRear" type="Node2D" parent="."]
+position = Vector2(24330, -390)
+script = ExtResource("backwall")
+size = Vector2(810, 1840)
+crenellated = true
+openings = Array[Rect2]([Rect2(90, 115, 570, 335), Rect2(220, 815, 365, 670)])
+
+[node name="GardenCloudGuard" parent="." instance=ExtResource("cloud")]
+position = Vector2(21810, -120)
+patrol = 140.0
+speed = 47.0
+
+[node name="TwinCourtShadowGuard" parent="." instance=ExtResource("stinko")]
+position = Vector2(23400, 120)
+patrol = 180.0
+speed = 44.0
+shadow_range = 480.0
+shadow_cooldown = 3.8
+shadow_warning = 1.05
+shadow_speed = 210.0
+
+[node name="GardenReturnSpring" parent="." instance=ExtResource("spring")]
+position = Vector2(23060, 120)
+launch_speed = 810.0
+
+[node name="GardenTwinLightTip" type="Marker2D" parent="."]
+position = Vector2(22810, 40)
+script = ExtResource("hint")
+title = "Dvě světla"
+message = "Levé i pravé zrcadlo musí svítit. Pružina vrací na horní rozcestí."
+activation_size = Vector2(420, 220)
+display_seconds = 5.0
+
+[node name="RoyalStar" type="Node2D" parent="."]
+position = Vector2(24700, 75)
+script = ExtResource("object")
+kind = "star_key"
+
+[node name="GardenGate" type="Node2D" parent="."]
+position = Vector2(25000, 120)
+script = ExtResource("object")
+kind = "goal"
+
+[node name="TwinLightJunctionCamera" type="Node2D" parent="."]
+position = Vector2(23080, -120)
+script = ExtResource("camera")
+area_size = Vector2(1230, 820)
+look_offset = Vector2(-70, -110)
+priority = 3
+
+[node name="Diamond01" type="Node2D" parent="."]
+position = Vector2(625, 510)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond02" type="Node2D" parent="."]
+position = Vector2(1450, 395)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond03" type="Node2D" parent="."]
+position = Vector2(2120, 240)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond04" type="Node2D" parent="."]
+position = Vector2(1640, 775)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond05" type="Node2D" parent="."]
+position = Vector2(2390, 775)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond06" type="Node2D" parent="."]
+position = Vector2(4470, 405)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond07" type="Node2D" parent="."]
+position = Vector2(6270, 95)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond08" type="Node2D" parent="."]
+position = Vector2(6800, -75)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond09" type="Node2D" parent="."]
+position = Vector2(8110, 305)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond10" type="Node2D" parent="."]
+position = Vector2(8220, -275)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond11" type="Node2D" parent="."]
+position = Vector2(9530, -275)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond12" type="Node2D" parent="."]
+position = Vector2(10570, -445)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond13" type="Node2D" parent="."]
+position = Vector2(12580, -105)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond14" type="Node2D" parent="."]
+position = Vector2(13920, -25)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond15" type="Node2D" parent="."]
+position = Vector2(14730, 15)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond16" type="Node2D" parent="."]
+position = Vector2(15800, -130)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond17" type="Node2D" parent="."]
+position = Vector2(18490, -325)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond18" type="Node2D" parent="."]
+position = Vector2(18930, 435)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond19" type="Node2D" parent="."]
+position = Vector2(19390, 435)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond20" type="Node2D" parent="."]
+position = Vector2(22240, -395)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond21" type="Node2D" parent="."]
+position = Vector2(23720, -235)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Diamond22" type="Node2D" parent="."]
+position = Vector2(24900, 75)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="CourtyardLamp" type="Sprite2D" parent="."]
+z_index = -9
+position = Vector2(4085, 310)
+scale = Vector2(0.3079179, 0.3079179)
+texture = SubResource("royal8_lantern")
+offset = Vector2(0, -170.5)
+metadata/royal_asset = "lantern"
+
+[node name="TowerLamp" type="Sprite2D" parent="."]
+z_index = -9
+position = Vector2(7890, 65)
+scale = Vector2(0.3079179, 0.3079179)
+texture = SubResource("royal8_lantern")
+offset = Vector2(0, -170.5)
+metadata/royal_asset = "lantern"
+
+[node name="AqueductLamp" type="Sprite2D" parent="."]
+z_index = -9
+position = Vector2(12225, -195)
+scale = Vector2(0.3079179, 0.3079179)
+texture = SubResource("royal8_lantern")
+offset = Vector2(0, -170.5)
+metadata/royal_asset = "lantern"
+
+[node name="BattlementLamp" type="Sprite2D" parent="."]
+z_index = -9
+position = Vector2(16790, -215)
+scale = Vector2(0.3079179, 0.3079179)
+texture = SubResource("royal8_lantern")
+offset = Vector2(0, -170.5)
+metadata/royal_asset = "lantern"
+
+[node name="GardenCourtLamp" type="Sprite2D" parent="."]
+z_index = -9
+position = Vector2(22100, -220)
+scale = Vector2(0.3079179, 0.3079179)
+texture = SubResource("royal8_lantern")
+offset = Vector2(0, -170.5)
+metadata/royal_asset = "lantern"
+
+[node name="GardenFlowersWest" parent="." instance=ExtResource("bush")]
+position = Vector2(24600, 120)
+z_index = -1
+
+[node name="GardenFlowersEast" parent="." instance=ExtResource("bush")]
+position = Vector2(25100, 120)
+z_index = -1
+
+[node name="GardenBalconyFlowers" parent="." instance=ExtResource("bush")]
+position = Vector2(23740, -190)
+z_index = -1
+
+[node name="GateVines" parent="." instance=ExtResource("vines")]
+position = Vector2(24450, 120)
+z_index = -1
+[node name="ViaductBridgeRelic" type="Sprite2D" parent="."]
+z_index = -13
+position = Vector2(2200, 820)
+scale = Vector2(0.6598985, 0.6598985)
+texture = SubResource("royal8_bridge")
+offset = Vector2(0, -98.5)
+metadata/royal_asset = "bridge"
+
+[node name="WestAqueductArch" type="Sprite2D" parent="."]
+z_index = -13
+position = Vector2(12385, -60)
+scale = Vector2(0.7692308, 0.7692308)
+texture = SubResource("royal8_aqueduct")
+offset = Vector2(0, -156)
+metadata/royal_asset = "aqueduct"
+
+[node name="MiddleAqueductArch" type="Sprite2D" parent="."]
+z_index = -13
+position = Vector2(14320, 60)
+scale = Vector2(0.7692308, 0.7692308)
+texture = SubResource("royal8_aqueduct")
+offset = Vector2(0, -156)
+metadata/royal_asset = "aqueduct"
+
+[node name="EastAqueductArch" type="Sprite2D" parent="."]
+z_index = -13
+position = Vector2(16590, -80)
+scale = Vector2(0.7692308, 0.7692308)
+texture = SubResource("royal8_aqueduct")
+offset = Vector2(0, -156)
+metadata/royal_asset = "aqueduct"
+
+[node name="CrateCourtWindow" type="Sprite2D" parent="."]
+z_index = -13
+position = Vector2(4350, 90)
+scale = Vector2(0.4657534, 0.4657534)
+texture = SubResource("royal8_window")
+offset = Vector2(0, -182.5)
+metadata/royal_asset = "window"
+
+[node name="LookoutWindow" type="Sprite2D" parent="."]
+z_index = -13
+position = Vector2(5900, 105)
+scale = Vector2(0.5753425, 0.5753425)
+texture = SubResource("royal8_window")
+offset = Vector2(0, -182.5)
+metadata/royal_asset = "window"
+
+[node name="WestTowerWindow" type="Sprite2D" parent="."]
+z_index = -13
+position = Vector2(8110, -395)
+scale = Vector2(0.5616438, 0.5616438)
+texture = SubResource("royal8_window")
+offset = Vector2(0, -182.5)
+metadata/royal_asset = "window"
+
+[node name="EastTowerWindow" type="Sprite2D" parent="."]
+z_index = -13
+position = Vector2(9880, -395)
+scale = Vector2(0.5616438, 0.5616438)
+texture = SubResource("royal8_window")
+offset = Vector2(0, -182.5)
+metadata/royal_asset = "window"
+
+[node name="GardenGateWindow" type="Sprite2D" parent="."]
+z_index = -13
+position = Vector2(24850, -25)
+scale = Vector2(0.5890411, 0.5890411)
+texture = SubResource("royal8_window")
+offset = Vector2(0, -182.5)
+metadata/royal_asset = "window"

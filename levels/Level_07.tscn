@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://bohuc0h15slyw" path="res://scripts/cloud_step.gd" id="cloud"]
 [ext_resource type="Script" uid="uid://cfgfcfchjekph" path="res://scripts/sky_discovery.gd" id="discovery"]
 [ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="enemy"]
+[ext_resource type="PackedScene" path="res://scenes/Enemy_cloud_enemy.tscn" id="cloud_enemy"]
 [ext_resource type="Script" uid="uid://bgem3m4f8r3n" path="res://scripts/sky_escape.gd" id="escape"]
 [ext_resource type="Script" uid="uid://c2svy4eaj02wn" path="res://scripts/tutorial_trigger.gd" id="hint"]
 [ext_resource type="Script" uid="uid://detg52t2f6hmm" path="res://scripts/sky_adventure.gd" id="level"]
@@ -1039,3 +1040,30 @@ position = Vector2(9877, 419)
 script = ExtResource("19_ve2xj")
 area_size = Vector2(700, 600)
 look_offset = Vector2(0, 180)
+
+[node name="CloudGuard_ArrivalFalls" parent="." instance=ExtResource("cloud_enemy")]
+position = Vector2(1030, 345)
+patrol = 70.0
+speed = 48.0
+
+[node name="CloudGuard_LowerRoute" parent="." instance=ExtResource("cloud_enemy")]
+position = Vector2(3395, 410)
+patrol = 80.0
+speed = 52.0
+obraceni = true
+
+[node name="CloudGuard_BellAtrium" parent="." instance=ExtResource("cloud_enemy")]
+position = Vector2(9270, 320)
+patrol = 130.0
+speed = 54.0
+
+[node name="CloudGuard_MoonGarden" parent="." instance=ExtResource("cloud_enemy")]
+position = Vector2(14670, -120)
+patrol = 90.0
+speed = 50.0
+obraceni = true
+
+[node name="CloudGuard_BeforeEscape" parent="." instance=ExtResource("cloud_enemy")]
+position = Vector2(16130, 310)
+patrol = 130.0
+speed = 56.0
