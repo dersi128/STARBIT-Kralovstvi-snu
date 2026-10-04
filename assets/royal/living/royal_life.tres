@@ -1,22 +1,17 @@
-[gd_resource type="SpriteFrames" load_steps=12 format=3]
+[gd_resource type="SpriteFrames" format=3 uid="uid://bi17pn1qkq2kx"]
 
-[ext_resource type="Texture2D" path="res://assets/royal/living/royal_life_atlas.png" id="new"]
-[ext_resource type="Texture2D" path="res://assets/royal/expansion/level08_atlas.png" id="court"]
-[ext_resource type="Texture2D" path="res://assets/royal/expansion/level10_atlas.png" id="palace"]
+[ext_resource type="Texture2D" uid="uid://ghp3eyrh6xln" path="res://assets/royal/expansion/level08_atlas.png" id="court"]
+[ext_resource type="Texture2D" uid="uid://mxdq72qcxhp1" path="res://assets/royal/living/royal_life_atlas.png" id="new"]
+[ext_resource type="Texture2D" uid="uid://b3tn27pmqsrnw" path="res://assets/royal/expansion/level10_atlas.png" id="palace"]
 
-[sub_resource type="AtlasTexture" id="Fountain"]
-atlas = ExtResource("new")
-region = Rect2(43, 21, 421, 445)
+[sub_resource type="AtlasTexture" id="Banner"]
+atlas = ExtResource("palace")
+region = Rect2(874, 831, 341, 380)
 filter_clip = true
 
 [sub_resource type="AtlasTexture" id="Bench"]
 atlas = ExtResource("new")
 region = Rect2(495, 144, 536, 309)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="Flowers"]
-atlas = ExtResource("new")
-region = Rect2(1060, 202, 446, 250)
 filter_clip = true
 
 [sub_resource type="AtlasTexture" id="Bookstand"]
@@ -29,9 +24,14 @@ atlas = ExtResource("new")
 region = Rect2(577, 510, 383, 470)
 filter_clip = true
 
-[sub_resource type="AtlasTexture" id="OwlStatue"]
+[sub_resource type="AtlasTexture" id="Flowers"]
 atlas = ExtResource("new")
-region = Rect2(1134, 518, 284, 475)
+region = Rect2(1060, 202, 446, 250)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="Fountain"]
+atlas = ExtResource("new")
+region = Rect2(43, 21, 421, 445)
 filter_clip = true
 
 [sub_resource type="AtlasTexture" id="Lantern"]
@@ -39,59 +39,74 @@ atlas = ExtResource("court")
 region = Rect2(524, 826, 236, 349)
 filter_clip = true
 
-[sub_resource type="AtlasTexture" id="Banner"]
-atlas = ExtResource("palace")
-region = Rect2(874, 831, 341, 380)
+[sub_resource type="AtlasTexture" id="OwlStatue"]
+atlas = ExtResource("new")
+region = Rect2(1134, 518, 284, 475)
 filter_clip = true
 
 [resource]
-animations = [
-{
-"frames": [{"duration": 1.0, "texture": SubResource("Fountain") }],
-"loop": true,
-"name": &"Fountain",
-"speed": 1.0
-},
-{
-"frames": [{"duration": 1.0, "texture": SubResource("Bench") }],
-"loop": true,
-"name": &"Bench",
-"speed": 1.0
-},
-{
-"frames": [{"duration": 1.0, "texture": SubResource("Flowers") }],
-"loop": true,
-"name": &"Flowers",
-"speed": 1.0
-},
-{
-"frames": [{"duration": 1.0, "texture": SubResource("Bookstand") }],
-"loop": true,
-"name": &"Bookstand",
-"speed": 1.0
-},
-{
-"frames": [{"duration": 1.0, "texture": SubResource("Chandelier") }],
-"loop": true,
-"name": &"Chandelier",
-"speed": 1.0
-},
-{
-"frames": [{"duration": 1.0, "texture": SubResource("OwlStatue") }],
-"loop": true,
-"name": &"OwlStatue",
-"speed": 1.0
-},
-{
-"frames": [{"duration": 1.0, "texture": SubResource("Lantern") }],
-"loop": true,
-"name": &"Lantern",
-"speed": 1.0
-},
-{
-"frames": [{"duration": 1.0, "texture": SubResource("Banner") }],
-"loop": true,
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Banner")
+}],
+"loop": 1,
 "name": &"Banner",
 "speed": 1.0
-}
-]
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Bench")
+}],
+"loop": 1,
+"name": &"Bench",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Bookstand")
+}],
+"loop": 1,
+"name": &"Bookstand",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Chandelier")
+}],
+"loop": 1,
+"name": &"Chandelier",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Flowers")
+}],
+"loop": 1,
+"name": &"Flowers",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Fountain")
+}],
+"loop": 1,
+"name": &"Fountain",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("Lantern")
+}],
+"loop": 1,
+"name": &"Lantern",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("OwlStatue")
+}],
+"loop": 1,
+"name": &"OwlStatue",
+"speed": 1.0
+}]
