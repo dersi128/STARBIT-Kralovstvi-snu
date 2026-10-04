@@ -43,7 +43,7 @@ var speech_voice:="voice_mole"
 var hero:TextureRect
 var mole_dialogue:Control
 var dialogue_session:=0
-const TITLES=["Lesní probuzení", "Mezi kořeny", "Světélka vesničky", "Nad střechami", "Brúčounova svatyně", "První ostrovy", "Vodopády v oblacích", "Hrad na dosah", "Královské zahrady", "Nebeské nádvoří"]
+const TITLES=["Lesní probuzení", "Mezi kořeny", "Světélka vesničky", "Nad střechami", "Brúčounova svatyně", "První ostrovy", "Vodopády v oblacích", "Nádvoří před branami", "Královské zahrady", "V srdci hradu"]
 const LEVEL_COUNT=10
 func _ready() -> void:
  get_tree().quit_on_go_back=false
@@ -302,6 +302,7 @@ func collect_crystal() -> void:
  crystals+=1
 func enter_portal() -> void:
  if mode!="play":return
+ if is_instance_valid(level) and level.has_method("can_finish_level") and not level.can_finish_level():return
  mode="transition";run_finished=true
  level.process_mode=Node.PROCESS_MODE_DISABLED
  level.player.frozen=true
@@ -377,6 +378,15 @@ func begin_owl_dialogue(source:Node2D) -> bool:
  if mode!="play" or not is_instance_valid(level) or not is_instance_valid(source):return false
  if not level.is_ancestor_of(source) or not source.defeated or source.dialogue_started:return false
  _begin_story_dialogue(source,source.OUTRO_TEXT,"Soví strážce",source.get_dialogue_frames(),null,"Převzít hvězdu",Callable(source,"finish_guardian_dialogue"))
+ return true
+
+func begin_jiskra_rescue_dialogue(source:Node2D) -> bool:
+ if mode!="play" or current!=10 or not is_instance_valid(level) or not is_instance_valid(source):return false
+ if not level.is_ancestor_of(source) or source.state!="opening" or source.rescued:return false
+ var portrait:=SpriteFrames.new()
+ portrait.add_frame("default",preload("res://scripts/art.gd").texture("jiskra"))
+ portrait.rename_animation("default","idle")
+ _begin_story_dialogue(source,source.MESSAGE,"Jiskra",portrait,null,"Společně domů!",Callable(source,"finish_rescue"))
  return true
 
 func begin_guardian_dialogue(source:Node2D) -> bool:

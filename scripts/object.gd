@@ -235,6 +235,8 @@ func _process(delta: float) -> void:
 	if Engine.is_editor_hint(): return
 	var level=get_tree().get_first_node_in_group("level")
 	gate_open=level!=null and level.star_collected and not level.boss_alive
+	if kind=="goal" and gate_open and level.has_method("can_finish_level"):
+		gate_open=level.can_finish_level()
 	if portal:
 		portal.visible=gate_open and kind=="goal"
 		if gate_open and not opening_started:

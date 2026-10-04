@@ -11,14 +11,12 @@ extends "res://scripts/level.gd"
 @export var first_gate: NodePath
 @export var thorn_gate: NodePath
 @export var reward_star: NodePath
-@export var ending_friend: NodePath
 @export var sun_fountain_texture: Texture2D
 @export var moon_fountain_texture: Texture2D
 var restored := [false, false]
 var growth := [0.0, 0.0]
 var light_age := [10.0, 10.0]
 var elapsed := 0.0
-var ending_spoken := false
 const FOUNTAIN_STAND = preload("res://assets/sky_props/wind_core_stand.png")
 
 func _ready() -> void:
@@ -60,12 +58,6 @@ func _physics_process(delta: float) -> void:
 	if complete and star:
 		star.visible = true
 		star.process_mode = Node.PROCESS_MODE_INHERIT
-	var friend := get_node_or_null(ending_friend)
-	if complete and friend and not ending_spoken and player.global_position.distance_to(friend.global_position) < 215:
-		var game := get_tree().get_first_node_in_group("game")
-		if game and game.get("mode") == "play":
-			ending_spoken = true
-			game.speak(friend, friend.message, "voice_mole")
 	queue_redraw()
 
 func _apply_garden_tints() -> void:

@@ -42,8 +42,6 @@
 
 [ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole"]
 
-[ext_resource type="PackedScene" path="res://scenes/jiskra.tscn" id="jiskra"]
-
 [ext_resource type="PackedScene" path="res://scenes/Enemy_rock_enemy.tscn" id="rock"]
 
 [ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="stinko"]
@@ -55,6 +53,8 @@
 [ext_resource type="PackedScene" path="res://scenes/worldkit/RainCloud.tscn" id="rain"]
 
 [ext_resource type="PackedScene" path="res://scenes/supplied/VinesLong.tscn" id="vine"]
+
+[ext_resource type="Script" path="res://scripts/royal_life.gd" id="royal_life"]
 
 [sub_resource type="AtlasTexture" id="flower_art"]
 atlas = ExtResource("flower")
@@ -323,12 +323,11 @@ first_light = NodePath("SunFountain")
 second_light = NodePath("MoonFountain")
 first_flowers = Array[NodePath]([NodePath("SunReturnA"), NodePath("SunReturnB"), NodePath("SunReturnC"), NodePath("SunReturnD"), NodePath("RestoredRose")])
 second_flowers = Array[NodePath]([NodePath("MoonDescent"), NodePath("CanopyRose"), NodePath("FinalRose")])
-first_scenery = Array[NodePath]([NodePath("SunTree"), NodePath("SunArch"), NodePath("SunFlowers"), NodePath("SunTerrace"), NodePath("AqueductFlowers"), NodePath("SunReturnAPlanter"), NodePath("SunReturnBPlanter"), NodePath("SunReturnCPlanter"), NodePath("SunReturnDPlanter"), NodePath("SunPlanterApproach"), NodePath("SunPlanterCourt"), NodePath("SunPlanterAqueduct")])
-second_scenery = Array[NodePath]([NodePath("MoonTree"), NodePath("MoonArch"), NodePath("MoonFlowers"), NodePath("MoonTerrace"), NodePath("CanopyTree"), NodePath("PalaceTree"), NodePath("FinalFlowers"), NodePath("MoonDescentPlanter"), NodePath("CanopyRosePlanter"), NodePath("FinalRosePlanter"), NodePath("MoonPlanterGallery"), NodePath("MoonPlanterCanopy"), NodePath("MoonPlanterPalace")])
+first_scenery = Array[NodePath]([NodePath("SunTree"), NodePath("SunArch"), NodePath("SunFlowers"), NodePath("SunTerrace"), NodePath("AqueductFlowers"), NodePath("SunReturnAPlanter"), NodePath("SunReturnBPlanter"), NodePath("SunReturnCPlanter"), NodePath("SunReturnDPlanter"), NodePath("SunPlanterApproach"), NodePath("SunPlanterCourt"), NodePath("SunPlanterAqueduct"), NodePath("SunApproachTree"), NodePath("SunCourtTree"), NodePath("OrangeryIslandTree"), NodePath("SunPlanterRoseWalk"), NodePath("SunPlanterOrangery"), NodePath("AqueductTree"), NodePath("OrangeryExitTree")])
+second_scenery = Array[NodePath]([NodePath("MoonTree"), NodePath("MoonArch"), NodePath("MoonFlowers"), NodePath("MoonTerrace"), NodePath("CanopyTree"), NodePath("PalaceTree"), NodePath("FinalFlowers"), NodePath("MoonDescentPlanter"), NodePath("CanopyRosePlanter"), NodePath("FinalRosePlanter"), NodePath("MoonPlanterGallery"), NodePath("MoonPlanterCanopy"), NodePath("MoonPlanterPalace"), NodePath("GalleryWestTree"), NodePath("GalleryEastTree"), NodePath("CanopyLandingTree"), NodePath("CanopyRiseTree"), NodePath("FinalCourtTree"), NodePath("PalaceCanalTree"), NodePath("MoonPlanterLowerWalk"), NodePath("MoonPlanterFinalCourt"), NodePath("GalleryWestArbor"), NodePath("GalleryEastArbor")])
 first_gate = NodePath("ConservatoryGate")
 thorn_gate = NodePath("ThornGate")
 reward_star = NodePath("GardenStar")
-ending_friend = NodePath("Jiskra")
 sun_fountain_texture = SubResource("sun_fountain_art")
 moon_fountain_texture = SubResource("moon_fountain_art")
 
@@ -464,7 +463,7 @@ position = Vector2(360.0, 557.5)
 
 [node name="MoleGarden" parent="." instance=ExtResource("mole")]
 position = Vector2(440, 620)
-message = "Zahrady usnuly. Rozsviť slunce i měsíc a najdi Jiskru u paláce."
+message = "Jiskru drží uvnitř hradu. Probuď zahrady světlem slunce i měsíce. Pak se otevře cesta k hradní bráně."
 
 [node name="PetalLesson" type="Marker2D" parent="."]
 script = ExtResource("tutorial")
@@ -798,29 +797,29 @@ modulate = Color(0.41, 0.25, 0.53, 1)
 
 [node name="ConservatoryGateWestPier" type="Node2D" parent="."]
 script = ExtResource("backwall")
-position = Vector2(6318, -1520)
-size = Vector2(62, 2200)
-tint = Color(0.69, 0.76, 0.74, 0.88)
+position = Vector2(6318, 400)
+size = Vector2(62, 280)
+tint = Color(0.72, 0.77, 0.85, 0.88)
 
 [node name="ConservatoryGateEastPier" type="Node2D" parent="."]
 script = ExtResource("backwall")
-position = Vector2(6480, -1520)
-size = Vector2(62, 2200)
-tint = Color(0.69, 0.76, 0.74, 0.88)
+position = Vector2(6480, 400)
+size = Vector2(62, 280)
+tint = Color(0.72, 0.77, 0.85, 0.88)
 
 [node name="SunTerraceArcade" type="Node2D" parent="."]
 script = ExtResource("backwall")
 position = Vector2(3780, -185)
 size = Vector2(820, 865)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(95, 170, 220, 695), Rect2(470, 170, 220, 695)])
+tint = Color(0.72, 0.77, 0.85, 0.88)
+openings = Array[Rect2]([Rect2(48, 42, 320, 823), Rect2(450, 42, 320, 823)])
 
 [node name="SunStairArcade" type="Node2D" parent="."]
 script = ExtResource("backwall")
-position = Vector2(4650, 370)
-size = Vector2(1580, 310)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(100, 65, 300, 245), Rect2(600, 65, 300, 245), Rect2(1100, 65, 300, 245)])
+position = Vector2(4650, 605)
+size = Vector2(1580, 100)
+tint = Color(0.72, 0.77, 0.85, 0.88)
+openings = Array[Rect2]([Rect2(70, 26, 370, 74), Rect2(600, 26, 370, 74), Rect2(1110, 26, 390, 74)])
 
 [node name="SunLesson" type="Marker2D" parent="."]
 script = ExtResource("tutorial")
@@ -948,8 +947,8 @@ position = Vector2(880.0, 537.5)
 script = ExtResource("backwall")
 position = Vector2(8290, 685)
 size = Vector2(2000, 770)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(110, 100, 360, 670), Rect2(700, 100, 360, 670), Rect2(1290, 100, 450, 670)])
+tint = Color(0.72, 0.77, 0.85, 0.88)
+openings = Array[Rect2]([Rect2(65, 50, 510, 720), Rect2(715, 50, 510, 720), Rect2(1365, 50, 570, 720)])
 
 [node name="AqueductSecretStep" type="AnimatableBody2D" parent="."]
 script = ExtResource("castle")
@@ -1100,10 +1099,10 @@ slow_multiplier = 0.3
 
 [node name="OrangeryPillars" type="Node2D" parent="."]
 script = ExtResource("backwall")
-position = Vector2(11750, 710)
-size = Vector2(2300, 750)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(75, 0, 510, 750), Rect2(890, 0, 510, 750), Rect2(1705, 0, 510, 750)])
+position = Vector2(11750, 760)
+size = Vector2(2300, 700)
+tint = Color(0.72, 0.77, 0.85, 0.88)
+openings = Array[Rect2]([Rect2(48, 0, 630, 700), Rect2(830, 0, 630, 700), Rect2(1615, 0, 630, 700)])
 
 [node name="CheckpointRoutes" type="Node2D" parent="."]
 script = ExtResource("object")
@@ -1529,13 +1528,6 @@ appearance = "crystal"
 latch = true
 plate_width = 125.0
 
-[node name="MoonOrangeryWall" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(15110, -300)
-size = Vector2(5150, 1020)
-tint = Color(0.71, 0.72, 0.82, 0.9)
-openings = Array[Rect2]([Rect2(80, 110, 720, 910), Rect2(1000, 110, 750, 910), Rect2(1960, 110, 750, 910), Rect2(2920, 110, 750, 910), Rect2(3900, 110, 1000, 910)])
-
 [node name="OrangeryChoice" type="Marker2D" parent="."]
 script = ExtResource("tutorial")
 position = Vector2(14840, 390)
@@ -1669,15 +1661,15 @@ modulate = Color(0.41, 0.25, 0.53, 1)
 
 [node name="ThornGateWestPier" type="Node2D" parent="."]
 script = ExtResource("backwall")
-position = Vector2(20488, -1560)
-size = Vector2(62, 2200)
-tint = Color(0.69, 0.76, 0.74, 0.88)
+position = Vector2(20488, 360)
+size = Vector2(62, 280)
+tint = Color(0.72, 0.77, 0.85, 0.88)
 
 [node name="ThornGateEastPier" type="Node2D" parent="."]
 script = ExtResource("backwall")
-position = Vector2(20650, -1560)
-size = Vector2(62, 2200)
-tint = Color(0.69, 0.76, 0.74, 0.88)
+position = Vector2(20650, 360)
+size = Vector2(62, 280)
+tint = Color(0.72, 0.77, 0.85, 0.88)
 
 [node name="CheckpointCanopy" type="Node2D" parent="."]
 script = ExtResource("object")
@@ -1893,15 +1885,15 @@ one_way_collision_margin = 8.0
 script = ExtResource("backwall")
 position = Vector2(22430, 470)
 size = Vector2(1340, 990)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(90, 110, 280, 880), Rect2(520, 110, 280, 880), Rect2(950, 110, 280, 880)])
+tint = Color(0.72, 0.77, 0.85, 0.88)
+openings = Array[Rect2]([Rect2(55, 50, 365, 940), Rect2(485, 50, 365, 940), Rect2(915, 50, 365, 940)])
 
 [node name="CanopySecretPillars" type="Node2D" parent="."]
 script = ExtResource("backwall")
 position = Vector2(23300, -150)
 size = Vector2(580, 480)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(100, 60, 380, 420)])
+tint = Color(0.72, 0.77, 0.85, 0.88)
+openings = Array[Rect2]([Rect2(50, 32, 480, 448)])
 
 [node name="CheckpointFinal" type="Node2D" parent="."]
 script = ExtResource("object")
@@ -2031,10 +2023,6 @@ position = Vector2(340.0, 707.5)
 script = ExtResource("object")
 position = Vector2(29100, 145)
 kind = "star_key"
-
-[node name="Jiskra" parent="." instance=ExtResource("jiskra")]
-position = Vector2(29200, 220)
-message = "Zahrady zase žijí! Sovího strážce nádvoří ovládla temnota. Pomoz mu otevřít palác."
 
 [node name="PalaceGate" type="Node2D" parent="."]
 script = ExtResource("object")
@@ -2331,11 +2319,11 @@ lush_texture = SubResource("planter_lush_art")
 art_width = 156.0
 
 [node name="AqueductTree" type="Sprite2D" parent="."]
-position = Vector2(8410, 313.0)
+position = Vector2(8424.48, 239.64)
 z_index = -5
-texture = ExtResource("tree")
+texture = SubResource("garden_tree_art")
 centered = false
-scale = Vector2(0.75, 0.75)
+scale = Vector2(0.94, 0.94)
 
 [node name="AqueductSecretArch" type="Sprite2D" parent="."]
 position = Vector2(9010, -180.79999999999998)
@@ -2359,11 +2347,11 @@ centered = false
 scale = Vector2(0.46, 0.46)
 
 [node name="OrangeryExitTree" type="Sprite2D" parent="."]
-position = Vector2(14200, 131.12)
+position = Vector2(14200.76, 34.18)
 z_index = -5
-texture = ExtResource("tree")
+texture = SubResource("garden_tree_art")
 centered = false
-scale = Vector2(0.78, 0.78)
+scale = Vector2(1.03, 1.03)
 
 [node name="GalleryEntryArch" type="Sprite2D" parent="."]
 position = Vector2(14800, 199.9)
@@ -2738,3 +2726,348 @@ z_index = -5
 dry_texture = SubResource("planter_dry_art")
 lush_texture = SubResource("planter_lush_art")
 art_width = 156.0
+
+[node name="ArrivalGardenTree" type="Sprite2D" parent="."]
+position = Vector2(1891.2, 121.6)
+z_index = -12
+texture = SubResource("garden_tree_art")
+centered = false
+scale = Vector2(1.1, 1.1)
+
+[node name="SunApproachTree" type="Sprite2D" parent="."]
+position = Vector2(3054.08, 129.94)
+z_index = -12
+texture = SubResource("garden_tree_art")
+centered = false
+scale = Vector2(0.99, 0.99)
+
+[node name="SunCourtTree" type="Sprite2D" parent="."]
+position = Vector2(4390.8, 226.9)
+z_index = -12
+texture = SubResource("garden_tree_art")
+centered = false
+scale = Vector2(1.15, 1.15)
+
+[node name="OrangeryIslandTree" type="Sprite2D" parent="."]
+position = Vector2(12880.32, 61.76)
+z_index = -12
+texture = SubResource("garden_tree_art")
+centered = false
+scale = Vector2(0.96, 0.96)
+
+[node name="GalleryWestTree" type="Sprite2D" parent="."]
+position = Vector2(15717.44, 298.42)
+z_index = -12
+texture = SubResource("garden_tree_art")
+centered = false
+scale = Vector2(1.07, 1.07)
+
+[node name="GalleryEastTree" type="Sprite2D" parent="."]
+position = Vector2(18117.04, 278.72)
+z_index = -12
+texture = SubResource("garden_tree_art")
+centered = false
+scale = Vector2(1.12, 1.12)
+
+[node name="CanopyLandingTree" type="Sprite2D" parent="."]
+position = Vector2(23559.52, -87.64)
+z_index = -12
+texture = SubResource("garden_tree_art")
+centered = false
+scale = Vector2(1.06, 1.06)
+
+[node name="CanopyRiseTree" type="Sprite2D" parent="."]
+position = Vector2(24182.4, -214.3)
+z_index = -12
+texture = SubResource("garden_tree_art")
+centered = false
+scale = Vector2(0.95, 0.95)
+
+[node name="FinalCourtTree" type="Sprite2D" parent="."]
+position = Vector2(26139.52, -87.64)
+z_index = -12
+texture = SubResource("garden_tree_art")
+centered = false
+scale = Vector2(1.06, 1.06)
+
+[node name="PalaceCanalTree" type="Sprite2D" parent="."]
+position = Vector2(27810.72, -58.54)
+z_index = -12
+texture = SubResource("garden_tree_art")
+centered = false
+scale = Vector2(0.91, 0.91)
+
+[node name="GalleryWestArbor" type="Node2D" parent="."]
+position = Vector2(16470.58, 357.08)
+z_index = -11
+scale = Vector2(0.86, 0.86)
+
+[node name="Finial" type="Sprite2D" parent="GalleryWestArbor"]
+position = Vector2(176, 0)
+texture = SubResource("garden_arch_finial_art")
+centered = false
+
+[node name="Arch" type="Sprite2D" parent="GalleryWestArbor"]
+position = Vector2(0, 29)
+texture = SubResource("garden_arch_body_art")
+centered = false
+
+[node name="GalleryEastArbor" type="Node2D" parent="."]
+position = Vector2(19312.7, 340.2)
+z_index = -11
+scale = Vector2(0.9, 0.9)
+
+[node name="Finial" type="Sprite2D" parent="GalleryEastArbor"]
+position = Vector2(176, 0)
+texture = SubResource("garden_arch_finial_art")
+centered = false
+
+[node name="Arch" type="Sprite2D" parent="GalleryEastArbor"]
+position = Vector2(0, 29)
+texture = SubResource("garden_arch_body_art")
+centered = false
+
+[node name="SunPlanterRoseWalk" type="Node2D" parent="."]
+script = ExtResource("planter")
+position = Vector2(2260, 555)
+z_index = -5
+dry_texture = SubResource("planter_dry_art")
+lush_texture = SubResource("planter_lush_art")
+art_width = 164.0
+
+[node name="SunPlanterOrangery" type="Node2D" parent="."]
+script = ExtResource("planter")
+position = Vector2(13210, 440)
+z_index = -5
+dry_texture = SubResource("planter_dry_art")
+lush_texture = SubResource("planter_lush_art")
+art_width = 164.0
+
+[node name="MoonPlanterLowerWalk" type="Node2D" parent="."]
+script = ExtResource("planter")
+position = Vector2(16150, 720)
+z_index = -5
+dry_texture = SubResource("planter_dry_art")
+lush_texture = SubResource("planter_lush_art")
+art_width = 164.0
+
+[node name="MoonPlanterFinalCourt" type="Node2D" parent="."]
+script = ExtResource("planter")
+position = Vector2(26650, 330)
+z_index = -5
+dry_texture = SubResource("planter_dry_art")
+lush_texture = SubResource("planter_lush_art")
+art_width = 164.0
+
+[node name="LivingDetails" type="Node2D" parent="."]
+
+[node name="ArrivalFlowers" type="Node2D" parent="LivingDetails"]
+position = Vector2(650, 620)
+script = ExtResource("royal_life")
+kind = "Flowers"
+height = 48.0
+phase = 0.2
+metadata/ground_surface = "ArrivalPlaza"
+
+[node name="ArrivalButterflies" type="Node2D" parent="LivingDetails"]
+position = Vector2(640, 590)
+script = ExtResource("royal_life")
+kind = "Butterflies"
+height = 100.0
+phase = 0.6
+
+[node name="RoseWalkBench" type="Node2D" parent="LivingDetails"]
+position = Vector2(2060, 555)
+script = ExtResource("royal_life")
+kind = "Bench"
+height = 75.0
+phase = 0.0
+metadata/ground_surface = "RoseStair"
+
+[node name="RoseWalkLantern" type="Node2D" parent="LivingDetails"]
+position = Vector2(1950, 555)
+script = ExtResource("royal_life")
+kind = "Lantern"
+height = 95.0
+phase = 0.4
+metadata/ground_surface = "RoseStair"
+
+[node name="RoseWalkRestoredFlowers" type="Node2D" parent="LivingDetails"]
+position = Vector2(2410, 555)
+script = ExtResource("royal_life")
+kind = "Flowers"
+height = 52.0
+phase = 1.2
+growth_source = 1
+mirrored = true
+metadata/ground_surface = "RoseStair"
+
+[node name="AqueductDecorativeFountain" type="Node2D" parent="LivingDetails"]
+position = Vector2(10320, 560)
+script = ExtResource("royal_life")
+kind = "Fountain"
+height = 150.0
+phase = 0.7
+metadata/ground_surface = "AqueductEast"
+
+[node name="AqueductFountainFlowers" type="Node2D" parent="LivingDetails"]
+position = Vector2(10100, 560)
+script = ExtResource("royal_life")
+kind = "Flowers"
+height = 46.0
+phase = 1.6
+growth_source = 1
+metadata/ground_surface = "AqueductEast"
+
+[node name="AqueductReadingBench" type="Node2D" parent="LivingDetails"]
+position = Vector2(11200, 560)
+script = ExtResource("royal_life")
+kind = "Bench"
+height = 75.0
+phase = 0.0
+mirrored = true
+metadata/ground_surface = "AqueductEast"
+
+[node name="AqueductRestoredButterflies" type="Node2D" parent="LivingDetails"]
+position = Vector2(11150, 510)
+script = ExtResource("royal_life")
+kind = "Butterflies"
+height = 100.0
+phase = 2.2
+growth_source = 1
+
+[node name="AqueductLantern" type="Node2D" parent="LivingDetails"]
+position = Vector2(11370, 560)
+script = ExtResource("royal_life")
+kind = "Lantern"
+height = 95.0
+phase = 1.0
+metadata/ground_surface = "AqueductEast"
+
+[node name="MoonArborOwlWest" type="Node2D" parent="LivingDetails"]
+position = Vector2(16410, 720)
+script = ExtResource("royal_life")
+kind = "OwlStatue"
+height = 105.0
+phase = 0.0
+metadata/ground_surface = "LowerGalleryWest"
+
+[node name="MoonArborOwlEast" type="Node2D" parent="LivingDetails"]
+position = Vector2(16870, 720)
+script = ExtResource("royal_life")
+kind = "OwlStatue"
+height = 105.0
+phase = 0.0
+mirrored = true
+metadata/ground_surface = "LowerGalleryWest"
+
+[node name="MoonArborFlowers" type="Node2D" parent="LivingDetails"]
+position = Vector2(16300, 720)
+script = ExtResource("royal_life")
+kind = "Flowers"
+height = 48.0
+phase = 2.8
+growth_source = 2
+metadata/ground_surface = "LowerGalleryWest"
+
+[node name="MoonArborFireflies" type="Node2D" parent="LivingDetails"]
+position = Vector2(16840, 665)
+script = ExtResource("royal_life")
+kind = "Fireflies"
+height = 110.0
+phase = 0.8
+growth_source = 2
+
+[node name="MoonTerraceFireflies" type="Node2D" parent="LivingDetails"]
+position = Vector2(19620, -280)
+script = ExtResource("royal_life")
+kind = "Fireflies"
+height = 110.0
+phase = 2.1
+growth_source = 2
+
+[node name="CanopyReadingBench" type="Node2D" parent="LivingDetails"]
+position = Vector2(23580, -215)
+script = ExtResource("royal_life")
+kind = "Bench"
+height = 75.0
+phase = 0.0
+metadata/ground_surface = "CanopySecretBalcony"
+
+[node name="CanopyBookstand" type="Node2D" parent="LivingDetails"]
+position = Vector2(23775, -215)
+script = ExtResource("royal_life")
+kind = "Bookstand"
+height = 100.0
+phase = 0.0
+mirrored = true
+metadata/ground_surface = "CanopySecretBalcony"
+
+[node name="CanopyReadingLantern" type="Node2D" parent="LivingDetails"]
+position = Vector2(23350, -215)
+script = ExtResource("royal_life")
+kind = "Lantern"
+height = 95.0
+phase = 2.5
+metadata/ground_surface = "CanopySecretBalcony"
+
+[node name="CanopyReadingFlowers" type="Node2D" parent="LivingDetails"]
+position = Vector2(23450, -215)
+script = ExtResource("royal_life")
+kind = "Flowers"
+height = 40.0
+phase = 1.4
+growth_source = 2
+mirrored = true
+metadata/ground_surface = "CanopySecretBalcony"
+
+[node name="CanopyReadingButterflies" type="Node2D" parent="LivingDetails"]
+position = Vector2(23530, -275)
+script = ExtResource("royal_life")
+kind = "Butterflies"
+height = 100.0
+phase = 3.0
+growth_source = 2
+
+[node name="FinalWalkFlowers" type="Node2D" parent="LivingDetails"]
+position = Vector2(25380, 330)
+script = ExtResource("royal_life")
+kind = "Flowers"
+height = 52.0
+phase = 3.5
+growth_source = 2
+metadata/ground_surface = "CanopyDescent"
+
+[node name="FinalWalkFireflies" type="Node2D" parent="LivingDetails"]
+position = Vector2(25380, 280)
+script = ExtResource("royal_life")
+kind = "Fireflies"
+height = 110.0
+phase = 1.7
+growth_source = 2
+
+[node name="CanalFlowers" type="Node2D" parent="LivingDetails"]
+position = Vector2(28140, 300)
+script = ExtResource("royal_life")
+kind = "Flowers"
+height = 44.0
+phase = 2.4
+growth_source = 2
+mirrored = true
+metadata/ground_surface = "CanalEast"
+
+[node name="CanalButterflies" type="Node2D" parent="LivingDetails"]
+position = Vector2(28130, 245)
+script = ExtResource("royal_life")
+kind = "Butterflies"
+height = 100.0
+phase = 4.0
+growth_source = 2
+
+[node name="PalaceLantern" type="Node2D" parent="LivingDetails"]
+position = Vector2(29040, 220)
+script = ExtResource("royal_life")
+kind = "Lantern"
+height = 95.0
+phase = 3.2
+metadata/ground_surface = "PalaceGarden"

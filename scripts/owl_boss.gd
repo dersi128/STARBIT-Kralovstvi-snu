@@ -7,7 +7,7 @@ extends Node2D
 @export var keeper_art:Texture2D
 @export var pose_regions:Array[Rect2] = [Rect2(43,88,612,501), Rect2(652,110,570,501), Rect2(95,721,451,459), Rect2(712,713,414,461)]
 const POSE_FEET := [Vector2(382,574),Vector2(994,596),Vector2(376,1175),Vector2(978,1173)]
-const OUTRO_TEXT := "Děkuji, Bite! Temnota je pryč. Vezmi si mou hvězdu a otevři bránu do paláce — Jiskra tě potřebuje!"
+const OUTRO_TEXT := "Děkuji, Bite! Temnota mě ovládala. Jiskra je v kleci za sálem. Vezmi si mou hvězdu — odemkne její zámek!"
 const PEARL = preload("res://scripts/owl_projectile.gd")
 const STOMP_HEIGHT := 158.0
 var max_hp := 5

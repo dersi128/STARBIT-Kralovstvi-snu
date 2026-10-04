@@ -1,9 +1,9 @@
-[gd_scene load_steps=99 format=3]
+[gd_scene load_steps=102 format=3]
 
-[ext_resource type="Script" path="res://scripts/level.gd" id="level"]
+[ext_resource type="Script" path="res://scripts/castle_rescue.gd" id="level"]
 [ext_resource type="Script" path="res://scripts/castle_platform.gd" id="stone"]
 [ext_resource type="Script" path="res://scripts/sky_backdrop.gd" id="backdrop"]
-[ext_resource type="Texture2D" path="res://assets/environments/castle_court.png" id="landscape"]
+[ext_resource type="Texture2D" path="res://assets/environments/palace_interior.png" id="landscape"]
 [ext_resource type="Script" path="res://scripts/object.gd" id="object"]
 [ext_resource type="PackedScene" path="res://scenes/worldkit/StarbitRopeBridge.tscn" id="bridge"]
 [ext_resource type="PackedScene" path="res://scenes/worldkit/SpringPad.tscn" id="spring"]
@@ -24,6 +24,9 @@
 [ext_resource type="Texture2D" path="res://assets/royal/expansion/level10_atlas.png" id="royal10_atlas"]
 [ext_resource type="Texture2D" path="res://assets/royal/expansion/level08_atlas.png" id="royal8_atlas"]
 [ext_resource type="Script" path="res://scripts/royal_seal.gd" id="royal_seal"]
+[ext_resource type="Script" path="res://scripts/jiskra_cage.gd" id="jiskra_cage"]
+[ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole"]
+[ext_resource type="Script" path="res://scripts/royal_life.gd" id="royal_life"]
 
 [sub_resource type="AtlasTexture" id="royal10_sun_icon"]
 atlas = ExtResource("royal10_atlas")
@@ -278,7 +281,7 @@ size = Vector2(205, 30)
 [node name="Level_10" type="Node2D"]
 script = ExtResource("level")
 number = 10
-title = "Poslední brány království"
+title = "V srdci hradu"
 width = 34200.0
 spawn = Vector2(140, 550)
 camera_top = -900
@@ -290,31 +293,35 @@ fouk_at_start = true
 script = ExtResource("backdrop")
 landscape = ExtResource("landscape")
 
-[node name="Room01_DamagedGatehouse" type="Marker2D" parent="."]
+[node name="Room01_InnerEntranceHall" type="Marker2D" parent="."]
 position = Vector2(100, 550)
-metadata/section = "01 — Poškozená vrátnice / dolní servisní galerie se zpátečním výtahem"
+metadata/section = "01 — Vstupní síň hradu / dolní služební chodba a zpáteční výtah"
+
+[node name="InteriorMole" parent="." instance=ExtResource("mole")]
+position = Vector2(430, 550)
+message = "Jsme uvnitř hradu. Odemkni tři pečeti a zbav sovu kletby. Jiskra čeká v kleci za trůnním sálem."
 
 [node name="OuterBalustrade" type="Node2D" parent="."]
 position = Vector2(0, 475)
 script = ExtResource("wall")
 size = Vector2(1200, 110)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([])
 
 [node name="DamagedGatehouseBack" type="Node2D" parent="."]
 position = Vector2(1160, 60)
 script = ExtResource("wall")
 size = Vector2(1050, 630)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240), Rect2(810, 68, 180, 240)])
 
 [node name="InspectionArcade" type="Node2D" parent="."]
 position = Vector2(2340, 390)
 script = ExtResource("wall")
 size = Vector2(940, 330)
-tint = Color(0.72, 0.77, 0.88, 1)
+tint = Color(0.72, 0.69, 0.81, 0.88)
 crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 210), Rect2(450, 68, 180, 210)])
 
@@ -322,8 +329,8 @@ openings = Array[Rect2]([Rect2(90, 68, 180, 210), Rect2(450, 68, 180, 210)])
 position = Vector2(3550, 150)
 script = ExtResource("wall")
 size = Vector2(680, 380)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240)])
 
 [node name="ArrivalCourt" type="AnimatableBody2D" parent="."]
@@ -512,9 +519,9 @@ area_size = Vector2(1450, 850)
 look_offset = Vector2(0, 65)
 priority = 2
 
-[node name="Room02_CounterweightCargoCourt" type="Marker2D" parent="."]
+[node name="Room02_CounterweightStorehouse" type="Marker2D" parent="."]
 position = Vector2(4600, 550)
-metadata/section = "02 — Nákladní nádvoří / bedna, protizávaží a horní ochoz"
+metadata/section = "02 — Královská zásobárna / bedna, protizávaží a vnitřní ochoz"
 
 [node name="CheckpointCargo" type="Node2D" parent="."]
 position = Vector2(4670, 550)
@@ -525,24 +532,24 @@ kind = "checkpoint"
 position = Vector2(4760, 120)
 script = ExtResource("wall")
 size = Vector2(1950, 540)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240), Rect2(810, 68, 180, 240), Rect2(1170, 68, 180, 240), Rect2(1530, 68, 180, 240)])
 
 [node name="CounterweightTower" type="Node2D" parent="."]
 position = Vector2(6900, -100)
 script = ExtResource("wall")
 size = Vector2(1140, 820)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240), Rect2(810, 68, 180, 240)])
 
 [node name="CargoExitButtress" type="Node2D" parent="."]
 position = Vector2(8310, 90)
 script = ExtResource("wall")
 size = Vector2(400, 420)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([])
 
 [node name="CargoLoadingCourt" type="AnimatableBody2D" parent="."]
@@ -677,9 +684,9 @@ area_size = Vector2(1580, 980)
 look_offset = Vector2(0, -65)
 priority = 2
 
-[node name="Room03_WindAndRainLoft" type="Marker2D" parent="."]
+[node name="Room03_EnchantedVentilationGallery" type="Marker2D" parent="."]
 position = Vector2(9200, 450)
-metadata/section = "03 — Větrná a dešťová půda / vypínač větru a bezpečná čekací místa"
+metadata/section = "03 — Zakletý větrací ochoz / páka ventilace, dešťová kouzla a bezpečné výklenky"
 
 [node name="CheckpointWeather" type="Node2D" parent="."]
 position = Vector2(9350, 450)
@@ -775,48 +782,48 @@ one_way_collision_margin = 6.0
 position = Vector2(9010, 110)
 script = ExtResource("wall")
 size = Vector2(840, 290)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 170), Rect2(450, 68, 180, 170)])
 
 [node name="LoftMasonry01" type="Node2D" parent="."]
 position = Vector2(10150, 120)
 script = ExtResource("wall")
 size = Vector2(400, 290)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([])
 
 [node name="LoftMasonry02" type="Node2D" parent="."]
 position = Vector2(10850, 210)
 script = ExtResource("wall")
 size = Vector2(400, 290)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([])
 
 [node name="LoftMasonry03" type="Node2D" parent="."]
 position = Vector2(11550, 90)
 script = ExtResource("wall")
 size = Vector2(400, 290)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([])
 
 [node name="LoftMasonry04" type="Node2D" parent="."]
 position = Vector2(12250, 190)
 script = ExtResource("wall")
 size = Vector2(400, 290)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([])
 
 [node name="LoftMasonry05" type="Node2D" parent="."]
 position = Vector2(12950, 180)
 script = ExtResource("wall")
 size = Vector2(1610, 290)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 170), Rect2(450, 68, 180, 170), Rect2(810, 68, 180, 170), Rect2(1170, 68, 180, 170)])
 
 [node name="LoftWindLever" type="Node2D" parent="."]
@@ -829,7 +836,7 @@ wind_width = 760.0
 wind_angle_degrees = 180.0
 wind_force = 600.0
 mill_offset = Vector2(2550, -40)
-mill_height = 270.0
+mill_height = 0.0
 
 [node name="LoftRainA" parent="." instance=ExtResource("rain")]
 position = Vector2(10360, 120)
@@ -870,24 +877,24 @@ kind = "checkpoint"
 position = Vector2(13720, -80)
 script = ExtResource("wall")
 size = Vector2(1820, 820)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240), Rect2(810, 68, 180, 240), Rect2(1170, 68, 180, 240), Rect2(1530, 68, 180, 240)])
 
 [node name="RelayGalleryBack" type="Node2D" parent="."]
 position = Vector2(16380, -40)
 script = ExtResource("wall")
 size = Vector2(640, 480)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240)])
 
 [node name="RelayExitBack" type="Node2D" parent="."]
 position = Vector2(17820, 130)
 script = ExtResource("wall")
 size = Vector2(1380, 520)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240), Rect2(810, 68, 180, 240), Rect2(1170, 68, 180, 240)])
 
 [node name="RoyalMirror" type="Node2D" parent="."]
@@ -1035,8 +1042,8 @@ kind = "checkpoint"
 position = Vector2(19200, 30)
 script = ExtResource("wall")
 size = Vector2(3560, 690)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240), Rect2(810, 68, 180, 240), Rect2(1170, 68, 180, 240), Rect2(1530, 68, 180, 240), Rect2(1890, 68, 180, 240), Rect2(2250, 68, 180, 240), Rect2(2610, 68, 180, 240), Rect2(2970, 68, 180, 240), Rect2(3330, 68, 180, 240)])
 
 [node name="GuardGalleryEntry" type="AnimatableBody2D" parent="."]
@@ -1278,9 +1285,9 @@ area_size = Vector2(2520, 1040)
 look_offset = Vector2(0, 65)
 priority = 2
 
-[node name="Room06_LastCrumblingViaduct" type="Marker2D" parent="."]
+[node name="Room06_FracturedVaultedPassage" type="Marker2D" parent="."]
 position = Vector2(23200, 450)
-metadata/section = "06 — Poslední rozpadající se viadukt / pevné pilíře mezi krátkými rozpady"
+metadata/section = "06 — Rozbitá klenutá chodba / pevné pilíře mezi rozpadajícími se lávkami"
 
 [node name="CheckpointViaduct" type="Node2D" parent="."]
 position = Vector2(23300, 450)
@@ -1439,40 +1446,40 @@ one_way_collision_margin = 6.0
 position = Vector2(22900, 220)
 script = ExtResource("wall")
 size = Vector2(700, 360)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240)])
 
 [node name="ViaductPierBack01" type="Node2D" parent="."]
 position = Vector2(23900, 100)
 script = ExtResource("wall")
 size = Vector2(400, 360)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([])
 
 [node name="ViaductPierBack02" type="Node2D" parent="."]
 position = Vector2(26080, 20)
 script = ExtResource("wall")
 size = Vector2(520, 360)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240)])
 
 [node name="ViaductPierBack03" type="Node2D" parent="."]
 position = Vector2(27980, 170)
 script = ExtResource("wall")
 size = Vector2(360, 360)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([])
 
 [node name="ViaductPierBack04" type="Node2D" parent="."]
 position = Vector2(28400, 220)
 script = ExtResource("wall")
 size = Vector2(920, 360)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240)])
 
 [node name="ViaductShelterArch" type="Sprite2D" parent="."]
@@ -1483,9 +1490,9 @@ texture = SubResource("royal10_column")
 offset = Vector2(0, -209)
 metadata/royal_asset = "column"
 
-[node name="Room07_ThreeSealsAndRoyalFinale" type="Marker2D" parent="."]
+[node name="Room07_SealsThroneHallAndJiskra" type="Marker2D" parent="."]
 position = Vector2(28600, 530)
-metadata/section = "07 — Tři pečeti, útočiště a finální nebeské nádvoří"
+metadata/section = "07 — Pečetní síň, soví strážce trůnního sálu a Jiskřina klec"
 
 [node name="CheckpointRoyalSeals" type="Node2D" parent="."]
 position = Vector2(28780, 530)
@@ -1496,16 +1503,16 @@ kind = "checkpoint"
 position = Vector2(28600, -100)
 script = ExtResource("wall")
 size = Vector2(2080, 790)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240), Rect2(810, 68, 180, 240), Rect2(1170, 68, 180, 240), Rect2(1530, 68, 180, 240), Rect2(1890, 68, 180, 240)])
 
 [node name="RoyalThresholdBack" type="Node2D" parent="."]
 position = Vector2(30680, 40)
 script = ExtResource("wall")
 size = Vector2(1100, 520)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240), Rect2(810, 68, 180, 240)])
 
 [node name="RoyalSealCourt" type="AnimatableBody2D" parent="."]
@@ -1723,16 +1730,16 @@ metadata/royal_asset = "banner"
 position = Vector2(31860, 350)
 script = ExtResource("wall")
 size = Vector2(1340, 110)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([])
 
 [node name="PalaceWing" type="Node2D" parent="."]
 position = Vector2(33220, 90)
 script = ExtResource("wall")
 size = Vector2(980, 490)
-tint = Color(0.72, 0.77, 0.88, 1)
-crenellated = true
+tint = Color(0.72, 0.69, 0.81, 0.88)
+crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240)])
 
 [node name="RefugeLeft" type="AnimatableBody2D" parent="."]
@@ -1790,7 +1797,7 @@ one_way_collision_margin = 6.0
 position = Vector2(32050, 315)
 script = ExtResource("wall")
 size = Vector2(45, 115)
-tint = Color(0.72, 0.77, 0.88, 1)
+tint = Color(0.72, 0.69, 0.81, 0.88)
 crenellated = false
 openings = Array[Rect2]([])
 
@@ -1798,7 +1805,7 @@ openings = Array[Rect2]([])
 position = Vector2(32160, 315)
 script = ExtResource("wall")
 size = Vector2(45, 115)
-tint = Color(0.72, 0.77, 0.88, 1)
+tint = Color(0.72, 0.69, 0.81, 0.88)
 crenellated = false
 openings = Array[Rect2]([])
 
@@ -1806,7 +1813,7 @@ openings = Array[Rect2]([])
 position = Vector2(32480, 235)
 script = ExtResource("wall")
 size = Vector2(65, 195)
-tint = Color(0.72, 0.77, 0.88, 1)
+tint = Color(0.72, 0.69, 0.81, 0.88)
 crenellated = false
 openings = Array[Rect2]([])
 
@@ -1814,7 +1821,7 @@ openings = Array[Rect2]([])
 position = Vector2(32775, 315)
 script = ExtResource("wall")
 size = Vector2(45, 115)
-tint = Color(0.72, 0.77, 0.88, 1)
+tint = Color(0.72, 0.69, 0.81, 0.88)
 crenellated = false
 openings = Array[Rect2]([])
 
@@ -1822,7 +1829,7 @@ openings = Array[Rect2]([])
 position = Vector2(32885, 315)
 script = ExtResource("wall")
 size = Vector2(45, 115)
-tint = Color(0.72, 0.77, 0.88, 1)
+tint = Color(0.72, 0.69, 0.81, 0.88)
 crenellated = false
 openings = Array[Rect2]([])
 
@@ -1831,6 +1838,17 @@ position = Vector2(32460, 430)
 left = 31950.0
 right = 32970.0
 
+[node name="JiskraCage" type="Node2D" parent="."]
+position = Vector2(33540, 430)
+script = ExtResource("jiskra_cage")
+
+[node name="JiskraRescueCamera" type="Node2D" parent="."]
+position = Vector2(33540, 280)
+script = ExtResource("camera")
+area_size = Vector2(800, 620)
+look_offset = Vector2(0, -40)
+priority = 3
+
 [node name="PalaceGate" type="Node2D" parent="."]
 position = Vector2(33980, 430)
 script = ExtResource("object")
@@ -1838,7 +1856,7 @@ kind = "goal"
 
 [node name="PalaceArch" type="Sprite2D" parent="."]
 z_index = -9
-position = Vector2(33420, 430)
+position = Vector2(33180, 430)
 scale = Vector2(0.6818182, 0.6818182)
 texture = SubResource("royal10_column")
 offset = Vector2(0, -209)
@@ -2073,3 +2091,786 @@ scale = Vector2(0.4838710, 0.4838710)
 texture = SubResource("royal10_banner")
 offset = Vector2(0, -186)
 metadata/royal_asset = "banner"
+
+[node name="InteriorArchitecture" type="Node2D" parent="."]
+z_index = -17
+metadata/design = "Klenby, vnitřní sloupy a vitráže; čistě dekorativní, bez kolizí."
+
+[node name="VaultCeiling" type="Polygon2D" parent="InteriorArchitecture"]
+polygon = PackedVector2Array(0, -920, 34200, -920, 34200, -490, 0, -490)
+color = Color(0.16, 0.18, 0.32, 1)
+
+[node name="CeilingCornice" type="Polygon2D" parent="InteriorArchitecture"]
+polygon = PackedVector2Array(0, -490, 34200, -490, 34200, -475, 0, -475)
+color = Color(0.65, 0.51, 0.30, 1)
+
+[node name="CorniceHighlight" type="Line2D" parent="InteriorArchitecture"]
+points = PackedVector2Array(0, -475, 34200, -475)
+width = 3.0
+default_color = Color(0.91, 0.79, 0.52, 0.7)
+
+[node name="InteriorColumn01" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(650, 550)
+scale = Vector2(1.25, 1.25)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn02" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(3330, 650)
+scale = Vector2(1.3, 1.3)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn03" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(4600, 550)
+scale = Vector2(1.3, 1.3)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn04" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(6910, 150)
+scale = Vector2(1.25, 1.25)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn05" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(8640, 350)
+scale = Vector2(1.2, 1.2)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn06" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(9280, 450)
+scale = Vector2(1.3, 1.3)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn07" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(13150, 500)
+scale = Vector2(1.2, 1.2)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn08" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(13840, 500)
+scale = Vector2(1.4, 1.4)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn09" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(17480, 190)
+scale = Vector2(1.1, 1.1)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn10" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(19600, 600)
+scale = Vector2(1.6, 1.6)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn11" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(23060, 530)
+scale = Vector2(1.4, 1.4)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn12" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(23900, 350)
+scale = Vector2(1.3, 1.3)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn13" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(26200, 300)
+scale = Vector2(1.2, 1.2)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn14" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(28170, 400)
+scale = Vector2(1.4, 1.4)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn15" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(28710, 530)
+scale = Vector2(1.4, 1.4)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn16" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(31620, 430)
+scale = Vector2(1.4, 1.4)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn17" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(31880, 430)
+scale = Vector2(1.4, 1.4)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn18" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(33030, 430)
+scale = Vector2(1.4, 1.4)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="InteriorColumn19" type="Sprite2D" parent="InteriorArchitecture"]
+position = Vector2(33830, 430)
+scale = Vector2(0.85, 0.85)
+modulate = Color(0.76, 0.74, 0.87, 0.8)
+texture = SubResource("royal10_column")
+offset = Vector2(0, -209)
+metadata/royal_asset = "interior_column"
+
+[node name="ArchedWindow01" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(1450, -310)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow01"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow01"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow01"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow01"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow02" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(4090, -290)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow02"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow02"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow02"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow02"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow03" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(5990, -340)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow03"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow03"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow03"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow03"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow04" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(8010, -370)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow04"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow04"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow04"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow04"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow05" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(9760, -360)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow05"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow05"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow05"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow05"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow06" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(13450, -310)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow06"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow06"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow06"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow06"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow07" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(15170, -410)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow07"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow07"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow07"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow07"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow08" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(18580, -310)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow08"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow08"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow08"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow08"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow09" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(20650, -330)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow09"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow09"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow09"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow09"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow10" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(22900, -340)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow10"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow10"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow10"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow10"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow11" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(24650, -340)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow11"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow11"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow11"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow11"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow12" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(26900, -370)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow12"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow12"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow12"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow12"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow13" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(29900, -370)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow13"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow13"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow13"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow13"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow14" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(32460, -365)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow14"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow14"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow14"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow14"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="ArchedWindow15" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(34020, -300)
+
+[node name="Glass" type="Polygon2D" parent="InteriorArchitecture/ArchedWindow15"]
+polygon = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245)
+color = Color(0.22, 0.31, 0.53, 0.92)
+
+[node name="IvoryFrame" type="Line2D" parent="InteriorArchitecture/ArchedWindow15"]
+points = PackedVector2Array(-74, 245, -74, 65, -68, 36, -48, 9, -25, -10, 0, -20, 25, -10, 48, 9, 68, 36, 74, 65, 74, 245, -74, 245)
+width = 13.0
+default_color = Color(0.79, 0.73, 0.65, 0.88)
+joint_mode = 2
+
+[node name="GoldMullion" type="Line2D" parent="InteriorArchitecture/ArchedWindow15"]
+points = PackedVector2Array(0, -12, 0, 242)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="Transom" type="Line2D" parent="InteriorArchitecture/ArchedWindow15"]
+points = PackedVector2Array(-67, 128, 67, 128)
+width = 5.0
+default_color = Color(0.72, 0.58, 0.37, 0.86)
+
+[node name="VentilationGrille" type="Node2D" parent="InteriorArchitecture"]
+position = Vector2(12440, 280)
+
+[node name="Frame" type="Polygon2D" parent="InteriorArchitecture/VentilationGrille"]
+polygon = PackedVector2Array(-110, -170, 110, -170, 110, 40, -110, 40)
+color = Color(0.64, 0.52, 0.34, 1)
+
+[node name="Recess" type="Polygon2D" parent="InteriorArchitecture/VentilationGrille"]
+polygon = PackedVector2Array(-95, -155, 95, -155, 95, 25, -95, 25)
+color = Color(0.12, 0.17, 0.28, 1)
+
+[node name="Louver1" type="Polygon2D" parent="InteriorArchitecture/VentilationGrille"]
+polygon = PackedVector2Array(-90, -139, 90, -139, 90, -128, -90, -128)
+color = Color(0.56, 0.58, 0.65, 1)
+
+[node name="Louver2" type="Polygon2D" parent="InteriorArchitecture/VentilationGrille"]
+polygon = PackedVector2Array(-90, -102, 90, -102, 90, -91, -90, -91)
+color = Color(0.56, 0.58, 0.65, 1)
+
+[node name="Louver3" type="Polygon2D" parent="InteriorArchitecture/VentilationGrille"]
+polygon = PackedVector2Array(-90, -65, 90, -65, 90, -54, -90, -54)
+color = Color(0.56, 0.58, 0.65, 1)
+
+[node name="Louver4" type="Polygon2D" parent="InteriorArchitecture/VentilationGrille"]
+polygon = PackedVector2Array(-90, -28, 90, -28, 90, -17, -90, -17)
+color = Color(0.56, 0.58, 0.65, 1)
+
+[node name="Louver5" type="Polygon2D" parent="InteriorArchitecture/VentilationGrille"]
+polygon = PackedVector2Array(-90, 9, 90, 9, 90, 20, -90, 20)
+color = Color(0.56, 0.58, 0.65, 1)
+
+[node name="LivingDetails" type="Node2D" parent="."]
+metadata/design = "Obydlený palác: čtenářské výklenky, zavěšená světla a královské praporce; pouze výzdoba bez kolizí."
+
+[node name="LifeEntranceBanner" type="Node2D" parent="LivingDetails"]
+position = Vector2(650, 80)
+script = ExtResource("royal_life")
+kind = "Banner"
+height = 145.0
+phase = 0.0
+metadata/mount_surface = "InteriorArchitecture/InteriorColumn01"
+
+[node name="LifeEntranceBench" type="Node2D" parent="LivingDetails"]
+position = Vector2(1070, 550)
+script = ExtResource("royal_life")
+kind = "Bench"
+height = 75.0
+phase = 0.71
+metadata/ground_surface = "ArrivalCourt"
+
+[node name="LifeInspectionBookstand" type="Node2D" parent="LivingDetails"]
+position = Vector2(3040, 670)
+script = ExtResource("royal_life")
+kind = "Bookstand"
+height = 102.0
+phase = 1.42
+metadata/ground_surface = "InspectionGallery"
+
+[node name="LifeGatehouseChandelierChain" type="Line2D" parent="LivingDetails"]
+z_index = -7
+points = PackedVector2Array(3900, -475, 3900, 60)
+width = 2.0
+default_color = Color(0.63, 0.49, 0.28, 0.8)
+antialiased = true
+metadata/mount_surface = "InteriorArchitecture/CeilingCornice"
+metadata/suspends = "LifeGatehouseChandelier"
+
+[node name="LifeGatehouseChandelier" type="Node2D" parent="LivingDetails"]
+position = Vector2(3900, 60)
+script = ExtResource("royal_life")
+kind = "Chandelier"
+height = 140.0
+phase = 2.13
+metadata/mount_surface = "InteriorArchitecture/CeilingCornice"
+metadata/suspension_node = "LivingDetails/LifeGatehouseChandelierChain"
+
+[node name="LifeCargoBanner" type="Node2D" parent="LivingDetails"]
+position = Vector2(4600, 75)
+script = ExtResource("royal_life")
+kind = "Banner"
+height = 140.0
+phase = 2.84
+metadata/mount_surface = "InteriorArchitecture/InteriorColumn03"
+
+[node name="LifeCargoLedger" type="Node2D" parent="LivingDetails"]
+position = Vector2(4890, 550)
+script = ExtResource("royal_life")
+kind = "Bookstand"
+height = 95.0
+phase = 3.55
+metadata/ground_surface = "CargoEntry"
+
+[node name="LifeStorehouseChandelierChain" type="Line2D" parent="LivingDetails"]
+z_index = -7
+points = PackedVector2Array(6480, -475, 6480, 125)
+width = 2.0
+default_color = Color(0.63, 0.49, 0.28, 0.8)
+antialiased = true
+metadata/mount_surface = "InteriorArchitecture/CeilingCornice"
+metadata/suspends = "LifeStorehouseChandelier"
+
+[node name="LifeStorehouseChandelier" type="Node2D" parent="LivingDetails"]
+position = Vector2(6480, 125)
+script = ExtResource("royal_life")
+kind = "Chandelier"
+height = 135.0
+phase = 4.26
+metadata/mount_surface = "InteriorArchitecture/CeilingCornice"
+metadata/suspension_node = "LivingDetails/LifeStorehouseChandelierChain"
+
+[node name="LifeUpperLibraryBookstand" type="Node2D" parent="LivingDetails"]
+position = Vector2(7885, 190)
+script = ExtResource("royal_life")
+kind = "Bookstand"
+height = 105.0
+phase = 4.97
+metadata/ground_surface = "CargoUpperWalk"
+mirrored = true
+
+[node name="LifeDispatchLantern" type="Node2D" parent="LivingDetails"]
+position = Vector2(8640, 330)
+script = ExtResource("royal_life")
+kind = "Lantern"
+height = 92.0
+phase = 5.68
+metadata/ground_surface = "CargoDispatchPier"
+
+[node name="LifeVentilationBanner" type="Node2D" parent="LivingDetails"]
+position = Vector2(9280, -20)
+script = ExtResource("royal_life")
+kind = "Banner"
+height = 145.0
+phase = 6.39
+metadata/mount_surface = "InteriorArchitecture/InteriorColumn06"
+
+[node name="LifeWeatherBookstand" type="Node2D" parent="LivingDetails"]
+position = Vector2(11155, 430)
+script = ExtResource("royal_life")
+kind = "Bookstand"
+height = 96.0
+phase = 7.1
+metadata/ground_surface = "WeatherPierB"
+
+[node name="LifeLoftReadingBench" type="Node2D" parent="LivingDetails"]
+position = Vector2(13270, 500)
+script = ExtResource("royal_life")
+kind = "Bench"
+height = 75.0
+phase = 7.81
+metadata/ground_surface = "LoftExit"
+mirrored = true
+
+[node name="LifeMirrorHallBanner" type="Node2D" parent="LivingDetails"]
+position = Vector2(13840, 30)
+script = ExtResource("royal_life")
+kind = "Banner"
+height = 150.0
+phase = 8.52
+metadata/mount_surface = "InteriorArchitecture/InteriorColumn08"
+
+[node name="LifeMirrorRelayChandelierChain" type="Line2D" parent="LivingDetails"]
+z_index = -7
+points = PackedVector2Array(15650, -475, 15650, -210)
+width = 2.0
+default_color = Color(0.63, 0.49, 0.28, 0.8)
+antialiased = true
+metadata/mount_surface = "InteriorArchitecture/CeilingCornice"
+metadata/suspends = "LifeMirrorRelayChandelier"
+
+[node name="LifeMirrorRelayChandelier" type="Node2D" parent="LivingDetails"]
+position = Vector2(15650, -210)
+script = ExtResource("royal_life")
+kind = "Chandelier"
+height = 140.0
+phase = 9.23
+metadata/mount_surface = "InteriorArchitecture/CeilingCornice"
+metadata/suspension_node = "LivingDetails/LifeMirrorRelayChandelierChain"
+
+[node name="LifeGalleryOwlLeft" type="Node2D" parent="LivingDetails"]
+position = Vector2(18250, 440)
+script = ExtResource("royal_life")
+kind = "OwlStatue"
+height = 112.0
+phase = 9.94
+metadata/ground_surface = "MirrorExit"
+
+[node name="LifeGalleryOwlRight" type="Node2D" parent="LivingDetails"]
+position = Vector2(18990, 440)
+script = ExtResource("royal_life")
+kind = "OwlStatue"
+height = 124.0
+phase = 10.65
+metadata/ground_surface = "MirrorExit"
+mirrored = true
+
+[node name="LifeLowerGalleryLantern" type="Node2D" parent="LivingDetails"]
+position = Vector2(20440, 650)
+script = ExtResource("royal_life")
+kind = "Lantern"
+height = 88.0
+phase = 11.36
+metadata/ground_surface = "GuardLowerB"
+
+[node name="LifeServiceLibraryBookstand" type="Node2D" parent="LivingDetails"]
+position = Vector2(20810, 810)
+script = ExtResource("royal_life")
+kind = "Bookstand"
+height = 100.0
+phase = 12.07
+metadata/ground_surface = "SecretServiceTunnel"
+
+[node name="LifeVaultPassageBanner" type="Node2D" parent="LivingDetails"]
+position = Vector2(23060, 40)
+script = ExtResource("royal_life")
+kind = "Banner"
+height = 145.0
+phase = 12.78
+metadata/mount_surface = "InteriorArchitecture/InteriorColumn11"
+
+[node name="LifeFracturedVaultChandelierChain" type="Line2D" parent="LivingDetails"]
+z_index = -7
+points = PackedVector2Array(25100, -475, 25100, -10)
+width = 2.0
+default_color = Color(0.63, 0.49, 0.28, 0.8)
+antialiased = true
+metadata/mount_surface = "InteriorArchitecture/CeilingCornice"
+metadata/suspends = "LifeFracturedVaultChandelier"
+
+[node name="LifeFracturedVaultChandelier" type="Node2D" parent="LivingDetails"]
+position = Vector2(25100, -10)
+script = ExtResource("royal_life")
+kind = "Chandelier"
+height = 130.0
+phase = 13.49
+metadata/mount_surface = "InteriorArchitecture/CeilingCornice"
+metadata/suspension_node = "LivingDetails/LifeFracturedVaultChandelierChain"
+
+[node name="LifeWatchPierBanner" type="Node2D" parent="LivingDetails"]
+position = Vector2(26200, -120)
+script = ExtResource("royal_life")
+kind = "Banner"
+height = 135.0
+phase = 14.2
+metadata/mount_surface = "InteriorArchitecture/InteriorColumn13"
+
+[node name="LifeArrivalPierLantern" type="Node2D" parent="LivingDetails"]
+position = Vector2(28260, 450)
+script = ExtResource("royal_life")
+kind = "Lantern"
+height = 88.0
+phase = 14.91
+metadata/ground_surface = "ViaductArrivalPier"
+
+[node name="LifeAntechamberBench" type="Node2D" parent="LivingDetails"]
+position = Vector2(28530, 530)
+script = ExtResource("royal_life")
+kind = "Bench"
+height = 75.0
+phase = 15.62
+metadata/ground_surface = "FinalCourtEntry"
+
+[node name="LifeRescueNookLantern" type="Node2D" parent="LivingDetails"]
+position = Vector2(33800, 430)
+script = ExtResource("royal_life")
+kind = "Lantern"
+height = 82.0
+phase = 16.33
+metadata/ground_surface = "ArenaFloor"
