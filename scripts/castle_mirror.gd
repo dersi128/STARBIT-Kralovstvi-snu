@@ -4,13 +4,20 @@ extends Node2D
 @export var targets: Array[NodePath] = []
 @export var receiver_offset := Vector2(620, -175):
 	set(value):receiver_offset=value;queue_redraw()
-@export var plate_offset := Vector2(-92, 0)
-@export var active := false
+## Poloha tlačítka i jeho aktivace vůči zrcadlu. Y patří na povrch, kde stojí Bit.
+@export var plate_offset := Vector2(-92, 0):
+	set(value):plate_offset=value;_sync_plate()
+## Výška vzhledu nad aktivačním bodem. Větší číslo zvedne tlačítko; detekce zůstává na povrchu země.
+@export_range(-80.0, 120.0, 1.0, "or_less", "or_greater") var plate_visual_height := 18.0:
+	set(value):plate_visual_height=value;_sync_plate()
+@export var active := false:
+	set(value):active=value;_sync_plate();queue_redraw()
 @export var mirror_texture: Texture2D
 @export var mirror_region := Rect2()
 @export var receiver_region := Rect2()
 @export var mirror_art: Texture2D
 @export var receiver_art: Texture2D
+const PLATE_VISUAL = preload("res://scripts/pressure_plate_visual.gd")
 const SWITCH = preload("res://assets/world_expansion/switches.png")
 var timer := 0.0
 var standing := 0.0
@@ -20,14 +27,33 @@ var turn_flash := 0.0
 
 func _ready() -> void:
 	z_index = -1
+	_sync_plate()
 	beam_angle = _target_angle()
 	queue_redraw()
+
+func _sync_plate() -> void:
+	if not is_inside_tree():return
+	# Resolve by node path instead of retaining a script member across tool reloads.
+	var plate := get_node_or_null(^"PressurePlateVisual")
+	if plate == null:
+		plate = PLATE_VISUAL.new()
+		plate.name = "PressurePlateVisual"
+		add_child(plate, false, Node.INTERNAL_MODE_BACK)
+	plate.position = plate_offset + Vector2(0, -plate_visual_height)
+	plate.width = 84.0
+	plate.active = active
+	plate.z_as_relative = false
+	plate.z_index = 1
+	plate.queue_redraw()
 
 func _target_angle() -> float:
 	return (receiver_offset - Vector2(0, -82)).angle() if active else -1.05
 
 func _physics_process(delta: float) -> void:
-	if Engine.is_editor_hint():return
+	if Engine.is_editor_hint():
+		# Recover the preview after script replacement in an already-open scene.
+		if not has_node(^"PressurePlateVisual"):_sync_plate()
+		return
 	timer += delta
 	turn_flash = maxf(0, turn_flash - delta)
 	var occupied := false
@@ -58,14 +84,15 @@ func set_active(value: bool) -> void:
 func _draw() -> void:
 	var source := Vector2(0, -82)
 	var distance := source.distance_to(receiver_offset) if active else 185.0
-	var finish := source + Vector2.from_angle(beam_angle) * distance
+	# Inspector edits redraw immediately; only gameplay uses the animated angle.
+	var preview_angle := _target_angle() if Engine.is_editor_hint() else beam_angle
+	var finish := source + Vector2.from_angle(preview_angle) * distance
 	var glow := Color(1, 0.85, 0.34, 0.12)
 	draw_line(source, finish, glow, 17, true)
 	draw_line(source, finish, Color(1, 0.94, 0.61, 0.86), 3, true)
 	for i in 7:
 		var fraction := fposmod(timer * 0.45 + i / 7.0, 1.0)
 		draw_circle(source.lerp(finish, fraction), 2.5, Color(1, 0.98, 0.82, 0.8))
-	draw_texture_rect_region(SWITCH, Rect2(plate_offset + Vector2(-42, -13), Vector2(84, 27)), Rect2(724 if active else 0, 640, 362, 202))
 	if mirror_art != null:
 		var size := mirror_art.get_size() * (122.0 / mirror_art.get_height())
 		draw_texture_rect(mirror_art, Rect2(Vector2(-size.x / 2, -122), size), false)

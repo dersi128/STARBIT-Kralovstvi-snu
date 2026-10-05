@@ -11,8 +11,6 @@ const RUN_CYCLE_DISTANCE:=168.0
 # The source sheet puts extension before passing; playing it in file order
 # repeatedly kicks the foot forward before pulling it back.
 const RUN_FRAME_ORDER:=[0,1,3,2,4,5,7,6]
-const RUN_FRAME_HOLDS:=[1.15,0.9,1.1,0.85,1.15,0.9,1.1,0.85]
-const RUN_POSE_HEIGHTS:=[298.0,276.0,296.0,292.0,299.0,279.0,300.0,290.0]
 const TAKEOFF_DURATION:=0.10
 const PUSH_TEXTURES:=[
  preload("res://assets/animations/push1.tres"),
@@ -20,6 +18,11 @@ const PUSH_TEXTURES:=[
  preload("res://assets/animations/push3.tres"),
  preload("res://assets/animations/push4.tres")
 ]
+# Palm contact points in the four existing atlas regions (not their centres).
+const PUSH_PALMS:=[Vector2(484,322),Vector2(425,322),Vector2(501,318),Vector2(436,317)]
+var pushed_crate:Node2D
+var push_contact:=Vector2.ZERO
+var push_visual_cache:Dictionary={}
 var sheet_frames:SpriteFrames
 var sheet_animation:=""
 var sheet_frame:=0
@@ -99,6 +102,10 @@ func _ready() -> void:
   var visible_rect:=texture.get_image().get_used_rect()
   pose_cache[key]=texture
   pose_offsets[key]=Vector2(texture.get_width()*0.5-visible_rect.get_center().x,texture.get_height()*0.5-visible_rect.end.y)
+ # Read each crate texture once, alongside the existing pose preparation.
+ for crate in get_tree().get_nodes_in_group("push_crates"):
+  var crate_visual:=crate.get_node_or_null("Visual") as Sprite2D
+  if crate_visual and crate_visual.texture:_cache_crate_visual(crate_visual.texture)
 func apply_selected_looks() -> void:
  if is_instance_valid(sprite):WARDROBE.apply_to(sprite,"bit")
  if is_instance_valid(drone):WARDROBE.apply_to(drone,"fouk")
@@ -176,7 +183,7 @@ func _physics_process(delta: float) -> void:
  velocity.y=minf(velocity.y+1450*delta,1000)
  var was_floor:=is_on_floor()
  var falling_speed:=velocity.y
- pushing=false
+ pushing=false;pushed_crate=null
  move_and_slide()
  if axis and is_on_floor():
   for i in get_slide_collision_count():
@@ -189,7 +196,8 @@ func _physics_process(delta: float) -> void:
     # actual speed for the next tick, so Bit keeps contact instead of having
     # to accelerate from rest across the small gap after every push.
     velocity.x=pushed_distance/maxf(delta,0.001)
-    pushing=true;push_clock+=delta
+    pushing=true;push_clock+=delta;pushed_crate=body
+    push_contact=hit.get_position()+Vector2(pushed_distance,0)
     break
  floor_motion_y=velocity.y
  floor_visual_offset=0.0
@@ -262,8 +270,10 @@ func animate(delta: float) -> void:
   if int(next_phase*2.0)>int(run_phase*2.0) and not show_hurt_pose:
    Progress.sfx("step")
   run_phase=fposmod(next_phase,1.0)
- elif grounded and not moving:
-  run_phase=0.0
+ elif grounded and not moving and idle_time>0.15:
+  # Brief stops on uneven ground or while turning keep the current stride.
+  # After settling, resume from the compact passing pose rather than a kick.
+  run_phase=0.125
 
  if show_hurt_pose:
   key="hurt";visual_state="hurt";height=86.0
@@ -275,7 +285,6 @@ func animate(delta: float) -> void:
   stretch=Vector2(1.025,0.96+sin(repair_clock*TAU*3.0)*0.012)
  elif pushing:
   key="push"+str(1+int(push_clock*7)%4);visual_state="push"
-  offset.x=facing*9
  elif not grounded:
   if boost_flash>0:
    key="jump";visual_state="boost"
@@ -361,10 +370,8 @@ func animate(delta: float) -> void:
  var texture:Texture2D=get_sheet_texture()
  if texture:
   height=124.0
-  if sheet_animation=="run" and sheet_frames.get_frame_count("run")==8:
-   # Keep the soles at the existing pivot and reduce the height jump between
-   # the compressed and extended drawings, retaining a little knee bend.
-   height*=lerpf(1.0,297.0/RUN_POSE_HEIGHTS[sheet_frame],0.7)
+  # Use one scale for every drawing. Per-frame height compensation also
+  # changed head width and produced a visible pop twice per stride.
   # Fixed 384px virtual canvas: every pose shares a foot pivot at y=356.
   sprite.offset=Vector2(0,-164)
  else:
@@ -380,6 +387,12 @@ func animate(delta: float) -> void:
  sprite.rotation=lerpf(sprite.rotation,tilt,1.0-exp(-20.0*delta))
  if grounded:offset.y+=floor_visual_offset
  sprite.position=sprite.position.lerp(offset,1.0-exp(-26.0*delta))
+ if visual_state=="push" and is_instance_valid(pushed_crate):
+  # Anchor the drawn palm, including scale, residual lean and horizontal flip.
+  # Correct only the drawing: the body, feet height and crate motion stay intact.
+  var palm_local:=_push_palm_local()
+  var surface_x:=_crate_surface_x(pushed_crate,sprite.to_global(palm_local))
+  sprite.position.x=surface_x-sprite.transform.basis_xform(palm_local).x
  var warmth:=sin(clampf(celebration_age/maxf(celebration_duration,0.01),0,1)*PI)*0.08 if happy>0 else 0.0
  sprite.modulate=Color(1.0+warmth,1.0+warmth,1.0+warmth)
  if hurt_time>0:
@@ -393,6 +406,46 @@ func animate(delta: float) -> void:
  drone.rotation=sin(anim_time*4)*0.045
  drone.flip_h=facing<0
  queue_redraw()
+
+func _push_palm_local() -> Vector2:
+ var palm:Vector2=PUSH_PALMS[int(push_clock*7)%4]
+ var uv:=palm/sprite.texture.get_size()
+ if sprite.flip_h:uv.x=1.0-uv.x
+ if sprite.flip_v:uv.y=1.0-uv.y
+ var rect:=sprite.get_rect()
+ return rect.position+uv*rect.size
+
+func _cache_crate_visual(texture:Texture2D) -> void:
+ if push_visual_cache.has(texture):return
+ var picture:=texture.get_image()
+ if picture!=null and picture.is_compressed():picture.decompress()
+ push_visual_cache[texture]={"image":picture,"rows":{}}
+
+func _crate_surface_x(crate:Node2D,hand_world:Vector2) -> float:
+ var visual:=crate.get_node_or_null("Visual") as Sprite2D
+ if visual==null or visual.texture==null:return to_local(push_contact).x
+ _cache_crate_visual(visual.texture)
+ var cached:Dictionary=push_visual_cache[visual.texture]
+ var picture:Image=cached.image
+ if picture==null or picture.is_empty():return to_local(push_contact).x
+ var rect:=visual.get_rect()
+ if not rect.has_area():return to_local(push_contact).x
+ var v:=clampf((visual.to_local(hand_world).y-rect.position.y)/rect.size.y,0,1)
+ var row:=clampi(int((1.0-v if visual.flip_v else v)*picture.get_height()),0,picture.get_height()-1)
+ if not cached.rows.has(row):
+  var bounds:=Vector2(-1,-1)
+  for x in picture.get_width():
+   if picture.get_pixel(x,row).a<0.65:continue
+   if bounds.x<0:bounds.x=x
+   bounds.y=x+1
+  cached.rows[row]=bounds
+ var edges:Vector2=cached.rows[row]
+ if edges.x<0:return to_local(push_contact).x
+ edges/=float(picture.get_width())
+ if visual.flip_h:edges=Vector2(1.0-edges.x,1.0-edges.y)
+ var left:=to_local(visual.to_global(rect.position+Vector2(edges.x*rect.size.x,v*rect.size.y))).x
+ var right:=to_local(visual.to_global(rect.position+Vector2(edges.y*rect.size.x,v*rect.size.y))).x
+ return minf(left,right) if facing>0 else maxf(left,right)
 
 func get_sheet_texture() -> Texture2D:
  sheet_animation="";sheet_frame=0
@@ -435,11 +488,8 @@ func get_sheet_texture() -> Texture2D:
 func run_sheet_frame() -> int:
  var count:=sheet_frames.get_frame_count("run")
  if count!=8:return mini(int(run_phase*count),maxi(0,count-1))
- var progress:=fposmod(run_phase,1.0)*8.0
- for i in RUN_FRAME_ORDER.size():
-  if progress<RUN_FRAME_HOLDS[i]:return RUN_FRAME_ORDER[i]
-  progress-=RUN_FRAME_HOLDS[i]
- return RUN_FRAME_ORDER[-1]
+ # Equal holds keep a constant cadence; distance still controls the speed.
+ return RUN_FRAME_ORDER[mini(int(fposmod(run_phase,1.0)*8.0),7)]
 
 func sheet_duration(animation:String) -> float:
  var units:=0.0

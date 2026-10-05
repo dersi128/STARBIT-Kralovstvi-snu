@@ -3,6 +3,7 @@ extends "res://scripts/platform.gd"
 ## Castle masonry keeps the original stone detail size, even on wide walls.
 const STONE = preload("res://assets/world_expansion/platforms_starbit_v2.png")
 const WALL = preload("res://assets/royal/castle_wall.png")
+static var _surface_padding_cache: Dictionary = {}
 @export var wall_body := false:
 	set(value):wall_body=value;queue_redraw()
 ## Optional painted shelf. Its walk row stays at collision y=0; wide shelves repeat.
@@ -19,15 +20,25 @@ const WALL = preload("res://assets/royal/castle_wall.png")
 func _draw() -> void:
 	if wall_body and depth > 95:
 		# Ordinary masonry beneath the grassy shelf; keep every block at a fixed scale.
+		var wall_top := 55.0
+		if surface_texture != null:
+			var source := surface_texture.get_size()
+			if source.x > 0 and source.y > 0:
+				var ratio := minf(surface_height / source.y, width / source.x)
+				wall_top = (source.y - clampf(surface_walk_y, 0, source.y)) * ratio - 8.0
+		var wall_height := maxf(0.0, depth - 15.0 - wall_top)
 		var tile_width := 360.0
 		var tile_height := tile_width * 914.0 / 1254.0
-		var rows := ceili((depth - 70.0) / tile_height)
+		var rows := ceili(wall_height / tile_height)
 		var columns := maxi(1, ceili(width / tile_width))
 		for row in rows:
 			for col in columns:
 				var w := minf(tile_width, width - col * tile_width)
-				var h := minf(tile_height, depth - 70.0 - row * tile_height)
-				draw_texture_rect_region(WALL, Rect2(col * tile_width, 55 + row * tile_height, w + 0.5, h + 0.5), Rect2(0, 0, 1254 * w / tile_width, 914 * h / tile_height), Color(0.90, 0.91, 0.97))
+				var h := minf(tile_height, wall_height - row * tile_height)
+				# Overlap interior tiles only; the outer edge stays exactly at width.
+				var overlap_x := 0.5 if col < columns - 1 else 0.0
+				var overlap_y := 0.5 if row < rows - 1 else 0.0
+				draw_texture_rect_region(WALL, Rect2(col * tile_width, wall_top + row * tile_height, w + overlap_x, h + overlap_y), Rect2(0, 0, 1254 * w / tile_width, 914 * h / tile_height), Color(0.90, 0.91, 0.97))
 	if surface_texture != null:
 		_draw_surface()
 		if Engine.is_editor_hint() and travel.length() > 0:
@@ -56,13 +67,37 @@ func _draw_surface() -> void:
 	var right_cap := right_pixels * ratio
 	var height := source.y * ratio
 	var top := -clampf(surface_walk_y, 0, source.y) * ratio
+	# Align the opaque stone sides, rather than the transparent image rectangle,
+	# with the wall. Grass and the rounded trim retain their natural overhang.
+	var padding := _surface_padding() * ratio if wall_body and depth > 95 else Vector2.ZERO
+	var start := -padding.x
+	var end := width + padding.y
 	# Caps retain their aspect ratio. Only the inner stone/plank strip repeats.
-	draw_texture_rect_region(surface_texture, Rect2(0, top, left_cap, height), Rect2(0, 0, left_pixels, source.y))
+	draw_texture_rect_region(surface_texture, Rect2(start, top, left_cap, height), Rect2(0, 0, left_pixels, source.y))
 	var inner_pixels := right_start - left_pixels
-	var remaining := width - left_cap - right_cap
+	var remaining := end - start - left_cap - right_cap
 	var natural_span := inner_pixels * ratio
 	var pieces := maxi(1, ceili(remaining / maxf(1, natural_span)))
 	for i in pieces:
 		var span := remaining / pieces
-		draw_texture_rect_region(surface_texture, Rect2(left_cap + span * i, top, span + 0.35, height), Rect2(left_pixels, 0, inner_pixels, source.y))
-	draw_texture_rect_region(surface_texture, Rect2(width - right_cap, top, right_cap, height), Rect2(right_start, 0, right_pixels, source.y))
+		draw_texture_rect_region(surface_texture, Rect2(start + left_cap + span * i, top, span + 0.35, height), Rect2(left_pixels, 0, inner_pixels, source.y))
+	draw_texture_rect_region(surface_texture, Rect2(end - right_cap, top, right_cap, height), Rect2(right_start, 0, right_pixels, source.y))
+
+func _surface_padding() -> Vector2:
+	if _surface_padding_cache.has(surface_texture):
+		return _surface_padding_cache[surface_texture]
+	var padding := Vector2.ZERO
+	var picture := surface_texture.get_image()
+	if picture != null and not picture.is_empty():
+		if picture.is_compressed(): picture.decompress()
+		# The middle of the stone face avoids the wider grass/foliage silhouette.
+		var y := mini(picture.get_height() - 1, int(picture.get_height() * 0.60))
+		var limit := int(picture.get_width() * 0.20)
+		for x in limit:
+			if picture.get_pixel(x, y).a >= 0.85: break
+			padding.x += 1.0
+		for x in limit:
+			if picture.get_pixel(picture.get_width() - 1 - x, y).a >= 0.85: break
+			padding.y += 1.0
+	_surface_padding_cache[surface_texture] = padding
+	return padding

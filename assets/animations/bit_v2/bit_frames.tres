@@ -94,7 +94,7 @@ atlas = ExtResource("motion")
 
 region = Rect2(62, 635, 210, 298)
 
-margin = Rect2(87.0, 58, 174, 86)
+margin = Rect2(76.5, 58, 174, 86)
 
 filter_clip = true
 
@@ -104,7 +104,7 @@ atlas = ExtResource("motion")
 
 region = Rect2(387, 655, 208, 276)
 
-margin = Rect2(88.0, 80, 176, 108)
+margin = Rect2(74.0, 80, 176, 108)
 
 filter_clip = true
 
@@ -114,7 +114,7 @@ atlas = ExtResource("motion")
 
 region = Rect2(689, 637, 206, 296)
 
-margin = Rect2(89.0, 60, 178, 88)
+margin = Rect2(72.5, 60, 178, 88)
 
 filter_clip = true
 
@@ -124,7 +124,7 @@ atlas = ExtResource("motion")
 
 region = Rect2(991, 631, 212, 292)
 
-margin = Rect2(86.0, 64, 172, 92)
+margin = Rect2(67.0, 64, 172, 92)
 
 filter_clip = true
 
@@ -134,7 +134,7 @@ atlas = ExtResource("motion")
 
 region = Rect2(49, 941, 209, 299)
 
-margin = Rect2(87.5, 57, 175, 85)
+margin = Rect2(74.0, 57, 175, 85)
 
 filter_clip = true
 
@@ -144,7 +144,7 @@ atlas = ExtResource("motion")
 
 region = Rect2(371, 962, 209, 279)
 
-margin = Rect2(87.5, 77, 175, 105)
+margin = Rect2(73.0, 77, 175, 105)
 
 filter_clip = true
 
@@ -154,7 +154,7 @@ atlas = ExtResource("motion")
 
 region = Rect2(695, 941, 204, 300)
 
-margin = Rect2(90.0, 56, 180, 84)
+margin = Rect2(88.5, 56, 180, 84)
 
 filter_clip = true
 
@@ -164,7 +164,7 @@ atlas = ExtResource("motion")
 
 region = Rect2(994, 940, 210, 290)
 
-margin = Rect2(87.0, 66, 174, 94)
+margin = Rect2(71.5, 66, 174, 94)
 
 filter_clip = true
 
