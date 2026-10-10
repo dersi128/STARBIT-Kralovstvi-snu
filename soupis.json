@@ -1,0 +1,1005 @@
+[
+  {
+    "file": "01_Higgsfield_dekorace/strom_duty.png",
+    "label": "Dutý strom",
+    "width": 831,
+    "height": 730,
+    "source": "assets/forest/higgsfield/forest_landmarks.png",
+    "source_rect": [
+      0,
+      0,
+      1024,
+      790
+    ],
+    "trimmed_bbox": [
+      114,
+      26,
+      929,
+      740
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "01_Higgsfield_dekorace/jeskyne_oblouk.png",
+    "label": "Skalní jeskyně",
+    "width": 908,
+    "height": 551,
+    "source": "assets/forest/higgsfield/forest_landmarks.png",
+    "source_rect": [
+      1024,
+      0,
+      2048,
+      790
+    ],
+    "trimmed_bbox": [
+      64,
+      214,
+      956,
+      749
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "01_Higgsfield_dekorace/branka_drevena.png",
+    "label": "Dřevěná branka",
+    "width": 844,
+    "height": 506,
+    "source": "assets/forest/higgsfield/forest_landmarks.png",
+    "source_rect": [
+      0,
+      790,
+      1024,
+      1360
+    ],
+    "trimmed_bbox": [
+      115,
+      36,
+      943,
+      526
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "01_Higgsfield_dekorace/kapradiny_s_houbami.png",
+    "label": "Kapradiny a houby",
+    "width": 927,
+    "height": 317,
+    "source": "assets/forest/higgsfield/forest_landmarks.png",
+    "source_rect": [
+      1024,
+      790,
+      2048,
+      1360
+    ],
+    "trimmed_bbox": [
+      53,
+      219,
+      964,
+      520
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "05_Plosiny_obrazky/plosina_travnata.png",
+    "label": "Travnatá plošina",
+    "width": 877,
+    "height": 406,
+    "source": "assets/forest/higgsfield/forest_platforms.png",
+    "source_rect": [
+      0,
+      0,
+      1024,
+      700
+    ],
+    "trimmed_bbox": [
+      96,
+      248,
+      957,
+      638
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "05_Plosiny_obrazky/plosina_kmen.png",
+    "label": "Dřevěná plošina",
+    "width": 909,
+    "height": 376,
+    "source": "assets/forest/higgsfield/forest_platforms.png",
+    "source_rect": [
+      1024,
+      0,
+      2048,
+      700
+    ],
+    "trimmed_bbox": [
+      36,
+      273,
+      929,
+      633
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "05_Plosiny_obrazky/plosina_kamenna.png",
+    "label": "Kamenná plošina",
+    "width": 916,
+    "height": 329,
+    "source": "assets/forest/higgsfield/forest_platforms.png",
+    "source_rect": [
+      0,
+      700,
+      1024,
+      1360
+    ],
+    "trimmed_bbox": [
+      78,
+      132,
+      978,
+      445
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "05_Plosiny_obrazky/plosina_listova.png",
+    "label": "Listová plošina",
+    "width": 917,
+    "height": 321,
+    "source": "assets/forest/higgsfield/forest_platforms.png",
+    "source_rect": [
+      1024,
+      700,
+      2048,
+      1360
+    ],
+    "trimmed_bbox": [
+      49,
+      164,
+      950,
+      469
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "02_Stromy_a_velke_dekorace/strom_listnaty.png",
+    "label": "Listnatý strom",
+    "width": 381,
+    "height": 410,
+    "source": "assets/world_scenery/starbit_scenery.png",
+    "source_rect": [
+      37,
+      37,
+      427,
+      457
+    ],
+    "trimmed_bbox": [
+      13,
+      13,
+      378,
+      407
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "02_Stromy_a_velke_dekorace/stromy_jehlicnate.png",
+    "label": "Dvojice jehličnanů",
+    "width": 336,
+    "height": 413,
+    "source": "assets/world_scenery/starbit_scenery.png",
+    "source_rect": [
+      465,
+      36,
+      811,
+      458
+    ],
+    "trimmed_bbox": [
+      13,
+      13,
+      333,
+      410
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "02_Stromy_a_velke_dekorace/kmen_duty.png",
+    "label": "Dutý padlý kmen",
+    "width": 366,
+    "height": 270,
+    "source": "assets/world_scenery/starbit_scenery.png",
+    "source_rect": [
+      857,
+      182,
+      1233,
+      462
+    ],
+    "trimmed_bbox": [
+      13,
+      13,
+      363,
+      267
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "02_Stromy_a_velke_dekorace/oblouk_mechovy.png",
+    "label": "Mechový kamenný oblouk",
+    "width": 405,
+    "height": 357,
+    "source": "assets/world_scenery/starbit_scenery.png",
+    "source_rect": [
+      27,
+      488,
+      442,
+      855
+    ],
+    "trimmed_bbox": [
+      13,
+      13,
+      402,
+      354
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "02_Stromy_a_velke_dekorace/sloupy_zarostle.png",
+    "label": "Zarostlé ruiny",
+    "width": 360,
+    "height": 360,
+    "source": "assets/world_scenery/starbit_scenery.png",
+    "source_rect": [
+      462,
+      495,
+      830,
+      866
+    ],
+    "trimmed_bbox": [
+      11,
+      13,
+      355,
+      357
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "02_Stromy_a_velke_dekorace/vyhlidka_drevena.png",
+    "label": "Dřevěná vyhlídka",
+    "width": 355,
+    "height": 382,
+    "source": "assets/world_scenery/starbit_scenery.png",
+    "source_rect": [
+      857,
+      478,
+      1223,
+      869
+    ],
+    "trimmed_bbox": [
+      13,
+      12,
+      352,
+      378
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "02_Stromy_a_velke_dekorace/plot_lesni.png",
+    "label": "Zarostlý lesní plot",
+    "width": 408,
+    "height": 223,
+    "source": "assets/world_scenery/starbit_scenery.png",
+    "source_rect": [
+      425,
+      952,
+      843,
+      1187
+    ],
+    "trimmed_bbox": [
+      13,
+      14,
+      405,
+      221
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "02_Stromy_a_velke_dekorace/kamen_kapradiny_houby.png",
+    "label": "Kámen s kapradinami",
+    "width": 363,
+    "height": 285,
+    "source": "assets/world_scenery/starbit_scenery.png",
+    "source_rect": [
+      861,
+      927,
+      1232,
+      1223
+    ],
+    "trimmed_bbox": [
+      12,
+      13,
+      359,
+      282
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/ker_s_kvetem.png",
+    "label": "Keř s květem",
+    "width": 232,
+    "height": 166,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      15,
+      321,
+      253,
+      483
+    ],
+    "trimmed_bbox": [
+      12,
+      7,
+      228,
+      157
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/ker_s_kvety.png",
+    "label": "Keř se třemi květy",
+    "width": 230,
+    "height": 165,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      249,
+      327,
+      493,
+      492
+    ],
+    "trimmed_bbox": [
+      10,
+      8,
+      224,
+      157
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/listi_siroke.png",
+    "label": "Široké listy",
+    "width": 201,
+    "height": 144,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      488,
+      345,
+      680,
+      483
+    ],
+    "trimmed_bbox": [
+      1,
+      0,
+      186,
+      128
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/listi_male.png",
+    "label": "Malé listy",
+    "width": 117,
+    "height": 107,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      681,
+      343,
+      805,
+      469
+    ],
+    "trimmed_bbox": [
+      8,
+      13,
+      109,
+      104
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/listi_vysoke.png",
+    "label": "Vysoké listy",
+    "width": 138,
+    "height": 134,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      802,
+      339,
+      958,
+      483
+    ],
+    "trimmed_bbox": [
+      3,
+      12,
+      125,
+      130
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/houba_cervena.png",
+    "label": "Červená houba",
+    "width": 108,
+    "height": 100,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      1108,
+      987,
+      1218,
+      1086
+    ],
+    "trimmed_bbox": [
+      12,
+      3,
+      104,
+      87
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/houba_cervena_mala.png",
+    "label": "Malá červená houba",
+    "width": 76,
+    "height": 75,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      1208,
+      1007,
+      1297,
+      1086
+    ],
+    "trimmed_bbox": [
+      12,
+      6,
+      72,
+      65
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/balvan_mechovy.png",
+    "label": "Velký mechový balvan",
+    "width": 205,
+    "height": 180,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      251,
+      892,
+      457,
+      1086
+    ],
+    "trimmed_bbox": [
+      10,
+      14,
+      199,
+      178
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/balvan_kulaty.png",
+    "label": "Kulatý balvan",
+    "width": 132,
+    "height": 125,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      434,
+      873,
+      567,
+      989
+    ],
+    "trimmed_bbox": [
+      3,
+      5,
+      119,
+      114
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/kamen_hranaty.png",
+    "label": "Hranatý kámen",
+    "width": 119,
+    "height": 81,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      554,
+      916,
+      673,
+      998
+    ],
+    "trimmed_bbox": [
+      6,
+      1,
+      109,
+      66
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/kamen_sedy.png",
+    "label": "Šedý kámen",
+    "width": 82,
+    "height": 67,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      658,
+      901,
+      735,
+      973
+    ],
+    "trimmed_bbox": [
+      8,
+      9,
+      74,
+      60
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/oblazek.png",
+    "label": "Oblázek",
+    "width": 62,
+    "height": 48,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      724,
+      927,
+      784,
+      973
+    ],
+    "trimmed_bbox": [
+      8,
+      3,
+      54,
+      35
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/kamen_maly_mechovy.png",
+    "label": "Malý mechový kámen",
+    "width": 108,
+    "height": 94,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      469,
+      981,
+      572,
+      1086
+    ],
+    "trimmed_bbox": [
+      6,
+      10,
+      98,
+      88
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/kaminky_s_mechem.png",
+    "label": "Kamínky s mechem",
+    "width": 83,
+    "height": 68,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      566,
+      984,
+      655,
+      1058
+    ],
+    "trimmed_bbox": [
+      8,
+      8,
+      75,
+      60
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/ker_nizky_kvet.png",
+    "label": "Nízký kvetoucí keř",
+    "width": 145,
+    "height": 101,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      648,
+      980,
+      792,
+      1086
+    ],
+    "trimmed_bbox": [
+      8,
+      8,
+      137,
+      93
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/ker_nizky_maly.png",
+    "label": "Malý nízký keř",
+    "width": 136,
+    "height": 90,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      790,
+      986,
+      927,
+      1086
+    ],
+    "trimmed_bbox": [
+      9,
+      10,
+      129,
+      84
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/skalisko_s_listy.png",
+    "label": "Skalisko s listím",
+    "width": 239,
+    "height": 157,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      990,
+      548,
+      1240,
+      704
+    ],
+    "trimmed_bbox": [
+      7,
+      7,
+      230,
+      148
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/liana_dlouha.png",
+    "label": "Dlouhá liána",
+    "width": 132,
+    "height": 296,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      1290,
+      328,
+      1448,
+      640
+    ],
+    "trimmed_bbox": [
+      8,
+      14,
+      124,
+      294
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/liana_kratka.png",
+    "label": "Krátká liána",
+    "width": 122,
+    "height": 243,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      1171,
+      328,
+      1299,
+      584
+    ],
+    "trimmed_bbox": [
+      10,
+      18,
+      116,
+      245
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "04_Lucerny_a_doplnky/lucerna_sloupek.png",
+    "label": "Lucerna na sloupku",
+    "width": 152,
+    "height": 213,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      1065,
+      708,
+      1227,
+      915
+    ],
+    "trimmed_bbox": [
+      3,
+      4,
+      139,
+      201
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "04_Lucerny_a_doplnky/lucerna_zavesna.png",
+    "label": "Závěsná lucerna",
+    "width": 127,
+    "height": 236,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      1303,
+      667,
+      1448,
+      914
+    ],
+    "trimmed_bbox": [
+      11,
+      7,
+      122,
+      227
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "04_Lucerny_a_doplnky/plot_dreveny.png",
+    "label": "Dřevěný plot",
+    "width": 402,
+    "height": 153,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      1041,
+      70,
+      1440,
+      221
+    ],
+    "trimmed_bbox": [
+      1,
+      11,
+      387,
+      148
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "04_Lucerny_a_doplnky/plot_provazovy.png",
+    "label": "Provazový plot",
+    "width": 380,
+    "height": 132,
+    "source": "assets/worldkit/props.png",
+    "source_rect": [
+      1070,
+      220,
+      1443,
+      341
+    ],
+    "trimmed_bbox": [
+      0,
+      2,
+      364,
+      118
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/parez_s_houbami.png",
+    "label": "Pařez s houbami",
+    "width": 263,
+    "height": 182,
+    "source": "assets/world_expansion/garden_props.png",
+    "source_rect": [
+      573,
+      376,
+      830,
+      581
+    ],
+    "trimmed_bbox": [
+      7,
+      19,
+      254,
+      185
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/stromek_jehlicnaty.png",
+    "label": "Malý jehličnan",
+    "width": 183,
+    "height": 261,
+    "source": "assets/world_expansion/garden_props.png",
+    "source_rect": [
+      734,
+      575,
+      919,
+      837
+    ],
+    "trimmed_bbox": [
+      7,
+      6,
+      174,
+      251
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/houby_skupina.png",
+    "label": "Skupina červených hub",
+    "width": 194,
+    "height": 165,
+    "source": "assets/world_expansion/garden_props.png",
+    "source_rect": [
+      302,
+      884,
+      494,
+      1063
+    ],
+    "trimmed_bbox": [
+      7,
+      11,
+      185,
+      160
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/ker_kulaty.png",
+    "label": "Kulatý kvetoucí keř",
+    "width": 265,
+    "height": 205,
+    "source": "assets/world_expansion/garden_props.png",
+    "source_rect": [
+      472,
+      612,
+      729,
+      829
+    ],
+    "trimmed_bbox": [
+      2,
+      12,
+      251,
+      201
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "03_Rostliny_a_kameny/skala_s_kvetinami.png",
+    "label": "Skála s květinami",
+    "width": 218,
+    "height": 187,
+    "source": "assets/world_expansion/garden_props.png",
+    "source_rect": [
+      1051,
+      868,
+      1265,
+      1064
+    ],
+    "trimmed_bbox": [
+      2,
+      9,
+      204,
+      180
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "04_Lucerny_a_doplnky/lavicka_lesni.png",
+    "label": "Lesní lavička",
+    "width": 326,
+    "height": 200,
+    "source": "assets/world_expansion/garden_props.png",
+    "source_rect": [
+      10,
+      88,
+      348,
+      306
+    ],
+    "trimmed_bbox": [
+      18,
+      22,
+      328,
+      206
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "04_Lucerny_a_doplnky/budka_s_ptackem.png",
+    "label": "Budka s ptáčkem",
+    "width": 171,
+    "height": 279,
+    "source": "assets/world_expansion/garden_props.png",
+    "source_rect": [
+      1248,
+      331,
+      1437,
+      616
+    ],
+    "trimmed_bbox": [
+      17,
+      10,
+      172,
+      273
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "04_Lucerny_a_doplnky/lucerna_lesni.png",
+    "label": "Zarostlá lucerna",
+    "width": 183,
+    "height": 298,
+    "source": "assets/world_expansion/garden_props.png",
+    "source_rect": [
+      1230,
+      19,
+      1448,
+      330
+    ],
+    "trimmed_bbox": [
+      14,
+      20,
+      181,
+      302
+    ],
+    "transparent_padding": 8,
+    "kind": "transparent_cutout"
+  },
+  {
+    "file": "06_Pozadi_a_zem/pozadi_les.png",
+    "label": "Souvislé lesní pozadí",
+    "width": 2688,
+    "height": 1520,
+    "source": "assets/forest/higgsfield/forest_glade.png",
+    "kind": "opaque_texture"
+  },
+  {
+    "file": "06_Pozadi_a_zem/textura_zeminy.png",
+    "label": "Textura zeminy",
+    "width": 2048,
+    "height": 2048,
+    "source": "assets/forest/higgsfield/forest_soil.png",
+    "kind": "opaque_texture"
+  }
+]

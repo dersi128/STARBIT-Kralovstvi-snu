@@ -1,0 +1,50 @@
+﻿Soubor;Název;Šířka px;Výška px;Zdroj v projektu
+01_Higgsfield_dekorace/strom_duty.png;Dutý strom;831;730;assets/forest/higgsfield/forest_landmarks.png
+01_Higgsfield_dekorace/jeskyne_oblouk.png;Skalní jeskyně;908;551;assets/forest/higgsfield/forest_landmarks.png
+01_Higgsfield_dekorace/branka_drevena.png;Dřevěná branka;844;506;assets/forest/higgsfield/forest_landmarks.png
+01_Higgsfield_dekorace/kapradiny_s_houbami.png;Kapradiny a houby;927;317;assets/forest/higgsfield/forest_landmarks.png
+05_Plosiny_obrazky/plosina_travnata.png;Travnatá plošina;877;406;assets/forest/higgsfield/forest_platforms.png
+05_Plosiny_obrazky/plosina_kmen.png;Dřevěná plošina;909;376;assets/forest/higgsfield/forest_platforms.png
+05_Plosiny_obrazky/plosina_kamenna.png;Kamenná plošina;916;329;assets/forest/higgsfield/forest_platforms.png
+05_Plosiny_obrazky/plosina_listova.png;Listová plošina;917;321;assets/forest/higgsfield/forest_platforms.png
+02_Stromy_a_velke_dekorace/strom_listnaty.png;Listnatý strom;381;410;assets/world_scenery/starbit_scenery.png
+02_Stromy_a_velke_dekorace/stromy_jehlicnate.png;Dvojice jehličnanů;336;413;assets/world_scenery/starbit_scenery.png
+02_Stromy_a_velke_dekorace/kmen_duty.png;Dutý padlý kmen;366;270;assets/world_scenery/starbit_scenery.png
+02_Stromy_a_velke_dekorace/oblouk_mechovy.png;Mechový kamenný oblouk;405;357;assets/world_scenery/starbit_scenery.png
+02_Stromy_a_velke_dekorace/sloupy_zarostle.png;Zarostlé ruiny;360;360;assets/world_scenery/starbit_scenery.png
+02_Stromy_a_velke_dekorace/vyhlidka_drevena.png;Dřevěná vyhlídka;355;382;assets/world_scenery/starbit_scenery.png
+02_Stromy_a_velke_dekorace/plot_lesni.png;Zarostlý lesní plot;408;223;assets/world_scenery/starbit_scenery.png
+02_Stromy_a_velke_dekorace/kamen_kapradiny_houby.png;Kámen s kapradinami;363;285;assets/world_scenery/starbit_scenery.png
+03_Rostliny_a_kameny/ker_s_kvetem.png;Keř s květem;232;166;assets/worldkit/props.png
+03_Rostliny_a_kameny/ker_s_kvety.png;Keř se třemi květy;230;165;assets/worldkit/props.png
+03_Rostliny_a_kameny/listi_siroke.png;Široké listy;201;144;assets/worldkit/props.png
+03_Rostliny_a_kameny/listi_male.png;Malé listy;117;107;assets/worldkit/props.png
+03_Rostliny_a_kameny/listi_vysoke.png;Vysoké listy;138;134;assets/worldkit/props.png
+03_Rostliny_a_kameny/houba_cervena.png;Červená houba;108;100;assets/worldkit/props.png
+03_Rostliny_a_kameny/houba_cervena_mala.png;Malá červená houba;76;75;assets/worldkit/props.png
+03_Rostliny_a_kameny/balvan_mechovy.png;Velký mechový balvan;205;180;assets/worldkit/props.png
+03_Rostliny_a_kameny/balvan_kulaty.png;Kulatý balvan;132;125;assets/worldkit/props.png
+03_Rostliny_a_kameny/kamen_hranaty.png;Hranatý kámen;119;81;assets/worldkit/props.png
+03_Rostliny_a_kameny/kamen_sedy.png;Šedý kámen;82;67;assets/worldkit/props.png
+03_Rostliny_a_kameny/oblazek.png;Oblázek;62;48;assets/worldkit/props.png
+03_Rostliny_a_kameny/kamen_maly_mechovy.png;Malý mechový kámen;108;94;assets/worldkit/props.png
+03_Rostliny_a_kameny/kaminky_s_mechem.png;Kamínky s mechem;83;68;assets/worldkit/props.png
+03_Rostliny_a_kameny/ker_nizky_kvet.png;Nízký kvetoucí keř;145;101;assets/worldkit/props.png
+03_Rostliny_a_kameny/ker_nizky_maly.png;Malý nízký keř;136;90;assets/worldkit/props.png
+03_Rostliny_a_kameny/skalisko_s_listy.png;Skalisko s listím;239;157;assets/worldkit/props.png
+03_Rostliny_a_kameny/liana_dlouha.png;Dlouhá liána;132;296;assets/worldkit/props.png
+03_Rostliny_a_kameny/liana_kratka.png;Krátká liána;122;243;assets/worldkit/props.png
+04_Lucerny_a_doplnky/lucerna_sloupek.png;Lucerna na sloupku;152;213;assets/worldkit/props.png
+04_Lucerny_a_doplnky/lucerna_zavesna.png;Závěsná lucerna;127;236;assets/worldkit/props.png
+04_Lucerny_a_doplnky/plot_dreveny.png;Dřevěný plot;402;153;assets/worldkit/props.png
+04_Lucerny_a_doplnky/plot_provazovy.png;Provazový plot;380;132;assets/worldkit/props.png
+03_Rostliny_a_kameny/parez_s_houbami.png;Pařez s houbami;263;182;assets/world_expansion/garden_props.png
+03_Rostliny_a_kameny/stromek_jehlicnaty.png;Malý jehličnan;183;261;assets/world_expansion/garden_props.png
+03_Rostliny_a_kameny/houby_skupina.png;Skupina červených hub;194;165;assets/world_expansion/garden_props.png
+03_Rostliny_a_kameny/ker_kulaty.png;Kulatý kvetoucí keř;265;205;assets/world_expansion/garden_props.png
+03_Rostliny_a_kameny/skala_s_kvetinami.png;Skála s květinami;218;187;assets/world_expansion/garden_props.png
+04_Lucerny_a_doplnky/lavicka_lesni.png;Lesní lavička;326;200;assets/world_expansion/garden_props.png
+04_Lucerny_a_doplnky/budka_s_ptackem.png;Budka s ptáčkem;171;279;assets/world_expansion/garden_props.png
+04_Lucerny_a_doplnky/lucerna_lesni.png;Zarostlá lucerna;183;298;assets/world_expansion/garden_props.png
+06_Pozadi_a_zem/pozadi_les.png;Souvislé lesní pozadí;2688;1520;assets/forest/higgsfield/forest_glade.png
+06_Pozadi_a_zem/textura_zeminy.png;Textura zeminy;2048;2048;assets/forest/higgsfield/forest_soil.png

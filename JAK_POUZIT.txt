@@ -1,0 +1,49 @@
+STARBIT – LES 01: SAMOSTATNÉ ASSETY
+
+Balíček obsahuje 47 průhledných PNG a 2 původní celoplošné textury.
+Je to výběr existujících assetů vhodných pro první lesní level.
+Nové obrázky se negenerovaly. Původní projekt ani jeho levely se neupravovaly.
+
+CO JE CO
+01_Higgsfield_dekorace – 4 velké dekorace z dříve vytvořených Higgsfield assetů.
+02_Stromy_a_velke_dekorace – další stromy, dutý kmen, ruiny, oblouk, vyhlídka a plot.
+03_Rostliny_a_kameny – malé dekorace na cestu: keře, listy, houby, kameny a pařez.
+04_Lucerny_a_doplnky – lucerny, ploty, lavička a ptačí budka.
+05_Plosiny_obrazky – 4 celé původní plošiny. Jde pouze o obrázky, bez kolizí.
+06_Pozadi_a_zem – původní lesní pozadí a zemina; tyto 2 obrázky nejsou průhledné.
+PREHLED.jpg – přehled všech obrázků. Náhledy nejsou ve stejném měřítku.
+soupis.csv / soupis.json – názvy, rozměry a zdrojové soubory.
+
+JAK TO VLOŽIT DO GODOTU
+1. Rozbal ZIP. Do nové složky svého projektu (např. assets/les_01_dekorace/)
+   zkopíruj vybrané složky s PNG. Nech Godot obrázky naimportovat.
+2. Otevři svůj první level. Přetáhni vybraný PNG z panelu FileSystem přímo
+   do 2D scény; dekorace může být běžný Sprite2D s tímto PNG jako Texture.
+3. Umísti dekoraci. Měřítko měň rovnoměrně v obou osách, aby se nedeformovala.
+   Vysoké rozlišení nového stromu neznamená, že má být ve hře obří.
+4. Pro dekorace si vytvoř dva obyčejné uzly Node2D:
+   DekoraceVzadu a DekoraceVpredu. Sprite2D pak přesuň pod příslušný uzel.
+5. V Inspectoru najdi Ordering > Z Index. Pokud má Bit Z Index 0, můžeš pro
+   zadní dekorace začít na -5 a pro přední na 5. Záleží i na Z Index rodičů
+   a herního pozadí: zadní dekorace mají být před pozadím, ale za Bitem.
+6. Samotné dekorace nepotřebují kolize ani skript. Obrázek jeskyně nebo
+   branky sám o sobě nevytvoří průchod, portál ani tajnou místnost.
+
+JAK DOSÁHNOUT VĚTŠÍ HLOUBKY
+Vzdálené pozadí = souvislý obraz lesa.
+Střední plán = stromy, kmeny, skály a ruiny za hráčem.
+Popředí (foreground) = pár listů, keřů či kamenů před okrajem terénu.
+Této práci s dekoracemi se také říká set dressing.
+Paralaxa znamená, že se vrstvy při pohybu kamery posouvají různou rychlostí;
+není nutná pro samotné vložení těchto PNG.
+
+Strom nebo kámen posaď základnou na terén. Malý keř může zakrýt napojení
+na zem. Přední dekorace nedávej přes hrany pro doskok ani přes tlačítka.
+Střídej velké orientační prvky a drobné detaily; nemusíš použít vše najednou.
+Existující animovanou vodu používej dál z jejích původních herních scén.
+
+TECHNICKÉ POZNÁMKY
+Obrázky jsou vyříznuté bez změny barev a bez zvětšování. Kolem průhledných
+výřezů je 8 px prázdného okraje. Byly odstraněny drobné zbytky pozadí
+a izolované pixely mimo hlavní objekt. Plošiny zachovávají původní kresbu.
+Balíček neobsahuje scény, herní skripty, import cache ani kolize.
