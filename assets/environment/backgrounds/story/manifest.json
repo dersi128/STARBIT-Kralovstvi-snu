@@ -1,0 +1,418 @@
+{
+  "format": 1,
+  "processor": "Higgsfield sandbox",
+  "tiles_per_background": 4,
+  "lossless_reconstruction": true,
+  "backgrounds": [
+    {
+      "level": 1,
+      "title": "Lesní probuzení",
+      "source_number": 1,
+      "source_filename": "Obrázek ChatGPT 10. 10. 2026 14_37_35-1(1).png",
+      "size": [
+        1672,
+        941
+      ],
+      "tiles": [
+        {
+          "path": "assets/environment/backgrounds/story/level_01/part_0.png",
+          "x": 0,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_01/part_1.png",
+          "x": 418,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_01/part_2.png",
+          "x": 836,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_01/part_3.png",
+          "x": 1254,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        }
+      ],
+      "rgb_sha256": "60067756abb9cdd71acb4d2229ebd82da85d57e81fef84dcd9f5ab969111a125"
+    },
+    {
+      "level": 2,
+      "title": "Mezi kořeny",
+      "source_number": 6,
+      "source_filename": "Obrázek ChatGPT 10. 10. 2026 14_37_41-6(1).png",
+      "size": [
+        1672,
+        941
+      ],
+      "tiles": [
+        {
+          "path": "assets/environment/backgrounds/story/level_02/part_0.png",
+          "x": 0,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_02/part_1.png",
+          "x": 418,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_02/part_2.png",
+          "x": 836,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_02/part_3.png",
+          "x": 1254,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        }
+      ],
+      "rgb_sha256": "c8b6feee31784ed4747a603a4846911e7dec7f4b168eb1923ec9b1bff674298a"
+    },
+    {
+      "level": 3,
+      "title": "Světélka vesničky",
+      "source_number": 8,
+      "source_filename": "Obrázek ChatGPT 10. 10. 2026 14_37_43-8(1).png",
+      "size": [
+        1672,
+        941
+      ],
+      "tiles": [
+        {
+          "path": "assets/environment/backgrounds/story/level_03/part_0.png",
+          "x": 0,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_03/part_1.png",
+          "x": 418,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_03/part_2.png",
+          "x": 836,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_03/part_3.png",
+          "x": 1254,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        }
+      ],
+      "rgb_sha256": "10cc48918452c1c9afcad46fa9ca567b50a1df26fc815d82077e9f6476f2dad9"
+    },
+    {
+      "level": 4,
+      "title": "Nad střechami",
+      "source_number": 10,
+      "source_filename": "Obrázek ChatGPT 10. 10. 2026 14_37_46-10(1).png",
+      "size": [
+        1672,
+        941
+      ],
+      "tiles": [
+        {
+          "path": "assets/environment/backgrounds/story/level_04/part_0.png",
+          "x": 0,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_04/part_1.png",
+          "x": 418,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_04/part_2.png",
+          "x": 836,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_04/part_3.png",
+          "x": 1254,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        }
+      ],
+      "rgb_sha256": "ebc8f45175d68dcfaab92f8f802b3e9817d3c02cb70bfaeefaa8b50b620b5a9e"
+    },
+    {
+      "level": 5,
+      "title": "Brúčounova svatyně",
+      "source_number": 5,
+      "source_filename": "Obrázek ChatGPT 10. 10. 2026 14_37_40-5(1).png",
+      "size": [
+        1672,
+        941
+      ],
+      "tiles": [
+        {
+          "path": "assets/environment/backgrounds/story/level_05/part_0.png",
+          "x": 0,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_05/part_1.png",
+          "x": 418,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_05/part_2.png",
+          "x": 836,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_05/part_3.png",
+          "x": 1254,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        }
+      ],
+      "rgb_sha256": "ad49461172a62d49af4f4ce18a1cced1badd7225a76ef577dc20b218c452b7f2"
+    },
+    {
+      "level": 6,
+      "title": "Mlýnská stezka",
+      "source_number": 2,
+      "source_filename": "Obrázek ChatGPT 10. 10. 2026 14_37_36-2(1).png",
+      "size": [
+        1672,
+        941
+      ],
+      "tiles": [
+        {
+          "path": "assets/environment/backgrounds/story/level_06/part_0.png",
+          "x": 0,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_06/part_1.png",
+          "x": 418,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_06/part_2.png",
+          "x": 836,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_06/part_3.png",
+          "x": 1254,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        }
+      ],
+      "rgb_sha256": "552da3f8a7a96c0a1e6d74c6552463eb075f055a4bd3a457950171c4ba376fa8"
+    },
+    {
+      "level": 7,
+      "title": "Zvony nad bouří",
+      "source_number": 7,
+      "source_filename": "Obrázek ChatGPT 10. 10. 2026 14_37_42-7(1).png",
+      "size": [
+        1672,
+        941
+      ],
+      "tiles": [
+        {
+          "path": "assets/environment/backgrounds/story/level_07/part_0.png",
+          "x": 0,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_07/part_1.png",
+          "x": 418,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_07/part_2.png",
+          "x": 836,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_07/part_3.png",
+          "x": 1254,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        }
+      ],
+      "rgb_sha256": "736ac8c0d82a664cf8096e3ad82b8a86e2702b7e9e93ee0c148d42b51dc08ac0"
+    },
+    {
+      "level": 8,
+      "title": "Nádvoří před branami",
+      "source_number": 4,
+      "source_filename": "Obrázek ChatGPT 10. 10. 2026 14_37_39-4(1).png",
+      "size": [
+        1672,
+        941
+      ],
+      "tiles": [
+        {
+          "path": "assets/environment/backgrounds/story/level_08/part_0.png",
+          "x": 0,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_08/part_1.png",
+          "x": 418,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_08/part_2.png",
+          "x": 836,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_08/part_3.png",
+          "x": 1254,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        }
+      ],
+      "rgb_sha256": "aa1b166e2a073c239cdb346bc5cac8757f96ced90efe047ed0c2bd0633206e35"
+    },
+    {
+      "level": 9,
+      "title": "Královské zahrady",
+      "source_number": 9,
+      "source_filename": "Obrázek ChatGPT 10. 10. 2026 14_37_44-9(1).png",
+      "size": [
+        1672,
+        941
+      ],
+      "tiles": [
+        {
+          "path": "assets/environment/backgrounds/story/level_09/part_0.png",
+          "x": 0,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_09/part_1.png",
+          "x": 418,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_09/part_2.png",
+          "x": 836,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_09/part_3.png",
+          "x": 1254,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        }
+      ],
+      "rgb_sha256": "cede5d6da98c2aa7b014644a1086bb5b0f06cd0d144bedb5981136a60f5e715b"
+    },
+    {
+      "level": 10,
+      "title": "V srdci hradu",
+      "source_number": 3,
+      "source_filename": "Obrázek ChatGPT 10. 10. 2026 14_37_37-3(1).png",
+      "size": [
+        1672,
+        941
+      ],
+      "tiles": [
+        {
+          "path": "assets/environment/backgrounds/story/level_10/part_0.png",
+          "x": 0,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_10/part_1.png",
+          "x": 418,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_10/part_2.png",
+          "x": 836,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        },
+        {
+          "path": "assets/environment/backgrounds/story/level_10/part_3.png",
+          "x": 1254,
+          "width": 418,
+          "height": 941,
+          "padding": 2
+        }
+      ],
+      "rgb_sha256": "4c30419adf91a3d688f5a3e3f9999957e54e2135dd10f88c28436b4e569f27c5"
+    }
+  ]
+}

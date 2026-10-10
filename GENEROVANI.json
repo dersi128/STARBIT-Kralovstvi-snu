@@ -1,0 +1,169 @@
+{
+  "created_date": "2026-10-10",
+  "project": "STARBIT – Království snů",
+  "source_story": "STARBIT-Pribeh-hry(2).txt",
+  "reference_repository": "https://github.com/dersi128/STARBIT-Kralovstvi-snu",
+  "reference_tree_sha": "e9e435e24bda24ed7e3800058c887436d5c04a5e",
+  "reference_files": [
+    "assets/shared/pieces/boss.png",
+    "assets/characters/stinko/frames/00.png",
+    "assets/characters/bit/source_sheets/Run1.png"
+  ],
+  "generator": "Higgsfield",
+  "model": "gpt_image_2_5",
+  "requests": [
+    {
+      "index": 1,
+      "params": {
+        "model": "gpt_image_2_5",
+        "resolution": "2k",
+        "quality": "high",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/shared/pieces/boss.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/characters/bit/source_sheets/Run1.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/characters/stinko/frames/00.png"
+          }
+        ],
+        "prompt": "Create a production 2D game character asset atlas for STARBIT – Kingdom of Dreams. Match the actual supplied game art references closely: rounded child-friendly storybook characters, large expressive jewel-like eyes, chunky readable forms, clean dark indigo outlines, hand-painted/cel shaded soft volume, polished colorful cartoon rendering. The first reference is the existing enchanted bear Brucoun, the second is the hero Bit (STYLE ONLY, do not draw Bit), the third is the existing purple Stinko. Preserve this art family's brushwork, outlines, highlights and proportions. NO photorealism, NO pixel art, NO rough sketch, NO horror, NO gore, no thin fiddly limbs. These are flat 2D sprite illustrations with soft painted volume, not 3D models.\n\nMANDATORY ATLAS LAYOUT: exactly FOUR separate full-body character sprites in a perfectly regular 2 by 2 grid on a genuinely TRANSPARENT ALPHA background. One sprite entirely inside each equal square quadrant. Do not draw grid lines, labels, letters, numbers, titles, frames or scenery. No floors, no contact shadows. Keep at least 10 percent clear padding around every sprite inside its own quadrant; keep the central horizontal and vertical divider completely empty. Never overlap quadrants, never crop any anatomy or magical wisps. Each character should occupy approximately 75 percent of its own quadrant, centered horizontally with feet near the same baseline. All sprites use the same side-scroller camera: full-body three-quarter SIDE view facing RIGHT, body and head turned toward the right so movement direction is unmistakable, the near eye and a little of the far eye visible, no front-on lineup poses. Preserve recognizable silhouette at small gameplay scale. One readable neutral/ready pose per character, not multiple animation frames. Purple curse magic is restrained, neatly contained near the body.\n\nSET A / FOREST, VILLAGE, SKY. Top LEFT: STINKO, preserve the supplied purple little shadow-cat spirit's identity, plump dark plum body, two tiny pointed ears, enormous mint-green eyes, luminous lilac star on chest, short legs, curled smoky lilac tail, mischievous wary expression. Top RIGHT: KORENOVY SKOKAN, a brand-new squat enchanted tree-stump hopper, warm cut-wood barrel body with expressive eyes in bark, moss hair, tiny branch arms and TWO thick bent springlike root legs, a small violet curse knot on brow, clear hopping-ready silhouette. Bottom LEFT: LAMPOVNIK, an enchanted walking village lantern, squat rounded aged brass and walnut frame, arched handle, glass belly containing a little violet flame with two curious mint eyes, two sturdy short wooden feet and tiny hinged arms, warm ochre palette with purple curse accents. Bottom RIGHT: MRAKOMOR, a compact sentient storm cloud, fluffy blue-lavender lobes, two large teal eyes and grumpy heavy purple eyebrows, a single curled dark cloud tail, three small suspended rounded raindrops close beneath its body, no legs, hovering side view. Distinct silhouettes: cat, stump, lantern, cloud."
+      }
+    },
+    {
+      "index": 2,
+      "params": {
+        "model": "gpt_image_2_5",
+        "resolution": "2k",
+        "quality": "high",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/shared/pieces/boss.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/characters/bit/source_sheets/Run1.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/characters/stinko/frames/00.png"
+          }
+        ],
+        "prompt": "Create a production 2D game character asset atlas for STARBIT – Kingdom of Dreams. Match the actual supplied game art references closely: rounded child-friendly storybook characters, large expressive jewel-like eyes, chunky readable forms, clean dark indigo outlines, hand-painted/cel shaded soft volume, polished colorful cartoon rendering. The first reference is the existing enchanted bear Brucoun, the second is the hero Bit (STYLE ONLY, do not draw Bit), the third is the existing purple Stinko. Preserve this art family's brushwork, outlines, highlights and proportions. NO photorealism, NO pixel art, NO rough sketch, NO horror, NO gore, no thin fiddly limbs. These are flat 2D sprite illustrations with soft painted volume, not 3D models.\n\nMANDATORY ATLAS LAYOUT: exactly FOUR separate full-body character sprites in a perfectly regular 2 by 2 grid on a genuinely TRANSPARENT ALPHA background. One sprite entirely inside each equal square quadrant. Do not draw grid lines, labels, letters, numbers, titles, frames or scenery. No floors, no contact shadows. Keep at least 10 percent clear padding around every sprite inside its own quadrant; keep the central horizontal and vertical divider completely empty. Never overlap quadrants, never crop any anatomy or magical wisps. Each character should occupy approximately 75 percent of its own quadrant, centered horizontally with feet near the same baseline. All sprites use the same side-scroller camera: full-body three-quarter SIDE view facing RIGHT, body and head turned toward the right so movement direction is unmistakable, the near eye and a little of the far eye visible, no front-on lineup poses. Preserve recognizable silhouette at small gameplay scale. One readable neutral/ready pose per character, not multiple animation frames. Purple curse magic is restrained, neatly contained near the body.\n\nSET B / GIANT GARDEN AND STOLEN RIVER. Top LEFT: TRNOVY BROUK, a small bulky enchanted beetle with a rich burgundy segmented chestnut shell, two big leaf-green armor plates tipped with a few blunt purple thorns, SIX short clearly separated legs, small teal eyes and walnut mandibles, three-quarter right-facing side view, no insect horror. Top RIGHT: ROSICKA, a charming hostile water-lily plant turret, stout potless bulb body, TWO broad leaf feet, trumpet-shaped pale peach and pink flower head pointing right with a glowing violet center, teal expressive eyes below petal rim, dew beads attached to leaves, ready to spit seeds. Bottom LEFT: KAPKOVEC, a round water-droplet frog creature, translucent turquoise watery round body with coherent firm outline, TWO broad hind feet and TWO little front paws, big mint eyes, a dark violet vine collar showing enchantment, clear compact crouched jumper silhouette. Bottom RIGHT: VRETENKA, a mischievous maple-seed flying imp, small honey-brown seed body and face with teal eyes, TWO broad wing-like maple seed leaves sweeping upward left and right like a propeller, two tiny curled root feet dangling, a restrained purple corruption knot, hovering facing right. All friendly-adventurous not scary; richly painted like supplied art."
+      }
+    },
+    {
+      "index": 3,
+      "params": {
+        "model": "gpt_image_2_5",
+        "resolution": "2k",
+        "quality": "high",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/shared/pieces/boss.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/characters/bit/source_sheets/Run1.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/characters/stinko/frames/00.png"
+          }
+        ],
+        "prompt": "Create a production 2D game character asset atlas for STARBIT – Kingdom of Dreams. Match the actual supplied game art references closely: rounded child-friendly storybook characters, large expressive jewel-like eyes, chunky readable forms, clean dark indigo outlines, hand-painted/cel shaded soft volume, polished colorful cartoon rendering. The first reference is the existing enchanted bear Brucoun, the second is the hero Bit (STYLE ONLY, do not draw Bit), the third is the existing purple Stinko. Preserve this art family's brushwork, outlines, highlights and proportions. NO photorealism, NO pixel art, NO rough sketch, NO horror, NO gore, no thin fiddly limbs. These are flat 2D sprite illustrations with soft painted volume, not 3D models.\n\nMANDATORY ATLAS LAYOUT: exactly FOUR separate full-body character sprites in a perfectly regular 2 by 2 grid on a genuinely TRANSPARENT ALPHA background. One sprite entirely inside each equal square quadrant. Do not draw grid lines, labels, letters, numbers, titles, frames or scenery. No floors, no contact shadows. Keep at least 10 percent clear padding around every sprite inside its own quadrant; keep the central horizontal and vertical divider completely empty. Never overlap quadrants, never crop any anatomy or magical wisps. Each character should occupy approximately 75 percent of its own quadrant, centered horizontally with feet near the same baseline. All sprites use the same side-scroller camera: full-body three-quarter SIDE view facing RIGHT, body and head turned toward the right so movement direction is unmistakable, the near eye and a little of the far eye visible, no front-on lineup poses. Preserve recognizable silhouette at small gameplay scale. One readable neutral/ready pose per character, not multiple animation frames. Purple curse magic is restrained, neatly contained near the body.\n\nSET C / MEMORIES, FALLEN STARS, FINAL ROOTS. Top LEFT: ZRCADLENKA, a small animated oval mirror creature in chunky worn silver and teal frame with two short curled silver feet and two tiny gloved arms, blue glass face showing a simple ghostlike face with asymmetrical eyes and a distinct small gold scratch in frame, purple ribbon wisp close behind, side-on three-quarter turned right, readable mirror silhouette. Top RIGHT: OZVENA, a flowing little river-memory spirit shaped like a compact crescent manta-ray, indigo and turquoise translucent rounded body, TWO broad soft fins and a short curled tail, large luminous mint eyes, a few internal pale cyan ripple bands, friendly sly face, hovering, no copied face from the mirror. Bottom LEFT: MURA SOUMRAKU, a plump nocturnal moth with velvety dark violet body, TWO large softly rounded indigo/lavender wings with stylized gold crescent and star markings, furry head with TWO short antennae, huge mint eyes, tiny feet, hovering right-facing side view with both wings readable. Bottom RIGHT: KORENOVY HLIDAC, a stocky short stone-and-root automaton, broad slate-gray stone torso with a single glowing amber magic joint in its chest, TWO chunky root legs and TWO heavy asymmetrical stone fists, small teal eyes under moss brow, dark purple roots wrapping stone plates, braced walking guard posture; not a giant boss."
+      }
+    },
+    {
+      "index": 4,
+      "params": {
+        "model": "gpt_image_2_5",
+        "resolution": "2k",
+        "quality": "high",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/shared/pieces/boss.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/characters/bit/source_sheets/Run1.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/characters/stinko/frames/00.png"
+          }
+        ],
+        "prompt": "Create a production 2D game character asset atlas for STARBIT – Kingdom of Dreams. Match the actual supplied game art references closely: rounded child-friendly storybook characters, large expressive jewel-like eyes, chunky readable forms, clean dark indigo outlines, hand-painted/cel shaded soft volume, polished colorful cartoon rendering. The first reference is the existing enchanted bear Brucoun, the second is the hero Bit (STYLE ONLY, do not draw Bit), the third is the existing purple Stinko. Preserve this art family's brushwork, outlines, highlights and proportions. NO photorealism, NO pixel art, NO rough sketch, NO horror, NO gore, no thin fiddly limbs. These are flat 2D sprite illustrations with soft painted volume, not 3D models.\n\nMANDATORY ATLAS LAYOUT: exactly FOUR separate full-body character sprites in a perfectly regular 2 by 2 grid on a genuinely TRANSPARENT ALPHA background. One sprite entirely inside each equal square quadrant. Do not draw grid lines, labels, letters, numbers, titles, frames or scenery. No floors, no contact shadows. Keep at least 10 percent clear padding around every sprite inside its own quadrant; keep the central horizontal and vertical divider completely empty. Never overlap quadrants, never crop any anatomy or magical wisps. Each character should occupy approximately 75 percent of its own quadrant, centered horizontally with feet near the same baseline. All sprites use the same side-scroller camera: full-body three-quarter SIDE view facing RIGHT, body and head turned toward the right so movement direction is unmistakable, the near eye and a little of the far eye visible, no front-on lineup poses. Preserve recognizable silhouette at small gameplay scale. One readable neutral/ready pose per character, not multiple animation frames. Purple curse magic is restrained, neatly contained near the body.\n\nSET D / TWO STORY GUARDIANS, CURSED AND FREED VERSIONS. Top LEFT: BRUCOUN CURSED, match the FIRST supplied reference bear very closely: same chunky golden-brown bear, rounded ears, recognizable muzzle and determined eyebrows, crown with central golden star, gray stone wrist cuffs with star emblems, large paws, green leaves and clinging purple cursed vines, purple star-like curse at chest. Turn him three-quarter toward RIGHT while preserving original identity. Top RIGHT: THE EXACT SAME BRUCOUN FREED, identical anatomy, crown, face structure and stone wrist cuffs, relaxed kind smile, natural amber-brown eyes, golden star on chest, healthy fresh GREEN leaves instead of purple vines, no purple curse or aura. The two bears are the same size. Bottom LEFT: TRNOVY OBR CURSED, a large stocky living garden guardian made from warm old oak, broad friendly-capable wooden face with teal eyes now grumpy, twig crown, moss shoulders, TWO huge root fists and TWO short trunk legs, curling thick violet thorn vines constraining chest and arms, a violet thorn knot over golden seed-shaped heart, pale blossoms closed. Bottom RIGHT: THE EXACT SAME TRNOVY OBR FREED, same wooden anatomy, twig crown and pose, kind warm smile, healthy green moss and vines, small open cream flowers, glowing warm golden seed-shaped heart visible, all dark curse thorns gone. The two tree guardians are the same size. Four complete isolated sprites, no unrelated creatures."
+      }
+    },
+    {
+      "index": 5,
+      "params": {
+        "model": "gpt_image_2_5",
+        "resolution": "2k",
+        "quality": "high",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/shared/pieces/boss.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/characters/bit/source_sheets/Run1.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/characters/stinko/frames/00.png"
+          }
+        ],
+        "prompt": "Create a production 2D game character asset atlas for STARBIT – Kingdom of Dreams. Match the actual supplied game art references closely: rounded child-friendly storybook characters, large expressive jewel-like eyes, chunky readable forms, clean dark indigo outlines, hand-painted/cel shaded soft volume, polished colorful cartoon rendering. The first reference is the existing enchanted bear Brucoun, the second is the hero Bit (STYLE ONLY, do not draw Bit), the third is the existing purple Stinko. Preserve this art family's brushwork, outlines, highlights and proportions. NO photorealism, NO pixel art, NO rough sketch, NO horror, NO gore, no thin fiddly limbs. These are flat 2D sprite illustrations with soft painted volume, not 3D models.\n\nMANDATORY ATLAS LAYOUT: exactly FOUR separate full-body character sprites in a perfectly regular 2 by 2 grid on a genuinely TRANSPARENT ALPHA background. One sprite entirely inside each equal square quadrant. Do not draw grid lines, labels, letters, numbers, titles, frames or scenery. No floors, no contact shadows. Keep at least 10 percent clear padding around every sprite inside its own quadrant; keep the central horizontal and vertical divider completely empty. Never overlap quadrants, never crop any anatomy or magical wisps. Each character should occupy approximately 75 percent of its own quadrant, centered horizontally with feet near the same baseline. All sprites use the same side-scroller camera: full-body three-quarter SIDE view facing RIGHT, body and head turned toward the right so movement direction is unmistakable, the near eye and a little of the far eye visible, no front-on lineup poses. Preserve recognizable silhouette at small gameplay scale. One readable neutral/ready pose per character, not multiple animation frames. Purple curse magic is restrained, neatly contained near the body.\n\nSET E / FOUR BOSS IDENTITIES. Top LEFT: ZAMKOVNIK, new guardian of Jiskra's prison, a large stout enchanted padlock-and-stone sentinel, a chunky dark silver oval padlock as torso with a large clearly visible purple KEYHOLE core, broad arch handle framing head, TWO heavy segmented stone arms and TWO short block feet, small mint eyes under a metal brow, three large purple magical lock seals embedded on shoulder plates and abdomen, heavy but child-friendly readable silhouette, no owl. Top RIGHT: STRAZCE ZRCADEL, tall elegant enchanted mirror guardian with broad oval silver mirror torso and face inside reflecting blue glass, gently crown-shaped asymmetric frame with a unique small GOLD notch at its top-right edge identifying the real one, TWO broad curved crystal arms and TWO tapered lilac glass legs, folded robe-like shapes made of chunky faceted blue glass, large stern mint eyes, luxurious turquoise and silver palette. No floating duplicate figures or loose mirror props. Bottom LEFT: POZIRAC HVEZD, enormous rotund NIGHT-SKY SHADOW CREATURE, whimsical cosmic whale-bat with one rounded plump midnight indigo body, short stubby hind legs, TWO broad crescent-shaped bat fins, short curled tail, huge simple rounded mouth with NO sharp teeth, TWO expressive mint eyes, softly glowing trapped golden star visible inside translucent belly, indigo to violet rim light, comically hungry expression, threatening by size not horror. Bottom RIGHT: MOROUS, the main villain, a grumpy stocky elderly wizard under a deep dark PLUM HOOD and long midnight-violet cloak; face partly concealed in shadow but readable, bushy pale eyebrows, small rounded hooked nose, narrow glowing mint eyes, short ash-gray beard, TWO visible little booted feet, holding ONE gnarled wooden staff in his near hand with a restrained purple stolen-magic crystal, other hand clutching cloak, thick shadow-root trim around lower cloak, one dark gold broken-star clasp, greedy calculating expression. He is a cunning fairy-tale wizard, not a skeleton or generic armored warrior. All four clearly different large boss silhouettes in same supplied game's art style."
+      }
+    }
+  ],
+  "jobs": [
+    {
+      "index": 1,
+      "job_id": "1cda18cf-a8f4-4e0f-a0cc-511452360801"
+    },
+    {
+      "index": 2,
+      "job_id": "f6820d69-506f-4585-97ee-3fc91179eb45"
+    },
+    {
+      "index": 3,
+      "job_id": "8ca596af-8c44-48d0-adc3-d032a1d1523d"
+    },
+    {
+      "index": 4,
+      "job_id": "ec5a5d39-872a-474e-8a43-a50872b23c8d"
+    },
+    {
+      "index": 5,
+      "job_id": "2f18433c-4d17-4bd5-a7ba-f0fd7b05ab3f"
+    }
+  ],
+  "status": "static character artwork; gameplay descriptions are proposals"
+}

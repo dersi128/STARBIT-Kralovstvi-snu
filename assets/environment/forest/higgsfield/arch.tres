@@ -1,8 +1,8 @@
 [gd_resource type="AtlasTexture" format=3 uid="uid://dc1ur7uox1dgc"]
 
-[ext_resource type="Texture2D" uid="uid://oaridlf0fjyn" path="res://assets/environment/forest/higgsfield/forest_landmarks.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://6thinoliotlf" path="res://assets/characters/animations/boss.png" id="1_gdick"]
 
 [resource]
-atlas = ExtResource("1")
-region = Rect2(110, 821, 839, 501)
+atlas = ExtResource("1_gdick")
+region = Rect2(955.2134, 966.9931, 303.80005, 310.70453)
 filter_clip = true

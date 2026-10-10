@@ -1,0 +1,747 @@
+{
+  "project": "STARBIT",
+  "status": "static_artwork",
+  "note": "Chování a měřítko jsou návrhy. Statické assety nejsou integrovány do hry.",
+  "characters": [
+    {
+      "id": "stinko",
+      "name": "Stínko",
+      "type": "enemy",
+      "sheet": 1,
+      "cell": 0,
+      "levels": "2–4; později 26–29",
+      "behavior": "Hlídá krátký úsek cesty.",
+      "tell": "Před obratem zvedne ocas; po krátkém výpadu zastaví.",
+      "response": "Přeskočit ho nebo obejít během pauzy.",
+      "note": "Původní postava; nový statický obrázek.",
+      "scale": "0,65×",
+      "file": "png/nepratele/stinko.png",
+      "width": 842,
+      "height": 832,
+      "atlas_file": "atlasy/sada_01.png",
+      "atlas_region": [
+        0,
+        0,
+        1016,
+        1024
+      ],
+      "trim_in_region": [
+        104,
+        178,
+        898,
+        962
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        421.0,
+        808
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "korenovy_skokan",
+      "name": "Kořenový skokan",
+      "type": "enemy",
+      "sheet": 1,
+      "cell": 1,
+      "levels": "2–4; 13–14",
+      "behavior": "V pravidelném rytmu skáče mezi dvěma místy.",
+      "tell": "Před skokem se přikrčí a kořeny se stlačí.",
+      "response": "Projít pod ním při výskoku nebo počkat na dopad.",
+      "note": "Nový návrh.",
+      "scale": "0,75×",
+      "file": "png/nepratele/korenovy_skokan.png",
+      "width": 879,
+      "height": 822,
+      "atlas_file": "atlasy/sada_01.png",
+      "atlas_region": [
+        1016,
+        0,
+        2048,
+        1024
+      ],
+      "trim_in_region": [
+        118,
+        200,
+        949,
+        974
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        439.5,
+        798
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "lampovnik",
+      "name": "Lampovník",
+      "type": "enemy",
+      "sheet": 1,
+      "cell": 2,
+      "levels": "3; 9; 22; 26",
+      "behavior": "Kráčí a občas vyšle nízký světelný pulz.",
+      "tell": "Fialový plamen krátce zesílí před pulzem.",
+      "response": "Přeskočit pulz a přejít za něj.",
+      "note": "Očarovaný předmět; po očištění svítí teple.",
+      "scale": "0,8×",
+      "file": "png/nepratele/lampovnik.png",
+      "width": 796,
+      "height": 907,
+      "atlas_file": "atlasy/sada_01.png",
+      "atlas_region": [
+        0,
+        1024,
+        976,
+        2048
+      ],
+      "trim_in_region": [
+        129,
+        51,
+        877,
+        910
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        398.0,
+        883
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "mrakomor",
+      "name": "Mrakomor",
+      "type": "enemy",
+      "sheet": 1,
+      "cell": 3,
+      "levels": "6–8",
+      "behavior": "Vznáší se po krátké dráze a vypouští déšť v úzkém sloupci.",
+      "tell": "Ztmavne, nafoukne tváře a zastaví před deštěm.",
+      "response": "Projít po konci deště; povinné řešení v 8. levelu i bez Zipa.",
+      "note": "Nový vzhled navazující na oblačné nepřátele.",
+      "scale": "0,8×",
+      "file": "png/nepratele/mrakomor.png",
+      "width": 916,
+      "height": 802,
+      "atlas_file": "atlasy/sada_01.png",
+      "atlas_region": [
+        976,
+        1024,
+        2048,
+        2048
+      ],
+      "trim_in_region": [
+        99,
+        140,
+        967,
+        894
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        458.0,
+        778
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "trnovy_brouk",
+      "name": "Trnový brouk",
+      "type": "enemy",
+      "sheet": 2,
+      "cell": 0,
+      "levels": "11–14",
+      "behavior": "Pomalu hlídkuje; trnitý krunýř chrání shora.",
+      "tell": "Před rozběhem sklopí hlavu a zvedne krovky.",
+      "response": "Vyhnout se mu; nespoléhat na skok na trnitá záda.",
+      "note": "Očarovaný zahradní tvor.",
+      "scale": "0,65×",
+      "file": "png/nepratele/trnovy_brouk.png",
+      "width": 901,
+      "height": 820,
+      "atlas_file": "atlasy/sada_02.png",
+      "atlas_region": [
+        0,
+        0,
+        1085,
+        1053
+      ],
+      "trim_in_region": [
+        126,
+        195,
+        979,
+        967
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        450.5,
+        796
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "rosicka",
+      "name": "Rosička",
+      "type": "enemy",
+      "sheet": 2,
+      "cell": 1,
+      "levels": "11–14",
+      "behavior": "Stojí na místě a vystřeluje jednotlivá semínka.",
+      "tell": "Květ se zavře a nabobtná před výstřelem.",
+      "response": "Projít během nadechnutí nebo využít kryt.",
+      "note": "Očarovaná rostlina.",
+      "scale": "0,8×",
+      "file": "png/nepratele/rosicka.png",
+      "width": 849,
+      "height": 939,
+      "atlas_file": "atlasy/sada_02.png",
+      "atlas_region": [
+        1085,
+        0,
+        2048,
+        1053
+      ],
+      "trim_in_region": [
+        106,
+        91,
+        907,
+        982
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        424.5,
+        915
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "kapkovec",
+      "name": "Kapkovec",
+      "type": "enemy",
+      "sheet": 2,
+      "cell": 2,
+      "levels": "12; 16–17",
+      "behavior": "Vyskakuje z mělčiny na blízký břeh.",
+      "tell": "Voda se rozvlní před vynořením.",
+      "response": "Počkat na jeho návrat do vody.",
+      "note": "Očarovaný vodní tvor.",
+      "scale": "0,65×",
+      "file": "png/nepratele/kapkovec.png",
+      "width": 823,
+      "height": 759,
+      "atlas_file": "atlasy/sada_02.png",
+      "atlas_region": [
+        0,
+        1053,
+        972,
+        2048
+      ],
+      "trim_in_region": [
+        113,
+        188,
+        888,
+        899
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        411.5,
+        735
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "vretenka",
+      "name": "Vřetenka",
+      "type": "enemy",
+      "sheet": 2,
+      "cell": 3,
+      "levels": "11; 14; 21",
+      "behavior": "Létá po čitelné smyčce a krátce klesá.",
+      "tell": "Zpomalí otáčení křídel před sestupem.",
+      "response": "Projít pod ní, když stoupá.",
+      "note": "Očarované živé semínko.",
+      "scale": "0,7×",
+      "file": "png/nepratele/vretenka.png",
+      "width": 967,
+      "height": 811,
+      "atlas_file": "atlasy/sada_02.png",
+      "atlas_region": [
+        972,
+        1053,
+        2048,
+        2048
+      ],
+      "trim_in_region": [
+        85,
+        70,
+        1004,
+        833
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        483.5,
+        787
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "zrcadlenka",
+      "name": "Zrcadlenka",
+      "type": "enemy",
+      "sheet": 3,
+      "cell": 0,
+      "levels": "17–20",
+      "behavior": "Krátce napodobuje poslední směr pohybu hráče.",
+      "tell": "Skutečný tvor nese zlatý zářez; klam ho nemá.",
+      "response": "Změnit rytmus a rozpoznat pravou podobu.",
+      "note": "Morousův výtvor; vizuální znak se musí zachovat i v animaci.",
+      "scale": "0,85×",
+      "file": "png/nepratele/zrcadlenka.png",
+      "width": 882,
+      "height": 894,
+      "atlas_file": "atlasy/sada_03.png",
+      "atlas_region": [
+        0,
+        0,
+        1026,
+        1013
+      ],
+      "trim_in_region": [
+        94,
+        103,
+        928,
+        949
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        441.0,
+        870
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "ozvena",
+      "name": "Ozvěna",
+      "type": "enemy",
+      "sheet": 3,
+      "cell": 1,
+      "levels": "16–19",
+      "behavior": "Pluje nad vodou a na chvíli opakuje svou předchozí dráhu.",
+      "tell": "Před opakováním zanechá krátkou tyrkysovou stopu.",
+      "response": "Využít předvídatelnou mezeru v pohybu.",
+      "note": "Stínový tvor složený z pokřivených vzpomínek.",
+      "scale": "0,65×",
+      "file": "png/nepratele/ozvena.png",
+      "width": 874,
+      "height": 773,
+      "atlas_file": "atlasy/sada_03.png",
+      "atlas_region": [
+        1026,
+        0,
+        2048,
+        1013
+      ],
+      "trim_in_region": [
+        98,
+        205,
+        924,
+        930
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        437.0,
+        749
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "mura_soumraku",
+      "name": "Můra soumraku",
+      "type": "enemy",
+      "sheet": 3,
+      "cell": 2,
+      "levels": "21–25",
+      "behavior": "Přilétá k rozsvíceným lucernám a pokouší se je zhasnout.",
+      "tell": "Obkrouží vybranou lucernu před sestupem.",
+      "response": "Aktivovat světelný mechanismus včas nebo ji odlákat.",
+      "note": "Morousův stínový tvor.",
+      "scale": "0,75×",
+      "file": "png/nepratele/mura_soumraku.png",
+      "width": 890,
+      "height": 804,
+      "atlas_file": "atlasy/sada_03.png",
+      "atlas_region": [
+        0,
+        1013,
+        1012,
+        2048
+      ],
+      "trim_in_region": [
+        96,
+        112,
+        938,
+        868
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        445.0,
+        780
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "korenovy_hlidac",
+      "name": "Kořenový hlídač",
+      "type": "enemy",
+      "sheet": 3,
+      "cell": 3,
+      "levels": "26–29",
+      "behavior": "Pomalý těžký strážce servisních průchodů.",
+      "tell": "Zvedne pěst před úderem a po něm zůstane stát.",
+      "response": "Vyhnout se úderu a v pauze opravit průchod.",
+      "note": "Očarovaný kamenný mechanismus.",
+      "scale": "1,2×",
+      "file": "png/nepratele/korenovy_hlidac.png",
+      "width": 956,
+      "height": 946,
+      "atlas_file": "atlasy/sada_03.png",
+      "atlas_region": [
+        1012,
+        1013,
+        2048,
+        2048
+      ],
+      "trim_in_region": [
+        76,
+        62,
+        984,
+        960
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        478.0,
+        922
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "brucoun_ocarovany",
+      "name": "Brúčoun – očarovaný",
+      "type": "boss",
+      "sheet": 4,
+      "cell": 0,
+      "levels": "5",
+      "behavior": "Výpad a úder tlapami s krátkou otřesovou vlnou.",
+      "tell": "Zvednuté tlapy a rozsvícená pouta před úderem.",
+      "response": "Po vyhnutí aktivovat tři pečetě brány, které lámou kouzlo.",
+      "note": "Boss z příběhu; zachována koruna, tlapy a kamenné náramky.",
+      "scale": "2,3×",
+      "file": "png/bossove/brucoun_ocarovany.png",
+      "width": 929,
+      "height": 932,
+      "atlas_file": "atlasy/sada_04.png",
+      "atlas_region": [
+        0,
+        0,
+        1042,
+        979
+      ],
+      "trim_in_region": [
+        137,
+        59,
+        1018,
+        943
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        464.5,
+        908
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "brucoun_osvobozeny",
+      "name": "Brúčoun – osvobozený",
+      "type": "ally",
+      "sheet": 4,
+      "cell": 1,
+      "levels": "Po 5; 27; závěr",
+      "behavior": "Přátelský ochránce a pomocník.",
+      "tell": "Klidný úsměv a zdravá zelená místo kletby.",
+      "response": "Nepřítel se osvobozuje, nezabíjí.",
+      "note": "Alternativní statická podoba stejného bosse.",
+      "scale": "2,3×",
+      "file": "png/osvobozeni/brucoun_osvobozeny.png",
+      "width": 909,
+      "height": 930,
+      "atlas_file": "atlasy/sada_04.png",
+      "atlas_region": [
+        1042,
+        0,
+        2048,
+        979
+      ],
+      "trim_in_region": [
+        25,
+        60,
+        886,
+        942
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        454.5,
+        906
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "trnovy_obr_ocarovany",
+      "name": "Trnový obr – očarovaný",
+      "type": "boss",
+      "sheet": 4,
+      "cell": 2,
+      "levels": "15",
+      "behavior": "Zvedá kořeny a blokuje přívody vody.",
+      "tell": "Kořen před výpadem vyznačí místo na zemi.",
+      "response": "V pauzách obnovit tři přívody vody; kouzlo povolí.",
+      "note": "Boss z příběhu. Kapka života přichází až od uzdraveného stromu.",
+      "scale": "3×",
+      "file": "png/bossove/trnovy_obr_ocarovany.png",
+      "width": 964,
+      "height": 1027,
+      "atlas_file": "atlasy/sada_04.png",
+      "atlas_region": [
+        0,
+        979,
+        1051,
+        2048
+      ],
+      "trim_in_region": [
+        106,
+        36,
+        1022,
+        1015
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        482.0,
+        1003
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "trnovy_obr_osvobozeny",
+      "name": "Trnový obr – osvobozený",
+      "type": "ally",
+      "sheet": 4,
+      "cell": 3,
+      "levels": "Po 15",
+      "behavior": "Chrání zahradu a Strom života.",
+      "tell": "Otevřené květy, zelené kořeny a zlaté jádro.",
+      "response": "Přátelská podoba po zlomení kouzla.",
+      "note": "Alternativní statická podoba stejného bosse.",
+      "scale": "3×",
+      "file": "png/osvobozeni/trnovy_obr_osvobozeny.png",
+      "width": 924,
+      "height": 1022,
+      "atlas_file": "atlasy/sada_04.png",
+      "atlas_region": [
+        1051,
+        979,
+        2048,
+        2048
+      ],
+      "trim_in_region": [
+        29,
+        39,
+        905,
+        1013
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        462.0,
+        998
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "zamkovnik",
+      "name": "Zámkovník",
+      "type": "boss",
+      "sheet": 5,
+      "cell": 0,
+      "levels": "10",
+      "behavior": "Hlídá věž a střídavě zakrývá tři stínové zámky.",
+      "tell": "Vždy zvýrazní zámek, který se chystá chránit.",
+      "response": "Postupně uvolnit tři zámky a zachránit Jiskru.",
+      "note": "Nový volitelný boss navržený k obraně věže; původní příběh ho nejmenuje.",
+      "scale": "2,2×",
+      "file": "png/bossove/zamkovnik.png",
+      "width": 1016,
+      "height": 1006,
+      "atlas_file": "atlasy/sada_05.png",
+      "atlas_region": [
+        0,
+        0,
+        1073,
+        1042
+      ],
+      "trim_in_region": [
+        54,
+        52,
+        1022,
+        1010
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        508.0,
+        982
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "strazce_zrcadel",
+      "name": "Strážce zrcadel",
+      "type": "boss",
+      "sheet": 5,
+      "cell": 1,
+      "levels": "20",
+      "behavior": "Skrývá se mezi kopiemi a mění jejich rozmístění.",
+      "tell": "Pravý má stále zlatý zářez v rámu.",
+      "response": "Rozpoznat pravého a odkrýt jeho zrcadlo v bezpečné chvíli.",
+      "note": "Boss z příběhu; Perla vzpomínek se získá až po něm.",
+      "scale": "2,5×",
+      "file": "png/bossove/strazce_zrcadel.png",
+      "width": 813,
+      "height": 1038,
+      "atlas_file": "atlasy/sada_05.png",
+      "atlas_region": [
+        1073,
+        0,
+        2048,
+        1042
+      ],
+      "trim_in_region": [
+        52,
+        23,
+        817,
+        1013
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        406.5,
+        1014
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "pozirac_hvezd",
+      "name": "Požírač hvězd",
+      "type": "boss",
+      "sheet": 5,
+      "cell": 2,
+      "levels": "25",
+      "behavior": "Nasává světlo a sesílá pomalé stínové vlny.",
+      "tell": "Nafoukne břicho a otevře tlamu před nasátím.",
+      "response": "Udržet osadní lucerny rozsvícené a využít pomoc obyvatel.",
+      "note": "Boss z příběhu; Hvězda naděje vznikne po obraně osady.",
+      "scale": "3,2×",
+      "file": "png/bossove/pozirac_hvezd.png",
+      "width": 1067,
+      "height": 986,
+      "atlas_file": "atlasy/sada_05.png",
+      "atlas_region": [
+        0,
+        1042,
+        1088,
+        2048
+      ],
+      "trim_in_region": [
+        35,
+        30,
+        1054,
+        968
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        533.5,
+        962
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    },
+    {
+      "id": "morous",
+      "name": "Morous",
+      "type": "boss",
+      "sheet": 5,
+      "cell": 3,
+      "levels": "28 setkání; 30 závěrečný souboj",
+      "behavior": "Ovládá temné kořeny a vytváří stínové kopie.",
+      "tell": "Hůl a příslušný přívod magie se rozsvítí před útokem.",
+      "response": "Zapojit tři esence a otočit tok magie mechanismem; vždy stačí obyčejný skok.",
+      "note": "Skutečný Morous se Bitovi osobně ukáže až v levelu 28.",
+      "scale": "1,5×",
+      "file": "png/bossove/morous.png",
+      "width": 927,
+      "height": 929,
+      "atlas_file": "atlasy/sada_05.png",
+      "atlas_region": [
+        1088,
+        1042,
+        2048,
+        2048
+      ],
+      "trim_in_region": [
+        35,
+        88,
+        914,
+        969
+      ],
+      "padding_px": 24,
+      "suggested_bottom_anchor_px": [
+        463.5,
+        905
+      ],
+      "facing": "right_three_quarter",
+      "animation_frames": 1,
+      "transparent_background": true
+    }
+  ]
+}

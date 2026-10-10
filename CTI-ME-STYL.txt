@@ -1,0 +1,15 @@
+STARBIT – jednotný grafický styl
+
+Balíček obsahuje pravidla pro další tvorbu assetů.
+
+1. Rozbal obsah do kořene své stávající hry, vedle project.godot.
+2. AGENTS.md určuje pravidla pro Codex při práci v tomto projektu.
+3. docs/design/STARBIT-GRAFICKY-STYL.md obsahuje konkrétní předlohy,
+   pravidla a společný prompt pro tvorbu v Higgsfieldu.
+4. Pokud už vlastní AGENTS.md máš, připoj nová pravidla k němu.
+
+Pro použití v jiném chatu přilož dokument grafického stylu a skutečné
+referenční obrázky potřebné pro konkrétní asset.
+
+Není potřeba spouštět instalační skript. Balíček obsahuje dokumentaci;
+scény, skripty hry ani obrázky nepřepisuje.

@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cgp8up2figoii"]
 
+[ext_resource type="Texture2D" uid="uid://b2a4527rfmrj7" path="res://assets/environment/forest/higgsfield/forest_platforms.png" id="12_156wx"]
 [ext_resource type="Shader" uid="uid://c23ovxxc4jskq" path="res://shaders/spring_pad_alpha.gdshader" id="alpha"]
 [ext_resource type="Texture2D" uid="uid://dc1ur7uox1dgc" path="res://assets/environment/forest/higgsfield/arch.tres" id="arch"]
 [ext_resource type="Shader" uid="uid://bwxj5eelcmjxs" path="res://shaders/forest_ground_blend.gdshader" id="bank_blend"]
@@ -11,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://bus6amcwoior0" path="res://assets/environment/forest/higgsfield/ferns.tres" id="ferns"]
 [ext_resource type="Script" uid="uid://bn2r71lkbsur6" path="res://scripts/forest_bank.gd" id="forest_bank"]
 [ext_resource type="Script" uid="uid://yqjcadri1doq" path="res://scripts/forest_support.gd" id="forest_support"]
-[ext_resource type="Texture2D" uid="uid://bvs7tg3twjmry" path="res://assets/environment/forest/higgsfield/forest_glade.png" id="glade"]
 [ext_resource type="Texture2D" uid="uid://b1ume7y5t0q6q" path="res://assets/environment/forest/higgsfield/grass.tres" id="grass"]
 [ext_resource type="Texture2D" path="res://assets/environment/forest/higgsfield/grass_lip.tres" id="grass_lip"]
 [ext_resource type="Script" uid="uid://c2svy4eaj02wn" path="res://scripts/tutorial_trigger.gd" id="hint"]
@@ -31,6 +31,9 @@
 [ext_resource type="Script" uid="uid://84c1mtqanj6e" path="res://scripts/dream_switch.gd" id="switch"]
 [ext_resource type="Texture2D" uid="uid://bxlo32d1jwxrf" path="res://assets/environment/forest/higgsfield/tree.tres" id="tree"]
 [ext_resource type="Texture2D" uid="uid://t7apj2xt8ht0" path="res://assets/environment/forest/higgsfield/wood.tres" id="wood"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y7pjk"]
+load_path = "res://.godot/imported/kingdom_adventure.png-02099e581ae16b674f6d3a06cab27496.ctex"
 
 [sub_resource type="ShaderMaterial" id="grass_blend"]
 shader = ExtResource("bank_blend")
@@ -62,9 +65,6 @@ size = Vector2(120, 25)
 
 [sub_resource type="RectangleShape2D" id="s_ShallowEastReturn"]
 size = Vector2(130, 25)
-
-[sub_resource type="RectangleShape2D" id="s_FernBank"]
-size = Vector2(900, 800)
 
 [sub_resource type="RectangleShape2D" id="s_LeafA"]
 size = Vector2(260, 19)
@@ -101,6 +101,11 @@ size = Vector2(140, 20)
 
 [sub_resource type="RectangleShape2D" id="s_WaterfallRest"]
 size = Vector2(900, 805)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6cw38"]
+atlas = ExtResource("12_156wx")
+region = Rect2(73, 827, 910, 185)
+filter_clip = true
 
 [sub_resource type="RectangleShape2D" id="s_StreamCatch"]
 size = Vector2(2020, 485)
@@ -258,7 +263,7 @@ size = Vector2(270, 30)
 [sub_resource type="RectangleShape2D" id="s_FinalMoverB"]
 size = Vector2(290, 23)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7pjk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6cw38"]
 shader = ExtResource("alpha")
 
 [node name="Level_01" type="Node2D" unique_id=278178222]
@@ -274,16 +279,16 @@ fall_limit = 1360.0
 layer = -100
 
 [node name="Glade" type="TextureRect" parent="DistantForest" unique_id=418763619]
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-texture = ExtResource("glade")
+texture = SubResource("CompressedTexture2D_y7pjk")
 expand_mode = 1
 stretch_mode = 6
-metadata/_edit_lock_ = true
 
 [node name="Arrival" type="AnimatableBody2D" parent="." unique_id=1714135161]
 material = SubResource("grass_blend")
@@ -340,7 +345,7 @@ width = 430.0
 depth = 820.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SecondStep" unique_id=1935487261]
-position = Vector2(-290, 628)
+position = Vector2(215, 402.5)
 shape = SubResource("s_SecondStep")
 one_way_collision_margin = 7.0
 
@@ -365,7 +370,7 @@ width = 1040.0
 depth = 650.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ShallowPath" unique_id=1690597575]
-position = Vector2(100, 606)
+position = Vector2(520, 317.5)
 shape = SubResource("s_ShallowPath")
 one_way_collision_margin = 7.0
 
@@ -425,11 +430,6 @@ surface_repeat = Vector2(0.32, 0.68)
 width = 900.0
 depth = 815.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FernBank" unique_id=1196885348]
-position = Vector2(450, 400)
-shape = SubResource("s_FernBank")
-one_way_collision_margin = 7.0
-
 [node name="FernBankEarth" type="Node2D" parent="." unique_id=774169163]
 z_index = -1
 texture_repeat = 2
@@ -440,7 +440,7 @@ bottom = 1450.0
 
 [node name="LeafA" type="AnimatableBody2D" parent="." unique_id=230575678]
 material = SubResource("clean_alpha")
-position = Vector2(2123, 408)
+position = Vector2(2173, 425)
 collision_mask = 0
 script = ExtResource("platform")
 surface_texture = ExtResource("leaf")
@@ -537,7 +537,7 @@ one_way_collision_margin = 7.0
 [node name="RootsWestEarth" type="Node2D" parent="." unique_id=418375901]
 z_index = -1
 texture_repeat = 2
-position = Vector2(4420, 550)
+position = Vector2(4420, 548)
 script = ExtResource("forest_bank")
 width = 1370.0
 bottom = 1450.0
@@ -692,12 +692,11 @@ bottom = 1450.0
 
 [node name="StreamCatch" type="AnimatableBody2D" parent="." unique_id=615791398]
 material = SubResource("stone_blend")
-position = Vector2(7253, 810)
+position = Vector2(7159, 810)
 collision_mask = 0
 script = ExtResource("platform")
-surface_texture = ExtResource("stone_lip")
-surface_walk_y = 56.0
-surface_height = 56.0
+surface_texture = SubResource("AtlasTexture_6cw38")
+surface_walk_y = 80.0
 surface_repeat = Vector2(0.32, 0.68)
 width = 2020.0
 depth = 500.0
@@ -710,7 +709,7 @@ one_way_collision_margin = 7.0
 [node name="StreamCatchEarth" type="Node2D" parent="." unique_id=234237021]
 z_index = -1
 texture_repeat = 2
-position = Vector2(7190, 973)
+position = Vector2(7159, 770)
 script = ExtResource("forest_bank")
 surface_overlap = 60.0
 texture_span = 1200.0
@@ -1818,7 +1817,7 @@ wave_height = 54.0
 
 [node name="Spring" parent="." unique_id=1258723147 instance=ExtResource("spring")]
 texture_filter = 4
-material = SubResource("ShaderMaterial_y7pjk")
+material = SubResource("ShaderMaterial_6cw38")
 position = Vector2(9730, 550)
 launch_speed = 970.0
 
@@ -1988,7 +1987,7 @@ script = ExtResource("object")
 modulate = Color(0.82, 0.9, 0.84, 1)
 z_index = -4
 material = SubResource("clean_alpha")
-position = Vector2(2490.0002, 565)
+position = Vector2(2505, 580)
 scale = Vector2(0.95376784, 0.9709944)
 texture = ExtResource("tree")
 offset = Vector2(0, -362)
@@ -2032,7 +2031,7 @@ offset = Vector2(0, -362)
 [node name="ArrivalArch" type="Sprite2D" parent="." unique_id=1813419773]
 z_index = -2
 material = SubResource("clean_alpha")
-position = Vector2(185.99997, 485)
+position = Vector2(194.99998, 532)
 scale = Vector2(0.30646548, 0.38680542)
 texture = ExtResource("arch")
 offset = Vector2(-94.03281, -61.038574)
@@ -2120,7 +2119,7 @@ offset = Vector2(0, -155.5)
 [node name="GardenFern1" type="Sprite2D" parent="." unique_id=1796154700]
 z_index = -2
 material = SubResource("clean_alpha")
-position = Vector2(3030, 550)
+position = Vector2(3630, 548)
 scale = Vector2(0.23151125, 0.23151125)
 texture = ExtResource("ferns")
 offset = Vector2(0, -155.5)

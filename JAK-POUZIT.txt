@@ -1,0 +1,57 @@
+STARBIT – NEPŘÁTELÉ A BOSSOVÉ
+Grafická sada • 10. října 2026
+
+OBSAH
+12 běžných nepřátel, 6 bossů a 2 osvobozené podoby bossů.
+20 samostatných PNG s průhledným pozadím, 5 zdrojových atlasů,
+obrázkový přehled, bestiář s navrženým chováním a technický soupis JSON.
+
+STAV
+Jde o statické grafické assety a návrhy chování. Neobsahují hotové animace,
+kolize, skripty nepřátel ani napojení na herní levely. Existující hra není změněna.
+Každá postava má jednu základní pózu. Sousední obrázky v atlasu jsou různé
+postavy nebo podoby, nikoli navazující animační snímky.
+
+POUŽITÍ V GODOTU
+1. Zkopíruj png/ do nové podsložky assets/characters/story_pack/ ve stávající hře.
+2. Vyber konkrétní obrázek jako Texture pro Sprite2D nebo jako jediný snímek
+   v připravené animaci AnimatedSprite2D. Existující scény a skripty zachovej.
+3. Uprav velikost podle Bita a vytvoř jednoduchou kolizi pro konkrétní chování.
+   Doporučené poměry výšky v bestiáři jsou návrh, ne změřené hodnoty ze hry.
+4. Filtraci textur ponech hladkou; grafika není pixel art. Pro pohyb vlevo
+   použij převrácení jen u postav, kde nezmění význam rozpoznávacích znaků.
+5. Před animováním udrž jednotnou velikost těla, spodní kotvu a směr pohledu
+   napříč snímky. Základní sada: idle, pohyb, příprava útoku, útok,
+   zotavení, zásah a rozplynutí/očištění.
+
+SOUBORY
+png/nepratele/ – 12 jednotlivých nepřátel.
+png/bossove/ – 6 jednotlivých bossů.
+png/osvobozeni/ – Brúčoun a Trnový obr po zlomení kouzla.
+atlasy/ – původní generované sady, 2 × 2 postavy v každé.
+PREHLED.jpg – náhled všech 20 podob se jmény.
+BESTIAR.md – umístění do příběhu, chování, varování před útokem a řešení.
+soupis.json – rozměry, průhlednost, výřezy a navržené měřítko.
+GENEROVANI.json – původ grafiky a zadání generování.
+
+NÁVAZNOST NA PŘÍBĚH
+Bossové z příběhu: Brúčoun (5), Trnový obr (15), Strážce zrcadel (20),
+Požírač hvězd (25), Morous (setkání 28, finále 30).
+Zámkovník (10) je nový navržený strážce Jiskřina vězení. Původní text
+ho výslovně nejmenuje; může být nahrazen soubojem se samotnými zámky.
+Morous se osobně neukazuje v dřívějších levelech; případné vzpomínky
+v 19. levelu nejsou osobní setkání s Bitem.
+Kapka života, Perla vzpomínek a Hvězda naděje se získávají až po
+příslušných dějových milnících. Souboje je předem nevyžadují.
+
+SKOK A OBTÍŽNOST
+Pozdější bossové nevyžadují Zipův dvojskok. Od 9. levelu musí být
+všechny povinné cesty zvládnutelné obyčejným skokem, jak uvádí příběh.
+
+GRAFICKÉ PŘEDLOHY
+Existující repozitář dersi128/STARBIT-Kralovstvi-snu, hlavní větev main:
+assets/shared/pieces/boss.png
+assets/characters/bit/source_sheets/Run1.png
+assets/characters/stinko/frames/00.png
+Grafika vznikla v Higgsfieldu z těchto předloh. Jde o nové kresby ve stejném
+výtvarném směru; nejsou náhradou již existujících animačních sad.
