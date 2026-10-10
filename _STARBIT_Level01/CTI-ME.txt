@@ -1,0 +1,53 @@
+STARBIT — první level / lesní tutoriál a sjednocení prostředí
+
+Základ: dersi128/STARBIT-Kralovstvi-snu
+GitHub main: 103ab43ff5fbad85a2ff0ba6472455c0e8a58eba (ověřeno 10. 10. 2026).
+Godot 4.7.2. Balíček obsahuje změny existujícího projektu, není samostatnou hrou.
+
+JAK VLOŽIT
+1. Zavři Godot a zazálohuj svůj levels/Level_01.tscn, pokud máš vlastní změny.
+2. Rozbal složky levels, assets, scripts a shaders do kořene aktuálního projektu,
+   kde je project.godot. Potřebné jsou všechny čtyři složky.
+3. Otevři projekt, nech doběhnout import PNG a otevři levels/Level_01.tscn.
+4. Stiskni F6. Spustí se první level přes existující herní systém.
+
+Nová podoba kompletně nahrazuje rozložení 1. levelu. Ostatní levely, ovládání,
+menu, uložený postup, animace Bita a globální fyzika se v tomto balíčku nemění.
+Změny nejsou pushnuté na GitHub; samotný git pull tento balíček nepřidá.
+
+VIZUÁLNÍ OPRAVY
+- jemnější lesní zemina od Higgsfieldu místo velkých oranžových kamenů;
+- přechod trávy do zeminy bez mezery a změkčená spodní hrana;
+- dřevěné plošiny bez opakujících se pahýlů;
+- větve, stonky a lana vizuálně spojují plošiny s okolím;
+- sjednocené odstíny stromů, upravená jeskyně a světlo u tajné cesty.
+Nové skripty forest_bank.gd a forest_support.gd jsou pouze vizuální.
+Oproti předchozímu tutoriálu zůstávají všechny kolize a herní dráhy stejné.
+Balíček zahrnuje původní tutoriál i jeho nynější opravy; není nutné skládat dvě verze.
+
+CO HRÁČ ZAŽIJE
+- bezpečný rozběh a krátké vysvětlení skoku;
+- krátký příběh krtečka se zastavením hry a potvrzením;
+- odbočku přes listy ke koruně stromu;
+- prvního pomalého Šutříka: skok na hlavu nebo přeskočení;
+- tlačítko v dutém stromě, které zvedne most;
+- checkpoint, vodopád a dobrovolnou dolní jeskyni;
+- pružinu a horní stezku;
+- bednu, která zatíží tlačítko a otevře průchod;
+- druhý checkpoint, pohyblivou plošinu a cestu korunami;
+- krátké závěrečné načasování, hvězdu a bránu.
+
+25 diamantů, 2 checkpointy, 3 pomalí Šutříci. Diamanty na pohyblivých plošinách
+se pohybují s nimi. Pod několika obtížnějšími úseky jsou dolní záchytné cesty
+s možností návratu. Tajné diamanty nejsou nutné k dokončení.
+
+DÉLKA
+Cíl je přibližně 5 minut při prvním hraní. Délka ještě není změřená s novým
+hráčem; automat znalý trasy prošel hlavní cestu za 87,2 s a vše za 96,1 s.
+Tyto časy dokazují průchodnost, nikoli pětiminutovou délku nebo zábavnost.
+Před finálním schválením doporučuji první lidský průchod bez znalosti trasy.
+
+DALŠÍ NAVÁZÁNÍ
+Ve 2. levelu má přibýt odlišná situace: úhyb před střelbou Stínka a využití
+krytí / výškové cesty. Fouk zůstává součástí pozdějšího příběhu. Další levely
+budeme stavět postupně kolem jiného hlavního nápadu, ne kopírováním této trasy.

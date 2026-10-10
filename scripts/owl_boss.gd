@@ -33,6 +33,8 @@ var cue:Label
 var encounter_camera:Camera2D
 var saved_camera_limits:=Vector2i.ZERO
 var camera_focused:=false
+# Low flight clears the refuge shelves; high flight asks the player to stay below.
+# Phase two teaches the height change before the faster two-pearl final phase.
 func _sweep_seconds() -> float:
 	return 1.8 if hp==1 else (2.0 if hp<=3 else 2.3)
 func _rest_seconds() -> float:
@@ -105,11 +107,11 @@ func reset_encounter() -> void:
 func _begin_flight() -> void:
 	_focus_arena()
 	state="flight_warn";timer=0;fired=false
-	high_flight=hp==1 and attacks%2==1
+	high_flight=hp<=3 and attacks%2==1
 	direction=-1.0 if body_offset.x>0 else 1.0
 	var start_x:=right-40 if direction<0 else left+40
 	move_from=body_offset
-	move_to=Vector2(start_x-position.x,-235 if high_flight else -15)
+	move_to=Vector2(start_x-position.x,-235 if high_flight else 0)
 	Progress.sfx("boss_stomp_warn")
 func _spawn_pearls(player:CharacterBody2D) -> void:
 	if hp>3 or fired:return
@@ -236,6 +238,12 @@ func _draw() -> void:
 		draw_circle(Vector2.ZERO,90,Color(0.78,0.41,1.0,glow*0.3))
 		draw_arc(Vector2.ZERO,90,0,TAU,48,Color(0.91,0.68,1,glow),5,true)
 		draw_set_transform(Vector2.ZERO)
+	if state=="dive_warn" and hp<=3 and not fired:
+		var charge:=clampf(timer/0.7,0,1)
+		for side in ([-1.0,1.0] if hp==1 else [0.0]):
+			var pearl_at:=feet+Vector2(side*27,-80)
+			draw_circle(pearl_at,7+charge*7,Color(0.84,0.65,1,0.3+charge*0.5))
+			draw_arc(pearl_at,18,0,TAU,24,Color(0.95,0.85,1,charge),2,true)
 	if state=="flight_warn":
 		var y:=move_to.y-68
 		draw_line(Vector2(left-position.x,y),Vector2(right-position.x,y),Color(0.84,0.62,1,0.35),4,true)

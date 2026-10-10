@@ -8265,6 +8265,9 @@ size = Vector2(240, 48)
 [sub_resource type="RectangleShape2D" id="Expansion_RoofGate"]
 size = Vector2(740, 100)
 
+[sub_resource type="RectangleShape2D" id="Campaign_WindmillRecovery"]
+size = Vector2(1250, 48)
+
 [node name="Level_04" type="Node2D" unique_id=462385026]
 script = ExtResource("level")
 number = 4
@@ -8441,6 +8444,8 @@ texture = ExtResource("column")
 position = Vector2(3710, 145)
 patrol = 110.0
 speed = 60.0
+shadow_range = 340.0
+shadow_warning = 1.2
 
 [node name="HiddenGarden" type="AnimatableBody2D" parent="." unique_id=1551840276]
 position = Vector2(2910, 650)
@@ -8459,7 +8464,7 @@ one_way_collision = true
 texture_filter = 4
 material = SubResource("ShaderMaterial_i5bf8")
 position = Vector2(3000, 650)
-launch_speed = 1060.0
+launch_speed = 1120.0
 
 [node name="GardenRuins" type="Sprite2D" parent="." unique_id=599984344]
 visible = false
@@ -8508,11 +8513,6 @@ position = Vector2(5250, 430)
 script = ExtResource("earth")
 width = 430.0
 bottom = 1450.0
-
-[node name="Checkpoint_Viaduct" type="Node2D" parent="." unique_id=973836911]
-position = Vector2(3910, 145)
-script = ExtResource("object")
-kind = "checkpoint"
 
 [node name="ViaductLookDown" type="Node2D" parent="." unique_id=1353460815]
 position = Vector2(4220, 230)
@@ -8648,7 +8648,7 @@ speed = 90.0
 position = Vector2(6500, 225)
 script = ExtResource("world_hint")
 title = "Cesta vzhůru"
-message = "Počkej, až ostrůvek vyjede nahoru. Pak pokračuj ke hvězdě."
+message = "Skoč na dřevěný ostrůvek, až je blízko. Vyveze tě k horní zahradě a diamantům."
 activation_size = Vector2(420, 300)
 display_seconds = 5.0
 
@@ -8664,7 +8664,7 @@ position = Vector2(7850, -300)
 scale = Vector2(0.6, 0.6)
 
 [node name="StarKey" type="Node2D" parent="." unique_id=1793814750]
-position = Vector2(7706, -365)
+position = Vector2(18000, -345)
 script = ExtResource("object")
 kind = "star_key"
 
@@ -8753,11 +8753,6 @@ script = ExtResource("earth")
 width = 690.0
 bottom = 1450.0
 
-[node name="Checkpoint_Sanctuary" type="Node2D" parent="." unique_id=1713984174]
-position = Vector2(7805, -300)
-script = ExtResource("object")
-kind = "checkpoint"
-
 [node name="Goal" type="Node2D" parent="." unique_id=685027890]
 position = Vector2(19590, 240)
 script = ExtResource("object")
@@ -8830,11 +8825,6 @@ script = ExtResource("object")
 [node name="Crystal_26" type="Node2D" parent="." unique_id=1604064452]
 position = Vector2(8140, -96)
 script = ExtResource("object")
-
-[node name="Checkpoint_OuterGardens" type="Node2D" parent="." unique_id=2102100115]
-position = Vector2(10107, 244)
-script = ExtResource("object")
-kind = "checkpoint"
 
 [node name="GardenFerry" type="AnimatableBody2D" parent="." unique_id=1147136390]
 position = Vector2(9510, 290)
@@ -8949,9 +8939,11 @@ position = Vector2(11540, 270)
 collision_mask = 0
 script = ExtResource("dream_platform")
 style = "island"
-width = 190.0
+width = 220.0
 depth = 115.0
-period = 4.5
+period = 4.8
+travel = Vector2(90, -40)
+surface_art = "wood"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GardenStep" unique_id=1782943416]
 position = Vector2(95, 50)
@@ -9002,7 +8994,7 @@ one_way_collision = true
 texture_filter = 4
 material = SubResource("ShaderMaterial_t0mab")
 position = Vector2(11840, 680)
-launch_speed = 1100.0
+launch_speed = 1160.0
 
 [node name="BonusRuins" type="Sprite2D" parent="." unique_id=1613120336]
 visible = false
@@ -9127,9 +9119,9 @@ bottom = 1500.0
 position = Vector2(14700, 460)
 script = ExtResource("world_hint")
 title = "Protizávaží"
-message = "Přisuň bednu na červenou desku. Spustí kamenný balkon ke skoku."
+message = "Přisuň bednu doprostřed červené desky. Balkon sjede dolů. Bednu nech stát a přeskoč ji."
 activation_size = Vector2(250, 220)
-display_seconds = 5.0
+display_seconds = 7.0
 
 [node name="CounterweightCrate" parent="." unique_id=1142648651 instance=ExtResource("world_crate")]
 position = Vector2(15080, 510)
@@ -9191,7 +9183,7 @@ width = 450.0
 bottom = 1500.0
 
 [node name="Checkpoint_Windmill" type="Node2D" parent="." unique_id=1592727498]
-position = Vector2(16609, 41)
+position = Vector2(14820, 510)
 script = ExtResource("object")
 kind = "checkpoint"
 
@@ -9199,9 +9191,9 @@ kind = "checkpoint"
 position = Vector2(17120, 40)
 collision_mask = 0
 script = ExtResource("dream_platform")
-width = 180.0
+width = 210.0
 depth = 63.0
-travel = Vector2(0, -140)
+travel = Vector2(120, -140)
 period = 4.8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WindLift" unique_id=768572470]
@@ -9213,8 +9205,11 @@ one_way_collision = true
 position = Vector2(17470, -160)
 collision_mask = 0
 script = ExtResource("dream_platform")
-width = 200.0
+width = 230.0
 depth = 63.0
+travel = Vector2(80, 90)
+period = 4.8
+surface_art = "wood"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WindLanding" unique_id=1874873810]
 position = Vector2(100, 24)
@@ -9288,7 +9283,7 @@ position = Vector2(16670, -5)
 script = ExtResource("object")
 
 [node name="WorldCrystal_6" type="Node2D" parent="." unique_id=1004557083]
-position = Vector2(18000, -345)
+position = Vector2(7706, -355)
 script = ExtResource("object")
 
 [node name="Scenery_EntryHouse" type="Node2D" parent="." unique_id=942027922]
@@ -9467,7 +9462,7 @@ preview_in_editor = true
 position = Vector2(3390, 95)
 script = ExtResource("world_hint")
 title = "Stínko"
-message = "Stínko se vznáší těsně nad zemí.\nPřeskoč ho, nebo mu skoč na hlavu."
+message = "Stínko před střelou zazáří.\nPřeskoč střelu i Stínka, nebo mu skoč na hlavu."
 activation_size = Vector2(360, 300)
 
 [node name="Hint_OptionalGarden" type="Marker2D" parent="."]
@@ -9536,3 +9531,44 @@ script = ExtResource("zone")
 area_size = Vector2(330, 270)
 look_offset = Vector2(-25, 150)
 priority = 3
+
+[node name="Hint_ClimbingCrate" type="Marker2D" parent="."]
+position = Vector2(925, 490)
+script = ExtResource("world_hint")
+title = "Bedna jako schod"
+message = "Přisuň bednu ke zdi. Skoč na ni a s Foukem vyskoč na zeď."
+activation_size = Vector2(320, 230)
+display_seconds = 6.0
+
+[node name="Hint_WindmillRhythm" type="Marker2D" parent="."]
+position = Vector2(16800, -10)
+script = ExtResource("world_hint")
+title = "Dva kroky ve větru"
+message = "První ostrůvek stoupá, druhý klesá. Skoč, když jsou blízko, a odpočiň si u hvězdy."
+activation_size = Vector2(320, 230)
+display_seconds = 6.0
+
+[node name="WindmillRecovery" type="AnimatableBody2D" parent="."]
+position = Vector2(17070, 390)
+collision_mask = 0
+script = ExtResource("platform")
+width = 1250.0
+depth = 85.0
+style = "ground"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindmillRecovery"]
+position = Vector2(625.0, 24)
+shape = SubResource("Campaign_WindmillRecovery")
+one_way_collision = true
+
+[node name="WindmillReturnSpring" parent="." instance=ExtResource("world_spring")]
+position = Vector2(17220, 390)
+launch_speed = 1150.0
+
+[node name="Hint_WindmillRecovery" type="Marker2D" parent="."]
+position = Vector2(17370, 335)
+script = ExtResource("world_hint")
+title = "Ještě jeden pokus"
+message = "Pružina vlevo tě vrátí na první ostrůvek. Odtud zkus znovu cestu ke hvězdě."
+activation_size = Vector2(320, 230)
+display_seconds = 6.0

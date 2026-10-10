@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" path="res://scenes/animated_water/AnimatedPool.tscn" id="6_nvukp"]
 [ext_resource type="Shader" uid="uid://c23ovxxc4jskq" path="res://shaders/spring_pad_alpha.gdshader" id="15_f85um"]
 [ext_resource type="PackedScene" path="res://scenes/environments/village.tscn" id="bg"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/PushCrate.tscn" id="campaign_crate"]
 [ext_resource type="Script" uid="uid://bd4fkdbvhf54y" path="res://scripts/camera_zone.gd" id="camera_zone"]
 [ext_resource type="Script" uid="uid://bxhwbssdynno" path="res://scripts/cave_back.gd" id="cave"]
 [ext_resource type="Script" uid="uid://bo2i4jhy1kyxd" path="res://scripts/linked_platform.gd" id="dream_link"]
@@ -15331,6 +15332,18 @@ size = Vector2(230, 48)
 [sub_resource type="RectangleShape2D" id="Expansion_VillageGate"]
 size = Vector2(740, 100)
 
+[sub_resource type="RectangleShape2D" id="Campaign_WorkshopRoof"]
+size = Vector2(220, 48)
+
+[sub_resource type="RectangleShape2D" id="Campaign_WorkshopChimney"]
+size = Vector2(180, 48)
+
+[sub_resource type="RectangleShape2D" id="Campaign_CaveRoofFerry"]
+size = Vector2(190, 48)
+
+[sub_resource type="RectangleShape2D" id="Campaign_CaveRoofLookout"]
+size = Vector2(210, 48)
+
 [node name="Level_03" type="Node2D" unique_id=568923922]
 script = ExtResource("level")
 number = 3
@@ -15555,12 +15568,14 @@ shape = SubResource("shape13")
 one_way_collision = true
 
 [node name="Platform_15" type="AnimatableBody2D" parent="." unique_id=793896465]
-position = Vector2(8230, 210)
+position = Vector2(8230, -130)
 collision_mask = 0
-script = ExtResource("dream_platform")
+script = ExtResource("dream_link")
 surface_art = "stone"
 width = 340.0
 depth = 115.0
+travel = Vector2(0, 340)
+move_seconds = 1.8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_15" unique_id=1996646737]
 position = Vector2(170, 50)
@@ -15902,7 +15917,7 @@ position = Vector2(10035, 749.0)
 script = ExtResource("object")
 
 [node name="star_key_28" type="Node2D" parent="." unique_id=480739478]
-position = Vector2(17555, 110)
+position = Vector2(21130, -235)
 script = ExtResource("object")
 kind = "star_key"
 
@@ -15921,11 +15936,6 @@ scale = Vector2(0.8, 0.8)
 script = ExtResource("object")
 kind = "fouk"
 fouk_on_ground = true
-
-[node name="checkpoint_33" type="Node2D" parent="." unique_id=147097437]
-position = Vector2(12940, 480)
-script = ExtResource("object")
-kind = "checkpoint"
 
 [node name="Enemy_0" parent="." unique_id=1981423056 instance=ExtResource("rock_enemy")]
 position = Vector2(4170, 480)
@@ -16310,9 +16320,9 @@ position = Vector2(3473, 739)
 collision_mask = 0
 script = ExtResource("dream_platform")
 style = "island"
-width = 150.0
+width = 190.0
 depth = 60.0
-travel = Vector2(180, 0)
+travel = Vector2(100, 0)
 period = 4.8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SecretReturnStep1" unique_id=791095474]
@@ -16357,11 +16367,6 @@ script = ExtResource("earth")
 width = 1930.0
 bottom = 1800.0
 
-[node name="CheckpointFouk" type="Node2D" parent="." unique_id=793523623]
-position = Vector2(4840, 572)
-script = ExtResource("object")
-kind = "checkpoint"
-
 [node name="CameraSecretDescent" type="Node2D" parent="." unique_id=1185485883]
 position = Vector2(1790, 540)
 script = ExtResource("camera_zone")
@@ -16382,14 +16387,14 @@ scale = Vector2(0.75, 0.75)
 
 [node name="SecretLowerGuard" parent="." unique_id=1985557584 instance=ExtResource("rock_enemy")]
 position = Vector2(2541, 1080)
-patrol = 500.0
-speed = 62.0
+patrol = 280.0
+speed = 58.0
 obraceni = null
 
 [node name="SecretLowerGuard2" parent="." unique_id=1282511587 instance=ExtResource("rock_enemy")]
-position = Vector2(3274, 1080)
-patrol = 300.0
-speed = 80.0
+position = Vector2(3100, 1080)
+patrol = 130.0
+speed = 58.0
 obraceni = true
 
 [node name="SecretLowerLantern" parent="." unique_id=2005428011 instance=ExtResource("lantern")]
@@ -16465,7 +16470,7 @@ look_offset = Vector2(60, 100)
 priority = 2
 
 [node name="Checkpoint_CrystalCourt" type="Node2D" parent="." unique_id=1580602135]
-position = Vector2(18650, 550)
+position = Vector2(16780, 550)
 script = ExtResource("object")
 kind = "checkpoint"
 
@@ -16473,9 +16478,9 @@ kind = "checkpoint"
 position = Vector2(18700, 500)
 script = ExtResource("world_hint")
 title = "Krystalové schodiště"
-message = "Dotkni se krystalu. Vyzdvihne kameny; Fouk ti pomůže doskočit výš."
+message = "Sestup k velkému krystalu vpravo. Dotyk zvedne tři schody. Pružina vlevo tě vrátí na začátek schodiště."
 activation_size = Vector2(250, 220)
-display_seconds = 5.0
+display_seconds = 7.0
 
 [node name="CrystalSwitch" type="Node2D" parent="." unique_id=82002561]
 z_index = 1
@@ -16483,6 +16488,7 @@ position = Vector2(19980, 889)
 script = ExtResource("dream_switch")
 targets = Array[NodePath]([NodePath("../CrystalStepA"), NodePath("../CrystalStepB"), NodePath("../CrystalStepC")])
 appearance = "crystal"
+plate_width = 150.0
 
 [node name="CrystalStepA" type="AnimatableBody2D" parent="." unique_id=1993423466]
 position = Vector2(19080, 700)
@@ -16551,7 +16557,7 @@ bottom = 1500.0
 texture_filter = 4
 material = SubResource("ShaderMaterial_d4fhi")
 position = Vector2(19200, 890)
-launch_speed = 1130.0
+launch_speed = 1250.0
 
 [node name="ArchivistTerrace" type="AnimatableBody2D" parent="." unique_id=627320308]
 position = Vector2(20280, -80)
@@ -16654,7 +16660,7 @@ position = Vector2(20399, -125)
 script = ExtResource("object")
 
 [node name="WorldCrystal_6" type="Node2D" parent="." unique_id=1592770099]
-position = Vector2(21130, -232)
+position = Vector2(17555, 110)
 script = ExtResource("object")
 
 [node name="WorldCrystal_8" type="Node2D" parent="." unique_id=483997574]
@@ -16827,3 +16833,122 @@ kind = "crystal"
 [node name="FoukTrailLantern" parent="." instance=ExtResource("lantern")]
 position = Vector2(2180, 1080)
 scale = Vector2(0.65, 0.65)
+
+[node name="MarketCrate" parent="." instance=ExtResource("campaign_crate")]
+position = Vector2(7750, 300)
+push_speed = 125.0
+
+[node name="MarketPlate" type="Node2D" parent="."]
+position = Vector2(7940, 300)
+script = ExtResource("dream_switch")
+targets = Array[NodePath]([NodePath("../Platform_15")])
+require_crate = true
+plate_width = 125.0
+
+[node name="Hint_MarketCrate" type="Marker2D" parent="."]
+position = Vector2(7590, 245)
+script = ExtResource("world_hint")
+title = "Zvedací střecha"
+message = "Přisuň bednu na červenou desku. Střecha sjede dolů a zůstane tam. Pak přeskoč bednu a pokračuj vpravo."
+activation_size = Vector2(320, 230)
+display_seconds = 6.0
+
+[node name="WorkshopRoof" type="AnimatableBody2D" parent="."]
+position = Vector2(4230, 270)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "stone"
+width = 220.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorkshopRoof"]
+position = Vector2(110.0, 24)
+shape = SubResource("Campaign_WorkshopRoof")
+one_way_collision = true
+
+[node name="WorkshopChimney" type="AnimatableBody2D" parent="."]
+position = Vector2(4470, 135)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "stone"
+width = 180.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorkshopChimney"]
+position = Vector2(90.0, 24)
+shape = SubResource("Campaign_WorkshopChimney")
+one_way_collision = true
+
+[node name="WorkshopRoofCrystal" type="Node2D" parent="."]
+position = Vector2(4340, 218)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="WorkshopChimneyCrystal" type="Node2D" parent="."]
+position = Vector2(4560, 80)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="WorkshopHouse" type="Node2D" parent="."]
+z_index = -6
+position = Vector2(4340, 480)
+script = ExtResource("world_art")
+piece = "blue_house"
+art_height = 210.0
+
+[node name="Hint_WorkshopRoof" type="Marker2D" parent="."]
+position = Vector2(3975, 425)
+script = ExtResource("world_hint")
+title = "Dílna nad cestou"
+message = "Fouk tě vynese na střechu. Diamanty nahoře jsou odbočka; dolů se vrátíš vpravo."
+activation_size = Vector2(320, 230)
+display_seconds = 6.0
+
+[node name="CaveRoofFerry" type="AnimatableBody2D" parent="."]
+position = Vector2(9820, 270)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 190.0
+depth = 63.0
+travel = Vector2(130, -80)
+period = 4.6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaveRoofFerry"]
+position = Vector2(95.0, 24)
+shape = SubResource("Campaign_CaveRoofFerry")
+one_way_collision = true
+
+[node name="CaveRoofLookout" type="AnimatableBody2D" parent="."]
+position = Vector2(10230, 100)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "stone"
+width = 210.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CaveRoofLookout"]
+position = Vector2(105.0, 24)
+shape = SubResource("Campaign_CaveRoofLookout")
+one_way_collision = true
+
+[node name="CaveRoofSecret" type="Node2D" parent="."]
+position = Vector2(10335, 45)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Hint_CaveRoute" type="Marker2D" parent="."]
+position = Vector2(9300, 300)
+script = ExtResource("world_hint")
+title = "Nad střechou, nebo pod ní?"
+message = "Dole svítí lucerny. Nahoře pluje ostrůvek k vyhlídce. Obě cesty se spojí vpravo."
+activation_size = Vector2(320, 230)
+display_seconds = 6.0
+
+[node name="Hint_FinalStar" type="Marker2D" parent="."]
+position = Vector2(20380, -130)
+script = ExtResource("world_hint")
+title = "Hvězda z hvězdárny"
+message = "Hvězda čeká na vyhlídce vpravo. Pak už jen po osvětlených ostrůvcích k bráně."
+activation_size = Vector2(320, 230)
+display_seconds = 6.0

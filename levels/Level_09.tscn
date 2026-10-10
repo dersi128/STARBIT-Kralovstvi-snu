@@ -1,8 +1,10 @@
-[gd_scene load_steps=106 format=3]
+[gd_scene load_steps=107 format=3]
 
 [ext_resource type="Script" path="res://scripts/garden_restore.gd" id="level"]
 
 [ext_resource type="Script" path="res://scripts/castle_platform.gd" id="castle"]
+
+[ext_resource type="Script" path="res://scripts/castle_lift.gd" id="rider_lift"]
 
 [ext_resource type="Script" path="res://scripts/royal_backwall.gd" id="backwall"]
 
@@ -55,6 +57,9 @@
 [ext_resource type="PackedScene" path="res://scenes/supplied/VinesLong.tscn" id="vine"]
 
 [ext_resource type="Script" path="res://scripts/royal_life.gd" id="royal_life"]
+
+[ext_resource type="PackedScene" path="res://scenes/royal/higgsfield/RoyalBalustrade.tscn" id="hf_detail_RoyalBalustrade"]
+[ext_resource type="PackedScene" path="res://scenes/royal/higgsfield/RoyalPlanter.tscn" id="hf_detail_RoyalPlanter"]
 
 [sub_resource type="AtlasTexture" id="flower_art"]
 atlas = ExtResource("flower")
@@ -471,11 +476,6 @@ position = Vector2(925, 630)
 title = "Květinové schody"
 message = "Počkej na otevřený květ. Pod tebou se nezavře."
 display_seconds = 4.5
-
-[node name="CheckpointSun" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(3310, 520)
-kind = "checkpoint"
 
 [node name="DryFountainCourt" type="AnimatableBody2D" parent="."]
 script = ExtResource("castle")
@@ -1017,11 +1017,6 @@ size = Vector2(530, 520)
 tint = Color(0.69, 0.76, 0.74, 0.88)
 openings = Array[Rect2]([Rect2(85, 40, 360, 480)])
 
-[node name="CheckpointRain" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(10800, 560)
-kind = "checkpoint"
-
 [node name="OrangeryLaunch" type="AnimatableBody2D" parent="."]
 script = ExtResource("castle")
 surface_texture = SubResource("garden_platform_art")
@@ -1103,11 +1098,6 @@ position = Vector2(11750, 760)
 size = Vector2(2300, 700)
 tint = Color(0.72, 0.77, 0.85, 0.88)
 openings = Array[Rect2]([Rect2(48, 0, 630, 700), Rect2(830, 0, 630, 700), Rect2(1615, 0, 630, 700)])
-
-[node name="CheckpointRoutes" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(14600, 440)
-kind = "checkpoint"
 
 [node name="LowerGalleryWest" type="AnimatableBody2D" parent="."]
 script = ExtResource("castle")
@@ -1479,6 +1469,7 @@ position = Vector2(17710, 720)
 appearance = "plate"
 latch = true
 plate_width = 125.0
+targets = Array[NodePath]([NodePath("../GardenersLift")])
 
 [node name="GalleryPressureGate" type="StaticBody2D" parent="."]
 script = ExtResource("lock")
@@ -1488,7 +1479,7 @@ gate_size = Vector2(72, 930)
 latched = true
 
 [node name="GardenersLift" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
+script = ExtResource("rider_lift")
 surface_texture = SubResource("garden_lift_art")
 surface_walk_y = 50.0
 surface_height = 72.0
@@ -1497,7 +1488,8 @@ width = 280.0
 depth = 55.0
 wall_body = false
 travel = Vector2(0, -650)
-period = 8.8
+period = 4.8
+return_seconds = 2.8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GardenersLift"]
 shape = SubResource("shape_GardenersLift")
@@ -1532,7 +1524,7 @@ plate_width = 125.0
 script = ExtResource("tutorial")
 position = Vector2(14840, 390)
 title = "Dvě cesty k měsíci"
-message = "Nahoře čekají květy. Dole hlídky, nášlapná deska a výtah."
+message = "Nahoře skákej po květech. Dole projdi kolem hlídek a zapni deskou výtah. Obě cesty vedou k měsíci."
 display_seconds = 5.0
 
 [node name="MoonDescent" type="AnimatableBody2D" parent="."]
@@ -1894,11 +1886,6 @@ position = Vector2(23300, -150)
 size = Vector2(580, 480)
 tint = Color(0.72, 0.77, 0.85, 0.88)
 openings = Array[Rect2]([Rect2(50, 32, 480, 448)])
-
-[node name="CheckpointFinal" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(25300, 330)
-kind = "checkpoint"
 
 [node name="FinalCoverWest" type="AnimatableBody2D" parent="."]
 script = ExtResource("castle")
@@ -3071,3 +3058,40 @@ kind = "Lantern"
 height = 95.0
 phase = 3.2
 metadata/ground_surface = "PalaceGarden"
+
+
+[node name="GardenersLiftLesson" type="Marker2D" parent="."]
+script = ExtResource("tutorial")
+position = Vector2(17700, 620)
+title = "Zahradníkův výtah"
+message = "Deska otevře pečeť a zapne výtah. Ten na tebe dole počká."
+activation_size = Vector2(350, 240)
+display_seconds = 5.0
+
+[node name="PalaceCanalLesson" type="Marker2D" parent="."]
+script = ExtResource("tutorial")
+position = Vector2(25400, 240)
+title = "Poslední kanál"
+message = "Za kanálem čeká hvězda a hradní brána. U hlídky se schovej za kamenný kryt."
+activation_size = Vector2(350, 240)
+display_seconds = 5.0
+
+[node name="AqueductSecretLantern" type="Node2D" parent="."]
+script = ExtResource("object")
+position = Vector2(9430, 25)
+kind = "lantern"
+z_index = -1
+scale = Vector2(0.65, 0.65)
+
+[node name="CanopySecretLantern" type="Node2D" parent="."]
+script = ExtResource("object")
+position = Vector2(23750, -215)
+kind = "lantern"
+z_index = -1
+scale = Vector2(0.65, 0.65)
+
+[node name="SecretGardenPlanterDetail" parent="." instance=ExtResource("hf_detail_RoyalPlanter")]
+position = Vector2(9090, 25)
+
+[node name="CanopyRailDetail" parent="." instance=ExtResource("hf_detail_RoyalBalustrade")]
+position = Vector2(23410, -215)

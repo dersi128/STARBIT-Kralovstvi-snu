@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://dln2niy023y37"]
+
+[ext_resource type="Texture2D" uid="uid://b2a4527rfmrj7" path="res://assets/forest/higgsfield/forest_platforms.png" id="1"]
+
+[resource]
+atlas = ExtResource("1")
+region = Rect2(1067, 859, 912, 315)
+filter_clip = true

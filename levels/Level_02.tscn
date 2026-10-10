@@ -24569,6 +24569,75 @@ size = Vector2(210, 48)
 [sub_resource type="RectangleShape2D" id="Expansion_CanopyGate"]
 size = Vector2(700, 100)
 
+[sub_resource type="RectangleShape2D" id="ForestShape_CrateRewardShelf"]
+size = Vector2(240, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_RootLowA"]
+size = Vector2(280, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_RootLowB"]
+size = Vector2(340, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_RootLowC"]
+size = Vector2(230, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_RootUpperReturn"]
+size = Vector2(250, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_BridgeStep"]
+size = Vector2(210, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_GrottoLanding"]
+size = Vector2(420, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_GrottoFloor"]
+size = Vector2(1650, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_GrottoExitA"]
+size = Vector2(240, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_GrottoExitB"]
+size = Vector2(240, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_GrottoExitC"]
+size = Vector2(240, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_RootBridgeA"]
+size = Vector2(320, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_RootBridgeB"]
+size = Vector2(420, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_RootBridgeC"]
+size = Vector2(220, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_RootBridgeD"]
+size = Vector2(250, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_RootBridgeE"]
+size = Vector2(210, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_CanopyRecoveryA"]
+size = Vector2(1010, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_CanopyRecoveryB"]
+size = Vector2(230, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_CanopyRecoveryC"]
+size = Vector2(230, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_FerryGuide"]
+size = Vector2(180, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_LastRecoveryA"]
+size = Vector2(780, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_LastRecoveryB"]
+size = Vector2(210, 48)
+
+[sub_resource type="RectangleShape2D" id="ForestShape_LastRecoveryC"]
+size = Vector2(210, 48)
+
 [node name="Level_02" type="Node2D" unique_id=1077783514]
 script = ExtResource("level")
 number = 2
@@ -24599,7 +24668,7 @@ tile_set = SubResource("TileSet_bfwlu")
 z_index = -3
 position = Vector2(8754, 260)
 script = ExtResource("cave")
-size = Vector2(2220, 549)
+size = Vector2(2620, 670)
 
 [node name="Background" parent="." unique_id=413981919 instance=ExtResource("bg")]
 position = Vector2(428, 84)
@@ -24645,7 +24714,7 @@ one_way_collision = true
 position = Vector2(2120, 470)
 collision_mask = 0
 script = ExtResource("platform")
-width = 510.0
+width = 650.0
 depth = 115.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform_4" unique_id=311756128]
@@ -24803,10 +24872,6 @@ depth = 115.0
 position = Vector2(255.5, 48.875)
 shape = SubResource("shape19")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Platform_20" unique_id=801192989]
-position = Vector2(347.5, 288.65625)
-shape = SubResource("RectangleShape2D_ixgmh")
-
 [node name="Platform_21" type="AnimatableBody2D" parent="." unique_id=1630090443]
 position = Vector2(11420, 420)
 collision_mask = 0
@@ -24921,7 +24986,7 @@ position = Vector2(4883, 734)
 script = ExtResource("object")
 
 [node name="crystal_5" type="Node2D" parent="." unique_id=1758938513]
-position = Vector2(6993.2, 455)
+position = Vector2(6880, 455)
 script = ExtResource("object")
 
 [node name="crystal_6" type="Node2D" parent="." unique_id=439056941]
@@ -24989,11 +25054,11 @@ position = Vector2(6388, 564)
 script = ExtResource("object")
 
 [node name="crystal_23" type="Node2D" parent="." unique_id=932657475]
-position = Vector2(10231, 570)
+position = Vector2(10100, 780)
 script = ExtResource("object")
 
 [node name="star_key_25" type="Node2D" parent="." unique_id=1569155943]
-position = Vector2(17098, 170)
+position = Vector2(23170, 350)
 script = ExtResource("object")
 kind = "star_key"
 
@@ -25002,39 +25067,23 @@ position = Vector2(23490, 410)
 script = ExtResource("object")
 kind = "goal"
 
-[node name="checkpoint_27" type="Node2D" parent="." unique_id=1146326788]
-position = Vector2(8760, 227)
-script = ExtResource("object")
-kind = "checkpoint"
-
-[node name="checkpoint_28" type="Node2D" parent="." unique_id=1988919884]
-position = Vector2(13959, 424)
-script = ExtResource("object")
-kind = "checkpoint"
-
 [node name="Enemy_0" parent="." unique_id=1768574362 instance=ExtResource("rock_enemy")]
-position = Vector2(2536, 468)
-patrol = 275.0
-speed = 68.0
+position = Vector2(2440, 470)
+patrol = 90.0
+speed = 48.0
 obraceni = true
 
 [node name="Enemy_1" parent="." unique_id=646578829 instance=ExtResource("rock_enemy")]
-position = Vector2(6955, 510)
-patrol = 105.0
-speed = 68.0
-obraceni = null
-
-[node name="Enemy_2" parent="." unique_id=2021821211 instance=ExtResource("rock_enemy")]
-position = Vector2(12235, 500)
-patrol = 105.0
-speed = 68.0
-obraceni = null
+position = Vector2(7080, 510)
+patrol = 80.0
+speed = 52.0
+obraceni = true
 
 [node name="Enemy_3" parent="." unique_id=868566270 instance=ExtResource("rock_enemy")]
-position = Vector2(13387, 498)
+position = Vector2(13390, 500)
 rotation = 0.0018172935
-patrol = 150.0
-speed = 68.0
+patrol = 95.0
+speed = 52.0
 obraceni = true
 
 [node name="CameraDescent_00" type="Node2D" parent="." unique_id=1167297342]
@@ -25047,7 +25096,7 @@ position = Vector2(0, 550)
 script = ExtResource("earth")
 width = 720.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_1" type="Node2D" parent="." unique_id=1219915574]
 z_index = -1
@@ -25055,7 +25104,7 @@ position = Vector2(820, 470)
 script = ExtResource("earth")
 width = 510.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_2" type="Node2D" parent="." unique_id=8815263]
 z_index = -1
@@ -25063,15 +25112,15 @@ position = Vector2(1430, 390)
 script = ExtResource("earth")
 width = 590.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_3" type="Node2D" parent="." unique_id=1802119657]
 z_index = -1
 position = Vector2(2120, 470)
 script = ExtResource("earth")
-width = 510.0
+width = 650.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_4" type="Node2D" parent="." unique_id=1844639074]
 visible = false
@@ -25080,7 +25129,7 @@ position = Vector2(2730, 570)
 script = ExtResource("earth")
 width = 340.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_5" type="Node2D" parent="." unique_id=1788227281]
 z_index = -1
@@ -25088,7 +25137,7 @@ position = Vector2(3170, 670)
 script = ExtResource("earth")
 width = 430.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_8" type="Node2D" parent="." unique_id=800777568]
 visible = false
@@ -25097,7 +25146,7 @@ position = Vector2(4742, 851)
 script = ExtResource("earth")
 width = 340.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_9" type="Node2D" parent="." unique_id=202533535]
 z_index = -1
@@ -25105,7 +25154,7 @@ position = Vector2(5230, 780)
 script = ExtResource("earth")
 width = 430.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_12" type="Node2D" parent="." unique_id=524768341]
 visible = false
@@ -25114,7 +25163,7 @@ position = Vector2(6830, 510)
 script = ExtResource("earth")
 width = 340.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_13" type="Node2D" parent="." unique_id=738310483]
 z_index = -1
@@ -25122,7 +25171,7 @@ position = Vector2(7270, 420)
 script = ExtResource("earth")
 width = 590.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_14" type="Node2D" parent="." unique_id=154024659]
 z_index = -1
@@ -25130,7 +25179,7 @@ position = Vector2(7960, 337)
 script = ExtResource("earth")
 width = 510.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_15" type="Node2D" parent="." unique_id=883044473]
 visible = false
@@ -25139,7 +25188,7 @@ position = Vector2(8590, 240)
 script = ExtResource("earth")
 width = 340.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_16" type="Node2D" parent="." unique_id=1645626619]
 z_index = -1
@@ -25147,7 +25196,7 @@ position = Vector2(8657, 205)
 script = ExtResource("earth")
 width = 2400.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_17" type="Node2D" parent="." unique_id=1352064798]
 visible = false
@@ -25156,7 +25205,7 @@ position = Vector2(8591, 258)
 script = ExtResource("earth")
 width = 2500.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_18" type="Node2D" parent="." unique_id=1722691149]
 z_index = -1
@@ -25164,7 +25213,7 @@ position = Vector2(10350, 240)
 script = ExtResource("earth")
 width = 340.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_19" type="Node2D" parent="." unique_id=1213547500]
 z_index = -1
@@ -25172,7 +25221,7 @@ position = Vector2(10494, 262)
 script = ExtResource("earth")
 width = 800.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_20" type="Node2D" parent="." unique_id=428335296]
 z_index = -1
@@ -25180,7 +25229,7 @@ position = Vector2(11420, 420)
 script = ExtResource("earth")
 width = 590.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_21" type="Node2D" parent="." unique_id=1536919761]
 visible = false
@@ -25189,7 +25238,7 @@ position = Vector2(12110, 500)
 script = ExtResource("earth")
 width = 340.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_23" type="Node2D" parent="." unique_id=15436488]
 z_index = -1
@@ -25197,7 +25246,7 @@ position = Vector2(13030, 500)
 script = ExtResource("earth")
 width = 430.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_24" type="Node2D" parent="." unique_id=1466117627]
 z_index = -1
@@ -25205,7 +25254,7 @@ position = Vector2(13560, 420)
 script = ExtResource("earth")
 width = 590.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_28" type="Node2D" parent="." unique_id=1789483938]
 visible = false
@@ -25214,7 +25263,7 @@ position = Vector2(16120, 420)
 script = ExtResource("earth")
 width = 340.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_29" type="Node2D" parent="." unique_id=125413893]
 z_index = -1
@@ -25222,7 +25271,7 @@ position = Vector2(16560, 510)
 script = ExtResource("earth")
 width = 340.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_30" type="Node2D" parent="." unique_id=248595021]
 z_index = -1
@@ -25230,7 +25279,7 @@ position = Vector2(17000, 550)
 script = ExtResource("earth")
 width = 430.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="Earth_31" type="Node2D" parent="." unique_id=773999759]
 z_index = -1
@@ -25238,7 +25287,7 @@ position = Vector2(17430, 550)
 script = ExtResource("earth")
 width = 850.0
 bottom = 1800.0
-cave = Rect2(8772, 193, 2201, 549)
+cave = Rect2(8772, 193, 2608, 710)
 
 [node name="RiverBetweenBanks" parent="." unique_id=1857268581 instance=ExtResource("water_3")]
 position = Vector2(140, 883)
@@ -25278,12 +25327,12 @@ position = Vector2(3471, 670)
 [node name="OptionalSpring2" parent="." unique_id=1257340951 instance=ExtResource("world_spring")]
 texture_filter = 4
 material = SubResource("ShaderMaterial_7hjoh")
-position = Vector2(8994, 423)
+position = Vector2(8994, 750)
 
 [node name="OptionalSpring2" parent="OptionalSpring2" unique_id=162616762 instance=ExtResource("world_spring")]
 texture_filter = 4
 material = SubResource("ShaderMaterial_ypnxh")
-position = Vector2(6002, 155)
+position = Vector2(6002, -175)
 
 [node name="BankFlowers_0" parent="." unique_id=405498104 instance=ExtResource("flowers")]
 z_index = -1
@@ -25366,23 +25415,22 @@ message = "Bite, i kameny tu ožily! Říkám jim Šutříci. Blokují cestu k J
 [node name="Tutorials" type="Node2D" parent="." unique_id=387594636]
 
 [node name="StompEnemy" type="Marker2D" parent="Tutorials" unique_id=1560876789]
-position = Vector2(2160, 380)
+position = Vector2(2230, 410)
 script = ExtResource("world_hint")
 title = "Šutřík – oživlý kámen"
-message = "Skoč Šutříkovi na hlavu.
-Pozor, dotyk ze strany tě zraní."
+message = "Počkej na volné místo a skoč Šutříkovi na hlavu. Na široké mýtině máš dost prostoru."
 activation_size = Vector2(620, 440)
 
 [node name="Checkpoint_Canopy" type="Node2D" parent="." unique_id=1478572014]
-position = Vector2(17950, 550)
+position = Vector2(13900, 420)
 script = ExtResource("object")
 kind = "checkpoint"
 
 [node name="Hint_Timber" type="Marker2D" parent="." unique_id=746103205]
-position = Vector2(18110, 500)
+position = Vector2(17990, 490)
 script = ExtResource("world_hint")
 title = "Staré prkno"
-message = "Praskající dřevo tě udrží jen chvíli. Pokračuj na další plošinu."
+message = "Prkno zapraská dřív, než spadne. Zkus jeden skok. Dole jsou kořeny pro návrat."
 activation_size = Vector2(250, 220)
 display_seconds = 5.0
 
@@ -25390,10 +25438,11 @@ display_seconds = 5.0
 position = Vector2(18400, 490)
 collision_mask = 0
 script = ExtResource("dream_fragile")
-crumble_delay = 1.65
+crumble_delay = 2.6
 surface_art = "wood"
 width = 190.0
 depth = 63.0
+return_delay = 2.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TimberA" unique_id=1252672472]
 position = Vector2(95, 24)
@@ -25404,10 +25453,11 @@ one_way_collision = true
 position = Vector2(18710, 430)
 collision_mask = 0
 script = ExtResource("dream_fragile")
-crumble_delay = 1.65
+crumble_delay = 2.6
 surface_art = "wood"
 width = 180.0
 depth = 63.0
+return_delay = 2.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TimberB" unique_id=811222656]
 position = Vector2(90, 24)
@@ -25418,10 +25468,11 @@ one_way_collision = true
 position = Vector2(19010, 480)
 collision_mask = 0
 script = ExtResource("dream_fragile")
-crumble_delay = 1.65
+crumble_delay = 2.6
 surface_art = "wood"
 width = 210.0
 depth = 63.0
+return_delay = 2.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TimberC" unique_id=967838033]
 position = Vector2(105, 24)
@@ -25447,14 +25498,14 @@ width = 650.0
 bottom = 1500.0
 
 [node name="CanopyFerry" type="AnimatableBody2D" parent="." unique_id=1645674363]
-position = Vector2(20120, 590)
+position = Vector2(20110, 560)
 collision_mask = 0
 script = ExtResource("dream_platform")
 surface_art = "wood"
 width = 220.0
 depth = 63.0
-travel = Vector2(210, -30)
-period = 5.0
+travel = Vector2(80, 0)
+period = 4.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CanopyFerry" unique_id=958812066]
 position = Vector2(110, 24)
@@ -25520,10 +25571,11 @@ bottom = 1500.0
 position = Vector2(22400, 380)
 collision_mask = 0
 script = ExtResource("dream_fragile")
-crumble_delay = 1.5
+crumble_delay = 2.6
 surface_art = "wood"
 width = 210.0
 depth = 63.0
+return_delay = 2.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LastTimberA" unique_id=1093294693]
 position = Vector2(105, 24)
@@ -25534,10 +25586,11 @@ one_way_collision = true
 position = Vector2(22710, 310)
 collision_mask = 0
 script = ExtResource("dream_fragile")
-crumble_delay = 1.5
+crumble_delay = 2.6
 surface_art = "wood"
 width = 210.0
 depth = 63.0
+return_delay = 2.5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LastTimberB" unique_id=1179991788]
 position = Vector2(105, 24)
@@ -25602,7 +25655,7 @@ script = ExtResource("world_art")
 piece = "pavilion"
 
 [node name="Checkpoint_Water" type="Node2D" parent="." unique_id=468138317]
-position = Vector2(5380, 780)
+position = Vector2(5420, 780)
 script = ExtResource("object")
 kind = "checkpoint"
 
@@ -25729,3 +25782,351 @@ touch_message = "Drž šipku směrem k bedně a posuneš ji.
 Vyskoč na ni, když potřebuješ dosáhnout výš."
 activation_size = Vector2(640, 440)
 display_seconds = 8.0
+[node name="CrateRewardShelf" type="AnimatableBody2D" parent="."]
+position = Vector2(1780, 205)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 240.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CrateRewardShelf"]
+position = Vector2(120.0, 24)
+shape = SubResource("ForestShape_CrateRewardShelf")
+one_way_collision = true
+
+[node name="CrateRewardDiamond" type="Node2D" parent="."]
+position = Vector2(1870, 150)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="RootLowA" type="AnimatableBody2D" parent="."]
+position = Vector2(3650, 755)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 360.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RootLowA"]
+position = Vector2(140.0, 24)
+shape = SubResource("ForestShape_RootLowA")
+one_way_collision = true
+
+[node name="RootLowB" type="AnimatableBody2D" parent="."]
+position = Vector2(4090, 850)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 340.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RootLowB"]
+position = Vector2(170.0, 24)
+shape = SubResource("ForestShape_RootLowB")
+one_way_collision = true
+
+[node name="RootLowC" type="AnimatableBody2D" parent="."]
+position = Vector2(4530, 850)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 230.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RootLowC"]
+position = Vector2(115.0, 24)
+shape = SubResource("ForestShape_RootLowC")
+one_way_collision = true
+
+[node name="RootUpperReturn" type="AnimatableBody2D" parent="."]
+position = Vector2(4490, 690)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 250.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RootUpperReturn"]
+position = Vector2(125.0, 24)
+shape = SubResource("ForestShape_RootUpperReturn")
+one_way_collision = true
+
+[node name="BridgeStep" type="AnimatableBody2D" parent="."]
+position = Vector2(6540, 600)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 210.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BridgeStep"]
+position = Vector2(105.0, 24)
+shape = SubResource("ForestShape_BridgeStep")
+one_way_collision = true
+
+[node name="GrottoLanding" type="AnimatableBody2D" parent="."]
+position = Vector2(8940, 750)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 420.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrottoLanding"]
+position = Vector2(210.0, 24)
+shape = SubResource("ForestShape_GrottoLanding")
+one_way_collision = true
+
+[node name="GrottoFloor" type="AnimatableBody2D" parent="."]
+position = Vector2(9310, 835)
+collision_mask = 0
+script = ExtResource("platform")
+width = 1650.0
+depth = 63.0
+style = "bridge"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrottoFloor"]
+position = Vector2(825.0, 24)
+shape = SubResource("ForestShape_GrottoFloor")
+one_way_collision = true
+
+[node name="GrottoExitA" type="AnimatableBody2D" parent="."]
+position = Vector2(10720, 745)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 240.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrottoExitA"]
+position = Vector2(120.0, 24)
+shape = SubResource("ForestShape_GrottoExitA")
+one_way_collision = true
+
+[node name="GrottoExitB" type="AnimatableBody2D" parent="."]
+position = Vector2(10920, 645)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 240.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrottoExitB"]
+position = Vector2(120.0, 24)
+shape = SubResource("ForestShape_GrottoExitB")
+one_way_collision = true
+
+[node name="GrottoExitC" type="AnimatableBody2D" parent="."]
+position = Vector2(11140, 545)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 240.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrottoExitC"]
+position = Vector2(120.0, 24)
+shape = SubResource("ForestShape_GrottoExitC")
+one_way_collision = true
+
+[node name="RootBridgeA" type="AnimatableBody2D" parent="."]
+position = Vector2(14260, 490)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 320.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RootBridgeA"]
+position = Vector2(160.0, 24)
+shape = SubResource("ForestShape_RootBridgeA")
+one_way_collision = true
+
+[node name="RootBridgeB" type="AnimatableBody2D" parent="."]
+position = Vector2(14690, 575)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 420.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RootBridgeB"]
+position = Vector2(210.0, 24)
+shape = SubResource("ForestShape_RootBridgeB")
+one_way_collision = true
+
+[node name="RootBridgeC" type="AnimatableBody2D" parent="."]
+position = Vector2(15190, 432)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 230.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RootBridgeC"]
+position = Vector2(110.0, 24)
+shape = SubResource("ForestShape_RootBridgeC")
+one_way_collision = true
+
+[node name="RootBridgeD" type="AnimatableBody2D" parent="."]
+position = Vector2(15530, 415)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 250.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RootBridgeD"]
+position = Vector2(125.0, 24)
+shape = SubResource("ForestShape_RootBridgeD")
+one_way_collision = true
+
+[node name="RootBridgeE" type="AnimatableBody2D" parent="."]
+position = Vector2(15890, 415)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 210.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RootBridgeE"]
+position = Vector2(105.0, 24)
+shape = SubResource("ForestShape_RootBridgeE")
+one_way_collision = true
+
+[node name="CanopyRecoveryA" type="AnimatableBody2D" parent="."]
+position = Vector2(18310, 750)
+collision_mask = 0
+script = ExtResource("platform")
+width = 1010.0
+depth = 63.0
+style = "bridge"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopyRecoveryA"]
+position = Vector2(505.0, 24)
+shape = SubResource("ForestShape_CanopyRecoveryA")
+one_way_collision = true
+
+[node name="CanopyRecoveryB" type="AnimatableBody2D" parent="."]
+position = Vector2(19070, 670)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 230.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopyRecoveryB"]
+position = Vector2(115.0, 24)
+shape = SubResource("ForestShape_CanopyRecoveryB")
+one_way_collision = true
+
+[node name="CanopyRecoveryC" type="AnimatableBody2D" parent="."]
+position = Vector2(19400, 660)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 230.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopyRecoveryC"]
+position = Vector2(115.0, 24)
+shape = SubResource("ForestShape_CanopyRecoveryC")
+one_way_collision = true
+
+[node name="FerryGuide" type="AnimatableBody2D" parent="."]
+position = Vector2(20370, 550)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 180.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FerryGuide"]
+position = Vector2(90.0, 24)
+shape = SubResource("ForestShape_FerryGuide")
+one_way_collision = true
+
+[node name="LastRecoveryA" type="AnimatableBody2D" parent="."]
+position = Vector2(22200, 700)
+collision_mask = 0
+script = ExtResource("platform")
+width = 780.0
+depth = 63.0
+style = "bridge"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LastRecoveryA"]
+position = Vector2(390.0, 24)
+shape = SubResource("ForestShape_LastRecoveryA")
+one_way_collision = true
+
+[node name="LastRecoveryB" type="AnimatableBody2D" parent="."]
+position = Vector2(22540, 610)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 210.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LastRecoveryB"]
+position = Vector2(105.0, 24)
+shape = SubResource("ForestShape_LastRecoveryB")
+one_way_collision = true
+
+[node name="LastRecoveryC" type="AnimatableBody2D" parent="."]
+position = Vector2(22800, 515)
+collision_mask = 0
+script = ExtResource("dream_platform")
+surface_art = "wood"
+width = 210.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LastRecoveryC"]
+position = Vector2(105.0, 24)
+shape = SubResource("ForestShape_LastRecoveryC")
+one_way_collision = true
+
+[node name="RootLowDiamond" type="Node2D" parent="."]
+position = Vector2(4240, 795)
+script = ExtResource("object")
+kind = "crystal"
+
+[node name="Hint_FirstSpring" type="Marker2D" parent="."]
+position = Vector2(3320, 610)
+script = ExtResource("world_hint")
+title = "Odraz do větví"
+message = "Dopadni na trampolínu. Vynese tě k horní cestě. Dole můžeš pokračovat po kořenech."
+activation_size = Vector2(400, 280)
+display_seconds = 5.0
+
+[node name="Hint_RootFork" type="Marker2D" parent="."]
+position = Vector2(3980, 715)
+script = ExtResource("world_hint")
+title = "Dvě lesní stezky"
+message = "Horní listy a spodní kořeny se za řekou zase spojí. Vyber si vlastní cestu."
+activation_size = Vector2(400, 280)
+display_seconds = 5.0
+
+[node name="Hint_GrottoReward" type="Marker2D" parent="."]
+position = Vector2(9200, 720)
+script = ExtResource("world_hint")
+title = "Poklad mezi kořeny"
+message = "Tahle jeskyně je dobrovolná. Vpravo vedou tři široké kořeny zpátky na světlo."
+activation_size = Vector2(400, 280)
+display_seconds = 5.0
+
+[node name="Hint_ForestRest" type="Marker2D" parent="."]
+position = Vector2(13720, 360)
+script = ExtResource("world_hint")
+title = "Mýtina před řekou"
+message = "Vlaječka si pamatuje cestu. Za vodou tě čekají staré lávky a hvězda."
+activation_size = Vector2(400, 280)
+display_seconds = 5.0
+
+[node name="Hint_LastStar" type="Marker2D" parent="."]
+position = Vector2(22970, 350)
+script = ExtResource("world_hint")
+title = "Hvězda je blízko"
+message = "Seber zlatou hvězdu a pokračuj k bráně napravo."
+activation_size = Vector2(400, 280)
+display_seconds = 5.0

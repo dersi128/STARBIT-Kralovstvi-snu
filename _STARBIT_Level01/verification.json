@@ -1,0 +1,182 @@
+{
+  "main": {
+    "checkpoints": [
+      {
+        "position": "(150.0, 550.0)",
+        "tick": 1
+      },
+      {
+        "position": "(6620.0, 550.0)",
+        "tick": 1597
+      },
+      {
+        "position": "(14690.0, 550.0)",
+        "tick": 3461
+      }
+    ],
+    "crystals": 19,
+    "deaths": 0,
+    "dialogue_ticks": 91,
+    "jumps": 39,
+    "missing": [
+      "SecretNestA",
+      "SecretNestB",
+      "SecretGrottoA",
+      "SecretGrottoB",
+      "SecretGrottoC",
+      "SecretCrown"
+    ],
+    "mode": "result",
+    "physics_ticks": 5234,
+    "seconds": 87.2333333333333,
+    "stages": [
+      "arrival / run / jump",
+      "optional leaf nest",
+      "first stomp",
+      "root switch and bridge",
+      "waterfall crossing and grotto",
+      "spring balcony",
+      "crate weight puzzle",
+      "enemy / upper choice",
+      "rider-aware raft",
+      "canopy zigzag / secret crown",
+      "final moving platforms",
+      "star and actual gate"
+    ],
+    "stomps": [
+      "FirstSutrik",
+      "SecondSutrik",
+      "LastSutrik"
+    ],
+    "success": true,
+    "total_crystals": 25
+  },
+  "explore": {
+    "checkpoints": [
+      {
+        "position": "(150.0, 550.0)",
+        "tick": 1
+      },
+      {
+        "position": "(6620.0, 550.0)",
+        "tick": 1664
+      },
+      {
+        "position": "(14690.0, 550.0)",
+        "tick": 3855
+      }
+    ],
+    "crystals": 25,
+    "deaths": 0,
+    "dialogue_ticks": 91,
+    "jumps": 45,
+    "missing": [],
+    "mode": "result",
+    "physics_ticks": 5765,
+    "seconds": 96.0833333333333,
+    "stages": [
+      "arrival / run / jump",
+      "optional leaf nest",
+      "first stomp",
+      "root switch and bridge",
+      "waterfall crossing and grotto",
+      "spring balcony",
+      "crate weight puzzle",
+      "enemy / upper choice",
+      "rider-aware raft",
+      "canopy zigzag / secret crown",
+      "final moving platforms",
+      "star and actual gate"
+    ],
+    "stomps": [
+      "FirstSutrik",
+      "LastSutrik"
+    ],
+    "success": true,
+    "total_crystals": 25
+  },
+  "recovery": {
+    "checkpoints": [
+      {
+        "position": "(150.0, 550.0)",
+        "tick": 1
+      },
+      {
+        "position": "(6620.0, 550.0)",
+        "tick": 806
+      },
+      {
+        "position": "(14690.0, 550.0)",
+        "tick": 1472
+      }
+    ],
+    "crystals": 5,
+    "deaths": 3,
+    "dialogue_ticks": 0,
+    "jumps": 31,
+    "missing": [
+      "Crystal13",
+      "Crystal17",
+      "Crystal01",
+      "Crystal02",
+      "Crystal03",
+      "Crystal04",
+      "Crystal05",
+      "Crystal06",
+      "Crystal10",
+      "Crystal11",
+      "Crystal14",
+      "Crystal16",
+      "Crystal18",
+      "SecretNestA",
+      "SecretNestB",
+      "SecretGrottoA",
+      "SecretGrottoB",
+      "SecretGrottoC",
+      "SecretOverpass",
+      "SecretCrown"
+    ],
+    "mode": "play",
+    "physics_ticks": 3191,
+    "seconds": 53.1833333333333,
+    "stages": [
+      "first missed jumps have exits on both sides",
+      "waterfall west return",
+      "isolated root bridge recovery; scene state unchanged",
+      "checkpoint 1 actual contact and fall",
+      "raft lower recovery and second checkpoint",
+      "canopy lower path returns to upper route",
+      "canopy lower exit side",
+      "crate latch survives a real checkpoint respawn"
+    ],
+    "stomps": [],
+    "success": true,
+    "total_crystals": 25
+  },
+  "geometry": {
+    "success": true,
+    "original_nodes": 244,
+    "added_visual_nodes": 61,
+    "changed_visual_properties": {
+      "surface_height": 51,
+      "material": 21,
+      "surface_texture": 23,
+      "surface_repeat": 65,
+      "script": 21,
+      "cool_stone": 21,
+      "surface_walk_y": 1,
+      "position": 2,
+      "size": 1,
+      "modulate": 5,
+      "z_index": 4,
+      "scale": 1
+    }
+  },
+  "scope": {
+    "main": "post-polish",
+    "explore": "final files",
+    "recovery": "prior tutorial geometry, unchanged by polish",
+    "graphical_runtime_verified": false,
+    "human_playtime_verified": false
+  }
+}

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/royal/higgsfield/RoyalBalustrade.tres" id="art"]
+
+[node name="RoyalBalustrade" type="Sprite2D"]
+z_index = -1
+texture_filter = 2
+scale = Vector2(0.25232404, 0.25232404)
+texture = ExtResource("art")
+centered = false
+offset = Vector2(-376.5, -456)
+metadata/purpose = "Scenery; bottom-centre anchor; no collision"
+metadata/art_source = "Higgsfield"

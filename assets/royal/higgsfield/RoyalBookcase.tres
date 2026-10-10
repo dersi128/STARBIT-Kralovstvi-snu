@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/royal/higgsfield/castle_details.png" id="atlas"]
+
+[resource]
+atlas = ExtResource("atlas")
+region = Rect2(1233, 659, 608, 640)
+filter_clip = true

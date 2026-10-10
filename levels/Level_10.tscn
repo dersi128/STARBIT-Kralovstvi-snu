@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=3]
+[gd_scene format=3]
 
 [ext_resource type="Script" path="res://scripts/castle_rescue.gd" id="level"]
 [ext_resource type="Script" path="res://scripts/castle_platform.gd" id="stone"]
@@ -27,6 +27,9 @@
 [ext_resource type="Script" path="res://scripts/jiskra_cage.gd" id="jiskra_cage"]
 [ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole"]
 [ext_resource type="Script" path="res://scripts/royal_life.gd" id="royal_life"]
+
+[ext_resource type="PackedScene" path="res://scenes/royal/higgsfield/RoyalBookcase.tscn" id="hf_detail_RoyalBookcase"]
+[ext_resource type="PackedScene" path="res://scenes/royal/higgsfield/RoyalLantern.tscn" id="hf_detail_RoyalLantern"]
 
 [sub_resource type="AtlasTexture" id="royal10_sun_icon"]
 atlas = ExtResource("royal10_atlas")
@@ -278,11 +281,23 @@ size = Vector2(205, 30)
 [sub_resource type="RectangleShape2D" id="deck_RefugeMiddle"]
 size = Vector2(205, 30)
 
+[sub_resource type="RectangleShape2D" id="ArchiveEntry_shape"]
+resource_local_to_scene = true
+size = Vector2(250, 35)
+
+[sub_resource type="RectangleShape2D" id="ArchiveShelf_shape"]
+resource_local_to_scene = true
+size = Vector2(300, 35)
+
+[sub_resource type="RectangleShape2D" id="ArchiveLoft_shape"]
+resource_local_to_scene = true
+size = Vector2(470, 35)
+
 [node name="Level_10" type="Node2D"]
 script = ExtResource("level")
 number = 10
 title = "V srdci hradu"
-width = 34200.0
+width = 22060.0
 spawn = Vector2(140, 550)
 camera_top = -900
 camera_bottom = 1300
@@ -299,7 +314,7 @@ metadata/section = "01 — Vstupní síň hradu / dolní služební chodba a zp�
 
 [node name="InteriorMole" parent="." instance=ExtResource("mole")]
 position = Vector2(430, 550)
-message = "Jsme uvnitř hradu. Odemkni tři pečeti a zbav sovu kletby. Jiskra čeká v kleci za trůnním sálem."
+message = "Jiskra je za trůnním sálem! Probuď tři královské pečeti a pomoz sovímu strážci zbavit se temnoty."
 
 [node name="OuterBalustrade" type="Node2D" parent="."]
 position = Vector2(0, 475)
@@ -418,6 +433,7 @@ wall_body = true
 surface_texture = SubResource("royal10_platform")
 surface_repeat = Vector2(0.35, 0.65)
 surface_walk_y = 59.0
+metadata/route = "secret"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InspectionGallery"]
 position = Vector2(460.0, 297.5)
@@ -438,6 +454,7 @@ powered = true
 surface_texture = SubResource("royal10_lift")
 surface_walk_y = 89.0
 surface_height = 62.0
+metadata/route = "secret"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InspectionReturnLift"]
 position = Vector2(115.0, 15.0)
@@ -522,11 +539,6 @@ priority = 2
 [node name="Room02_CounterweightStorehouse" type="Marker2D" parent="."]
 position = Vector2(4600, 550)
 metadata/section = "02 — Královská zásobárna / bedna, protizávaží a vnitřní ochoz"
-
-[node name="CheckpointCargo" type="Node2D" parent="."]
-position = Vector2(4670, 550)
-script = ExtResource("object")
-kind = "checkpoint"
 
 [node name="CargoArcadeBack" type="Node2D" parent="."]
 position = Vector2(4760, 120)
@@ -635,23 +647,6 @@ shape = SubResource("deck_CargoDispatchPier")
 one_way_collision = false
 one_way_collision_margin = 6.0
 
-[node name="WeatherEntry" type="AnimatableBody2D" parent="."]
-position = Vector2(9010, 450)
-script = ExtResource("stone")
-style = "stone"
-width = 840.0
-depth = 830.0
-wall_body = true
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WeatherEntry"]
-position = Vector2(420.0, 407.5)
-shape = SubResource("deck_WeatherEntry")
-one_way_collision = false
-one_way_collision_margin = 6.0
-
 [node name="CargoLookout" type="AnimatableBody2D" parent="."]
 position = Vector2(5060, 390)
 script = ExtResource("stone")
@@ -662,6 +657,7 @@ wall_body = false
 surface_texture = SubResource("royal10_platform")
 surface_repeat = Vector2(0.35, 0.65)
 surface_walk_y = 59.0
+metadata/route = "secret"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CargoLookout"]
 position = Vector2(145.0, 15.0)
@@ -684,85 +680,8 @@ area_size = Vector2(1580, 980)
 look_offset = Vector2(0, -65)
 priority = 2
 
-[node name="Room03_EnchantedVentilationGallery" type="Marker2D" parent="."]
-position = Vector2(9200, 450)
-metadata/section = "03 — Zakletý větrací ochoz / páka ventilace, dešťová kouzla a bezpečné výklenky"
-
-[node name="CheckpointWeather" type="Node2D" parent="."]
-position = Vector2(9350, 450)
-script = ExtResource("object")
-kind = "checkpoint"
-
-[node name="WeatherPierA" type="AnimatableBody2D" parent="."]
-position = Vector2(10150, 340)
-script = ExtResource("stone")
-style = "stone"
-width = 400.0
-depth = 940.0
-wall_body = true
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WeatherPierA"]
-position = Vector2(200.0, 462.5)
-shape = SubResource("deck_WeatherPierA")
-one_way_collision = false
-one_way_collision_margin = 6.0
-
-[node name="WeatherPierB" type="AnimatableBody2D" parent="."]
-position = Vector2(10850, 430)
-script = ExtResource("stone")
-style = "stone"
-width = 400.0
-depth = 850.0
-wall_body = true
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WeatherPierB"]
-position = Vector2(200.0, 417.5)
-shape = SubResource("deck_WeatherPierB")
-one_way_collision = false
-one_way_collision_margin = 6.0
-
-[node name="WeatherPierC" type="AnimatableBody2D" parent="."]
-position = Vector2(11550, 310)
-script = ExtResource("stone")
-style = "stone"
-width = 400.0
-depth = 970.0
-wall_body = true
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WeatherPierC"]
-position = Vector2(200.0, 477.5)
-shape = SubResource("deck_WeatherPierC")
-one_way_collision = false
-one_way_collision_margin = 6.0
-
-[node name="WeatherPierD" type="AnimatableBody2D" parent="."]
-position = Vector2(12250, 410)
-script = ExtResource("stone")
-style = "stone"
-width = 400.0
-depth = 870.0
-wall_body = true
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WeatherPierD"]
-position = Vector2(200.0, 427.5)
-shape = SubResource("deck_WeatherPierD")
-one_way_collision = false
-one_way_collision_margin = 6.0
-
 [node name="LoftExit" type="AnimatableBody2D" parent="."]
-position = Vector2(12950, 500)
+position = Vector2(9010, 500)
 script = ExtResource("stone")
 style = "stone"
 width = 1610.0
@@ -778,103 +697,33 @@ shape = SubResource("deck_LoftExit")
 one_way_collision = false
 one_way_collision_margin = 6.0
 
-[node name="LoftMasonry00" type="Node2D" parent="."]
-position = Vector2(9010, 110)
-script = ExtResource("wall")
-size = Vector2(840, 290)
-tint = Color(0.72, 0.69, 0.81, 0.88)
-crenellated = false
-openings = Array[Rect2]([Rect2(90, 68, 180, 170), Rect2(450, 68, 180, 170)])
-
-[node name="LoftMasonry01" type="Node2D" parent="."]
-position = Vector2(10150, 120)
-script = ExtResource("wall")
-size = Vector2(400, 290)
-tint = Color(0.72, 0.69, 0.81, 0.88)
-crenellated = false
-openings = Array[Rect2]([])
-
-[node name="LoftMasonry02" type="Node2D" parent="."]
-position = Vector2(10850, 210)
-script = ExtResource("wall")
-size = Vector2(400, 290)
-tint = Color(0.72, 0.69, 0.81, 0.88)
-crenellated = false
-openings = Array[Rect2]([])
-
-[node name="LoftMasonry03" type="Node2D" parent="."]
-position = Vector2(11550, 90)
-script = ExtResource("wall")
-size = Vector2(400, 290)
-tint = Color(0.72, 0.69, 0.81, 0.88)
-crenellated = false
-openings = Array[Rect2]([])
-
-[node name="LoftMasonry04" type="Node2D" parent="."]
-position = Vector2(12250, 190)
-script = ExtResource("wall")
-size = Vector2(400, 290)
-tint = Color(0.72, 0.69, 0.81, 0.88)
-crenellated = false
-openings = Array[Rect2]([])
-
 [node name="LoftMasonry05" type="Node2D" parent="."]
-position = Vector2(12950, 180)
+position = Vector2(9010, 180)
 script = ExtResource("wall")
 size = Vector2(1610, 290)
 tint = Color(0.72, 0.69, 0.81, 0.88)
 crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 170), Rect2(450, 68, 180, 170), Rect2(810, 68, 180, 170), Rect2(1170, 68, 180, 170)])
 
-[node name="LoftWindLever" type="Node2D" parent="."]
-position = Vector2(9700, 450)
-script = ExtResource("wind")
-off_seconds = 16.0
-wind_origin = Vector2(2740, -170)
-wind_length = 2470.0
-wind_width = 760.0
-wind_angle_degrees = 180.0
-wind_force = 600.0
-mill_offset = Vector2(2550, -40)
-mill_height = 0.0
-
-[node name="LoftRainA" parent="." instance=ExtResource("rain")]
-position = Vector2(10360, 120)
-rain_width = 220.0
-rain_height = 220.0
-calm_duration = 6.0
-warning_duration = 1.7
-rain_duration = 3.0
-start_offset = 0.0
-
-[node name="LoftRainB" parent="." instance=ExtResource("rain")]
-position = Vector2(11770, 90)
-rain_width = 220.0
-rain_height = 220.0
-calm_duration = 6.5
-warning_duration = 1.8
-rain_duration = 3.0
-start_offset = 4.0
-
 [node name="LoftExitArch" type="Sprite2D" parent="."]
 z_index = -9
-position = Vector2(13670, 340)
+position = Vector2(9730, 340)
 scale = Vector2(0.4166667, 0.4166667)
 texture = SubResource("royal10_banner")
 offset = Vector2(0, -186)
 metadata/royal_asset = "banner"
 
 [node name="Room04_MirrorRelay" type="Marker2D" parent="."]
-position = Vector2(13600, 500)
+position = Vector2(9660, 500)
 metadata/section = "04 — Zrcadlová síň / světelný výtah a navazující pohyblivé balkony"
 
 [node name="CheckpointMirror" type="Node2D" parent="."]
-position = Vector2(13780, 500)
+position = Vector2(9900, 500)
 script = ExtResource("object")
 kind = "checkpoint"
 
 [node name="MirrorHallBack" type="Node2D" parent="."]
-position = Vector2(13720, -80)
+position = Vector2(9780, -80)
 script = ExtResource("wall")
 size = Vector2(1820, 820)
 tint = Color(0.72, 0.69, 0.81, 0.88)
@@ -882,7 +731,7 @@ crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240), Rect2(810, 68, 180, 240), Rect2(1170, 68, 180, 240), Rect2(1530, 68, 180, 240)])
 
 [node name="RelayGalleryBack" type="Node2D" parent="."]
-position = Vector2(16380, -40)
+position = Vector2(12440, -40)
 script = ExtResource("wall")
 size = Vector2(640, 480)
 tint = Color(0.72, 0.69, 0.81, 0.88)
@@ -890,7 +739,7 @@ crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240)])
 
 [node name="RelayExitBack" type="Node2D" parent="."]
-position = Vector2(17820, 130)
+position = Vector2(13880, 130)
 script = ExtResource("wall")
 size = Vector2(1380, 520)
 tint = Color(0.72, 0.69, 0.81, 0.88)
@@ -898,7 +747,7 @@ crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240), Rect2(810, 68, 180, 240), Rect2(1170, 68, 180, 240)])
 
 [node name="RoyalMirror" type="Node2D" parent="."]
-position = Vector2(14280, 500)
+position = Vector2(10340, 500)
 script = ExtResource("mirror")
 targets = Array[NodePath]([NodePath("../MirrorReceiverLift"), NodePath("../MirrorRelayLift")])
 receiver_offset = Vector2(750, -397)
@@ -907,7 +756,7 @@ mirror_art = SubResource("royal8_mirror")
 receiver_art = SubResource("royal8_receiver")
 
 [node name="MirrorReceiverLift" type="AnimatableBody2D" parent="."]
-position = Vector2(14600, 500)
+position = Vector2(10660, 500)
 script = ExtResource("lift")
 style = "stone"
 width = 250.0
@@ -926,7 +775,7 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="MirrorHighBalcony" type="AnimatableBody2D" parent="."]
-position = Vector2(14920, 160)
+position = Vector2(10980, 160)
 script = ExtResource("stone")
 style = "stone"
 width = 630.0
@@ -943,7 +792,7 @@ one_way_collision = false
 one_way_collision_margin = 6.0
 
 [node name="MirrorRelayLift" type="AnimatableBody2D" parent="."]
-position = Vector2(15820, 240)
+position = Vector2(11880, 240)
 script = ExtResource("lift")
 style = "stone"
 width = 260.0
@@ -962,7 +811,7 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="MirrorRelayLanding" type="AnimatableBody2D" parent="."]
-position = Vector2(16400, 220)
+position = Vector2(12460, 220)
 script = ExtResource("stone")
 style = "stone"
 width = 600.0
@@ -979,14 +828,14 @@ one_way_collision = false
 one_way_collision_margin = 6.0
 
 [node name="MirrorPendulumBalcony" type="AnimatableBody2D" parent="."]
-position = Vector2(17290, 350)
+position = Vector2(13350, 350)
 script = ExtResource("stone")
 style = "stone"
 width = 260.0
 depth = 45.0
 wall_body = false
 travel = Vector2(180, -80)
-period = 5.2
+period = 5.8
 surface_texture = SubResource("royal10_platform")
 surface_repeat = Vector2(0.35, 0.65)
 surface_walk_y = 59.0
@@ -998,7 +847,7 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="MirrorExit" type="AnimatableBody2D" parent="."]
-position = Vector2(17820, 440)
+position = Vector2(13880, 440)
 script = ExtResource("stone")
 style = "stone"
 width = 1380.0
@@ -1015,7 +864,7 @@ one_way_collision = false
 one_way_collision_margin = 6.0
 
 [node name="MirrorInstructionCamera" type="Node2D" parent="."]
-position = Vector2(14630, 220)
+position = Vector2(10690, 220)
 script = ExtResource("camera")
 area_size = Vector2(1670, 980)
 look_offset = Vector2(0, -55)
@@ -1023,201 +872,18 @@ priority = 2
 
 [node name="MirrorArrivalArch" type="Sprite2D" parent="."]
 z_index = -9
-position = Vector2(15440, 160)
+position = Vector2(11500, 160)
 scale = Vector2(0.5980861, 0.5980861)
 texture = SubResource("royal10_column")
 offset = Vector2(0, -209)
 metadata/royal_asset = "column"
 
 [node name="Room05_TwoRouteGuardGallery" type="Marker2D" parent="."]
-position = Vector2(18400, 440)
+position = Vector2(14460, 440)
 metadata/section = "05 — Dvojitá strážní galerie / horní zkratka, dolní cesta a vratná tajná chodba"
 
-[node name="CheckpointGuardGallery" type="Node2D" parent="."]
-position = Vector2(18580, 440)
-script = ExtResource("object")
-kind = "checkpoint"
-
-[node name="GuardGalleryArcade" type="Node2D" parent="."]
-position = Vector2(19200, 30)
-script = ExtResource("wall")
-size = Vector2(3560, 690)
-tint = Color(0.72, 0.69, 0.81, 0.88)
-crenellated = false
-openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240), Rect2(810, 68, 180, 240), Rect2(1170, 68, 180, 240), Rect2(1530, 68, 180, 240), Rect2(1890, 68, 180, 240), Rect2(2250, 68, 180, 240), Rect2(2610, 68, 180, 240), Rect2(2970, 68, 180, 240), Rect2(3330, 68, 180, 240)])
-
-[node name="GuardGalleryEntry" type="AnimatableBody2D" parent="."]
-position = Vector2(19200, 440)
-script = ExtResource("stone")
-style = "stone"
-width = 300.0
-depth = 840.0
-wall_body = true
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardGalleryEntry"]
-position = Vector2(150.0, 412.5)
-shape = SubResource("deck_GuardGalleryEntry")
-one_way_collision = false
-one_way_collision_margin = 6.0
-
-[node name="GuardUpperStep" type="AnimatableBody2D" parent="."]
-position = Vector2(19450, 300)
-script = ExtResource("stone")
-style = "stone"
-width = 320.0
-depth = 45.0
-wall_body = false
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardUpperStep"]
-position = Vector2(160.0, 15.0)
-shape = SubResource("deck_GuardUpperStep")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="GuardUpperA" type="AnimatableBody2D" parent="."]
-position = Vector2(19980, 170)
-script = ExtResource("stone")
-style = "stone"
-width = 320.0
-depth = 45.0
-wall_body = false
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardUpperA"]
-position = Vector2(160.0, 15.0)
-shape = SubResource("deck_GuardUpperA")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="GuardUpperB" type="AnimatableBody2D" parent="."]
-position = Vector2(20560, 230)
-script = ExtResource("stone")
-style = "stone"
-width = 580.0
-depth = 45.0
-wall_body = false
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardUpperB"]
-position = Vector2(290.0, 15.0)
-shape = SubResource("deck_GuardUpperB")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="GuardUpperC" type="AnimatableBody2D" parent="."]
-position = Vector2(21440, 140)
-script = ExtResource("stone")
-style = "stone"
-width = 340.0
-depth = 45.0
-wall_body = false
-surface_texture = SubResource("royal10_platform_dark")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardUpperC"]
-position = Vector2(170.0, 15.0)
-shape = SubResource("deck_GuardUpperC")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="GuardUpperD" type="AnimatableBody2D" parent="."]
-position = Vector2(22080, 300)
-script = ExtResource("stone")
-style = "stone"
-width = 380.0
-depth = 45.0
-wall_body = false
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardUpperD"]
-position = Vector2(190.0, 15.0)
-shape = SubResource("deck_GuardUpperD")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="GuardLowerA" type="AnimatableBody2D" parent="."]
-position = Vector2(19500, 600)
-script = ExtResource("stone")
-style = "stone"
-width = 650.0
-depth = 680.0
-wall_body = true
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardLowerA"]
-position = Vector2(325.0, 332.5)
-shape = SubResource("deck_GuardLowerA")
-one_way_collision = false
-one_way_collision_margin = 6.0
-
-[node name="GuardLowerB" type="AnimatableBody2D" parent="."]
-position = Vector2(20370, 650)
-script = ExtResource("stone")
-style = "stone"
-width = 530.0
-depth = 45.0
-wall_body = false
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardLowerB"]
-position = Vector2(265.0, 15.0)
-shape = SubResource("deck_GuardLowerB")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="GuardLowerC" type="AnimatableBody2D" parent="."]
-position = Vector2(21200, 600)
-script = ExtResource("stone")
-style = "stone"
-width = 700.0
-depth = 680.0
-wall_body = true
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardLowerC"]
-position = Vector2(350.0, 332.5)
-shape = SubResource("deck_GuardLowerC")
-one_way_collision = false
-one_way_collision_margin = 6.0
-
-[node name="GuardLowerD" type="AnimatableBody2D" parent="."]
-position = Vector2(22200, 540)
-script = ExtResource("stone")
-style = "stone"
-width = 400.0
-depth = 740.0
-wall_body = true
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GuardLowerD"]
-position = Vector2(200.0, 362.5)
-shape = SubResource("deck_GuardLowerD")
-one_way_collision = false
-one_way_collision_margin = 6.0
-
 [node name="GuardGalleryExit" type="AnimatableBody2D" parent="."]
-position = Vector2(22900, 450)
+position = Vector2(15260, 450)
 script = ExtResource("stone")
 style = "stone"
 width = 700.0
@@ -1233,200 +899,20 @@ shape = SubResource("deck_GuardGalleryExit")
 one_way_collision = false
 one_way_collision_margin = 6.0
 
-[node name="SecretServiceTunnel" type="AnimatableBody2D" parent="."]
-position = Vector2(20170, 810)
-script = ExtResource("stone")
-style = "stone"
-width = 810.0
-depth = 470.0
-wall_body = true
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretServiceTunnel"]
-position = Vector2(405.0, 227.5)
-shape = SubResource("deck_SecretServiceTunnel")
-one_way_collision = false
-one_way_collision_margin = 6.0
-
-[node name="ServiceReturnLift" type="AnimatableBody2D" parent="."]
-position = Vector2(21000, 810)
-script = ExtResource("lift")
-style = "stone"
-width = 180.0
-depth = 45.0
-wall_body = false
-travel = Vector2(0, -220)
-period = 3.4
-powered = true
-surface_texture = SubResource("royal10_lift")
-surface_walk_y = 89.0
-surface_height = 62.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ServiceReturnLift"]
-position = Vector2(90.0, 15.0)
-shape = SubResource("deck_ServiceReturnLift")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
 [node name="GuardGalleryArch" type="Sprite2D" parent="."]
 z_index = -9
-position = Vector2(18900, 290)
+position = Vector2(14960, 290)
 scale = Vector2(0.4166667, 0.4166667)
 texture = SubResource("royal10_banner")
 offset = Vector2(0, -186)
 metadata/royal_asset = "banner"
 
-[node name="GuardRouteCamera" type="Node2D" parent="."]
-position = Vector2(20800, 440)
-script = ExtResource("camera")
-area_size = Vector2(2520, 1040)
-look_offset = Vector2(0, 65)
-priority = 2
-
 [node name="Room06_FracturedVaultedPassage" type="Marker2D" parent="."]
-position = Vector2(23200, 450)
+position = Vector2(15560, 450)
 metadata/section = "06 — Rozbitá klenutá chodba / pevné pilíře mezi rozpadajícími se lávkami"
 
-[node name="CheckpointViaduct" type="Node2D" parent="."]
-position = Vector2(23300, 450)
-script = ExtResource("object")
-kind = "checkpoint"
-
-[node name="ViaductEntryPier" type="AnimatableBody2D" parent="."]
-position = Vector2(23900, 350)
-script = ExtResource("stone")
-style = "stone"
-width = 400.0
-depth = 930.0
-wall_body = true
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ViaductEntryPier"]
-position = Vector2(200.0, 457.5)
-shape = SubResource("deck_ViaductEntryPier")
-one_way_collision = false
-one_way_collision_margin = 6.0
-
-[node name="CrumbleSpanA" type="AnimatableBody2D" parent="."]
-position = Vector2(24600, 420)
-script = ExtResource("crumble")
-style = "stone"
-width = 300.0
-depth = 45.0
-surface_art = "stone"
-crumble_delay = 1.25
-return_delay = 3.2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CrumbleSpanA"]
-position = Vector2(150.0, 15.0)
-shape = SubResource("deck_CrumbleSpanA")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="CrumbleSpanB" type="AnimatableBody2D" parent="."]
-position = Vector2(25080, 310)
-script = ExtResource("crumble")
-style = "stone"
-width = 260.0
-depth = 45.0
-surface_art = "stone"
-crumble_delay = 1.25
-return_delay = 3.2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CrumbleSpanB"]
-position = Vector2(130.0, 15.0)
-shape = SubResource("deck_CrumbleSpanB")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="CrumbleSpanC" type="AnimatableBody2D" parent="."]
-position = Vector2(25520, 400)
-script = ExtResource("crumble")
-style = "stone"
-width = 300.0
-depth = 45.0
-surface_art = "stone"
-crumble_delay = 1.25
-return_delay = 3.2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CrumbleSpanC"]
-position = Vector2(150.0, 15.0)
-shape = SubResource("deck_CrumbleSpanC")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="ViaductWatchPier" type="AnimatableBody2D" parent="."]
-position = Vector2(26080, 300)
-script = ExtResource("stone")
-style = "stone"
-width = 520.0
-depth = 980.0
-wall_body = true
-surface_texture = SubResource("royal10_platform_dark")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ViaductWatchPier"]
-position = Vector2(260.0, 482.5)
-shape = SubResource("deck_ViaductWatchPier")
-one_way_collision = false
-one_way_collision_margin = 6.0
-
-[node name="CrumbleSpanD" type="AnimatableBody2D" parent="."]
-position = Vector2(26900, 420)
-script = ExtResource("crumble")
-style = "stone"
-width = 320.0
-depth = 45.0
-surface_art = "stone"
-crumble_delay = 1.25
-return_delay = 3.2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CrumbleSpanD"]
-position = Vector2(160.0, 15.0)
-shape = SubResource("deck_CrumbleSpanD")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="CrumbleSpanE" type="AnimatableBody2D" parent="."]
-position = Vector2(27420, 330)
-script = ExtResource("crumble")
-style = "stone"
-width = 280.0
-depth = 45.0
-surface_art = "stone"
-crumble_delay = 1.25
-return_delay = 3.2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CrumbleSpanE"]
-position = Vector2(140.0, 15.0)
-shape = SubResource("deck_CrumbleSpanE")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="ViaductArrivalPier" type="AnimatableBody2D" parent="."]
-position = Vector2(27980, 450)
-script = ExtResource("stone")
-style = "stone"
-width = 360.0
-depth = 830.0
-wall_body = true
-surface_texture = SubResource("royal10_platform")
-surface_repeat = Vector2(0.35, 0.65)
-surface_walk_y = 59.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ViaductArrivalPier"]
-position = Vector2(180.0, 407.5)
-shape = SubResource("deck_ViaductArrivalPier")
-one_way_collision = false
-one_way_collision_margin = 6.0
-
 [node name="FinalCourtEntry" type="AnimatableBody2D" parent="."]
-position = Vector2(28400, 530)
+position = Vector2(16260, 530)
 script = ExtResource("stone")
 style = "stone"
 width = 920.0
@@ -1443,64 +929,27 @@ one_way_collision = false
 one_way_collision_margin = 6.0
 
 [node name="ViaductPierBack00" type="Node2D" parent="."]
-position = Vector2(22900, 220)
+position = Vector2(15260, 220)
 script = ExtResource("wall")
 size = Vector2(700, 360)
 tint = Color(0.72, 0.69, 0.81, 0.88)
 crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240)])
 
-[node name="ViaductPierBack01" type="Node2D" parent="."]
-position = Vector2(23900, 100)
-script = ExtResource("wall")
-size = Vector2(400, 360)
-tint = Color(0.72, 0.69, 0.81, 0.88)
-crenellated = false
-openings = Array[Rect2]([])
-
-[node name="ViaductPierBack02" type="Node2D" parent="."]
-position = Vector2(26080, 20)
-script = ExtResource("wall")
-size = Vector2(520, 360)
-tint = Color(0.72, 0.69, 0.81, 0.88)
-crenellated = false
-openings = Array[Rect2]([Rect2(90, 68, 180, 240)])
-
-[node name="ViaductPierBack03" type="Node2D" parent="."]
-position = Vector2(27980, 170)
-script = ExtResource("wall")
-size = Vector2(360, 360)
-tint = Color(0.72, 0.69, 0.81, 0.88)
-crenellated = false
-openings = Array[Rect2]([])
-
 [node name="ViaductPierBack04" type="Node2D" parent="."]
-position = Vector2(28400, 220)
+position = Vector2(16260, 220)
 script = ExtResource("wall")
 size = Vector2(920, 360)
 tint = Color(0.72, 0.69, 0.81, 0.88)
 crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240)])
 
-[node name="ViaductShelterArch" type="Sprite2D" parent="."]
-z_index = -9
-position = Vector2(26250, 300)
-scale = Vector2(0.5741627, 0.5741627)
-texture = SubResource("royal10_column")
-offset = Vector2(0, -209)
-metadata/royal_asset = "column"
-
 [node name="Room07_SealsThroneHallAndJiskra" type="Marker2D" parent="."]
-position = Vector2(28600, 530)
+position = Vector2(16460, 530)
 metadata/section = "07 — Pečetní síň, soví strážce trůnního sálu a Jiskřina klec"
 
-[node name="CheckpointRoyalSeals" type="Node2D" parent="."]
-position = Vector2(28780, 530)
-script = ExtResource("object")
-kind = "checkpoint"
-
 [node name="RoyalSealHallBack" type="Node2D" parent="."]
-position = Vector2(28600, -100)
+position = Vector2(16460, -100)
 script = ExtResource("wall")
 size = Vector2(2080, 790)
 tint = Color(0.72, 0.69, 0.81, 0.88)
@@ -1508,7 +957,7 @@ crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240), Rect2(810, 68, 180, 240), Rect2(1170, 68, 180, 240), Rect2(1530, 68, 180, 240), Rect2(1890, 68, 180, 240)])
 
 [node name="RoyalThresholdBack" type="Node2D" parent="."]
-position = Vector2(30680, 40)
+position = Vector2(18540, 40)
 script = ExtResource("wall")
 size = Vector2(1100, 520)
 tint = Color(0.72, 0.69, 0.81, 0.88)
@@ -1516,7 +965,7 @@ crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240), Rect2(810, 68, 180, 240)])
 
 [node name="RoyalSealCourt" type="AnimatableBody2D" parent="."]
-position = Vector2(29400, 530)
+position = Vector2(17260, 530)
 script = ExtResource("stone")
 style = "stone"
 width = 1260.0
@@ -1533,7 +982,7 @@ one_way_collision = false
 one_way_collision_margin = 6.0
 
 [node name="RoyalThresholdStep" type="AnimatableBody2D" parent="."]
-position = Vector2(30660, 430)
+position = Vector2(18520, 430)
 script = ExtResource("stone")
 style = "stone"
 width = 1120.0
@@ -1550,7 +999,7 @@ one_way_collision = false
 one_way_collision_margin = 6.0
 
 [node name="ArenaFloor" type="AnimatableBody2D" parent="."]
-position = Vector2(31780, 430)
+position = Vector2(19640, 430)
 script = ExtResource("stone")
 style = "stone"
 width = 2420.0
@@ -1567,7 +1016,7 @@ one_way_collision = false
 one_way_collision_margin = 6.0
 
 [node name="RoyalSealOne" type="Node2D" parent="."]
-position = Vector2(28940, 530)
+position = Vector2(16800, 530)
 script = ExtResource("royal_seal")
 targets = Array[NodePath]([NodePath("../RoyalSealLiftOne")])
 latch = true
@@ -1577,7 +1026,7 @@ appearance = "crystal"
 seal_texture = SubResource("royal10_sun_seal")
 
 [node name="RoyalSealLiftOne" type="AnimatableBody2D" parent="."]
-position = Vector2(29360, 530)
+position = Vector2(17220, 530)
 script = ExtResource("lift")
 style = "stone"
 width = 260.0
@@ -1596,7 +1045,7 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="RoyalSealBalcony" type="AnimatableBody2D" parent="."]
-position = Vector2(29880, 180)
+position = Vector2(17740, 180)
 script = ExtResource("stone")
 style = "stone"
 width = 320.0
@@ -1613,7 +1062,7 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="RoyalSealTwo" type="Node2D" parent="."]
-position = Vector2(30030, 180)
+position = Vector2(17890, 180)
 script = ExtResource("royal_seal")
 targets = Array[NodePath]([NodePath("../RoyalSealLiftTwo")])
 latch = true
@@ -1623,7 +1072,7 @@ appearance = "crystal"
 seal_texture = SubResource("royal10_moon_seal")
 
 [node name="RoyalSealLiftTwo" type="AnimatableBody2D" parent="."]
-position = Vector2(30380, 530)
+position = Vector2(18240, 530)
 script = ExtResource("lift")
 style = "stone"
 width = 230.0
@@ -1642,7 +1091,7 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="RoyalSealHighStep" type="AnimatableBody2D" parent="."]
-position = Vector2(30650, 320)
+position = Vector2(18510, 320)
 script = ExtResource("stone")
 style = "stone"
 width = 220.0
@@ -1659,7 +1108,7 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="RoyalSealFinalBalcony" type="AnimatableBody2D" parent="."]
-position = Vector2(31280, 270)
+position = Vector2(19140, 270)
 script = ExtResource("stone")
 style = "stone"
 width = 330.0
@@ -1676,9 +1125,9 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="RoyalSealThree" type="Node2D" parent="."]
-position = Vector2(31430, 270)
+position = Vector2(19290, 270)
 script = ExtResource("royal_seal")
-targets = Array[NodePath]([NodePath("../RoyalSealLiftThree")])
+targets = Array[NodePath]([])
 latch = true
 require_crate = false
 plate_width = 110.0
@@ -1686,7 +1135,7 @@ appearance = "crystal"
 seal_texture = SubResource("royal10_star_seal")
 
 [node name="RoyalSealLiftThree" type="AnimatableBody2D" parent="."]
-position = Vector2(31000, 430)
+position = Vector2(18860, 430)
 script = ExtResource("lift")
 style = "stone"
 width = 220.0
@@ -1697,6 +1146,7 @@ period = 3.0
 surface_texture = SubResource("royal10_lift")
 surface_walk_y = 89.0
 surface_height = 62.0
+powered = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RoyalSealLiftThree"]
 position = Vector2(110.0, 15.0)
@@ -1705,7 +1155,7 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="RoyalFinalLock" type="StaticBody2D" parent="."]
-position = Vector2(31720, 430)
+position = Vector2(19580, 430)
 script = ExtResource("lock")
 sources = Array[NodePath]([NodePath("../RoyalSealOne"), NodePath("../RoyalSealTwo"), NodePath("../RoyalSealThree")])
 gate_size = Vector2(72, 650)
@@ -1714,20 +1164,20 @@ frame_texture = SubResource("royal10_gate")
 seal_icons = Array[Texture2D]([SubResource("royal10_sun_icon"), SubResource("royal10_moon_icon"), SubResource("royal10_star_icon")])
 
 [node name="CheckpointGuardian" type="Node2D" parent="."]
-position = Vector2(31280, 430)
+position = Vector2(19480, 430)
 script = ExtResource("object")
 kind = "checkpoint"
 
 [node name="ThresholdArch" type="Sprite2D" parent="."]
 z_index = -9
-position = Vector2(31040, 290)
+position = Vector2(18900, 290)
 scale = Vector2(0.4435484, 0.4435484)
 texture = SubResource("royal10_banner")
 offset = Vector2(0, -186)
 metadata/royal_asset = "banner"
 
 [node name="ArenaBalustrade" type="Node2D" parent="."]
-position = Vector2(31860, 350)
+position = Vector2(19720, 350)
 script = ExtResource("wall")
 size = Vector2(1340, 110)
 tint = Color(0.72, 0.69, 0.81, 0.88)
@@ -1735,7 +1185,7 @@ crenellated = false
 openings = Array[Rect2]([])
 
 [node name="PalaceWing" type="Node2D" parent="."]
-position = Vector2(33220, 90)
+position = Vector2(21080, 90)
 script = ExtResource("wall")
 size = Vector2(980, 490)
 tint = Color(0.72, 0.69, 0.81, 0.88)
@@ -1743,7 +1193,7 @@ crenellated = false
 openings = Array[Rect2]([Rect2(90, 68, 180, 240), Rect2(450, 68, 180, 240)])
 
 [node name="RefugeLeft" type="AnimatableBody2D" parent="."]
-position = Vector2(32025, 285)
+position = Vector2(19885, 285)
 script = ExtResource("stone")
 style = "stone"
 width = 205.0
@@ -1760,7 +1210,7 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="RefugeRight" type="AnimatableBody2D" parent="."]
-position = Vector2(32750, 285)
+position = Vector2(20610, 285)
 script = ExtResource("stone")
 style = "stone"
 width = 205.0
@@ -1777,7 +1227,7 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="RefugeMiddle" type="AnimatableBody2D" parent="."]
-position = Vector2(32410, 205)
+position = Vector2(20270, 205)
 script = ExtResource("stone")
 style = "stone"
 width = 205.0
@@ -1794,7 +1244,7 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="LeftRefugePillarA" type="Node2D" parent="."]
-position = Vector2(32050, 315)
+position = Vector2(19910, 315)
 script = ExtResource("wall")
 size = Vector2(45, 115)
 tint = Color(0.72, 0.69, 0.81, 0.88)
@@ -1802,7 +1252,7 @@ crenellated = false
 openings = Array[Rect2]([])
 
 [node name="LeftRefugePillarB" type="Node2D" parent="."]
-position = Vector2(32160, 315)
+position = Vector2(20020, 315)
 script = ExtResource("wall")
 size = Vector2(45, 115)
 tint = Color(0.72, 0.69, 0.81, 0.88)
@@ -1810,7 +1260,7 @@ crenellated = false
 openings = Array[Rect2]([])
 
 [node name="MiddleRefugePillar" type="Node2D" parent="."]
-position = Vector2(32480, 235)
+position = Vector2(20340, 235)
 script = ExtResource("wall")
 size = Vector2(65, 195)
 tint = Color(0.72, 0.69, 0.81, 0.88)
@@ -1818,7 +1268,7 @@ crenellated = false
 openings = Array[Rect2]([])
 
 [node name="RightRefugePillarA" type="Node2D" parent="."]
-position = Vector2(32775, 315)
+position = Vector2(20635, 315)
 script = ExtResource("wall")
 size = Vector2(45, 115)
 tint = Color(0.72, 0.69, 0.81, 0.88)
@@ -1826,7 +1276,7 @@ crenellated = false
 openings = Array[Rect2]([])
 
 [node name="RightRefugePillarB" type="Node2D" parent="."]
-position = Vector2(32885, 315)
+position = Vector2(20745, 315)
 script = ExtResource("wall")
 size = Vector2(45, 115)
 tint = Color(0.72, 0.69, 0.81, 0.88)
@@ -1834,43 +1284,43 @@ crenellated = false
 openings = Array[Rect2]([])
 
 [node name="Boss" parent="." instance=ExtResource("owl")]
-position = Vector2(32460, 430)
-left = 31950.0
-right = 32970.0
+position = Vector2(20320, 430)
+left = 19810.0
+right = 20830.0
 
 [node name="JiskraCage" type="Node2D" parent="."]
-position = Vector2(33540, 430)
+position = Vector2(21400, 430)
 script = ExtResource("jiskra_cage")
 
 [node name="JiskraRescueCamera" type="Node2D" parent="."]
-position = Vector2(33540, 280)
+position = Vector2(21400, 280)
 script = ExtResource("camera")
 area_size = Vector2(800, 620)
 look_offset = Vector2(0, -40)
 priority = 3
 
 [node name="PalaceGate" type="Node2D" parent="."]
-position = Vector2(33980, 430)
+position = Vector2(21840, 430)
 script = ExtResource("object")
 kind = "goal"
 
 [node name="PalaceArch" type="Sprite2D" parent="."]
 z_index = -9
-position = Vector2(33180, 430)
+position = Vector2(21040, 430)
 scale = Vector2(0.6818182, 0.6818182)
 texture = SubResource("royal10_column")
 offset = Vector2(0, -209)
 metadata/royal_asset = "column"
 
 [node name="RoyalSealCamera" type="Node2D" parent="."]
-position = Vector2(29890, 280)
+position = Vector2(17750, 280)
 script = ExtResource("camera")
 area_size = Vector2(1700, 980)
 look_offset = Vector2(0, -55)
 priority = 2
 
 [node name="ArenaCamera" type="Node2D" parent="."]
-position = Vector2(32460, 270)
+position = Vector2(20320, 270)
 script = ExtResource("camera")
 area_size = Vector2(1600, 700)
 look_offset = Vector2(0, -35)
@@ -1887,9 +1337,12 @@ patrol = 100.0
 speed = 52.0
 
 [node name="OuterShade" parent="." instance=ExtResource("stinko")]
-position = Vector2(3880, 440)
-patrol = 100.0
+position = Vector2(4030, 440)
+patrol = 55.0
 speed = 47.0
+
+shadow_range = 350.0
+shadow_warning = 1.2
 
 [node name="CargoRock" parent="." instance=ExtResource("rock")]
 position = Vector2(5480, 550)
@@ -1897,73 +1350,38 @@ patrol = 130.0
 speed = 66.0
 
 [node name="CargoShade" parent="." instance=ExtResource("stinko")]
-position = Vector2(7660, 190)
-patrol = 130.0
+position = Vector2(7850, 190)
+patrol = 65.0
 speed = 47.0
+shadow_range = 390.0
+shadow_warning = 1.1
+shadow_cooldown = 4.1
 
 [node name="DispatchCloud" parent="." instance=ExtResource("cloud")]
 position = Vector2(8520, 210)
 patrol = 100.0
 speed = 54.0
 
-[node name="LoftRock" parent="." instance=ExtResource("rock")]
-position = Vector2(9600, 450)
-patrol = 120.0
-speed = 64.0
-
-[node name="LoftCloud" parent="." instance=ExtResource("cloud")]
-position = Vector2(12400, 255)
-patrol = 100.0
-speed = 55.0
-
 [node name="LoftShade" parent="." instance=ExtResource("stinko")]
-position = Vector2(13010, 500)
+position = Vector2(9470, 500)
 patrol = 100.0
 speed = 47.0
 
 [node name="MirrorRock" parent="." instance=ExtResource("rock")]
-position = Vector2(15200, 160)
-patrol = 120.0
+position = Vector2(11490, 160)
+patrol = 70.0
 speed = 67.0
 
 [node name="MirrorShade" parent="." instance=ExtResource("stinko")]
-position = Vector2(16750, 220)
-patrol = 100.0
+position = Vector2(12900, 220)
+patrol = 55.0
 speed = 49.0
+shadow_warning = 1.1
+shadow_cooldown = 4.2
 
 [node name="RelayCloud" parent="." instance=ExtResource("cloud")]
-position = Vector2(17880, 275)
+position = Vector2(13940, 275)
 patrol = 100.0
-speed = 54.0
-
-[node name="GalleryShade" parent="." instance=ExtResource("stinko")]
-position = Vector2(19750, 600)
-patrol = 120.0
-speed = 50.0
-
-[node name="GalleryRock" parent="." instance=ExtResource("rock")]
-position = Vector2(21400, 600)
-patrol = 160.0
-speed = 68.0
-
-[node name="GalleryCloud" parent="." instance=ExtResource("cloud")]
-position = Vector2(22100, 205)
-patrol = 90.0
-speed = 53.0
-
-[node name="ViaductRock" parent="." instance=ExtResource("rock")]
-position = Vector2(24080, 350)
-patrol = 100.0
-speed = 67.0
-
-[node name="ViaductShade" parent="." instance=ExtResource("stinko")]
-position = Vector2(26300, 300)
-patrol = 110.0
-speed = 49.0
-
-[node name="LastCloud" parent="." instance=ExtResource("cloud")]
-position = Vector2(28130, 275)
-patrol = 90.0
 speed = 54.0
 
 [node name="Diamond01" type="Node2D" parent="."]
@@ -1985,11 +1403,13 @@ kind = "crystal"
 position = Vector2(2680, 628)
 script = ExtResource("object")
 kind = "crystal"
+metadata/route = "secret"
 
 [node name="Diamond05" type="Node2D" parent="."]
 position = Vector2(5210, 348)
 script = ExtResource("object")
 kind = "crystal"
+metadata/route = "secret"
 
 [node name="Diamond06" type="Node2D" parent="."]
 position = Vector2(7520, 148)
@@ -2001,84 +1421,39 @@ position = Vector2(8480, 288)
 script = ExtResource("object")
 kind = "crystal"
 
-[node name="Diamond08" type="Node2D" parent="."]
-position = Vector2(10290, 298)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond09" type="Node2D" parent="."]
-position = Vector2(11680, 268)
-script = ExtResource("object")
-kind = "crystal"
-
 [node name="Diamond10" type="Node2D" parent="."]
-position = Vector2(13460, 458)
+position = Vector2(9520, 458)
 script = ExtResource("object")
 kind = "crystal"
 
 [node name="Diamond11" type="Node2D" parent="."]
-position = Vector2(14410, 458)
+position = Vector2(10470, 458)
 script = ExtResource("object")
 kind = "crystal"
 
 [node name="Diamond12" type="Node2D" parent="."]
-position = Vector2(15370, 118)
+position = Vector2(11430, 118)
 script = ExtResource("object")
 kind = "crystal"
 
 [node name="Diamond13" type="Node2D" parent="."]
-position = Vector2(18070, 398)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond14" type="Node2D" parent="."]
-position = Vector2(19860, 558)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond15" type="Node2D" parent="."]
-position = Vector2(20800, 188)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond16" type="Node2D" parent="."]
-position = Vector2(22340, 258)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond17" type="Node2D" parent="."]
-position = Vector2(20660, 768)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond18" type="Node2D" parent="."]
-position = Vector2(24740, 378)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond19" type="Node2D" parent="."]
-position = Vector2(26480, 258)
-script = ExtResource("object")
-kind = "crystal"
-
-[node name="Diamond20" type="Node2D" parent="."]
-position = Vector2(28040, 408)
+position = Vector2(14130, 398)
 script = ExtResource("object")
 kind = "crystal"
 
 [node name="Diamond21" type="Node2D" parent="."]
-position = Vector2(29920, 138)
+position = Vector2(17780, 138)
 script = ExtResource("object")
 kind = "crystal"
 
 [node name="Diamond22" type="Node2D" parent="."]
-position = Vector2(30740, 278)
+position = Vector2(18600, 278)
 script = ExtResource("object")
 kind = "crystal"
 
 [node name="RoyalCourtBanner" type="Sprite2D" parent="."]
 z_index = -11
-position = Vector2(29680, 105)
+position = Vector2(17540, 105)
 scale = Vector2(0.4301075, 0.4301075)
 texture = SubResource("royal10_banner")
 offset = Vector2(0, -186)
@@ -2086,7 +1461,7 @@ metadata/royal_asset = "banner"
 
 [node name="PalaceBanner" type="Sprite2D" parent="."]
 z_index = -11
-position = Vector2(33580, 295)
+position = Vector2(21440, 295)
 scale = Vector2(0.4838710, 0.4838710)
 texture = SubResource("royal10_banner")
 offset = Vector2(0, -186)
@@ -2733,24 +2108,8 @@ height = 92.0
 phase = 5.68
 metadata/ground_surface = "CargoDispatchPier"
 
-[node name="LifeVentilationBanner" type="Node2D" parent="LivingDetails"]
-position = Vector2(9280, -20)
-script = ExtResource("royal_life")
-kind = "Banner"
-height = 145.0
-phase = 6.39
-metadata/mount_surface = "InteriorArchitecture/InteriorColumn06"
-
-[node name="LifeWeatherBookstand" type="Node2D" parent="LivingDetails"]
-position = Vector2(11155, 430)
-script = ExtResource("royal_life")
-kind = "Bookstand"
-height = 96.0
-phase = 7.1
-metadata/ground_surface = "WeatherPierB"
-
 [node name="LifeLoftReadingBench" type="Node2D" parent="LivingDetails"]
-position = Vector2(13270, 500)
+position = Vector2(9330, 500)
 script = ExtResource("royal_life")
 kind = "Bench"
 height = 75.0
@@ -2759,7 +2118,7 @@ metadata/ground_surface = "LoftExit"
 mirrored = true
 
 [node name="LifeMirrorHallBanner" type="Node2D" parent="LivingDetails"]
-position = Vector2(13840, 30)
+position = Vector2(9900, 30)
 script = ExtResource("royal_life")
 kind = "Banner"
 height = 150.0
@@ -2776,7 +2135,7 @@ metadata/mount_surface = "InteriorArchitecture/CeilingCornice"
 metadata/suspends = "LifeMirrorRelayChandelier"
 
 [node name="LifeMirrorRelayChandelier" type="Node2D" parent="LivingDetails"]
-position = Vector2(15650, -210)
+position = Vector2(11710, -210)
 script = ExtResource("royal_life")
 kind = "Chandelier"
 height = 140.0
@@ -2785,7 +2144,7 @@ metadata/mount_surface = "InteriorArchitecture/CeilingCornice"
 metadata/suspension_node = "LivingDetails/LifeMirrorRelayChandelierChain"
 
 [node name="LifeGalleryOwlLeft" type="Node2D" parent="LivingDetails"]
-position = Vector2(18250, 440)
+position = Vector2(14310, 440)
 script = ExtResource("royal_life")
 kind = "OwlStatue"
 height = 112.0
@@ -2793,7 +2152,7 @@ phase = 9.94
 metadata/ground_surface = "MirrorExit"
 
 [node name="LifeGalleryOwlRight" type="Node2D" parent="LivingDetails"]
-position = Vector2(18990, 440)
+position = Vector2(15050, 440)
 script = ExtResource("royal_life")
 kind = "OwlStatue"
 height = 124.0
@@ -2801,24 +2160,8 @@ phase = 10.65
 metadata/ground_surface = "MirrorExit"
 mirrored = true
 
-[node name="LifeLowerGalleryLantern" type="Node2D" parent="LivingDetails"]
-position = Vector2(20440, 650)
-script = ExtResource("royal_life")
-kind = "Lantern"
-height = 88.0
-phase = 11.36
-metadata/ground_surface = "GuardLowerB"
-
-[node name="LifeServiceLibraryBookstand" type="Node2D" parent="LivingDetails"]
-position = Vector2(20810, 810)
-script = ExtResource("royal_life")
-kind = "Bookstand"
-height = 100.0
-phase = 12.07
-metadata/ground_surface = "SecretServiceTunnel"
-
 [node name="LifeVaultPassageBanner" type="Node2D" parent="LivingDetails"]
-position = Vector2(23060, 40)
+position = Vector2(15420, 40)
 script = ExtResource("royal_life")
 kind = "Banner"
 height = 145.0
@@ -2834,33 +2177,8 @@ antialiased = true
 metadata/mount_surface = "InteriorArchitecture/CeilingCornice"
 metadata/suspends = "LifeFracturedVaultChandelier"
 
-[node name="LifeFracturedVaultChandelier" type="Node2D" parent="LivingDetails"]
-position = Vector2(25100, -10)
-script = ExtResource("royal_life")
-kind = "Chandelier"
-height = 130.0
-phase = 13.49
-metadata/mount_surface = "InteriorArchitecture/CeilingCornice"
-metadata/suspension_node = "LivingDetails/LifeFracturedVaultChandelierChain"
-
-[node name="LifeWatchPierBanner" type="Node2D" parent="LivingDetails"]
-position = Vector2(26200, -120)
-script = ExtResource("royal_life")
-kind = "Banner"
-height = 135.0
-phase = 14.2
-metadata/mount_surface = "InteriorArchitecture/InteriorColumn13"
-
-[node name="LifeArrivalPierLantern" type="Node2D" parent="LivingDetails"]
-position = Vector2(28260, 450)
-script = ExtResource("royal_life")
-kind = "Lantern"
-height = 88.0
-phase = 14.91
-metadata/ground_surface = "ViaductArrivalPier"
-
 [node name="LifeAntechamberBench" type="Node2D" parent="LivingDetails"]
-position = Vector2(28530, 530)
+position = Vector2(16390, 530)
 script = ExtResource("royal_life")
 kind = "Bench"
 height = 75.0
@@ -2868,9 +2186,95 @@ phase = 15.62
 metadata/ground_surface = "FinalCourtEntry"
 
 [node name="LifeRescueNookLantern" type="Node2D" parent="LivingDetails"]
-position = Vector2(33800, 430)
+position = Vector2(21660, 430)
 script = ExtResource("royal_life")
 kind = "Lantern"
 height = 82.0
 phase = 16.33
 metadata/ground_surface = "ArenaFloor"
+
+[node name="ArchiveEntry" type="AnimatableBody2D" parent="."]
+position = Vector2(11100, -5)
+collision_mask = 0
+script = ExtResource("stone")
+width = 250.0
+depth = 50.0
+surface_texture = SubResource("royal10_platform")
+surface_walk_y = 59.0
+surface_height = 96.0
+metadata/route = "secret"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArchiveEntry"]
+position = Vector2(125, 17.5)
+shape = SubResource("ArchiveEntry_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="ArchiveShelf" type="AnimatableBody2D" parent="."]
+position = Vector2(11490, -130)
+collision_mask = 0
+script = ExtResource("stone")
+width = 300.0
+depth = 50.0
+surface_texture = SubResource("royal10_platform")
+surface_walk_y = 59.0
+surface_height = 96.0
+metadata/route = "secret"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArchiveShelf"]
+position = Vector2(150, 17.5)
+shape = SubResource("ArchiveShelf_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="ArchiveLoft" type="AnimatableBody2D" parent="."]
+position = Vector2(11900, -250)
+collision_mask = 0
+script = ExtResource("stone")
+width = 470.0
+depth = 50.0
+surface_texture = SubResource("royal10_platform")
+surface_walk_y = 59.0
+surface_height = 96.0
+metadata/route = "secret"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArchiveLoft"]
+position = Vector2(235, 17.5)
+shape = SubResource("ArchiveLoft_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="ArchiveBack" type="Node2D" parent="."]
+position = Vector2(11100, -390)
+script = ExtResource("wall")
+size = Vector2(1270, 560)
+crenellated = false
+openings = Array[Rect2]([Rect2(100, 65, 160, 210), Rect2(510, 65, 160, 210), Rect2(920, 65, 160, 210)])
+tint = Color(0.63, 0.59, 0.76, 0.82)
+[node name="ArchiveCamera" type="Node2D" parent="."]
+position = Vector2(11730, -160)
+script = ExtResource("camera")
+area_size = Vector2(1300, 380)
+look_offset = Vector2(80, -65)
+priority = 3
+
+[node name="Diamond23" type="Node2D" parent="."]
+position = Vector2(11210, -45)
+script = ExtResource("object")
+kind = "crystal"
+metadata/route = "secret"
+
+[node name="Diamond24" type="Node2D" parent="."]
+position = Vector2(11640, -170)
+script = ExtResource("object")
+kind = "crystal"
+metadata/route = "secret"
+
+[node name="Diamond25" type="Node2D" parent="."]
+position = Vector2(12160, -290)
+script = ExtResource("object")
+kind = "crystal"
+metadata/route = "secret"
+
+[node name="ArchiveBooksDetail" parent="." instance=ExtResource("hf_detail_RoyalBookcase")]
+position = Vector2(12035, -250)
+
+[node name="ArchiveLampDetail" parent="." instance=ExtResource("hf_detail_RoyalLantern")]
+position = Vector2(12275, -280)

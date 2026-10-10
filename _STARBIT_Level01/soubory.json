@@ -1,0 +1,93 @@
+{
+  "base_commit": "103ab43ff5fbad85a2ff0ba6472455c0e8a58eba",
+  "files": [
+    {
+      "path": "levels/Level_01.tscn",
+      "sha256": "b0815870cde44263af5ea00076766134880e4302c1c672c28b60748ad67f12d7"
+    },
+    {
+      "path": "assets/forest/higgsfield/ART_NOTES.md",
+      "sha256": "783a2461e3b7548e3bd05f9af35c66aa019e049bb724bc86189fc92c93357b34"
+    },
+    {
+      "path": "assets/forest/higgsfield/arch.tres",
+      "sha256": "59e803a8ffbc680b3dbffdfe94570a3e46ae8d0bef111dffd338ed5e0a077e27"
+    },
+    {
+      "path": "assets/forest/higgsfield/cave.tres",
+      "sha256": "d92c8de043bd857d17c53487ee382547039a191465b38ecc0c6a3357063a5d17"
+    },
+    {
+      "path": "assets/forest/higgsfield/ferns.tres",
+      "sha256": "ae83ba8601865d44e1d47b1ec9a97d8b53cda5c1bb75fa399a22399b85254403"
+    },
+    {
+      "path": "assets/forest/higgsfield/forest_glade.png",
+      "sha256": "236340bcfde0cebcf2fe5f5db4f39b6b30793c54357284ef5306235d7a420e75"
+    },
+    {
+      "path": "assets/forest/higgsfield/forest_landmarks.png",
+      "sha256": "5a275c46750c4e756c34642e0971033fc4f767797aff5e2ee101d46bc3622fb1"
+    },
+    {
+      "path": "assets/forest/higgsfield/forest_platforms.png",
+      "sha256": "a1c5f7c4061069dfc4ea4bbe8edbd99f7bbaae9751d39cde75952ee14f81ae79"
+    },
+    {
+      "path": "assets/forest/higgsfield/forest_soil.png",
+      "sha256": "62a1297ac00aada1580585a22ff356fd335020342fb6ac0fe84efa62eaf76a19"
+    },
+    {
+      "path": "assets/forest/higgsfield/grass.tres",
+      "sha256": "781e083565785fc7ea8392aac3c60986347d7f3ff173aec10ccedde401baf521"
+    },
+    {
+      "path": "assets/forest/higgsfield/grass_lip.tres",
+      "sha256": "c077e8e93d85a3feb6d40c8aac7c90f3435e1415cced87590f0074411be2ee11"
+    },
+    {
+      "path": "assets/forest/higgsfield/leaf.tres",
+      "sha256": "8c5ec135befb1365fb87faf39c17b7c0fbe766aaeda5693b8bbb822cb786bafb"
+    },
+    {
+      "path": "assets/forest/higgsfield/stone.tres",
+      "sha256": "4a726481f16e6f04c21ebe24e0b060de694c4536a3cc509712f05344d3437b83"
+    },
+    {
+      "path": "assets/forest/higgsfield/stone_lip.tres",
+      "sha256": "bf083c585628968d6d6c9ba09df78fa677c44eee70bc99dccb69534b2f3ecbed"
+    },
+    {
+      "path": "assets/forest/higgsfield/tree.tres",
+      "sha256": "ef1c860380b7f6f6feb4c9439a57fbb395c453e8aaf06a1e124ba4cab4522f36"
+    },
+    {
+      "path": "assets/forest/higgsfield/wood.tres",
+      "sha256": "2b9afab36f0616b9a28dae8f7e397789974567da07a79d6789ae0bd336e38742"
+    },
+    {
+      "path": "scripts/forest_bank.gd",
+      "sha256": "835a3b205dfead54ce83a256b84ca61b4ca344a55564f87affd41c8f8afd02c7"
+    },
+    {
+      "path": "scripts/forest_bank.gd.uid",
+      "sha256": "243d1179bfc4e29168efeadce577af6ee98ddc2c38aec41d6b24104b263ee9c4"
+    },
+    {
+      "path": "scripts/forest_support.gd",
+      "sha256": "fd5149ba559e5d8d548dcb77241714ae3b8c7591913d79082d769ebca79e9986"
+    },
+    {
+      "path": "scripts/forest_support.gd.uid",
+      "sha256": "7e741ce9ff0920f1dd96daa752342aac4fd43f56a954185763d97c7ae4255e75"
+    },
+    {
+      "path": "shaders/forest_ground_blend.gdshader",
+      "sha256": "cddf438f2d849d75b8cafc5e8fda88ab534c4e975c361b3c42c0da94d26c0e7c"
+    },
+    {
+      "path": "shaders/forest_ground_blend.gdshader.uid",
+      "sha256": "1850d3e0cdab54421371be862aed2bf5f884a4e21fe8eb6849a81ec8a5e1d6fe"
+    }
+  ]
+}

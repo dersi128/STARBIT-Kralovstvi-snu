@@ -173,6 +173,24 @@ size = Vector2(310, 100)
 [sub_resource type="RectangleShape2D" id="BossRefugeShape"]
 size = Vector2(240, 36)
 
+[sub_resource type="RectangleShape2D" id="Polish_ArrivalCatchBank"]
+size = Vector2(1040, 48)
+
+[sub_resource type="RectangleShape2D" id="Polish_QuayCatchBank"]
+size = Vector2(1200, 48)
+
+[sub_resource type="RectangleShape2D" id="Polish_QuayRecoveryStep"]
+size = Vector2(190, 48)
+
+[sub_resource type="RectangleShape2D" id="Polish_CourtPracticeRefuge"]
+size = Vector2(190, 48)
+
+[sub_resource type="RectangleShape2D" id="Polish_RuneCatchBank"]
+size = Vector2(870, 48)
+
+[sub_resource type="RectangleShape2D" id="Polish_RuneRecoveryStep"]
+size = Vector2(210, 48)
+
 [node name="Level_05" type="Node2D" unique_id=1871261897]
 script = ExtResource("level")
 number = 5
@@ -271,7 +289,7 @@ texture = ExtResource("fence")
 position = Vector2(2450, 420)
 script = ExtResource("world_hint")
 title = "Praskající plošiny"
-message = "Plošina pod tebou praská! Skoč dál. Za chvíli se znovu objeví."
+message = "Dřevo nejdřív zapraská. Přeskoč na další prkno; když spadneš, dolní břeh tě zachytí."
 activation_size = Vector2(480, 260)
 
 [node name="FragileA" type="AnimatableBody2D" parent="." unique_id=608870186]
@@ -346,10 +364,6 @@ position = Vector2(4200, 400)
 patrol = 160.0
 speed = 85.0
 
-[node name="Checkpoint_Quarry" type="Node2D" parent="." unique_id=954512294]
-position = Vector2(4000, 400)
-script = ExtResource("object")
-kind = "checkpoint"
 
 [node name="QuarryLantern" parent="." unique_id=1155823897 instance=ExtResource("lantern")]
 position = Vector2(4060, 400)
@@ -419,10 +433,6 @@ script = ExtResource("earth")
 width = 620.0
 bottom = 1700.0
 
-[node name="Checkpoint_Ruins" type="Node2D" parent="." unique_id=490305266]
-position = Vector2(6330, 290)
-script = ExtResource("object")
-kind = "checkpoint"
 
 [node name="EntranceColumn" type="Sprite2D" parent="." unique_id=2072997038]
 visible = false
@@ -535,8 +545,13 @@ position = Vector2(7740, 650)
 launch_speed = 990.0
 
 [node name="CourtGuard" parent="." unique_id=2035846130 instance=ExtResource("polish_stinko")]
-position = Vector2(7100, 650)
-speed = 65.0
+position = Vector2(7460, 650)
+speed = 0.0
+patrol = 0.0
+shadow_warning = 1.2
+shadow_cooldown = 3.8
+shadow_speed = 185.0
+shadow_range = 580.0
 
 [node name="CourtGuard2" parent="." unique_id=739847983 instance=ExtResource("enemy")]
 position = Vector2(7659, 205)
@@ -696,20 +711,10 @@ width = 900.0
 bottom = 1700.0
 
 [node name="ForestGuard" parent="." unique_id=1523387896 instance=ExtResource("enemy")]
-position = Vector2(11400, 300)
-patrol = 190.0
-speed = 90.0
+position = Vector2(11650, 300)
+patrol = 150.0
+speed = 70.0
 
-[node name="ForestGuard2" parent="." unique_id=1103815610 instance=ExtResource("enemy")]
-position = Vector2(11718, 300)
-patrol = 190.0
-speed = 90.0
-obraceni = true
-
-[node name="Checkpoint_FinalGaps" type="Node2D" parent="." unique_id=982025931]
-position = Vector2(11910, 300)
-script = ExtResource("object")
-kind = "checkpoint"
 
 [node name="FinalGapsLantern" parent="." unique_id=1586651023 instance=ExtResource("lantern")]
 position = Vector2(12020, 300)
@@ -833,9 +838,10 @@ kind = "checkpoint"
 [node name="BossHint" type="Marker2D" parent="." unique_id=1232109609]
 position = Vector2(18900, 500)
 script = ExtResource("world_hint")
-title = "Pomoz Brúčounovi"
-message = "Uhni rozběhu, při odpočinku skoč na hlavu. Od 3 srdcí přijdou vlny, při 1 dvě za sebou. Dřevo praská!"
+title = "Brúčounovy vlny"
+message = "Když se přikrčí, chystá vlnu. Přeskoč ji; při posledním srdci přijdou dvě. Až odpočívá, skoč mu na hlavu."
 activation_size = Vector2(360, 260)
+display_seconds = 8.0
 
 [node name="Boss" parent="." unique_id=1446203197 instance=ExtResource("boss")]
 z_index = 2
@@ -929,10 +935,6 @@ script = ExtResource("object")
 position = Vector2(13507, 295)
 script = ExtResource("object")
 
-[node name="Checkpoint_OldQuay" type="Node2D" parent="." unique_id=303395795]
-position = Vector2(2390, 470)
-script = ExtResource("object")
-kind = "checkpoint"
 
 [node name="RuneCourt" type="AnimatableBody2D" parent="." unique_id=1358323863]
 position = Vector2(14400, 550)
@@ -956,7 +958,7 @@ bottom = 1500.0
 position = Vector2(14840, 500)
 script = ExtResource("world_hint")
 title = "Živé runy"
-message = "Svítící kámen tě unese. Když bliká, skoč dál; obrys značí, že zmizel."
+message = "Svítící kámen tě unese. Blikání varuje před zmizením. Dolní břeh tě zachytí; kameny vpravo tě vrátí nahoru."
 activation_size = Vector2(250, 220)
 display_seconds = 5.0
 
@@ -967,6 +969,8 @@ script = ExtResource("dream_rhythm")
 surface_art = "stone"
 width = 190.0
 depth = 63.0
+solid_seconds = 4.2
+empty_seconds = 0.9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RuneA" unique_id=2129077515]
 position = Vector2(95, 24)
@@ -977,10 +981,12 @@ one_way_collision = true
 position = Vector2(15520, 230)
 collision_mask = 0
 script = ExtResource("dream_rhythm")
-phase_offset = 0.6
+phase_offset = 0.3
 surface_art = "stone"
 width = 190.0
 depth = 63.0
+solid_seconds = 4.2
+empty_seconds = 0.9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RuneB" unique_id=1134860710]
 position = Vector2(95, 24)
@@ -1015,20 +1021,7 @@ position = Vector2(90, 24)
 shape = SubResource("Expansion_RuneFerry")
 one_way_collision = true
 
-[node name="RuneFerry2" type="AnimatableBody2D" parent="." unique_id=674057098]
-position = Vector2(16230, 120)
-collision_mask = 0
-script = ExtResource("dream_platform")
-surface_art = "stone"
-width = 180.0
-depth = 63.0
-travel = Vector2(180, -180)
-period = 5.2
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RuneFerry2" unique_id=959001851]
-position = Vector2(90, 24)
-shape = SubResource("Expansion_RuneFerry")
-one_way_collision = true
 
 [node name="RuneOverlook" type="AnimatableBody2D" parent="." unique_id=1351215201]
 position = Vector2(16690, -120)
@@ -1212,7 +1205,7 @@ offset = Vector2(0, -171.5)
 
 [node name="BossRefuge" type="AnimatableBody2D" parent="." unique_id=828698142]
 z_index = -1
-position = Vector2(19536, 300)
+position = Vector2(19536, 420)
 collision_mask = 0
 script = ExtResource("boss_refuge")
 crumble_delay = 1.8
@@ -1227,10 +1220,6 @@ shape = SubResource("BossRefugeShape")
 one_way_collision = true
 one_way_collision_margin = 6.0
 
-[node name="CourtGuard3" parent="." unique_id=197501473 instance=ExtResource("enemy")]
-position = Vector2(10915, 100)
-speed = 90.0
-obraceni = true
 
 [node name="RiverBetweenBanks2" parent="." unique_id=960148665 instance=ExtResource("35_qlv1n")]
 position = Vector2(999, 693)
@@ -1267,7 +1256,141 @@ width = 6000.0
 depth = 1500.0
 preview_in_editor = true
 
-[node name="Checkpoint_RuneCourt" type="Node2D" parent="."]
-position = Vector2(14740, 550)
+
+[node name="ArrivalCatchBank" type="AnimatableBody2D" parent="."]
+position = Vector2(1000, 610)
+collision_mask = 0
+script = ExtResource("platform")
+width = 1040.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrivalCatchBank"]
+position = Vector2(520.0, 24)
+shape = SubResource("Polish_ArrivalCatchBank")
+one_way_collision = true
+
+[node name="QuayCatchBank" type="AnimatableBody2D" parent="."]
+position = Vector2(2620, 610)
+collision_mask = 0
+script = ExtResource("platform")
+width = 1200.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QuayCatchBank"]
+position = Vector2(600.0, 24)
+shape = SubResource("Polish_QuayCatchBank")
+one_way_collision = true
+
+[node name="QuayRecoveryStep" type="AnimatableBody2D" parent="."]
+position = Vector2(3620, 505)
+collision_mask = 0
+script = ExtResource("dream_platform")
+width = 190.0
+depth = 63.0
+surface_art = "stone"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QuayRecoveryStep"]
+position = Vector2(95.0, 24)
+shape = SubResource("Polish_QuayRecoveryStep")
+one_way_collision = true
+
+[node name="CourtPracticeRefuge" type="AnimatableBody2D" parent="."]
+position = Vector2(7060, 525)
+collision_mask = 0
+script = ExtResource("dream_fragile")
+width = 190.0
+depth = 63.0
+surface_art = "wood"
+crumble_delay = 1.8
+return_delay = 3.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CourtPracticeRefuge"]
+position = Vector2(95.0, 24)
+shape = SubResource("Polish_CourtPracticeRefuge")
+one_way_collision = true
+
+[node name="DodgePracticeHint" type="Marker2D" parent="."]
+position = Vector2(6780, 595)
+script = ExtResource("world_hint")
+title = "Nejdřív varování"
+message = "Stínko zvedá světélko? Přeskoč střelu. Dřevěný úkryt pomůže jen na chvíli — pak skoč dál."
+activation_size = Vector2(400, 260)
+display_seconds = 6.0
+
+[node name="SecretDiamond_00" type="Node2D" parent="."]
+position = Vector2(7400, 150)
 script = ExtResource("object")
-kind = "checkpoint"
+
+[node name="SecretDiamond_01" type="Node2D" parent="."]
+position = Vector2(7510, 150)
+script = ExtResource("object")
+
+[node name="SecretDiamond_02" type="Node2D" parent="."]
+position = Vector2(7620, 150)
+script = ExtResource("object")
+
+[node name="SecretDiamond_03" type="Node2D" parent="."]
+position = Vector2(9980, 370)
+script = ExtResource("object")
+
+[node name="SecretDiamond_04" type="Node2D" parent="."]
+position = Vector2(10085, 370)
+script = ExtResource("object")
+
+[node name="SecretDiamond_05" type="Node2D" parent="."]
+position = Vector2(10355, 370)
+script = ExtResource("object")
+
+[node name="GallerySecretHint" type="Marker2D" parent="."]
+position = Vector2(7220, 325)
+script = ExtResource("world_hint")
+title = "Stopa mezi sloupy"
+message = "Nahoře se třpytí schovaná galerie. Prozkoumej ji, nebo pokračuj spodním nádvořím."
+activation_size = Vector2(400, 260)
+display_seconds = 6.0
+
+[node name="TreasureExitHint" type="Marker2D" parent="."]
+position = Vector2(10020, 380)
+script = ExtResource("world_hint")
+title = "Poklad pod stezkou"
+message = "Diamanty patří tobě! Pružina vpravo tě vrátí na horní břeh. Ve vzduchu ti pomůže Fouk."
+activation_size = Vector2(400, 260)
+display_seconds = 6.0
+
+[node name="MidpointRestHint" type="Marker2D" parent="."]
+position = Vector2(11000, 55)
+script = ExtResource("world_hint")
+title = "Polovina cesty"
+message = "Lucerna si pamatuje cestu. Za mostem čeká poslední výstup ke svatyni."
+activation_size = Vector2(400, 260)
+display_seconds = 6.0
+
+[node name="RuneCatchBank" type="AnimatableBody2D" parent="."]
+position = Vector2(15000, 570)
+collision_mask = 0
+script = ExtResource("platform")
+width = 870.0
+depth = 63.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RuneCatchBank"]
+position = Vector2(435.0, 24)
+shape = SubResource("Polish_RuneCatchBank")
+one_way_collision = true
+
+[node name="RuneRecoveryStep" type="AnimatableBody2D" parent="."]
+position = Vector2(15700, 390)
+collision_mask = 0
+script = ExtResource("dream_platform")
+width = 210.0
+depth = 63.0
+surface_art = "stone"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RuneRecoveryStep"]
+position = Vector2(105.0, 24)
+shape = SubResource("Polish_RuneRecoveryStep")
+one_way_collision = true
+
+[node name="GuardianChargeHint" type="Marker2D" parent="."]
+position = Vector2(18170, 505)
+script = ExtResource("world_hint")
+title = "Zkouška strážce"
+message = "Brúčoun nejdřív varuje, pak běží rovně. Přeskoč ho s Foukem. Hvězdičky nad hlavou znamenají: teď!"
+activation_size = Vector2(400, 260)
+display_seconds = 6.0

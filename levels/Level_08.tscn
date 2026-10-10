@@ -23,6 +23,15 @@
 [ext_resource type="Script" uid="uid://sobj37yd18t3" path="res://scripts/castle_platform.gd" id="stone"]
 [ext_resource type="Script" uid="uid://84c1mtqanj6e" path="res://scripts/dream_switch.gd" id="switch"]
 
+[ext_resource type="Script" path="res://scripts/dream_platform.gd" id="rest_platform"]
+[ext_resource type="Script" path="res://scripts/cave_back.gd" id="alcove_back"]
+[ext_resource type="Script" path="res://scripts/water_feature.gd" id="water_detail"]
+[ext_resource type="Script" path="res://scripts/animated_water_pool.gd" id="pool_detail"]
+[ext_resource type="PackedScene" path="res://scenes/worldkit/SpringPad.tscn" id="alcove_spring"]
+
+[ext_resource type="PackedScene" path="res://scenes/royal/higgsfield/RoyalBalustrade.tscn" id="hf_detail_RoyalBalustrade"]
+[ext_resource type="PackedScene" path="res://scenes/royal/higgsfield/RoyalPlanter.tscn" id="hf_detail_RoyalPlanter"]
+
 [sub_resource type="AtlasTexture" id="royal8_mirror"]
 atlas = ExtResource("royal8_atlas")
 region = Rect2(473, 417, 311, 366)
@@ -228,6 +237,10 @@ size = Vector2(175, 40)
 shader = ExtResource("22_umo7i")
 shader_parameter/edge_pixels = 6.0
 
+[sub_resource type="RectangleShape2D" id="SealStep_shape"]
+resource_local_to_scene = true
+size = Vector2(170, 70)
+
 [node name="Level_08" type="Node2D" unique_id=336195938]
 script = ExtResource("level")
 number = 8
@@ -246,7 +259,7 @@ targets = Array[NodePath]([NodePath("../LightGate")])
 receiver_offset = Vector2(650, 515)
 plate_offset = Vector2(-100, 0)
 plate_visual_height = 12.0
-active = true
+active = false
 mirror_art = SubResource("royal8_mirror")
 receiver_art = SubResource("royal8_receiver")
 
@@ -298,7 +311,7 @@ one_way_collision_margin = 6.0
 
 [node name="GatehouseMole" parent="." unique_id=2009110118 instance=ExtResource("mole")]
 position = Vector2(340, 550)
-message = "Za nádvořím začínají zahrady. Projdi spodní galerií a rozsviť sluneční bránu. V odbočkách se ukrývají diamanty."
+message = "Temnota už pronikla za hradby. Jiskra je pořád uvnitř! Přes nádvoří a zahrady se dostaneš až k hradu."
 
 [node name="RepairGallery" type="AnimatableBody2D" parent="." unique_id=908333871]
 position = Vector2(1603, 1028)
@@ -534,7 +547,7 @@ script = ExtResource("object")
 metadata/route = "main"
 
 [node name="Diamond03" type="Node2D" parent="." unique_id=1512095210]
-position = Vector2(3811, 245)
+position = Vector2(3811, 270)
 script = ExtResource("object")
 metadata/route = "main"
 
@@ -544,7 +557,7 @@ script = ExtResource("object")
 metadata/route = "main"
 
 [node name="Diamond05" type="Node2D" parent="." unique_id=1916105558]
-position = Vector2(7420, 314)
+position = Vector2(7435, 50)
 script = ExtResource("object")
 metadata/route = "main"
 
@@ -622,45 +635,29 @@ speed = 80.0
 obraceni = true
 
 [node name="Diamond06" type="Node2D" parent="." unique_id=1393319494]
-position = Vector2(8500, 290)
+position = Vector2(8500, 394)
 script = ExtResource("object")
 metadata/route = "main"
 
 [node name="Diamond07" type="Node2D" parent="." unique_id=142424137]
-position = Vector2(10110, 148)
+position = Vector2(10450, 148)
 script = ExtResource("object")
 metadata/route = "main"
 
-[node name="SecretGalleryBalcony" type="AnimatableBody2D" parent="." unique_id=1170278474]
-position = Vector2(7801, -70)
-collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 480.0
-depth = 85.0
-metadata/route = "secret"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretGalleryBalcony" unique_id=188025818]
-position = Vector2(240, 35)
-shape = SubResource("SecretGalleryBalcony_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
 [node name="Diamond17" type="Node2D" parent="." unique_id=1323481732]
-position = Vector2(8215, -131)
+position = Vector2(9340, 90)
 script = ExtResource("object")
-metadata/route = "secret"
+metadata/route = "main"
 
 [node name="Diamond18" type="Node2D" parent="." unique_id=188182448]
-position = Vector2(8041, -131)
+position = Vector2(9920, -171)
 script = ExtResource("object")
-metadata/route = "secret"
+metadata/route = "main"
 
 [node name="Diamond19" type="Node2D" parent="." unique_id=1080081686]
-position = Vector2(7865, -131)
+position = Vector2(9608, -325)
 script = ExtResource("object")
-metadata/route = "secret"
+metadata/route = "main"
 
 [node name="LightGate" type="StaticBody2D" parent="." unique_id=181107522]
 z_index = 1
@@ -672,12 +669,12 @@ gate_size = Vector2(80, 600)
 palette = Color(0.66, 0.48, 0.89, 1)
 
 [node name="MirrorHint" type="Marker2D" parent="." unique_id=853044508]
-position = Vector2(10161, -439)
+position = Vector2(9125, 225)
 script = ExtResource("hint")
 title = "Sluneční brána"
-message = "Postůj na destičce u zrcadla. Světlo otevře bránu."
-activation_size = Vector2(380, 250)
-display_seconds = 5.5
+message = "Vystoupej ke zrcadlu. Postůj na jeho destičce a otevři světlem bránu."
+activation_size = Vector2(360, 240)
+display_seconds = 5.0
 
 [node name="SecretGalleryBalcony2" type="AnimatableBody2D" parent="." unique_id=1049664925]
 position = Vector2(9874, -381)
@@ -687,7 +684,7 @@ surface_texture = SubResource("royal8_platform")
 surface_walk_y = 67.0
 width = 480.0
 depth = 85.0
-metadata/route = "secret"
+metadata/route = "main"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SecretGalleryBalcony2" unique_id=1118660180]
 position = Vector2(240, 35)
@@ -709,11 +706,6 @@ depth = 960.0
 position = Vector2(375, 472.5)
 shape = SubResource("AqueductLanding_shape")
 one_way_collision_margin = 6.0
-
-[node name="AqueductCheckpoint" type="Node2D" parent="." unique_id=2059884377]
-position = Vector2(11484, 190)
-script = ExtResource("object")
-kind = "checkpoint"
 
 [node name="Diamond08" type="Node2D" parent="." unique_id=1649571700]
 position = Vector2(12820, 58)
@@ -765,10 +757,11 @@ position = Vector2(14100, 100)
 collision_mask = 0
 script = ExtResource("cloudstep")
 width = 300.0
-behaviour = "drift"
+behaviour = "ferry"
 travel = Vector2(760, 0)
-period = 6.4
+period = 3.6
 art_variant = 1
+return_period = 2.4
 
 [node name="AqueductBrokenSpan" type="AnimatableBody2D" parent="." unique_id=1874046771]
 texture_filter = 4
@@ -862,8 +855,8 @@ script = ExtResource("object")
 kind = "checkpoint"
 
 [node name="RampartGuard" parent="." unique_id=1016051616 instance=ExtResource("rock")]
-position = Vector2(17880, 100)
-patrol = 210.0
+position = Vector2(17940, 100)
+patrol = 120.0
 speed = 52.0
 
 [node name="RampartLoosePlankA" type="AnimatableBody2D" parent="." unique_id=1286242532]
@@ -1005,10 +998,11 @@ one_way_collision = true
 one_way_collision_margin = 6.0
 
 [node name="SecretAlcoveIvy" type="Node2D" parent="." unique_id=1638822515]
-z_index = -1
-position = Vector2(20020, 100)
+z_index = 2
+position = Vector2(20020, 184)
 script = ExtResource("object")
 kind = "piece_VinesShort"
+scale = Vector2(0.75, 0.75)
 
 [node name="GardenBridgeApproach" type="AnimatableBody2D" parent="." unique_id=1382965364]
 position = Vector2(21340, 20)
@@ -1024,11 +1018,6 @@ position = Vector2(580, 35)
 shape = SubResource("GardenBridgeApproach_shape")
 one_way_collision = true
 one_way_collision_margin = 6.0
-
-[node name="MoatCheckpoint" type="Node2D" parent="." unique_id=1451914822]
-position = Vector2(21600, 20)
-script = ExtResource("object")
-kind = "checkpoint"
 
 [node name="GardenBridgePlate" type="Node2D" parent="." unique_id=1558308836]
 z_index = 1
@@ -1191,36 +1180,6 @@ position = Vector2(20630, 390)
 script = ExtResource("object")
 metadata/route = "secret"
 
-[node name="FragileA" type="AnimatableBody2D" parent="." unique_id=1318684666]
-position = Vector2(8382, 30)
-collision_mask = 0
-script = ExtResource("crumble")
-surface_art = "wood"
-style = "bridge"
-width = 175.0
-depth = 55.0
-period = 4.5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FragileA" unique_id=1661275084]
-position = Vector2(87.5, 20)
-shape = SubResource("RectangleShape2D_xre7u")
-one_way_collision = true
-
-[node name="FragileA2" type="AnimatableBody2D" parent="." unique_id=1666734374]
-position = Vector2(8655.449, 118.36389)
-collision_mask = 0
-script = ExtResource("crumble")
-surface_art = "wood"
-style = "bridge"
-width = 175.0
-depth = 55.0
-period = 4.5
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FragileA2" unique_id=1072994120]
-position = Vector2(87.5, 20)
-shape = SubResource("RectangleShape2D_xre7u")
-one_way_collision = true
-
 [node name="FragileA3" type="AnimatableBody2D" parent="." unique_id=1646556664]
 position = Vector2(9523, -11)
 collision_mask = 0
@@ -1230,6 +1189,8 @@ style = "bridge"
 width = 175.0
 depth = 55.0
 period = 4.5
+crumble_delay = 1.7
+metadata/route = "main"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FragileA3" unique_id=664281331]
 position = Vector2(87.5, 20)
@@ -1237,14 +1198,15 @@ shape = SubResource("RectangleShape2D_xre7u")
 one_way_collision = true
 
 [node name="FragileA4" type="AnimatableBody2D" parent="." unique_id=1174305267]
-position = Vector2(9523, -11)
+position = Vector2(9250, 130)
 collision_mask = 0
-script = ExtResource("crumble")
+script = ExtResource("rest_platform")
 surface_art = "wood"
 style = "bridge"
 width = 175.0
 depth = 55.0
 period = 4.5
+metadata/route = "main"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FragileA4" unique_id=1003921550]
 position = Vector2(87.5, 20)
@@ -1260,6 +1222,8 @@ style = "bridge"
 width = 175.0
 depth = 55.0
 period = 4.5
+crumble_delay = 1.7
+metadata/route = "main"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FragileA5" unique_id=924057457]
 position = Vector2(87.5, 20)
@@ -1275,6 +1239,8 @@ style = "bridge"
 width = 175.0
 depth = 55.0
 period = 4.5
+crumble_delay = 1.7
+metadata/route = "main"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FragileA6" unique_id=1430426246]
 position = Vector2(88, 18)
@@ -1294,3 +1260,166 @@ art_variant = 2
 [node name="Diamond_06" type="Node2D" parent="RainHopA1" unique_id=718967093]
 position = Vector2(105, -48)
 script = ExtResource("object")
+
+[node name="MirrorClimbCheckpoint" type="Node2D" parent="."]
+position = Vector2(9070, 282)
+script = ExtResource("object")
+kind = "checkpoint"
+
+[node name="AlcoveStoneBack" type="Node2D" parent="."]
+position = Vector2(19840, 150)
+script = ExtResource("alcove_back")
+size = Vector2(900, 280)
+
+[node name="AlcoveSpring" parent="." instance=ExtResource("alcove_spring")]
+position = Vector2(19915, 430)
+
+[node name="AlcoveCamera" type="Node2D" parent="."]
+position = Vector2(20300, 165)
+script = ExtResource("camera")
+area_size = Vector2(1120, 120)
+look_offset = Vector2(0, 150)
+priority = 2
+
+[node name="MirrorAscentCamera" type="Node2D" parent="."]
+position = Vector2(9630, -40)
+script = ExtResource("camera")
+area_size = Vector2(900, 680)
+look_offset = Vector2(65, -100)
+priority = 2
+
+[node name="GalleryWorkLantern" type="Node2D" parent="."]
+position = Vector2(1995, 1028)
+script = ExtResource("object")
+kind = "lantern"
+z_index = -1
+
+[node name="LookoutLantern" type="Node2D" parent="."]
+position = Vector2(5140, 170)
+script = ExtResource("object")
+kind = "lantern"
+z_index = -1
+scale = Vector2(0.8, 0.8)
+
+[node name="AlcoveLantern" type="Node2D" parent="."]
+position = Vector2(20500, 430)
+script = ExtResource("object")
+kind = "lantern"
+z_index = -1
+scale = Vector2(0.8, 0.8)
+
+[node name="FerryCascade" type="Node2D" parent="."]
+position = Vector2(14055, 155)
+script = ExtResource("water_detail")
+kind = "waterfall"
+size = Vector2(90, 640)
+
+[node name="FerryLowerWater" type="Node2D" parent="."]
+z_index = -2
+position = Vector2(14040, 790)
+script = ExtResource("pool_detail")
+width = 1160.0
+depth = 780.0
+wave_height = 75.0
+
+[node name="ArrivalForegroundLeaves" type="Node2D" parent="."]
+position = Vector2(100, 569)
+script = ExtResource("object")
+kind = "piece_LeavesSmall"
+z_index = 3
+scale = Vector2(0.65, 0.65)
+
+[node name="CourtyardForegroundLeaves" type="Node2D" parent="."]
+position = Vector2(3960, 329)
+script = ExtResource("object")
+kind = "piece_LeavesSmall"
+z_index = 3
+scale = Vector2(0.6, 0.6)
+
+[node name="AlcoveForegroundLeaves" type="Node2D" parent="."]
+position = Vector2(20695, 451)
+script = ExtResource("object")
+kind = "piece_LeavesSmall"
+z_index = 3
+scale = Vector2(0.6, 0.6)
+
+[node name="GardenForegroundLeaves" type="Node2D" parent="."]
+position = Vector2(24120, 41)
+script = ExtResource("object")
+kind = "piece_LeavesSmall"
+z_index = 3
+scale = Vector2(0.65, 0.65)
+
+
+[node name="GallerySealStep" type="AnimatableBody2D" parent="."]
+position = Vector2(7120, 220)
+collision_mask = 0
+script = ExtResource("stone")
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+width = 170.0
+depth = 85.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GallerySealStep"]
+position = Vector2(85, 35)
+shape = SubResource("SealStep_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="GallerySealBalcony" type="AnimatableBody2D" parent="."]
+position = Vector2(7350, 90)
+collision_mask = 0
+script = ExtResource("stone")
+surface_texture = SubResource("royal8_platform")
+surface_walk_y = 67.0
+width = 170.0
+depth = 85.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GallerySealBalcony"]
+position = Vector2(85, 35)
+shape = SubResource("SealStep_shape")
+one_way_collision = true
+one_way_collision_margin = 6.0
+
+[node name="GalleryLowerPlate" type="Node2D" parent="."]
+position = Vector2(7050, 350)
+script = ExtResource("switch")
+plate_width = 110.0
+
+[node name="GalleryUpperPlate" type="Node2D" parent="."]
+position = Vector2(7435, 90)
+script = ExtResource("switch")
+plate_width = 110.0
+
+[node name="GalleryPairSeal" type="StaticBody2D" parent="."]
+position = Vector2(7585, 482)
+script = ExtResource("lock")
+sources = Array[NodePath]([NodePath("../GalleryLowerPlate"), NodePath("../GalleryUpperPlate")])
+gate_size = Vector2(64, 860)
+palette = Color(0.66, 0.48, 0.89, 1)
+
+[node name="GalleryPairHint" type="Marker2D" parent="."]
+position = Vector2(7010, 255)
+script = ExtResource("hint")
+title = "Dvě destičky"
+message = "Rozsviť obě destičky. Jedna je dole, druhá nahoře. Pečeť pak zůstane otevřená."
+activation_size = Vector2(360, 240)
+display_seconds = 5.5
+
+[node name="GallerySealDiamond" type="Node2D" parent="."]
+position = Vector2(7205, 180)
+script = ExtResource("object")
+metadata/route = "main"
+
+[node name="GallerySealLantern" type="Node2D" parent="."]
+position = Vector2(7480, 90)
+script = ExtResource("object")
+kind = "lantern"
+z_index = -1
+scale = Vector2(0.65, 0.65)
+
+[node name="CourtyardPlanterDetail" parent="." instance=ExtResource("hf_detail_RoyalPlanter")]
+position = Vector2(9520, 282)
+
+[node name="CourtyardRailDetail" parent="." instance=ExtResource("hf_detail_RoyalBalustrade")]
+position = Vector2(7805, 482)

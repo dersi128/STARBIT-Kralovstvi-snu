@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/royal/higgsfield/RoyalBookcase.tres" id="art"]
+
+[node name="RoyalBookcase" type="Sprite2D"]
+z_index = -1
+texture_filter = 2
+scale = Vector2(0.19736842, 0.19736842)
+texture = ExtResource("art")
+centered = false
+offset = Vector2(-304.0, -634)
+metadata/purpose = "Scenery; bottom-centre anchor; no collision"
+metadata/art_source = "Higgsfield"
