@@ -40,6 +40,14 @@ var frozen := false
 var repair_active := false
 var repair_target: Node2D
 var repair_clock := 0.0
+const INTERACTION_FRAMES = preload("res://assets/characters/animations/bit_interactions/frames.tres")
+var interaction_target: Node2D
+var interaction_candidate: Node2D
+var interaction_kind := ""
+var interaction_clock := 0.0
+var interaction_duration := 0.0
+var health := 3
+var last_safe_position := Vector2.ZERO
 var has_fouk := false
 var previous_bottom := 0.0
 var deaths := 0
@@ -82,6 +90,7 @@ var sparkles:Array[Dictionary]=[]
 var pickup_echoes:Array[Dictionary]=[]
 func _ready() -> void:
  add_to_group("player")
+ last_safe_position=global_position
  collision_layer=2
  collision_mask=5
  floor_snap_length=8.0
@@ -124,6 +133,53 @@ func end_repair() -> void:
  if not repair_active:return
  repair_active=false;repair_target=null;repair_clock=0.0;frozen=false
 
+func begin_interaction(target:Node2D,kind:String,duration:float) -> bool:
+ if frozen or not is_on_floor() or interaction_target!=null:return false
+ interaction_target=target;interaction_kind=kind;interaction_clock=0.0
+ interaction_duration=maxf(duration,0.1)
+ if absf(target.global_position.x-global_position.x)>4:facing=signf(target.global_position.x-global_position.x)
+ happy=0;previous_happy=0;land_time=0;hurt_time=0;pushing=false;pickup_pose_active=false
+ frozen=true;velocity=Vector2.ZERO
+ return true
+
+func cancel_interaction() -> void:
+ if interaction_kind.is_empty():return
+ interaction_target=null;interaction_kind="";interaction_clock=0.0;frozen=false
+
+func _update_interaction(delta:float) -> void:
+ if not interaction_kind.is_empty():
+  if not is_instance_valid(interaction_target):cancel_interaction();return
+  interaction_clock+=delta
+  if interaction_clock>=interaction_duration:
+   var target:=interaction_target
+   target.complete_interaction(self)
+   cancel_interaction()
+  return
+ interaction_candidate=null
+ if frozen:return
+ var closest:=INF
+ for target in get_tree().get_nodes_in_group("story_interactions"):
+  if not target.available_for(self):continue
+  var distance:float=global_position.distance_squared_to(target.global_position)
+  if distance<closest:closest=distance;interaction_candidate=target
+ if InputMap.has_action("interact") and Input.is_action_just_pressed("interact") and is_instance_valid(interaction_candidate):
+  interaction_candidate.interact(self)
+
+func _remember_safe_ground() -> void:
+ if not is_on_floor() or frozen:return
+ var level=get_tree().get_first_node_in_group("level")
+ if level==null or not level.use_hearts:return
+ # Support on both sides, excluding crates, enemies and moving platforms.
+ for x in [-32.0,32.0]:
+  var origin:=global_position+Vector2(x,-8)
+  var ray:=PhysicsRayQueryParameters2D.create(origin,origin+Vector2(0,24),1,[get_rid()])
+  var hit:=get_world_2d().direct_space_state.intersect_ray(ray)
+  if hit.is_empty():return
+  if hit.collider.get("travel")!=null and hit.collider.travel!=Vector2.ZERO:return
+ for enemy in get_tree().get_nodes_in_group("enemies"):
+  if not enemy.defeated and global_position.distance_to(enemy.global_position)<140:return
+ last_safe_position=global_position
+
 func _physics_process(delta: float) -> void:
  var previous_position:=global_position
  var previous_speed:=velocity.x
@@ -145,6 +201,7 @@ func _physics_process(delta: float) -> void:
  celebration_age+=delta
  previous_happy=happy
  update_visual_effects(delta)
+ _update_interaction(delta)
  if repair_active:
   if is_instance_valid(repair_target):repair_clock+=delta
   else:end_repair()
@@ -216,6 +273,7 @@ func _physics_process(delta: float) -> void:
  if is_on_ceiling():takeoff_time=0.0;boost_flash=0.0
  if not was_floor and is_on_floor() and falling_speed>140:
   land_time=LAND_DURATION;landing_strength=clampf(falling_speed/1000.0,0.2,1.0);Progress.sfx("land")
+ _remember_safe_ground()
  var current_level=get_tree().get_first_node_in_group("level")
  if current_level:
   if current_level.check_portal_contact(previous_position,global_position):return
@@ -277,6 +335,8 @@ func animate(delta: float) -> void:
 
  if show_hurt_pose:
   key="hurt";visual_state="hurt";height=86.0
+ elif not interaction_kind.is_empty():
+  visual_state=interaction_kind
  elif repair_active:
   var pose_index:int=[1,2,3,2][int(repair_clock*6.0)%4]
   key="push"+str(pose_index);visual_state="repair";height=90.0
@@ -320,7 +380,7 @@ func animate(delta: float) -> void:
    stretch*=Vector2(1.0+settle*0.025,1.0-settle*0.025)
    tilt-=facing*settle*0.022
 
- if grounded and not show_hurt_pose and not pushing and not repair_active and land_time>0:
+ if grounded and not show_hurt_pose and not pushing and not repair_active and interaction_kind.is_empty() and land_time>0:
   visual_state="land"
   var t:=1.0-land_time/LAND_DURATION
   # Absorb the impact early, then ease out while the knees straighten.
@@ -449,6 +509,11 @@ func _crate_surface_x(crate:Node2D,hand_world:Vector2) -> float:
 
 func get_sheet_texture() -> Texture2D:
  sheet_animation="";sheet_frame=0
+ if not interaction_kind.is_empty():
+  sheet_animation=interaction_kind
+  var progress:=interaction_clock/interaction_duration
+  sheet_frame=int(interaction_clock*6.0)%4 if interaction_kind=="repair" else mini(3,int(progress*4.0))
+  return INTERACTION_FRAMES.get_frame_texture(interaction_kind,sheet_frame)
  if not use_new_sheets or sheet_frames==null:return null
  match visual_state:
   "idle":
@@ -592,12 +657,28 @@ func _draw() -> void:
    draw_arc(Vector2(0,-72),30+(0.3-boost_flash)*70,0,TAU,32,Color(0.55,0.9,1,boost_flash*2),3,true)
 func hurt(force:bool=false) -> void:
  if not force and (invulnerable>0 or frozen): return
+ cancel_interaction()
  end_repair()
- deaths+=1
+ var level=get_tree().get_first_node_in_group("level")
+ var hearts:bool=level!=null and level.use_hearts
+ if hearts:health=maxi(0,health-1)
+ if hearts and health>0 and not force:
+  happy=0;previous_happy=0;hurt_time=hurt_animation_duration;invulnerable=1.3
+  velocity.x=-facing*150.0
+  Progress.sfx("hurt")
+  return
+ if not hearts or health<=0:deaths+=1
  happy=0;previous_happy=0;land_time=0;takeoff_time=0;sparkles.clear();pickup_echoes.clear()
  pickup_pose_active=false;air_time=0.0;boost_flash=0.0;ground_distance=0.0;ground_speed=0.0
  run_phase=0.0;idle_time=0.0;stop_time=0.0;turn_time=0.0;buffer=0.0;coyote=0.0
  floor_motion_y=0.0;floor_visual_offset=0.0
  Progress.sfx("hurt");hurt_time=hurt_animation_duration
- get_tree().call_group("level","respawn_player")
+ if hearts and health>0:
+  global_position=last_safe_position+Vector2(0,-5)
+  velocity=Vector2.ZERO;boost_used=false
+  get_node("Camera2D").reset_follow()
+ else:
+  health=3
+  get_tree().call_group("level","respawn_player")
+  last_safe_position=level.checkpoint if level else global_position
  invulnerable=1.3

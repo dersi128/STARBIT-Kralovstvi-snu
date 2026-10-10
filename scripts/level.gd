@@ -8,6 +8,9 @@ extends Node2D
 @export var camera_bottom := 2400
 @export var fall_limit := 2700.0
 @export var fouk_at_start := false
+@export var use_hearts := false
+var inventory: Dictionary = {}
+var completed_actions: Dictionary = {}
 var arena_active:=false
 var arena_walls:Array[StaticBody2D]=[]
 var arena_floor:=550.0
@@ -42,6 +45,9 @@ func _ready() -> void:
    add_child(wall);arena_walls.append(wall)
 func set_checkpoint(point:Vector2) -> void:
  checkpoint=point
+ if use_hearts and is_instance_valid(player):
+  player.health=3
+  player.last_safe_position=point
 func respawn_player() -> void:
  _set_arena(false)
  player.global_position=checkpoint+Vector2(0,-5)

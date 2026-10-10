@@ -6,6 +6,7 @@ const PAUSE_THEME=preload("res://scripts/pause_menu_theme.gd")
 const ILLUSTRATED_MENU=preload("res://scripts/illustrated_menu.gd")
 const REWARDS_SCREEN=preload("res://scripts/rewards_screen.gd")
 const LEVEL_LOADER=preload("res://scripts/level_loader.gd")
+const ADVENTURE_HUD=preload("res://scripts/adventure_hud.gd")
 const DREAM_INTRO=preload("res://scenes/DreamIntro.tscn")
 var level_loader:CanvasLayer
 var intro_view:Control
@@ -43,15 +44,15 @@ var speech_voice:="voice_mole"
 var hero:TextureRect
 var mole_dialogue:Control
 var dialogue_session:=0
-const TITLES=["Lesní probuzení", "Mezi kořeny", "Světélka vesničky", "Nad střechami", "Brúčounova svatyně", "První ostrovy", "Vodopády v oblacích", "Nádvoří před branami", "Královské zahrady", "V srdci hradu"]
+const TITLES=["Probuzení pod kořeny", "Mezi kořeny", "Světélka vesničky", "Nad střechami", "Brúčounova svatyně", "První ostrovy", "Vodopády v oblacích", "Nádvoří před branami", "Královské zahrady", "V srdci hradu"]
 const LEVEL_COUNT=10
 func _ready() -> void:
  get_tree().quit_on_go_back=false
  process_mode=Node.PROCESS_MODE_ALWAYS
  add_to_group("game")
- for action in ["left","right","jump"]:
+ for action in ["left","right","jump","interact"]:
   if not InputMap.has_action(action):InputMap.add_action(action)
- var keys={"left":[KEY_LEFT,KEY_A],"right":[KEY_RIGHT,KEY_D],"jump":[KEY_SPACE,KEY_UP]}
+ var keys={"left":[KEY_LEFT,KEY_A],"right":[KEY_RIGHT,KEY_D],"jump":[KEY_SPACE,KEY_UP],"interact":[KEY_E]}
  for a in keys:
   for key in keys[a]:
    var e:=InputEventKey.new();e.physical_keycode=key;InputMap.action_add_event(a,e)
@@ -178,7 +179,7 @@ func settings() -> void:
  v.add_child(button("Zvuk: "+("vypnutý" if Progress.muted else "zapnutý"),func():Progress.muted=not Progress.muted;Progress.apply_audio_volumes();Progress.silence();Progress.save();settings(),Color("d2b0f7")))
  audio_slider(v, "Hudba", "music", Progress.music_volume)
  audio_slider(v, "Zvukové efekty", "effects", Progress.effects_volume)
- var l:=Label.new();l.text="Pohyb: ← → nebo A/D\nSkok: mezerník nebo ↑\nPauza: Escape\nFouk: druhý stisk skoku ve vzduchu";l.add_theme_color_override("font_color",Color("143458"));l.add_theme_font_size_override("font_size",20);v.add_child(l)
+ var l:=Label.new();l.text="Pohyb: ← → nebo A/D\nSkok: mezerník nebo ↑\nAkce / oprava / sebrání: E\nPauza: Escape\nZIP: druhý stisk skoku ve vzduchu";l.add_theme_color_override("font_color",Color("143458"));l.add_theme_font_size_override("font_size",20);v.add_child(l)
  var navigation:=HBoxContainer.new();navigation.add_theme_constant_override("separation",12);v.add_child(navigation)
  for spec in [["Autoři",credits,"purple"],["Zpět",menu,"blue"]]:
   var item:=PAUSE_THEME.button(spec[0],spec[1],spec[2])
@@ -261,15 +262,17 @@ func start_level(n:int,custom_scene:String="") -> void:
  level.process_mode=Node.PROCESS_MODE_INHERIT
  mode="play"
 func release_input() -> void:
- for a in ["left","right","jump"]:Input.action_release(a)
+ for a in ["left","right","jump","interact"]:Input.action_release(a)
 func game_ui() -> void:
  clear_ui()
  hud=COLLECTIBLE_HUD.new();hud.position=Vector2(22,16);screen.add_child(hud)
  hud.update_values(crystals,level.star_collected,total_crystals,false)
+ if level.use_hearts:
+  var adventure:=ADVENTURE_HUD.new();adventure.name="AdventureHUD";adventure.level=level;screen.add_child(adventure)
  var pause_button:=button("Ⅱ",pause_game);pause_button.custom_minimum_size=Vector2(64,50);pause_button.position=Vector2(1188,16);screen.add_child(pause_button)
  build_bubble()
  touch=Control.new();screen.add_child(touch)
- for spec in [["←","left",32],["→","right",140],["↑","jump",1140]]:
+ for spec in [["←","left",32],["→","right",140],["Akce","interact",1034],["↑","jump",1140]]:
   var b:=button(spec[0],func():pass,Color(0.8,0.95,1,0.65));b.position=Vector2(spec[2],620);b.custom_minimum_size=Vector2(84,80);b.size=Vector2(84,80)
   var a:String=spec[1]
   b.button_down.connect(func():Input.action_press(a))

@@ -221,7 +221,7 @@ func _render_frame() -> void:
 		_caption.text = "Do Království snů se vplížila temnota…"
 		_caption.modulate.a = _smooth((story_time - 2.65) / 0.65) * (1.0 - _smooth((story_time - 5.0) / 0.60))
 	else:
-		_caption.text = "Bite… Království snů tě potřebuje."
+		_caption.text = "Krtečku… Najdi Bita. Království ho potřebuje."
 		_caption.modulate.a = _smooth((story_time - 6.10) / 0.60)
 	_skip_button.disabled = elapsed < SKIP_GUARD
 	_skip_button.modulate.a = lerpf(0.65, 0.94, _smooth(elapsed / SKIP_GUARD))

@@ -1,0 +1,41 @@
+STARBIT – LEVEL 1: PROBUZENÍ POD KOŘENY
+
+Tento balíček přidává hotovou první hratelnou verzi nového levelu do projektu
+STARBIT-Kralovstvi-snu. Obsahuje všechny změněné scény, skripty a nové assety.
+
+INSTALACE
+1. Udělej si kopii svého projektu. Pokud máš vlastní neuložené změny ve stejných
+   souborech, nejdřív je zazálohuj nebo porovnej.
+2. Obsah tohoto ZIPu rozbal do kořene projektu, vedle project.godot.
+3. Potvrď nahrazení stejných souborů. Nepřesouvej jednotlivé obrázky jinam.
+4. Otevři projekt v Godotu 4.7.2 a nech doběhnout import nových assetů.
+5. Otevři levels/Level_01.tscn a stiskni F6. Případně F5 a Nová hra.
+
+Základ: main, commit e9e435e24bda24ed7e3800058c887436d5c04a5e
+Repozitář: https://github.com/dersi128/STARBIT-Kralovstvi-snu
+
+OVLÁDÁNÍ
+A/D nebo šipky: pohyb. Mezerník/nahoru: skok, podržení pro vyšší skok.
+E: sebrat předmět, opravit zařízení nebo použít páku.
+Na dotykové obrazovce je tlačítko Akce. Escape: pauza.
+
+CO JE NOVÉ
+Dílna pod kořeny, Krtečkův vzkaz, bezpečný nácvik skoků, bedna a ozubené kolo,
+oprava navijáku, funkční páka, rozvíjející se most, jeden nepřítel, tři
+checkpointy, dvanáct dobrovolných diamantů, hvězda a přechod do druhého levelu.
+Bit má nové animace opravy, aktivace a sebrání předmětu (12 snímků).
+Tři srdíčka; opravy a sebrané předměty se při neúspěchu neztratí.
+
+OVĚŘENÍ
+Godot 4.7.2: automatický průchod celým levelem a zkoušky interakcí, pauzy,
+přerušení opravy, zdraví a checkpointů: 0 selhání. Načtení všech deseti
+levelů a 338 zdrojů: 0 selhání kontrol. Při ukončení běhu bez okna engine
+vypisuje upozornění na neuklizené prostředky; herní kontroly tím neselhaly.
+Grafické okno zde nebylo dostupné. Výslednou kompozici, zvuk a pocit z ovládání
+je ještě potřeba posoudit při hraní v editoru.
+
+Podrobnosti: docs/design/level-01-awakening.md
+Původ nové grafiky: assets/environment/forest/awakening/ART_NOTES.md
+
+GitHub tento zápis odmítl chybou 403 (oprávnění integrace). Změny jsou v tomto
+balíčku; nebyly uloženy do vzdálené větve ani do hlavní větve repozitáře.
