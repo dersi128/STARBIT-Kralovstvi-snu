@@ -11,7 +11,7 @@ func _ready() -> void:
  deck.one_way_collision=true
  add_child(deck)
 func _draw() -> void:
- var tex:Texture2D=preload("res://assets/worldkit/WoodBridge.tres")
+ var tex:Texture2D=preload("res://assets/environment/worldkit/WoodBridge.tres")
  var count:=maxi(1,ceili(end_offset.x/240.0))
  var angle:=end_offset.angle()
  draw_set_transform(Vector2.ZERO,angle)

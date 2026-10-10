@@ -12,7 +12,7 @@ func _process(delta:float) -> void:
  if Engine.is_editor_hint():return
  time+=delta;queue_redraw()
 func _draw() -> void:
- var tex:Texture2D=preload("res://assets/worldkit/WaterSurface.tres") if kind=="pool" else preload("res://assets/supplied/pieces/FallsLongThin.png")
+ var tex:Texture2D=preload("res://assets/environment/worldkit/WaterSurface.tres") if kind=="pool" else preload("res://assets/environment/supplied/pieces/FallsLongThin.png")
  draw_texture_rect(tex,Rect2(Vector2.ZERO,size),false,Color(1,1,1,0.8))
  if kind=="pool":
   for i in 8:

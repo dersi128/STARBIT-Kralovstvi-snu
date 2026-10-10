@@ -18,7 +18,7 @@ var active := false
 var grace := 0.0
 var glow_time := 0.0
 const PLATE_VISUAL = preload("res://scripts/pressure_plate_visual.gd")
-const SHEET = preload("res://assets/world_expansion/switches.png")
+const SHEET = preload("res://assets/environment/expansion/switches.png")
 
 func _ready() -> void:
 	z_index = 1

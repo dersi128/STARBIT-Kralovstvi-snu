@@ -11,7 +11,7 @@ extends AnimatableBody2D
 ## The existing dream_switch supplies its grace value for the warning glow.
 @export var power_source: NodePath
 
-const ART = preload("res://assets/worldkit/starbit_bridge_parts.png")
+const ART = preload("res://assets/environment/worldkit/starbit_bridge_parts.png")
 const CLEAN_EDGES = preload("res://shaders/bridge_alpha.gdshader")
 const DECK = Rect2(43, 364, 787, 295)
 const POST = Rect2(944, 90, 274, 612)

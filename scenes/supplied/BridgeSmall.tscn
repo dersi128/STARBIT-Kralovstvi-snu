@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3]
 [ext_resource type="Script" path="res://scripts/sheet_platform.gd" id="script"]
-[ext_resource type="Texture2D" path="res://assets/supplied/pieces/BridgeSmall.png" id="texture"]
+[ext_resource type="Texture2D" path="res://assets/environment/supplied/pieces/BridgeSmall.png" id="texture"]
 [node name="BridgeSmall" type="AnimatableBody2D"]
 script=ExtResource("script")
 texture=ExtResource("texture")

@@ -18,7 +18,7 @@
 [ext_resource type="Script" uid="uid://cueha53tp0240" path="res://scripts/object.gd" id="object"]
 [ext_resource type="PackedScene" path="res://scenes/worldkit/RainCloud.tscn" id="rain"]
 [ext_resource type="PackedScene" path="res://scenes/Enemy_rock_enemy.tscn" id="rock"]
-[ext_resource type="Texture2D" uid="uid://ghp3eyrh6xln" path="res://assets/royal/expansion/level08_atlas.png" id="royal8_atlas"]
+[ext_resource type="Texture2D" uid="uid://ghp3eyrh6xln" path="res://assets/environment/castle/expansion/level08_atlas.png" id="royal8_atlas"]
 [ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="stinko"]
 [ext_resource type="Script" uid="uid://sobj37yd18t3" path="res://scripts/castle_platform.gd" id="stone"]
 [ext_resource type="Script" uid="uid://84c1mtqanj6e" path="res://scripts/dream_switch.gd" id="switch"]

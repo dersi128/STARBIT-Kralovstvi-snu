@@ -19,7 +19,7 @@ extends AnimatableBody2D
 @export_range(0.6, 2.0, 0.1) var empty_seconds := 1.0
 @export_range(0, 4, 1) var art_variant := 0:
 	set(value):art_variant=clampi(value,0,4);queue_redraw()
-const CLOUDS = [preload("res://assets/cloud_paths/cloud_1.png"), preload("res://assets/cloud_paths/cloud_2.png"), preload("res://assets/cloud_paths/cloud_3.png"), preload("res://assets/cloud_paths/cloud_4.png"), preload("res://assets/cloud_paths/cloud_5.png")]
+const CLOUDS = [preload("res://assets/environment/sky/cloud_platforms/cloud_1.png"), preload("res://assets/environment/sky/cloud_platforms/cloud_2.png"), preload("res://assets/environment/sky/cloud_platforms/cloud_3.png"), preload("res://assets/environment/sky/cloud_platforms/cloud_4.png"), preload("res://assets/environment/sky/cloud_platforms/cloud_5.png")]
 # Atlas regions discard empty margins without modifying the supplied images.
 const REGIONS = [Rect2(145,465,970,395),Rect2(225,388,1000,440),Rect2(180,350,1165,470),Rect2(18,245,1638,560),Rect2(15,248,1887,390)]
 # Source-pixel height of the broad walking shelf, not the highest side puff.

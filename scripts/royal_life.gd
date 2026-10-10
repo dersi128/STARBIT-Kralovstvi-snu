@@ -11,7 +11,7 @@ extends Node2D
 	set(value):mirrored=value;queue_redraw()
 ## Obnovená zahrada rozjasní i květiny, motýly a světlušky kolem cesty.
 @export_enum("Vždy živé","Sluneční fontána","Měsíční fontána") var growth_source := 0
-const ART = preload("res://assets/royal/living/royal_life.tres")
+const ART = preload("res://assets/environment/castle/living/royal_life.tres")
 var clock := 0.0
 var growth := 1.0
 var response := 0.0

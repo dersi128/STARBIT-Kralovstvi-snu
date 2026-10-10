@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3]
 [ext_resource type="Script" path="res://scripts/rock_enemy.gd" id="1"]
-[ext_resource type="SpriteFrames" path="res://assets/animations/rock_enemy.tres" id="anim_rock_enemy"]
+[ext_resource type="SpriteFrames" path="res://assets/characters/animations/rock_enemy.tres" id="anim_rock_enemy"]
 [sub_resource type="CapsuleShape2D" id="Feet"]
 radius=22.0
 height=64.0

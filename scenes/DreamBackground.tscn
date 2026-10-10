@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3]
-[ext_resource type="Texture2D" path="res://assets/sky.png" id="1"]
-[ext_resource type="Texture2D" path="res://assets/far.png" id="2"]
-[ext_resource type="Texture2D" path="res://assets/mid.png" id="3"]
-[ext_resource type="Texture2D" path="res://assets/front.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/environment/backgrounds/layers/sky.png" id="1"]
+[ext_resource type="Texture2D" path="res://assets/environment/backgrounds/layers/far.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/environment/backgrounds/layers/mid.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/environment/backgrounds/layers/front.png" id="4"]
 [node name="DreamBackground" type="Node2D"]
 z_index = -100
 [node name="sky" type="Parallax2D" parent="."]

@@ -199,7 +199,7 @@ func play_music(track:String) -> void:
  if music_track==track and is_instance_valid(music):
   music.stream_paused=false
   return
- var path:="res://assets/audio/"+track+".ogg"
+ var path:="res://assets/audio/music/"+track+".ogg"
  if not ResourceLoader.exists(path):
   push_warning("Music resource missing or not imported: "+path)
   return

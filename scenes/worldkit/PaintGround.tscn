@@ -1,6 +1,6 @@
 [gd_scene format=4]
 
-[ext_resource type="Texture2D" path="res://assets/worldkit/ground_tiles.png" id="1_g7ba1"]
+[ext_resource type="Texture2D" path="res://assets/environment/worldkit/ground_tiles.png" id="1_g7ba1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n4jyl"]
 texture = ExtResource("1_g7ba1")

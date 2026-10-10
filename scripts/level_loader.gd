@@ -2,18 +2,18 @@ extends CanvasLayer
 ## Holds one prepared level plus the small shared resources loaded in _ready/_draw.
 ## Scene instantiation and SceneTree changes always stay on the main thread.
 
-const FONT = preload("res://assets/menu/pause/Nunito.ttf")
-const STAR = preload("res://assets/menu/pause/star.svg")
+const FONT = preload("res://assets/ui/fonts/Nunito.ttf")
+const STAR = preload("res://assets/ui/menu/pause/star.svg")
 const SHARED_PATHS = [
 	"res://scenes/Bit.tscn",
-	"res://assets/animations/bit_v2/bit_frames.tres",
-	"res://assets/bit.png",
-	"res://assets/pieces/fouk.png",
-	"res://assets/pieces/flag.png",
-	"res://assets/pieces/arch.png",
-	"res://assets/pieces/bush.png",
-	"res://assets/pieces/star.png",
-	"res://assets/audio/adventure.ogg",
+	"res://assets/characters/animations/bit_v2/bit_frames.tres",
+	"res://assets/characters/bit/bit_extra_poses.png",
+	"res://assets/shared/pieces/fouk.png",
+	"res://assets/shared/pieces/flag.png",
+	"res://assets/shared/pieces/arch.png",
+	"res://assets/shared/pieces/bush.png",
+	"res://assets/shared/pieces/star.png",
+	"res://assets/audio/music/adventure.ogg",
 ]
 
 var _resources: Dictionary = {}

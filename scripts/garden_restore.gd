@@ -17,7 +17,7 @@ var restored := [false, false]
 var growth := [0.0, 0.0]
 var light_age := [10.0, 10.0]
 var elapsed := 0.0
-const FOUNTAIN_STAND = preload("res://assets/sky_props/wind_core_stand.png")
+const FOUNTAIN_STAND = preload("res://assets/environment/sky/props/wind_core_stand.png")
 
 func _ready() -> void:
 	super._ready()

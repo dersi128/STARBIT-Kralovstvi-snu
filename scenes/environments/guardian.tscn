@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3]
-[ext_resource type="Texture2D" path="res://assets/sky.png" id="1"]
-[ext_resource type="Texture2D" path="res://assets/environments/guardian.png" id="2"]
-[ext_resource type="Texture2D" path="res://assets/pieces/cloud.png" id="3"]
-[ext_resource type="Texture2D" path="res://assets/pieces/bush.png" id="4"]
+[ext_resource type="Texture2D" path="res://assets/environment/backgrounds/layers/sky.png" id="1"]
+[ext_resource type="Texture2D" path="res://assets/environment/backgrounds/guardian.png" id="2"]
+[ext_resource type="Texture2D" path="res://assets/shared/pieces/cloud.png" id="3"]
+[ext_resource type="Texture2D" path="res://assets/shared/pieces/bush.png" id="4"]
 [node name="guardian" type="Node2D"]
 z_index=-100
 [node name="sky" type="Parallax2D" parent="."]

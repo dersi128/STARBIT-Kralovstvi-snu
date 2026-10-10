@@ -2,10 +2,10 @@ extends RefCounted
 ## Presentation for the existing main menu; gameplay stays in game.gd.
 
 const DESIGN_SIZE := Vector2(1280, 720)
-const TITLE_FONT = preload("res://assets/menu/Fredoka.ttf")
-const UI_FONT = preload("res://assets/menu/Nunito.ttf")
-const BUTTON_SKIN = preload("res://assets/menu/menu_button.svg")
-const VELORA_MARK = preload("res://assets/menu/velora_mark.svg")
+const TITLE_FONT = preload("res://assets/ui/fonts/Fredoka.ttf")
+const UI_FONT = preload("res://assets/ui/fonts/Nunito.ttf")
+const BUTTON_SKIN = preload("res://assets/ui/menu/menu_button.svg")
+const VELORA_MARK = preload("res://assets/ui/menu/velora_mark.svg")
 
 class StaticAccents extends Control:
 	func _draw() -> void:

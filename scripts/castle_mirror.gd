@@ -18,7 +18,7 @@ extends Node2D
 @export var mirror_art: Texture2D
 @export var receiver_art: Texture2D
 const PLATE_VISUAL = preload("res://scripts/pressure_plate_visual.gd")
-const SWITCH = preload("res://assets/world_expansion/switches.png")
+const SWITCH = preload("res://assets/environment/expansion/switches.png")
 var timer := 0.0
 var standing := 0.0
 var occupied_before := false

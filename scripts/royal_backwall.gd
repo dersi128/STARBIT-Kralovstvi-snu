@@ -10,7 +10,7 @@ extends Node2D
 	set(value): openings = value; queue_redraw()
 @export var crenellated := false:
 	set(value): crenellated = value; queue_redraw()
-const WALL = preload("res://assets/royal/castle_wall.png")
+const WALL = preload("res://assets/environment/castle/castle_wall.png")
 const TILE := Vector2(360, 262.39234)
 const SOURCE := Vector2(1254, 914)
 

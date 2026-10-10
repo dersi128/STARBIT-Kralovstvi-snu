@@ -9,7 +9,7 @@ extends "res://scripts/terrain_body.gd"
 @export var cool_stone := false:
 	set(value): cool_stone = value; queue_redraw()
 
-const EARTH := preload("res://assets/forest/higgsfield/forest_soil.png")
+const EARTH := preload("res://assets/environment/forest/higgsfield/forest_soil.png")
 
 func _ready() -> void:
 	super._ready()

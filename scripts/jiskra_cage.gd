@@ -1,8 +1,8 @@
 @tool
 extends Node2D
 ## Grounded royal cage. Reuses the palace frame and the original Jiskra art.
-const FRAME = preload("res://assets/royal/expansion/level10_atlas.png")
-const JISKRA = preload("res://assets/pieces/jiskra.png")
+const FRAME = preload("res://assets/environment/castle/expansion/level10_atlas.png")
+const JISKRA = preload("res://assets/shared/pieces/jiskra.png")
 const MESSAGE := "Bite, dokázal jsi to! Temnota mě tu uvěznila. Díky tobě může Království snů zase zářit. Pojďme domů!"
 var kind := "jiskra"
 var rescued := false

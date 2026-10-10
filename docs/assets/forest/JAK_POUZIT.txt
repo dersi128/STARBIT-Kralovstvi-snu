@@ -1,0 +1,48 @@
+STARBIT – LES 01: SAMOSTATNÉ ASSETY
+
+Sada obsahuje 47 průhledných PNG a odkazy na 2 původní celoplošné textury.
+Je to výběr existujících assetů vhodných pro první lesní level.
+Při přípravě výřezů se nové obrázky negenerovaly. Nynější úklid upravil cesty, nikoli kresby.
+
+KDE SOUBORY NAJDEŠ V NYNĚJŠÍM PROJEKTU
+assets/environment/forest/cutouts/landmarks/ – velké Higgsfield dekorace.
+assets/environment/forest/cutouts/trees_and_structures/ – stromy, kmen, ruiny a plot.
+assets/environment/forest/cutouts/plants_and_rocks/ – keře, houby, kameny, pařez a liány.
+assets/environment/forest/cutouts/props/ – lucerny, ploty, lavička a budka.
+assets/environment/forest/cutouts/platforms/ – obrázky čtyř plošin, bez kolizí.
+assets/environment/forest/higgsfield/forest_glade.png – lesní pozadí.
+assets/environment/forest/higgsfield/forest_soil.png – textura zeminy.
+
+Původní ZIP byl vložen do projektu a jeho složky byly následně uspořádané.
+Přehled PREHLED.jpg a soupisy jsou nyní v docs/assets/forest/.
+Cesty v soupisu jsou relativní ke kořeni projektu s project.godot.
+
+JAK TO POUŽÍT V GODOTU
+1. Otevři svůj první level.
+2. Přetáhni PNG z panelu FileSystem přímo do 2D scény jako Sprite2D.
+3. Umísti dekoraci. Měřítko měň rovnoměrně v obou osách, aby se nedeformovala.
+4. Pro dekorace můžeš vytvořit uzly Node2D DekoraceVzadu a DekoraceVpredu.
+5. V Inspectoru najdi Ordering > Z Index. Pokud má Bit Z Index 0, můžeš pro
+   zadní dekorace začít na -5 a pro přední na 5. Záleží i na Z Index rodičů
+   a pozadí: zadní dekorace mají být před pozadím, ale za Bitem.
+6. Dekorace nepotřebují kolize ani skript. Obrázek jeskyně nebo branky sám
+   o sobě nevytvoří průchod, portál ani tajnou místnost.
+
+JAK DOSÁHNOUT VĚTŠÍ HLOUBKY
+Vzdálené pozadí = souvislý obraz lesa.
+Střední plán = stromy, kmeny, skály a ruiny za hráčem.
+Popředí (foreground) = pár listů, keřů či kamenů před okrajem terénu.
+Této práci s dekoracemi se také říká set dressing.
+Paralaxa znamená, že se vrstvy při pohybu kamery posouvají různou rychlostí;
+není nutná pro samotné vložení těchto PNG.
+
+Strom nebo kámen posaď základnou na terén. Malý keř může zakrýt napojení
+na zem. Přední dekorace nedávej přes hrany pro doskok ani přes tlačítka.
+Střídej velké orientační prvky a drobné detaily; nemusíš použít vše najednou.
+Existující animovanou vodu používej dál z jejích původních herních scén.
+
+TECHNICKÉ POZNÁMKY
+Obrázky jsou vyříznuté bez změny barev a bez zvětšování. Kolem průhledných
+výřezů je 8 px prázdného okraje. Byly odstraněny drobné zbytky pozadí
+a izolované pixely mimo hlavní objekt. Plošiny zachovávají původní kresbu.
+Balíček neobsahuje scény, herní skripty, import cache ani kolize.

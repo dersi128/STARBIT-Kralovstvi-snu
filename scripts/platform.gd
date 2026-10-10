@@ -26,7 +26,7 @@ func _physics_process(delta: float) -> void:
  time+=delta
  position=origin+travel*(0.5-0.5*cos(TAU*time/maxf(period,0.5)))
 func _draw() -> void:
- var tex:Texture2D = preload("res://assets/worldkit/WoodBridge.tres") if style=="bridge" else DreamArt.texture(style)
+ var tex:Texture2D = preload("res://assets/environment/worldkit/WoodBridge.tres") if style=="bridge" else DreamArt.texture(style)
  if style=="ground":
   var n := maxi(1,ceili(width/256.0))
   for i in n:

@@ -20,7 +20,7 @@ var _external_power := false
 var _lit: Array[bool] = []
 var _shape: CollisionShape2D
 var _flash := 0.0
-const SWITCHES = preload("res://assets/world_expansion/switches.png")
+const SWITCHES = preload("res://assets/environment/expansion/switches.png")
 
 func _ready() -> void:
 	collision_layer = 1

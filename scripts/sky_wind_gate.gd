@@ -57,10 +57,10 @@ var rotor_speed:=0.0
 var visual_clock:=0.0
 var visual_wind:=1.0
 var mill_art:Node2D
-const MILL=preload("res://assets/wind_gate/windmill_parts.png")
-const LEVER=preload("res://assets/wind_gate/lever.png")
-const GUST=preload("res://assets/wind_gate/gust.png")
-const FONT=preload("res://assets/menu/pause/Nunito.ttf")
+const MILL=preload("res://assets/environment/sky/windmill/windmill_parts.png")
+const LEVER=preload("res://assets/environment/sky/windmill/lever.png")
+const GUST=preload("res://assets/environment/sky/windmill/gust.png")
+const FONT=preload("res://assets/ui/fonts/Nunito.ttf")
 const HUD=preload("res://scripts/collectible_hud.gd")
 const LEVER_ANCHORS=[Vector2(305,495),Vector2(720,495),Vector2(1178,495),Vector2(234,990),Vector2(722,994),Vector2(1178,994)]
 const LEVER_RECTS=[Rect2(130,42,340,463),Rect2(560,125,385,380),Rect2(1000,150,395,365),Rect2(95,550,435,465),Rect2(550,540,360,480),Rect2(1015,540,340,480)]

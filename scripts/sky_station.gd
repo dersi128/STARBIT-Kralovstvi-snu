@@ -24,10 +24,10 @@ var player: CharacterBody2D
 var pulse_targets: Array[Node2D] = []
 var typeface:FontVariation
 var card_style:StyleBoxFlat
-const SHEET=preload("res://assets/world_expansion/switches.png")
-const FONT=preload("res://assets/menu/Nunito.ttf")
-const CORE=preload("res://assets/sky_props/wind_core_red.png")
-const STAND=preload("res://assets/sky_props/wind_core_stand.png")
+const SHEET=preload("res://assets/environment/expansion/switches.png")
+const FONT=preload("res://assets/ui/fonts/Nunito.ttf")
+const CORE=preload("res://assets/environment/sky/props/wind_core_red.png")
+const STAND=preload("res://assets/environment/sky/props/wind_core_stand.png")
 const CORE_REGION=Rect2(92,113,1069,1020)
 const STAND_REGION=Rect2(123,229,1008,886)
 const SOCKET=Vector2(0,-82)

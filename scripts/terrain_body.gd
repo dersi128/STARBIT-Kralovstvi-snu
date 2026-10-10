@@ -6,7 +6,7 @@ extends Node2D
 @export var cave:=Rect2()
 func _ready() -> void:z_index=-1
 func _draw() -> void:
- var tex:Texture2D=preload("res://assets/worldkit/earth_interior.png")
+ var tex:Texture2D=preload("res://assets/environment/worldkit/earth_interior.png")
  var cave_local:=Rect2(cave.position-position,cave.size)
  # Repeating rock interiors preserve texture proportions; grass stays on the platform.
  var cols:=maxi(1,ceili(width/360.0))

@@ -7,15 +7,15 @@ signal finished
 
 const PAUSE_THEME = preload("res://scripts/pause_menu_theme.gd")
 const DARKNESS_SHADER = preload("res://shaders/dream_intro_darkness.gdshader")
-const JISKRA = preload("res://assets/pieces/jiskra.png")
-const FREDOKA = preload("res://assets/menu/Fredoka.ttf")
-const NUNITO = preload("res://assets/menu/Nunito.ttf")
+const JISKRA = preload("res://assets/shared/pieces/jiskra.png")
+const FREDOKA = preload("res://assets/ui/fonts/Fredoka.ttf")
+const NUNITO = preload("res://assets/ui/fonts/Nunito.ttf")
 const STORY_LENGTH := 9.5
 const SKIP_GUARD := 0.5
 const SKIP_FADE := 0.35
 
 @export_range(7.0, 18.0, 0.1) var duration_seconds := 9.5
-@export var kingdom_texture: Texture2D = preload("res://assets/environments/near_castle.png")
+@export var kingdom_texture: Texture2D = preload("res://assets/environment/backgrounds/near_castle.png")
 
 var elapsed := 0.0
 var is_finished := false

@@ -1,8 +1,8 @@
 @tool
 extends "res://scripts/platform.gd"
 ## Castle masonry keeps the original stone detail size, even on wide walls.
-const STONE = preload("res://assets/world_expansion/platforms_starbit_v2.png")
-const WALL = preload("res://assets/royal/castle_wall.png")
+const STONE = preload("res://assets/environment/expansion/platforms_starbit_v2.png")
+const WALL = preload("res://assets/environment/castle/castle_wall.png")
 static var _surface_padding_cache: Dictionary = {}
 @export var wall_body := false:
 	set(value):wall_body=value;queue_redraw()

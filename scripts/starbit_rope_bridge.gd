@@ -1,7 +1,7 @@
 @tool
 extends AnimatableBody2D
 ## Wooden bridge. Gap coordinates are horizontal pixels from the left end.
-const ART = preload("res://assets/worldkit/starbit_bridge_parts.png")
+const ART = preload("res://assets/environment/worldkit/starbit_bridge_parts.png")
 const CLEAN_EDGES = preload("res://shaders/bridge_alpha.gdshader")
 const DECK = Rect2(43, 364, 787, 295)
 const POST = Rect2(944, 90, 274, 612)

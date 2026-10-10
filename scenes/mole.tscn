@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3]
 [ext_resource type="Script" path="res://scripts/object.gd" id="1"]
-[ext_resource type="SpriteFrames" path="res://assets/animations/mole.tres" id="anim_mole"]
+[ext_resource type="SpriteFrames" path="res://assets/characters/animations/mole.tres" id="anim_mole"]
 [node name="mole" type="Node2D"]
 script=ExtResource("1")
 kind="mole"

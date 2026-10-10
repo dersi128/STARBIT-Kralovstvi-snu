@@ -19,8 +19,8 @@ extends Node2D
 @export_range(0.0, 0.99, 0.01) var phase_offset := 0.0
 @export var preview_in_editor := false
 
-const FRAMES: SpriteFrames = preload("res://assets/animations/water_v2/water_frames.tres")
-const SURFACE_MATERIAL: Material = preload("res://assets/animations/water_v2/water_material.tres")
+const FRAMES: SpriteFrames = preload("res://assets/environment/water/animated/water_frames.tres")
+const SURFACE_MATERIAL: Material = preload("res://assets/environment/water/animated/water_material.tres")
 var elapsed := 0.0
 var current_frame := -1
 var tiles: Array[Sprite2D] = []

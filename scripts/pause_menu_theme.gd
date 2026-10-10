@@ -1,14 +1,14 @@
 extends RefCounted
 ## Reusable pause buttons in the same glossy style as the illustrated main menu.
 
-const FONT = preload("res://assets/menu/pause/Nunito.ttf")
-const STAR = preload("res://assets/menu/pause/star.svg")
+const FONT = preload("res://assets/ui/fonts/Nunito.ttf")
+const STAR = preload("res://assets/ui/menu/pause/star.svg")
 const FEEDBACK = preload("res://shaders/menu_button_feedback.gdshader")
 const SKINS = {
-	"blue": preload("res://assets/menu/pause/blue.svg"),
-	"yellow": preload("res://assets/menu/pause/yellow.svg"),
-	"green": preload("res://assets/menu/pause/green.svg"),
-	"purple": preload("res://assets/menu/pause/purple.svg"),
+	"blue": preload("res://assets/ui/menu/pause/blue.svg"),
+	"yellow": preload("res://assets/ui/menu/pause/yellow.svg"),
+	"green": preload("res://assets/ui/menu/pause/green.svg"),
+	"purple": preload("res://assets/ui/menu/pause/purple.svg"),
 }
 const INKS = {
 	"blue": Color("073674"), "yellow": Color("642704"),

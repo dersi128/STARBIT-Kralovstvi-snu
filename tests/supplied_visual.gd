@@ -13,5 +13,5 @@ func run():
  p.position=stinko.position+Vector2(-85,-5);p.velocity=Vector2.ZERO
  p.get_node("Camera2D").reset_follow()
  await ticks(25);await RenderingServer.frame_post_draw
- root.get_texture().get_image().save_png("res://verification/supplied-stinko.png")
+ root.get_texture().get_image().save_png("res://docs/archive/verification/supplied-stinko.png")
  quit()

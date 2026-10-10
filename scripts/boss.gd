@@ -66,7 +66,7 @@ func _ready() -> void:
  health_label.add_theme_color_override("font_color",Color("ff637e"))
  health_label.add_theme_color_override("font_outline_color",Color("30223f"));health_label.add_theme_constant_override("outline_size",5)
  add_child(health_label)
- healing=ShaderMaterial.new();healing.shader=preload("res://assets/bear_free.gdshader")
+ healing=ShaderMaterial.new();healing.shader=preload("res://shaders/bear_free.gdshader")
  sprite.material=healing
  wrist_star=Sprite2D.new();wrist_star.texture=DreamArt.texture("star")
  wrist_star.scale=Vector2(0.28,0.28);wrist_star.z_index=2;wrist_star.visible=false;add_child(wrist_star)

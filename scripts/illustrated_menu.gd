@@ -1,11 +1,11 @@
 extends Control
 ## Main menu: original artwork, with real buttons aligned in image coordinates.
 
-const ARTWORK = preload("res://assets/menu/starbit_illustrated_menu.png")
+const ARTWORK = preload("res://assets/ui/menu/starbit_illustrated_menu.png")
 const FEEDBACK_SHADER = preload("res://shaders/menu_button_feedback.gdshader")
-const REWARDS_BUTTON = preload("res://assets/menu/pause/purple.svg")
-const REWARDS_FONT = preload("res://assets/menu/pause/Nunito.ttf")
-const REWARDS_STAR = preload("res://assets/menu/pause/star.svg")
+const REWARDS_BUTTON = preload("res://assets/ui/menu/pause/purple.svg")
+const REWARDS_FONT = preload("res://assets/ui/fonts/Nunito.ttf")
+const REWARDS_STAR = preload("res://assets/ui/menu/pause/star.svg")
 const DESIGN_SIZE = Vector2(1672.0, 941.0)
 const BUTTONS = [
 	["new", "NewButton", "Nová hra", Rect2(630, 311, 414, 95)],

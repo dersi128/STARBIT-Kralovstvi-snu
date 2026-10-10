@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3]
-[ext_resource type="Texture2D" path="res://assets/worldkit/Fence.tres" id="1"]
+[ext_resource type="Texture2D" path="res://assets/environment/worldkit/Fence.tres" id="1"]
 [node name="Fence" type="Node2D"]
 [node name="Visual" type="Sprite2D" parent="."]
 texture = ExtResource("1")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3]
 [ext_resource type="Script" path="res://scripts/animated_waterfall_platform.gd" id="script"]
-[ext_resource type="SpriteFrames" path="res://assets/animations/water_v2/ruins_frames.tres" id="frames"]
-[ext_resource type="Material" path="res://assets/animations/water_v2/platform_material.tres" id="material"]
+[ext_resource type="SpriteFrames" path="res://assets/environment/water/animated/ruins_frames.tres" id="frames"]
+[ext_resource type="Material" path="res://assets/environment/water/animated/platform_material.tres" id="material"]
 [sub_resource type="RectangleShape2D" id="deck"]
 resource_local_to_scene = true
 size = Vector2(240, 16)

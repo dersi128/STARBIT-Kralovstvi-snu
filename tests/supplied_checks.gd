@@ -16,7 +16,7 @@ func run():
   for e in get_nodes_in_group("enemies"):
    if e.kind=="stinko":
     count+=1
-    check(e.anim.sprite_frames.resource_path=="res://assets/supplied/stinko.tres","new sheet in level %d"%n)
+    check(e.anim.sprite_frames.resource_path=="res://assets/characters/stinko/stinko.tres","new sheet in level %d"%n)
   counts.append(count)
   check(count==0 if n<7 else count>0,"Stinko introduction level %d"%n)
  print("STINKO COUNTS ",counts)
@@ -45,7 +45,7 @@ func run():
  for e in get_nodes_in_group("enemies"):
   if e.kind=="stinko":reset_count+=1
  check(reset_count==3,"restart restores Stinko")
- var data=JSON.parse_string(FileAccess.get_file_as_string("res://assets/supplied/pieces.json"))
+ var data=JSON.parse_string(FileAccess.get_file_as_string("res://assets/environment/supplied/pieces.json"))
  var platform_count:=0
  for item in data:
   var scene=load("res://scenes/supplied/"+item.scene+".tscn").instantiate()

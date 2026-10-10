@@ -2,13 +2,13 @@ extends Control
 ## Selection and results share the actual menu artwork, typefaces and button skins.
 
 const BUTTON_THEME = preload("res://scripts/pause_menu_theme.gd")
-const ARTWORK = preload("res://assets/menu/starbit_illustrated_menu.png")
-const FONT = preload("res://assets/menu/Nunito.ttf")
-const TITLE_FONT = preload("res://assets/menu/Fredoka.ttf")
-const GOLD_STAR = preload("res://assets/menu/ratings/star_gold.svg")
-const EMPTY_STAR = preload("res://assets/menu/ratings/star_empty.svg")
-const LOCK = preload("res://assets/menu/ratings/lock.svg")
-const DIAMOND = preload("res://assets/worldkit/crystal.tres")
+const ARTWORK = preload("res://assets/ui/menu/starbit_illustrated_menu.png")
+const FONT = preload("res://assets/ui/fonts/Nunito.ttf")
+const TITLE_FONT = preload("res://assets/ui/fonts/Fredoka.ttf")
+const GOLD_STAR = preload("res://assets/ui/menu/ratings/star_gold.svg")
+const EMPTY_STAR = preload("res://assets/ui/menu/ratings/star_empty.svg")
+const LOCK = preload("res://assets/ui/menu/ratings/lock.svg")
+const DIAMOND = preload("res://assets/environment/worldkit/crystal.tres")
 const DESIGN_SIZE = Vector2(1280, 720)
 const BACKGROUNDS = ["forest", "forest", "village", "village", "guardian", "distant_castle", "distant_castle", "near_castle", "near_castle", "castle_court"]
 const REGIONS = ["Kouzelný les a vesnička", "Cesta do Království snů"]
@@ -76,7 +76,7 @@ func show_selection(titles: Array, page: int, selected: int, callbacks: Dictiona
 		card.tooltip_text = titles[n - 1] + (" · Zamčeno" if card.disabled else "")
 		card.prepare(n == selected)
 		canvas.add_child(card)
-		var art: Texture2D = load("res://assets/environments/" + BACKGROUNDS[n - 1] + ".png")
+		var art: Texture2D = load("res://assets/environment/backgrounds/" + BACKGROUNDS[n - 1] + ".png")
 		var thumbnail := _picture(card, art, Rect2(12, 12, 176, 111), true)
 		if card.disabled:thumbnail.modulate = Color(0.52, 0.62, 0.72)
 		_panel(card, Rect2(20, 20, 36, 36), Color("296497"), 14)

@@ -3,7 +3,7 @@ extends "res://scripts/platform.gd"
 ## Shared STARBIT palette. This renderer keeps the existing width, motion and collisions.
 @export_enum("grass", "wood", "stone") var surface_art := "grass":
 	set(value):surface_art = value;queue_redraw()
-const ATLAS = preload("res://assets/world_expansion/platforms_starbit_v2.png")
+const ATLAS = preload("res://assets/environment/expansion/platforms_starbit_v2.png")
 # The generated atlas is packed, not a uniform animation grid. Explicit regions avoid neighbouring sprites.
 # Entries: first row y/height/walk line, second row y/height/walk line.
 const ROWS = {

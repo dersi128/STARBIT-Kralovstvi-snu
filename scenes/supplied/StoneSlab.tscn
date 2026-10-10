@@ -1,5 +1,5 @@
 [gd_scene load_steps=2 format=3]
-[ext_resource type="Texture2D" path="res://assets/supplied/pieces/StoneSlab.png" id="texture"]
+[ext_resource type="Texture2D" path="res://assets/environment/supplied/pieces/StoneSlab.png" id="texture"]
 [node name="StoneSlab" type="Sprite2D"]
 texture=ExtResource("texture")
 centered=false

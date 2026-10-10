@@ -15,8 +15,8 @@ extends Node2D
 @export var attach_y := 8.0:
 	set(value): attach_y = value; queue_redraw()
 
-const ART := preload("res://assets/forest/higgsfield/forest_platforms.png")
-const BRIDGE := preload("res://assets/worldkit/starbit_bridge_parts.png")
+const ART := preload("res://assets/environment/forest/higgsfield/forest_platforms.png")
+const BRIDGE := preload("res://assets/environment/worldkit/starbit_bridge_parts.png")
 const BARK := Rect2(1240, 346, 430, 74)
 const ROPE := Rect2(146, 963, 78, 55)
 var _last_parent_position := Vector2.INF

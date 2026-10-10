@@ -16,7 +16,7 @@
 [ext_resource type="Script" uid="uid://cx0dp1hsus65h" path="res://scripts/sky_island.gd" id="platform"]
 [ext_resource type="PackedScene" path="res://scenes/worldkit/RainCloud.tscn" id="rain"]
 [ext_resource type="Script" uid="uid://bgnpcva3gqg04" path="res://scripts/sky_router.gd" id="router"]
-[ext_resource type="Texture2D" uid="uid://ct4p76bw3lne3" path="res://assets/environments/near_castle.png" id="skyart"]
+[ext_resource type="Texture2D" uid="uid://ct4p76bw3lne3" path="res://assets/environment/backgrounds/near_castle.png" id="skyart"]
 [ext_resource type="Script" uid="uid://kwwfevc6c0ip" path="res://scripts/sky_station.gd" id="station"]
 [ext_resource type="Script" uid="uid://chktnke30ql3h" path="res://scripts/sky_water_ledge.gd" id="water_ledge"]
 [ext_resource type="Script" uid="uid://d0yba4cdevhyd" path="res://scripts/sky_wind_gate.gd" id="wind_gate"]

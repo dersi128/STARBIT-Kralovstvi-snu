@@ -3,8 +3,8 @@ extends Node2D
 ## Pure artwork: no body, collision, player code or saved progress.
 ## The supplied PNG files remain byte-for-byte originals. Their navy matte is
 ## removed at draw time, and the shader animates only blue/white water pixels.
-const LEFT_ART = preload("res://assets/sky_waterfalls/island_left_original.png")
-const CENTER_ART = preload("res://assets/sky_waterfalls/island_center_original.png")
+const LEFT_ART = preload("res://assets/environment/sky/waterfalls/island_left_original.png")
+const CENTER_ART = preload("res://assets/environment/sky/waterfalls/island_center_original.png")
 const WATER_SHADER = preload("res://shaders/sky_island_water.gdshader")
 var _render: Polygon2D
 var _water_material: ShaderMaterial

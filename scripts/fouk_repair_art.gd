@@ -1,6 +1,6 @@
 extends RefCounted
 ## Shared, cached atlas frames. The original artwork stays in one texture.
-const SHEET = preload("res://assets/characters/fouk_repair_sheet.png")
+const SHEET = preload("res://assets/characters/fouk/fouk_repair_sheet.png")
 const DURATION := 2.0
 const FRAME_COUNT := 8
 const REGIONS := [

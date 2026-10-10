@@ -6,7 +6,7 @@ extends Node2D
 @export var caption:="Tajná zahrada — déšť na další cestě ustal!"
 var active:=false
 var reveal_time:=0.0
-const FONT=preload("res://assets/menu/pause/Nunito.ttf")
+const FONT=preload("res://assets/ui/fonts/Nunito.ttf")
 func _ready() -> void:z_index=2
 func _physics_process(delta:float) -> void:
 	if Engine.is_editor_hint():return

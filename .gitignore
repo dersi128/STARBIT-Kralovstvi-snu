@@ -1,3 +1,17 @@
+# Godot generates its import cache locally; keep *.import and *.uid sidecars.
 .godot/
+.DS_Store
+Thumbs.db
 *.tmp
 *.log
+
+# Local exports / audio previews / private export credentials.
+/builds/
+/exports/
+*.apk
+*.apk.idsig
+*.aab
+*.pck
+*.jks
+*.keystore
+export_credentials.cfg

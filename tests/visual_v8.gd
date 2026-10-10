@@ -3,7 +3,7 @@ func frames(n:int):
  for i in n:await process_frame
 func shot(path:String):
  await RenderingServer.frame_post_draw
- root.get_texture().get_image().save_png("res://verification/"+path)
+ root.get_texture().get_image().save_png("res://docs/archive/verification/"+path)
 func _initialize():call_deferred("run")
 func run():
  var game=load("res://Main.tscn").instantiate();root.add_child(game);await frames(3)

@@ -2,9 +2,9 @@ extends Control
 ## Manual story pages. The controller pauses only the current level, not this UI.
 signal finished
 
-const MOLE = preload("res://assets/animations/mole.tres")
-const FONT = preload("res://assets/menu/Nunito.ttf")
-const BUTTON_ART = preload("res://assets/menu/pause/yellow.svg")
+const MOLE = preload("res://assets/characters/animations/mole.tres")
+const FONT = preload("res://assets/ui/fonts/Nunito.ttf")
+const BUTTON_ART = preload("res://assets/ui/menu/pause/yellow.svg")
 const DESIGN_SIZE = Vector2(1280, 720)
 const LETTERS_PER_SECOND := 42.0
 

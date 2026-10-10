@@ -1,0 +1,50 @@
+﻿Soubor;Název;Šířka px;Výška px;Zdroj v projektu
+assets/environment/forest/cutouts/landmarks/strom_duty.png;Dutý strom;831;730;assets/environment/forest/higgsfield/forest_landmarks.png
+assets/environment/forest/cutouts/landmarks/jeskyne_oblouk.png;Skalní jeskyně;908;551;assets/environment/forest/higgsfield/forest_landmarks.png
+assets/environment/forest/cutouts/landmarks/branka_drevena.png;Dřevěná branka;844;506;assets/environment/forest/higgsfield/forest_landmarks.png
+assets/environment/forest/cutouts/landmarks/kapradiny_s_houbami.png;Kapradiny a houby;927;317;assets/environment/forest/higgsfield/forest_landmarks.png
+assets/environment/forest/cutouts/platforms/plosina_travnata.png;Travnatá plošina;877;406;assets/environment/forest/higgsfield/forest_platforms.png
+assets/environment/forest/cutouts/platforms/plosina_kmen.png;Dřevěná plošina;909;376;assets/environment/forest/higgsfield/forest_platforms.png
+assets/environment/forest/cutouts/platforms/plosina_kamenna.png;Kamenná plošina;916;329;assets/environment/forest/higgsfield/forest_platforms.png
+assets/environment/forest/cutouts/platforms/plosina_listova.png;Listová plošina;917;321;assets/environment/forest/higgsfield/forest_platforms.png
+assets/environment/forest/cutouts/trees_and_structures/strom_listnaty.png;Listnatý strom;381;410;assets/environment/scenery/starbit_scenery.png
+assets/environment/forest/cutouts/trees_and_structures/stromy_jehlicnate.png;Dvojice jehličnanů;336;413;assets/environment/scenery/starbit_scenery.png
+assets/environment/forest/cutouts/trees_and_structures/kmen_duty.png;Dutý padlý kmen;366;270;assets/environment/scenery/starbit_scenery.png
+assets/environment/forest/cutouts/trees_and_structures/oblouk_mechovy.png;Mechový kamenný oblouk;405;357;assets/environment/scenery/starbit_scenery.png
+assets/environment/forest/cutouts/trees_and_structures/sloupy_zarostle.png;Zarostlé ruiny;360;360;assets/environment/scenery/starbit_scenery.png
+assets/environment/forest/cutouts/trees_and_structures/vyhlidka_drevena.png;Dřevěná vyhlídka;355;382;assets/environment/scenery/starbit_scenery.png
+assets/environment/forest/cutouts/trees_and_structures/plot_lesni.png;Zarostlý lesní plot;408;223;assets/environment/scenery/starbit_scenery.png
+assets/environment/forest/cutouts/trees_and_structures/kamen_kapradiny_houby.png;Kámen s kapradinami;363;285;assets/environment/scenery/starbit_scenery.png
+assets/environment/forest/cutouts/plants_and_rocks/ker_s_kvetem.png;Keř s květem;232;166;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/ker_s_kvety.png;Keř se třemi květy;230;165;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/listi_siroke.png;Široké listy;201;144;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/listi_male.png;Malé listy;117;107;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/listi_vysoke.png;Vysoké listy;138;134;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/houba_cervena.png;Červená houba;108;100;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/houba_cervena_mala.png;Malá červená houba;76;75;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/balvan_mechovy.png;Velký mechový balvan;205;180;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/balvan_kulaty.png;Kulatý balvan;132;125;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/kamen_hranaty.png;Hranatý kámen;119;81;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/kamen_sedy.png;Šedý kámen;82;67;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/oblazek.png;Oblázek;62;48;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/kamen_maly_mechovy.png;Malý mechový kámen;108;94;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/kaminky_s_mechem.png;Kamínky s mechem;83;68;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/ker_nizky_kvet.png;Nízký kvetoucí keř;145;101;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/ker_nizky_maly.png;Malý nízký keř;136;90;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/skalisko_s_listy.png;Skalisko s listím;239;157;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/liana_dlouha.png;Dlouhá liána;132;296;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/liana_kratka.png;Krátká liána;122;243;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/props/lucerna_sloupek.png;Lucerna na sloupku;152;213;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/props/lucerna_zavesna.png;Závěsná lucerna;127;236;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/props/plot_dreveny.png;Dřevěný plot;402;153;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/props/plot_provazovy.png;Provazový plot;380;132;assets/environment/worldkit/props.png
+assets/environment/forest/cutouts/plants_and_rocks/parez_s_houbami.png;Pařez s houbami;263;182;assets/environment/expansion/garden_props.png
+assets/environment/forest/cutouts/plants_and_rocks/stromek_jehlicnaty.png;Malý jehličnan;183;261;assets/environment/expansion/garden_props.png
+assets/environment/forest/cutouts/plants_and_rocks/houby_skupina.png;Skupina červených hub;194;165;assets/environment/expansion/garden_props.png
+assets/environment/forest/cutouts/plants_and_rocks/ker_kulaty.png;Kulatý kvetoucí keř;265;205;assets/environment/expansion/garden_props.png
+assets/environment/forest/cutouts/plants_and_rocks/skala_s_kvetinami.png;Skála s květinami;218;187;assets/environment/expansion/garden_props.png
+assets/environment/forest/cutouts/props/lavicka_lesni.png;Lesní lavička;326;200;assets/environment/expansion/garden_props.png
+assets/environment/forest/cutouts/props/budka_s_ptackem.png;Budka s ptáčkem;171;279;assets/environment/expansion/garden_props.png
+assets/environment/forest/cutouts/props/lucerna_lesni.png;Zarostlá lucerna;183;298;assets/environment/expansion/garden_props.png
+assets/environment/forest/higgsfield/forest_glade.png;Souvislé lesní pozadí;2688;1520;assets/environment/forest/higgsfield/forest_glade.png
+assets/environment/forest/higgsfield/forest_soil.png;Textura zeminy;2048;2048;assets/environment/forest/higgsfield/forest_soil.png

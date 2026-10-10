@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3]
 
-[ext_resource type="Texture2D" path="res://assets/royal/higgsfield/RoyalLantern.tres" id="art"]
+[ext_resource type="Texture2D" path="res://assets/environment/castle/higgsfield/RoyalLantern.tres" id="art"]
 
 [node name="RoyalLantern" type="Sprite2D"]
 z_index = -1

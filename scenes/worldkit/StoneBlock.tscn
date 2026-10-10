@@ -1,5 +1,5 @@
 [gd_scene load_steps=3 format=3]
-[ext_resource type="Texture2D" path="res://assets/worldkit/StoneBlock.tres" id="1"]
+[ext_resource type="Texture2D" path="res://assets/environment/worldkit/StoneBlock.tres" id="1"]
 [sub_resource type="RectangleShape2D" id="shape"]
 size = Vector2(90, 88)
 [node name="StoneBlock" type="StaticBody2D"]

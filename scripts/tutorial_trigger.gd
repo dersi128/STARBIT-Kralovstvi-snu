@@ -39,7 +39,7 @@ func _draw() -> void:
 	draw_rect(bounds, Color(0.3, 0.85, 0.7, 0.65), false, 2.0)
 
 class TutorialCard extends Control:
-	const FONT = preload("res://assets/menu/Nunito.ttf")
+	const FONT = preload("res://assets/ui/fonts/Nunito.ttf")
 	const DESIGN_SIZE = Vector2(1280, 720)
 	var source: Node2D
 	var game: Node

@@ -7,9 +7,9 @@ extends Node2D
 	set(value):art_height = value;queue_redraw()
 @export var mirrored := false:
 	set(value):mirrored = value;queue_redraw()
-const HOUSES = preload("res://assets/world_expansion/houses.png")
-const GARDEN = preload("res://assets/world_expansion/garden_props.png")
-const VILLAGE = preload("res://assets/world_expansion/village_props.png")
+const HOUSES = preload("res://assets/environment/expansion/houses.png")
+const GARDEN = preload("res://assets/environment/expansion/garden_props.png")
+const VILLAGE = preload("res://assets/environment/expansion/village_props.png")
 const PIECES = {
 	"cottage": [0, Rect2(15, 60, 358, 383)], "treehouse": [0, Rect2(379, 11, 354, 430)],
 	"windmill": [0, Rect2(737, 13, 343, 439)], "blue_house": [0, Rect2(408, 456, 369, 370)],

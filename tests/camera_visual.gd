@@ -3,7 +3,7 @@ func ticks(n:int):
  for i in n:await physics_frame
 func shot(name:String):
  await RenderingServer.frame_post_draw
- root.get_texture().get_image().save_png("res://verification/"+name+".png")
+ root.get_texture().get_image().save_png("res://docs/archive/verification/"+name+".png")
 func _initialize():call_deferred("run")
 func run():
  var game=load("res://Main.tscn").instantiate();root.add_child(game);await process_frame

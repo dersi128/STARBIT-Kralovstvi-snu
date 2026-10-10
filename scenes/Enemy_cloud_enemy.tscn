@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3]
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1"]
-[ext_resource type="SpriteFrames" path="res://assets/animations/cloud_enemy.tres" id="anim_cloud_enemy"]
+[ext_resource type="SpriteFrames" path="res://assets/characters/animations/cloud_enemy.tres" id="anim_cloud_enemy"]
 [node name="Enemy" type="Node2D"]
 script=ExtResource("1")
 kind="cloud_enemy"

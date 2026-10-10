@@ -24,21 +24,21 @@
 
 [ext_resource type="Script" path="res://scripts/royal_lock.gd" id="lock"]
 
-[ext_resource type="Texture2D" path="res://assets/royal/expansion/level09_atlas.png" id="flower"]
+[ext_resource type="Texture2D" path="res://assets/environment/castle/expansion/level09_atlas.png" id="flower"]
 
 [ext_resource type="Script" path="res://scripts/royal_planter.gd" id="planter"]
 
-[ext_resource type="Texture2D" path="res://assets/royal/expansion/level08_atlas.png" id="machinery_atlas"]
+[ext_resource type="Texture2D" path="res://assets/environment/castle/expansion/level08_atlas.png" id="machinery_atlas"]
 
-[ext_resource type="Texture2D" path="res://assets/environments/near_castle.png" id="landscape"]
+[ext_resource type="Texture2D" path="res://assets/environment/backgrounds/near_castle.png" id="landscape"]
 
-[ext_resource type="Texture2D" path="res://assets/world_scenery/Tree.tres" id="tree"]
+[ext_resource type="Texture2D" path="res://assets/environment/scenery/Tree.tres" id="tree"]
 
-[ext_resource type="Texture2D" path="res://assets/world_scenery/Arch.tres" id="arch"]
+[ext_resource type="Texture2D" path="res://assets/environment/scenery/Arch.tres" id="arch"]
 
-[ext_resource type="Texture2D" path="res://assets/world_scenery/Ferns.tres" id="ferns"]
+[ext_resource type="Texture2D" path="res://assets/environment/scenery/Ferns.tres" id="ferns"]
 
-[ext_resource type="Texture2D" path="res://assets/world_scenery/Columns.tres" id="columns"]
+[ext_resource type="Texture2D" path="res://assets/environment/scenery/Columns.tres" id="columns"]
 
 [ext_resource type="PackedScene" path="res://scenes/animated_water/WaterfallGarden.tscn" id="water"]
 

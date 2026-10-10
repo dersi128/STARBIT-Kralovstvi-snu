@@ -2,7 +2,7 @@
 extends CanvasLayer
 ## Four quiet landscapes, each belonging to a different part of Level 8.
 ## They blend in world space instead of tiling scenery along the route.
-const LANDSCAPES = preload("res://assets/royal/courtyard_route/courtyard_backdrops.png")
+const LANDSCAPES = preload("res://assets/environment/castle/courtyard_route/courtyard_backdrops.png")
 const REGIONS = [Rect2(0, 0, 836, 470), Rect2(836, 0, 836, 470), Rect2(0, 470, 836, 471), Rect2(836, 470, 836, 471)]
 @export var transition_positions := PackedFloat32Array([7500.0, 17000.0, 21500.0])
 @export_range(200.0, 1600.0, 50.0) var blend_distance := 600.0

@@ -1,7 +1,7 @@
 @tool
 extends Area2D
 
-const ART = preload("res://assets/worldkit/spring_pad_starbit.png")
+const ART = preload("res://assets/environment/worldkit/spring_pad_starbit.png")
 const CLEAN_ALPHA = preload("res://shaders/spring_pad_alpha.gdshader")
 # Crop transparent padding at draw time; keep the original PNG intact.
 const ART_REGION = Rect2(104, 108, 1426, 762)

@@ -12,7 +12,7 @@ var progress_label:Label
 var progress_card:PanelContainer
 var count_label:Label
 var bell_icons:Array[TextureRect]=[]
-const FONT=preload("res://assets/menu/pause/Nunito.ttf")
+const FONT=preload("res://assets/ui/fonts/Nunito.ttf")
 const HUD=preload("res://scripts/collectible_hud.gd")
 const CHIME=preload("res://scripts/sky_chime.gd")
 func _ready() -> void:

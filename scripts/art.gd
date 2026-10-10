@@ -18,24 +18,30 @@ static var rects := {
 static func texture(key: String) -> Texture2D:
  if cache.has(key): return cache[key]
  if key.begins_with("push"):
-  cache[key]=load("res://assets/animations/"+key+".tres")
+  cache[key]=load("res://assets/characters/animations/"+key+".tres")
   return cache[key]
- if ResourceLoader.exists("res://assets/pieces/"+key+".png"):
-  cache[key]=load("res://assets/pieces/"+key+".png")
+ if ResourceLoader.exists("res://assets/shared/pieces/"+key+".png"):
+  cache[key]=load("res://assets/shared/pieces/"+key+".png")
   return cache[key]
  var file := "bit"
  if key in ["ground","island","small","stone"]: file="platforms"
  elif key in ["arch","flag","bush","star","cloud"]: file="props"
  elif key in ["mole","rock_enemy","cloud_enemy","boss","fouk","jiskra"]: file="cast"
  var a := AtlasTexture.new()
- a.atlas = load("res://assets/"+file+".png")
+ var sources := {
+  "bit":"res://assets/characters/bit/bit_extra_poses.png",
+  "platforms":"res://assets/environment/worldkit/platforms.png",
+  "props":"res://assets/environment/worldkit/props.png",
+  "cast":"res://assets/source_sheets/cast.png"
+ }
+ a.atlas = load(sources[file])
  a.region = rects[key]
  a.filter_clip = true
  cache[key]=a
  return a
 static func material() -> ShaderMaterial:
  var m := ShaderMaterial.new()
- m.shader=load("res://assets/cutout.gdshader")
+ m.shader=load("res://shaders/cutout.gdshader")
  return m
 static func set_sprite(sprite: Sprite2D, key: String, height: float) -> void:
  sprite.texture=texture(key)

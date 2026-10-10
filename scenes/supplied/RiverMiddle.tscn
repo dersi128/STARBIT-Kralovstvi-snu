@@ -1,5 +1,5 @@
 [gd_scene load_steps=3 format=3]
-[ext_resource type="Texture2D" path="res://assets/supplied/pieces/RiverMiddle.png" id="texture"]
+[ext_resource type="Texture2D" path="res://assets/environment/supplied/pieces/RiverMiddle.png" id="texture"]
 [ext_resource type="Script" path="res://scripts/sheet_water.gd" id="effect"]
 [node name="RiverMiddle" type="Sprite2D"]
 texture=ExtResource("texture")

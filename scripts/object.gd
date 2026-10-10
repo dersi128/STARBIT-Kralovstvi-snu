@@ -1,6 +1,6 @@
 @tool
 extends Node2D
-@export_enum("checkpoint","goal","mole","fouk","jiskra","arch","bush","star_key","crystal","crate","push_crate","spring_pad","stone_block","wood_bridge","island_wide","island_small","sign","fence","lantern","flowers","vines","waterfall","water_surface","rock_enemy","cloud_enemy","stinko","asset_piece","piece_GrassLeft","piece_GrassMiddle","piece_GrassMiddleB","piece_GrassRight","piece_StoneGrassLeft","piece_StoneGrassMiddle","piece_StoneGrassMiddleB","piece_StoneGrassRight","piece_IslandTiny","piece_IslandRound","piece_IslandVines","piece_IslandStar","piece_IslandStone","piece_IslandWide","piece_IslandPoint","piece_IslandLow","piece_IslandSmall","piece_StarBlock","piece_StarBlockWide","piece_SlopeDown","piece_SlopeUp","piece_CliffLeft","piece_CliffRight","piece_CliffVines","piece_CliffEnd","piece_BridgeLeft","piece_BridgeMiddle","piece_BridgeRight","piece_BridgeSmall","piece_IslandPebbles","piece_IslandTall","piece_SignArrow","piece_SignDouble","piece_Banner","piece_FlagRope","piece_BannerStar","piece_Fence","piece_RopeFence","piece_Bush","piece_BushFlowers","piece_LeavesWide","piece_LeavesSmall","piece_LeavesTall","piece_VinesShort","piece_VinesLong","piece_StoneColumn","piece_BrokenColumn","piece_Ruins","piece_StoneSlab","piece_FallenRocks","piece_LanternPost","piece_LanternHook","piece_MushroomRed","piece_MushroomSmall","piece_MushroomBlue","piece_Barrel","piece_CloudWide","piece_CloudLong","piece_CloudSmall","piece_CloudPair","piece_WaterfallWide","piece_WaterfallMedium","piece_WaterfallSlim","piece_WaterfallThin","piece_SplashWide","piece_SplashSmall","piece_Foam","piece_RiverSurface","piece_RiverLeft","piece_RiverMiddle","piece_RiverRight","piece_FallsLongThin","piece_FallsLongA","piece_FallsLongWide","piece_FallsLongB","piece_FallsLongLarge","piece_FallsBodyA","piece_FallsBodyB","piece_FallsBodyC","piece_FallsMist","piece_WaterIslandLeft","piece_WaterIslandWide","piece_WaterIslandRight","piece_WaterIslandSlim","piece_FallsIsland","piece_FallsTwinIsland","piece_FallsWideIsland","piece_FallsMossIsland","piece_FallsStoneIsland","piece_FallsRock","piece_FallsStarRock","piece_FallsSteps","piece_RockShards","piece_RockShardsTall","piece_ArchDecor","piece_BoulderMoss","piece_BoulderRound","piece_BoulderSmall","piece_RockAngular","piece_RockSmall","piece_Pebble","piece_RockPatch","piece_BushLow","piece_BushLowFlowers","piece_StarDecorLarge","piece_StarDecorMedium","piece_StarDecorSmall","piece_StarDecorTilt","piece_ShootingStar","piece_StarTrail","piece_CrateOrnate","piece_LanternHanging","piece_LanternPostSmall","piece_VineRight","piece_CloudPuff","piece_CloudLow","piece_IslandGarden","piece_WaterIslandTall","piece_WaterIslandTiny","piece_WaterIslandEdge","piece_TwinWaterIsland","piece_ThinWaterIsland","piece_RoundWaterIsland","piece_WaterfallNarrow","piece_SplashRight","piece_DropsWide","piece_DropsTall","piece_Drop","piece_DropsPair","piece_FoamMedium","piece_FoamWide","piece_FoamSmall","piece_RiverSurfaceMedium","piece_RiverSurfaceShort","piece_RiverSurfaceSmall","piece_RiverSurfaceTiny","piece_FallsNarrowIsland","piece_FallsIslandEdge","piece_FallsWallIsland","piece_FallsGardenIsland","piece_FallsSmallIsland","piece_FallsTinyIsland","piece_FallsLongNeedle","piece_FallsBodyD","piece_FallsBodyE","piece_FallsBodyF","piece_FallsDropsA","piece_FallsDropsB","piece_FallsDropsC") var kind := "crystal":
+@export_enum("checkpoint","goal","mole","fouk","jiskra","arch","bush","star_key","crystal","crate","push_crate","spring_pad","stone_block","wood_bridge","island_wide","island_small","sign","fence","lantern","flowers","vines","waterfall","water_surface","rock_enemy","cloud_enemy","stinko","asset_piece","piece_GrassLeft","piece_GrassMiddle","piece_GrassMiddleB","piece_GrassRight","piece_StoneGrassLeft","piece_StoneGrassMiddle","piece_StoneGrassMiddleB","piece_StoneGrassRight","piece_IslandTiny","piece_IslandRound","piece_IslandVines","piece_IslandStar","piece_IslandStone","piece_IslandWide","piece_IslandPoint","piece_IslandLow","piece_IslandSmall","piece_StarBlock","piece_StarBlockWide","piece_SlopeDown","piece_SlopeUp","piece_CliffLeft","piece_CliffRight","piece_CliffVines","piece_CliffEnd","piece_BridgeLeft","piece_BridgeMiddle","piece_BridgeRight","piece_BridgeSmall","piece_IslandPebbles","piece_IslandTall","piece_SignArrow","piece_SignDouble","piece_Banner","piece_FlagRope","piece_BannerStar","piece_Fence","piece_RopeFence","piece_Bush","piece_BushFlowers","piece_LeavesWide","piece_LeavesSmall","piece_LeavesTall","piece_VinesShort","piece_VinesLong","piece_StoneColumn","piece_BrokenColumn","piece_Ruins","piece_StoneSlab","piece_FallenRocks","piece_LanternPost","piece_LanternHook","piece_MushroomRed","piece_MushroomSmall","piece_MushroomBlue","piece_Barrel","piece_CloudWide","piece_CloudLong","piece_CloudSmall","piece_CloudPair","piece_WaterfallWide","piece_WaterfallMedium","piece_WaterfallSlim","piece_WaterfallThin","piece_SplashWide","piece_SplashSmall","piece_Foam","piece_RiverSurface","piece_RiverLeft","piece_RiverMiddle","piece_RiverRight","piece_FallsLongThin","piece_FallsLongA","piece_FallsLongWide","piece_FallsLongB","piece_FallsLongLarge","piece_FallsBodyA","piece_FallsBodyB","piece_FallsBodyC","piece_FallsMist","piece_WaterIslandLeft","piece_WaterIslandWide","piece_WaterIslandRight","piece_WaterIslandSlim","piece_FallsIsland","piece_FallsTwinIsland","piece_FallsWideIsland","piece_FallsMossIsland","piece_FallsStoneIsland","piece_FallsRock","piece_FallsStarRock","piece_FallsSteps") var kind := "crystal":
 	set(v):
 		kind=v;queue_redraw()
 		if is_inside_tree():call_deferred("_refresh_kit")
@@ -125,63 +125,6 @@ const KIT_SCENES = {
 	"piece_FallsRock": "res://scenes/supplied/FallsRock.tscn",
 	"piece_FallsStarRock": "res://scenes/supplied/FallsStarRock.tscn",
 	"piece_FallsSteps": "res://scenes/supplied/FallsSteps.tscn",
-	"piece_RockShards": "res://scenes/supplied/RockShards.tscn",
-	"piece_RockShardsTall": "res://scenes/supplied/RockShardsTall.tscn",
-	"piece_ArchDecor": "res://scenes/supplied/ArchDecor.tscn",
-	"piece_BoulderMoss": "res://scenes/supplied/BoulderMoss.tscn",
-	"piece_BoulderRound": "res://scenes/supplied/BoulderRound.tscn",
-	"piece_BoulderSmall": "res://scenes/supplied/BoulderSmall.tscn",
-	"piece_RockAngular": "res://scenes/supplied/RockAngular.tscn",
-	"piece_RockSmall": "res://scenes/supplied/RockSmall.tscn",
-	"piece_Pebble": "res://scenes/supplied/Pebble.tscn",
-	"piece_RockPatch": "res://scenes/supplied/RockPatch.tscn",
-	"piece_BushLow": "res://scenes/supplied/BushLow.tscn",
-	"piece_BushLowFlowers": "res://scenes/supplied/BushLowFlowers.tscn",
-	"piece_StarDecorLarge": "res://scenes/supplied/StarDecorLarge.tscn",
-	"piece_StarDecorMedium": "res://scenes/supplied/StarDecorMedium.tscn",
-	"piece_StarDecorSmall": "res://scenes/supplied/StarDecorSmall.tscn",
-	"piece_StarDecorTilt": "res://scenes/supplied/StarDecorTilt.tscn",
-	"piece_ShootingStar": "res://scenes/supplied/ShootingStar.tscn",
-	"piece_StarTrail": "res://scenes/supplied/StarTrail.tscn",
-	"piece_CrateOrnate": "res://scenes/supplied/CrateOrnate.tscn",
-	"piece_LanternHanging": "res://scenes/supplied/LanternHanging.tscn",
-	"piece_LanternPostSmall": "res://scenes/supplied/LanternPostSmall.tscn",
-	"piece_VineRight": "res://scenes/supplied/VineRight.tscn",
-	"piece_CloudPuff": "res://scenes/supplied/CloudPuff.tscn",
-	"piece_CloudLow": "res://scenes/supplied/CloudLow.tscn",
-	"piece_IslandGarden": "res://scenes/supplied/IslandGarden.tscn",
-	"piece_WaterIslandTall": "res://scenes/supplied/WaterIslandTall.tscn",
-	"piece_WaterIslandTiny": "res://scenes/supplied/WaterIslandTiny.tscn",
-	"piece_WaterIslandEdge": "res://scenes/supplied/WaterIslandEdge.tscn",
-	"piece_TwinWaterIsland": "res://scenes/supplied/TwinWaterIsland.tscn",
-	"piece_ThinWaterIsland": "res://scenes/supplied/ThinWaterIsland.tscn",
-	"piece_RoundWaterIsland": "res://scenes/supplied/RoundWaterIsland.tscn",
-	"piece_WaterfallNarrow": "res://scenes/supplied/WaterfallNarrow.tscn",
-	"piece_SplashRight": "res://scenes/supplied/SplashRight.tscn",
-	"piece_DropsWide": "res://scenes/supplied/DropsWide.tscn",
-	"piece_DropsTall": "res://scenes/supplied/DropsTall.tscn",
-	"piece_Drop": "res://scenes/supplied/Drop.tscn",
-	"piece_DropsPair": "res://scenes/supplied/DropsPair.tscn",
-	"piece_FoamMedium": "res://scenes/supplied/FoamMedium.tscn",
-	"piece_FoamWide": "res://scenes/supplied/FoamWide.tscn",
-	"piece_FoamSmall": "res://scenes/supplied/FoamSmall.tscn",
-	"piece_RiverSurfaceMedium": "res://scenes/supplied/RiverSurfaceMedium.tscn",
-	"piece_RiverSurfaceShort": "res://scenes/supplied/RiverSurfaceShort.tscn",
-	"piece_RiverSurfaceSmall": "res://scenes/supplied/RiverSurfaceSmall.tscn",
-	"piece_RiverSurfaceTiny": "res://scenes/supplied/RiverSurfaceTiny.tscn",
-	"piece_FallsNarrowIsland": "res://scenes/supplied/FallsNarrowIsland.tscn",
-	"piece_FallsIslandEdge": "res://scenes/supplied/FallsIslandEdge.tscn",
-	"piece_FallsWallIsland": "res://scenes/supplied/FallsWallIsland.tscn",
-	"piece_FallsGardenIsland": "res://scenes/supplied/FallsGardenIsland.tscn",
-	"piece_FallsSmallIsland": "res://scenes/supplied/FallsSmallIsland.tscn",
-	"piece_FallsTinyIsland": "res://scenes/supplied/FallsTinyIsland.tscn",
-	"piece_FallsLongNeedle": "res://scenes/supplied/FallsLongNeedle.tscn",
-	"piece_FallsBodyD": "res://scenes/supplied/FallsBodyD.tscn",
-	"piece_FallsBodyE": "res://scenes/supplied/FallsBodyE.tscn",
-	"piece_FallsBodyF": "res://scenes/supplied/FallsBodyF.tscn",
-	"piece_FallsDropsA": "res://scenes/supplied/FallsDropsA.tscn",
-	"piece_FallsDropsB": "res://scenes/supplied/FallsDropsB.tscn",
-	"piece_FallsDropsC": "res://scenes/supplied/FallsDropsC.tscn"
 }
 var kit_instance:Node2D
 var used := false
@@ -197,8 +140,8 @@ var gate_open:=false
 var portal:AnimatedSprite2D
 var opening_started:=false
 const COLLECTIBLE_TEXTURES = {
-	"star_key":preload("res://assets/worldkit/star_key.tres"),
-	"crystal":preload("res://assets/worldkit/crystal.tres")
+	"star_key":preload("res://assets/environment/worldkit/star_key.tres"),
+	"crystal":preload("res://assets/environment/worldkit/crystal.tres")
 }
 func _refresh_kit() -> void:
 	if is_instance_valid(kit_instance):
@@ -218,7 +161,7 @@ func _ready() -> void:
 	_refresh_kit()
 	if kind=="goal":
 		portal=AnimatedSprite2D.new()
-		portal.sprite_frames=preload("res://assets/animations/portal_shackles.tres")
+		portal.sprite_frames=preload("res://assets/environment/gates/portal_shackles.tres")
 		portal.position=Vector2(-20 if gate_flip else 20,-38)*gate_scale
 		portal.scale=Vector2(0.245,0.24)*gate_scale
 		portal.z_index=-1

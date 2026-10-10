@@ -4,7 +4,7 @@ extends Sprite2D
 var elapsed:=0.0
 func _ready() -> void:
  var mat:=ShaderMaterial.new()
- mat.shader=preload("res://assets/supplied/water_motion.gdshader")
+ mat.shader=preload("res://shaders/water_motion.gdshader")
  material=mat
 func _process(delta:float) -> void:
  if Engine.is_editor_hint():return

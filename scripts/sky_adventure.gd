@@ -15,7 +15,7 @@ func _ready() -> void:
 	objective_label=Label.new();objective_label.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	objective_label.size=Vector2(480,38)
 	objective_label.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
-	objective_label.add_theme_font_override("font",preload("res://assets/menu/pause/Nunito.ttf"))
+	objective_label.add_theme_font_override("font",preload("res://assets/ui/fonts/Nunito.ttf"))
 	objective_label.add_theme_font_size_override("font_size",20)
 	objective_label.add_theme_color_override("font_color",Color("fff9dc"))
 	objective_label.add_theme_color_override("font_outline_color",Color("204456"))

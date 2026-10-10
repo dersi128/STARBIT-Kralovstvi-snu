@@ -1,6 +1,6 @@
 extends Node2D
 ## Stable torso and two feet sampled from the original art, without morphing frames.
-const SHEET: Texture2D = preload("res://assets/animations/rock_enemy.png")
+const SHEET: Texture2D = preload("res://assets/characters/animations/rock_enemy.png")
 const ART_SCALE := 0.30
 const STRIDE := 56.0
 const STANCE := 0.60

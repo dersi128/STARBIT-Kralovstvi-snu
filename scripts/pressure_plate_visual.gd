@@ -1,7 +1,7 @@
 @tool
 extends Node2D
 ## One registered stone base for both states: only its inset star lights up.
-const SHEET = preload("res://assets/world_expansion/switches.png")
+const SHEET = preload("res://assets/environment/expansion/switches.png")
 const BASE_REGION := Rect2(67, 672, 314, 170)
 const STAR_ANCHOR := Vector2(156, 55)
 

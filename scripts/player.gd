@@ -13,10 +13,10 @@ const RUN_CYCLE_DISTANCE:=168.0
 const RUN_FRAME_ORDER:=[0,1,3,2,4,5,7,6]
 const TAKEOFF_DURATION:=0.10
 const PUSH_TEXTURES:=[
- preload("res://assets/animations/push1.tres"),
- preload("res://assets/animations/push2.tres"),
- preload("res://assets/animations/push3.tres"),
- preload("res://assets/animations/push4.tres")
+ preload("res://assets/characters/animations/push1.tres"),
+ preload("res://assets/characters/animations/push2.tres"),
+ preload("res://assets/characters/animations/push3.tres"),
+ preload("res://assets/characters/animations/push4.tres")
 ]
 # Palm contact points in the four existing atlas regions (not their centres).
 const PUSH_PALMS:=[Vector2(484,322),Vector2(425,322),Vector2(501,318),Vector2(436,317)]
@@ -67,8 +67,8 @@ const EXTRA_POSES={
  "surprised":Rect2(600,748,250,276)
 }
 const PICKUP_TEXTURES={
- "crystal":preload("res://assets/worldkit/crystal.tres"),
- "star_key":preload("res://assets/worldkit/star_key.tres")
+ "crystal":preload("res://assets/environment/worldkit/crystal.tres"),
+ "star_key":preload("res://assets/environment/worldkit/star_key.tres")
 }
 var pose_cache:Dictionary={}
 var visual_state:="idle"
@@ -88,13 +88,13 @@ func _ready() -> void:
  floor_constant_speed=true
  sprite=$Visual
  sprite.position=Vector2.ZERO
- if use_new_sheets and ResourceLoader.exists("res://assets/animations/bit_v2/bit_frames.tres"):
-  sheet_frames=load("res://assets/animations/bit_v2/bit_frames.tres")
+ if use_new_sheets and ResourceLoader.exists("res://assets/characters/animations/bit_v2/bit_frames.tres"):
+  sheet_frames=load("res://assets/characters/animations/bit_v2/bit_frames.tres")
  drone=Sprite2D.new();add_child(drone)
  DreamArt.set_sprite(drone,"fouk",76)
  apply_selected_looks()
  for key in EXTRA_POSES:
-  var pose:=AtlasTexture.new();pose.atlas=load("res://assets/bit.png");pose.region=EXTRA_POSES[key];pose.filter_clip=true;pose_cache[key]=pose
+  var pose:=AtlasTexture.new();pose.atlas=load("res://assets/characters/bit/bit_extra_poses.png");pose.region=EXTRA_POSES[key];pose.filter_clip=true;pose_cache[key]=pose
  # Prepare the four push poses before play, not during the first contact.
  for i in PUSH_TEXTURES.size():
   var key:="push"+str(i+1)

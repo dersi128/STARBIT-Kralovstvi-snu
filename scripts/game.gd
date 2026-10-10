@@ -102,7 +102,7 @@ func centered_panel(title:String) -> VBoxContainer:
  var l:=Label.new();l.text=title;l.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;l.add_theme_font_size_override("font_size",34);l.add_theme_color_override("font_color",Color("205080"));v.add_child(l)
  return v
 func background() -> void:
- var bg:=TextureRect.new();bg.name="MenuBackground";bg.texture=load("res://assets/menu/kingdom_adventure.png");bg.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;bg.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED;bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);bg.mouse_filter=Control.MOUSE_FILTER_IGNORE;screen.add_child(bg);screen.move_child(bg,0)
+ var bg:=TextureRect.new();bg.name="MenuBackground";bg.texture=load("res://assets/ui/menu/kingdom_adventure.png");bg.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;bg.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_COVERED;bg.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);bg.mouse_filter=Control.MOUSE_FILTER_IGNORE;screen.add_child(bg);screen.move_child(bg,0)
 func title_label(text:String,where:Vector2,font_size:int,color:Color) -> Label:
  var l:=Label.new();l.text=text;l.position=where;l.add_theme_font_size_override("font_size",font_size);l.add_theme_color_override("font_color",color);l.add_theme_color_override("font_outline_color",Color("143562"));l.add_theme_constant_override("outline_size",9);screen.add_child(l);return l
 func menu() -> void:

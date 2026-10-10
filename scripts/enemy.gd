@@ -116,7 +116,7 @@ func _setup_sprite() -> void:
  anim=get_node_or_null("AnimatedSprite2D") as AnimatedSprite2D
  if anim==null:
   anim=AnimatedSprite2D.new();anim.name="AnimatedSprite2D";add_child(anim)
-  anim.sprite_frames=load("res://assets/supplied/stinko.tres" if kind=="stinko" else "res://assets/animations/"+kind+".tres")
+  anim.sprite_frames=load("res://assets/characters/stinko/stinko.tres" if kind=="stinko" else "res://assets/characters/animations/"+kind+".tres")
   anim.scale=Vector2.ONE*0.30;anim.offset=Vector2(0,-168)
  anim.flip_h=direction<0
  if not Engine.is_editor_hint():anim.play("idle")

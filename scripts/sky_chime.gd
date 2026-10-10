@@ -8,7 +8,7 @@ extends Node2D
 var active := false
 var ringing := 0.0
 var clock := 0.0
-const ART=preload("res://assets/sky_props/bell_starbit.png")
+const ART=preload("res://assets/environment/sky/props/bell_starbit.png")
 const STAND=Rect2(90,59,924,754)
 const BELL=Rect2(1148,217,476,580)
 const RING_SECONDS=1.6

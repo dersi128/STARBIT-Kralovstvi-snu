@@ -1,9 +1,9 @@
 extends HBoxContainer
 ## Compact in-game counters, using the same collectibles that appear in the level.
 
-const DIAMOND = preload("res://assets/worldkit/crystal.tres")
-const STAR_KEY = preload("res://assets/worldkit/star_key.tres")
-const FONT = preload("res://assets/menu/Nunito.ttf")
+const DIAMOND = preload("res://assets/environment/worldkit/crystal.tres")
+const STAR_KEY = preload("res://assets/environment/worldkit/star_key.tres")
+const FONT = preload("res://assets/ui/fonts/Nunito.ttf")
 
 var diamond_count: Label
 var diamond_icon: TextureRect

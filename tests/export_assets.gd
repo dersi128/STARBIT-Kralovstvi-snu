@@ -5,7 +5,7 @@ func run() -> void:
  for key in DreamArt.rects:
   var tex:Texture2D
   if key in ["mole","rock_enemy","cloud_enemy","boss","fouk","jiskra"]:
-   var atlas:=AtlasTexture.new();atlas.atlas=load("res://assets/cast.png");atlas.region=DreamArt.rects[key];atlas.filter_clip=true;tex=atlas
+   var atlas:=AtlasTexture.new();atlas.atlas=load("res://assets/source_sheets/cast.png");atlas.region=DreamArt.rects[key];atlas.filter_clip=true;tex=atlas
   else:continue
   var viewport:=SubViewport.new()
   viewport.size=Vector2i(tex.get_size())
@@ -18,7 +18,7 @@ func run() -> void:
   viewport.add_child(sprite)
   await process_frame
   await RenderingServer.frame_post_draw
-  viewport.get_texture().get_image().save_png("res://assets/pieces/"+key+".png")
+  viewport.get_texture().get_image().save_png("res://assets/shared/pieces/"+key+".png")
   viewport.queue_free()
  print("Exported ",DreamArt.rects.size()," isolated sprites")
  quit()

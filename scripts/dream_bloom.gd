@@ -20,7 +20,7 @@ var openness := 1.0
 var clock := 0.0
 var deck: CollisionShape2D
 var warning := false
-const FALLBACK = preload("res://assets/world_scenery/Ferns.tres")
+const FALLBACK = preload("res://assets/environment/scenery/Ferns.tres")
 
 func _ready() -> void:
 	collision_layer = 1

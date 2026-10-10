@@ -19,7 +19,7 @@ extends AnimatableBody2D
 	set(value):waterfall_effects=value;_refresh_water()
 @export var preview_waterfall := false:
 	set(value):preview_waterfall=value;_refresh_water()
-const ART = preload("res://assets/pieces/island.png")
+const ART = preload("res://assets/shared/pieces/island.png")
 const WATER_ART = preload("res://scripts/sky_waterfall_art.gd")
 const AUTO_WATER = {"DryPavilion":0, "OrchardLanding":1, "LastRest":0,
 	"WaterfallShelter":1, "HighBellBalcony":0, "QuietGarden":1}
