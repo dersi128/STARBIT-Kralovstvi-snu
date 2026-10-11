@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/heart/root_arch.png" id="tex"]
+
+
+[node name="RootArch" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-105.00000, -184.67480)
+scale = Vector2(0.28455, 0.28455)

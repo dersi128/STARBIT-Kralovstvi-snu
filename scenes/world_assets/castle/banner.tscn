@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/castle/banner.png" id="tex"]
+
+
+[node name="Banner" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-78.03571, -226.71429)
+scale = Vector2(0.41071, 0.41071)

@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/memory/reflection_frame.png" id="tex"]
+
+
+[node name="ReflectionFrame" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-72.70968, -227.03226)
+scale = Vector2(0.37097, 0.37097)

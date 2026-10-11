@@ -8,7 +8,7 @@ const STOMP_IMPACT := 0.48
 const STOMP_RECOVERY := 1.05
 const CHARGE_LIMIT := 3.8
 const COMBO_RECOVERY := 0.82
-const OUTRO_TEXT := "Děkuji, Bite! Osvobodil jsi mě. Teď se vydej do oblak — pohyblivé mráčky tě donesou blíž ke Království snů.\n\nBuď opatrný, temnota se šíří i tam. Vezmi si mou hvězdu a otevři bránu. Jiskra potřebuje tvou pomoc!"
+const OUTRO_TEXT := "Děkuji, Bite! Temnota mě nutila bránit všem v cestě. Teď mohu zase chránit stezku.\n\nK hradu musíš přes vzdušné ostrovy. Tohle je Zip — pomůže ti druhým skokem. Vezmi hvězdu a vyrazte za Jiskrou!"
 var last_attack := "charge"
 var stomps_remaining := 0
 var warning_duration := 1.2
@@ -47,6 +47,10 @@ func finish_guardian_dialogue() -> void:
  if not defeated or not dialogue_started or dialogue_completed:return
  dialogue_completed=true
  free_bear()
+ var level=get_tree().get_first_node_in_group("level")
+ if level!=null and level.number==5:
+  level.player.has_fouk=true
+  level.completed_actions["zip_met"]=true
 
 func _try_guardian_dialogue(player:CharacterBody2D) -> void:
  if dialogue_started or not player.is_on_floor():return

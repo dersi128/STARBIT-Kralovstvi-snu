@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/village/repair_socket.png" id="tex"]
+[ext_resource type="Script" path="res://scripts/world_assets/repair.gd" id="behavior"]
+
+[node name="RepairSocket" type="Node2D"]
+script = ExtResource("behavior")
+picture = ExtResource("tex")
+action = "repair"
+required_item = "repair_gear"
+picture_height = 130.0
+duration = 1.4
+caption = "Opravit mechanismus"
+locked_caption = "Nejdřív najdi součástku"
+repair_socket_uv = Vector2(0.49836, 0.55812)
+repair_gear_width = 0.225

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+[ext_resource type="Script" path="res://scripts/world_assets/lever.gd" id="script"]
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/common/lever_base.png" id="tex"]
+[node name="Lever" type="Node2D"]
+script = ExtResource("script")
+action = "activate"
+picture = ExtResource("tex")
+picture_height = 95.0
+duration = 0.8
+caption = "Aktivovat páku"

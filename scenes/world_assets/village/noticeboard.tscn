@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/village/noticeboard.png" id="tex"]
+
+
+[node name="Noticeboard" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-105.00000, -195.78125)
+scale = Vector2(0.36458, 0.36458)

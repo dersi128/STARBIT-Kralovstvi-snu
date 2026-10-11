@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/common/gear.png" id="tex"]
+[ext_resource type="Script" path="res://scripts/story_interaction.gd" id="behavior"]
+
+[node name="Gear" type="Node2D"]
+script = ExtResource("behavior")
+picture = ExtResource("tex")
+action = "pickup"
+item_id = "repair_gear"
+picture_height = 48.0
+caption = "Sebrat předmět"
+duration = 0.65

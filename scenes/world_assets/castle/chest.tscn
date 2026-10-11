@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/castle/chest.png" id="tex"]
+
+
+[node name="Chest" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-105.00000, -156.78571)
+scale = Vector2(0.35714, 0.35714)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3]
+[ext_resource type="Script" path="res://scripts/world_assets/lift.gd" id="lift"]
+[ext_resource type="PackedScene" path="res://scenes/world_assets/forest/lift_deck.tscn" id="deck"]
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/forest/lift_header.png" id="header"]
+
+[node name="Lift" type="Node2D"]
+script = ExtResource("lift")
+
+[node name="RopeLeft" type="Line2D" parent="."]
+points = PackedVector2Array(-70, -233, -70, 8)
+width = 4.0
+default_color = Color(0.55, 0.38, 0.2, 1)
+antialiased = true
+
+[node name="RopeRight" type="Line2D" parent="."]
+points = PackedVector2Array(70, -233, 70, 8)
+width = 4.0
+default_color = Color(0.55, 0.38, 0.2, 1)
+antialiased = true
+
+[node name="Header" type="Sprite2D" parent="."]
+position = Vector2(0, -245)
+texture = ExtResource("header")
+scale = Vector2(0.33019, 0.33019)
+
+[node name="Deck" parent="." instance=ExtResource("deck")]
+travel = Vector2(0, -180)
+period = 4.5

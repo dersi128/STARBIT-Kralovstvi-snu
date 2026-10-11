@@ -192,6 +192,7 @@ func _remember_safe_ground() -> void:
   var hit:=get_world_2d().direct_space_state.intersect_ray(ray)
   if hit.is_empty():return
   if hit.collider.get("travel")!=null and hit.collider.travel!=Vector2.ZERO:return
+  if hit.collider.get("countdown")!=null:return
  for enemy in get_tree().get_nodes_in_group("enemies"):
   if not enemy.defeated and global_position.distance_to(enemy.global_position)<140:return
  last_safe_position=global_position
@@ -218,6 +219,7 @@ func _physics_process(delta: float) -> void:
  previous_happy=happy
  update_visual_effects(delta)
  _update_interaction(delta)
+ if not can_process():return # A completed interaction may have opened a paused dialogue.
  if repair_active:
   if is_instance_valid(repair_target):repair_clock+=delta
   else:end_repair()
@@ -681,6 +683,9 @@ func hurt(force:bool=false) -> void:
  cancel_interaction()
  end_repair()
  var level=get_tree().get_first_node_in_group("level")
+ if level != null and level.bonus_active:
+  level.get_node("BonusRoom").retry_room()
+  return
  var hearts:bool=level!=null and level.use_hearts
  if hearts:health=maxi(0,health-1)
  if hearts and health>0 and not force:

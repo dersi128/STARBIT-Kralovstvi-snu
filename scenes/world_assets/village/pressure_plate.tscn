@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/village/pressure_plate.png" id="tex"]
+[ext_resource type="Script" path="res://scripts/world_assets/pressure_plate.gd" id="behavior"]
+
+[sub_resource type="RectangleShape2D" id="shape"]
+size = Vector2(72, 20)
+
+[node name="PressurePlate" type="Area2D"]
+script = ExtResource("behavior")
+collision_layer = 0
+collision_mask = 6
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-42.50000, -35.72464)
+scale = Vector2(0.15399, 0.15399)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("shape")

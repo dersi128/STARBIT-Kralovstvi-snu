@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/garden/lift_deck.png" id="tex"]
+[ext_resource type="Script" path="res://scripts/world_assets/moving_platform.gd" id="behavior"]
+
+[sub_resource type="RectangleShape2D" id="shape"]
+size = Vector2(205.23404, 14.00000)
+
+[node name="LiftDeck" type="AnimatableBody2D"]
+script = ExtResource("behavior")
+collision_layer = 1
+collision_mask = 0
+travel = Vector2(160, 0)
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-105.00000, -3.87234)
+scale = Vector2(0.29787, 0.29787)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("shape")

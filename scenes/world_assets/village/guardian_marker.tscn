@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/village/guardian_marker.png" id="tex"]
+
+
+[node name="GuardianMarker" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-104.60452, -226.53484)
+scale = Vector2(0.43315, 0.43315)

@@ -1,0 +1,27 @@
+{
+  "generator": "Higgsfield",
+  "job_id": "f677dcc8-ccec-4475-88c2-5c6eb679d44b",
+  "approved_credits": 2.75,
+  "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_094441_f677dcc8-ccec-4475-88c2-5c6eb679d44b.png",
+  "layout": "One complete 16:9 painting, 2688 x 1520 pixels; no atlas and no character sprites. Slow zoom in shot 3 of chapter_one cinematic.",
+  "model": "gpt_image_2_5",
+  "aspect_ratio": "16:9",
+  "count": 1,
+  "resolution": "2k",
+  "quality": "high",
+  "medias": [
+    {
+      "role": "image",
+      "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/shared/pieces/idle.png"
+    },
+    {
+      "role": "image",
+      "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/environment/castle/royal_props.png"
+    },
+    {
+      "role": "image",
+      "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/main/assets/environment/backgrounds/castle_court.png"
+    }
+  ],
+  "prompt": "Create one polished cinematic background painting for the EXISTING STARBIT Kingdom of Dreams 2D platform game, horizontal 16:9. Image 1 is Bit and defines the existing illustrated game's rounded silhouettes, clean soft dark outlines and hand-painted cartoon volume ONLY. Do NOT include Bit or any characters in this shot. Image 2 defines the kingdom's existing rounded cream stone, deep blue and gold mechanism design and luminous turquoise crystal style; borrow exactly that painted material language and star emblems. Image 3 defines the target royal environment's painting style, stone architecture and lighting. This shot is DEEP UNDER the same castle, an underground ancient magical engine chamber called the Heart of the Kingdom. One beautiful spherical turquoise crystal heart with a small luminous gold STAR floating inside it, suspended inside a large circular antique gold mechanism with tasteful cream stone base and blue ornament. Place the core centered in the middle third of the frame. Thick twisted dark violet magical ROOTS have invaded the engine, wrapping around the metal ring and clutching the glass crystal, draining its light toward underground conduits. Root material looks like smooth curved enchanted tree roots, irregular tapering branches with subtle purple glints; NOT straight cables or diagram lines. The heart is still softly pulsing with dim hopeful turquoise and gold. Rich depth with softly painted stone pillars, distant arch recesses and curved magic conduits. Ominous but gentle family fantasy, no horror. Warm small gold lights resist deep plum and indigo shadows. Important: the mechanical ring must be tangible illustrated equipment, not a flat geometric graphic. Compose as a cinematic medium wide establishing shot with atmospheric light, full environment, no text, no letters, no UI, no watermarks, no subtitles. Keep center of attention around x50% y45%, leave top and bottom 12% quiet for letterbox overlay. The real Morous must NOT appear. Not photorealistic, not a 3D render, not pixel art. Match STARBIT's existing painted art precisely."
+}

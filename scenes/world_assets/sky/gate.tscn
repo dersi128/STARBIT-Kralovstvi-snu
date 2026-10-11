@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/sky/gate.png" id="tex"]
+[ext_resource type="Script" path="res://scripts/world_assets/moving_platform.gd" id="behavior"]
+
+[sub_resource type="RectangleShape2D" id="shape"]
+size = Vector2(107.59300, 159.22319)
+
+[node name="Gate" type="AnimatableBody2D"]
+script = ExtResource("behavior")
+collision_layer = 1
+collision_mask = 0
+motion_kind = 1
+powered = false
+period = 1.0
+travel = Vector2(0, -190)
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-56.68490, -162.11160)
+scale = Vector2(0.36105, 0.36105)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0.00000, -79.61160)
+shape = SubResource("shape")

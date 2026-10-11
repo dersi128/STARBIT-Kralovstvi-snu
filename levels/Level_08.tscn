@@ -1,1425 +1,559 @@
 [gd_scene format=3 uid="uid://bmdvdu2qx4hox"]
 
-[ext_resource type="Shader" uid="uid://rty78wrj2h2g" path="res://shaders/bridge_alpha.gdshader" id="6_ti0ur"]
-[ext_resource type="Shader" uid="uid://dtiajredopi3u" path="res://shaders/cloud_edge_cleanup.gdshader" id="22_umo7i"]
-[ext_resource type="Script" uid="uid://cxc6e4c06xl8o" path="res://scripts/courtyard_route_backdrop.gd" id="bg"]
-[ext_resource type="Script" uid="uid://d307bkgfu80so" path="res://scripts/starbit_rope_bridge.gd" id="bridge"]
-[ext_resource type="Script" uid="uid://bd4fkdbvhf54y" path="res://scripts/camera_zone.gd" id="camera"]
-[ext_resource type="Script" uid="uid://bohuc0h15slyw" path="res://scripts/cloud_step.gd" id="cloudstep"]
-[ext_resource type="PackedScene" path="res://scenes/RoyalCrate.tscn" id="crate"]
-[ext_resource type="Script" uid="uid://d3py4h5karcy0" path="res://scripts/crumble_platform.gd" id="crumble"]
-[ext_resource type="Script" uid="uid://djuidxx4hd31e" path="res://scripts/courtyard_drawbridge.gd" id="drawbridge"]
-[ext_resource type="Script" uid="uid://c2svy4eaj02wn" path="res://scripts/tutorial_trigger.gd" id="hint"]
-[ext_resource type="Script" uid="uid://cuod8udlqrmt6" path="res://scripts/level.gd" id="level"]
-[ext_resource type="Script" uid="uid://by7q8r4tsauyg" path="res://scripts/castle_lift.gd" id="lift"]
-[ext_resource type="Script" uid="uid://cqaiqlvipp7k2" path="res://scripts/royal_lock.gd" id="lock"]
-[ext_resource type="Script" uid="uid://dwc1hbvwlgkaj" path="res://scripts/castle_mirror.gd" id="mirror"]
-[ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole"]
-[ext_resource type="Script" uid="uid://cueha53tp0240" path="res://scripts/object.gd" id="object"]
-[ext_resource type="PackedScene" path="res://scenes/worldkit/RainCloud.tscn" id="rain"]
-[ext_resource type="PackedScene" path="res://scenes/Enemy_rock_enemy.tscn" id="rock"]
-[ext_resource type="Texture2D" uid="uid://ghp3eyrh6xln" path="res://assets/environment/castle/expansion/level08_atlas.png" id="royal8_atlas"]
-[ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="stinko"]
-[ext_resource type="Script" uid="uid://sobj37yd18t3" path="res://scripts/castle_platform.gd" id="stone"]
-[ext_resource type="Script" uid="uid://84c1mtqanj6e" path="res://scripts/dream_switch.gd" id="switch"]
+[ext_resource type="Script" path="res://scripts/chapter_level.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/story_background.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/morous_darkness.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/sky_island.gd" id="4"]
+[ext_resource type="Script" path="res://scripts/object.gd" id="5"]
+[ext_resource type="Texture2D" path="res://assets/environment/sky/windmill/windmill.png" id="6"]
+[ext_resource type="Script" path="res://scripts/castle_platform.gd" id="7"]
+[ext_resource type="Texture2D" path="res://assets/environment/forest/higgsfield/stone_lip.tres" id="8"]
+[ext_resource type="Script" path="res://scripts/secret_door.gd" id="9"]
+[ext_resource type="Script" path="res://scripts/bonus_room.gd" id="10"]
+[ext_resource type="Script" path="res://scripts/dream_platform.gd" id="11"]
+[ext_resource type="Script" path="res://scripts/crumble_platform.gd" id="12"]
+[ext_resource type="Script" path="res://scripts/chapter_action.gd" id="13"]
+[ext_resource type="Texture2D" path="res://assets/environment/sky/props/wind_core_stand.png" id="14"]
+[ext_resource type="Texture2D" path="res://assets/environment/forest/awakening/winch.png" id="15"]
+[ext_resource type="Texture2D" path="res://assets/shared/pieces/fouk.png" id="16"]
+[ext_resource type="Script" path="res://scripts/tutorial_trigger.gd" id="17"]
 
-[ext_resource type="Script" path="res://scripts/dream_platform.gd" id="rest_platform"]
-[ext_resource type="Script" path="res://scripts/cave_back.gd" id="alcove_back"]
-[ext_resource type="Script" path="res://scripts/water_feature.gd" id="water_detail"]
-[ext_resource type="Script" path="res://scripts/animated_water_pool.gd" id="pool_detail"]
-[ext_resource type="PackedScene" path="res://scenes/worldkit/SpringPad.tscn" id="alcove_spring"]
+[sub_resource type="RectangleShape2D" id="Shape0"]
+size = Vector2(1050, 80.0)
 
-[ext_resource type="PackedScene" path="res://scenes/royal/higgsfield/RoyalBalustrade.tscn" id="hf_detail_RoyalBalustrade"]
-[ext_resource type="PackedScene" path="res://scenes/royal/higgsfield/RoyalPlanter.tscn" id="hf_detail_RoyalPlanter"]
+[sub_resource type="RectangleShape2D" id="Shape1"]
+size = Vector2(600, 80.0)
 
-[sub_resource type="AtlasTexture" id="royal8_mirror"]
-atlas = ExtResource("royal8_atlas")
-region = Rect2(473, 417, 311, 366)
-filter_clip = true
+[sub_resource type="RectangleShape2D" id="Shape2"]
+size = Vector2(900, 80.0)
 
-[sub_resource type="AtlasTexture" id="royal8_receiver"]
-atlas = ExtResource("royal8_atlas")
-region = Rect2(880, 484, 330, 294)
-filter_clip = true
+[sub_resource type="RectangleShape2D" id="Shape3"]
+size = Vector2(700, 80.0)
 
-[sub_resource type="AtlasTexture" id="royal8_platform"]
-atlas = ExtResource("royal8_atlas")
-region = Rect2(15, 128, 421, 249)
-filter_clip = true
+[sub_resource type="RectangleShape2D" id="Shape4"]
+size = Vector2(1200, 80.0)
 
-[sub_resource type="RectangleShape2D" id="ArrivalBank_shape"]
-resource_local_to_scene = true
-size = Vector2(720, 835)
+[sub_resource type="RectangleShape2D" id="Shape5"]
+size = Vector2(700, 80.0)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v3l5v"]
-shader = ExtResource("6_ti0ur")
+[sub_resource type="RectangleShape2D" id="Shape6"]
+size = Vector2(320, 80.0)
 
-[sub_resource type="RectangleShape2D" id="ViaductPier_shape"]
-resource_local_to_scene = true
-size = Vector2(460, 995)
+[sub_resource type="RectangleShape2D" id="Shape7"]
+size = Vector2(850, 80.0)
 
-[sub_resource type="RectangleShape2D" id="RepairGallery_shape"]
-resource_local_to_scene = true
-size = Vector2(1240, 125)
+[sub_resource type="RectangleShape2D" id="Shape8"]
+size = Vector2(160, 20.0)
 
-[sub_resource type="AtlasTexture" id="royal8_lift"]
-atlas = ExtResource("royal8_atlas")
-region = Rect2(15, 938, 460, 179)
-filter_clip = true
+[sub_resource type="RectangleShape2D" id="Shape9"]
+size = Vector2(220, 20.0)
 
-[sub_resource type="RectangleShape2D" id="GalleryDescent_shape"]
-resource_local_to_scene = true
-size = Vector2(190, 50)
+[sub_resource type="RectangleShape2D" id="Shape10"]
+size = Vector2(420, 80.0)
 
-[sub_resource type="RectangleShape2D" id="GalleryAscent_shape"]
-resource_local_to_scene = true
-size = Vector2(190, 50)
+[sub_resource type="RectangleShape2D" id="Shape11"]
+size = Vector2(140, 80.0)
 
-[sub_resource type="RectangleShape2D" id="GalleryExit_shape"]
-resource_local_to_scene = true
-size = Vector2(430, 835)
+[sub_resource type="RectangleShape2D" id="Shape12"]
+size = Vector2(140, 80.0)
 
-[sub_resource type="RectangleShape2D" id="CourtApproach_shape"]
-resource_local_to_scene = true
-size = Vector2(990, 965)
+[sub_resource type="RectangleShape2D" id="Shape13"]
+size = Vector2(140, 80.0)
 
-[sub_resource type="RectangleShape2D" id="CourtWestWalk_shape"]
-resource_local_to_scene = true
-size = Vector2(720, 965)
+[sub_resource type="RectangleShape2D" id="Shape14"]
+size = Vector2(145, 80.0)
 
-[sub_resource type="RectangleShape2D" id="CourtEastWalk_shape"]
-resource_local_to_scene = true
-size = Vector2(590, 945)
+[sub_resource type="RectangleShape2D" id="Shape15"]
+size = Vector2(140, 80.0)
 
-[sub_resource type="RectangleShape2D" id="CourtBridgePier_shape"]
-resource_local_to_scene = true
-size = Vector2(400, 1035)
+[sub_resource type="RectangleShape2D" id="Shape16"]
+size = Vector2(550, 80.0)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rj4lp"]
-shader = ExtResource("6_ti0ur")
-
-[sub_resource type="RectangleShape2D" id="GalleryApproach_shape"]
-resource_local_to_scene = true
-size = Vector2(680, 1065)
-
-[sub_resource type="RectangleShape2D" id="LookoutStep_shape"]
-resource_local_to_scene = true
-size = Vector2(190, 70)
-
-[sub_resource type="RectangleShape2D" id="LookoutBalcony_shape"]
-resource_local_to_scene = true
-size = Vector2(540, 70)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_30003"]
-shader = ExtResource("6_ti0ur")
-
-[sub_resource type="RectangleShape2D" id="GalleryEntrance_shape"]
-resource_local_to_scene = true
-size = Vector2(780, 745)
-
-[sub_resource type="RectangleShape2D" id="GalleryWalk_shape"]
-resource_local_to_scene = true
-size = Vector2(790, 835)
-
-[sub_resource type="RectangleShape2D" id="MirrorCourt_shape"]
-resource_local_to_scene = true
-size = Vector2(1860, 1085)
-
-[sub_resource type="RectangleShape2D" id="SecretGalleryBalcony_shape"]
-resource_local_to_scene = true
-size = Vector2(480, 70)
-
-[sub_resource type="RectangleShape2D" id="AqueductLanding_shape"]
-resource_local_to_scene = true
-size = Vector2(750, 945)
-
-[sub_resource type="RectangleShape2D" id="RainPier_shape"]
-resource_local_to_scene = true
-size = Vector2(410, 1025)
-
-[sub_resource type="RectangleShape2D" id="FerryDeparture_shape"]
-resource_local_to_scene = true
-size = Vector2(330, 945)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_23j1a"]
-shader = ExtResource("22_umo7i")
-shader_parameter/edge_pixels = 6.0
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hy0ij"]
-shader = ExtResource("6_ti0ur")
-
-[sub_resource type="RectangleShape2D" id="FerryArrival_shape"]
-resource_local_to_scene = true
-size = Vector2(830, 945)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a0cf5"]
-shader = ExtResource("6_ti0ur")
-
-[sub_resource type="RectangleShape2D" id="AqueductLastPier_shape"]
-resource_local_to_scene = true
-size = Vector2(500, 1025)
-
-[sub_resource type="RectangleShape2D" id="RampartWest_shape"]
-resource_local_to_scene = true
-size = Vector2(800, 165)
-
-[sub_resource type="RectangleShape2D" id="RampartLoosePlankA_shape"]
-resource_local_to_scene = true
-size = Vector2(240, 35)
-
-[sub_resource type="RectangleShape2D" id="RampartRest_shape"]
-resource_local_to_scene = true
-size = Vector2(450, 135)
-
-[sub_resource type="RectangleShape2D" id="RampartLoosePlankB_shape"]
-resource_local_to_scene = true
-size = Vector2(260, 35)
-
-[sub_resource type="RectangleShape2D" id="OvergrownRampart_shape"]
-resource_local_to_scene = true
-size = Vector2(800, 70)
-
-[sub_resource type="RectangleShape2D" id="GardenApproachStep_shape"]
-resource_local_to_scene = true
-size = Vector2(440, 125)
-
-[sub_resource type="RectangleShape2D" id="SecretAlcoveFloor_shape"]
-resource_local_to_scene = true
-size = Vector2(900, 125)
-
-[sub_resource type="RectangleShape2D" id="SecretAlcoveReturnLow_shape"]
-resource_local_to_scene = true
-size = Vector2(170, 70)
-
-[sub_resource type="RectangleShape2D" id="SecretAlcoveReturnMiddle_shape"]
-resource_local_to_scene = true
-size = Vector2(150, 70)
-
-[sub_resource type="RectangleShape2D" id="SecretAlcoveReturnTop_shape"]
-resource_local_to_scene = true
-size = Vector2(150, 70)
-
-[sub_resource type="RectangleShape2D" id="GardenBridgeApproach_shape"]
-resource_local_to_scene = true
-size = Vector2(1160, 70)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rle8x"]
-shader = ExtResource("6_ti0ur")
-
-[sub_resource type="RectangleShape2D" id="MoatCatchwalk_shape"]
-resource_local_to_scene = true
-size = Vector2(1100, 135)
-
-[sub_resource type="RectangleShape2D" id="MoatReturnStep1_shape"]
-resource_local_to_scene = true
-size = Vector2(180, 70)
-
-[sub_resource type="RectangleShape2D" id="MoatReturnStep2_shape"]
-resource_local_to_scene = true
-size = Vector2(180, 70)
-
-[sub_resource type="RectangleShape2D" id="MoatReturnStep3_shape"]
-resource_local_to_scene = true
-size = Vector2(180, 70)
-
-[sub_resource type="RectangleShape2D" id="MoatReturnStep4_shape"]
-resource_local_to_scene = true
-size = Vector2(180, 70)
-
-[sub_resource type="RectangleShape2D" id="GardenGateBank_shape"]
-resource_local_to_scene = true
-size = Vector2(1700, 1035)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xre7u"]
-size = Vector2(175, 40)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ti0ur"]
-shader = ExtResource("22_umo7i")
-shader_parameter/edge_pixels = 6.0
-
-[sub_resource type="RectangleShape2D" id="SealStep_shape"]
-resource_local_to_scene = true
-size = Vector2(170, 70)
-
-[node name="Level_08" type="Node2D" unique_id=336195938]
-script = ExtResource("level")
+[node name="Level_08" type="Node2D"]
+script = ExtResource("1")
 number = 8
-title = "Nádvoří před branami"
-width = 25200.0
-camera_top = -1550
-camera_bottom = 1740
-fall_limit = 1560.0
+title = "Poslední větrná brána"
+spawn = Vector2(200, 550)
+width = 8160.0
+camera_top = -170
+camera_bottom = 1200
+fall_limit = 1060.0
+use_hearts = true
 fouk_at_start = true
+quest_flags = PackedStringArray("outer_wind", "wind_gate")
+quest_hints = PackedStringArray("Obnov přívod větru k poslední bráně.", "Oprav větrnou bránu. Zip u ní zůstane.")
+zip_departure = true
+final_hint = "Pokračuj sám do hradu. Zip drží větrnou bránu."
 
-[node name="CourtyardMirror" type="Node2D" parent="." unique_id=1704580101]
-z_index = -1
-position = Vector2(10280, -388)
-script = ExtResource("mirror")
-targets = Array[NodePath]([NodePath("../LightGate")])
-receiver_offset = Vector2(650, 515)
-plate_offset = Vector2(-100, 0)
-plate_visual_height = 12.0
-active = false
-mirror_art = SubResource("royal8_mirror")
-receiver_art = SubResource("royal8_receiver")
+[node name="StoryBackground" type="CanvasLayer" parent="."]
+script = ExtResource("2")
+level_number = 7
 
-[node name="Background" type="CanvasLayer" parent="." unique_id=170189609]
-layer = -100
-script = ExtResource("bg")
-transition_positions = PackedFloat32Array(7500, 17000, 21500)
+[node name="MorousDarkness" type="CanvasLayer" parent="."]
+script = ExtResource("3")
+strength = 0.565
 
-[node name="ArrivalBank" type="AnimatableBody2D" parent="." unique_id=957792792]
+[node name="Start" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
 position = Vector2(0, 550)
+width = 1050.0
+depth = 95.0
 collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 720.0
-depth = 850.0
+waterfall_art = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrivalBank" unique_id=1583475007]
-position = Vector2(360, 417.5)
-shape = SubResource("ArrivalBank_shape")
-one_way_collision_margin = 6.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start"]
+shape = SubResource("Shape0")
+position = Vector2(525.0, 40.0)
 
-[node name="BreachedApproach" type="AnimatableBody2D" parent="." unique_id=1758921995]
-texture_filter = 4
-material = SubResource("ShaderMaterial_v3l5v")
-position = Vector2(710, 550)
+[node name="WindRise" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(1410, 420)
+width = 600.0
+depth = 95.0
 collision_mask = 0
-script = ExtResource("bridge")
-end_offset = Vector2(450, -110)
-rail_height = 78.0
-gaps = PackedVector2Array(170, 300)
-broken_ropes = true
+waterfall_art = 1
 
-[node name="ViaductPier" type="AnimatableBody2D" parent="." unique_id=1144499784]
-position = Vector2(1150, 440)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WindRise"]
+shape = SubResource("Shape1")
+position = Vector2(300.0, 40.0)
+
+[node name="OuterAnchor" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(2340, 500)
+width = 900.0
+depth = 95.0
 collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 460.0
-depth = 1010.0
+waterfall_art = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ViaductPier" unique_id=562766155]
-position = Vector2(230, 497.5)
-shape = SubResource("ViaductPier_shape")
-one_way_collision_margin = 6.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OuterAnchor"]
+shape = SubResource("Shape2")
+position = Vector2(450.0, 40.0)
 
-[node name="GatehouseMole" parent="." unique_id=2009110118 instance=ExtResource("mole")]
-position = Vector2(340, 550)
-message = "Temnota už pronikla za hradby. Jiskra je pořád uvnitř! Přes nádvoří a zahrady se dostaneš až k hradu."
-
-[node name="RepairGallery" type="AnimatableBody2D" parent="." unique_id=908333871]
-position = Vector2(1603, 1028)
+[node name="LastSkyIsland" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(3590, 380)
+width = 700.0
+depth = 95.0
 collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 1240.0
-depth = 140.0
+waterfall_art = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RepairGallery" unique_id=2065634010]
-position = Vector2(620, 62.5)
-shape = SubResource("RepairGallery_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LastSkyIsland"]
+shape = SubResource("Shape3")
+position = Vector2(350.0, 40.0)
 
-[node name="GalleryDescent" type="AnimatableBody2D" parent="." unique_id=500001330]
-position = Vector2(1709, 508)
+[node name="GateBank" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(4640, 550)
+width = 1200.0
+depth = 95.0
 collision_mask = 0
-script = ExtResource("lift")
-powered = true
-return_seconds = 2.4
-surface_texture = SubResource("royal8_lift")
-surface_walk_y = 50.0
-surface_height = 105.0
-width = 190.0
-depth = 65.0
-travel = Vector2(0, 520)
-period = 3.4
+waterfall_art = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GalleryDescent" unique_id=1565636833]
-position = Vector2(95, 25)
-shape = SubResource("GalleryDescent_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GateBank"]
+shape = SubResource("Shape4")
+position = Vector2(600.0, 40.0)
 
-[node name="GalleryAscent" type="AnimatableBody2D" parent="." unique_id=1621823575]
-position = Vector2(2620, 1028)
+[node name="AloneBank" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(6000, 550)
+width = 700.0
+depth = 95.0
 collision_mask = 0
-script = ExtResource("lift")
-return_seconds = 2.4
-surface_texture = SubResource("royal8_lift")
-surface_walk_y = 50.0
-surface_height = 105.0
-width = 190.0
-depth = 65.0
-travel = Vector2(0, -520)
-period = 3.4
+waterfall_art = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GalleryAscent" unique_id=1193192696]
-position = Vector2(95, 25)
-shape = SubResource("GalleryAscent_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AloneBank"]
+shape = SubResource("Shape5")
+position = Vector2(350.0, 40.0)
 
-[node name="GalleryCrate" parent="." unique_id=1699659778 instance=ExtResource("crate")]
-position = Vector2(2180, 1028)
-
-[node name="GalleryPowerPlate" type="Node2D" parent="." unique_id=712134502]
-z_index = 1
-position = Vector2(2500, 1028)
-script = ExtResource("switch")
-targets = Array[NodePath]([NodePath("../GalleryAscent")])
-require_crate = true
-plate_width = 110.0
-
-[node name="GalleryHint" type="Marker2D" parent="." unique_id=1969430418]
-position = Vector2(2050, 920)
-script = ExtResource("hint")
-title = "Opravářská galerie"
-message = "Přisuň bednu na zlatou destičku. Zapne výtah ven."
-activation_size = Vector2(430, 270)
-display_seconds = 5.5
-
-[node name="GalleryDescentCamera" type="Node2D" parent="." unique_id=1063306793]
-position = Vector2(1672, 553)
-script = ExtResource("camera")
-area_size = Vector2(500, 450)
-look_offset = Vector2(80, 220)
-priority = 3
-
-[node name="GalleryExit" type="AnimatableBody2D" parent="." unique_id=810484012]
-position = Vector2(2830, 508)
+[node name="AloneStep" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(6840, 460)
+width = 320.0
+depth = 95.0
 collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 430.0
-depth = 850.0
+waterfall_art = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GalleryExit" unique_id=936325637]
-position = Vector2(215, 417.5)
-shape = SubResource("GalleryExit_shape")
-one_way_collision_margin = 6.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AloneStep"]
+shape = SubResource("Shape6")
+position = Vector2(160.0, 40.0)
 
-[node name="CourtApproach" type="AnimatableBody2D" parent="." unique_id=1858307703]
-position = Vector2(3244, 310)
+[node name="Exit" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(7310, 550)
+width = 850.0
+depth = 95.0
 collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 990.0
-depth = 980.0
+waterfall_art = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CourtApproach" unique_id=1223033932]
-position = Vector2(495, 482.5)
-shape = SubResource("CourtApproach_shape")
-one_way_collision_margin = 6.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+shape = SubResource("Shape7")
+position = Vector2(425.0, 40.0)
 
-[node name="CourtWestWalk" type="AnimatableBody2D" parent="." unique_id=364519656]
-position = Vector2(4473, 489)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 720.0
-depth = 980.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CourtWestWalk" unique_id=594868878]
-position = Vector2(360, 482.5)
-shape = SubResource("CourtWestWalk_shape")
-one_way_collision_margin = 6.0
-
-[node name="CourtEastWalk" type="AnimatableBody2D" parent="." unique_id=1181123985]
-position = Vector2(5129, 489)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 590.0
-depth = 960.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CourtEastWalk" unique_id=1762206276]
-position = Vector2(295, 472.5)
-shape = SubResource("CourtEastWalk_shape")
-one_way_collision_margin = 6.0
-
-[node name="CourtBridgePier" type="AnimatableBody2D" parent="." unique_id=1457888176]
-position = Vector2(5930, 350)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 400.0
-depth = 1050.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CourtBridgePier" unique_id=1455266531]
-position = Vector2(200, 517.5)
-shape = SubResource("CourtBridgePier_shape")
-one_way_collision_margin = 6.0
-
-[node name="CourtBrokenBridge" type="AnimatableBody2D" parent="." unique_id=833629412]
-texture_filter = 4
-material = SubResource("ShaderMaterial_rj4lp")
-position = Vector2(6320, 350)
-collision_mask = 0
-script = ExtResource("bridge")
-end_offset = Vector2(620, 0)
-rail_height = 78.0
-gaps = PackedVector2Array(260, 390)
-broken_ropes = true
-
-[node name="GalleryApproach" type="AnimatableBody2D" parent="." unique_id=1476074168]
-position = Vector2(6930, 350)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 680.0
-depth = 1080.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GalleryApproach" unique_id=109634298]
-position = Vector2(340, 532.5)
-shape = SubResource("GalleryApproach_shape")
-one_way_collision_margin = 6.0
-
-[node name="CourtyardPatrol" parent="." unique_id=759775833 instance=ExtResource("rock")]
-position = Vector2(4716, 489)
-patrol = 300.0
-speed = 70.0
-
-[node name="CourtyardPatrol2" parent="." unique_id=1797279426 instance=ExtResource("rock")]
-position = Vector2(5496, 170)
-patrol = 200.0
-speed = 52.0
-obraceni = true
-
-[node name="LookoutStep" type="AnimatableBody2D" parent="." unique_id=887292504]
-position = Vector2(4860, 290)
-collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 190.0
-depth = 85.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LookoutStep" unique_id=334507446]
-position = Vector2(95, 35)
-shape = SubResource("LookoutStep_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="LookoutBalcony" type="AnimatableBody2D" parent="." unique_id=997090883]
-position = Vector2(5100, 170)
-collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 540.0
-depth = 85.0
-metadata/route = "secret"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LookoutBalcony" unique_id=669297603]
-position = Vector2(270, 35)
-shape = SubResource("LookoutBalcony_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="Diamond01" type="Node2D" parent="." unique_id=58221254]
-position = Vector2(570, 514)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="Diamond02" type="Node2D" parent="." unique_id=432405554]
-position = Vector2(2300, 990)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="Diamond03" type="Node2D" parent="." unique_id=1512095210]
-position = Vector2(3811, 270)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="Diamond04" type="Node2D" parent="." unique_id=1084221640]
-position = Vector2(6641, 225)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="Diamond05" type="Node2D" parent="." unique_id=1916105558]
-position = Vector2(7435, 50)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="Diamond15" type="Node2D" parent="." unique_id=1194066930]
-position = Vector2(5270, 134)
-script = ExtResource("object")
-metadata/route = "secret"
-
-[node name="Diamond16" type="Node2D" parent="." unique_id=2046055717]
-position = Vector2(5520, 134)
-script = ExtResource("object")
-metadata/route = "secret"
-
-[node name="GalleryRise" type="AnimatableBody2D" parent="." unique_id=99237311]
-texture_filter = 4
-material = SubResource("ShaderMaterial_30003")
-position = Vector2(8352, 482)
-collision_mask = 0
-script = ExtResource("bridge")
-end_offset = Vector2(600, -200)
-rail_height = 102.0
-rope_sag = 22.0
-gaps = PackedVector2Array()
-broken_ropes = true
-
-[node name="GalleryEntrance" type="AnimatableBody2D" parent="." unique_id=2017430099]
-position = Vector2(7602, 482)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 780.0
-depth = 760.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GalleryEntrance" unique_id=1111905747]
-position = Vector2(390, 372.5)
-shape = SubResource("GalleryEntrance_shape")
-one_way_collision_margin = 6.0
-
-[node name="GalleryWalk" type="AnimatableBody2D" parent="." unique_id=1994605280]
-position = Vector2(8944, 282)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 790.0
-depth = 850.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GalleryWalk" unique_id=1976793612]
-position = Vector2(395, 417.5)
-shape = SubResource("GalleryWalk_shape")
-one_way_collision_margin = 6.0
-
-[node name="MirrorCourt" type="AnimatableBody2D" parent="." unique_id=1033597860]
-position = Vector2(9800, 190)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 1860.0
-depth = 1100.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MirrorCourt" unique_id=570222092]
-position = Vector2(930, 542.5)
-shape = SubResource("MirrorCourt_shape")
-one_way_collision_margin = 6.0
-
-[node name="GalleryPatrol" parent="." unique_id=830551026 instance=ExtResource("rock")]
-position = Vector2(8215, 482)
-patrol = 400.0
-speed = 80.0
-obraceni = true
-
-[node name="Diamond06" type="Node2D" parent="." unique_id=1393319494]
-position = Vector2(8500, 394)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="Diamond07" type="Node2D" parent="." unique_id=142424137]
-position = Vector2(10450, 148)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="Diamond17" type="Node2D" parent="." unique_id=1323481732]
-position = Vector2(9340, 90)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="Diamond18" type="Node2D" parent="." unique_id=188182448]
-position = Vector2(9920, -171)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="Diamond19" type="Node2D" parent="." unique_id=1080081686]
-position = Vector2(9608, -325)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="LightGate" type="StaticBody2D" parent="." unique_id=181107522]
-z_index = 1
-position = Vector2(11070, 190)
-collision_mask = 0
-script = ExtResource("lock")
-sources = Array[NodePath]([NodePath("../CourtyardMirror")])
-gate_size = Vector2(80, 600)
-palette = Color(0.66, 0.48, 0.89, 1)
-
-[node name="MirrorHint" type="Marker2D" parent="." unique_id=853044508]
-position = Vector2(9125, 225)
-script = ExtResource("hint")
-title = "Sluneční brána"
-message = "Vystoupej ke zrcadlu. Postůj na jeho destičce a otevři světlem bránu."
-activation_size = Vector2(360, 240)
-display_seconds = 5.0
-
-[node name="SecretGalleryBalcony2" type="AnimatableBody2D" parent="." unique_id=1049664925]
-position = Vector2(9874, -381)
-collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 480.0
-depth = 85.0
-metadata/route = "main"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretGalleryBalcony2" unique_id=1118660180]
-position = Vector2(240, 35)
-shape = SubResource("SecretGalleryBalcony_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="AqueductLanding" type="AnimatableBody2D" parent="." unique_id=1924217127]
-position = Vector2(12300, 100)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 750.0
-depth = 960.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductLanding" unique_id=803836649]
-position = Vector2(375, 472.5)
-shape = SubResource("AqueductLanding_shape")
-one_way_collision_margin = 6.0
-
-[node name="Diamond08" type="Node2D" parent="." unique_id=1649571700]
-position = Vector2(12820, 58)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="RainPier" type="AnimatableBody2D" parent="." unique_id=1871856286]
-position = Vector2(13190, 20)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 410.0
-depth = 1040.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RainPier" unique_id=578183118]
-position = Vector2(205, 512.5)
-shape = SubResource("RainPier_shape")
-one_way_collision_margin = 6.0
-
-[node name="AqueductRainCloud" parent="." unique_id=456093248 instance=ExtResource("rain")]
-process_physics_priority = -10
-position = Vector2(13395, -300)
-rain_height = 320.0
-warning_duration = 1.3
-rain_duration = 3.0
-recovery_duration = 1.0
-start_offset = 0.7
-
-[node name="FerryDeparture" type="AnimatableBody2D" parent="." unique_id=1594236974]
-position = Vector2(13770, 100)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 330.0
-depth = 960.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FerryDeparture" unique_id=196284803]
-position = Vector2(165, 472.5)
-shape = SubResource("FerryDeparture_shape")
-one_way_collision_margin = 6.0
-
-[node name="AqueductFerry" type="AnimatableBody2D" parent="." unique_id=1285939891]
-material = SubResource("ShaderMaterial_23j1a")
-position = Vector2(14100, 100)
-collision_mask = 0
-script = ExtResource("cloudstep")
-width = 300.0
-behaviour = "ferry"
-travel = Vector2(760, 0)
-period = 3.6
-art_variant = 1
-return_period = 2.4
-
-[node name="AqueductBrokenSpan" type="AnimatableBody2D" parent="." unique_id=1874046771]
-texture_filter = 4
-material = SubResource("ShaderMaterial_hy0ij")
-position = Vector2(15960, 100)
-collision_mask = 0
-script = ExtResource("bridge")
-end_offset = Vector2(540, -80)
-rail_height = 78.0
-gaps = PackedVector2Array(190, 340)
-broken_ropes = true
-
-[node name="FerryArrival" type="AnimatableBody2D" parent="." unique_id=1143812787]
-position = Vector2(15150, 100)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 830.0
-depth = 960.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FerryArrival" unique_id=1491882721]
-position = Vector2(415, 472.5)
-shape = SubResource("FerryArrival_shape")
-one_way_collision_margin = 6.0
-
-[node name="Diamond09" type="Node2D" parent="." unique_id=1530337585]
-position = Vector2(15310, 58)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="AqueductShadow" parent="." unique_id=1690523947 instance=ExtResource("stinko")]
-position = Vector2(15750, 100)
-patrol = 140.0
-speed = 42.0
-shadow_range = 430.0
-shadow_cooldown = 4.2
-shadow_warning = 1.1
-shadow_speed = 210.0
-
-[node name="AqueductRampartLink" type="AnimatableBody2D" parent="." unique_id=217023219]
-texture_filter = 4
-material = SubResource("ShaderMaterial_a0cf5")
-position = Vector2(16990, 20)
-collision_mask = 0
-script = ExtResource("bridge")
-end_offset = Vector2(420, 80)
-rail_height = 78.0
-gaps = PackedVector2Array()
-
-[node name="AqueductLastPier" type="AnimatableBody2D" parent="." unique_id=626641638]
-position = Vector2(16500, 20)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 500.0
-depth = 1040.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductLastPier" unique_id=859800074]
-position = Vector2(250, 512.5)
-shape = SubResource("AqueductLastPier_shape")
-one_way_collision_margin = 6.0
-
-[node name="Diamond10" type="Node2D" parent="." unique_id=705250548]
-position = Vector2(16700, -22)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="RampartWest" type="AnimatableBody2D" parent="." unique_id=1530853119]
-position = Vector2(17400, 100)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 800.0
-depth = 180.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RampartWest" unique_id=72852347]
-position = Vector2(400, 82.5)
-shape = SubResource("RampartWest_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="RampartCheckpoint" type="Node2D" parent="." unique_id=1181383114]
-position = Vector2(17610, 100)
-script = ExtResource("object")
+[node name="Checkpoint0" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(130, 550)
 kind = "checkpoint"
 
-[node name="RampartGuard" parent="." unique_id=1016051616 instance=ExtResource("rock")]
-position = Vector2(17940, 100)
-patrol = 120.0
-speed = 52.0
+[node name="Checkpoint4" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(4770, 550)
+kind = "checkpoint"
 
-[node name="RampartLoosePlankA" type="AnimatableBody2D" parent="." unique_id=1286242532]
-position = Vector2(18400, 20)
-collision_mask = 0
-script = ExtResource("crumble")
-crumble_delay = 1.2
-surface_art = "wood"
-width = 240.0
-depth = 50.0
+[node name="Checkpoint6" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(6936.0, 460)
+kind = "checkpoint"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RampartLoosePlankA" unique_id=1081507413]
-position = Vector2(120, 17.5)
-shape = SubResource("RampartLoosePlankA_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
+[node name="Diamond0_0" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(472.5, 492)
+kind = "crystal"
 
-[node name="RampartRest" type="AnimatableBody2D" parent="." unique_id=1689604654]
-position = Vector2(18820, -70)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 450.0
-depth = 150.0
+[node name="Diamond0_1" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(703.5, 492)
+kind = "crystal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RampartRest" unique_id=1195726682]
-position = Vector2(225, 67.5)
-shape = SubResource("RampartRest_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
+[node name="Diamond1_0" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(1680.0, 362)
+kind = "crystal"
 
-[node name="RampartLoosePlankB" type="AnimatableBody2D" parent="." unique_id=306943661]
-position = Vector2(19480, -10)
-collision_mask = 0
-script = ExtResource("crumble")
-crumble_delay = 1.25
-surface_art = "wood"
-width = 260.0
-depth = 50.0
+[node name="Diamond2_0" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(2745.0, 442)
+kind = "crystal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RampartLoosePlankB" unique_id=1425195568]
-position = Vector2(130, 17.5)
-shape = SubResource("RampartLoosePlankB_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
+[node name="Diamond2_1" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(2943.0, 442)
+kind = "crystal"
 
-[node name="OvergrownRampart" type="AnimatableBody2D" parent="." unique_id=1080583182]
-position = Vector2(19920, 80)
-collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 800.0
-depth = 85.0
+[node name="Diamond3_0" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(3905.0, 322)
+kind = "crystal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OvergrownRampart" unique_id=248039149]
-position = Vector2(400, 35)
-shape = SubResource("OvergrownRampart_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
+[node name="Diamond3_1" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(4059.0, 322)
+kind = "crystal"
 
-[node name="GardenApproachStep" type="AnimatableBody2D" parent="." unique_id=1367444568]
-position = Vector2(20920, -20)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 440.0
-depth = 140.0
+[node name="Diamond4_0" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(5180.0, 492)
+kind = "crystal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GardenApproachStep" unique_id=1555778862]
-position = Vector2(220, 62.5)
-shape = SubResource("GardenApproachStep_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
+[node name="Diamond4_1" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(5444.0, 492)
+kind = "crystal"
 
-[node name="SecretAlcoveFloor" type="AnimatableBody2D" parent="." unique_id=2109090599]
-position = Vector2(19840, 430)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 900.0
-depth = 140.0
+[node name="Diamond5_0" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(6315.0, 492)
+kind = "crystal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretAlcoveFloor" unique_id=652638895]
-position = Vector2(450, 62.5)
-shape = SubResource("SecretAlcoveFloor_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
+[node name="Diamond5_1" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(6469.0, 492)
+kind = "crystal"
 
-[node name="SecretAlcoveReturnLow" type="AnimatableBody2D" parent="." unique_id=1106828313]
-position = Vector2(19740, 320)
-collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 170.0
-depth = 85.0
+[node name="Diamond6_0" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(6984.0, 402)
+kind = "crystal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretAlcoveReturnLow" unique_id=1157538629]
-position = Vector2(85, 35)
-shape = SubResource("SecretAlcoveReturnLow_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
+[node name="Diamond7_0" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(7692.5, 492)
+kind = "crystal"
 
-[node name="SecretAlcoveReturnMiddle" type="AnimatableBody2D" parent="." unique_id=170829900]
-position = Vector2(19600, 210)
-collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 150.0
-depth = 85.0
+[node name="Diamond7_1" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(7879.5, 492)
+kind = "crystal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretAlcoveReturnMiddle" unique_id=1929209825]
-position = Vector2(75, 35)
-shape = SubResource("SecretAlcoveReturnMiddle_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="SecretAlcoveReturnTop" type="AnimatableBody2D" parent="." unique_id=350441456]
-position = Vector2(19460, 110)
-collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 150.0
-depth = 85.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretAlcoveReturnTop" unique_id=505577014]
-position = Vector2(75, 35)
-shape = SubResource("SecretAlcoveReturnTop_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="SecretAlcoveIvy" type="Node2D" parent="." unique_id=1638822515]
-z_index = 2
-position = Vector2(20020, 184)
-script = ExtResource("object")
-kind = "piece_VinesShort"
-scale = Vector2(0.75, 0.75)
-
-[node name="GardenBridgeApproach" type="AnimatableBody2D" parent="." unique_id=1382965364]
-position = Vector2(21340, 20)
-collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 1160.0
-depth = 85.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GardenBridgeApproach" unique_id=653283752]
-position = Vector2(580, 35)
-shape = SubResource("GardenBridgeApproach_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="GardenBridgePlate" type="Node2D" parent="." unique_id=1558308836]
-z_index = 1
-position = Vector2(22320, 20)
-script = ExtResource("switch")
-targets = Array[NodePath]([NodePath("../GardenDrawbridge")])
-latch = false
-release_grace = 8.0
-plate_width = 112.0
-
-[node name="GardenDrawbridge" type="AnimatableBody2D" parent="." unique_id=35974356]
-texture_filter = 4
-material = SubResource("ShaderMaterial_rle8x")
-position = Vector2(22500, 20)
-collision_mask = 0
-script = ExtResource("drawbridge")
-power_source = NodePath("../GardenBridgePlate")
-
-[node name="GardenBridgeHint" type="Marker2D" parent="." unique_id=1779296293]
-position = Vector2(22160, -55)
-script = ExtResource("hint")
-title = "Most do zahrad"
-message = "Stoupni na desku a přeběhni most. Na druhém břehu se zajistí."
-activation_size = Vector2(450, 260)
-display_seconds = 5.0
-
-[node name="MoatCatchwalk" type="AnimatableBody2D" parent="." unique_id=1964976665]
-position = Vector2(22400, 520)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 1100.0
-depth = 150.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoatCatchwalk" unique_id=56434012]
-position = Vector2(550, 67.5)
-shape = SubResource("MoatCatchwalk_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="MoatReturnStep1" type="AnimatableBody2D" parent="." unique_id=1705801136]
-position = Vector2(22260, 410)
-collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 180.0
-depth = 85.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoatReturnStep1" unique_id=1943416381]
-position = Vector2(90, 35)
-shape = SubResource("MoatReturnStep1_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="MoatReturnStep2" type="AnimatableBody2D" parent="." unique_id=1334931587]
-position = Vector2(22120, 300)
-collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 180.0
-depth = 85.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoatReturnStep2" unique_id=933709778]
-position = Vector2(90, 35)
-shape = SubResource("MoatReturnStep2_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="MoatReturnStep3" type="AnimatableBody2D" parent="." unique_id=1540460790]
-position = Vector2(21980, 190)
-collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 180.0
-depth = 85.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoatReturnStep3" unique_id=1175201035]
-position = Vector2(90, 35)
-shape = SubResource("MoatReturnStep3_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="MoatReturnStep4" type="AnimatableBody2D" parent="." unique_id=990271910]
-position = Vector2(21840, 90)
-collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 180.0
-depth = 85.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoatReturnStep4" unique_id=764917016]
-position = Vector2(90, 35)
-shape = SubResource("MoatReturnStep4_shape")
-one_way_collision = true
-one_way_collision_margin = 6.0
-
-[node name="GardenGateBank" type="AnimatableBody2D" parent="." unique_id=1705848499]
-position = Vector2(23500, 20)
-collision_mask = 0
-script = ExtResource("stone")
-wall_body = true
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 1700.0
-depth = 1050.0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GardenGateBank" unique_id=1375484386]
-position = Vector2(850, 517.5)
-shape = SubResource("GardenGateBank_shape")
-one_way_collision_margin = 6.0
-
-[node name="RoyalStar" type="Node2D" parent="." unique_id=750166845]
-position = Vector2(24420, -28)
-script = ExtResource("object")
+[node name="QuestStar" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(7770, 482)
 kind = "star_key"
 
-[node name="GardenGate" type="Node2D" parent="." unique_id=1705689876]
-position = Vector2(24940, 20)
-script = ExtResource("object")
+[node name="Gate" type="Node2D" parent="."]
+script = ExtResource("5")
+position = Vector2(8045, 550)
 kind = "goal"
 
-[node name="Diamond11" type="Node2D" parent="." unique_id=202661916]
-position = Vector2(19040, -110)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="Diamond12" type="Node2D" parent="." unique_id=449748336]
-position = Vector2(20450, 40)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="Diamond13" type="Node2D" parent="." unique_id=1915893372]
-position = Vector2(21720, -20)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="Diamond14" type="Node2D" parent="." unique_id=163671928]
-position = Vector2(23920, -20)
-script = ExtResource("object")
-metadata/route = "main"
-
-[node name="Diamond20" type="Node2D" parent="." unique_id=711186868]
-position = Vector2(20010, 390)
-script = ExtResource("object")
-metadata/route = "secret"
-
-[node name="Diamond21" type="Node2D" parent="." unique_id=1497086675]
-position = Vector2(20320, 390)
-script = ExtResource("object")
-metadata/route = "secret"
-
-[node name="Diamond22" type="Node2D" parent="." unique_id=1373965446]
-position = Vector2(20630, 390)
-script = ExtResource("object")
-metadata/route = "secret"
-
-[node name="FragileA3" type="AnimatableBody2D" parent="." unique_id=1646556664]
-position = Vector2(9523, -11)
-collision_mask = 0
-script = ExtResource("crumble")
-surface_art = "wood"
-style = "bridge"
-width = 175.0
-depth = 55.0
-period = 4.5
-crumble_delay = 1.7
-metadata/route = "main"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FragileA3" unique_id=664281331]
-position = Vector2(87.5, 20)
-shape = SubResource("RectangleShape2D_xre7u")
-one_way_collision = true
-
-[node name="FragileA4" type="AnimatableBody2D" parent="." unique_id=1174305267]
-position = Vector2(9250, 130)
-collision_mask = 0
-script = ExtResource("rest_platform")
-surface_art = "wood"
-style = "bridge"
-width = 175.0
-depth = 55.0
-period = 4.5
-metadata/route = "main"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FragileA4" unique_id=1003921550]
-position = Vector2(87.5, 20)
-shape = SubResource("RectangleShape2D_xre7u")
-one_way_collision = true
-
-[node name="FragileA5" type="AnimatableBody2D" parent="." unique_id=306471049]
-position = Vector2(9843, -131)
-collision_mask = 0
-script = ExtResource("crumble")
-surface_art = "wood"
-style = "bridge"
-width = 175.0
-depth = 55.0
-period = 4.5
-crumble_delay = 1.7
-metadata/route = "main"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FragileA5" unique_id=924057457]
-position = Vector2(87.5, 20)
-shape = SubResource("RectangleShape2D_xre7u")
-one_way_collision = true
-
-[node name="FragileA6" type="AnimatableBody2D" parent="." unique_id=432217352]
-position = Vector2(9523, -285)
-collision_mask = 0
-script = ExtResource("crumble")
-surface_art = "wood"
-style = "bridge"
-width = 175.0
-depth = 55.0
-period = 4.5
-crumble_delay = 1.7
-metadata/route = "main"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FragileA6" unique_id=1430426246]
-position = Vector2(88, 18)
-shape = SubResource("RectangleShape2D_xre7u")
-one_way_collision = true
-
-[node name="RainHopA1" type="AnimatableBody2D" parent="." unique_id=138997679]
-material = SubResource("ShaderMaterial_ti0ur")
-position = Vector2(11867, 118)
-collision_mask = 0
-script = ExtResource("cloudstep")
-width = 230.0
-behaviour = "pulse"
-period = 3.8
-art_variant = 2
-
-[node name="Diamond_06" type="Node2D" parent="RainHopA1" unique_id=718967093]
-position = Vector2(105, -48)
-script = ExtResource("object")
-
-[node name="MirrorClimbCheckpoint" type="Node2D" parent="."]
-position = Vector2(9070, 282)
-script = ExtResource("object")
-kind = "checkpoint"
-
-[node name="AlcoveStoneBack" type="Node2D" parent="."]
-position = Vector2(19840, 150)
-script = ExtResource("alcove_back")
-size = Vector2(900, 280)
-
-[node name="AlcoveSpring" parent="." instance=ExtResource("alcove_spring")]
-position = Vector2(19915, 430)
-
-[node name="AlcoveCamera" type="Node2D" parent="."]
-position = Vector2(20300, 165)
-script = ExtResource("camera")
-area_size = Vector2(1120, 120)
-look_offset = Vector2(0, 150)
-priority = 2
-
-[node name="MirrorAscentCamera" type="Node2D" parent="."]
-position = Vector2(9630, -40)
-script = ExtResource("camera")
-area_size = Vector2(900, 680)
-look_offset = Vector2(65, -100)
-priority = 2
-
-[node name="GalleryWorkLantern" type="Node2D" parent="."]
-position = Vector2(1995, 1028)
-script = ExtResource("object")
-kind = "lantern"
-z_index = -1
-
-[node name="LookoutLantern" type="Node2D" parent="."]
-position = Vector2(5140, 170)
-script = ExtResource("object")
-kind = "lantern"
-z_index = -1
-scale = Vector2(0.8, 0.8)
-
-[node name="AlcoveLantern" type="Node2D" parent="."]
-position = Vector2(20500, 430)
-script = ExtResource("object")
-kind = "lantern"
-z_index = -1
-scale = Vector2(0.8, 0.8)
-
-[node name="FerryCascade" type="Node2D" parent="."]
-position = Vector2(14055, 155)
-script = ExtResource("water_detail")
-kind = "waterfall"
-size = Vector2(90, 640)
-
-[node name="FerryLowerWater" type="Node2D" parent="."]
+[node name="Windmill0" type="Sprite2D" parent="."]
+texture = ExtResource("6")
+position = Vector2(910, 415)
+scale = Vector2(0.24, 0.24)
 z_index = -2
-position = Vector2(14040, 790)
-script = ExtResource("pool_detail")
-width = 1160.0
-depth = 780.0
-wave_height = 75.0
 
-[node name="ArrivalForegroundLeaves" type="Node2D" parent="."]
-position = Vector2(100, 569)
-script = ExtResource("object")
-kind = "piece_LeavesSmall"
-z_index = 3
-scale = Vector2(0.65, 0.65)
+[node name="Windmill4" type="Sprite2D" parent="."]
+texture = ExtResource("6")
+position = Vector2(5700, 415)
+scale = Vector2(0.24, 0.24)
+z_index = -2
 
-[node name="CourtyardForegroundLeaves" type="Node2D" parent="."]
-position = Vector2(3960, 329)
-script = ExtResource("object")
-kind = "piece_LeavesSmall"
-z_index = 3
-scale = Vector2(0.6, 0.6)
-
-[node name="AlcoveForegroundLeaves" type="Node2D" parent="."]
-position = Vector2(20695, 451)
-script = ExtResource("object")
-kind = "piece_LeavesSmall"
-z_index = 3
-scale = Vector2(0.6, 0.6)
-
-[node name="GardenForegroundLeaves" type="Node2D" parent="."]
-position = Vector2(24120, 41)
-script = ExtResource("object")
-kind = "piece_LeavesSmall"
-z_index = 3
-scale = Vector2(0.65, 0.65)
-
-
-[node name="GallerySealStep" type="AnimatableBody2D" parent="."]
-position = Vector2(7120, 220)
+[node name="SecretStep" type="AnimatableBody2D" parent="."]
+script = ExtResource("7")
+position = Vector2(430, 445)
+width = 160.0
+depth = 35.0
 collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 170.0
-depth = 85.0
+surface_texture = ExtResource("8")
+surface_height = 100.0
+surface_walk_y = 29.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GallerySealStep"]
-position = Vector2(85, 35)
-shape = SubResource("SealStep_shape")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretStep"]
+shape = SubResource("Shape8")
+position = Vector2(80.0, 10.0)
 one_way_collision = true
-one_way_collision_margin = 6.0
 
-[node name="GallerySealBalcony" type="AnimatableBody2D" parent="."]
-position = Vector2(7350, 90)
+[node name="SecretLanding" type="AnimatableBody2D" parent="."]
+script = ExtResource("7")
+position = Vector2(645, 340)
+width = 220.0
+depth = 35.0
 collision_mask = 0
-script = ExtResource("stone")
-surface_texture = SubResource("royal8_platform")
-surface_walk_y = 67.0
-width = 170.0
-depth = 85.0
+surface_texture = ExtResource("8")
+surface_height = 100.0
+surface_walk_y = 29.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GallerySealBalcony"]
-position = Vector2(85, 35)
-shape = SubResource("SealStep_shape")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretLanding"]
+shape = SubResource("Shape9")
+position = Vector2(110.0, 10.0)
 one_way_collision = true
-one_way_collision_margin = 6.0
 
-[node name="GalleryLowerPlate" type="Node2D" parent="."]
-position = Vector2(7050, 350)
-script = ExtResource("switch")
-plate_width = 110.0
+[node name="SecretEntrance" type="Node2D" parent="."]
+script = ExtResource("9")
+position = Vector2(710, 340)
+room_path = NodePath("../BonusRoom")
+room_title = "Větrný archiv"
 
-[node name="GalleryUpperPlate" type="Node2D" parent="."]
-position = Vector2(7435, 90)
-script = ExtResource("switch")
-plate_width = 110.0
+[node name="BonusRoom" type="Node2D" parent="."]
+script = ExtResource("10")
+position = Vector2(0, -2400)
+room_title = "Větrný archiv"
+room_width = 3080.0
+chamber_style = "sky"
+challenge_hint = "Načasuj skoky na malé plošiny."
 
-[node name="GalleryPairSeal" type="StaticBody2D" parent="."]
-position = Vector2(7585, 482)
-script = ExtResource("lock")
-sources = Array[NodePath]([NodePath("../GalleryLowerPlate"), NodePath("../GalleryUpperPlate")])
-gate_size = Vector2(64, 860)
-palette = Color(0.66, 0.48, 0.89, 1)
+[node name="BonusPlatform0" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("7")
+position = Vector2(0, 550)
+width = 420.0
+depth = 95.0
+collision_mask = 0
+surface_texture = ExtResource("8")
+surface_height = 100.0
+surface_walk_y = 29.0
 
-[node name="GalleryPairHint" type="Marker2D" parent="."]
-position = Vector2(7010, 255)
-script = ExtResource("hint")
-title = "Dvě destičky"
-message = "Rozsviť obě destičky. Jedna je dole, druhá nahoře. Pečeť pak zůstane otevřená."
-activation_size = Vector2(360, 240)
-display_seconds = 5.5
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform0"]
+shape = SubResource("Shape10")
+position = Vector2(210.0, 40.0)
 
-[node name="GallerySealDiamond" type="Node2D" parent="."]
-position = Vector2(7205, 180)
-script = ExtResource("object")
-metadata/route = "main"
+[node name="BonusPlatform1" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("11")
+position = Vector2(610, 460)
+width = 140.0
+depth = 95.0
+collision_mask = 0
+surface_art = "stone"
+travel = Vector2(0, -50)
+period = 3.8
 
-[node name="GallerySealLantern" type="Node2D" parent="."]
-position = Vector2(7480, 90)
-script = ExtResource("object")
-kind = "lantern"
-z_index = -1
-scale = Vector2(0.65, 0.65)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform1"]
+shape = SubResource("Shape11")
+position = Vector2(70.0, 40.0)
 
-[node name="CourtyardPlanterDetail" parent="." instance=ExtResource("hf_detail_RoyalPlanter")]
-position = Vector2(9520, 282)
+[node name="BonusGem1_0" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(652, 408)
+kind = "crystal"
 
-[node name="CourtyardRailDetail" parent="." instance=ExtResource("hf_detail_RoyalBalustrade")]
-position = Vector2(7805, 482)
+[node name="BonusGem1_1" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(700, 408)
+kind = "crystal"
+
+[node name="BonusPlatform2" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("7")
+position = Vector2(990, 380)
+width = 140.0
+depth = 95.0
+collision_mask = 0
+surface_texture = ExtResource("8")
+surface_height = 100.0
+surface_walk_y = 29.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform2"]
+shape = SubResource("Shape12")
+position = Vector2(70.0, 40.0)
+
+[node name="BonusGem2_0" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(1032, 328)
+kind = "crystal"
+
+[node name="BonusGem2_1" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(1080, 328)
+kind = "crystal"
+
+[node name="BonusPlatform3" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("12")
+position = Vector2(1370, 455)
+width = 140.0
+depth = 95.0
+collision_mask = 0
+surface_art = "wood"
+crumble_delay = 0.8
+return_delay = 2.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform3"]
+shape = SubResource("Shape13")
+position = Vector2(70.0, 40.0)
+
+[node name="BonusGem3_0" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(1412, 403)
+kind = "crystal"
+
+[node name="BonusGem3_1" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(1460, 403)
+kind = "crystal"
+
+[node name="BonusPlatform4" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("11")
+position = Vector2(1760, 410)
+width = 145.0
+depth = 95.0
+collision_mask = 0
+surface_art = "stone"
+travel = Vector2(0, -50)
+period = 3.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform4"]
+shape = SubResource("Shape14")
+position = Vector2(72.5, 40.0)
+
+[node name="BonusGem4_0" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(1804, 358)
+kind = "crystal"
+
+[node name="BonusGem4_1" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(1853, 358)
+kind = "crystal"
+
+[node name="BonusPlatform5" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("12")
+position = Vector2(2150, 445)
+width = 140.0
+depth = 95.0
+collision_mask = 0
+surface_art = "wood"
+crumble_delay = 0.8
+return_delay = 2.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform5"]
+shape = SubResource("Shape15")
+position = Vector2(70.0, 40.0)
+
+[node name="BonusGem5_0" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(2192, 393)
+kind = "crystal"
+
+[node name="BonusGem5_1" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(2240, 393)
+kind = "crystal"
+
+[node name="BonusPlatform6" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("7")
+position = Vector2(2530, 530)
+width = 550.0
+depth = 95.0
+collision_mask = 0
+surface_texture = ExtResource("8")
+surface_height = 100.0
+surface_walk_y = 29.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform6"]
+shape = SubResource("Shape16")
+position = Vector2(275.0, 40.0)
+
+[node name="BonusGem6_0" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(2600, 478)
+kind = "crystal"
+
+[node name="BonusGem6_1" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(2705, 478)
+kind = "crystal"
+
+[node name="BonusGem6_2" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(2810, 478)
+kind = "crystal"
+
+[node name="BonusGem6_3" type="Node2D" parent="BonusRoom"]
+script = ExtResource("5")
+position = Vector2(2915, 478)
+kind = "crystal"
+
+[node name="ReturnAtStart" type="Node2D" parent="BonusRoom"]
+script = ExtResource("9")
+position = Vector2(90, 550)
+return_door = true
+room_path = NodePath("..")
+
+[node name="ReturnAtEnd" type="Node2D" parent="BonusRoom"]
+script = ExtResource("9")
+position = Vector2(3005, 530)
+return_door = true
+room_path = NodePath("..")
+
+[node name="OuterWind" type="Node2D" parent="."]
+script = ExtResource("13")
+position = Vector2(2800, 500)
+action = "repair"
+completion_flag = "outer_wind"
+caption = "Obnovit přívod větru"
+picture = ExtResource("14")
+picture_height = 135.0
+duration = 1.4
+aftermath = ""
+
+[node name="LastWindGate" type="Node2D" parent="."]
+script = ExtResource("13")
+position = Vector2(5190, 550)
+action = "repair"
+completion_flag = "wind_gate"
+caption = "Opravit poslední větrnou bránu"
+picture = ExtResource("15")
+picture_height = 135.0
+duration = 1.4
+aftermath = ""
+required_flag = "outer_wind"
+locked_caption = "Nejdřív obnov předchozí část cesty."
+
+[node name="ZipAtGate" type="Sprite2D" parent="."]
+texture = ExtResource("16")
+position = Vector2(5260, 455)
+scale = Vector2(0.3, 0.3)
+z_index = -2
+visible = false
+
+[node name="AloneHint" type="Marker2D" parent="."]
+script = ExtResource("17")
+position = Vector2(5700, 550)
+title = "Znovu po svých"
+message = "Zip zůstává u brány. Dál stačí obyčejný skok."
+

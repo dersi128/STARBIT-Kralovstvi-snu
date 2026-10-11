@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/forest/lantern_post.png" id="tex"]
+
+
+[node name="LanternPost" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-78.92157, -226.72014)
+scale = Vector2(0.40998, 0.40998)

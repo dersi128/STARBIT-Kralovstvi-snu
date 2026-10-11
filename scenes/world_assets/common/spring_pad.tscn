@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/common/spring_pad.png" id="tex"]
+
+
+[node name="SpringPad" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-35.76450, -108.45343)
+scale = Vector2(0.19332, 0.19332)

@@ -3,7 +3,7 @@ extends Node2D
 ## Grounded royal cage. Reuses the palace frame and the original Jiskra art.
 const FRAME = preload("res://assets/environment/castle/expansion/level10_atlas.png")
 const JISKRA = preload("res://assets/shared/pieces/jiskra.png")
-const MESSAGE := "Bite, dokázal jsi to! Temnota mě tu uvěznila. Díky tobě může Království snů zase zářit. Pojďme domů!"
+const MESSAGE := "Bite… našel jsi mě! Děkuji. Ale poslouchej — Srdce stále slábne. Musím ti něco ukázat."
 var kind := "jiskra"
 var rescued := false
 var state := "locked"
@@ -22,7 +22,7 @@ func _process(delta:float) -> void:
 	var player = level.player
 	var boss = level.get_node_or_null("Boss")
 	var game = get_tree().get_first_node_in_group("game")
-	ready_to_unlock = boss != null and boss.defeated and boss.dialogue_completed and level.star_collected
+	ready_to_unlock = level.star_collected and ((boss != null and boss.defeated and boss.dialogue_completed) or (boss == null and level.has_method("objectives_complete") and level.objectives_complete()))
 	if game == null or player == null or game.mode != "play":return
 	if state == "locked" and ready_to_unlock and player.is_on_floor():
 		var distance:Vector2 = player.global_position - global_position
@@ -49,6 +49,7 @@ func finish_rescue() -> void:
 	level.set_checkpoint(global_position + Vector2(-135, 0))
 	Progress.sfx("checkpoint")
 	queue_redraw()
+	get_tree().call_group("game", "begin_chapter_cinematic")
 
 func reset_interrupted_rescue() -> void:
 	if rescued:return

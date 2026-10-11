@@ -3,6 +3,7 @@ const SFX_BANK_PATH := "res://scripts/starbit_sfx.gd"
 # Extra gain for all effects; music keeps its own volume. More negative = quieter.
 const SFX_VOLUME_DB := -8.0
 const LEVEL_COUNT := 10
+var save_path := "user://dreambit.cfg"
 var unlocked := 1
 var muted := false
 var music_volume := 1.0
@@ -26,7 +27,7 @@ func _ready() -> void:
  # Warm the effects at game startup, after Godot has imported new audio files.
  _sfx_effects=load(SFX_BANK_PATH).EFFECTS
  var c := ConfigFile.new()
- if c.load("user://dreambit.cfg") == OK:
+ if c.load(save_path) == OK:
   unlocked = clampi(int(c.get_value("save", "unlocked", 1)), 1, 10)
   muted = bool(c.get_value("save", "muted", false))
   music_volume = clampf(float(c.get_value("audio", "music", 1.0)), 0.0, 1.0)
@@ -63,13 +64,13 @@ func set_audio_volume(channel: String, value: float) -> void:
 
 func save() -> void:
  var c := ConfigFile.new()
- c.load("user://dreambit.cfg")
+ c.load(save_path)
  c.set_value("save", "unlocked", unlocked)
  c.set_value("save", "muted", muted)
  c.set_value("save", "level_stars", level_stars)
  c.set_value("audio", "music", music_volume)
  c.set_value("audio", "effects", effects_volume)
- c.save("user://dreambit.cfg")
+ c.save(save_path)
 func stars_for_run(diamonds:int,total:int) -> int:
  # A level without diamonds awards completion only. Half must be exceeded.
  if total <= 0:return 1

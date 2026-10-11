@@ -20,6 +20,8 @@ var gold := 0
 var crystals:=0
 var total_crystals:=0
 var run_finished:=false
+var chapter_result:Dictionary={}
+var cinematic_view:Control
 var preview_scene_path:=""
 var current_scene_path:=""
 var mode := "menu"
@@ -44,7 +46,7 @@ var speech_voice:="voice_mole"
 var hero:TextureRect
 var mole_dialogue:Control
 var dialogue_session:=0
-const TITLES=["Probuzení pod kořeny", "Mezi kořeny", "Světélka vesničky", "Nad střechami", "Brúčounova svatyně", "První ostrovy", "Vodopády v oblacích", "Nádvoří před branami", "Královské zahrady", "V srdci hradu"]
+const TITLES=["Probuzení pod kořeny", "Les, který zabloudil", "Ztichlá vesnice", "Medvědí stezka", "Brúčounova brána", "První kroky v oblacích", "Roztržené nebe", "Poslední větrná brána", "Hrad bez světel", "Jiskřino vězení"]
 const LEVEL_COUNT=10
 func _ready() -> void:
  get_tree().quit_on_go_back=false
@@ -189,7 +191,7 @@ func credits() -> void:
  mode="credits"
  var v:=centered_panel("Velora")
  background()
- var l:=Label.new();l.text="STARBIT · Království snů\nBit, Jiskra, Fouk a jejich dobrodružství.\nVytvořeno podle dodaných výtvarných předloh.";l.add_theme_color_override("font_color",Color("143458"));l.add_theme_font_size_override("font_size",20);v.add_child(l)
+ var l:=Label.new();l.text="STARBIT · Království snů\nBit, Jiskra, Zip a jejich dobrodružství.\nVytvořeno podle dodaných výtvarných předloh.";l.add_theme_color_override("font_color",Color("143458"));l.add_theme_font_size_override("font_size",20);v.add_child(l)
  v.add_child(button("Zpět",settings,Color("f6abc9")))
 func rewards() -> void:
  mode="rewards";release_input()
@@ -241,6 +243,8 @@ func start_level(n:int,custom_scene:String="") -> void:
  await get_tree().process_frame
  current=n;screws=0;gold=0;crystals=0;total_crystals=0;run_finished=false
  current_scene_path=path
+ chapter_result={}
+ cinematic_view=null
  level=packed.instantiate()
  level.process_mode=Node.PROCESS_MODE_DISABLED
  add_child(level)
@@ -316,7 +320,7 @@ func enter_portal() -> void:
  call_deferred("_show_level_result")
 func _show_level_result() -> void:
  if mode!="transition":return
- var result:Dictionary=Progress.record_level_result(current,crystals,total_crystals)
+ var result:Dictionary=chapter_result if not chapter_result.is_empty() else Progress.record_level_result(current,crystals,total_crystals)
  mode="result";Progress.silence();Progress.play_music("victory")
  clear_ui()
  var view:=DREAM_SCREENS.new();screen.add_child(view)
@@ -392,7 +396,7 @@ func begin_jiskra_rescue_dialogue(source:Node2D) -> bool:
  var portrait:=SpriteFrames.new()
  portrait.add_frame("default",preload("res://scripts/art.gd").texture("jiskra"))
  portrait.rename_animation("default","idle")
- _begin_story_dialogue(source,source.MESSAGE,"Jiskra",portrait,null,"Společně domů!",Callable(source,"finish_rescue"))
+ _begin_story_dialogue(source,source.MESSAGE,"Jiskra",portrait,null,"Co se děje se Srdcem?",Callable(source,"finish_rescue"))
  return true
 
 func begin_guardian_dialogue(source:Node2D) -> bool:
@@ -467,3 +471,32 @@ func _notification(what:int) -> void:
    if mode=="pause":resume()
    elif mode=="credits":settings()
    elif mode in ["rewards","settings","selection"]:menu()
+
+func show_chapter_message(speaker_label:String,message:String,art:String="idle") -> void:
+ if mode!="play" or not is_instance_valid(level):return
+ var portrait:=SpriteFrames.new()
+ portrait.add_frame("default",DreamArt.texture(art))
+ portrait.rename_animation("default","idle")
+ _begin_story_dialogue(level,message,speaker_label,portrait,null,"Pokračovat")
+
+func begin_chapter_cinematic() -> void:
+ if mode!="play" or current!=10 or not is_instance_valid(level):return
+ mode="cinematic"
+ release_input()
+ level.process_mode=Node.PROCESS_MODE_DISABLED
+ level.player.frozen=true
+ touch.hide()
+ # Store completion before the movie so closing the app cannot lose the rescue.
+ chapter_result=Progress.record_level_result(current,crystals,total_crystals)
+ cinematic_view=load("res://scripts/chapter_cinematic.gd").new()
+ screen.add_child(cinematic_view)
+ cinematic_view.finished.connect(func():
+  if mode!="cinematic":return
+  cinematic_view.queue_free()
+  cinematic_view=null
+  mode="play"
+  level.process_mode=Node.PROCESS_MODE_INHERIT
+  level.player.frozen=false
+  release_input()
+  enter_portal()
+ ,CONNECT_ONE_SHOT)

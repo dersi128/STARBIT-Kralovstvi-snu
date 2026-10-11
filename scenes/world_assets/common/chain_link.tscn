@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/common/chain_link.png" id="tex"]
+
+
+[node name="ChainLink" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-17.58883, -108.51100)
+scale = Vector2(0.18613, 0.18613)

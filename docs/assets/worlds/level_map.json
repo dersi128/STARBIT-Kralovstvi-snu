@@ -1,0 +1,212 @@
+[
+  {
+    "level": 1,
+    "title": "Probuzení pod kořeny",
+    "biome": "forest",
+    "key_assets": "root_workshop,root_arch,repair_socket,common/gear",
+    "purpose": "Dílna, první sběr součástky a oprava."
+  },
+  {
+    "level": 2,
+    "title": "Les, který zabloudil",
+    "biome": "forest",
+    "key_assets": "signpost,root_vine,hazard,pressure_plate",
+    "purpose": "Rozcestí, falešné cesty a první stíny."
+  },
+  {
+    "level": 3,
+    "title": "Ztichlá vesnice",
+    "biome": "village",
+    "key_assets": "cottage,lantern_post,repair_socket",
+    "purpose": "Znovurozsvícení vesnice."
+  },
+  {
+    "level": 4,
+    "title": "Medvědí stezka",
+    "biome": "village",
+    "key_assets": "watchtower,guardian_marker,crumble_platform",
+    "purpose": "Opuštěná stanoviště strážců."
+  },
+  {
+    "level": 5,
+    "title": "Brúčounova brána",
+    "biome": "village",
+    "key_assets": "guardian_arch,gate,guardian_marker",
+    "purpose": "Aréna a odemknutí cesty k obloze."
+  },
+  {
+    "level": 6,
+    "title": "První kroky v oblacích",
+    "biome": "sky",
+    "key_assets": "Lift,cloud_island,windmill,common/wind_rotor",
+    "purpose": "Pohyblivé ostrovy a Zipův dvojskok."
+  },
+  {
+    "level": 7,
+    "title": "Roztržené nebe",
+    "biome": "sky",
+    "key_assets": "sky_cottage,crumble_platform,bell_tower",
+    "purpose": "Rozpadající se ostrovy a evakuace."
+  },
+  {
+    "level": 8,
+    "title": "Poslední větrná brána",
+    "biome": "sky",
+    "key_assets": "wind_arch,repair_socket,story/wind_core",
+    "purpose": "Větrný mechanismus a rozloučení se Zipem."
+  },
+  {
+    "level": 9,
+    "title": "Hrad bez světel",
+    "biome": "castle",
+    "key_assets": "royal_arch,Lift,gate,common/lever_base",
+    "purpose": "Rozbité průchody; odtud běžný skok bez Zipa."
+  },
+  {
+    "level": 10,
+    "title": "Jiskřino vězení",
+    "biome": "castle",
+    "key_assets": "prison_cage,common/shadow_lock,portal_frame,story/essence_lantern",
+    "purpose": "Vysvobození Jiskry a předání lucerny."
+  },
+  {
+    "level": 11,
+    "title": "Zahrady obrů",
+    "biome": "garden",
+    "key_assets": "giant_flower,dew_leaf,leaf_arch",
+    "purpose": "Velké rostliny a kapky rosy."
+  },
+  {
+    "level": 12,
+    "title": "Ukradená řeka",
+    "biome": "garden",
+    "key_assets": "reservoir,irrigation_pipe,repair_socket,common/valve_wheel",
+    "purpose": "Obnovení ukradeného toku vody."
+  },
+  {
+    "level": 13,
+    "title": "Kořeny v zajetí",
+    "biome": "garden",
+    "key_assets": "root_bundle,thorn_vine,hazard",
+    "purpose": "Podzemní kořeny; pozadí root_depths."
+  },
+  {
+    "level": 14,
+    "title": "Poslední semínko",
+    "biome": "garden",
+    "key_assets": "seed_bed,story/last_seed,garden_shrine",
+    "purpose": "Záchrana a zasazení semínka."
+  },
+  {
+    "level": 15,
+    "title": "Trnový obr",
+    "biome": "garden",
+    "key_assets": "thorn_vine,garden_shrine,story/life_drop",
+    "purpose": "Aréna zahradního strážce a Kapka života."
+  },
+  {
+    "level": 16,
+    "title": "Řeka pod světem",
+    "biome": "memory",
+    "key_assets": "river_stone,glowing_reeds,water_lily",
+    "purpose": "Podzemní řeka vzpomínek."
+  },
+  {
+    "level": 17,
+    "title": "Zrcadlové břehy",
+    "biome": "memory",
+    "key_assets": "reflection_frame,mirror_gate,crystal_cluster",
+    "purpose": "Pravé a falešné odrazy."
+  },
+  {
+    "level": 18,
+    "title": "Falešný návrat",
+    "biome": "memory",
+    "key_assets": "mirror_gate,castle/royal_arch,castle/mirror",
+    "purpose": "Iluze návratu do hradu."
+  },
+  {
+    "level": 19,
+    "title": "Čaroděj před vyhnáním",
+    "biome": "memory",
+    "key_assets": "memory_obelisk,ruined_arch,memory_fountain",
+    "purpose": "Vzpomínka na Morousovu minulost."
+  },
+  {
+    "level": 20,
+    "title": "Strážce zrcadel",
+    "biome": "memory",
+    "key_assets": "mirror_gate,repair_socket,story/memory_pearl",
+    "purpose": "Aréna a Perla vzpomínek."
+  },
+  {
+    "level": 21,
+    "title": "Hory zhaslých hvězd",
+    "biome": "stars",
+    "key_assets": "alpine_rock,pine,Lift",
+    "purpose": "Výstup do hvězdných hor."
+  },
+  {
+    "level": 22,
+    "title": "Vesnice prázdných luceren",
+    "biome": "stars",
+    "key_assets": "lantern_house,star_lamp,empty_lanterns",
+    "purpose": "Oprava světel a bezpečné cesty."
+  },
+  {
+    "level": 23,
+    "title": "Opuštěná hvězdárna",
+    "biome": "stars",
+    "key_assets": "observatory,telescope,constellation_table,repair_socket",
+    "purpose": "Oprava hvězdárny."
+  },
+  {
+    "level": 24,
+    "title": "Světlo pro druhé",
+    "biome": "stars",
+    "key_assets": "lantern_house,star_lamp,common/checkpoint_lantern",
+    "purpose": "Ochrana vesnice a obnovená naděje."
+  },
+  {
+    "level": 25,
+    "title": "Požírač hvězd",
+    "biome": "stars",
+    "key_assets": "star_shrine,empty_lanterns,story/hope_star",
+    "purpose": "Obrana vesnice a Hvězda naděje."
+  },
+  {
+    "level": 26,
+    "title": "Návrat do temnoty",
+    "biome": "heart",
+    "key_assets": "shadow_root,village/cottage,light_beacon",
+    "purpose": "Pozadí shadow_kingdom; zachráněná světla dál svítí."
+  },
+  {
+    "level": 27,
+    "title": "Cesta pod hradem",
+    "biome": "heart",
+    "key_assets": "service_hatch,root_arch,Lift",
+    "purpose": "Starý servisní vstup pod hradem."
+  },
+  {
+    "level": 28,
+    "title": "Morous",
+    "biome": "heart",
+    "key_assets": "heart_altar,root_arch,gate",
+    "purpose": "První osobní setkání s Morousem."
+  },
+  {
+    "level": 29,
+    "title": "Temné kořeny",
+    "biome": "heart",
+    "key_assets": "magic_conduit,repair_socket,root_knot",
+    "purpose": "Obnovení čistých přívodů magie."
+  },
+  {
+    "level": 30,
+    "title": "Srdce království",
+    "biome": "heart",
+    "key_assets": "heart_pedestal,heart_altar,story/heart_core,story/life_drop,story/memory_pearl,story/hope_star",
+    "purpose": "Aktivace tří esencí a uzdravení Srdce."
+  }
+]

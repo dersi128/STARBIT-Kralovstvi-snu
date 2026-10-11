@@ -11,7 +11,7 @@ const LOCK = preload("res://assets/ui/menu/ratings/lock.svg")
 const DIAMOND = preload("res://assets/environment/worldkit/crystal.tres")
 const DESIGN_SIZE = Vector2(1280, 720)
 const BACKGROUNDS = ["forest", "forest", "village", "village", "guardian", "distant_castle", "distant_castle", "near_castle", "near_castle", "castle_court"]
-const REGIONS = ["Kouzelný les a vesnička", "Cesta do Království snů"]
+const REGIONS = ["Cesta za Jiskrou", "Oblaka a hrad"]
 
 var canvas: Control
 var busy := false
@@ -95,7 +95,7 @@ func show_result(number: int, title: String, diamonds: int, total: int, result: 
 	actions = callbacks
 	_base()
 	_panel(canvas, Rect2(366, 230, 548, 400), Color("fff8e3"))
-	_text(canvas, "Level dokončen!", Rect2(392, 242, 496, 44), 36, true)
+	_text(canvas, "První kapitola dokončena!" if number == 10 else "Level dokončen!", Rect2(392, 242, 496, 44), 30 if number == 10 else 36, true)
 	_text(canvas, "%d · %s" % [number, title], Rect2(390, 289, 500, 34), 22)
 	var earned: int = result.get("earned", 1)
 	var stars := _star_row(canvas, 0, Vector2(488, 334), 88, 20)

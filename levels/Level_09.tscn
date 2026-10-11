@@ -1,3097 +1,574 @@
-[gd_scene load_steps=107 format=3]
+[gd_scene format=3]
 
-[ext_resource type="Script" path="res://scripts/garden_restore.gd" id="level"]
+[ext_resource type="Script" path="res://scripts/chapter_level.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/story_background.gd" id="2"]
+[ext_resource type="Script" path="res://scripts/morous_darkness.gd" id="3"]
+[ext_resource type="Script" path="res://scripts/castle_platform.gd" id="4"]
+[ext_resource type="Texture2D" path="res://assets/environment/forest/higgsfield/stone_lip.tres" id="5"]
+[ext_resource type="Script" path="res://scripts/object.gd" id="6"]
+[ext_resource type="Texture2D" path="res://assets/shared/pieces/arch.png" id="7"]
+[ext_resource type="Script" path="res://scripts/secret_door.gd" id="8"]
+[ext_resource type="Script" path="res://scripts/bonus_room.gd" id="9"]
+[ext_resource type="Script" path="res://scripts/crumble_platform.gd" id="10"]
+[ext_resource type="Script" path="res://scripts/dream_platform.gd" id="11"]
+[ext_resource type="Script" path="res://scripts/chapter_action.gd" id="12"]
+[ext_resource type="Texture2D" path="res://assets/environment/castle/higgsfield/RoyalLantern.tres" id="13"]
+[ext_resource type="Script" path="res://scripts/tutorial_trigger.gd" id="14"]
+[ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="15"]
 
-[ext_resource type="Script" path="res://scripts/castle_platform.gd" id="castle"]
+[sub_resource type="RectangleShape2D" id="Shape0"]
+size = Vector2(1200, 605.0)
 
-[ext_resource type="Script" path="res://scripts/castle_lift.gd" id="rider_lift"]
+[sub_resource type="RectangleShape2D" id="Shape1"]
+size = Vector2(500, 80.0)
 
-[ext_resource type="Script" path="res://scripts/royal_backwall.gd" id="backwall"]
+[sub_resource type="RectangleShape2D" id="Shape2"]
+size = Vector2(1050, 605.0)
 
-[ext_resource type="Script" path="res://scripts/dream_bloom.gd" id="bloom"]
+[sub_resource type="RectangleShape2D" id="Shape3"]
+size = Vector2(430, 80.0)
 
-[ext_resource type="Script" path="res://scripts/object.gd" id="object"]
+[sub_resource type="RectangleShape2D" id="Shape4"]
+size = Vector2(680, 605.0)
 
-[ext_resource type="Script" path="res://scripts/dream_switch.gd" id="switch"]
+[sub_resource type="RectangleShape2D" id="Shape5"]
+size = Vector2(1100, 605.0)
 
-[ext_resource type="Script" path="res://scripts/starbit_rope_bridge.gd" id="bridge"]
+[sub_resource type="RectangleShape2D" id="Shape6"]
+size = Vector2(450, 80.0)
 
-[ext_resource type="Script" path="res://scripts/camera_zone.gd" id="camera"]
+[sub_resource type="RectangleShape2D" id="Shape7"]
+size = Vector2(1100, 605.0)
 
-[ext_resource type="Script" path="res://scripts/sky_backdrop.gd" id="backdrop"]
+[sub_resource type="RectangleShape2D" id="Shape8"]
+size = Vector2(160, 20.0)
 
-[ext_resource type="Script" path="res://scripts/tutorial_trigger.gd" id="tutorial"]
+[sub_resource type="RectangleShape2D" id="Shape9"]
+size = Vector2(220, 20.0)
 
-[ext_resource type="Script" path="res://scripts/royal_lock.gd" id="lock"]
+[sub_resource type="RectangleShape2D" id="Shape10"]
+size = Vector2(420, 80.0)
 
-[ext_resource type="Texture2D" path="res://assets/environment/castle/expansion/level09_atlas.png" id="flower"]
+[sub_resource type="RectangleShape2D" id="Shape11"]
+size = Vector2(135, 80.0)
 
-[ext_resource type="Script" path="res://scripts/royal_planter.gd" id="planter"]
+[sub_resource type="RectangleShape2D" id="Shape12"]
+size = Vector2(140, 80.0)
 
-[ext_resource type="Texture2D" path="res://assets/environment/castle/expansion/level08_atlas.png" id="machinery_atlas"]
+[sub_resource type="RectangleShape2D" id="Shape13"]
+size = Vector2(140, 80.0)
 
-[ext_resource type="Texture2D" path="res://assets/environment/backgrounds/near_castle.png" id="landscape"]
+[sub_resource type="RectangleShape2D" id="Shape14"]
+size = Vector2(140, 80.0)
 
-[ext_resource type="Texture2D" path="res://assets/environment/scenery/Tree.tres" id="tree"]
+[sub_resource type="RectangleShape2D" id="Shape15"]
+size = Vector2(135, 80.0)
 
-[ext_resource type="Texture2D" path="res://assets/environment/scenery/Arch.tres" id="arch"]
-
-[ext_resource type="Texture2D" path="res://assets/environment/scenery/Ferns.tres" id="ferns"]
-
-[ext_resource type="Texture2D" path="res://assets/environment/scenery/Columns.tres" id="columns"]
-
-[ext_resource type="PackedScene" path="res://scenes/animated_water/WaterfallGarden.tscn" id="water"]
-
-[ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole"]
-
-[ext_resource type="PackedScene" path="res://scenes/Enemy_rock_enemy.tscn" id="rock"]
-
-[ext_resource type="PackedScene" path="res://scenes/Enemy_stinko.tscn" id="stinko"]
-
-[ext_resource type="PackedScene" path="res://scenes/Enemy_cloud_enemy.tscn" id="cloud_enemy"]
-
-[ext_resource type="PackedScene" path="res://scenes/worldkit/MovingCloud.tscn" id="cloud"]
-
-[ext_resource type="PackedScene" path="res://scenes/worldkit/RainCloud.tscn" id="rain"]
-
-[ext_resource type="PackedScene" path="res://scenes/supplied/VinesLong.tscn" id="vine"]
-
-[ext_resource type="Script" path="res://scripts/royal_life.gd" id="royal_life"]
-
-[ext_resource type="PackedScene" path="res://scenes/royal/higgsfield/RoyalBalustrade.tscn" id="hf_detail_RoyalBalustrade"]
-[ext_resource type="PackedScene" path="res://scenes/royal/higgsfield/RoyalPlanter.tscn" id="hf_detail_RoyalPlanter"]
-
-[sub_resource type="AtlasTexture" id="flower_art"]
-atlas = ExtResource("flower")
-region = Rect2(450, 78, 454, 332)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="flower_closed_art"]
-atlas = ExtResource("flower")
-region = Rect2(948, 42, 287, 368)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="garden_platform_art"]
-atlas = ExtResource("flower")
-region = Rect2(12, 174, 448, 241)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="sun_fountain_art"]
-atlas = ExtResource("flower")
-region = Rect2(27, 437, 388, 377)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="moon_fountain_art"]
-atlas = ExtResource("flower")
-region = Rect2(445, 448, 375, 366)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="garden_tree_art"]
-atlas = ExtResource("flower")
-region = Rect2(829, 433, 416, 394)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="planter_dry_art"]
-atlas = ExtResource("flower")
-region = Rect2(430, 1011, 388, 202)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="planter_lush_art"]
-atlas = ExtResource("flower")
-region = Rect2(852, 977, 390, 250)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="garden_arch_finial_art"]
-atlas = ExtResource("flower")
-region = Rect2(190, 793, 48, 29)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="garden_arch_body_art"]
-atlas = ExtResource("flower")
-region = Rect2(14, 822, 394, 393)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="garden_lift_art"]
-atlas = ExtResource("machinery_atlas")
-region = Rect2(15, 938, 460, 179)
-filter_clip = true
-
-[sub_resource type="RectangleShape2D" id="shape_ArrivalPlaza"]
-size = Vector2(840, 1015)
-
-[sub_resource type="RectangleShape2D" id="shape_LearningBed"]
-size = Vector2(930, 890)
-
-[sub_resource type="RectangleShape2D" id="shape_FirstPetalPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_SecondPetalPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_RoseStair"]
-size = Vector2(740, 1080)
-
-[sub_resource type="RectangleShape2D" id="shape_SunApproach"]
-size = Vector2(720, 1115)
-
-[sub_resource type="RectangleShape2D" id="shape_DryFountainCourt"]
-size = Vector2(3000, 955)
-
-[sub_resource type="RectangleShape2D" id="shape_SunClimbA"]
-size = Vector2(310, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_SunClimbB"]
-size = Vector2(310, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_SunClimbC"]
-size = Vector2(310, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_SunClimbD"]
-size = Vector2(310, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_SunTerrace"]
-size = Vector2(760, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_SunReturnAPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_SunReturnBPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_SunReturnCPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_SunReturnDPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_ConservatoryGate"]
-size = Vector2(72, 2200)
-
-[sub_resource type="RectangleShape2D" id="shape_RestoredCourt"]
-size = Vector2(1600, 955)
-
-[sub_resource type="RectangleShape2D" id="shape_RestoredRosePlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_AqueductCoverWest"]
-size = Vector2(115, 125)
-
-[sub_resource type="RectangleShape2D" id="shape_AqueductCoverEast"]
-size = Vector2(115, 125)
-
-[sub_resource type="RectangleShape2D" id="shape_AqueductWest"]
-size = Vector2(700, 1025)
-
-[sub_resource type="RectangleShape2D" id="shape_AqueductEast"]
-size = Vector2(1760, 1075)
-
-[sub_resource type="RectangleShape2D" id="shape_AqueductSecretStep"]
-size = Vector2(280, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_AqueductSecretRise"]
-size = Vector2(290, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_AqueductSecretBalcony"]
-size = Vector2(530, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_AqueductSecretReturn"]
-size = Vector2(280, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_OrangeryLaunch"]
-size = Vector2(230, 1075)
-
-[sub_resource type="RectangleShape2D" id="shape_DryOrangeryIsland"]
-size = Vector2(500, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_OrangeryExit"]
-size = Vector2(1050, 1195)
-
-[sub_resource type="RectangleShape2D" id="shape_LowerGalleryWest"]
-size = Vector2(2900, 915)
-
-[sub_resource type="RectangleShape2D" id="shape_LowerGalleryEast"]
-size = Vector2(1340, 915)
-
-[sub_resource type="RectangleShape2D" id="shape_MoonPetalAPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_MoonPetalBPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_MoonPetalCPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_UpperGalleryRest"]
-size = Vector2(490, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_MoonPetalDPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_MoonPetalEPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_MoonPetalFPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_MoonPetalGPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_GalleryCoverWest"]
-size = Vector2(120, 130)
-
-[sub_resource type="RectangleShape2D" id="shape_GalleryCoverEast"]
-size = Vector2(120, 130)
-
-[sub_resource type="RectangleShape2D" id="shape_GalleryStep"]
-size = Vector2(300, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_LiftLanding"]
-size = Vector2(405, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_GardenersLift"]
-size = Vector2(280, 40)
-
-[sub_resource type="RectangleShape2D" id="shape_MoonTerrace"]
-size = Vector2(890, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_MoonDescentPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_MoonGateCourt"]
-size = Vector2(1310, 995)
-
-[sub_resource type="RectangleShape2D" id="shape_ThornGate"]
-size = Vector2(72, 2200)
-
-[sub_resource type="RectangleShape2D" id="shape_CanopyRosePlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_CanopyCourt"]
-size = Vector2(730, 1235)
-
-[sub_resource type="RectangleShape2D" id="shape_CanopyCoverWest"]
-size = Vector2(105, 125)
-
-[sub_resource type="RectangleShape2D" id="shape_CanopyCoverEast"]
-size = Vector2(105, 125)
-
-[sub_resource type="RectangleShape2D" id="shape_CanopyLanding"]
-size = Vector2(550, 1305)
-
-[sub_resource type="RectangleShape2D" id="shape_CanopyRise"]
-size = Vector2(650, 1475)
-
-[sub_resource type="RectangleShape2D" id="shape_CanopyDescent"]
-size = Vector2(1050, 1305)
-
-[sub_resource type="RectangleShape2D" id="shape_CanopySecretStep"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_CanopySecretPetalPlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_CanopySecretBalcony"]
-size = Vector2(580, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_CanopySecretReturn"]
-size = Vector2(250, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_FinalCoverWest"]
-size = Vector2(110, 125)
-
-[sub_resource type="RectangleShape2D" id="shape_FinalCourt"]
-size = Vector2(680, 1305)
-
-[sub_resource type="RectangleShape2D" id="shape_FinalCoverEast"]
-size = Vector2(110, 125)
-
-[sub_resource type="RectangleShape2D" id="shape_CanalEast"]
-size = Vector2(560, 1335)
-
-[sub_resource type="RectangleShape2D" id="shape_FinalRosePlanter"]
-size = Vector2(270, 50)
-
-[sub_resource type="RectangleShape2D" id="shape_PalaceGarden"]
-size = Vector2(680, 1415)
+[sub_resource type="RectangleShape2D" id="Shape16"]
+size = Vector2(550, 80.0)
 
 [node name="Level_09" type="Node2D"]
-script = ExtResource("level")
+script = ExtResource("1")
 number = 9
-title = "Královské zahrady"
-width = 29400.0
-spawn = Vector2(140, 615)
-camera_top = -1550
-camera_bottom = 1560
-fall_limit = 1470.0
-fouk_at_start = true
-first_light = NodePath("SunFountain")
-second_light = NodePath("MoonFountain")
-first_flowers = Array[NodePath]([NodePath("SunReturnA"), NodePath("SunReturnB"), NodePath("SunReturnC"), NodePath("SunReturnD"), NodePath("RestoredRose")])
-second_flowers = Array[NodePath]([NodePath("MoonDescent"), NodePath("CanopyRose"), NodePath("FinalRose")])
-first_scenery = Array[NodePath]([NodePath("SunTree"), NodePath("SunArch"), NodePath("SunFlowers"), NodePath("SunTerrace"), NodePath("AqueductFlowers"), NodePath("SunReturnAPlanter"), NodePath("SunReturnBPlanter"), NodePath("SunReturnCPlanter"), NodePath("SunReturnDPlanter"), NodePath("SunPlanterApproach"), NodePath("SunPlanterCourt"), NodePath("SunPlanterAqueduct"), NodePath("SunApproachTree"), NodePath("SunCourtTree"), NodePath("OrangeryIslandTree"), NodePath("SunPlanterRoseWalk"), NodePath("SunPlanterOrangery"), NodePath("AqueductTree"), NodePath("OrangeryExitTree")])
-second_scenery = Array[NodePath]([NodePath("MoonTree"), NodePath("MoonArch"), NodePath("MoonFlowers"), NodePath("MoonTerrace"), NodePath("CanopyTree"), NodePath("PalaceTree"), NodePath("FinalFlowers"), NodePath("MoonDescentPlanter"), NodePath("CanopyRosePlanter"), NodePath("FinalRosePlanter"), NodePath("MoonPlanterGallery"), NodePath("MoonPlanterCanopy"), NodePath("MoonPlanterPalace"), NodePath("GalleryWestTree"), NodePath("GalleryEastTree"), NodePath("CanopyLandingTree"), NodePath("CanopyRiseTree"), NodePath("FinalCourtTree"), NodePath("PalaceCanalTree"), NodePath("MoonPlanterLowerWalk"), NodePath("MoonPlanterFinalCourt"), NodePath("GalleryWestArbor"), NodePath("GalleryEastArbor")])
-first_gate = NodePath("ConservatoryGate")
-thorn_gate = NodePath("ThornGate")
-reward_star = NodePath("GardenStar")
-sun_fountain_texture = SubResource("sun_fountain_art")
-moon_fountain_texture = SubResource("moon_fountain_art")
+title = "Hrad bez světel"
+spawn = Vector2(200, 550)
+width = 7560.0
+camera_top = -170
+camera_bottom = 1200
+fall_limit = 1060.0
+use_hearts = true
+fouk_at_start = false
+quest_flags = PackedStringArray("court_light", "tower_light")
+quest_hints = PackedStringArray("Obnov světlo na opuštěném nádvoří.", "Rozsviť cestu k Jiskřině věži.")
+zip_departure = false
+final_hint = "Cesta je obnovená. Najdi hvězdu a pokračuj dál."
 
-[node name="Background" type="CanvasLayer" parent="."]
-script = ExtResource("backdrop")
-landscape = ExtResource("landscape")
+[node name="StoryBackground" type="CanvasLayer" parent="."]
+script = ExtResource("2")
+level_number = 10
 
-[node name="ArrivalPlaza" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(0, 620)
-width = 840.0
-depth = 1030.0
-wall_body = true
+[node name="MorousDarkness" type="CanvasLayer" parent="."]
+script = ExtResource("3")
+strength = 0.63
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrivalPlaza"]
-shape = SubResource("shape_ArrivalPlaza")
-position = Vector2(420.0, 507.5)
-
-[node name="LearningBed" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(840, 745)
-width = 930.0
-depth = 905.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LearningBed"]
-shape = SubResource("shape_LearningBed")
-position = Vector2(465.0, 445.0)
-
-[node name="FirstPetal" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(1100, 620)
-width = 210.0
-powered = true
-rhythmic = true
-phase = 0.04
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="FirstPetalPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(965, 743)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FirstPetalPlanter"]
-shape = SubResource("shape_FirstPetalPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="FirstPetalRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(975, 797)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="SecondPetal" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(1510, 575)
-width = 210.0
-powered = true
-rhythmic = true
-phase = 0.34
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="SecondPetalPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(1375, 698)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SecondPetalPlanter"]
-shape = SubResource("shape_SecondPetalPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="SecondPetalRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(1385, 752)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="RoseStair" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(1770, 555)
-width = 740.0
-depth = 1095.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RoseStair"]
-shape = SubResource("shape_RoseStair")
-position = Vector2(370.0, 540.0)
-
-[node name="SunApproach" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(2780, 520)
-width = 720.0
-depth = 1130.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SunApproach"]
-shape = SubResource("shape_SunApproach")
-position = Vector2(360.0, 557.5)
-
-[node name="MoleGarden" parent="." instance=ExtResource("mole")]
-position = Vector2(440, 620)
-message = "Jiskru drží uvnitř hradu. Probuď zahrady světlem slunce i měsíce. Pak se otevře cesta k hradní bráně."
-
-[node name="PetalLesson" type="Marker2D" parent="."]
-script = ExtResource("tutorial")
-position = Vector2(925, 630)
-title = "Květinové schody"
-message = "Počkej na otevřený květ. Pod tebou se nezavře."
-display_seconds = 4.5
-
-[node name="DryFountainCourt" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(3500, 680)
-width = 3000.0
-depth = 970.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DryFountainCourt"]
-shape = SubResource("shape_DryFountainCourt")
-position = Vector2(1500.0, 477.5)
-
-[node name="SunClimbA" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(5650, 490)
-width = 310.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SunClimbA"]
-shape = SubResource("shape_SunClimbA")
-position = Vector2(155.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="SunClimbB" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(5230, 305)
-width = 310.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SunClimbB"]
-shape = SubResource("shape_SunClimbB")
-position = Vector2(155.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="SunClimbC" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(4810, 120)
-width = 310.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SunClimbC"]
-shape = SubResource("shape_SunClimbC")
-position = Vector2(155.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="SunClimbD" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(4390, -65)
-width = 310.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SunClimbD"]
-shape = SubResource("shape_SunClimbD")
-position = Vector2(155.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="SunTerrace" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(3810, -250)
-width = 760.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SunTerrace"]
-shape = SubResource("shape_SunTerrace")
-position = Vector2(380.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="SunFountain" type="Node2D" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-script = ExtResource("switch")
-position = Vector2(4120, -250)
-appearance = "crystal"
-latch = true
-plate_width = 125.0
-
-[node name="SunReturnA" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(4840, -160)
-width = 210.0
-powered = false
-rhythmic = false
-phase = 0.0
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="SunReturnAPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(4705, -37)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SunReturnAPlanter"]
-shape = SubResource("shape_SunReturnAPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="SunReturnARoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(4715, 17)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="SunReturnB" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(5290, 20)
-width = 210.0
-powered = false
-rhythmic = false
-phase = 0.0
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="SunReturnBPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(5155, 143)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SunReturnBPlanter"]
-shape = SubResource("shape_SunReturnBPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="SunReturnBRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(5165, 197)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="SunReturnC" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(5750, 200)
-width = 210.0
-powered = false
-rhythmic = false
-phase = 0.0
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="SunReturnCPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(5615, 323)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SunReturnCPlanter"]
-shape = SubResource("shape_SunReturnCPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="SunReturnCRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(5625, 377)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="SunReturnD" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(6200, 385)
-width = 210.0
-powered = false
-rhythmic = false
-phase = 0.0
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="SunReturnDPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(6065, 508)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="SunReturnDPlanter"]
-shape = SubResource("shape_SunReturnDPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="SunReturnDRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(6075, 562)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="ConservatoryGate" type="StaticBody2D" parent="."]
-position = Vector2(6430, 680)
-collision_layer = 1
+[node name="Start" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(0, 550)
+width = 1200.0
+depth = 620.0
 collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ConservatoryGate"]
-shape = SubResource("shape_ConservatoryGate")
-position = Vector2(0, -1100.0)
-
-[node name="Thorns0" parent="ConservatoryGate" instance=ExtResource("vine")]
-position = Vector2(-3, -40)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="Thorns1" parent="ConservatoryGate" instance=ExtResource("vine")]
-position = Vector2(-34, -210)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="Thorns2" parent="ConservatoryGate" instance=ExtResource("vine")]
-position = Vector2(-3, -380)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="Thorns3" parent="ConservatoryGate" instance=ExtResource("vine")]
-position = Vector2(-34, -550)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="Thorns4" parent="ConservatoryGate" instance=ExtResource("vine")]
-position = Vector2(-3, -720)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="Thorns5" parent="ConservatoryGate" instance=ExtResource("vine")]
-position = Vector2(-34, -890)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="Thorns6" parent="ConservatoryGate" instance=ExtResource("vine")]
-position = Vector2(-3, -1060)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="Thorns7" parent="ConservatoryGate" instance=ExtResource("vine")]
-position = Vector2(-34, -1230)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="Thorns8" parent="ConservatoryGate" instance=ExtResource("vine")]
-position = Vector2(-3, -1400)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="Thorns9" parent="ConservatoryGate" instance=ExtResource("vine")]
-position = Vector2(-34, -1570)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="Thorns10" parent="ConservatoryGate" instance=ExtResource("vine")]
-position = Vector2(-3, -1740)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="Thorns11" parent="ConservatoryGate" instance=ExtResource("vine")]
-position = Vector2(-34, -1910)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="Thorns12" parent="ConservatoryGate" instance=ExtResource("vine")]
-position = Vector2(-3, -2080)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="ConservatoryGateWestPier" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(6318, 400)
-size = Vector2(62, 280)
-tint = Color(0.72, 0.77, 0.85, 0.88)
-
-[node name="ConservatoryGateEastPier" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(6480, 400)
-size = Vector2(62, 280)
-tint = Color(0.72, 0.77, 0.85, 0.88)
-
-[node name="SunTerraceArcade" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(3780, -185)
-size = Vector2(820, 865)
-tint = Color(0.72, 0.77, 0.85, 0.88)
-openings = Array[Rect2]([Rect2(48, 42, 320, 823), Rect2(450, 42, 320, 823)])
-
-[node name="SunStairArcade" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(4650, 605)
-size = Vector2(1580, 100)
-tint = Color(0.72, 0.77, 0.85, 0.88)
-openings = Array[Rect2]([Rect2(70, 26, 370, 74), Rect2(600, 26, 370, 74), Rect2(1110, 26, 390, 74)])
-
-[node name="SunLesson" type="Marker2D" parent="."]
-script = ExtResource("tutorial")
-position = Vector2(5970, 635)
-title = "Sluneční světlo"
-message = "Světlo čeká nahoře vlevo. Probudí květy i cestu zpátky."
-display_seconds = 5.0
-
-[node name="RestoredCourt" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(6500, 680)
-width = 1600.0
-depth = 970.0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
 wall_body = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RestoredCourt"]
-shape = SubResource("shape_RestoredCourt")
-position = Vector2(800.0, 477.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Start"]
+shape = SubResource("Shape0")
+position = Vector2(600.0, 302.5)
 
-[node name="CheckpointAqueduct" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(6780, 680)
-kind = "checkpoint"
-
-[node name="RestoredRose" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(6980, 555)
-width = 210.0
-powered = false
-rhythmic = false
-phase = 0.0
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="RestoredRosePlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(6845, 678)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RestoredRosePlanter"]
-shape = SubResource("shape_RestoredRosePlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="RestoredRoseRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(6855, 732)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="AqueductCoverWest" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(7240, 555)
-width = 115.0
-depth = 140.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductCoverWest"]
-shape = SubResource("shape_AqueductCoverWest")
-position = Vector2(57.5, 62.5)
-
-[node name="AqueductCoverEast" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(7950, 555)
-width = 115.0
-depth = 140.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductCoverEast"]
-shape = SubResource("shape_AqueductCoverEast")
-position = Vector2(57.5, 62.5)
-
-[node name="AqueductWest" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(8350, 610)
-width = 700.0
-depth = 1040.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductWest"]
-shape = SubResource("shape_AqueductWest")
-position = Vector2(350.0, 512.5)
-
-[node name="AqueductBridge" type="AnimatableBody2D" parent="."]
-script = ExtResource("bridge")
-position = Vector2(9050, 610)
-end_offset = Vector2(790, -50)
-gaps = PackedVector2Array(330, 530)
-broken_ropes = true
-rail_height = 70.0
-
-[node name="AqueductEast" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(9840, 560)
-width = 1760.0
-depth = 1090.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductEast"]
-shape = SubResource("shape_AqueductEast")
-position = Vector2(880.0, 537.5)
-
-[node name="AqueductArcade" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(8290, 685)
-size = Vector2(2000, 770)
-tint = Color(0.72, 0.77, 0.85, 0.88)
-openings = Array[Rect2]([Rect2(65, 50, 510, 720), Rect2(715, 50, 510, 720), Rect2(1365, 50, 570, 720)])
-
-[node name="AqueductSecretStep" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(8170, 365)
-width = 280.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductSecretStep"]
-shape = SubResource("shape_AqueductSecretStep")
-position = Vector2(140.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="AqueductSecretRise" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(8580, 195)
-width = 290.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductSecretRise"]
-shape = SubResource("shape_AqueductSecretRise")
-position = Vector2(145.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="AqueductSecretBalcony" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(8990, 25)
-width = 530.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductSecretBalcony"]
-shape = SubResource("shape_AqueductSecretBalcony")
-position = Vector2(265.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="AqueductSecretReturn" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(9500, 300)
-width = 280.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AqueductSecretReturn"]
-shape = SubResource("shape_AqueductSecretReturn")
-position = Vector2(140.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="AqueductSecretWall" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(8990, 90)
-size = Vector2(530, 520)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(85, 40, 360, 480)])
-
-[node name="OrangeryLaunch" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(11600, 560)
-width = 230.0
-depth = 1090.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OrangeryLaunch"]
-shape = SubResource("shape_OrangeryLaunch")
-position = Vector2(115.0, 537.5)
-
-[node name="RainFerryWest" parent="." instance=ExtResource("cloud")]
-position = Vector2(11860, 520)
-width = 270.0
-travel = Vector2(570, 0)
-period = 6.4
-
-[node name="DryOrangeryIsland" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(12650, 440)
+[node name="OuterWall" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(1350, 460)
 width = 500.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DryOrangeryIsland"]
-shape = SubResource("shape_DryOrangeryIsland")
-position = Vector2(250.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="RainFerryEast" parent="." instance=ExtResource("cloud")]
-position = Vector2(13180, 440)
-width = 270.0
-travel = Vector2(490, 0)
-period = 6.8
-
-[node name="OrangeryExit" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(14050, 440)
-width = 1050.0
-depth = 1210.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="OrangeryExit"]
-shape = SubResource("shape_OrangeryExit")
-position = Vector2(525.0, 597.5)
-
-[node name="OrangeryRainWest" parent="." instance=ExtResource("rain")]
-position = Vector2(12270, 70)
-rain_width = 250.0
-rain_height = 485.0
-calm_duration = 5.5
-warning_duration = 1.8
-rain_duration = 4.2
-recovery_duration = 1.3
-start_offset = 0.0
-slow_multiplier = 0.3
-
-[node name="OrangeryRainEast" parent="." instance=ExtResource("rain")]
-position = Vector2(13560, 0)
-rain_width = 260.0
-rain_height = 480.0
-calm_duration = 5.5
-warning_duration = 1.8
-rain_duration = 4.2
-recovery_duration = 1.3
-start_offset = 4.3
-slow_multiplier = 0.3
-
-[node name="OrangeryPillars" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(11750, 760)
-size = Vector2(2300, 700)
-tint = Color(0.72, 0.77, 0.85, 0.88)
-openings = Array[Rect2]([Rect2(48, 0, 630, 700), Rect2(830, 0, 630, 700), Rect2(1615, 0, 630, 700)])
-
-[node name="LowerGalleryWest" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(15100, 720)
-width = 2900.0
-depth = 930.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerGalleryWest"]
-shape = SubResource("shape_LowerGalleryWest")
-position = Vector2(1450.0, 457.5)
-
-[node name="LowerGalleryEast" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(18000, 720)
-width = 1340.0
-depth = 930.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerGalleryEast"]
-shape = SubResource("shape_LowerGalleryEast")
-position = Vector2(670.0, 457.5)
-
-[node name="MoonPetalA" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(15350, 285)
-width = 210.0
-powered = true
-rhythmic = true
-phase = 0.05
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="MoonPetalAPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(15215, 408)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPetalAPlanter"]
-shape = SubResource("shape_MoonPetalAPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="MoonPetalARoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(15225, 462)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="MoonPetalB" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(15780, 110)
-width = 210.0
-powered = true
-rhythmic = true
-phase = 0.26
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="MoonPetalBPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(15645, 233)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPetalBPlanter"]
-shape = SubResource("shape_MoonPetalBPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="MoonPetalBRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(15655, 287)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="MoonPetalC" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(16210, -65)
-width = 210.0
-powered = true
-rhythmic = true
-phase = 0.48
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="MoonPetalCPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(16075, 58)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPetalCPlanter"]
-shape = SubResource("shape_MoonPetalCPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="MoonPetalCRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(16085, 112)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="UpperGalleryRest" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(16500, -240)
-width = 490.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperGalleryRest"]
-shape = SubResource("shape_UpperGalleryRest")
-position = Vector2(245.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="MoonSkyBridge" type="AnimatableBody2D" parent="."]
-script = ExtResource("bridge")
-position = Vector2(16990, -240)
-end_offset = Vector2(500, 0)
-gaps = PackedVector2Array(160, 340)
-broken_ropes = true
-rail_height = 70.0
-
-[node name="MoonPetalD" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(17720, -365)
-width = 210.0
-powered = true
-rhythmic = true
-phase = 0.12
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="MoonPetalDPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(17585, -242)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPetalDPlanter"]
-shape = SubResource("shape_MoonPetalDPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="MoonPetalDRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(17595, -188)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="MoonPetalE" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(18160, -240)
-width = 210.0
-powered = true
-rhythmic = true
-phase = 0.45
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="MoonPetalEPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(18025, -117)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPetalEPlanter"]
-shape = SubResource("shape_MoonPetalEPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="MoonPetalERoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(18035, -63)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="MoonPetalF" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(18600, -405)
-width = 210.0
-powered = true
-rhythmic = true
-phase = 0.67
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="MoonPetalFPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(18465, -282)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPetalFPlanter"]
-shape = SubResource("shape_MoonPetalFPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="MoonPetalFRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(18475, -228)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="MoonPetalG" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(19040, -240)
-width = 210.0
-powered = true
-rhythmic = true
-phase = 0.21
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="MoonPetalGPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(18905, -117)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonPetalGPlanter"]
-shape = SubResource("shape_MoonPetalGPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="MoonPetalGRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(18915, -63)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="GalleryCoverWest" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(16610, 590)
-width = 120.0
-depth = 145.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GalleryCoverWest"]
-shape = SubResource("shape_GalleryCoverWest")
-position = Vector2(60.0, 65.0)
-
-[node name="GalleryCoverEast" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(17550, 590)
-width = 120.0
-depth = 145.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GalleryCoverEast"]
-shape = SubResource("shape_GalleryCoverEast")
-position = Vector2(60.0, 65.0)
-
-[node name="GalleryStep" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(17980, 535)
-width = 300.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GalleryStep"]
-shape = SubResource("shape_GalleryStep")
-position = Vector2(150.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="LiftLanding" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(18480, 535)
-width = 405.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LiftLanding"]
-shape = SubResource("shape_LiftLanding")
-position = Vector2(202.5, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="GalleryPressurePlate" type="Node2D" parent="."]
-script = ExtResource("switch")
-position = Vector2(17710, 720)
-appearance = "plate"
-latch = true
-plate_width = 125.0
-targets = Array[NodePath]([NodePath("../GardenersLift")])
-
-[node name="GalleryPressureGate" type="StaticBody2D" parent="."]
-script = ExtResource("lock")
-position = Vector2(17920, 720)
-sources = Array[NodePath]([NodePath("../GalleryPressurePlate")])
-gate_size = Vector2(72, 930)
-latched = true
-
-[node name="GardenersLift" type="AnimatableBody2D" parent="."]
-script = ExtResource("rider_lift")
-surface_texture = SubResource("garden_lift_art")
-surface_walk_y = 50.0
-surface_height = 72.0
-position = Vector2(18910, 535)
-width = 280.0
-depth = 55.0
-wall_body = false
-travel = Vector2(0, -650)
-period = 4.8
-return_seconds = 2.8
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GardenersLift"]
-shape = SubResource("shape_GardenersLift")
-position = Vector2(140.0, 20.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="MoonTerrace" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(19350, -240)
-width = 890.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonTerrace"]
-shape = SubResource("shape_MoonTerrace")
-position = Vector2(445.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="MoonFountain" type="Node2D" parent="."]
-self_modulate = Color(1, 1, 1, 0)
-script = ExtResource("switch")
-position = Vector2(19970, -240)
-appearance = "crystal"
-latch = true
-plate_width = 125.0
-
-[node name="OrangeryChoice" type="Marker2D" parent="."]
-script = ExtResource("tutorial")
-position = Vector2(14840, 390)
-title = "Dvě cesty k měsíci"
-message = "Nahoře skákej po květech. Dole projdi kolem hlídek a zapni deskou výtah. Obě cesty vedou k měsíci."
-display_seconds = 5.0
-
-[node name="MoonDescent" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(20340, -5)
-width = 210.0
-powered = false
-rhythmic = false
-phase = 0.0
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="MoonDescentPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(20205, 118)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonDescentPlanter"]
-shape = SubResource("shape_MoonDescentPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="MoonDescentRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(20215, 172)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="MoonGateCourt" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(20240, 640)
-width = 1310.0
-depth = 1010.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MoonGateCourt"]
-shape = SubResource("shape_MoonGateCourt")
-position = Vector2(655.0, 497.5)
-
-[node name="ThornGate" type="StaticBody2D" parent="."]
-position = Vector2(20600, 640)
-collision_layer = 1
+depth = 95.0
 collision_mask = 0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ThornGate"]
-shape = SubResource("shape_ThornGate")
-position = Vector2(0, -1100.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="OuterWall"]
+shape = SubResource("Shape1")
+position = Vector2(250.0, 40.0)
 
-[node name="Thorns0" parent="ThornGate" instance=ExtResource("vine")]
-position = Vector2(-3, -40)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
+[node name="LowerCourt" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(2000, 550)
+width = 1050.0
+depth = 620.0
+collision_mask = 0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
+wall_body = true
 
-[node name="Thorns1" parent="ThornGate" instance=ExtResource("vine")]
-position = Vector2(-34, -210)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowerCourt"]
+shape = SubResource("Shape2")
+position = Vector2(525.0, 302.5)
 
-[node name="Thorns2" parent="ThornGate" instance=ExtResource("vine")]
-position = Vector2(-3, -380)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
+[node name="TowerStep" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(3200, 450)
+width = 430.0
+depth = 95.0
+collision_mask = 0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
 
-[node name="Thorns3" parent="ThornGate" instance=ExtResource("vine")]
-position = Vector2(-34, -550)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TowerStep"]
+shape = SubResource("Shape3")
+position = Vector2(215.0, 40.0)
 
-[node name="Thorns4" parent="ThornGate" instance=ExtResource("vine")]
-position = Vector2(-3, -720)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
+[node name="UpperWall" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(3780, 360)
+width = 680.0
+depth = 620.0
+collision_mask = 0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
+wall_body = true
 
-[node name="Thorns5" parent="ThornGate" instance=ExtResource("vine")]
-position = Vector2(-34, -890)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UpperWall"]
+shape = SubResource("Shape4")
+position = Vector2(340.0, 302.5)
 
-[node name="Thorns6" parent="ThornGate" instance=ExtResource("vine")]
-position = Vector2(-3, -1060)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
+[node name="InnerCourt" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(4610, 470)
+width = 1100.0
+depth = 620.0
+collision_mask = 0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
+wall_body = true
 
-[node name="Thorns7" parent="ThornGate" instance=ExtResource("vine")]
-position = Vector2(-34, -1230)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InnerCourt"]
+shape = SubResource("Shape5")
+position = Vector2(550.0, 302.5)
 
-[node name="Thorns8" parent="ThornGate" instance=ExtResource("vine")]
-position = Vector2(-3, -1400)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
+[node name="LastBalcony" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(5860, 390)
+width = 450.0
+depth = 95.0
+collision_mask = 0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
 
-[node name="Thorns9" parent="ThornGate" instance=ExtResource("vine")]
-position = Vector2(-34, -1570)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LastBalcony"]
+shape = SubResource("Shape6")
+position = Vector2(225.0, 40.0)
 
-[node name="Thorns10" parent="ThornGate" instance=ExtResource("vine")]
-position = Vector2(-3, -1740)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
+[node name="Exit" type="AnimatableBody2D" parent="." groups=["chapter_route"]]
+script = ExtResource("4")
+position = Vector2(6460, 550)
+width = 1100.0
+depth = 620.0
+collision_mask = 0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
+wall_body = true
 
-[node name="Thorns11" parent="ThornGate" instance=ExtResource("vine")]
-position = Vector2(-34, -1910)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+shape = SubResource("Shape7")
+position = Vector2(550.0, 302.5)
 
-[node name="Thorns12" parent="ThornGate" instance=ExtResource("vine")]
-position = Vector2(-3, -2080)
-scale = Vector2(0.8, 0.8)
-modulate = Color(0.41, 0.25, 0.53, 1)
-
-[node name="ThornGateWestPier" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(20488, 360)
-size = Vector2(62, 280)
-tint = Color(0.72, 0.77, 0.85, 0.88)
-
-[node name="ThornGateEastPier" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(20650, 360)
-size = Vector2(62, 280)
-tint = Color(0.72, 0.77, 0.85, 0.88)
-
-[node name="CheckpointCanopy" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(21000, 640)
+[node name="Checkpoint0" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(130, 550)
 kind = "checkpoint"
 
-[node name="CanopyRose" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(21530, 495)
-width = 210.0
-powered = false
-rhythmic = false
-phase = 0.0
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
+[node name="Checkpoint4" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(3910, 360)
+kind = "checkpoint"
 
-[node name="CanopyRosePlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(21395, 618)
-width = 270.0
-depth = 65.0
-wall_body = false
+[node name="Checkpoint6" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(5990, 390)
+kind = "checkpoint"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopyRosePlanter"]
-shape = SubResource("shape_CanopyRosePlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
+[node name="Diamond0_0" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(540.0, 492)
+kind = "crystal"
 
-[node name="CanopyRoseRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(21405, 672)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
+[node name="Diamond0_1" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(804.0, 492)
+kind = "crystal"
 
-[node name="CanopyCourt" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(21700, 400)
-width = 730.0
-depth = 1250.0
-wall_body = true
+[node name="Diamond1_0" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(1575.0, 402)
+kind = "crystal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopyCourt"]
-shape = SubResource("shape_CanopyCourt")
-position = Vector2(365.0, 617.5)
+[node name="Diamond2_0" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(2472.5, 492)
+kind = "crystal"
 
-[node name="CanopyCoverWest" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(21735, 275)
-width = 105.0
-depth = 140.0
-wall_body = true
+[node name="Diamond2_1" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(2703.5, 492)
+kind = "crystal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopyCoverWest"]
-shape = SubResource("shape_CanopyCoverWest")
-position = Vector2(52.5, 62.5)
+[node name="Diamond3_0" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(3393.5, 392)
+kind = "crystal"
 
-[node name="CanopyCoverEast" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(22310, 275)
-width = 105.0
-depth = 140.0
-wall_body = true
+[node name="Diamond4_0" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(4086.0, 302)
+kind = "crystal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopyCoverEast"]
-shape = SubResource("shape_CanopyCoverEast")
-position = Vector2(52.5, 62.5)
+[node name="Diamond4_1" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(4235.6, 302)
+kind = "crystal"
 
-[node name="CanopyBridge" type="AnimatableBody2D" parent="."]
-script = ExtResource("bridge")
-position = Vector2(22430, 400)
-end_offset = Vector2(800, -70)
-gaps = PackedVector2Array(330, 535)
-broken_ropes = true
-rail_height = 70.0
+[node name="Diamond5_0" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(5105.0, 412)
+kind = "crystal"
 
-[node name="CanopyLanding" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(23230, 330)
-width = 550.0
-depth = 1320.0
-wall_body = true
+[node name="Diamond5_1" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(5347.0, 412)
+kind = "crystal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopyLanding"]
-shape = SubResource("shape_CanopyLanding")
-position = Vector2(275.0, 652.5)
+[node name="Diamond6_0" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(6062.5, 332)
+kind = "crystal"
 
-[node name="CanopyRise" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(24050, 160)
-width = 650.0
-depth = 1490.0
-wall_body = true
+[node name="Diamond7_0" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(6955.0, 492)
+kind = "crystal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopyRise"]
-shape = SubResource("shape_CanopyRise")
-position = Vector2(325.0, 737.5)
+[node name="Diamond7_1" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(7197.0, 492)
+kind = "crystal"
 
-[node name="CanopyDescent" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(24930, 330)
-width = 1050.0
-depth = 1320.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopyDescent"]
-shape = SubResource("shape_CanopyDescent")
-position = Vector2(525.0, 652.5)
-
-[node name="CanopySecretStep" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(22480, 135)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopySecretStep"]
-shape = SubResource("shape_CanopySecretStep")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="CanopySecretPetal" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(22920, -40)
-width = 210.0
-powered = true
-rhythmic = true
-phase = 0.31
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="CanopySecretPetalPlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(22785, 83)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopySecretPetalPlanter"]
-shape = SubResource("shape_CanopySecretPetalPlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="CanopySecretPetalRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(22795, 137)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="CanopySecretBalcony" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(23300, -215)
-width = 580.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopySecretBalcony"]
-shape = SubResource("shape_CanopySecretBalcony")
-position = Vector2(290.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="CanopySecretReturn" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(23970, -30)
-width = 250.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanopySecretReturn"]
-shape = SubResource("shape_CanopySecretReturn")
-position = Vector2(125.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="CanopyBridgeArcade" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(22430, 470)
-size = Vector2(1340, 990)
-tint = Color(0.72, 0.77, 0.85, 0.88)
-openings = Array[Rect2]([Rect2(55, 50, 365, 940), Rect2(485, 50, 365, 940), Rect2(915, 50, 365, 940)])
-
-[node name="CanopySecretPillars" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(23300, -150)
-size = Vector2(580, 480)
-tint = Color(0.72, 0.77, 0.85, 0.88)
-openings = Array[Rect2]([Rect2(50, 32, 480, 448)])
-
-[node name="FinalCoverWest" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(25780, 205)
-width = 110.0
-depth = 140.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FinalCoverWest"]
-shape = SubResource("shape_FinalCoverWest")
-position = Vector2(55.0, 62.5)
-
-[node name="FinalCourt" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(26200, 330)
-width = 680.0
-depth = 1320.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FinalCourt"]
-shape = SubResource("shape_FinalCourt")
-position = Vector2(340.0, 652.5)
-
-[node name="FinalCoverEast" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(26730, 205)
-width = 110.0
-depth = 140.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FinalCoverEast"]
-shape = SubResource("shape_FinalCoverEast")
-position = Vector2(55.0, 62.5)
-
-[node name="PalaceCanalFerry" parent="." instance=ExtResource("cloud")]
-position = Vector2(26950, 340)
-width = 260.0
-travel = Vector2(475, -40)
-period = 6.4
-
-[node name="PalaceRain" parent="." instance=ExtResource("rain")]
-position = Vector2(27280, -110)
-rain_width = 250.0
-rain_height = 520.0
-calm_duration = 5.5
-warning_duration = 1.8
-rain_duration = 4.2
-recovery_duration = 1.3
-start_offset = 2.1
-slow_multiplier = 0.3
-
-[node name="CanalEast" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(27680, 300)
-width = 560.0
-depth = 1350.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CanalEast"]
-shape = SubResource("shape_CanalEast")
-position = Vector2(280.0, 667.5)
-
-[node name="FinalRose" type="AnimatableBody2D" parent="."]
-script = ExtResource("bloom")
-position = Vector2(28460, 140)
-width = 210.0
-powered = false
-rhythmic = true
-phase = 0.3
-cycle_seconds = 6.8
-flower_texture = SubResource("flower_art")
-closed_flower_texture = SubResource("flower_closed_art")
-art_walk_line = 0.346386
-petal_split = 0.542169
-closed_petal_split = 0.611413
-open_left_notch = Rect2(0, 138, 16, 194)
-
-[node name="FinalRosePlanter" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(28325, 263)
-width = 270.0
-depth = 65.0
-wall_body = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FinalRosePlanter"]
-shape = SubResource("shape_FinalRosePlanter")
-position = Vector2(135.0, 25.0)
-one_way_collision = true
-one_way_collision_margin = 8.0
-
-[node name="FinalRoseRoot" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(28335, 317)
-size = Vector2(250, 95)
-tint = Color(0.69, 0.76, 0.74, 0.88)
-openings = Array[Rect2]([Rect2(48, 30, 154, 65)])
-
-[node name="PalaceGarden" type="AnimatableBody2D" parent="."]
-script = ExtResource("castle")
-surface_texture = SubResource("garden_platform_art")
-surface_walk_y = 40.0
-position = Vector2(28720, 220)
-width = 680.0
-depth = 1430.0
-wall_body = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PalaceGarden"]
-shape = SubResource("shape_PalaceGarden")
-position = Vector2(340.0, 707.5)
-
-[node name="GardenStar" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(29100, 145)
+[node name="QuestStar" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(7170, 482)
 kind = "star_key"
 
-[node name="PalaceGate" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(29300, 220)
+[node name="Gate" type="Node2D" parent="."]
+script = ExtResource("6")
+position = Vector2(7445, 550)
 kind = "goal"
 
-[node name="PalaceFacade" type="Node2D" parent="."]
-script = ExtResource("backwall")
-position = Vector2(28720, -380)
-size = Vector2(680, 600)
-tint = Color(0.81, 0.83, 0.9, 0.8)
-openings = Array[Rect2]([Rect2(130, 130, 420, 470)])
+[node name="CastleArch0" type="Sprite2D" parent="."]
+texture = ExtResource("7")
+position = Vector2(140, 435)
+scale = Vector2(0.75, 0.75)
+z_index = -2
 
-[node name="LessonSutrik" parent="." instance=ExtResource("rock")]
-position = Vector2(2200, 555)
-patrol = 120.0
-speed = 52.0
+[node name="CastleArch4" type="Sprite2D" parent="."]
+texture = ExtResource("7")
+position = Vector2(3920, 245)
+scale = Vector2(0.75, 0.75)
+z_index = -2
 
-[node name="SunCourtSutrik" parent="." instance=ExtResource("rock")]
-position = Vector2(5140, 680)
-patrol = 125.0
-speed = 56.0
+[node name="SecretStep" type="AnimatableBody2D" parent="."]
+script = ExtResource("4")
+position = Vector2(3870, 250)
+width = 160.0
+depth = 35.0
+collision_mask = 0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
 
-[node name="AqueductStinko" parent="." instance=ExtResource("stinko")]
-position = Vector2(7660, 680)
-patrol = 75.0
-speed = 48.0
-shadow_range = 570.0
-shadow_warning = 1.05
-shadow_cooldown = 3.8
-shadow_speed = 215.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretStep"]
+shape = SubResource("Shape8")
+position = Vector2(80.0, 10.0)
+one_way_collision = true
 
-[node name="AqueductSutrik" parent="." instance=ExtResource("rock")]
-position = Vector2(8690, 610)
-patrol = 130.0
-speed = 59.0
+[node name="SecretLanding" type="AnimatableBody2D" parent="."]
+script = ExtResource("4")
+position = Vector2(4085, 145)
+width = 220.0
+depth = 35.0
+collision_mask = 0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
 
-[node name="AqueductCloud" parent="." instance=ExtResource("cloud_enemy")]
-position = Vector2(10000, 540)
-patrol = 100.0
-speed = 65.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretLanding"]
+shape = SubResource("Shape9")
+position = Vector2(110.0, 10.0)
+one_way_collision = true
 
-[node name="OrangerySutrik" parent="." instance=ExtResource("rock")]
-position = Vector2(11480, 560)
-patrol = 90.0
-speed = 58.0
+[node name="SecretEntrance" type="Node2D" parent="."]
+script = ExtResource("8")
+position = Vector2(4150, 145)
+room_path = NodePath("../BonusRoom")
+room_title = "Skrytá hradní chodba"
 
-[node name="LowerGallerySutrik" parent="." instance=ExtResource("rock")]
-position = Vector2(15790, 720)
-patrol = 130.0
-speed = 61.0
+[node name="BonusRoom" type="Node2D" parent="."]
+script = ExtResource("9")
+position = Vector2(0, -2400)
+room_title = "Skrytá hradní chodba"
+room_width = 3110.0
+chamber_style = "castle"
+challenge_hint = "Načasuj skoky na malé plošiny."
 
-[node name="GalleryStinko" parent="." instance=ExtResource("stinko")]
-position = Vector2(17060, 720)
-patrol = 80.0
-speed = 50.0
-shadow_range = 570.0
-shadow_warning = 1.05
-shadow_cooldown = 3.8
-shadow_speed = 215.0
+[node name="BonusPlatform0" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("4")
+position = Vector2(0, 550)
+width = 420.0
+depth = 95.0
+collision_mask = 0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
 
-[node name="LiftSutrik" parent="." instance=ExtResource("rock")]
-position = Vector2(18520, 535)
-patrol = 95.0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform0"]
+shape = SubResource("Shape10")
+position = Vector2(210.0, 40.0)
+
+[node name="BonusPlatform1" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("4")
+position = Vector2(620, 445)
+width = 135.0
+depth = 95.0
+collision_mask = 0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform1"]
+shape = SubResource("Shape11")
+position = Vector2(67.5, 40.0)
+
+[node name="BonusGem1_0" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(660, 393)
+kind = "crystal"
+
+[node name="BonusGem1_1" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(706, 393)
+kind = "crystal"
+
+[node name="BonusPlatform2" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("10")
+position = Vector2(1000, 360)
+width = 140.0
+depth = 95.0
+collision_mask = 0
+surface_art = "wood"
+crumble_delay = 0.8
+return_delay = 2.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform2"]
+shape = SubResource("Shape12")
+position = Vector2(70.0, 40.0)
+
+[node name="BonusGem2_0" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(1042, 308)
+kind = "crystal"
+
+[node name="BonusGem2_1" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(1090, 308)
+kind = "crystal"
+
+[node name="BonusPlatform3" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("11")
+position = Vector2(1390, 455)
+width = 140.0
+depth = 95.0
+collision_mask = 0
+surface_art = "stone"
+travel = Vector2(0, -50)
+period = 3.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform3"]
+shape = SubResource("Shape13")
+position = Vector2(70.0, 40.0)
+
+[node name="BonusGem3_0" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(1432, 403)
+kind = "crystal"
+
+[node name="BonusGem3_1" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(1480, 403)
+kind = "crystal"
+
+[node name="BonusPlatform4" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("4")
+position = Vector2(1780, 360)
+width = 140.0
+depth = 95.0
+collision_mask = 0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform4"]
+shape = SubResource("Shape14")
+position = Vector2(70.0, 40.0)
+
+[node name="BonusGem4_0" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(1822, 308)
+kind = "crystal"
+
+[node name="BonusGem4_1" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(1870, 308)
+kind = "crystal"
+
+[node name="BonusPlatform5" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("10")
+position = Vector2(2170, 460)
+width = 135.0
+depth = 95.0
+collision_mask = 0
+surface_art = "wood"
+crumble_delay = 0.8
+return_delay = 2.8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform5"]
+shape = SubResource("Shape15")
+position = Vector2(67.5, 40.0)
+
+[node name="BonusGem5_0" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(2210, 408)
+kind = "crystal"
+
+[node name="BonusGem5_1" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(2256, 408)
+kind = "crystal"
+
+[node name="BonusPlatform6" type="AnimatableBody2D" parent="BonusRoom"]
+script = ExtResource("4")
+position = Vector2(2560, 550)
+width = 550.0
+depth = 95.0
+collision_mask = 0
+surface_texture = ExtResource("5")
+surface_height = 100.0
+surface_walk_y = 29.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform6"]
+shape = SubResource("Shape16")
+position = Vector2(275.0, 40.0)
+
+[node name="BonusGem6_0" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(2630, 498)
+kind = "crystal"
+
+[node name="BonusGem6_1" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(2735, 498)
+kind = "crystal"
+
+[node name="BonusGem6_2" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(2840, 498)
+kind = "crystal"
+
+[node name="BonusGem6_3" type="Node2D" parent="BonusRoom"]
+script = ExtResource("6")
+position = Vector2(2945, 498)
+kind = "crystal"
+
+[node name="ReturnAtStart" type="Node2D" parent="BonusRoom"]
+script = ExtResource("8")
+position = Vector2(90, 550)
+return_door = true
+room_path = NodePath("..")
+
+[node name="ReturnAtEnd" type="Node2D" parent="BonusRoom"]
+script = ExtResource("8")
+position = Vector2(3035, 550)
+return_door = true
+room_path = NodePath("..")
+
+[node name="CourtLight" type="Node2D" parent="."]
+script = ExtResource("12")
+position = Vector2(2590, 550)
+action = "repair"
+completion_flag = "court_light"
+caption = "Opravit hradní lucernu"
+picture = ExtResource("13")
+picture_height = 135.0
+duration = 1.4
+aftermath = ""
+
+[node name="TowerLight" type="Node2D" parent="."]
+script = ExtResource("12")
+position = Vector2(5270, 470)
+action = "repair"
+completion_flag = "tower_light"
+caption = "Rozsvítit cestu k věži"
+picture = ExtResource("13")
+picture_height = 135.0
+duration = 1.4
+aftermath = "Ve věži někdo je. Jiskra… drží ji za stínovými zámky!"
+required_flag = "court_light"
+locked_caption = "Nejdřív obnov předchozí část cesty."
+
+[node name="CastleHint" type="Marker2D" parent="."]
+script = ExtResource("14")
+position = Vector2(450, 550)
+title = "Hrad bez světel"
+message = "Základnou hradu proudí temnota do celého království. Najdi cestu za Jiskrou."
+
+[node name="ShadowPatrol" parent="." instance=ExtResource("15")]
+position = Vector2(3900, 360)
+patrol = 160.0
 speed = 60.0
+shadow_bolts_enabled = true
+shadow_cooldown = 4.0
+shadow_warning = 1.2
 
-[node name="CanopyStinko" parent="." instance=ExtResource("stinko")]
-position = Vector2(22080, 400)
-patrol = 70.0
-speed = 50.0
-shadow_range = 570.0
-shadow_warning = 1.05
-shadow_cooldown = 3.8
-shadow_speed = 215.0
-
-[node name="CanopyCloud" parent="." instance=ExtResource("cloud_enemy")]
-position = Vector2(23370, 310)
-patrol = 100.0
-speed = 69.0
-
-[node name="CanopySutrik" parent="." instance=ExtResource("rock")]
-position = Vector2(24380, 160)
-patrol = 100.0
-speed = 63.0
-
-[node name="FinalStinko" parent="." instance=ExtResource("stinko")]
-position = Vector2(26470, 330)
-patrol = 75.0
-speed = 51.0
-shadow_range = 570.0
-shadow_warning = 1.05
-shadow_cooldown = 3.8
-shadow_speed = 215.0
-
-[node name="FinalCloud" parent="." instance=ExtResource("cloud_enemy")]
-position = Vector2(27800, 280)
-patrol = 90.0
-speed = 68.0
-
-[node name="PalaceSutrik" parent="." instance=ExtResource("rock")]
-position = Vector2(28810, 220)
-patrol = 70.0
-speed = 59.0
-
-[node name="Crystal01" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(1100, 568)
-kind = "crystal"
-
-[node name="Crystal02" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(1870, 495)
-kind = "crystal"
-
-[node name="Crystal03" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(2950, 465)
-kind = "crystal"
-
-[node name="Crystal04" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(5530, 250)
-kind = "crystal"
-
-[node name="Crystal05" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(4230, -305)
-kind = "crystal"
-
-[node name="Crystal06" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(6200, 330)
-kind = "crystal"
-
-[node name="Crystal07" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(7070, 625)
-kind = "crystal"
-
-[node name="Crystal08" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(8440, 550)
-kind = "crystal"
-
-[node name="Crystal09" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(9100, -30)
-kind = "crystal"
-
-[node name="Crystal10" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(9390, -30)
-kind = "crystal"
-
-[node name="Crystal11" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(10170, 505)
-kind = "crystal"
-
-[node name="Crystal12" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(12900, 380)
-kind = "crystal"
-
-[node name="Crystal13" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(14200, 385)
-kind = "crystal"
-
-[node name="Crystal14" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(15800, 55)
-kind = "crystal"
-
-[node name="Crystal15" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(16750, -295)
-kind = "crystal"
-
-[node name="Crystal16" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(17270, 665)
-kind = "crystal"
-
-[node name="Crystal17" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(19035, -295)
-kind = "crystal"
-
-[node name="Crystal18" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(20080, -295)
-kind = "crystal"
-
-[node name="Crystal19" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(23430, -270)
-kind = "crystal"
-
-[node name="Crystal20" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(23700, -270)
-kind = "crystal"
-
-[node name="Crystal21" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(25450, 275)
-kind = "crystal"
-
-[node name="Crystal22" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(28460, 85)
-kind = "crystal"
-
-[node name="EntranceTree" type="Sprite2D" parent="."]
-position = Vector2(11.5497, 267.2183)
-z_index = -5
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(0.904569, 0.904569)
-
-[node name="EntranceArch" type="Node2D" parent="."]
-position = Vector2(432.9964, 399.1633)
-z_index = -5
-scale = Vector2(0.528318, 0.528318)
-
-[node name="Finial" type="Sprite2D" parent="EntranceArch"]
-position = Vector2(176, 0)
-texture = SubResource("garden_arch_finial_art")
-centered = false
-
-[node name="Arch" type="Sprite2D" parent="EntranceArch"]
-position = Vector2(0, 29)
-texture = SubResource("garden_arch_body_art")
-centered = false
-
-[node name="LessonFern" type="Sprite2D" parent="."]
-position = Vector2(870, 609.0)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.5, 0.5)
-
-[node name="ArrivalFern" type="Sprite2D" parent="."]
-position = Vector2(60, 511.2)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.4, 0.4)
-
-[node name="SunTree" type="Sprite2D" parent="."]
-position = Vector2(3819.6764, -555.7442)
-z_index = -5
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(0.783959, 0.783959)
-
-[node name="SunArch" type="Node2D" parent="."]
-position = Vector2(4343.3502, -474.2342)
-z_index = -5
-scale = Vector2(0.536445, 0.536445)
-
-[node name="Finial" type="Sprite2D" parent="SunArch"]
-position = Vector2(176, 0)
-texture = SubResource("garden_arch_finial_art")
-centered = false
-
-[node name="Arch" type="Sprite2D" parent="SunArch"]
-position = Vector2(0, 29)
-texture = SubResource("garden_arch_body_art")
-centered = false
-
-[node name="SunFlowers" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(3637.1600, 680.0000)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 156.0
-
-[node name="SunCourtColumns" type="Sprite2D" parent="."]
-position = Vector2(5560, 430.15999999999997)
-z_index = -5
-texture = ExtResource("columns")
-centered = false
-scale = Vector2(0.72, 0.72)
-
-[node name="AqueductFlowers" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(6836.7500, 680.0000)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 156.0
-
-[node name="AqueductTree" type="Sprite2D" parent="."]
-position = Vector2(8424.48, 239.64)
-z_index = -5
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(0.94, 0.94)
-
-[node name="AqueductSecretArch" type="Sprite2D" parent="."]
-position = Vector2(9010, -180.79999999999998)
-z_index = -5
-texture = ExtResource("arch")
-centered = false
-scale = Vector2(0.6, 0.6)
-
-[node name="RainEntryArch" type="Sprite2D" parent="."]
-position = Vector2(10520, 292.46)
-z_index = -5
-texture = ExtResource("arch")
-centered = false
-scale = Vector2(0.78, 0.78)
-
-[node name="DryIslandFern" type="Sprite2D" parent="."]
-position = Vector2(12710, 314.88)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.46, 0.46)
-
-[node name="OrangeryExitTree" type="Sprite2D" parent="."]
-position = Vector2(14200.76, 34.18)
-z_index = -5
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(1.03, 1.03)
-
-[node name="GalleryEntryArch" type="Sprite2D" parent="."]
-position = Vector2(14800, 199.9)
-z_index = -5
-texture = ExtResource("arch")
-centered = false
-scale = Vector2(0.7, 0.7)
-
-[node name="GalleryFern" type="Sprite2D" parent="."]
-position = Vector2(16020, 562.24)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.58, 0.58)
-
-[node name="GalleryColumns" type="Sprite2D" parent="."]
-position = Vector2(18020, 425.05)
-z_index = -5
-texture = ExtResource("columns")
-centered = false
-scale = Vector2(0.85, 0.85)
-
-[node name="UpperGalleryFern" type="Sprite2D" parent="."]
-position = Vector2(16540, -370.56)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.48, 0.48)
-
-[node name="UpperGalleryArch" type="Sprite2D" parent="."]
-position = Vector2(16740, -459.52)
-z_index = -5
-texture = ExtResource("arch")
-centered = false
-scale = Vector2(0.64, 0.64)
-
-[node name="LowerGalleryArch" type="Sprite2D" parent="."]
-position = Vector2(16320, 486.76)
-z_index = -5
-texture = ExtResource("arch")
-centered = false
-scale = Vector2(0.68, 0.68)
-
-[node name="MoonTree" type="Sprite2D" parent="."]
-position = Vector2(19339.1553, -553.5838)
-z_index = -5
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(0.804061, 0.804061)
-
-[node name="MoonArch" type="Node2D" parent="."]
-position = Vector2(19852.6427, -457.4392)
-z_index = -5
-scale = Vector2(0.520190, 0.520190)
-
-[node name="Finial" type="Sprite2D" parent="MoonArch"]
-position = Vector2(176, 0)
-texture = SubResource("garden_arch_finial_art")
-centered = false
-
-[node name="Arch" type="Sprite2D" parent="MoonArch"]
-position = Vector2(0, 29)
-texture = SubResource("garden_arch_body_art")
-centered = false
-
-[node name="MoonFlowers" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(20395.4250, 640.0000)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 156.0
-
-[node name="CanopyTree" type="Sprite2D" parent="."]
-position = Vector2(21037.0709, 295.0579)
-z_index = -5
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(0.884467, 0.884467)
-
-[node name="CanopyFern" type="Sprite2D" parent="."]
-position = Vector2(24080, 24.0)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.5, 0.5)
-
-[node name="CanopySecretArch" type="Sprite2D" parent="."]
-position = Vector2(23410, -441.38)
-z_index = -5
-texture = ExtResource("arch")
-centered = false
-scale = Vector2(0.66, 0.66)
-
-[node name="FinalArch" type="Node2D" parent="."]
-position = Vector2(25024.7654, 92.1758)
-z_index = -5
-scale = Vector2(0.568957, 0.568957)
-
-[node name="Finial" type="Sprite2D" parent="FinalArch"]
-position = Vector2(176, 0)
-texture = SubResource("garden_arch_finial_art")
-centered = false
-
-[node name="Arch" type="Sprite2D" parent="FinalArch"]
-position = Vector2(0, 29)
-texture = SubResource("garden_arch_body_art")
-centered = false
-
-[node name="FinalFlowers" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(25533.6900, 330.0000)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 156.0
-
-[node name="PalaceTree" type="Sprite2D" parent="."]
-position = Vector2(29191.2398, -62.2254)
-z_index = -5
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(0.723655, 0.723655)
-
-[node name="GardenFerns0" type="Sprite2D" parent="."]
-position = Vector2(2800, 430.24)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.33, 0.33)
-
-[node name="GardenFerns1" type="Sprite2D" parent="."]
-position = Vector2(4650, 575.28)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.385, 0.385)
-
-[node name="GardenFerns2" type="Sprite2D" parent="."]
-position = Vector2(5870, 560.3199999999999)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.44, 0.44)
-
-[node name="GardenFerns3" type="Sprite2D" parent="."]
-position = Vector2(7310, 590.24)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.33, 0.33)
-
-[node name="GardenFerns4" type="Sprite2D" parent="."]
-position = Vector2(8910, 505.28)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.385, 0.385)
-
-[node name="GardenFerns5" type="Sprite2D" parent="."]
-position = Vector2(9850, 440.32)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.44, 0.44)
-
-[node name="GardenFerns6" type="Sprite2D" parent="."]
-position = Vector2(10900, 470.24)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.33, 0.33)
-
-[node name="GardenFerns7" type="Sprite2D" parent="."]
-position = Vector2(11700, 455.28)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.385, 0.385)
-
-[node name="GardenFerns8" type="Sprite2D" parent="."]
-position = Vector2(13000, 320.32)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.44, 0.44)
-
-[node name="GardenFerns9" type="Sprite2D" parent="."]
-position = Vector2(14600, 350.24)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.33, 0.33)
-
-[node name="GardenFerns10" type="Sprite2D" parent="."]
-position = Vector2(15170, 615.28)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.385, 0.385)
-
-[node name="GardenFerns11" type="Sprite2D" parent="."]
-position = Vector2(17400, 600.3199999999999)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.44, 0.44)
-
-[node name="GardenFerns12" type="Sprite2D" parent="."]
-position = Vector2(18610, 445.24)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.33, 0.33)
-
-[node name="GardenFerns13" type="Sprite2D" parent="."]
-position = Vector2(19440, -344.72)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.385, 0.385)
-
-[node name="GardenFerns14" type="Sprite2D" parent="."]
-position = Vector2(20800, 520.3199999999999)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.44, 0.44)
-
-[node name="GardenFerns15" type="Sprite2D" parent="."]
-position = Vector2(23190, 240.24)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.33, 0.33)
-
-[node name="GardenFerns16" type="Sprite2D" parent="."]
-position = Vector2(24540, 55.28)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.385, 0.385)
-
-[node name="GardenFerns17" type="Sprite2D" parent="."]
-position = Vector2(25600, 210.32)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.44, 0.44)
-
-[node name="GardenFerns18" type="Sprite2D" parent="."]
-position = Vector2(26580, 240.24)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.33, 0.33)
-
-[node name="GardenFerns19" type="Sprite2D" parent="."]
-position = Vector2(28010, 195.28)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.385, 0.385)
-
-[node name="GardenFerns20" type="Sprite2D" parent="."]
-position = Vector2(28740, 100.32)
-z_index = -5
-texture = ExtResource("ferns")
-centered = false
-scale = Vector2(0.44, 0.44)
-
-[node name="SunClimbView" type="Node2D" parent="."]
-script = ExtResource("camera")
-position = Vector2(5580, 475)
-area_size = Vector2(850, 600)
-look_offset = Vector2(-115, -90)
-priority = 2
-
-[node name="SunSourceView" type="Node2D" parent="."]
-script = ExtResource("camera")
-position = Vector2(4240, -270)
-area_size = Vector2(980, 420)
-look_offset = Vector2(115, 80)
-priority = 2
-
-[node name="AqueductSecretView" type="Node2D" parent="."]
-script = ExtResource("camera")
-position = Vector2(8590, 255)
-area_size = Vector2(800, 420)
-look_offset = Vector2(70, -110)
-priority = 2
-
-[node name="RainCrossingView" type="Node2D" parent="."]
-script = ExtResource("camera")
-position = Vector2(12340, 410)
-area_size = Vector2(1760, 680)
-look_offset = Vector2(100, 55)
-priority = 2
-
-[node name="OrangeryChoiceView" type="Node2D" parent="."]
-script = ExtResource("camera")
-position = Vector2(15030, 430)
-area_size = Vector2(580, 470)
-look_offset = Vector2(130, 100)
-priority = 2
-
-[node name="MoonSourceView" type="Node2D" parent="."]
-script = ExtResource("camera")
-position = Vector2(19600, -235)
-area_size = Vector2(1000, 420)
-look_offset = Vector2(80, 60)
-priority = 2
-
-[node name="CanopySecretView" type="Node2D" parent="."]
-script = ExtResource("camera")
-position = Vector2(23000, -15)
-area_size = Vector2(950, 430)
-look_offset = Vector2(80, -65)
-priority = 2
-
-[node name="FinalCanalView" type="Node2D" parent="."]
-script = ExtResource("camera")
-position = Vector2(27040, 290)
-area_size = Vector2(1400, 680)
-look_offset = Vector2(100, 40)
-priority = 2
-
-[node name="SunPlanterApproach" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(3030, 520)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 156.0
-
-[node name="SunPlanterCourt" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(5380, 680)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 156.0
-
-[node name="SunPlanterAqueduct" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(10950, 560)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 156.0
-
-[node name="MoonPlanterGallery" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(15460, 720)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 156.0
-
-[node name="MoonPlanterCanopy" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(23610, 330)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 156.0
-
-[node name="MoonPlanterPalace" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(28900, 220)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 156.0
-
-[node name="ArrivalGardenTree" type="Sprite2D" parent="."]
-position = Vector2(1891.2, 121.6)
-z_index = -12
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(1.1, 1.1)
-
-[node name="SunApproachTree" type="Sprite2D" parent="."]
-position = Vector2(3054.08, 129.94)
-z_index = -12
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(0.99, 0.99)
-
-[node name="SunCourtTree" type="Sprite2D" parent="."]
-position = Vector2(4390.8, 226.9)
-z_index = -12
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(1.15, 1.15)
-
-[node name="OrangeryIslandTree" type="Sprite2D" parent="."]
-position = Vector2(12880.32, 61.76)
-z_index = -12
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(0.96, 0.96)
-
-[node name="GalleryWestTree" type="Sprite2D" parent="."]
-position = Vector2(15717.44, 298.42)
-z_index = -12
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(1.07, 1.07)
-
-[node name="GalleryEastTree" type="Sprite2D" parent="."]
-position = Vector2(18117.04, 278.72)
-z_index = -12
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(1.12, 1.12)
-
-[node name="CanopyLandingTree" type="Sprite2D" parent="."]
-position = Vector2(23559.52, -87.64)
-z_index = -12
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(1.06, 1.06)
-
-[node name="CanopyRiseTree" type="Sprite2D" parent="."]
-position = Vector2(24182.4, -214.3)
-z_index = -12
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(0.95, 0.95)
-
-[node name="FinalCourtTree" type="Sprite2D" parent="."]
-position = Vector2(26139.52, -87.64)
-z_index = -12
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(1.06, 1.06)
-
-[node name="PalaceCanalTree" type="Sprite2D" parent="."]
-position = Vector2(27810.72, -58.54)
-z_index = -12
-texture = SubResource("garden_tree_art")
-centered = false
-scale = Vector2(0.91, 0.91)
-
-[node name="GalleryWestArbor" type="Node2D" parent="."]
-position = Vector2(16470.58, 357.08)
-z_index = -11
-scale = Vector2(0.86, 0.86)
-
-[node name="Finial" type="Sprite2D" parent="GalleryWestArbor"]
-position = Vector2(176, 0)
-texture = SubResource("garden_arch_finial_art")
-centered = false
-
-[node name="Arch" type="Sprite2D" parent="GalleryWestArbor"]
-position = Vector2(0, 29)
-texture = SubResource("garden_arch_body_art")
-centered = false
-
-[node name="GalleryEastArbor" type="Node2D" parent="."]
-position = Vector2(19312.7, 340.2)
-z_index = -11
-scale = Vector2(0.9, 0.9)
-
-[node name="Finial" type="Sprite2D" parent="GalleryEastArbor"]
-position = Vector2(176, 0)
-texture = SubResource("garden_arch_finial_art")
-centered = false
-
-[node name="Arch" type="Sprite2D" parent="GalleryEastArbor"]
-position = Vector2(0, 29)
-texture = SubResource("garden_arch_body_art")
-centered = false
-
-[node name="SunPlanterRoseWalk" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(2260, 555)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 164.0
-
-[node name="SunPlanterOrangery" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(13210, 440)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 164.0
-
-[node name="MoonPlanterLowerWalk" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(16150, 720)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 164.0
-
-[node name="MoonPlanterFinalCourt" type="Node2D" parent="."]
-script = ExtResource("planter")
-position = Vector2(26650, 330)
-z_index = -5
-dry_texture = SubResource("planter_dry_art")
-lush_texture = SubResource("planter_lush_art")
-art_width = 164.0
-
-[node name="LivingDetails" type="Node2D" parent="."]
-
-[node name="ArrivalFlowers" type="Node2D" parent="LivingDetails"]
-position = Vector2(650, 620)
-script = ExtResource("royal_life")
-kind = "Flowers"
-height = 48.0
-phase = 0.2
-metadata/ground_surface = "ArrivalPlaza"
-
-[node name="ArrivalButterflies" type="Node2D" parent="LivingDetails"]
-position = Vector2(640, 590)
-script = ExtResource("royal_life")
-kind = "Butterflies"
-height = 100.0
-phase = 0.6
-
-[node name="RoseWalkBench" type="Node2D" parent="LivingDetails"]
-position = Vector2(2060, 555)
-script = ExtResource("royal_life")
-kind = "Bench"
-height = 75.0
-phase = 0.0
-metadata/ground_surface = "RoseStair"
-
-[node name="RoseWalkLantern" type="Node2D" parent="LivingDetails"]
-position = Vector2(1950, 555)
-script = ExtResource("royal_life")
-kind = "Lantern"
-height = 95.0
-phase = 0.4
-metadata/ground_surface = "RoseStair"
-
-[node name="RoseWalkRestoredFlowers" type="Node2D" parent="LivingDetails"]
-position = Vector2(2410, 555)
-script = ExtResource("royal_life")
-kind = "Flowers"
-height = 52.0
-phase = 1.2
-growth_source = 1
-mirrored = true
-metadata/ground_surface = "RoseStair"
-
-[node name="AqueductDecorativeFountain" type="Node2D" parent="LivingDetails"]
-position = Vector2(10320, 560)
-script = ExtResource("royal_life")
-kind = "Fountain"
-height = 150.0
-phase = 0.7
-metadata/ground_surface = "AqueductEast"
-
-[node name="AqueductFountainFlowers" type="Node2D" parent="LivingDetails"]
-position = Vector2(10100, 560)
-script = ExtResource("royal_life")
-kind = "Flowers"
-height = 46.0
-phase = 1.6
-growth_source = 1
-metadata/ground_surface = "AqueductEast"
-
-[node name="AqueductReadingBench" type="Node2D" parent="LivingDetails"]
-position = Vector2(11200, 560)
-script = ExtResource("royal_life")
-kind = "Bench"
-height = 75.0
-phase = 0.0
-mirrored = true
-metadata/ground_surface = "AqueductEast"
-
-[node name="AqueductRestoredButterflies" type="Node2D" parent="LivingDetails"]
-position = Vector2(11150, 510)
-script = ExtResource("royal_life")
-kind = "Butterflies"
-height = 100.0
-phase = 2.2
-growth_source = 1
-
-[node name="AqueductLantern" type="Node2D" parent="LivingDetails"]
-position = Vector2(11370, 560)
-script = ExtResource("royal_life")
-kind = "Lantern"
-height = 95.0
-phase = 1.0
-metadata/ground_surface = "AqueductEast"
-
-[node name="MoonArborOwlWest" type="Node2D" parent="LivingDetails"]
-position = Vector2(16410, 720)
-script = ExtResource("royal_life")
-kind = "OwlStatue"
-height = 105.0
-phase = 0.0
-metadata/ground_surface = "LowerGalleryWest"
-
-[node name="MoonArborOwlEast" type="Node2D" parent="LivingDetails"]
-position = Vector2(16870, 720)
-script = ExtResource("royal_life")
-kind = "OwlStatue"
-height = 105.0
-phase = 0.0
-mirrored = true
-metadata/ground_surface = "LowerGalleryWest"
-
-[node name="MoonArborFlowers" type="Node2D" parent="LivingDetails"]
-position = Vector2(16300, 720)
-script = ExtResource("royal_life")
-kind = "Flowers"
-height = 48.0
-phase = 2.8
-growth_source = 2
-metadata/ground_surface = "LowerGalleryWest"
-
-[node name="MoonArborFireflies" type="Node2D" parent="LivingDetails"]
-position = Vector2(16840, 665)
-script = ExtResource("royal_life")
-kind = "Fireflies"
-height = 110.0
-phase = 0.8
-growth_source = 2
-
-[node name="MoonTerraceFireflies" type="Node2D" parent="LivingDetails"]
-position = Vector2(19620, -280)
-script = ExtResource("royal_life")
-kind = "Fireflies"
-height = 110.0
-phase = 2.1
-growth_source = 2
-
-[node name="CanopyReadingBench" type="Node2D" parent="LivingDetails"]
-position = Vector2(23580, -215)
-script = ExtResource("royal_life")
-kind = "Bench"
-height = 75.0
-phase = 0.0
-metadata/ground_surface = "CanopySecretBalcony"
-
-[node name="CanopyBookstand" type="Node2D" parent="LivingDetails"]
-position = Vector2(23775, -215)
-script = ExtResource("royal_life")
-kind = "Bookstand"
-height = 100.0
-phase = 0.0
-mirrored = true
-metadata/ground_surface = "CanopySecretBalcony"
-
-[node name="CanopyReadingLantern" type="Node2D" parent="LivingDetails"]
-position = Vector2(23350, -215)
-script = ExtResource("royal_life")
-kind = "Lantern"
-height = 95.0
-phase = 2.5
-metadata/ground_surface = "CanopySecretBalcony"
-
-[node name="CanopyReadingFlowers" type="Node2D" parent="LivingDetails"]
-position = Vector2(23450, -215)
-script = ExtResource("royal_life")
-kind = "Flowers"
-height = 40.0
-phase = 1.4
-growth_source = 2
-mirrored = true
-metadata/ground_surface = "CanopySecretBalcony"
-
-[node name="CanopyReadingButterflies" type="Node2D" parent="LivingDetails"]
-position = Vector2(23530, -275)
-script = ExtResource("royal_life")
-kind = "Butterflies"
-height = 100.0
-phase = 3.0
-growth_source = 2
-
-[node name="FinalWalkFlowers" type="Node2D" parent="LivingDetails"]
-position = Vector2(25380, 330)
-script = ExtResource("royal_life")
-kind = "Flowers"
-height = 52.0
-phase = 3.5
-growth_source = 2
-metadata/ground_surface = "CanopyDescent"
-
-[node name="FinalWalkFireflies" type="Node2D" parent="LivingDetails"]
-position = Vector2(25380, 280)
-script = ExtResource("royal_life")
-kind = "Fireflies"
-height = 110.0
-phase = 1.7
-growth_source = 2
-
-[node name="CanalFlowers" type="Node2D" parent="LivingDetails"]
-position = Vector2(28140, 300)
-script = ExtResource("royal_life")
-kind = "Flowers"
-height = 44.0
-phase = 2.4
-growth_source = 2
-mirrored = true
-metadata/ground_surface = "CanalEast"
-
-[node name="CanalButterflies" type="Node2D" parent="LivingDetails"]
-position = Vector2(28130, 245)
-script = ExtResource("royal_life")
-kind = "Butterflies"
-height = 100.0
-phase = 4.0
-growth_source = 2
-
-[node name="PalaceLantern" type="Node2D" parent="LivingDetails"]
-position = Vector2(29040, 220)
-script = ExtResource("royal_life")
-kind = "Lantern"
-height = 95.0
-phase = 3.2
-metadata/ground_surface = "PalaceGarden"
-
-
-[node name="GardenersLiftLesson" type="Marker2D" parent="."]
-script = ExtResource("tutorial")
-position = Vector2(17700, 620)
-title = "Zahradníkův výtah"
-message = "Deska otevře pečeť a zapne výtah. Ten na tebe dole počká."
-activation_size = Vector2(350, 240)
-display_seconds = 5.0
-
-[node name="PalaceCanalLesson" type="Marker2D" parent="."]
-script = ExtResource("tutorial")
-position = Vector2(25400, 240)
-title = "Poslední kanál"
-message = "Za kanálem čeká hvězda a hradní brána. U hlídky se schovej za kamenný kryt."
-activation_size = Vector2(350, 240)
-display_seconds = 5.0
-
-[node name="AqueductSecretLantern" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(9430, 25)
-kind = "lantern"
-z_index = -1
-scale = Vector2(0.65, 0.65)
-
-[node name="CanopySecretLantern" type="Node2D" parent="."]
-script = ExtResource("object")
-position = Vector2(23750, -215)
-kind = "lantern"
-z_index = -1
-scale = Vector2(0.65, 0.65)
-
-[node name="SecretGardenPlanterDetail" parent="." instance=ExtResource("hf_detail_RoyalPlanter")]
-position = Vector2(9090, 25)
-
-[node name="CanopyRailDetail" parent="." instance=ExtResource("hf_detail_RoyalBalustrade")]
-position = Vector2(23410, -215)

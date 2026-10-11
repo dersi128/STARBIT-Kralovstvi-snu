@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/garden/garden_shrine.png" id="tex"]
+
+
+[node name="GardenShrine" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-104.74522, -227.07006)
+scale = Vector2(0.36624, 0.36624)

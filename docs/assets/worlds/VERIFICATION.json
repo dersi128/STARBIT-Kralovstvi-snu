@@ -1,0 +1,16 @@
+{
+  "engine": "Godot 4.7.2",
+  "date": "2026-10-11",
+  "sprite_count": 162,
+  "new_backgrounds": 6,
+  "prefabs": 171,
+  "all_asset_sha256": "passed",
+  "alpha_padding_8px": "passed",
+  "all_30_level_links": "passed",
+  "catalog_javascript_syntax": "passed",
+  "headless_integration": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\n\nWORLD ASSETS: 171 prefabs; 8 lift/passenger tests; pickup -> repair -> lever -> gate; crumble/return; hazard. Failures: 0\n",
+  "visual_review": "All 18 atlases, 6 backgrounds, 8 actual-image gameplay-scale composites and final 8 socket fits inspected. Live Godot window not inspected.",
+  "headless_errors": 0,
+  "headless_warnings": 0,
+  "catalog_browser_preview": "Not run: local Playwright Chromium binary is unavailable. JavaScript syntax and all asset/scene/level links were checked."
+}

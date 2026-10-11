@@ -77,6 +77,7 @@ static func style_pause(button: Button) -> void:
 
 func _icon(texture: Texture2D, bounds: Rect2) -> TextureRect:
 	var icon := TextureRect.new()
+	icon.expand_mode = TextureRect.EXPAND_IGNORE_SIZE
 	icon.texture = texture
 	icon.position = bounds.position
 	icon.size = bounds.size
@@ -120,7 +121,9 @@ func update_values(diamonds: int, has_key: bool, total: int, animate := true) ->
 
 func _sync_quest(animate: bool) -> void:
 	if not is_instance_valid(level) or not is_instance_valid(level.player):return
-	if level.has_method("objective_text"):objective.text = level.objective_text()
+	if level.bonus_active and level.has_node("BonusRoom"):
+		objective.text = level.get_node("BonusRoom").objective_text()
+	elif level.has_method("objective_text"):objective.text = level.objective_text()
 	var health: int = clampi(level.player.health, 0, 3)
 	if health != _health:
 		for i in 3:

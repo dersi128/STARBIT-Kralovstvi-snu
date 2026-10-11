@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/sky/windmill.png" id="tex"]
+
+
+[node name="Windmill" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-78.84202, -227.17791)
+scale = Vector2(0.35276, 0.35276)

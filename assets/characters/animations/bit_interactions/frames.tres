@@ -1,26 +1,6 @@
-[gd_resource type="SpriteFrames" load_steps=14 format=3]
+[gd_resource type="SpriteFrames" format=3 uid="uid://b37ch364gb4qp"]
 
-[ext_resource type="Texture2D" path="res://assets/characters/animations/bit_interactions/actions.png" id="atlas"]
-
-[sub_resource type="AtlasTexture" id="frame0"]
-atlas = ExtResource("atlas")
-region = Rect2(0, 0, 384, 384)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="frame1"]
-atlas = ExtResource("atlas")
-region = Rect2(384, 0, 384, 384)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="frame2"]
-atlas = ExtResource("atlas")
-region = Rect2(768, 0, 384, 384)
-filter_clip = true
-
-[sub_resource type="AtlasTexture" id="frame3"]
-atlas = ExtResource("atlas")
-region = Rect2(1152, 0, 384, 384)
-filter_clip = true
+[ext_resource type="Texture2D" uid="uid://coilhcp5hwp1y" path="res://assets/characters/animations/bit_interactions/actions.png" id="atlas"]
 
 [sub_resource type="AtlasTexture" id="frame4"]
 atlas = ExtResource("atlas")
@@ -62,13 +42,76 @@ atlas = ExtResource("atlas")
 region = Rect2(1152, 768, 384, 384)
 filter_clip = true
 
+[sub_resource type="AtlasTexture" id="frame0"]
+atlas = ExtResource("atlas")
+region = Rect2(0, 0, 384, 384)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame1"]
+atlas = ExtResource("atlas")
+region = Rect2(384, 0, 384, 384)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame2"]
+atlas = ExtResource("atlas")
+region = Rect2(768, 0, 384, 384)
+filter_clip = true
+
+[sub_resource type="AtlasTexture" id="frame3"]
+atlas = ExtResource("atlas")
+region = Rect2(1152, 0, 384, 384)
+filter_clip = true
+
 [resource]
-animations = [
-
-{"name": &"repair", "speed": 6.0, "loop": true, "frames": [{"duration": 1.0, "texture": SubResource("frame0")}, {"duration": 1.0, "texture": SubResource("frame1")}, {"duration": 1.0, "texture": SubResource("frame2")}, {"duration": 1.0, "texture": SubResource("frame3")}]},
-
-{"name": &"activate", "speed": 6.0, "loop": false, "frames": [{"duration": 1.0, "texture": SubResource("frame4")}, {"duration": 1.0, "texture": SubResource("frame5")}, {"duration": 1.0, "texture": SubResource("frame6")}, {"duration": 1.0, "texture": SubResource("frame7")}]},
-
-{"name": &"pickup", "speed": 6.0, "loop": false, "frames": [{"duration": 1.0, "texture": SubResource("frame8")}, {"duration": 1.0, "texture": SubResource("frame9")}, {"duration": 1.0, "texture": SubResource("frame10")}, {"duration": 1.0, "texture": SubResource("frame11")}]}
-
-]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("frame4")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame5")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame6")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame7")
+}],
+"loop": 0,
+"name": &"activate",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("frame8")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame9")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame10")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame11")
+}],
+"loop": 0,
+"name": &"pickup",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("frame0")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame1")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame2")
+}, {
+"duration": 1.0,
+"texture": SubResource("frame3")
+}],
+"loop": 1,
+"name": &"repair",
+"speed": 6.0
+}]

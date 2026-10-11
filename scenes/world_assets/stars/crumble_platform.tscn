@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/stars/crumble_platform.png" id="tex"]
+[ext_resource type="Script" path="res://scripts/world_assets/crumble_platform.gd" id="behavior"]
+
+[sub_resource type="RectangleShape2D" id="shape"]
+size = Vector2(219.80519, 14.00000)
+
+[node name="CrumblePlatform" type="StaticBody2D"]
+script = ExtResource("behavior")
+collision_layer = 1
+collision_mask = 0
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-112.50000, -2.92208)
+scale = Vector2(0.32468, 0.32468)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("shape")

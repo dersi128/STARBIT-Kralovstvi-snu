@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/forest/root_vine.png" id="tex"]
+
+
+[node name="RootVine" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-44.42308, -226.92308)
+scale = Vector2(0.38462, 0.38462)

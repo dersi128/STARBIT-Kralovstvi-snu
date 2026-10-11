@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/castle/portal_frame.png" id="tex"]
+
+
+[node name="PortalFrame" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-100.24167, -226.93333)
+scale = Vector2(0.38333, 0.38333)

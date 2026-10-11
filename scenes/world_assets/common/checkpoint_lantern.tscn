@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/common/checkpoint_lantern.png" id="tex"]
+
+
+[node name="CheckpointLantern" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-37.18182, -108.54545)
+scale = Vector2(0.18182, 0.18182)

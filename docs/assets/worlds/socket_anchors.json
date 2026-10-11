@@ -1,0 +1,66 @@
+{
+  "forest": {
+    "socket_uv": [
+      0.497449,
+      0.467195
+    ],
+    "gear_width": 0.19,
+    "hole_radius": 94.30000305175781
+  },
+  "village": {
+    "socket_uv": [
+      0.498363,
+      0.558121
+    ],
+    "gear_width": 0.225,
+    "hole_radius": 101.5
+  },
+  "sky": {
+    "socket_uv": [
+      0.5,
+      0.563395
+    ],
+    "gear_width": 0.342296,
+    "hole_radius": 77.5999984741211
+  },
+  "castle": {
+    "socket_uv": [
+      0.500237,
+      0.337143
+    ],
+    "gear_width": 0.255424,
+    "hole_radius": 68.5
+  },
+  "garden": {
+    "socket_uv": [
+      0.498302,
+      0.563393
+    ],
+    "gear_width": 0.195,
+    "hole_radius": 95.4000015258789
+  },
+  "memory": {
+    "socket_uv": [
+      0.499659,
+      0.502675
+    ],
+    "gear_width": 0.336726,
+    "hole_radius": 97
+  },
+  "stars": {
+    "socket_uv": [
+      0.502028,
+      0.560526
+    ],
+    "gear_width": 0.23,
+    "hole_radius": 96.4000015258789
+  },
+  "heart": {
+    "socket_uv": [
+      0.505591,
+      0.546872
+    ],
+    "gear_width": 0.260465,
+    "hole_radius": 70
+  }
+}

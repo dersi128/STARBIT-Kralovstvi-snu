@@ -2,6 +2,12 @@
 
 [ext_resource type="Shader" uid="uid://dan1ttd4eiihb" path="res://shaders/forest_mirror_repeat.gdshader" id="3_is5vl"]
 [ext_resource type="Script" uid="uid://bn2r71lkbsur6" path="res://scripts/forest_bank.gd" id="bank"]
+[ext_resource type="Texture2D" uid="uid://3ay71fpujo1m" path="res://assets/environment/forest/cutouts/platforms/plosina_travnata.png" id="bonus_2"]
+[ext_resource type="Script" uid="uid://dajusp61wvw0c" path="res://scripts/secret_door.gd" id="bonus_3"]
+[ext_resource type="Script" uid="uid://mni5v1gj6ltk" path="res://scripts/bonus_room.gd" id="bonus_4"]
+[ext_resource type="Texture2D" path="res://assets/environment/forest/higgsfield/stone_lip.tres" id="bonus_5"]
+[ext_resource type="Script" uid="uid://d3py4h5karcy0" path="res://scripts/crumble_platform.gd" id="bonus_7"]
+[ext_resource type="Script" uid="uid://sdc02f1aqxyw" path="res://scripts/morous_darkness.gd" id="bonus_8"]
 [ext_resource type="Script" uid="uid://c06yjv6pk1tkb" path="res://scripts/repair_bridge.gd" id="bridge"]
 [ext_resource type="PackedScene" path="res://scenes/worldkit/PushCrate.tscn" id="crate"]
 [ext_resource type="PackedScene" uid="uid://b1be2t40wr3mo" path="res://scenes/Enemy_rock_enemy.tscn" id="enemy"]
@@ -24,47 +30,47 @@
 [ext_resource type="Texture2D" uid="uid://t7apj2xt8ht0" path="res://assets/environment/forest/higgsfield/wood.tres" id="wood"]
 [ext_resource type="Texture2D" uid="uid://brkv3m5ub5kx2" path="res://assets/environment/forest/awakening/workshop.png" id="workshop"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4bgdj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s4hsh"]
 shader = ExtResource("3_is5vl")
 
 [sub_resource type="RectangleShape2D" id="s_WorkshopBank"]
 size = Vector2(3200, 805)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ctdx4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l2m6v"]
 shader = ExtResource("3_is5vl")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_la4bl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7pjk"]
 shader = ExtResource("3_is5vl")
 
 [sub_resource type="RectangleShape2D" id="s_FarBank"]
-size = Vector2(880, 805)
+size = Vector2(800, 805)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fsmxb"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_156wx"]
 shader = ExtResource("3_is5vl")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b6rjf"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6cw38"]
 shader = ExtResource("3_is5vl")
 
 [sub_resource type="RectangleShape2D" id="s_MiddleBank"]
 size = Vector2(610, 805)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_s4hsh"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4p2fq"]
 shader = ExtResource("3_is5vl")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_l2m6v"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7hxxo"]
 shader = ExtResource("3_is5vl")
 
 [sub_resource type="RectangleShape2D" id="s_ExitBank"]
 size = Vector2(1260, 805)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7pjk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r6k77"]
 shader = ExtResource("3_is5vl")
 
 [sub_resource type="RectangleShape2D" id="s_LowRoot"]
-size = Vector2(150, 55)
+size = Vector2(150, 21)
 
 [sub_resource type="RectangleShape2D" id="s_TallRoot"]
-size = Vector2(180, 95)
+size = Vector2(180, 27)
 
 [sub_resource type="RectangleShape2D" id="s_FernLookout"]
 size = Vector2(180, 30)
@@ -73,13 +79,40 @@ size = Vector2(180, 30)
 size = Vector2(280, 30)
 
 [sub_resource type="RectangleShape2D" id="s_RestingBranch"]
-size = Vector2(140, 30)
+size = Vector2(137, 20)
 
 [sub_resource type="RectangleShape2D" id="s_StarStep"]
 size = Vector2(140, 30)
 
 [sub_resource type="RectangleShape2D" id="s_StarShelf"]
 size = Vector2(270, 30)
+
+[sub_resource type="RectangleShape2D" id="BonusShape0"]
+size = Vector2(160, 20)
+
+[sub_resource type="RectangleShape2D" id="BonusShape1"]
+size = Vector2(220, 20)
+
+[sub_resource type="RectangleShape2D" id="BonusShape2"]
+size = Vector2(430, 80)
+
+[sub_resource type="RectangleShape2D" id="BonusShape3"]
+size = Vector2(170, 80)
+
+[sub_resource type="RectangleShape2D" id="BonusShape4"]
+size = Vector2(150, 80)
+
+[sub_resource type="RectangleShape2D" id="BonusShape5"]
+size = Vector2(145, 80)
+
+[sub_resource type="RectangleShape2D" id="BonusShape6"]
+size = Vector2(150, 80)
+
+[sub_resource type="RectangleShape2D" id="BonusShape7"]
+size = Vector2(170, 80)
+
+[sub_resource type="RectangleShape2D" id="BonusShape8"]
+size = Vector2(520, 80)
 
 [node name="Level_01" type="Node2D" unique_id=251339197]
 script = ExtResource("level")
@@ -107,7 +140,7 @@ stretch_mode = 6
 
 [node name="WorkshopBank" type="AnimatableBody2D" parent="." unique_id=1839754126]
 texture_filter = 2
-material = SubResource("ShaderMaterial_4bgdj")
+material = SubResource("ShaderMaterial_s4hsh")
 position = Vector2(0, 550)
 collision_mask = 0
 script = ExtResource("ground")
@@ -125,7 +158,7 @@ shape = SubResource("s_WorkshopBank")
 z_index = -1
 texture_filter = 2
 texture_repeat = 2
-material = SubResource("ShaderMaterial_ctdx4")
+material = SubResource("ShaderMaterial_l2m6v")
 position = Vector2(0, 550)
 script = ExtResource("bank")
 surface_overlap = 0.0
@@ -135,34 +168,35 @@ bottom = 1400.0
 
 [node name="FarBank" type="AnimatableBody2D" parent="." unique_id=979467519]
 texture_filter = 2
-material = SubResource("ShaderMaterial_la4bl")
+material = SubResource("ShaderMaterial_y7pjk")
 position = Vector2(3920, 550)
 collision_mask = 0
 script = ExtResource("ground")
 surface_texture = ExtResource("grass")
 surface_walk_y = 35.0
 surface_height = 44.0
-width = 880.0
+width = 800.0
 depth = 820.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FarBank" unique_id=1714437118]
-position = Vector2(440, 402.5)
+position = Vector2(400, 402.5)
 shape = SubResource("s_FarBank")
 
 [node name="FarBankEarth" type="Node2D" parent="." unique_id=1989335209]
 z_index = -1
 texture_filter = 2
 texture_repeat = 2
-material = SubResource("ShaderMaterial_fsmxb")
-position = Vector2(3920, 550)
+material = SubResource("ShaderMaterial_156wx")
+position = Vector2(3920, 553)
 script = ExtResource("bank")
 surface_overlap = 5.0
-width = 880.0
+texture_span = 497.0
+width = 800.0
 bottom = 1400.0
 
 [node name="MiddleBank" type="AnimatableBody2D" parent="." unique_id=970867613]
 texture_filter = 2
-material = SubResource("ShaderMaterial_b6rjf")
+material = SubResource("ShaderMaterial_6cw38")
 position = Vector2(4970, 550)
 collision_mask = 0
 script = ExtResource("ground")
@@ -180,7 +214,7 @@ shape = SubResource("s_MiddleBank")
 z_index = -1
 texture_filter = 2
 texture_repeat = 2
-material = SubResource("ShaderMaterial_s4hsh")
+material = SubResource("ShaderMaterial_4p2fq")
 position = Vector2(4970, 550)
 script = ExtResource("bank")
 surface_overlap = 5.0
@@ -189,7 +223,7 @@ bottom = 1400.0
 
 [node name="ExitBank" type="AnimatableBody2D" parent="." unique_id=73879177]
 texture_filter = 2
-material = SubResource("ShaderMaterial_l2m6v")
+material = SubResource("ShaderMaterial_7hxxo")
 position = Vector2(5740, 550)
 collision_mask = 0
 script = ExtResource("ground")
@@ -207,7 +241,7 @@ shape = SubResource("s_ExitBank")
 z_index = -1
 texture_filter = 2
 texture_repeat = 2
-material = SubResource("ShaderMaterial_y7pjk")
+material = SubResource("ShaderMaterial_r6k77")
 position = Vector2(5740, 550)
 script = ExtResource("bank")
 surface_overlap = 5.0
@@ -215,7 +249,7 @@ width = 1260.0
 bottom = 1400.0
 
 [node name="LowRoot" type="AnimatableBody2D" parent="." unique_id=1386689634]
-position = Vector2(870, 495)
+position = Vector2(2080, 228)
 collision_mask = 0
 script = ExtResource("platform")
 surface_texture = ExtResource("wood")
@@ -225,8 +259,9 @@ width = 150.0
 depth = 70.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LowRoot" unique_id=678759342]
-position = Vector2(75, 27.5)
+position = Vector2(75, 10.5)
 shape = SubResource("s_LowRoot")
+one_way_collision = true
 
 [node name="TallRoot" type="AnimatableBody2D" parent="." unique_id=1647558462]
 position = Vector2(1270, 455)
@@ -239,8 +274,9 @@ width = 180.0
 depth = 110.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TallRoot" unique_id=1058873903]
-position = Vector2(90, 47.5)
+position = Vector2(90, 13.5)
 shape = SubResource("s_TallRoot")
+one_way_collision = true
 
 [node name="FernLookout" type="AnimatableBody2D" parent="." unique_id=1167422007]
 position = Vector2(1640, 420)
@@ -258,7 +294,7 @@ shape = SubResource("s_FernLookout")
 one_way_collision = true
 
 [node name="GearShelf" type="AnimatableBody2D" parent="." unique_id=92699127]
-position = Vector2(2250, 355)
+position = Vector2(2233, 342)
 collision_mask = 0
 script = ExtResource("platform")
 surface_texture = ExtResource("wood")
@@ -273,7 +309,7 @@ shape = SubResource("s_GearShelf")
 one_way_collision = true
 
 [node name="RestingBranch" type="AnimatableBody2D" parent="." unique_id=2071453476]
-position = Vector2(4580, 440)
+position = Vector2(4735, 469)
 collision_mask = 0
 script = ExtResource("platform")
 surface_texture = ExtResource("wood")
@@ -283,7 +319,7 @@ width = 140.0
 depth = 45.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RestingBranch" unique_id=936082632]
-position = Vector2(70, 15)
+position = Vector2(71.5, 10)
 shape = SubResource("s_RestingBranch")
 one_way_collision = true
 
@@ -303,7 +339,7 @@ shape = SubResource("s_StarStep")
 one_way_collision = true
 
 [node name="StarShelf" type="AnimatableBody2D" parent="." unique_id=1969105960]
-position = Vector2(6190, 420)
+position = Vector2(6184, 400)
 collision_mask = 0
 script = ExtResource("platform")
 surface_texture = ExtResource("wood")
@@ -321,12 +357,12 @@ one_way_collision = true
 position = Vector2(2080, 548)
 
 [node name="RepairBridge" type="StaticBody2D" parent="." unique_id=1350541135]
-position = Vector2(3190, 550)
+position = Vector2(3197, 548)
 collision_mask = 0
 script = ExtResource("bridge")
 
 [node name="Gear" type="Node2D" parent="." unique_id=46768155]
-position = Vector2(2385, 355)
+position = Vector2(2155, 215)
 script = ExtResource("interaction")
 picture = ExtResource("gear")
 picture_height = 43.0
@@ -334,7 +370,7 @@ caption = "Sebrat ozubené kolo"
 duration = 0.85
 
 [node name="Winch" type="Node2D" parent="." unique_id=715975355]
-position = Vector2(2855, 550)
+position = Vector2(2349, 560)
 script = ExtResource("interaction")
 action = "repair"
 required_item = "bridge_gear"
@@ -358,18 +394,8 @@ caption = "Spustit most"
 locked_caption = "Nejdřív oprav naviják"
 duration = 0.7
 
-[node name="CheckpointWorkshop" type="Node2D" parent="." unique_id=820691864]
-position = Vector2(1890, 550)
-script = ExtResource("object")
-kind = "checkpoint"
-
 [node name="CheckpointBridge" type="Node2D" parent="." unique_id=1477306867]
-position = Vector2(4035, 550)
-script = ExtResource("object")
-kind = "checkpoint"
-
-[node name="CheckpointExit" type="Node2D" parent="." unique_id=621322696]
-position = Vector2(5845, 550)
+position = Vector2(4662, 548)
 script = ExtResource("object")
 kind = "checkpoint"
 
@@ -401,7 +427,7 @@ touch_message = "Krátký stisk ↑ = malý skok. Podrž ↑ pro vyšší skok."
 activation_size = Vector2(340, 240)
 
 [node name="CrateLesson" type="Marker2D" parent="." unique_id=1140390068]
-position = Vector2(1970, 510)
+position = Vector2(2032, 485)
 script = ExtResource("hint")
 title = "Malý opravář"
 message = "Kolo je vysoko. Přisuň bednu, vyskoč na ni a pak na polici. U kola stiskni E."
@@ -409,7 +435,7 @@ touch_message = "Přisuň bednu pod polici. Přes bednu vyskoč ke kolu a stiskn
 activation_size = Vector2(340, 240)
 
 [node name="RepairLesson" type="Marker2D" parent="." unique_id=305454398]
-position = Vector2(2740, 510)
+position = Vector2(2945, 498)
 script = ExtResource("hint")
 title = "Oprava cesty"
 message = "Se součástkou dojdi k navijáku a stiskni E. Pak zatáhni za páku."
@@ -442,11 +468,11 @@ position = Vector2(725, 506)
 script = ExtResource("object")
 
 [node name="Crystal02" type="Node2D" parent="." unique_id=1101539535]
-position = Vector2(948, 445)
+position = Vector2(945, 455)
 script = ExtResource("object")
 
 [node name="Crystal03" type="Node2D" parent="." unique_id=1600824724]
-position = Vector2(1380, 406)
+position = Vector2(1360, 400)
 script = ExtResource("object")
 
 [node name="Crystal04" type="Node2D" parent="." unique_id=88061069]
@@ -454,7 +480,7 @@ position = Vector2(1730, 382)
 script = ExtResource("object")
 
 [node name="Crystal05" type="Node2D" parent="." unique_id=1450905064]
-position = Vector2(2320, 310)
+position = Vector2(2373, 300)
 script = ExtResource("object")
 
 [node name="Crystal06" type="Node2D" parent="." unique_id=50744439]
@@ -462,7 +488,7 @@ position = Vector2(4120, 506)
 script = ExtResource("object")
 
 [node name="Crystal07" type="Node2D" parent="." unique_id=1424784236]
-position = Vector2(4660, 400)
+position = Vector2(4807, 430)
 script = ExtResource("object")
 
 [node name="Crystal08" type="Node2D" parent="." unique_id=2118928747]
@@ -478,15 +504,15 @@ position = Vector2(6035, 447)
 script = ExtResource("object")
 
 [node name="Crystal11" type="Node2D" parent="." unique_id=171156957]
-position = Vector2(6230, 380)
+position = Vector2(6250, 357)
 script = ExtResource("object")
 
 [node name="Crystal12" type="Node2D" parent="." unique_id=1843703753]
-position = Vector2(6550, 506)
+position = Vector2(6370, 479)
 script = ExtResource("object")
 
 [node name="StarKey" type="Node2D" parent="." unique_id=943434814]
-position = Vector2(6380, 380)
+position = Vector2(6383, 357)
 script = ExtResource("object")
 kind = "star_key"
 
@@ -502,51 +528,17 @@ scale = Vector2(0.8037825, 0.8037825)
 texture = ExtResource("workshop")
 offset = Vector2(0, -211.5)
 
-[node name="Oak0" type="Sprite2D" parent="." unique_id=1740521822]
-z_index = -3
-position = Vector2(1510, 568)
-scale = Vector2(0.4834254, 0.4834254)
-texture = ExtResource("tree")
-offset = Vector2(0, -362)
-
 [node name="Oak1" type="Sprite2D" parent="." unique_id=1498041128]
+visible = false
 z_index = -3
-position = Vector2(2480, 562)
-scale = Vector2(0.5248619, 0.5248619)
-texture = ExtResource("tree")
-offset = Vector2(0, -362)
-
-[node name="Oak2" type="Sprite2D" parent="." unique_id=936627826]
-z_index = -3
-position = Vector2(4140, 565)
-scale = Vector2(0.4834254, 0.4834254)
-texture = ExtResource("tree")
-offset = Vector2(0, -362)
-
-[node name="Oak3" type="Sprite2D" parent="." unique_id=764011245]
-z_index = -3
-position = Vector2(5900, 565)
-scale = Vector2(0.51104975, 0.51104975)
-texture = ExtResource("tree")
-offset = Vector2(0, -362)
-
-[node name="Oak4" type="Sprite2D" parent="." unique_id=2090874596]
-z_index = -3
-position = Vector2(6550, 565)
-scale = Vector2(0.53867406, 0.53867406)
+position = Vector2(2297.0002, 581)
+scale = Vector2(0.84959763, 0.85359114)
 texture = ExtResource("tree")
 offset = Vector2(0, -362)
 
 [node name="Fern0" type="Sprite2D" parent="." unique_id=1248221053]
 z_index = -1
 position = Vector2(173, 518)
-scale = Vector2(0.19935691, 0.19935691)
-texture = ExtResource("ferns")
-offset = Vector2(0, -155.5)
-
-[node name="Fern1" type="Sprite2D" parent="." unique_id=719892683]
-z_index = -1
-position = Vector2(630, 560)
 scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
 offset = Vector2(0, -155.5)
@@ -558,13 +550,6 @@ scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
 offset = Vector2(0, -155.5)
 
-[node name="Fern3" type="Sprite2D" parent="." unique_id=1822861276]
-z_index = -1
-position = Vector2(1770, 560)
-scale = Vector2(0.19935691, 0.19935691)
-texture = ExtResource("ferns")
-offset = Vector2(0, -155.5)
-
 [node name="Fern4" type="Sprite2D" parent="." unique_id=355044594]
 z_index = -1
 position = Vector2(2670, 560)
@@ -572,23 +557,9 @@ scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
 offset = Vector2(0, -155.5)
 
-[node name="Fern5" type="Sprite2D" parent="." unique_id=451051230]
-z_index = -1
-position = Vector2(3160, 560)
-scale = Vector2(0.19935691, 0.19935691)
-texture = ExtResource("ferns")
-offset = Vector2(0, -155.5)
-
 [node name="Fern6" type="Sprite2D" parent="." unique_id=111829259]
 z_index = -1
-position = Vector2(3940, 560)
-scale = Vector2(0.19935691, 0.19935691)
-texture = ExtResource("ferns")
-offset = Vector2(0, -155.5)
-
-[node name="Fern7" type="Sprite2D" parent="." unique_id=1204648213]
-z_index = -1
-position = Vector2(4750, 560)
+position = Vector2(4515, 550)
 scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
 offset = Vector2(0, -155.5)
@@ -600,29 +571,12 @@ scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
 offset = Vector2(0, -155.5)
 
-[node name="Fern9" type="Sprite2D" parent="." unique_id=1703983934]
-z_index = -1
-position = Vector2(5780, 560)
-scale = Vector2(0.19935691, 0.19935691)
-texture = ExtResource("ferns")
-offset = Vector2(0, -155.5)
-
 [node name="Fern10" type="Sprite2D" parent="." unique_id=1035584113]
 z_index = -1
 position = Vector2(6530, 560)
 scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
 offset = Vector2(0, -155.5)
-
-[node name="Fern11" type="Sprite2D" parent="." unique_id=484281850]
-z_index = -1
-position = Vector2(6930, 560)
-scale = Vector2(0.19935691, 0.19935691)
-texture = ExtResource("ferns")
-offset = Vector2(0, -155.5)
-
-[node name="Lantern0" parent="." unique_id=1743093301 instance=ExtResource("lantern")]
-position = Vector2(1830, 550)
 
 [node name="Lantern1" parent="." unique_id=1770193486 instance=ExtResource("lantern")]
 position = Vector2(4100, 550)
@@ -632,5 +586,220 @@ position = Vector2(6650, 550)
 
 [node name="Stream" parent="." unique_id=485702773 instance=ExtResource("pool")]
 z_index = -3
-position = Vector2(3535, 900)
-width = 710.0
+position = Vector2(3197, 657)
+width = 3690.0
+depth = 740.0
+
+[node name="SecretStep" type="AnimatableBody2D" parent="." unique_id=1349058434]
+position = Vector2(5110, 430)
+collision_mask = 0
+script = ExtResource("platform")
+surface_texture = ExtResource("bonus_2")
+surface_walk_y = 82.0
+surface_height = 150.0
+width = 160.0
+depth = 35.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretStep" unique_id=976400970]
+position = Vector2(80, 10)
+shape = SubResource("BonusShape0")
+one_way_collision = true
+
+[node name="SecretLanding" type="AnimatableBody2D" parent="." unique_id=399599638]
+position = Vector2(5325, 325)
+collision_mask = 0
+script = ExtResource("platform")
+surface_texture = ExtResource("bonus_2")
+surface_walk_y = 82.0
+surface_height = 150.0
+width = 220.0
+depth = 35.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SecretLanding" unique_id=1274651356]
+position = Vector2(110, 10)
+shape = SubResource("BonusShape1")
+one_way_collision = true
+
+[node name="SecretEntrance" type="Node2D" parent="." unique_id=499217612]
+position = Vector2(5435, 325)
+script = ExtResource("bonus_3")
+room_path = NodePath("../BonusRoom")
+room_title = "Dílna mezi kořeny"
+
+[node name="BonusRoom" type="Node2D" parent="." unique_id=844761127]
+position = Vector2(0, -2400)
+script = ExtResource("bonus_4")
+room_title = "Dílna mezi kořeny"
+room_width = 3100.0
+challenge_hint = "Načasuj skoky na malé plošiny."
+
+[node name="BonusPlatform0" type="AnimatableBody2D" parent="BonusRoom" unique_id=258853179]
+position = Vector2(0, 550)
+collision_mask = 0
+script = ExtResource("platform")
+surface_texture = ExtResource("bonus_5")
+surface_walk_y = 29.0
+surface_height = 100.0
+width = 430.0
+depth = 95.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform0" unique_id=847966432]
+position = Vector2(215, 40)
+shape = SubResource("BonusShape2")
+
+[node name="BonusPlatform1" type="AnimatableBody2D" parent="BonusRoom" unique_id=372593602]
+position = Vector2(610, 510)
+collision_mask = 0
+script = ExtResource("platform")
+surface_texture = ExtResource("bonus_5")
+surface_walk_y = 29.0
+surface_height = 100.0
+width = 170.0
+depth = 95.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform1" unique_id=719346559]
+position = Vector2(85, 40)
+shape = SubResource("BonusShape3")
+
+[node name="BonusGem1_0" type="Node2D" parent="BonusRoom" unique_id=1275761926]
+position = Vector2(661, 458)
+script = ExtResource("object")
+
+[node name="BonusGem1_1" type="Node2D" parent="BonusRoom" unique_id=190636344]
+position = Vector2(719, 458)
+script = ExtResource("object")
+
+[node name="BonusPlatform2" type="AnimatableBody2D" parent="BonusRoom" unique_id=1580090500]
+position = Vector2(1010, 435)
+collision_mask = 0
+script = ExtResource("platform")
+surface_texture = ExtResource("bonus_5")
+surface_walk_y = 29.0
+surface_height = 100.0
+width = 150.0
+depth = 95.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform2" unique_id=644102021]
+position = Vector2(75, 40)
+shape = SubResource("BonusShape4")
+
+[node name="BonusGem2_0" type="Node2D" parent="BonusRoom" unique_id=894838858]
+position = Vector2(1055, 383)
+script = ExtResource("object")
+
+[node name="BonusGem2_1" type="Node2D" parent="BonusRoom" unique_id=1845541581]
+position = Vector2(1106, 383)
+script = ExtResource("object")
+
+[node name="BonusPlatform3" type="AnimatableBody2D" parent="BonusRoom" unique_id=1867360931]
+position = Vector2(1410, 480)
+collision_mask = 0
+script = ExtResource("bonus_7")
+crumble_delay = 0.8
+return_delay = 2.8
+surface_art = "wood"
+width = 145.0
+depth = 95.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform3" unique_id=1995715590]
+position = Vector2(72.5, 40)
+shape = SubResource("BonusShape5")
+
+[node name="BonusGem3_0" type="Node2D" parent="BonusRoom" unique_id=1616977422]
+position = Vector2(1454, 428)
+script = ExtResource("object")
+
+[node name="BonusGem3_1" type="Node2D" parent="BonusRoom" unique_id=1438129088]
+position = Vector2(1503, 428)
+script = ExtResource("object")
+
+[node name="BonusPlatform4" type="AnimatableBody2D" parent="BonusRoom" unique_id=942033958]
+position = Vector2(1810, 430)
+collision_mask = 0
+script = ExtResource("platform")
+surface_texture = ExtResource("bonus_5")
+surface_walk_y = 29.0
+surface_height = 100.0
+width = 150.0
+depth = 95.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform4" unique_id=1208892042]
+position = Vector2(75, 40)
+shape = SubResource("BonusShape6")
+
+[node name="BonusGem4_0" type="Node2D" parent="BonusRoom" unique_id=920448137]
+position = Vector2(1855, 378)
+script = ExtResource("object")
+
+[node name="BonusGem4_1" type="Node2D" parent="BonusRoom" unique_id=736542742]
+position = Vector2(1906, 378)
+script = ExtResource("object")
+
+[node name="BonusPlatform5" type="AnimatableBody2D" parent="BonusRoom" unique_id=785845851]
+position = Vector2(2190, 510)
+collision_mask = 0
+script = ExtResource("platform")
+surface_texture = ExtResource("bonus_5")
+surface_walk_y = 29.0
+surface_height = 100.0
+width = 170.0
+depth = 95.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform5" unique_id=449754283]
+position = Vector2(85, 40)
+shape = SubResource("BonusShape7")
+
+[node name="BonusGem5_0" type="Node2D" parent="BonusRoom" unique_id=1698914362]
+position = Vector2(2241, 458)
+script = ExtResource("object")
+
+[node name="BonusGem5_1" type="Node2D" parent="BonusRoom" unique_id=2018145781]
+position = Vector2(2299, 458)
+script = ExtResource("object")
+
+[node name="BonusPlatform6" type="AnimatableBody2D" parent="BonusRoom" unique_id=1881856469]
+position = Vector2(2580, 550)
+collision_mask = 0
+script = ExtResource("platform")
+surface_texture = ExtResource("bonus_5")
+surface_walk_y = 29.0
+surface_height = 100.0
+width = 520.0
+depth = 95.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BonusRoom/BonusPlatform6" unique_id=1060553846]
+position = Vector2(260, 40)
+shape = SubResource("BonusShape8")
+
+[node name="BonusGem6_0" type="Node2D" parent="BonusRoom" unique_id=740292315]
+position = Vector2(2650, 498)
+script = ExtResource("object")
+
+[node name="BonusGem6_1" type="Node2D" parent="BonusRoom" unique_id=1272203403]
+position = Vector2(2755, 498)
+script = ExtResource("object")
+
+[node name="BonusGem6_2" type="Node2D" parent="BonusRoom" unique_id=474931628]
+position = Vector2(2860, 498)
+script = ExtResource("object")
+
+[node name="BonusGem6_3" type="Node2D" parent="BonusRoom" unique_id=185618707]
+position = Vector2(2965, 498)
+script = ExtResource("object")
+
+[node name="ReturnAtStart" type="Node2D" parent="BonusRoom" unique_id=711986760]
+position = Vector2(90, 550)
+script = ExtResource("bonus_3")
+room_path = NodePath("..")
+return_door = true
+
+[node name="ReturnAtEnd" type="Node2D" parent="BonusRoom" unique_id=1119295938]
+position = Vector2(3025, 550)
+script = ExtResource("bonus_3")
+room_path = NodePath("..")
+return_door = true
+
+[node name="MorousDarkness" type="CanvasLayer" parent="." unique_id=1659504132]
+layer = -90
+script = ExtResource("bonus_8")
+strength = 0.07

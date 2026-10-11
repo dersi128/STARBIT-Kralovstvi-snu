@@ -1,0 +1,2497 @@
+{
+  "base_commit": "6b4d4f37aab920ad86d0069710cfe1763693d56d",
+  "created": "2026-10-11",
+  "generator": "Higgsfield gpt_image_2_5",
+  "processing": "Higgsfield sandbox",
+  "specs": [
+    {
+      "index": 0,
+      "key": "forest_mechanics",
+      "biome": "forest",
+      "title": "Les a kořeny",
+      "levels": [
+        1,
+        2
+      ],
+      "environment": 1,
+      "palette": "Honey-brown timber, ochre stones, lime moss and grass, turquoise copper fittings, little cream flowers.",
+      "kind": "mechanics",
+      "objects": [
+        {
+          "id": "platform_long",
+          "title": "platform_long",
+          "description": "one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface"
+        },
+        {
+          "id": "ledge",
+          "title": "ledge",
+          "description": "one short horizontal ledge with flat top, 2:1 width to height"
+        },
+        {
+          "id": "lift_deck",
+          "title": "lift_deck",
+          "description": "a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure"
+        },
+        {
+          "id": "lift_header",
+          "title": "lift_header",
+          "description": "a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts"
+        },
+        {
+          "id": "pressure_plate",
+          "title": "pressure_plate",
+          "description": "a low horizontal pressure plate with inset turquoise center button, no tall structure"
+        },
+        {
+          "id": "gate",
+          "title": "gate",
+          "description": "one standalone closed vertical barred shutter panel, no outer frame"
+        },
+        {
+          "id": "hazard",
+          "title": "hazard",
+          "description": "prickly bramble patch"
+        },
+        {
+          "id": "crumble_platform",
+          "title": "crumble_platform",
+          "description": "one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact"
+        },
+        {
+          "id": "repair_socket",
+          "title": "repair_socket",
+          "description": "old mossy winch with a clean circular empty gear socket"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/awakening/winch.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/cutouts/platforms/plosina_travnata.png"
+          },
+          {
+            "role": "image",
+            "value": "4f1aa865-c369-4967-a6b2-34d49bb35492"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Honey-brown timber, ochre stones, lime moss and grass, turquoise copper fittings, little cream flowers. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface.\n2. one short horizontal ledge with flat top, 2:1 width to height.\n3. a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure.\n4. a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts.\n5. a low horizontal pressure plate with inset turquoise center button, no tall structure.\n6. one standalone closed vertical barred shutter panel, no outer frame.\n7. prickly bramble patch.\n8. one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact.\n9. old mossy winch with a clean circular empty gear socket.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 1,
+      "key": "forest_decor",
+      "biome": "forest",
+      "title": "Les a kořeny",
+      "levels": [
+        1,
+        2
+      ],
+      "environment": 1,
+      "palette": "Honey-brown timber, ochre stones, lime moss and grass, turquoise copper fittings, little cream flowers.",
+      "kind": "decor",
+      "objects": [
+        {
+          "id": "root_workshop",
+          "title": "root_workshop",
+          "description": "small round workshop doorway nestled into a hollow root stump, blue roof detail"
+        },
+        {
+          "id": "root_arch",
+          "title": "root_arch",
+          "description": "thick hollow tree root arch with empty transparent passage"
+        },
+        {
+          "id": "signpost",
+          "title": "signpost",
+          "description": "forked timber signpost with TWO blank arrow boards, no letters"
+        },
+        {
+          "id": "fern_cluster",
+          "title": "fern_cluster",
+          "description": "low broad fern cluster with small cream flowers"
+        },
+        {
+          "id": "mushroom_cluster",
+          "title": "mushroom_cluster",
+          "description": "three turquoise and cream mushrooms on a tiny moss base"
+        },
+        {
+          "id": "boulder",
+          "title": "boulder",
+          "description": "rounded mossy ochre boulder"
+        },
+        {
+          "id": "lantern_post",
+          "title": "lantern_post",
+          "description": "short curved wooden post bearing one warm star lantern"
+        },
+        {
+          "id": "supply_crate",
+          "title": "supply_crate",
+          "description": "wooden repair supply crate with turquoise straps, closed"
+        },
+        {
+          "id": "root_vine",
+          "title": "root_vine",
+          "description": "long slender curling root vine, vertical standalone"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/higgsfield/forest_landmarks.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/cutouts/platforms/plosina_travnata.png"
+          },
+          {
+            "role": "image",
+            "value": "4f1aa865-c369-4967-a6b2-34d49bb35492"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Honey-brown timber, ochre stones, lime moss and grass, turquoise copper fittings, little cream flowers. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. small round workshop doorway nestled into a hollow root stump, blue roof detail.\n2. thick hollow tree root arch with empty transparent passage.\n3. forked timber signpost with TWO blank arrow boards, no letters.\n4. low broad fern cluster with small cream flowers.\n5. three turquoise and cream mushrooms on a tiny moss base.\n6. rounded mossy ochre boulder.\n7. short curved wooden post bearing one warm star lantern.\n8. wooden repair supply crate with turquoise straps, closed.\n9. long slender curling root vine, vertical standalone.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 2,
+      "key": "village_mechanics",
+      "biome": "village",
+      "title": "Vesnice a strážci",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "environment": 3,
+      "palette": "Warm timber, cream stone, blue roof shingles, old gold, moss and small white daisies. Guardian paw-and-star motifs.",
+      "kind": "mechanics",
+      "objects": [
+        {
+          "id": "platform_long",
+          "title": "platform_long",
+          "description": "one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface"
+        },
+        {
+          "id": "ledge",
+          "title": "ledge",
+          "description": "one short horizontal ledge with flat top, 2:1 width to height"
+        },
+        {
+          "id": "lift_deck",
+          "title": "lift_deck",
+          "description": "a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure"
+        },
+        {
+          "id": "lift_header",
+          "title": "lift_header",
+          "description": "a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts"
+        },
+        {
+          "id": "pressure_plate",
+          "title": "pressure_plate",
+          "description": "a low horizontal pressure plate with inset turquoise center button, no tall structure"
+        },
+        {
+          "id": "gate",
+          "title": "gate",
+          "description": "one standalone closed vertical barred shutter panel, no outer frame"
+        },
+        {
+          "id": "hazard",
+          "title": "hazard",
+          "description": "broken wooden spike barricade with rounded cartoon points"
+        },
+        {
+          "id": "crumble_platform",
+          "title": "crumble_platform",
+          "description": "one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact"
+        },
+        {
+          "id": "repair_socket",
+          "title": "repair_socket",
+          "description": "timber and gold village light generator with a clear empty round socket"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/awakening/winch.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/cutouts/platforms/plosina_travnata.png"
+          },
+          {
+            "role": "image",
+            "value": "d57d2112-f8ac-4828-bdb5-0129f6c008b9"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Warm timber, cream stone, blue roof shingles, old gold, moss and small white daisies. Guardian paw-and-star motifs. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface.\n2. one short horizontal ledge with flat top, 2:1 width to height.\n3. a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure.\n4. a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts.\n5. a low horizontal pressure plate with inset turquoise center button, no tall structure.\n6. one standalone closed vertical barred shutter panel, no outer frame.\n7. broken wooden spike barricade with rounded cartoon points.\n8. one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact.\n9. timber and gold village light generator with a clear empty round socket.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 3,
+      "key": "village_decor",
+      "biome": "village",
+      "title": "Vesnice a strážci",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "environment": 3,
+      "palette": "Warm timber, cream stone, blue roof shingles, old gold, moss and small white daisies. Guardian paw-and-star motifs.",
+      "kind": "decor",
+      "objects": [
+        {
+          "id": "cottage",
+          "title": "cottage",
+          "description": "little cream timber cottage with blue roof and golden round window"
+        },
+        {
+          "id": "guardian_arch",
+          "title": "guardian_arch",
+          "description": "cream stone guardian arch with a simple paw-shaped stone crest, transparent opening"
+        },
+        {
+          "id": "watchtower",
+          "title": "watchtower",
+          "description": "small wooden lookout tower with blue canopy and a ladder"
+        },
+        {
+          "id": "lantern_post",
+          "title": "lantern_post",
+          "description": "wooden twin lantern post, empty clear glass housings"
+        },
+        {
+          "id": "well",
+          "title": "well",
+          "description": "small village well with wooden canopy, no dangling bucket"
+        },
+        {
+          "id": "fence",
+          "title": "fence",
+          "description": "short timber fence section with leaves"
+        },
+        {
+          "id": "barrels",
+          "title": "barrels",
+          "description": "pair of wooden barrels tied with brass rings"
+        },
+        {
+          "id": "noticeboard",
+          "title": "noticeboard",
+          "description": "wooden noticeboard with blank parchment"
+        },
+        {
+          "id": "guardian_marker",
+          "title": "guardian_marker",
+          "description": "small mossy guardian waystone with paw and star relief"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/higgsfield/forest_landmarks.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/cutouts/platforms/plosina_travnata.png"
+          },
+          {
+            "role": "image",
+            "value": "d57d2112-f8ac-4828-bdb5-0129f6c008b9"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Warm timber, cream stone, blue roof shingles, old gold, moss and small white daisies. Guardian paw-and-star motifs. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. little cream timber cottage with blue roof and golden round window.\n2. cream stone guardian arch with a simple paw-shaped stone crest, transparent opening.\n3. small wooden lookout tower with blue canopy and a ladder.\n4. wooden twin lantern post, empty clear glass housings.\n5. small village well with wooden canopy, no dangling bucket.\n6. short timber fence section with leaves.\n7. pair of wooden barrels tied with brass rings.\n8. wooden noticeboard with blank parchment.\n9. small mossy guardian waystone with paw and star relief.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 4,
+      "key": "sky_mechanics",
+      "biome": "sky",
+      "title": "Oblačné ostrovy",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "environment": 6,
+      "palette": "Cream floating stone, azure and teal panels, old brass wind machinery, bright cloud curls and a little fresh grass. Golden wind-star motifs.",
+      "kind": "mechanics",
+      "objects": [
+        {
+          "id": "platform_long",
+          "title": "platform_long",
+          "description": "one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface"
+        },
+        {
+          "id": "ledge",
+          "title": "ledge",
+          "description": "one short horizontal ledge with flat top, 2:1 width to height"
+        },
+        {
+          "id": "lift_deck",
+          "title": "lift_deck",
+          "description": "a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure"
+        },
+        {
+          "id": "lift_header",
+          "title": "lift_header",
+          "description": "a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts"
+        },
+        {
+          "id": "pressure_plate",
+          "title": "pressure_plate",
+          "description": "a low horizontal pressure plate with inset turquoise center button, no tall structure"
+        },
+        {
+          "id": "gate",
+          "title": "gate",
+          "description": "one standalone closed vertical barred shutter panel, no outer frame"
+        },
+        {
+          "id": "hazard",
+          "title": "hazard",
+          "description": "small rotating wind hazard rotor, blunt pointed brass fins"
+        },
+        {
+          "id": "crumble_platform",
+          "title": "crumble_platform",
+          "description": "one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact"
+        },
+        {
+          "id": "repair_socket",
+          "title": "repair_socket",
+          "description": "brass wind gate control housing with a clean circular empty core socket"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/awakening/winch.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/cutouts/platforms/plosina_travnata.png"
+          },
+          {
+            "role": "image",
+            "value": "649745a2-7666-4520-984c-44ca3ec48acc"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Cream floating stone, azure and teal panels, old brass wind machinery, bright cloud curls and a little fresh grass. Golden wind-star motifs. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface.\n2. one short horizontal ledge with flat top, 2:1 width to height.\n3. a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure.\n4. a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts.\n5. a low horizontal pressure plate with inset turquoise center button, no tall structure.\n6. one standalone closed vertical barred shutter panel, no outer frame.\n7. small rotating wind hazard rotor, blunt pointed brass fins.\n8. one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact.\n9. brass wind gate control housing with a clean circular empty core socket.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 5,
+      "key": "sky_decor",
+      "biome": "sky",
+      "title": "Oblačné ostrovy",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "environment": 6,
+      "palette": "Cream floating stone, azure and teal panels, old brass wind machinery, bright cloud curls and a little fresh grass. Golden wind-star motifs.",
+      "kind": "decor",
+      "objects": [
+        {
+          "id": "wind_arch",
+          "title": "wind_arch",
+          "description": "cream and gold wind gateway arch, transparent opening, no portal painting"
+        },
+        {
+          "id": "windmill",
+          "title": "windmill",
+          "description": "small cream and turquoise windmill tower WITHOUT blades, exposed center axle"
+        },
+        {
+          "id": "cloud_island",
+          "title": "cloud_island",
+          "description": "small decorative floating island tuft, hanging roots and one tree"
+        },
+        {
+          "id": "bell_tower",
+          "title": "bell_tower",
+          "description": "open cream bell tower with one brass bell"
+        },
+        {
+          "id": "windsock",
+          "title": "windsock",
+          "description": "curved pole with turquoise windsock pointing right"
+        },
+        {
+          "id": "sky_cottage",
+          "title": "sky_cottage",
+          "description": "tiny floating air village house with blue roof, complete isolated building"
+        },
+        {
+          "id": "anchor",
+          "title": "anchor",
+          "description": "heavy brass sky mooring anchor resting on small cream pedestal"
+        },
+        {
+          "id": "cloud_cluster",
+          "title": "cloud_cluster",
+          "description": "soft white and pale turquoise cloud curl cluster"
+        },
+        {
+          "id": "wind_crystal",
+          "title": "wind_crystal",
+          "description": "small three-pronged teal wind crystal on brass socket base"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/cutouts/platforms/plosina_travnata.png"
+          },
+          {
+            "role": "image",
+            "value": "649745a2-7666-4520-984c-44ca3ec48acc"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Cream floating stone, azure and teal panels, old brass wind machinery, bright cloud curls and a little fresh grass. Golden wind-star motifs. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. cream and gold wind gateway arch, transparent opening, no portal painting.\n2. small cream and turquoise windmill tower WITHOUT blades, exposed center axle.\n3. small decorative floating island tuft, hanging roots and one tree.\n4. open cream bell tower with one brass bell.\n5. curved pole with turquoise windsock pointing right.\n6. tiny floating air village house with blue roof, complete isolated building.\n7. heavy brass sky mooring anchor resting on small cream pedestal.\n8. soft white and pale turquoise cloud curl cluster.\n9. small three-pronged teal wind crystal on brass socket base.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 6,
+      "key": "castle_mechanics",
+      "biome": "castle",
+      "title": "Hrad a vězení",
+      "levels": [
+        9,
+        10
+      ],
+      "environment": 10,
+      "palette": "Cream limestone, polished old gold trim, cobalt blue cloth, turquoise crystals, delicate ivy, restrained violet shadow locks.",
+      "kind": "mechanics",
+      "objects": [
+        {
+          "id": "platform_long",
+          "title": "platform_long",
+          "description": "one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface"
+        },
+        {
+          "id": "ledge",
+          "title": "ledge",
+          "description": "one short horizontal ledge with flat top, 2:1 width to height"
+        },
+        {
+          "id": "lift_deck",
+          "title": "lift_deck",
+          "description": "a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure"
+        },
+        {
+          "id": "lift_header",
+          "title": "lift_header",
+          "description": "a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts"
+        },
+        {
+          "id": "pressure_plate",
+          "title": "pressure_plate",
+          "description": "a low horizontal pressure plate with inset turquoise center button, no tall structure"
+        },
+        {
+          "id": "gate",
+          "title": "gate",
+          "description": "one standalone closed vertical barred shutter panel, no outer frame"
+        },
+        {
+          "id": "hazard",
+          "title": "hazard",
+          "description": "short row of purple magical floor spikes"
+        },
+        {
+          "id": "crumble_platform",
+          "title": "crumble_platform",
+          "description": "one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact"
+        },
+        {
+          "id": "repair_socket",
+          "title": "repair_socket",
+          "description": "royal light console with clear empty round crystal socket"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/awakening/winch.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "25f63f28-331b-4627-b95f-d4b396ed1ed5"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Cream limestone, polished old gold trim, cobalt blue cloth, turquoise crystals, delicate ivy, restrained violet shadow locks. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface.\n2. one short horizontal ledge with flat top, 2:1 width to height.\n3. a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure.\n4. a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts.\n5. a low horizontal pressure plate with inset turquoise center button, no tall structure.\n6. one standalone closed vertical barred shutter panel, no outer frame.\n7. short row of purple magical floor spikes.\n8. one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact.\n9. royal light console with clear empty round crystal socket.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 7,
+      "key": "castle_decor",
+      "biome": "castle",
+      "title": "Hrad a vězení",
+      "levels": [
+        9,
+        10
+      ],
+      "environment": 10,
+      "palette": "Cream limestone, polished old gold trim, cobalt blue cloth, turquoise crystals, delicate ivy, restrained violet shadow locks.",
+      "kind": "decor",
+      "objects": [
+        {
+          "id": "royal_arch",
+          "title": "royal_arch",
+          "description": "cream and gold royal doorway arch with blue star crest, empty transparent opening"
+        },
+        {
+          "id": "prison_cage",
+          "title": "prison_cage",
+          "description": "tall graceful gold and cream prison cage with vertical bars, no captive"
+        },
+        {
+          "id": "column",
+          "title": "column",
+          "description": "cream carved column with gold base and cap"
+        },
+        {
+          "id": "banner",
+          "title": "banner",
+          "description": "cobalt hanging banner with simple gold star, no writing"
+        },
+        {
+          "id": "chandelier",
+          "title": "chandelier",
+          "description": "small gold chandelier with three warm lights"
+        },
+        {
+          "id": "mirror",
+          "title": "mirror",
+          "description": "oval cyan mirror in ornate cream and gold frame, no person"
+        },
+        {
+          "id": "chest",
+          "title": "chest",
+          "description": "royal closed blue and gold chest"
+        },
+        {
+          "id": "ivy",
+          "title": "ivy",
+          "description": "delicate green climbing ivy branch"
+        },
+        {
+          "id": "portal_frame",
+          "title": "portal_frame",
+          "description": "cream and gold oval portal frame with tiny turquoise jewels, transparent middle"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "25f63f28-331b-4627-b95f-d4b396ed1ed5"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Cream limestone, polished old gold trim, cobalt blue cloth, turquoise crystals, delicate ivy, restrained violet shadow locks. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. cream and gold royal doorway arch with blue star crest, empty transparent opening.\n2. tall graceful gold and cream prison cage with vertical bars, no captive.\n3. cream carved column with gold base and cap.\n4. cobalt hanging banner with simple gold star, no writing.\n5. small gold chandelier with three warm lights.\n6. oval cyan mirror in ornate cream and gold frame, no person.\n7. royal closed blue and gold chest.\n8. delicate green climbing ivy branch.\n9. cream and gold oval portal frame with tiny turquoise jewels, transparent middle.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 8,
+      "key": "garden_mechanics",
+      "biome": "garden",
+      "title": "Zahrady obrů",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "environment": 18,
+      "palette": "Oversized lime emerald leaves, rose-pink petals, warm ochre roots, cream irrigation stone, dew turquoise and old gold fittings.",
+      "kind": "mechanics",
+      "objects": [
+        {
+          "id": "platform_long",
+          "title": "platform_long",
+          "description": "one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface"
+        },
+        {
+          "id": "ledge",
+          "title": "ledge",
+          "description": "one short horizontal ledge with flat top, 2:1 width to height"
+        },
+        {
+          "id": "lift_deck",
+          "title": "lift_deck",
+          "description": "a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure"
+        },
+        {
+          "id": "lift_header",
+          "title": "lift_header",
+          "description": "a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts"
+        },
+        {
+          "id": "pressure_plate",
+          "title": "pressure_plate",
+          "description": "a low horizontal pressure plate with inset turquoise center button, no tall structure"
+        },
+        {
+          "id": "gate",
+          "title": "gate",
+          "description": "one standalone closed vertical barred shutter panel, no outer frame"
+        },
+        {
+          "id": "hazard",
+          "title": "hazard",
+          "description": "curled dark violet thorn cluster"
+        },
+        {
+          "id": "crumble_platform",
+          "title": "crumble_platform",
+          "description": "one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact"
+        },
+        {
+          "id": "repair_socket",
+          "title": "repair_socket",
+          "description": "root and brass irrigation junction with clear round empty valve socket"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/awakening/winch.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "3ee0e9ab-2e6e-4c56-8c78-7924932a1602"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Oversized lime emerald leaves, rose-pink petals, warm ochre roots, cream irrigation stone, dew turquoise and old gold fittings. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface.\n2. one short horizontal ledge with flat top, 2:1 width to height.\n3. a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure.\n4. a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts.\n5. a low horizontal pressure plate with inset turquoise center button, no tall structure.\n6. one standalone closed vertical barred shutter panel, no outer frame.\n7. curled dark violet thorn cluster.\n8. one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact.\n9. root and brass irrigation junction with clear round empty valve socket.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 9,
+      "key": "garden_decor",
+      "biome": "garden",
+      "title": "Zahrady obrů",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "environment": 18,
+      "palette": "Oversized lime emerald leaves, rose-pink petals, warm ochre roots, cream irrigation stone, dew turquoise and old gold fittings.",
+      "kind": "decor",
+      "objects": [
+        {
+          "id": "giant_flower",
+          "title": "giant_flower",
+          "description": "enormous pink flower on curved emerald stem with two broad leaves"
+        },
+        {
+          "id": "leaf_arch",
+          "title": "leaf_arch",
+          "description": "two curled fern stems forming a wide arch, transparent center"
+        },
+        {
+          "id": "irrigation_pipe",
+          "title": "irrigation_pipe",
+          "description": "curved cream stone irrigation pipe outlet with gold binding"
+        },
+        {
+          "id": "reservoir",
+          "title": "reservoir",
+          "description": "small cream and gold reservoir basin, turquoise water visible"
+        },
+        {
+          "id": "seed_bed",
+          "title": "seed_bed",
+          "description": "round patch of fertile soil framed by roots, empty center for a seed"
+        },
+        {
+          "id": "dew_leaf",
+          "title": "dew_leaf",
+          "description": "giant emerald leaf bearing one sparkling dew drop"
+        },
+        {
+          "id": "root_bundle",
+          "title": "root_bundle",
+          "description": "thick tangle of ochre living roots with tiny green shoots"
+        },
+        {
+          "id": "thorn_vine",
+          "title": "thorn_vine",
+          "description": "tall curved dark violet thorn vine"
+        },
+        {
+          "id": "garden_shrine",
+          "title": "garden_shrine",
+          "description": "small flower-shaped stone shrine with three green leaves, empty center"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "3ee0e9ab-2e6e-4c56-8c78-7924932a1602"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Oversized lime emerald leaves, rose-pink petals, warm ochre roots, cream irrigation stone, dew turquoise and old gold fittings. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. enormous pink flower on curved emerald stem with two broad leaves.\n2. two curled fern stems forming a wide arch, transparent center.\n3. curved cream stone irrigation pipe outlet with gold binding.\n4. small cream and gold reservoir basin, turquoise water visible.\n5. round patch of fertile soil framed by roots, empty center for a seed.\n6. giant emerald leaf bearing one sparkling dew drop.\n7. thick tangle of ochre living roots with tiny green shoots.\n8. tall curved dark violet thorn vine.\n9. small flower-shaped stone shrine with three green leaves, empty center.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 10,
+      "key": "memory_mechanics",
+      "biome": "memory",
+      "title": "Řeka vzpomínek",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "environment": 20,
+      "palette": "Rounded lavender and blue stone, luminous turquoise water and glass, old cream and gold ruins, pale pearl highlights.",
+      "kind": "mechanics",
+      "objects": [
+        {
+          "id": "platform_long",
+          "title": "platform_long",
+          "description": "one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface"
+        },
+        {
+          "id": "ledge",
+          "title": "ledge",
+          "description": "one short horizontal ledge with flat top, 2:1 width to height"
+        },
+        {
+          "id": "lift_deck",
+          "title": "lift_deck",
+          "description": "a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure"
+        },
+        {
+          "id": "lift_header",
+          "title": "lift_header",
+          "description": "a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts"
+        },
+        {
+          "id": "pressure_plate",
+          "title": "pressure_plate",
+          "description": "a low horizontal pressure plate with inset turquoise center button, no tall structure"
+        },
+        {
+          "id": "gate",
+          "title": "gate",
+          "description": "one standalone closed vertical barred shutter panel, no outer frame"
+        },
+        {
+          "id": "hazard",
+          "title": "hazard",
+          "description": "short patch of violet crystal points"
+        },
+        {
+          "id": "crumble_platform",
+          "title": "crumble_platform",
+          "description": "one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact"
+        },
+        {
+          "id": "repair_socket",
+          "title": "repair_socket",
+          "description": "cream and pearl mirror mechanism housing with clean empty circular socket"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/awakening/winch.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "b0cf4ada-0d46-4aad-86b3-07b0b5a45b85"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Rounded lavender and blue stone, luminous turquoise water and glass, old cream and gold ruins, pale pearl highlights. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface.\n2. one short horizontal ledge with flat top, 2:1 width to height.\n3. a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure.\n4. a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts.\n5. a low horizontal pressure plate with inset turquoise center button, no tall structure.\n6. one standalone closed vertical barred shutter panel, no outer frame.\n7. short patch of violet crystal points.\n8. one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact.\n9. cream and pearl mirror mechanism housing with clean empty circular socket.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 11,
+      "key": "memory_decor",
+      "biome": "memory",
+      "title": "Řeka vzpomínek",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "environment": 20,
+      "palette": "Rounded lavender and blue stone, luminous turquoise water and glass, old cream and gold ruins, pale pearl highlights.",
+      "kind": "decor",
+      "objects": [
+        {
+          "id": "mirror_gate",
+          "title": "mirror_gate",
+          "description": "great ornate oval cream and gold mirror gateway with blank turquoise glass"
+        },
+        {
+          "id": "crystal_cluster",
+          "title": "crystal_cluster",
+          "description": "pale cyan and lavender cave crystal cluster"
+        },
+        {
+          "id": "river_stone",
+          "title": "river_stone",
+          "description": "smooth rounded blue shoreline rock with tiny mint moss"
+        },
+        {
+          "id": "memory_obelisk",
+          "title": "memory_obelisk",
+          "description": "cream and gold memory obelisk with three empty oval recesses"
+        },
+        {
+          "id": "ruined_arch",
+          "title": "ruined_arch",
+          "description": "broken cream temple arch, transparent opening"
+        },
+        {
+          "id": "glowing_reeds",
+          "title": "glowing_reeds",
+          "description": "slender mint glowing river reeds"
+        },
+        {
+          "id": "memory_fountain",
+          "title": "memory_fountain",
+          "description": "small circular pearl and turquoise fountain"
+        },
+        {
+          "id": "reflection_frame",
+          "title": "reflection_frame",
+          "description": "freestanding empty oval gold mirror frame, transparent center"
+        },
+        {
+          "id": "water_lily",
+          "title": "water_lily",
+          "description": "wide cyan water lily with small pink flower"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "b0cf4ada-0d46-4aad-86b3-07b0b5a45b85"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Rounded lavender and blue stone, luminous turquoise water and glass, old cream and gold ruins, pale pearl highlights. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. great ornate oval cream and gold mirror gateway with blank turquoise glass.\n2. pale cyan and lavender cave crystal cluster.\n3. smooth rounded blue shoreline rock with tiny mint moss.\n4. cream and gold memory obelisk with three empty oval recesses.\n5. broken cream temple arch, transparent opening.\n6. slender mint glowing river reeds.\n7. small circular pearl and turquoise fountain.\n8. freestanding empty oval gold mirror frame, transparent center.\n9. wide cyan water lily with small pink flower.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 12,
+      "key": "stars_mechanics",
+      "biome": "stars",
+      "title": "Hvězdné hory",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "environment": 21,
+      "palette": "Frosted blue-grey stone, lavender shadows, cream observatory stone, brass and warm golden light, cobalt cloth. Tiny star engravings.",
+      "kind": "mechanics",
+      "objects": [
+        {
+          "id": "platform_long",
+          "title": "platform_long",
+          "description": "one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface"
+        },
+        {
+          "id": "ledge",
+          "title": "ledge",
+          "description": "one short horizontal ledge with flat top, 2:1 width to height"
+        },
+        {
+          "id": "lift_deck",
+          "title": "lift_deck",
+          "description": "a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure"
+        },
+        {
+          "id": "lift_header",
+          "title": "lift_header",
+          "description": "a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts"
+        },
+        {
+          "id": "pressure_plate",
+          "title": "pressure_plate",
+          "description": "a low horizontal pressure plate with inset turquoise center button, no tall structure"
+        },
+        {
+          "id": "gate",
+          "title": "gate",
+          "description": "one standalone closed vertical barred shutter panel, no outer frame"
+        },
+        {
+          "id": "hazard",
+          "title": "hazard",
+          "description": "short row of readable blue icicle points"
+        },
+        {
+          "id": "crumble_platform",
+          "title": "crumble_platform",
+          "description": "one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact"
+        },
+        {
+          "id": "repair_socket",
+          "title": "repair_socket",
+          "description": "old observatory star power housing with clear round empty socket"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/awakening/winch.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "06469553-9e1f-458a-b7c2-22ec307c6899"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Frosted blue-grey stone, lavender shadows, cream observatory stone, brass and warm golden light, cobalt cloth. Tiny star engravings. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface.\n2. one short horizontal ledge with flat top, 2:1 width to height.\n3. a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure.\n4. a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts.\n5. a low horizontal pressure plate with inset turquoise center button, no tall structure.\n6. one standalone closed vertical barred shutter panel, no outer frame.\n7. short row of readable blue icicle points.\n8. one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact.\n9. old observatory star power housing with clear round empty socket.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 13,
+      "key": "stars_decor",
+      "biome": "stars",
+      "title": "Hvězdné hory",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "environment": 21,
+      "palette": "Frosted blue-grey stone, lavender shadows, cream observatory stone, brass and warm golden light, cobalt cloth. Tiny star engravings.",
+      "kind": "decor",
+      "objects": [
+        {
+          "id": "observatory",
+          "title": "observatory",
+          "description": "small cream and brass observatory dome building with opening, no telescope"
+        },
+        {
+          "id": "telescope",
+          "title": "telescope",
+          "description": "large brass and turquoise telescope on tripod, pointing diagonally up right"
+        },
+        {
+          "id": "lantern_house",
+          "title": "lantern_house",
+          "description": "tiny cream alpine lantern cottage with blue roof"
+        },
+        {
+          "id": "star_lamp",
+          "title": "star_lamp",
+          "description": "tall brass street lantern with star-shaped pale glass, unlit"
+        },
+        {
+          "id": "alpine_rock",
+          "title": "alpine_rock",
+          "description": "rounded frosted indigo mountain rock"
+        },
+        {
+          "id": "pine",
+          "title": "pine",
+          "description": "small soft snow-dusted blue spruce"
+        },
+        {
+          "id": "constellation_table",
+          "title": "constellation_table",
+          "description": "round brass star chart table with abstract dots only, no letters"
+        },
+        {
+          "id": "empty_lanterns",
+          "title": "empty_lanterns",
+          "description": "three small empty hanging lantern housings on a curved rail"
+        },
+        {
+          "id": "star_shrine",
+          "title": "star_shrine",
+          "description": "small gold star pedestal on cream mountain stone"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "06469553-9e1f-458a-b7c2-22ec307c6899"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Frosted blue-grey stone, lavender shadows, cream observatory stone, brass and warm golden light, cobalt cloth. Tiny star engravings. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. small cream and brass observatory dome building with opening, no telescope.\n2. large brass and turquoise telescope on tripod, pointing diagonally up right.\n3. tiny cream alpine lantern cottage with blue roof.\n4. tall brass street lantern with star-shaped pale glass, unlit.\n5. rounded frosted indigo mountain rock.\n6. small soft snow-dusted blue spruce.\n7. round brass star chart table with abstract dots only, no letters.\n8. three small empty hanging lantern housings on a curved rail.\n9. small gold star pedestal on cream mountain stone.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 14,
+      "key": "heart_mechanics",
+      "biome": "heart",
+      "title": "Temnota a Srdce",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "environment": 23,
+      "palette": "Cream castle stone weathered under deep lavender, old gold, dark violet living roots, turquoise clean magic conduits, pale pink rim light. Friendly fantasy, no horror.",
+      "kind": "mechanics",
+      "objects": [
+        {
+          "id": "platform_long",
+          "title": "platform_long",
+          "description": "one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface"
+        },
+        {
+          "id": "ledge",
+          "title": "ledge",
+          "description": "one short horizontal ledge with flat top, 2:1 width to height"
+        },
+        {
+          "id": "lift_deck",
+          "title": "lift_deck",
+          "description": "a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure"
+        },
+        {
+          "id": "lift_header",
+          "title": "lift_header",
+          "description": "a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts"
+        },
+        {
+          "id": "pressure_plate",
+          "title": "pressure_plate",
+          "description": "a low horizontal pressure plate with inset turquoise center button, no tall structure"
+        },
+        {
+          "id": "gate",
+          "title": "gate",
+          "description": "one standalone closed vertical barred shutter panel, no outer frame"
+        },
+        {
+          "id": "hazard",
+          "title": "hazard",
+          "description": "curling purple shadow root spike cluster"
+        },
+        {
+          "id": "crumble_platform",
+          "title": "crumble_platform",
+          "description": "one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact"
+        },
+        {
+          "id": "repair_socket",
+          "title": "repair_socket",
+          "description": "cream and gold heart energy junction with clean circular empty conduit socket"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/awakening/winch.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "37db6aaa-ba5f-495e-81ca-c9add4441b6b"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Cream castle stone weathered under deep lavender, old gold, dark violet living roots, turquoise clean magic conduits, pale pink rim light. Friendly fantasy, no horror. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. one wide horizontal playable platform, about 3:1 width to height, perfectly level continuous top across the central 85 percent; no tall plants on walking surface.\n2. one short horizontal ledge with flat top, 2:1 width to height.\n3. a separate thin wide lift deck, 4:1 width to height, flat top; no ropes, no posts, no overhead structure.\n4. a separate horizontal lift overhead header with two small pulleys; no ropes, no lift deck, no posts.\n5. a low horizontal pressure plate with inset turquoise center button, no tall structure.\n6. one standalone closed vertical barred shutter panel, no outer frame.\n7. curling purple shadow root spike cluster.\n8. one cracked horizontal platform, perfectly flat walking top with clearly visible cracks, still intact.\n9. cream and gold heart energy junction with clean circular empty conduit socket.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 15,
+      "key": "heart_decor",
+      "biome": "heart",
+      "title": "Temnota a Srdce",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "environment": 23,
+      "palette": "Cream castle stone weathered under deep lavender, old gold, dark violet living roots, turquoise clean magic conduits, pale pink rim light. Friendly fantasy, no horror.",
+      "kind": "decor",
+      "objects": [
+        {
+          "id": "heart_altar",
+          "title": "heart_altar",
+          "description": "grand low cream and gold altar with THREE empty clearly separated essence recesses"
+        },
+        {
+          "id": "root_arch",
+          "title": "root_arch",
+          "description": "large cream stone arch tangled in dark purple roots, transparent opening"
+        },
+        {
+          "id": "magic_conduit",
+          "title": "magic_conduit",
+          "description": "curved turquoise magic conduit enclosed in pale stone rings"
+        },
+        {
+          "id": "shadow_root",
+          "title": "shadow_root",
+          "description": "thick curved violet root branch, complete isolated silhouette"
+        },
+        {
+          "id": "royal_ruin",
+          "title": "royal_ruin",
+          "description": "small broken cream and gold pillar with lavender moss"
+        },
+        {
+          "id": "heart_pedestal",
+          "title": "heart_pedestal",
+          "description": "round gold and cream pedestal with empty open cradle for a heart crystal"
+        },
+        {
+          "id": "service_hatch",
+          "title": "service_hatch",
+          "description": "old round brass service hatch with star relief"
+        },
+        {
+          "id": "light_beacon",
+          "title": "light_beacon",
+          "description": "small surviving warm gold beacon surrounded by teal leaves"
+        },
+        {
+          "id": "root_knot",
+          "title": "root_knot",
+          "description": "rounded tangled root knot with a visible turquoise crack"
+        }
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "37db6aaa-ba5f-495e-81ca-c9add4441b6b"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Cream castle stone weathered under deep lavender, old gold, dark violet living roots, turquoise clean magic conduits, pale pink rim light. Friendly fantasy, no horror. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. grand low cream and gold altar with THREE empty clearly separated essence recesses.\n2. large cream stone arch tangled in dark purple roots, transparent opening.\n3. curved turquoise magic conduit enclosed in pale stone rings.\n4. thick curved violet root branch, complete isolated silhouette.\n5. small broken cream and gold pillar with lavender moss.\n6. round gold and cream pedestal with empty open cradle for a heart crystal.\n7. old round brass service hatch with star relief.\n8. small surviving warm gold beacon surrounded by teal leaves.\n9. rounded tangled root knot with a visible turquoise crack.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 16,
+      "key": "common_mechanisms",
+      "biome": "common",
+      "kind": "mechanics",
+      "title": "Společné mechanismy",
+      "environment": 1,
+      "palette": "Wood, cream stone, brass and turquoise with deep teal outlines.",
+      "objects": [
+        {
+          "id": "lever_base",
+          "title": "lever_base",
+          "description": "a small wood and brass lever pedestal with a round exposed turquoise pivot at its upper center; NO handle"
+        },
+        {
+          "id": "lever_handle",
+          "title": "lever_handle",
+          "description": "a separate straight brass lever shaft with turquoise grip at TOP and round pivot hole at BOTTOM, upright, no base"
+        },
+        {
+          "id": "gear",
+          "title": "gear",
+          "description": "a face-on circular golden gear wheel, eight chunky teeth, round hollow center, perfectly rotationally symmetric"
+        },
+        {
+          "id": "chain_link",
+          "title": "chain_link",
+          "description": "one short vertical brass chain segment, three oval links, no attachment"
+        },
+        {
+          "id": "wind_rotor",
+          "title": "wind_rotor",
+          "description": "a face-on brass and turquoise wind rotor with four broad blades and circular central hub, rotationally symmetric"
+        },
+        {
+          "id": "spring_pad",
+          "title": "spring_pad",
+          "description": "a compressed brass coil spring on a low turquoise base with a flat small cap"
+        },
+        {
+          "id": "valve_wheel",
+          "title": "valve_wheel",
+          "description": "a face-on turquoise valve wheel with four gold spokes and a round central pivot"
+        },
+        {
+          "id": "shadow_lock",
+          "title": "shadow_lock",
+          "description": "a small rounded violet magical padlock with dark gold trim, no letters"
+        },
+        {
+          "id": "checkpoint_lantern",
+          "title": "checkpoint_lantern",
+          "description": "a small warm glowing star lantern in a brass and cream frame, on a low sturdy pedestal"
+        }
+      ],
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/forest/awakening/winch.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "4f1aa865-c369-4967-a6b2-34d49bb35492"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Wood, cream stone, brass and turquoise with deep teal outlines. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. a small wood and brass lever pedestal with a round exposed turquoise pivot at its upper center; NO handle.\n2. a separate straight brass lever shaft with turquoise grip at TOP and round pivot hole at BOTTOM, upright, no base.\n3. a face-on circular golden gear wheel, eight chunky teeth, round hollow center, perfectly rotationally symmetric.\n4. one short vertical brass chain segment, three oval links, no attachment.\n5. a face-on brass and turquoise wind rotor with four broad blades and circular central hub, rotationally symmetric.\n6. a compressed brass coil spring on a low turquoise base with a flat small cap.\n7. a face-on turquoise valve wheel with four gold spokes and a round central pivot.\n8. a small rounded violet magical padlock with dark gold trim, no letters.\n9. a small warm glowing star lantern in a brass and cream frame, on a low sturdy pedestal.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 17,
+      "key": "story_items",
+      "biome": "story",
+      "kind": "items",
+      "title": "Příběhové předměty",
+      "environment": 10,
+      "palette": "Cream, old gold, emerald turquoise and pearl cyan, warm soft highlights.",
+      "objects": [
+        {
+          "id": "life_drop",
+          "title": "life_drop",
+          "description": "one large green turquoise life essence water drop, clear crisp self-contained silhouette, tiny golden leaf clasp"
+        },
+        {
+          "id": "memory_pearl",
+          "title": "memory_pearl",
+          "description": "one lustrous pale cyan memory essence pearl in a small gold crescent clasp"
+        },
+        {
+          "id": "hope_star",
+          "title": "hope_star",
+          "description": "one glowing five-point gold hope essence star with soft cream center and tiny cyan gem"
+        },
+        {
+          "id": "essence_lantern",
+          "title": "essence_lantern",
+          "description": "a wearable tiny cream and gold essence lantern with three distinct small green cyan and gold gem recesses"
+        },
+        {
+          "id": "last_seed",
+          "title": "last_seed",
+          "description": "one large chestnut seed split slightly to show a tiny bright green shoot"
+        },
+        {
+          "id": "wind_core",
+          "title": "wind_core",
+          "description": "a round turquoise wind energy core with a swirling gold inner spiral and brass rim"
+        },
+        {
+          "id": "mirror_shard",
+          "title": "mirror_shard",
+          "description": "one rounded triangular cyan mirror fragment with thin golden rim"
+        },
+        {
+          "id": "star_shard",
+          "title": "star_shard",
+          "description": "one small golden collectible star fragment shaped like a diamond with a tiny star cutout"
+        },
+        {
+          "id": "heart_core",
+          "title": "heart_core",
+          "description": "one large luminous turquoise heart-of-the-kingdom crystal held in a small open golden root cradle, rounded faceted oval crystal"
+        }
+      ],
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "1:1",
+        "background": "transparent",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "25f63f28-331b-4627-b95f-d4b396ed1ed5"
+          }
+        ],
+        "prompt": "Create a production sprite sheet for the existing 2D STARBIT game, not concept art. EXACTLY NINE separate assets in a strict equally spaced 3 columns by 3 rows grid, read row-major. Canvas square with TRUE TRANSPARENT alpha background. Each asset must be isolated completely in its own cell, with at least 9 percent of the cell width of fully transparent margin on ALL FOUR sides. No object crosses cell boundaries. No grid lines, no labels, no letters, no cast shadow on the canvas, no fog or broad glows. Each whole silhouette including tiny tips must fit inside its cell. Center each object. Reference 1 defines the closest existing object category and its painted shapes; reference 2 defines the existing foreground outline thickness and material rendering; reference 3 is the actual target environment and only defines palette and world setting. Do not copy scenes or characters from references. Match STARBIT's hand-painted soft-volume rounded 2D cartoon sprites, colored dark teal/brown outlines, soft warm upper-left highlights, readable simplified details, not 3D, not pixel art, not flat vector. Strict side-view platformer perspective with only a LITTLE of top faces visible. Cream, old gold, emerald turquoise and pearl cyan, warm soft highlights. All nine objects must belong to this SAME visual set. Sprite contents in exact row-major order:\n1. one large green turquoise life essence water drop, clear crisp self-contained silhouette, tiny golden leaf clasp.\n2. one lustrous pale cyan memory essence pearl in a small gold crescent clasp.\n3. one glowing five-point gold hope essence star with soft cream center and tiny cyan gem.\n4. a wearable tiny cream and gold essence lantern with three distinct small green cyan and gold gem recesses.\n5. one large chestnut seed split slightly to show a tiny bright green shoot.\n6. a round turquoise wind energy core with a swirling gold inner spiral and brass rim.\n7. one rounded triangular cyan mirror fragment with thin golden rim.\n8. one small golden collectible star fragment shaped like a diamond with a tiny star cutout.\n9. one large luminous turquoise heart-of-the-kingdom crystal held in a small open golden root cradle, rounded faceted oval crystal.\nDo not add extra unrelated objects. Mechanical parts are designed as separately movable components, never combine them. Make solid clean silhouettes, with no blurred halos."
+      }
+    },
+    {
+      "index": 18,
+      "key": "giant_garden",
+      "title": "Zahrady obrů",
+      "env": 9,
+      "description": "A vast garden at the scale of a small toy robot: enormous pink and cream flowers, huge dew drops, curled fern bridges, turquoise stream and distant cream stone irrigation terraces. Healthy lime emerald leaves, gentle morning sunlight. Floating garden islands far away. Story setting: a beautiful garden whose river is being stolen. No actual giant characters.",
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "16:9",
+        "background": "opaque",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "734e1773-6fec-494e-a5bd-4d5d8ad6f1fc"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/shared/pieces/idle.png"
+          }
+        ],
+        "prompt": "Create one complete 16:9 game background painting, not an atlas. Reference image 1 is the original full STARBIT environment: preserve its painting language, atmospheric depth, light and architecture while adapting to the new location. Reference image 2 defines existing world materials and plant/stone shapes; use softer background versions. Reference image 3 is Bit, only a scale and art direction reference; do NOT depict Bit or any other characters. STARBIT Kingdom of Dreams, existing hand-painted 2D storybook game. Preserve rounded shapes, luminous pastel atmosphere, cream stone, warm gold and turquoise, soft painted material shading. Background objects use softer outlines and lower contrast than foreground sprites. No photorealism, no 3D render, no pixel art, no flat vector art, no new visual style. New environment: A vast garden at the scale of a small toy robot: enormous pink and cream flowers, huge dew drops, curled fern bridges, turquoise stream and distant cream stone irrigation terraces. Healthy lime emerald leaves, gentle morning sunlight. Floating garden islands far away. Story setting: a beautiful garden whose river is being stolen. No actual giant characters. Side-scrolling platformer camera, broad panoramic composition, generous quiet middle/lower region for separately placed playable platforms. No baked foreground collision platforms, no UI, no text, no frames, no border. This is a static distant backdrop; no fake game screenshot."
+      }
+    },
+    {
+      "index": 19,
+      "key": "root_depths",
+      "title": "Kořeny v zajetí",
+      "env": 1,
+      "description": "An underground sanctuary among enormous intertwined tree roots, teal glowing pools and bioluminescent mint mushrooms. A distant natural root arch with tiny patches of purple corruption, warm golden root sap, subtle pink motes. A safe readable storybook root cavern, hopeful and mysterious, not a horror cave.",
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "16:9",
+        "background": "opaque",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "4f1aa865-c369-4967-a6b2-34d49bb35492"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/shared/pieces/idle.png"
+          }
+        ],
+        "prompt": "Create one complete 16:9 game background painting, not an atlas. Reference image 1 is the original full STARBIT environment: preserve its painting language, atmospheric depth, light and architecture while adapting to the new location. Reference image 2 defines existing world materials and plant/stone shapes; use softer background versions. Reference image 3 is Bit, only a scale and art direction reference; do NOT depict Bit or any other characters. STARBIT Kingdom of Dreams, existing hand-painted 2D storybook game. Preserve rounded shapes, luminous pastel atmosphere, cream stone, warm gold and turquoise, soft painted material shading. Background objects use softer outlines and lower contrast than foreground sprites. No photorealism, no 3D render, no pixel art, no flat vector art, no new visual style. New environment: An underground sanctuary among enormous intertwined tree roots, teal glowing pools and bioluminescent mint mushrooms. A distant natural root arch with tiny patches of purple corruption, warm golden root sap, subtle pink motes. A safe readable storybook root cavern, hopeful and mysterious, not a horror cave. Side-scrolling platformer camera, broad panoramic composition, generous quiet middle/lower region for separately placed playable platforms. No baked foreground collision platforms, no UI, no text, no frames, no border. This is a static distant backdrop; no fake game screenshot."
+      }
+    },
+    {
+      "index": 20,
+      "key": "memory_lakes",
+      "title": "Zrcadlová jezera",
+      "env": 10,
+      "description": "A magical underground river and memory lake with broad calm turquoise reflective water, rounded lavender and teal caves, delicate crystal columns and ruined cream and gold arches. A single distant oval mirror sanctuary, soft cyan reflections and rose light. No written symbols or people in reflections. Tranquil mysterious dream atmosphere.",
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "16:9",
+        "background": "opaque",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "25f63f28-331b-4627-b95f-d4b396ed1ed5"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/shared/pieces/idle.png"
+          }
+        ],
+        "prompt": "Create one complete 16:9 game background painting, not an atlas. Reference image 1 is the original full STARBIT environment: preserve its painting language, atmospheric depth, light and architecture while adapting to the new location. Reference image 2 defines existing world materials and plant/stone shapes; use softer background versions. Reference image 3 is Bit, only a scale and art direction reference; do NOT depict Bit or any other characters. STARBIT Kingdom of Dreams, existing hand-painted 2D storybook game. Preserve rounded shapes, luminous pastel atmosphere, cream stone, warm gold and turquoise, soft painted material shading. Background objects use softer outlines and lower contrast than foreground sprites. No photorealism, no 3D render, no pixel art, no flat vector art, no new visual style. New environment: A magical underground river and memory lake with broad calm turquoise reflective water, rounded lavender and teal caves, delicate crystal columns and ruined cream and gold arches. A single distant oval mirror sanctuary, soft cyan reflections and rose light. No written symbols or people in reflections. Tranquil mysterious dream atmosphere. Side-scrolling platformer camera, broad panoramic composition, generous quiet middle/lower region for separately placed playable platforms. No baked foreground collision platforms, no UI, no text, no frames, no border. This is a static distant backdrop; no fake game screenshot."
+      }
+    },
+    {
+      "index": 21,
+      "key": "star_mountains",
+      "title": "Hory zhaslých hvězd",
+      "env": 6,
+      "description": "Mountains of fading stars at blue hour, rounded indigo alpine peaks with pale frost, floating stone ledges, a distant abandoned cream and brass observatory with a great telescope dome, a tiny lantern village below. Golden stars hanging among lavender clouds, pink horizon glow, hopeful twilight. Large quiet lower midground, no active characters.",
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "16:9",
+        "background": "opaque",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "649745a2-7666-4520-984c-44ca3ec48acc"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/shared/pieces/idle.png"
+          }
+        ],
+        "prompt": "Create one complete 16:9 game background painting, not an atlas. Reference image 1 is the original full STARBIT environment: preserve its painting language, atmospheric depth, light and architecture while adapting to the new location. Reference image 2 defines existing world materials and plant/stone shapes; use softer background versions. Reference image 3 is Bit, only a scale and art direction reference; do NOT depict Bit or any other characters. STARBIT Kingdom of Dreams, existing hand-painted 2D storybook game. Preserve rounded shapes, luminous pastel atmosphere, cream stone, warm gold and turquoise, soft painted material shading. Background objects use softer outlines and lower contrast than foreground sprites. No photorealism, no 3D render, no pixel art, no flat vector art, no new visual style. New environment: Mountains of fading stars at blue hour, rounded indigo alpine peaks with pale frost, floating stone ledges, a distant abandoned cream and brass observatory with a great telescope dome, a tiny lantern village below. Golden stars hanging among lavender clouds, pink horizon glow, hopeful twilight. Large quiet lower midground, no active characters. Side-scrolling platformer camera, broad panoramic composition, generous quiet middle/lower region for separately placed playable platforms. No baked foreground collision platforms, no UI, no text, no frames, no border. This is a static distant backdrop; no fake game screenshot."
+      }
+    },
+    {
+      "index": 22,
+      "key": "shadow_kingdom",
+      "title": "Návrat do temnoty",
+      "env": 3,
+      "description": "Return to the same dream kingdom village and castle after purple shadow roots spread: distant cream towers under deep lavender skies, rounded ruined arches, dark violet vines, and several warm lantern windows still glowing where the player saved the villages. Same friendly storybook world, no skulls or horror. A faint turquoise path leads towards castle foundations.",
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "16:9",
+        "background": "opaque",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "d57d2112-f8ac-4828-bdb5-0129f6c008b9"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/shared/pieces/idle.png"
+          }
+        ],
+        "prompt": "Create one complete 16:9 game background painting, not an atlas. Reference image 1 is the original full STARBIT environment: preserve its painting language, atmospheric depth, light and architecture while adapting to the new location. Reference image 2 defines existing world materials and plant/stone shapes; use softer background versions. Reference image 3 is Bit, only a scale and art direction reference; do NOT depict Bit or any other characters. STARBIT Kingdom of Dreams, existing hand-painted 2D storybook game. Preserve rounded shapes, luminous pastel atmosphere, cream stone, warm gold and turquoise, soft painted material shading. Background objects use softer outlines and lower contrast than foreground sprites. No photorealism, no 3D render, no pixel art, no flat vector art, no new visual style. New environment: Return to the same dream kingdom village and castle after purple shadow roots spread: distant cream towers under deep lavender skies, rounded ruined arches, dark violet vines, and several warm lantern windows still glowing where the player saved the villages. Same friendly storybook world, no skulls or horror. A faint turquoise path leads towards castle foundations. Side-scrolling platformer camera, broad panoramic composition, generous quiet middle/lower region for separately placed playable platforms. No baked foreground collision platforms, no UI, no text, no frames, no border. This is a static distant backdrop; no fake game screenshot."
+      }
+    },
+    {
+      "index": 23,
+      "key": "kingdom_heart",
+      "title": "Srdce království",
+      "env": 10,
+      "description": "Deep beneath the royal castle, a majestic circular cream stone and old gold chamber with enormous living roots and three distant arched conduits. A small softly glowing turquoise world heart crystal in the far background, wrapped in flowing violet magic ribbons, with subtle water-green, pearl-cyan and star-gold lighting motifs. Center floor area unobstructed for gameplay. Magical and dramatic but hopeful, not horror.",
+      "params": {
+        "model": "gpt_image_2_5",
+        "quality": "high",
+        "resolution": "2k",
+        "aspect_ratio": "16:9",
+        "background": "opaque",
+        "count": 1,
+        "medias": [
+          {
+            "role": "image",
+            "value": "25f63f28-331b-4627-b95f-d4b396ed1ed5"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/environment/castle/royal_props.png"
+          },
+          {
+            "role": "image",
+            "value": "https://raw.githubusercontent.com/dersi128/STARBIT-Kralovstvi-snu/6b4d4f37aab920ad86d0069710cfe1763693d56d/assets/shared/pieces/idle.png"
+          }
+        ],
+        "prompt": "Create one complete 16:9 game background painting, not an atlas. Reference image 1 is the original full STARBIT environment: preserve its painting language, atmospheric depth, light and architecture while adapting to the new location. Reference image 2 defines existing world materials and plant/stone shapes; use softer background versions. Reference image 3 is Bit, only a scale and art direction reference; do NOT depict Bit or any other characters. STARBIT Kingdom of Dreams, existing hand-painted 2D storybook game. Preserve rounded shapes, luminous pastel atmosphere, cream stone, warm gold and turquoise, soft painted material shading. Background objects use softer outlines and lower contrast than foreground sprites. No photorealism, no 3D render, no pixel art, no flat vector art, no new visual style. New environment: Deep beneath the royal castle, a majestic circular cream stone and old gold chamber with enormous living roots and three distant arched conduits. A small softly glowing turquoise world heart crystal in the far background, wrapped in flowing violet magic ribbons, with subtle water-green, pearl-cyan and star-gold lighting motifs. Center floor area unobstructed for gameplay. Magical and dramatic but hopeful, not horror. Side-scrolling platformer camera, broad panoramic composition, generous quiet middle/lower region for separately placed playable platforms. No baked foreground collision platforms, no UI, no text, no frames, no border. This is a static distant backdrop; no fake game screenshot."
+      }
+    }
+  ],
+  "jobs": [
+    {
+      "index": 18,
+      "job_id": "3ee0e9ab-2e6e-4c56-8c78-7924932a1602",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 19,
+      "job_id": "303ffc14-3365-49cf-9e55-ca7868872c85",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 20,
+      "job_id": "b0cf4ada-0d46-4aad-86b3-07b0b5a45b85",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 21,
+      "job_id": "06469553-9e1f-458a-b7c2-22ec307c6899",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 22,
+      "job_id": "9227c43f-805b-4347-b1c8-bf1bb35c77a7",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 23,
+      "job_id": "37db6aaa-ba5f-495e-81ca-c9add4441b6b",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 0,
+      "job_id": "d7fe3861-932d-4a40-879e-8f10c87a9505",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "job_id": "cfe4e026-dcff-4227-a6fc-559ea22197fb",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "job_id": "f0a885e1-937a-4d57-85ac-d9cf3fd18f19",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "job_id": "7a207efd-16f6-40d2-9c89-4f21f1388fbe",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 4,
+      "job_id": "8ac8a3e3-96d9-4a5c-a98b-8b1d8422a344",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 5,
+      "job_id": "c051c6d0-d1a2-4740-ae58-e34256c6186e",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "job_id": "37ddc27a-c122-45bc-be57-4e30469f2722",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "job_id": "ead6b02c-b463-46b3-9168-5fc2c5bfcdb5",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 16,
+      "job_id": "4e445710-600d-4cca-a048-a2034753211c",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 17,
+      "job_id": "2269b432-097b-4897-87e4-e8fe982a2651",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "job_id": "561d3089-2db4-433e-bd11-5b8835a6012d",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "job_id": "330f39a9-e176-4f83-8a97-4f483473c57e",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "job_id": "aead5328-79c9-482e-bcb1-1158ac6e8822",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "job_id": "27cffd7f-b69a-4f1b-9e57-702c8db420f0",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 12,
+      "job_id": "8d8eb50c-108f-4a9e-88c6-83b72638d13b",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 13,
+      "job_id": "19f34673-8860-44f9-8c9a-d3a4a89bf4e0",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "job_id": "8a96442b-aeae-4c28-a4ff-2d2fe5766111",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "job_id": "552c6fbd-02b0-4497-bc3c-5d7b3c168473",
+      "status": "pending",
+      "adjustments": {
+        "medias[0].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[1].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        },
+        "medias[2].role": {
+          "requested": "image",
+          "used": "image_references",
+          "reason": "GPT Image 2.5 backend expects schema-key media roles"
+        }
+      }
+    }
+  ],
+  "references": {
+    "1": "4f1aa865-c369-4967-a6b2-34d49bb35492",
+    "3": "d57d2112-f8ac-4828-bdb5-0129f6c008b9",
+    "6": "649745a2-7666-4520-984c-44ca3ec48acc",
+    "9": "734e1773-6fec-494e-a5bd-4d5d8ad6f1fc",
+    "10": "25f63f28-331b-4627-b95f-d4b396ed1ed5"
+  },
+  "results": [
+    {
+      "index": 0,
+      "job_id": "d7fe3861-932d-4a40-879e-8f10c87a9505",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095114_d7fe3861-932d-4a40-879e-8f10c87a9505.png"
+    },
+    {
+      "index": 1,
+      "job_id": "cfe4e026-dcff-4227-a6fc-559ea22197fb",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095115_cfe4e026-dcff-4227-a6fc-559ea22197fb.png"
+    },
+    {
+      "index": 2,
+      "job_id": "f0a885e1-937a-4d57-85ac-d9cf3fd18f19",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095114_f0a885e1-937a-4d57-85ac-d9cf3fd18f19.png"
+    },
+    {
+      "index": 3,
+      "job_id": "7a207efd-16f6-40d2-9c89-4f21f1388fbe",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095115_7a207efd-16f6-40d2-9c89-4f21f1388fbe.png"
+    },
+    {
+      "index": 4,
+      "job_id": "8ac8a3e3-96d9-4a5c-a98b-8b1d8422a344",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095114_8ac8a3e3-96d9-4a5c-a98b-8b1d8422a344.png"
+    },
+    {
+      "index": 5,
+      "job_id": "c051c6d0-d1a2-4740-ae58-e34256c6186e",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095115_c051c6d0-d1a2-4740-ae58-e34256c6186e.png"
+    },
+    {
+      "index": 6,
+      "job_id": "37ddc27a-c122-45bc-be57-4e30469f2722",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095127_37ddc27a-c122-45bc-be57-4e30469f2722.png"
+    },
+    {
+      "index": 7,
+      "job_id": "ead6b02c-b463-46b3-9168-5fc2c5bfcdb5",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095127_ead6b02c-b463-46b3-9168-5fc2c5bfcdb5.png"
+    },
+    {
+      "index": 8,
+      "job_id": "561d3089-2db4-433e-bd11-5b8835a6012d",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095218_561d3089-2db4-433e-bd11-5b8835a6012d.png"
+    },
+    {
+      "index": 9,
+      "job_id": "330f39a9-e176-4f83-8a97-4f483473c57e",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095219_330f39a9-e176-4f83-8a97-4f483473c57e.png"
+    },
+    {
+      "index": 10,
+      "job_id": "aead5328-79c9-482e-bcb1-1158ac6e8822",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095218_aead5328-79c9-482e-bcb1-1158ac6e8822.png"
+    },
+    {
+      "index": 11,
+      "job_id": "27cffd7f-b69a-4f1b-9e57-702c8db420f0",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095217_27cffd7f-b69a-4f1b-9e57-702c8db420f0.png"
+    },
+    {
+      "index": 12,
+      "job_id": "8d8eb50c-108f-4a9e-88c6-83b72638d13b",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095219_8d8eb50c-108f-4a9e-88c6-83b72638d13b.png"
+    },
+    {
+      "index": 13,
+      "job_id": "19f34673-8860-44f9-8c9a-d3a4a89bf4e0",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095220_19f34673-8860-44f9-8c9a-d3a4a89bf4e0.png"
+    },
+    {
+      "index": 14,
+      "job_id": "8a96442b-aeae-4c28-a4ff-2d2fe5766111",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095222_8a96442b-aeae-4c28-a4ff-2d2fe5766111.png"
+    },
+    {
+      "index": 15,
+      "job_id": "552c6fbd-02b0-4497-bc3c-5d7b3c168473",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095222_552c6fbd-02b0-4497-bc3c-5d7b3c168473.png"
+    },
+    {
+      "index": 16,
+      "job_id": "4e445710-600d-4cca-a048-a2034753211c",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095126_4e445710-600d-4cca-a048-a2034753211c.png"
+    },
+    {
+      "index": 17,
+      "job_id": "2269b432-097b-4897-87e4-e8fe982a2651",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_095128_2269b432-097b-4897-87e4-e8fe982a2651.png"
+    },
+    {
+      "index": 18,
+      "job_id": "3ee0e9ab-2e6e-4c56-8c78-7924932a1602",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_094858_3ee0e9ab-2e6e-4c56-8c78-7924932a1602.png"
+    },
+    {
+      "index": 19,
+      "job_id": "303ffc14-3365-49cf-9e55-ca7868872c85",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_094859_303ffc14-3365-49cf-9e55-ca7868872c85.png"
+    },
+    {
+      "index": 20,
+      "job_id": "b0cf4ada-0d46-4aad-86b3-07b0b5a45b85",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_094858_b0cf4ada-0d46-4aad-86b3-07b0b5a45b85.png"
+    },
+    {
+      "index": 21,
+      "job_id": "06469553-9e1f-458a-b7c2-22ec307c6899",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_094858_06469553-9e1f-458a-b7c2-22ec307c6899.png"
+    },
+    {
+      "index": 22,
+      "job_id": "9227c43f-805b-4347-b1c8-bf1bb35c77a7",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_094858_9227c43f-805b-4347-b1c8-bf1bb35c77a7.png"
+    },
+    {
+      "index": 23,
+      "job_id": "37db6aaa-ba5f-495e-81ca-c9add4441b6b",
+      "status": "completed",
+      "type": "image",
+      "model": "gpt_image_2_5",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3JJLC54rmCvFUMvC0KZRSnLCwmN/hf_20261011_094858_37db6aaa-ba5f-495e-81ca-c9add4441b6b.png"
+    }
+  ]
+}

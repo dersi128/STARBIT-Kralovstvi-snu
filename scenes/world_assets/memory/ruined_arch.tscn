@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/memory/ruined_arch.png" id="tex"]
+
+
+[node name="RuinedArch" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-105.00000, -211.92956)
+scale = Vector2(0.32159, 0.32159)

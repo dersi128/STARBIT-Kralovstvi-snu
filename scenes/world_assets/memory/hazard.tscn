@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/memory/hazard.png" id="tex"]
+[ext_resource type="Script" path="res://scripts/world_assets/hazard.gd" id="behavior"]
+
+
+[node name="Hazard" type="Area2D"]
+script = ExtResource("behavior")
+collision_layer = 0
+collision_mask = 2
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-50.42659, -113.17460)
+scale = Vector2(0.22817, 0.22817)
+
+[node name="Collision" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-48.1448, -26.4683, -42.4405, -51.5675, -39.0179, -62.9762, -36.7361, -69.8214, -34.4544, -74.3849, -9.3552, -108.6111, -7.0734, -110.8929, -4.7917, -110.8929, -0.2282, -107.4702, 5.4762, -102.9067, 13.4623, -94.9206, 36.2798, -70.9623, 37.4206, -68.6806, 46.5476, -44.7222, 47.6885, -41.2996, 47.6885, -18.4821, 44.2659, -10.4960, 43.1250, -8.2143, 38.5615, -5.9325, 22.5893, -2.5099, 15.7440, -1.3690, -8.2143, -1.3690, -17.3413, -2.5099, -36.7361, -5.9325, -40.1587, -7.0734, -42.4405, -8.2143, -47.0040, -16.2004, -48.1448, -24.1865)

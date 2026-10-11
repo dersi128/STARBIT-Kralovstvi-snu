@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/castle/royal_arch.png" id="tex"]
+
+
+[node name="RoyalArch" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-93.86752, -227.37892)
+scale = Vector2(0.32764, 0.32764)

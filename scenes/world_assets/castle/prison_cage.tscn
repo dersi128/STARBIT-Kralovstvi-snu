@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/castle/prison_cage.png" id="tex"]
+
+
+[node name="PrisonCage" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-59.46648, -227.48290)
+scale = Vector2(0.31464, 0.31464)

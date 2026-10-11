@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/stars/platform_long.png" id="tex"]
+
+[sub_resource type="RectangleShape2D" id="shape"]
+size = Vector2(293.29609, 14.00000)
+
+[node name="PlatformLong" type="StaticBody2D"]
+collision_layer = 1
+collision_mask = 0
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-150.00000, -4.18994)
+scale = Vector2(0.41899, 0.41899)
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, 7)
+shape = SubResource("shape")

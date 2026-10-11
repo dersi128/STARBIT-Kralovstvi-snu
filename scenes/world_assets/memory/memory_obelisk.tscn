@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/memory/memory_obelisk.png" id="tex"]
+
+
+[node name="MemoryObelisk" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-56.61538, -227.42657)
+scale = Vector2(0.32168, 0.32168)

@@ -1,0 +1,7524 @@
+{
+  "assets": [
+    {
+      "id": "forest/platform_long",
+      "biome": "forest",
+      "name": "platform_long",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/platform_long.png",
+      "size": [
+        708,
+        324
+      ],
+      "anchor_bottom": [
+        354.0,
+        316
+      ],
+      "anchor_top": [
+        354.0,
+        38
+      ],
+      "source_atlas": 0,
+      "source_rect": [
+        39,
+        322,
+        692,
+        308
+      ],
+      "component_count": 1,
+      "sha256": "977c408514e480e926bc8e0144dac3d1b7872ae09b6c007f12385f03b9586f1c",
+      "label": "Dlouhá plošina",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/platform_long.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "forest/ledge",
+      "biome": "forest",
+      "name": "ledge",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/ledge.png",
+      "size": [
+        432,
+        286
+      ],
+      "anchor_bottom": [
+        216.0,
+        278
+      ],
+      "anchor_top": [
+        216.0,
+        30
+      ],
+      "source_atlas": 0,
+      "source_rect": [
+        816,
+        337,
+        416,
+        270
+      ],
+      "component_count": 3,
+      "sha256": "c9f0f7c38d28c781a3a685682fba2a0dfa397eebab8d63056ae6d175a32608f0",
+      "label": "Krátká římsa",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/ledge.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "forest/lift_deck",
+      "biome": "forest",
+      "name": "lift_deck",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/lift_deck.png",
+      "size": [
+        688,
+        193
+      ],
+      "anchor_bottom": [
+        344.0,
+        185
+      ],
+      "anchor_top": [
+        344.0,
+        10
+      ],
+      "source_atlas": 0,
+      "source_rect": [
+        1331,
+        370,
+        672,
+        177
+      ],
+      "component_count": 1,
+      "sha256": "aafa3fd6108a2a5732c875d58990148ff9bf7dc8fedae75efd3fd5c1102268ab",
+      "label": "Pohyblivá podlaha",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/lift_deck.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "forest/lift_header",
+      "biome": "forest",
+      "name": "lift_header",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/lift_header.png",
+      "size": [
+        636,
+        246
+      ],
+      "anchor_bottom": [
+        318.0,
+        238
+      ],
+      "anchor_top": [
+        318.0,
+        18
+      ],
+      "source_atlas": 0,
+      "source_rect": [
+        52,
+        929,
+        620,
+        230
+      ],
+      "component_count": 1,
+      "sha256": "e198d804186bcefaf0e7f7e700b69889ed48295e9ed31f63da1417438d2e20fb",
+      "label": "Horní kladky",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/lift_header.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "forest/pressure_plate",
+      "biome": "forest",
+      "name": "pressure_plate",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/pressure_plate.png",
+      "size": [
+        524,
+        214
+      ],
+      "anchor_bottom": [
+        262.0,
+        206
+      ],
+      "anchor_top": [
+        262.0,
+        16
+      ],
+      "source_atlas": 0,
+      "source_rect": [
+        770,
+        976,
+        508,
+        198
+      ],
+      "component_count": 1,
+      "sha256": "54f7d038323fedd0f33fc95d88fb0b7c03ec6cc91a72132d30f8b5d716dc4539",
+      "label": "Nášlapný spínač",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/pressure_plate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "forest/gate",
+      "biome": "forest",
+      "name": "gate",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/gate.png",
+      "size": [
+        382,
+        466
+      ],
+      "anchor_bottom": [
+        191.0,
+        458
+      ],
+      "anchor_top": [
+        191.0,
+        15
+      ],
+      "source_atlas": 0,
+      "source_rect": [
+        1498,
+        803,
+        366,
+        450
+      ],
+      "component_count": 1,
+      "sha256": "e6cff5d09c875e518789ee0a5b2a7f972727f4f4a112701c702680539dc64984",
+      "label": "Posuvná brána",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/gate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "forest/hazard",
+      "biome": "forest",
+      "name": "hazard",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/hazard.png",
+      "size": [
+        544,
+        419
+      ],
+      "anchor_bottom": [
+        272.0,
+        411
+      ],
+      "anchor_top": [
+        272.0,
+        58
+      ],
+      "source_atlas": 0,
+      "source_rect": [
+        75,
+        1524,
+        528,
+        403
+      ],
+      "component_count": 1,
+      "sha256": "7d5f82270144272a6f30f542dbe1ae09099ec8126f1f596dd5a992c6a965d1f2",
+      "collision_hull": [
+        [
+          10,
+          265
+        ],
+        [
+          55,
+          155
+        ],
+        [
+          80,
+          125
+        ],
+        [
+          135,
+          75
+        ],
+        [
+          165,
+          60
+        ],
+        [
+          275,
+          10
+        ],
+        [
+          280,
+          10
+        ],
+        [
+          350,
+          25
+        ],
+        [
+          360,
+          30
+        ],
+        [
+          435,
+          70
+        ],
+        [
+          485,
+          115
+        ],
+        [
+          525,
+          215
+        ],
+        [
+          530,
+          260
+        ],
+        [
+          530,
+          305
+        ],
+        [
+          495,
+          380
+        ],
+        [
+          460,
+          405
+        ],
+        [
+          185,
+          405
+        ],
+        [
+          50,
+          380
+        ],
+        [
+          10,
+          270
+        ]
+      ],
+      "label": "Past",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/hazard.tscn",
+      "category": "Pasti"
+    },
+    {
+      "id": "forest/crumble_platform",
+      "biome": "forest",
+      "name": "crumble_platform",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/crumble_platform.png",
+      "size": [
+        663,
+        335
+      ],
+      "anchor_bottom": [
+        331.5,
+        327
+      ],
+      "anchor_top": [
+        331.5,
+        24
+      ],
+      "source_atlas": 0,
+      "source_rect": [
+        698,
+        1596,
+        647,
+        319
+      ],
+      "component_count": 1,
+      "sha256": "513819e3414b4556774e7796e5ec9db26f573b5a1678627848679a4bcc5b4556",
+      "label": "Rozpadající se plošina",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/crumble_platform.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "forest/repair_socket",
+      "biome": "forest",
+      "name": "repair_socket",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/repair_socket.png",
+      "size": [
+        588,
+        442
+      ],
+      "anchor_bottom": [
+        294.0,
+        434
+      ],
+      "anchor_top": [
+        294.0,
+        76
+      ],
+      "source_atlas": 0,
+      "source_rect": [
+        1411,
+        1510,
+        572,
+        426
+      ],
+      "component_count": 1,
+      "sha256": "84ab3ab559ca22ab719a79f498431e48f1d8adbde1c0c6681611c37e28bf9a6b",
+      "label": "Opravovaný mechanismus",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/repair_socket.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "forest/root_workshop",
+      "biome": "forest",
+      "name": "root_workshop",
+      "kind": "decor",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/root_workshop.png",
+      "size": [
+        577,
+        575
+      ],
+      "anchor_bottom": [
+        288.5,
+        567
+      ],
+      "anchor_top": [
+        288.5,
+        86
+      ],
+      "source_atlas": 1,
+      "source_rect": [
+        72,
+        99,
+        561,
+        559
+      ],
+      "component_count": 1,
+      "sha256": "45290b30aebe1ab218a991a02986aae07133ceeab45158a96dd36864e3de3937",
+      "label": "Dílna pod kořeny",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/root_workshop.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "forest/root_arch",
+      "biome": "forest",
+      "name": "root_arch",
+      "kind": "decor",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/root_arch.png",
+      "size": [
+        661,
+        512
+      ],
+      "anchor_bottom": [
+        330.5,
+        504
+      ],
+      "anchor_top": [
+        330.5,
+        50
+      ],
+      "source_atlas": 1,
+      "source_rect": [
+        702,
+        163,
+        645,
+        496
+      ],
+      "component_count": 1,
+      "sha256": "28de18c29fc15a61bd626d637c8ea21cfa9fe378f137082e975aebf5e0e02017",
+      "label": "Kořenový oblouk",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/root_arch.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "forest/signpost",
+      "biome": "forest",
+      "name": "signpost",
+      "kind": "decor",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/signpost.png",
+      "size": [
+        469,
+        580
+      ],
+      "anchor_bottom": [
+        234.5,
+        572
+      ],
+      "anchor_top": [
+        234.5,
+        52
+      ],
+      "source_atlas": 1,
+      "source_rect": [
+        1491,
+        112,
+        453,
+        564
+      ],
+      "component_count": 1,
+      "sha256": "df5189ca69d540a126b1ca2c8af8567e05315e17a14ca999694e4ba6b311ea4c",
+      "label": "Rozcestník",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/signpost.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "forest/fern_cluster",
+      "biome": "forest",
+      "name": "fern_cluster",
+      "kind": "decor",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/fern_cluster.png",
+      "size": [
+        584,
+        449
+      ],
+      "anchor_bottom": [
+        292.0,
+        441
+      ],
+      "anchor_top": [
+        292.0,
+        96
+      ],
+      "source_atlas": 1,
+      "source_rect": [
+        74,
+        847,
+        568,
+        433
+      ],
+      "component_count": 1,
+      "sha256": "f21d5d40a68e490387f4949d5e0d7879bd1c6349a778d62611a24eebaacfbb7e",
+      "label": "Kapradiny",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/fern_cluster.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "forest/mushroom_cluster",
+      "biome": "forest",
+      "name": "mushroom_cluster",
+      "kind": "decor",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/mushroom_cluster.png",
+      "size": [
+        438,
+        410
+      ],
+      "anchor_bottom": [
+        219.0,
+        402
+      ],
+      "anchor_top": [
+        219.0,
+        25
+      ],
+      "source_atlas": 1,
+      "source_rect": [
+        803,
+        883,
+        422,
+        394
+      ],
+      "component_count": 1,
+      "sha256": "5988790469cc0d75e262b98fae4d96d7142da8b5d8e5be2aa2e8ebbc3f178212",
+      "label": "Houby",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/mushroom_cluster.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "forest/boulder",
+      "biome": "forest",
+      "name": "boulder",
+      "kind": "decor",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/boulder.png",
+      "size": [
+        546,
+        499
+      ],
+      "anchor_bottom": [
+        273.0,
+        491
+      ],
+      "anchor_top": [
+        273.0,
+        59
+      ],
+      "source_atlas": 1,
+      "source_rect": [
+        1427,
+        812,
+        530,
+        483
+      ],
+      "component_count": 1,
+      "sha256": "80824dbbe11d57e96b361b03d2322b746ee4f89e1438d35ee851fbb3bb261d44",
+      "label": "Mechový balvan",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/boulder.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "forest/lantern_post",
+      "biome": "forest",
+      "name": "lantern_post",
+      "kind": "decor",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/lantern_post.png",
+      "size": [
+        385,
+        561
+      ],
+      "anchor_bottom": [
+        192.5,
+        553
+      ],
+      "anchor_top": [
+        192.5,
+        51
+      ],
+      "source_atlas": 1,
+      "source_rect": [
+        170,
+        1410,
+        369,
+        545
+      ],
+      "component_count": 1,
+      "sha256": "7da43c17e0d0272b8a81a3b9578287a07daddd48fc7619fd876d2d625d4575c1",
+      "label": "Sloup s lucernou",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/lantern_post.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "forest/supply_crate",
+      "biome": "forest",
+      "name": "supply_crate",
+      "kind": "decor",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/supply_crate.png",
+      "size": [
+        497,
+        424
+      ],
+      "anchor_bottom": [
+        248.5,
+        416
+      ],
+      "anchor_top": [
+        248.5,
+        27
+      ],
+      "source_atlas": 1,
+      "source_rect": [
+        784,
+        1503,
+        481,
+        408
+      ],
+      "component_count": 1,
+      "sha256": "df79a5c053153ee3cbecc1fbe2a3cce662cb7d7dc936ba921c43baec2519e58c",
+      "label": "Bedna se zásobami",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/supply_crate.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "forest/root_vine",
+      "biome": "forest",
+      "name": "root_vine",
+      "kind": "decor",
+      "levels": [
+        1,
+        2
+      ],
+      "path": "assets/environment/worlds/forest/root_vine.png",
+      "size": [
+        231,
+        598
+      ],
+      "anchor_bottom": [
+        115.5,
+        590
+      ],
+      "anchor_top": [
+        115.5,
+        14
+      ],
+      "source_atlas": 1,
+      "source_rect": [
+        1595,
+        1390,
+        215,
+        582
+      ],
+      "component_count": 1,
+      "sha256": "9a125745d7c79bfda4cfdcc24ad36bf1ec300904f7336618caa7f07d19fa8b84",
+      "label": "Kořenová liána",
+      "biome_label": "Les a kořeny",
+      "scene": "scenes/world_assets/forest/root_vine.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "village/platform_long",
+      "biome": "village",
+      "name": "platform_long",
+      "kind": "mechanics",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/platform_long.png",
+      "size": [
+        724,
+        288
+      ],
+      "anchor_bottom": [
+        362.0,
+        280
+      ],
+      "anchor_top": [
+        362.0,
+        41
+      ],
+      "source_atlas": 2,
+      "source_rect": [
+        57,
+        316,
+        708,
+        272
+      ],
+      "component_count": 1,
+      "sha256": "2ddfb641c4f8dd57d693bd0a55585473c781e6819b50372c4cbf74d4ce979067",
+      "label": "Dlouhá plošina",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/platform_long.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "village/ledge",
+      "biome": "village",
+      "name": "ledge",
+      "kind": "mechanics",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/ledge.png",
+      "size": [
+        443,
+        286
+      ],
+      "anchor_bottom": [
+        221.5,
+        278
+      ],
+      "anchor_top": [
+        221.5,
+        42
+      ],
+      "source_atlas": 2,
+      "source_rect": [
+        828,
+        315,
+        427,
+        270
+      ],
+      "component_count": 1,
+      "sha256": "d04e69f434563c22039fa955412ecb50592d1a0cb816bebe3bfc59ef54cfdfd4",
+      "label": "Krátká římsa",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/ledge.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "village/lift_deck",
+      "biome": "village",
+      "name": "lift_deck",
+      "kind": "mechanics",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/lift_deck.png",
+      "size": [
+        697,
+        188
+      ],
+      "anchor_bottom": [
+        348.5,
+        180
+      ],
+      "anchor_top": [
+        348.5,
+        33
+      ],
+      "source_atlas": 2,
+      "source_rect": [
+        1324,
+        358,
+        681,
+        172
+      ],
+      "component_count": 1,
+      "sha256": "d18acf7aa6ed8964a5d17e8b31d0ecd8d772468099d76fc61f8805e39affa93b",
+      "label": "Pohyblivá podlaha",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/lift_deck.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "village/lift_header",
+      "biome": "village",
+      "name": "lift_header",
+      "kind": "mechanics",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/lift_header.png",
+      "size": [
+        590,
+        237
+      ],
+      "anchor_bottom": [
+        295.0,
+        229
+      ],
+      "anchor_top": [
+        295.0,
+        24
+      ],
+      "source_atlas": 2,
+      "source_rect": [
+        88,
+        883,
+        574,
+        221
+      ],
+      "component_count": 1,
+      "sha256": "6b59468943ba91fe7c78b5e97d095e70dab28860b5503556217d4baf2821dd1a",
+      "label": "Horní kladky",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/lift_header.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "village/pressure_plate",
+      "biome": "village",
+      "name": "pressure_plate",
+      "kind": "mechanics",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/pressure_plate.png",
+      "size": [
+        552,
+        240
+      ],
+      "anchor_bottom": [
+        276.0,
+        232
+      ],
+      "anchor_top": [
+        276.0,
+        17
+      ],
+      "source_atlas": 2,
+      "source_rect": [
+        766,
+        963,
+        536,
+        224
+      ],
+      "component_count": 1,
+      "sha256": "73ca39acad6f92aba5448541cee890fd1f996ab0a54aa115647b15e64e9249a8",
+      "label": "Nášlapný spínač",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/pressure_plate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "village/gate",
+      "biome": "village",
+      "name": "gate",
+      "kind": "mechanics",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/gate.png",
+      "size": [
+        343,
+        529
+      ],
+      "anchor_bottom": [
+        171.5,
+        521
+      ],
+      "anchor_top": [
+        171.5,
+        34
+      ],
+      "source_atlas": 2,
+      "source_rect": [
+        1530,
+        769,
+        327,
+        513
+      ],
+      "component_count": 1,
+      "sha256": "12773973bab7adfed64c199e4c6f168679e98e7f439649988853f8e4e4a7d444",
+      "label": "Posuvná brána",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/gate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "village/hazard",
+      "biome": "village",
+      "name": "hazard",
+      "kind": "mechanics",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/hazard.png",
+      "size": [
+        560,
+        463
+      ],
+      "anchor_bottom": [
+        280.0,
+        455
+      ],
+      "anchor_top": [
+        280.0,
+        88
+      ],
+      "source_atlas": 2,
+      "source_rect": [
+        76,
+        1495,
+        544,
+        447
+      ],
+      "component_count": 1,
+      "sha256": "4044df09a34ae4313cdac46388a0f6fa00d2268e82e6abe68408add0438771d2",
+      "collision_hull": [
+        [
+          10,
+          175
+        ],
+        [
+          125,
+          55
+        ],
+        [
+          135,
+          45
+        ],
+        [
+          335,
+          10
+        ],
+        [
+          340,
+          10
+        ],
+        [
+          530,
+          100
+        ],
+        [
+          535,
+          105
+        ],
+        [
+          545,
+          245
+        ],
+        [
+          545,
+          425
+        ],
+        [
+          540,
+          430
+        ],
+        [
+          440,
+          445
+        ],
+        [
+          185,
+          450
+        ],
+        [
+          110,
+          450
+        ],
+        [
+          65,
+          435
+        ],
+        [
+          55,
+          430
+        ],
+        [
+          40,
+          390
+        ],
+        [
+          10,
+          185
+        ]
+      ],
+      "label": "Past",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/hazard.tscn",
+      "category": "Pasti"
+    },
+    {
+      "id": "village/crumble_platform",
+      "biome": "village",
+      "name": "crumble_platform",
+      "kind": "mechanics",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/crumble_platform.png",
+      "size": [
+        605,
+        312
+      ],
+      "anchor_bottom": [
+        302.5,
+        304
+      ],
+      "anchor_top": [
+        302.5,
+        13
+      ],
+      "source_atlas": 2,
+      "source_rect": [
+        731,
+        1603,
+        589,
+        296
+      ],
+      "component_count": 1,
+      "sha256": "e68dcb91ccb2fd4ac88edf7cad8e42c04c10f53e4448f75b8d1e8084881c61eb",
+      "label": "Rozpadající se plošina",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/crumble_platform.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "village/repair_socket",
+      "biome": "village",
+      "name": "repair_socket",
+      "kind": "mechanics",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/repair_socket.png",
+      "size": [
+        611,
+        628
+      ],
+      "anchor_bottom": [
+        305.5,
+        620
+      ],
+      "anchor_top": [
+        305.5,
+        84
+      ],
+      "source_atlas": 2,
+      "source_rect": [
+        1390,
+        1363,
+        595,
+        612
+      ],
+      "component_count": 1,
+      "sha256": "87e4bc2965213c1ac7bed000c3a3e9dac814b400cec96be47fb82696f865270c",
+      "label": "Opravovaný mechanismus",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/repair_socket.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "village/cottage",
+      "biome": "village",
+      "name": "cottage",
+      "kind": "decor",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/cottage.png",
+      "size": [
+        603,
+        589
+      ],
+      "anchor_bottom": [
+        301.5,
+        581
+      ],
+      "anchor_top": [
+        301.5,
+        34
+      ],
+      "source_atlas": 3,
+      "source_rect": [
+        92,
+        129,
+        587,
+        573
+      ],
+      "component_count": 1,
+      "sha256": "e64d0033874897f67e820a386c385774ad573f0d891e74a631a1e034103d89c1",
+      "label": "Vesnický domek",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/cottage.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "village/guardian_arch",
+      "biome": "village",
+      "name": "guardian_arch",
+      "kind": "decor",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/guardian_arch.png",
+      "size": [
+        607,
+        597
+      ],
+      "anchor_bottom": [
+        303.5,
+        589
+      ],
+      "anchor_top": [
+        303.5,
+        56
+      ],
+      "source_atlas": 3,
+      "source_rect": [
+        731,
+        122,
+        591,
+        581
+      ],
+      "component_count": 1,
+      "sha256": "ac6e894b55e5af28db0579a699603c6efc7e1cffcbb89690be7a40023f198ba0",
+      "label": "Brána strážců",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/guardian_arch.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "village/watchtower",
+      "biome": "village",
+      "name": "watchtower",
+      "kind": "decor",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/watchtower.png",
+      "size": [
+        445,
+        690
+      ],
+      "anchor_bottom": [
+        222.5,
+        682
+      ],
+      "anchor_top": [
+        222.5,
+        85
+      ],
+      "source_atlas": 3,
+      "source_rect": [
+        1490,
+        43,
+        429,
+        674
+      ],
+      "component_count": 1,
+      "sha256": "77d7eec04f6234afd5911cec23d3b98ca21bc6d16a5190b989317643c5b1ad71",
+      "label": "Strážní věž",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/watchtower.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "village/lantern_post",
+      "biome": "village",
+      "name": "lantern_post",
+      "kind": "decor",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/lantern_post.png",
+      "size": [
+        412,
+        619
+      ],
+      "anchor_bottom": [
+        206.0,
+        611
+      ],
+      "anchor_top": [
+        206.0,
+        87
+      ],
+      "source_atlas": 3,
+      "source_rect": [
+        165,
+        755,
+        396,
+        603
+      ],
+      "component_count": 1,
+      "sha256": "db1d58d1e08d707131fbc398ac423e4841bcbba62fc90fa70ae81a4d1197fa79",
+      "label": "Sloup s lucernou",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/lantern_post.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "village/well",
+      "biome": "village",
+      "name": "well",
+      "kind": "decor",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/well.png",
+      "size": [
+        558,
+        573
+      ],
+      "anchor_bottom": [
+        279.0,
+        565
+      ],
+      "anchor_top": [
+        279.0,
+        33
+      ],
+      "source_atlas": 3,
+      "source_rect": [
+        750,
+        799,
+        542,
+        557
+      ],
+      "component_count": 1,
+      "sha256": "559914b7812cbfb8eea72fb77502d2ae9857fe8b5c056e3509849c9c066ce63a",
+      "label": "Studna",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/well.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "village/fence",
+      "biome": "village",
+      "name": "fence",
+      "kind": "decor",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/fence.png",
+      "size": [
+        586,
+        410
+      ],
+      "anchor_bottom": [
+        293.0,
+        402
+      ],
+      "anchor_top": [
+        293.0,
+        95
+      ],
+      "source_atlas": 3,
+      "source_rect": [
+        1415,
+        913,
+        570,
+        394
+      ],
+      "component_count": 1,
+      "sha256": "7f5ad67ce1af4bf39179bc367ce78a629ca2a6f632af09533916400914648522",
+      "label": "Plot",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/fence.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "village/barrels",
+      "biome": "village",
+      "name": "barrels",
+      "kind": "decor",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/barrels.png",
+      "size": [
+        544,
+        444
+      ],
+      "anchor_bottom": [
+        272.0,
+        436
+      ],
+      "anchor_top": [
+        272.0,
+        18
+      ],
+      "source_atlas": 3,
+      "source_rect": [
+        90,
+        1509,
+        528,
+        428
+      ],
+      "component_count": 1,
+      "sha256": "5a40bca62e333e98a64dfb25485f7be9c95c05a1ff4d51db51b9c0b55271f0db",
+      "label": "Sudy",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/barrels.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "village/noticeboard",
+      "biome": "village",
+      "name": "noticeboard",
+      "kind": "decor",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/noticeboard.png",
+      "size": [
+        576,
+        545
+      ],
+      "anchor_bottom": [
+        288.0,
+        537
+      ],
+      "anchor_top": [
+        288.0,
+        53
+      ],
+      "source_atlas": 3,
+      "source_rect": [
+        749,
+        1450,
+        560,
+        529
+      ],
+      "component_count": 1,
+      "sha256": "43734f2ffe252c02962e9e4c6d22cc150986cf729e48f7b6d2395eca049e0546",
+      "label": "Nástěnka",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/noticeboard.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "village/guardian_marker",
+      "biome": "village",
+      "name": "guardian_marker",
+      "kind": "decor",
+      "levels": [
+        3,
+        4,
+        5
+      ],
+      "path": "assets/environment/worlds/village/guardian_marker.png",
+      "size": [
+        483,
+        531
+      ],
+      "anchor_bottom": [
+        241.5,
+        523
+      ],
+      "anchor_top": [
+        241.5,
+        26
+      ],
+      "source_atlas": 3,
+      "source_rect": [
+        1468,
+        1456,
+        467,
+        515
+      ],
+      "component_count": 1,
+      "sha256": "fe00781b19bf26890aa477876850f63c437cc897a8d130bf487827b9b309ba80",
+      "label": "Strážní kámen",
+      "biome_label": "Vesnice a strážci",
+      "scene": "scenes/world_assets/village/guardian_marker.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "sky/platform_long",
+      "biome": "sky",
+      "name": "platform_long",
+      "kind": "mechanics",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/platform_long.png",
+      "size": [
+        737,
+        297
+      ],
+      "anchor_bottom": [
+        368.5,
+        289
+      ],
+      "anchor_top": [
+        368.5,
+        42
+      ],
+      "source_atlas": 4,
+      "source_rect": [
+        22,
+        289,
+        721,
+        281
+      ],
+      "component_count": 1,
+      "sha256": "916c7b51e5600fb3d868f33257c7eb6ed7aa9437baf83a9824729ca9c5fb3cc1",
+      "label": "Dlouhá plošina",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/platform_long.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "sky/ledge",
+      "biome": "sky",
+      "name": "ledge",
+      "kind": "mechanics",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/ledge.png",
+      "size": [
+        451,
+        293
+      ],
+      "anchor_bottom": [
+        225.5,
+        285
+      ],
+      "anchor_top": [
+        225.5,
+        40
+      ],
+      "source_atlas": 4,
+      "source_rect": [
+        806,
+        295,
+        435,
+        277
+      ],
+      "component_count": 1,
+      "sha256": "a74b04b8cf07ab14621ced876441724792a1120a7ad2ba086ec3e49a83561228",
+      "label": "Krátká římsa",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/ledge.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "sky/lift_deck",
+      "biome": "sky",
+      "name": "lift_deck",
+      "kind": "mechanics",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/lift_deck.png",
+      "size": [
+        711,
+        135
+      ],
+      "anchor_bottom": [
+        355.5,
+        127
+      ],
+      "anchor_top": [
+        355.5,
+        10
+      ],
+      "source_atlas": 4,
+      "source_rect": [
+        1315,
+        368,
+        695,
+        119
+      ],
+      "component_count": 1,
+      "sha256": "43dc381bc74c3ea5dbad7793600fbe1943cb934e6344b7115ef6cc261ac5952b",
+      "label": "Pohyblivá podlaha",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/lift_deck.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "sky/lift_header",
+      "biome": "sky",
+      "name": "lift_header",
+      "kind": "mechanics",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/lift_header.png",
+      "size": [
+        665,
+        280
+      ],
+      "anchor_bottom": [
+        332.5,
+        272
+      ],
+      "anchor_top": [
+        332.5,
+        14
+      ],
+      "source_atlas": 4,
+      "source_rect": [
+        57,
+        880,
+        649,
+        264
+      ],
+      "component_count": 1,
+      "sha256": "0fb937e189b7f902d0935c65a3ecdd3c2949bc34017615c758b704e605473d52",
+      "label": "Horní kladky",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/lift_header.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "sky/pressure_plate",
+      "biome": "sky",
+      "name": "pressure_plate",
+      "kind": "mechanics",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/pressure_plate.png",
+      "size": [
+        470,
+        204
+      ],
+      "anchor_bottom": [
+        235.0,
+        196
+      ],
+      "anchor_top": [
+        235.0,
+        14
+      ],
+      "source_atlas": 4,
+      "source_rect": [
+        797,
+        947,
+        454,
+        188
+      ],
+      "component_count": 1,
+      "sha256": "ca49d1596d5cdf490b506ee56705940d9fa6c79c58c1175c960ba9ee29c16cb4",
+      "label": "Nášlapný spínač",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/pressure_plate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "sky/gate",
+      "biome": "sky",
+      "name": "gate",
+      "kind": "mechanics",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/gate.png",
+      "size": [
+        314,
+        457
+      ],
+      "anchor_bottom": [
+        157.0,
+        449
+      ],
+      "anchor_top": [
+        157.0,
+        12
+      ],
+      "source_atlas": 4,
+      "source_rect": [
+        1515,
+        785,
+        298,
+        441
+      ],
+      "component_count": 1,
+      "sha256": "6aaedd16f241e779c06c003b00241db4e2ce6e794312fcca90ff76d2e7352a29",
+      "label": "Posuvná brána",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/gate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "sky/hazard",
+      "biome": "sky",
+      "name": "hazard",
+      "kind": "mechanics",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/hazard.png",
+      "size": [
+        497,
+        513
+      ],
+      "anchor_bottom": [
+        248.5,
+        505
+      ],
+      "anchor_top": [
+        248.5,
+        106
+      ],
+      "source_atlas": 4,
+      "source_rect": [
+        108,
+        1395,
+        481,
+        497
+      ],
+      "component_count": 1,
+      "sha256": "5c3b83f12a1ee74f4d427aceab58e7db520f38295b814b0e4b6e7a434d368639",
+      "collision_hull": [
+        [
+          10,
+          260
+        ],
+        [
+          240,
+          20
+        ],
+        [
+          250,
+          10
+        ],
+        [
+          255,
+          10
+        ],
+        [
+          260,
+          15
+        ],
+        [
+          485,
+          255
+        ],
+        [
+          485,
+          260
+        ],
+        [
+          260,
+          490
+        ],
+        [
+          250,
+          500
+        ],
+        [
+          240,
+          500
+        ],
+        [
+          10,
+          265
+        ]
+      ],
+      "label": "Past",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/hazard.tscn",
+      "category": "Pasti"
+    },
+    {
+      "id": "sky/crumble_platform",
+      "biome": "sky",
+      "name": "crumble_platform",
+      "kind": "mechanics",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/crumble_platform.png",
+      "size": [
+        713,
+        314
+      ],
+      "anchor_bottom": [
+        356.5,
+        306
+      ],
+      "anchor_top": [
+        356.5,
+        21
+      ],
+      "source_atlas": 4,
+      "source_rect": [
+        675,
+        1553,
+        697,
+        298
+      ],
+      "component_count": 1,
+      "sha256": "f069d5d4651541ab8d7d8c0cc9d0fde8715d3634ed471310982024b611a04442",
+      "label": "Rozpadající se plošina",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/crumble_platform.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "sky/repair_socket",
+      "biome": "sky",
+      "name": "repair_socket",
+      "kind": "mechanics",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/repair_socket.png",
+      "size": [
+        399,
+        489
+      ],
+      "anchor_bottom": [
+        199.5,
+        481
+      ],
+      "anchor_top": [
+        199.5,
+        75
+      ],
+      "source_atlas": 4,
+      "source_rect": [
+        1527,
+        1399,
+        383,
+        473
+      ],
+      "component_count": 1,
+      "sha256": "5b0cdb876b45caacc496e6a51312a772451ec1f7beec73162286e11272aae11c",
+      "label": "Opravovaný mechanismus",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/repair_socket.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "sky/wind_arch",
+      "biome": "sky",
+      "name": "wind_arch",
+      "kind": "decor",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/wind_arch.png",
+      "size": [
+        571,
+        642
+      ],
+      "anchor_bottom": [
+        285.5,
+        634
+      ],
+      "anchor_top": [
+        285.5,
+        83
+      ],
+      "source_atlas": 5,
+      "source_rect": [
+        92,
+        67,
+        555,
+        626
+      ],
+      "component_count": 1,
+      "sha256": "41a1fc720d877a5357b6fcf5302dc8b0c84c45a2dc9892287298bff7f8f138f1",
+      "label": "Větrná brána",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/wind_arch.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "sky/windmill",
+      "biome": "sky",
+      "name": "windmill",
+      "kind": "decor",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/windmill.png",
+      "size": [
+        447,
+        652
+      ],
+      "anchor_bottom": [
+        223.5,
+        644
+      ],
+      "anchor_top": [
+        223.5,
+        75
+      ],
+      "source_atlas": 5,
+      "source_rect": [
+        805,
+        59,
+        431,
+        636
+      ],
+      "component_count": 1,
+      "sha256": "e81da7c84700214f15789d9e48ce09322634026423a409e6142b27c473e29adb",
+      "label": "Větrný mlýn bez vrtule",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/windmill.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "sky/cloud_island",
+      "biome": "sky",
+      "name": "cloud_island",
+      "kind": "decor",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/cloud_island.png",
+      "size": [
+        564,
+        667
+      ],
+      "anchor_bottom": [
+        282.0,
+        659
+      ],
+      "anchor_top": [
+        282.0,
+        45
+      ],
+      "source_atlas": 5,
+      "source_rect": [
+        1386,
+        54,
+        548,
+        651
+      ],
+      "component_count": 1,
+      "sha256": "1497d4449dd08a0bec173dc028dc09dac1231db6feccd8191739f58fd75c66f3",
+      "label": "Oblačný ostrůvek",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/cloud_island.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "sky/bell_tower",
+      "biome": "sky",
+      "name": "bell_tower",
+      "kind": "decor",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/bell_tower.png",
+      "size": [
+        411,
+        645
+      ],
+      "anchor_bottom": [
+        205.5,
+        637
+      ],
+      "anchor_top": [
+        205.5,
+        86
+      ],
+      "source_atlas": 5,
+      "source_rect": [
+        170,
+        728,
+        395,
+        629
+      ],
+      "component_count": 1,
+      "sha256": "93702cb6af9e3dc1a4abc2c78677a537cce94856a128c5af8657f951f1fa005d",
+      "label": "Zvonice",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/bell_tower.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "sky/windsock",
+      "biome": "sky",
+      "name": "windsock",
+      "kind": "decor",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/windsock.png",
+      "size": [
+        506,
+        591
+      ],
+      "anchor_bottom": [
+        253.0,
+        583
+      ],
+      "anchor_top": [
+        253.0,
+        81
+      ],
+      "source_atlas": 5,
+      "source_rect": [
+        791,
+        771,
+        490,
+        575
+      ],
+      "component_count": 1,
+      "sha256": "8981b3c8c501ae1c203dc6e031294181da16733e82bfb1da4f8a601e13651bb9",
+      "label": "Větrný rukáv",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/windsock.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "sky/sky_cottage",
+      "biome": "sky",
+      "name": "sky_cottage",
+      "kind": "decor",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/sky_cottage.png",
+      "size": [
+        515,
+        663
+      ],
+      "anchor_bottom": [
+        257.5,
+        655
+      ],
+      "anchor_top": [
+        257.5,
+        94
+      ],
+      "source_atlas": 5,
+      "source_rect": [
+        1434,
+        728,
+        499,
+        647
+      ],
+      "component_count": 1,
+      "sha256": "781f24d6f64298019780e84b3d71252d81b3b563f0715acdd5de89e56df4f9b1",
+      "label": "Vzdušný domek",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/sky_cottage.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "sky/anchor",
+      "biome": "sky",
+      "name": "anchor",
+      "kind": "decor",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/anchor.png",
+      "size": [
+        460,
+        624
+      ],
+      "anchor_bottom": [
+        230.0,
+        616
+      ],
+      "anchor_top": [
+        230.0,
+        42
+      ],
+      "source_atlas": 5,
+      "source_rect": [
+        144,
+        1390,
+        444,
+        608
+      ],
+      "component_count": 1,
+      "sha256": "61746e943ffd578b726e6494137bc684c0826cb40cd808d54998a6009b6f4a4e",
+      "label": "Kotva ostrovů",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/anchor.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "sky/cloud_cluster",
+      "biome": "sky",
+      "name": "cloud_cluster",
+      "kind": "decor",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/cloud_cluster.png",
+      "size": [
+        604,
+        456
+      ],
+      "anchor_bottom": [
+        302.0,
+        448
+      ],
+      "anchor_top": [
+        302.0,
+        34
+      ],
+      "source_atlas": 5,
+      "source_rect": [
+        730,
+        1508,
+        588,
+        440
+      ],
+      "component_count": 1,
+      "sha256": "af661f0c57b144afe8c3d6abffd67d00861afa4613c0c36b6354d859174823b6",
+      "label": "Oblak",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/cloud_cluster.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "sky/wind_crystal",
+      "biome": "sky",
+      "name": "wind_crystal",
+      "kind": "decor",
+      "levels": [
+        6,
+        7,
+        8
+      ],
+      "path": "assets/environment/worlds/sky/wind_crystal.png",
+      "size": [
+        347,
+        583
+      ],
+      "anchor_bottom": [
+        173.5,
+        575
+      ],
+      "anchor_top": [
+        173.5,
+        66
+      ],
+      "source_atlas": 5,
+      "source_rect": [
+        1521,
+        1424,
+        331,
+        567
+      ],
+      "component_count": 1,
+      "sha256": "88702b3636ce2415efe5ef3947ef48dd69f3aa9ca760249b5fa0a96936c26472",
+      "label": "Větrný krystal",
+      "biome_label": "Oblačné ostrovy",
+      "scene": "scenes/world_assets/sky/wind_crystal.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "castle/platform_long",
+      "biome": "castle",
+      "name": "platform_long",
+      "kind": "mechanics",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/platform_long.png",
+      "size": [
+        821,
+        282
+      ],
+      "anchor_bottom": [
+        410.5,
+        274
+      ],
+      "anchor_top": [
+        410.5,
+        11
+      ],
+      "source_atlas": 6,
+      "source_rect": [
+        47,
+        362,
+        805,
+        266
+      ],
+      "component_count": 1,
+      "sha256": "d14bee6b64ec923fe290accae332e038e25f3466c6aa5b1b3ee03d031e586e72",
+      "label": "Dlouhá plošina",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/platform_long.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "castle/ledge",
+      "biome": "castle",
+      "name": "ledge",
+      "kind": "mechanics",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/ledge.png",
+      "size": [
+        402,
+        210
+      ],
+      "anchor_bottom": [
+        201.0,
+        202
+      ],
+      "anchor_top": [
+        201.0,
+        11
+      ],
+      "source_atlas": 6,
+      "source_rect": [
+        915,
+        373,
+        386,
+        194
+      ],
+      "component_count": 1,
+      "sha256": "8bff5ddf81072fcd632691ecf24f9c182cf2258dff0c313a36cba324c3811c15",
+      "label": "Krátká římsa",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/ledge.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "castle/lift_deck",
+      "biome": "castle",
+      "name": "lift_deck",
+      "kind": "mechanics",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/lift_deck.png",
+      "size": [
+        678,
+        133
+      ],
+      "anchor_bottom": [
+        339.0,
+        125
+      ],
+      "anchor_top": [
+        339.0,
+        9
+      ],
+      "source_atlas": 6,
+      "source_rect": [
+        1352,
+        410,
+        662,
+        117
+      ],
+      "component_count": 1,
+      "sha256": "f60314e0a24c3ba0eb44fc38b227f1dc4473fdd5d49d963fc9a541a7fc1fc61a",
+      "label": "Pohyblivá podlaha",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/lift_deck.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "castle/lift_header",
+      "biome": "castle",
+      "name": "lift_header",
+      "kind": "mechanics",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/lift_header.png",
+      "size": [
+        607,
+        219
+      ],
+      "anchor_bottom": [
+        303.5,
+        211
+      ],
+      "anchor_top": [
+        303.5,
+        11
+      ],
+      "source_atlas": 6,
+      "source_rect": [
+        67,
+        902,
+        591,
+        203
+      ],
+      "component_count": 1,
+      "sha256": "816a618b30bdcfe2ccab98998241ebd5350efa1f2435fce652143cb5609d7229",
+      "label": "Horní kladky",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/lift_header.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "castle/pressure_plate",
+      "biome": "castle",
+      "name": "pressure_plate",
+      "kind": "mechanics",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/pressure_plate.png",
+      "size": [
+        481,
+        221
+      ],
+      "anchor_bottom": [
+        240.5,
+        213
+      ],
+      "anchor_top": [
+        240.5,
+        12
+      ],
+      "source_atlas": 6,
+      "source_rect": [
+        810,
+        968,
+        465,
+        205
+      ],
+      "component_count": 1,
+      "sha256": "c8f5d10d85a24abf6f73f10e8f6e0724c52acc51404b5078437ce980270f281f",
+      "label": "Nášlapný spínač",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/pressure_plate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "castle/gate",
+      "biome": "castle",
+      "name": "gate",
+      "kind": "mechanics",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/gate.png",
+      "size": [
+        377,
+        478
+      ],
+      "anchor_bottom": [
+        188.5,
+        470
+      ],
+      "anchor_top": [
+        188.5,
+        12
+      ],
+      "source_atlas": 6,
+      "source_rect": [
+        1536,
+        772,
+        361,
+        462
+      ],
+      "component_count": 2,
+      "sha256": "6ebfefd8a32f3a23b1eab4c6fdb41b012ac6d598a7a6851a95be7bffc4aefd13",
+      "label": "Posuvná brána",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/gate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "castle/hazard",
+      "biome": "castle",
+      "name": "hazard",
+      "kind": "mechanics",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/hazard.png",
+      "size": [
+        590,
+        322
+      ],
+      "anchor_bottom": [
+        295.0,
+        314
+      ],
+      "anchor_top": [
+        295.0,
+        53
+      ],
+      "source_atlas": 6,
+      "source_rect": [
+        52,
+        1578,
+        574,
+        306
+      ],
+      "component_count": 1,
+      "sha256": "32ac66450901ebcecc4e18f6b19e5101ed93f1ddfd3dc3175a224027a0f876a5",
+      "collision_hull": [
+        [
+          10,
+          225
+        ],
+        [
+          45,
+          100
+        ],
+        [
+          50,
+          85
+        ],
+        [
+          65,
+          50
+        ],
+        [
+          80,
+          20
+        ],
+        [
+          85,
+          15
+        ],
+        [
+          510,
+          10
+        ],
+        [
+          515,
+          10
+        ],
+        [
+          520,
+          15
+        ],
+        [
+          535,
+          50
+        ],
+        [
+          545,
+          75
+        ],
+        [
+          550,
+          95
+        ],
+        [
+          580,
+          230
+        ],
+        [
+          580,
+          245
+        ],
+        [
+          565,
+          275
+        ],
+        [
+          555,
+          285
+        ],
+        [
+          545,
+          290
+        ],
+        [
+          530,
+          295
+        ],
+        [
+          305,
+          310
+        ],
+        [
+          285,
+          310
+        ],
+        [
+          60,
+          295
+        ],
+        [
+          40,
+          290
+        ],
+        [
+          25,
+          275
+        ],
+        [
+          10,
+          245
+        ]
+      ],
+      "label": "Past",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/hazard.tscn",
+      "category": "Pasti"
+    },
+    {
+      "id": "castle/crumble_platform",
+      "biome": "castle",
+      "name": "crumble_platform",
+      "kind": "mechanics",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/crumble_platform.png",
+      "size": [
+        678,
+        266
+      ],
+      "anchor_bottom": [
+        339.0,
+        258
+      ],
+      "anchor_top": [
+        339.0,
+        10
+      ],
+      "source_atlas": 6,
+      "source_rect": [
+        713,
+        1593,
+        662,
+        250
+      ],
+      "component_count": 1,
+      "sha256": "5830487faf83f2732392c33a5402c03dffd2ed50600b6755ac8e29078827bf27",
+      "label": "Rozpadající se plošina",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/crumble_platform.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "castle/repair_socket",
+      "biome": "castle",
+      "name": "repair_socket",
+      "kind": "mechanics",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/repair_socket.png",
+      "size": [
+        472,
+        518
+      ],
+      "anchor_bottom": [
+        236.0,
+        510
+      ],
+      "anchor_top": [
+        236.0,
+        71
+      ],
+      "source_atlas": 6,
+      "source_rect": [
+        1507,
+        1403,
+        456,
+        502
+      ],
+      "component_count": 1,
+      "sha256": "8950a228988dc8ff0c4bfabf64cd3fed38c89347f8ca61549ce82eb3b8ecef9d",
+      "label": "Opravovaný mechanismus",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/repair_socket.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "castle/royal_arch",
+      "biome": "castle",
+      "name": "royal_arch",
+      "kind": "decor",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/royal_arch.png",
+      "size": [
+        573,
+        702
+      ],
+      "anchor_bottom": [
+        286.5,
+        694
+      ],
+      "anchor_top": [
+        286.5,
+        84
+      ],
+      "source_atlas": 7,
+      "source_rect": [
+        112,
+        41,
+        557,
+        686
+      ],
+      "component_count": 2,
+      "sha256": "0b3b1f78d135860601c96a1189794c06e8bc8ea1bbb8acf015070db0144d185a",
+      "label": "Královský oblouk",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/royal_arch.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "castle/prison_cage",
+      "biome": "castle",
+      "name": "prison_cage",
+      "kind": "decor",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/prison_cage.png",
+      "size": [
+        378,
+        731
+      ],
+      "anchor_bottom": [
+        189.0,
+        723
+      ],
+      "anchor_top": [
+        189.0,
+        99
+      ],
+      "source_atlas": 7,
+      "source_rect": [
+        843,
+        25,
+        362,
+        715
+      ],
+      "component_count": 2,
+      "sha256": "1a2bdfa966088d6e37e137b4e7b6da2a258282ee189493024f889dd3e4419dbd",
+      "label": "Vězeňská klec",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/prison_cage.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "castle/column",
+      "biome": "castle",
+      "name": "column",
+      "kind": "decor",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/column.png",
+      "size": [
+        251,
+        712
+      ],
+      "anchor_bottom": [
+        125.5,
+        704
+      ],
+      "anchor_top": [
+        125.5,
+        12
+      ],
+      "source_atlas": 7,
+      "source_rect": [
+        1570,
+        53,
+        235,
+        696
+      ],
+      "component_count": 1,
+      "sha256": "164920e60dbb50b3b25ff217ab33f52c0bfd127cf233c97fb5d21422308fed6e",
+      "label": "Hradní sloup",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/column.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "castle/banner",
+      "biome": "castle",
+      "name": "banner",
+      "kind": "decor",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/banner.png",
+      "size": [
+        380,
+        560
+      ],
+      "anchor_bottom": [
+        190.0,
+        552
+      ],
+      "anchor_top": [
+        190.0,
+        18
+      ],
+      "source_atlas": 7,
+      "source_rect": [
+        202,
+        811,
+        364,
+        544
+      ],
+      "component_count": 1,
+      "sha256": "37dcf97cc40fd9f85c654711b7a20ba1f7d009429b5581f166bbe3f348b3e899",
+      "label": "Hvězdný prapor",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/banner.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "castle/chandelier",
+      "biome": "castle",
+      "name": "chandelier",
+      "kind": "decor",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/chandelier.png",
+      "size": [
+        525,
+        620
+      ],
+      "anchor_bottom": [
+        262.5,
+        612
+      ],
+      "anchor_top": [
+        262.5,
+        216
+      ],
+      "source_atlas": 7,
+      "source_rect": [
+        769,
+        779,
+        509,
+        604
+      ],
+      "component_count": 1,
+      "sha256": "7e8b0fdd8190d057ddc562156f7836d76d28c0fa0a179e1914b8dace2a7ff74e",
+      "label": "Lustr",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/chandelier.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "castle/mirror",
+      "biome": "castle",
+      "name": "mirror",
+      "kind": "decor",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/mirror.png",
+      "size": [
+        447,
+        603
+      ],
+      "anchor_bottom": [
+        223.5,
+        595
+      ],
+      "anchor_top": [
+        223.5,
+        85
+      ],
+      "source_atlas": 7,
+      "source_rect": [
+        1462,
+        800,
+        431,
+        587
+      ],
+      "component_count": 1,
+      "sha256": "dae853cd1ffe489ef6bb85839644024b76f5927613d80773a8399384265e58e5",
+      "label": "Zrcadlo",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/mirror.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "castle/chest",
+      "biome": "castle",
+      "name": "chest",
+      "kind": "decor",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/chest.png",
+      "size": [
+        588,
+        447
+      ],
+      "anchor_bottom": [
+        294.0,
+        439
+      ],
+      "anchor_top": [
+        294.0,
+        21
+      ],
+      "source_atlas": 7,
+      "source_rect": [
+        95,
+        1548,
+        572,
+        431
+      ],
+      "component_count": 1,
+      "sha256": "cd21d239effcf05b412a71fed86a7898559166a54f6c3f175a279de07b2aab1c",
+      "label": "Truhla",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/chest.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "castle/ivy",
+      "biome": "castle",
+      "name": "ivy",
+      "kind": "decor",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/ivy.png",
+      "size": [
+        300,
+        605
+      ],
+      "anchor_bottom": [
+        150.0,
+        597
+      ],
+      "anchor_top": [
+        150.0,
+        36
+      ],
+      "source_atlas": 7,
+      "source_rect": [
+        900,
+        1425,
+        284,
+        589
+      ],
+      "component_count": 1,
+      "sha256": "08dd3e62a43c694fafccdaa2e8362f9411a68bb4aafa3cb7d759c9ab1219d876",
+      "label": "Břečťan",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/ivy.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "castle/portal_frame",
+      "biome": "castle",
+      "name": "portal_frame",
+      "kind": "decor",
+      "levels": [
+        9,
+        10
+      ],
+      "path": "assets/environment/worlds/castle/portal_frame.png",
+      "size": [
+        523,
+        600
+      ],
+      "anchor_bottom": [
+        261.5,
+        592
+      ],
+      "anchor_top": [
+        261.5,
+        82
+      ],
+      "source_atlas": 7,
+      "source_rect": [
+        1425,
+        1418,
+        507,
+        584
+      ],
+      "component_count": 1,
+      "sha256": "23a3c77720476f7ce119d3f3dec8bf6630cb7ddc4ca4dccdc79d38882de5cc6f",
+      "label": "Rám portálu",
+      "biome_label": "Hrad a vězení",
+      "scene": "scenes/world_assets/castle/portal_frame.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "garden/platform_long",
+      "biome": "garden",
+      "name": "platform_long",
+      "kind": "mechanics",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/platform_long.png",
+      "size": [
+        739,
+        292
+      ],
+      "anchor_bottom": [
+        369.5,
+        284
+      ],
+      "anchor_top": [
+        369.5,
+        36
+      ],
+      "source_atlas": 8,
+      "source_rect": [
+        27,
+        418,
+        723,
+        276
+      ],
+      "component_count": 1,
+      "sha256": "d67658ee0609feb9b587e898c77dad74fc5a69aed904d66fecaa7eaa62ba37bf",
+      "label": "Dlouhá plošina",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/platform_long.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "garden/ledge",
+      "biome": "garden",
+      "name": "ledge",
+      "kind": "mechanics",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/ledge.png",
+      "size": [
+        468,
+        237
+      ],
+      "anchor_bottom": [
+        234.0,
+        229
+      ],
+      "anchor_top": [
+        234.0,
+        17
+      ],
+      "source_atlas": 8,
+      "source_rect": [
+        822,
+        453,
+        452,
+        221
+      ],
+      "component_count": 1,
+      "sha256": "365609966b87162ae31b1d45635e30b7fdd82e2f187520a4928c83be0dacc1ee",
+      "label": "Krátká římsa",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/ledge.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "garden/lift_deck",
+      "biome": "garden",
+      "name": "lift_deck",
+      "kind": "mechanics",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/lift_deck.png",
+      "size": [
+        705,
+        126
+      ],
+      "anchor_bottom": [
+        352.5,
+        118
+      ],
+      "anchor_top": [
+        352.5,
+        13
+      ],
+      "source_atlas": 8,
+      "source_rect": [
+        1329,
+        496,
+        689,
+        110
+      ],
+      "component_count": 1,
+      "sha256": "a8f0d8b20b409ce82087d84a9998f377a701c4e98fe278293577504705521996",
+      "label": "Pohyblivá podlaha",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/lift_deck.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "garden/lift_header",
+      "biome": "garden",
+      "name": "lift_header",
+      "kind": "mechanics",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/lift_header.png",
+      "size": [
+        687,
+        281
+      ],
+      "anchor_bottom": [
+        343.5,
+        273
+      ],
+      "anchor_top": [
+        343.5,
+        13
+      ],
+      "source_atlas": 8,
+      "source_rect": [
+        47,
+        931,
+        671,
+        265
+      ],
+      "component_count": 3,
+      "sha256": "854205d1ca3f6a8dc16fdd7f296aa33fa89348b922c5f1c6d34f82dc40aa3c3d",
+      "label": "Horní kladky",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/lift_header.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "garden/pressure_plate",
+      "biome": "garden",
+      "name": "pressure_plate",
+      "kind": "mechanics",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/pressure_plate.png",
+      "size": [
+        518,
+        222
+      ],
+      "anchor_bottom": [
+        259.0,
+        214
+      ],
+      "anchor_top": [
+        259.0,
+        17
+      ],
+      "source_atlas": 8,
+      "source_rect": [
+        779,
+        987,
+        502,
+        206
+      ],
+      "component_count": 1,
+      "sha256": "296f7690d679ee0f816efd2c26ad64e5a15e1760f41930277e7ef6dd471ea158",
+      "label": "Nášlapný spínač",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/pressure_plate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "garden/gate",
+      "biome": "garden",
+      "name": "gate",
+      "kind": "mechanics",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/gate.png",
+      "size": [
+        373,
+        408
+      ],
+      "anchor_bottom": [
+        186.5,
+        400
+      ],
+      "anchor_top": [
+        186.5,
+        9
+      ],
+      "source_atlas": 8,
+      "source_rect": [
+        1507,
+        834,
+        357,
+        392
+      ],
+      "component_count": 6,
+      "sha256": "cc408c9f987f95c182e76d497653cbe18c3bebb5a1ba47c1b02abff1b7b0773c",
+      "label": "Posuvná brána",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/gate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "garden/hazard",
+      "biome": "garden",
+      "name": "hazard",
+      "kind": "mechanics",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/hazard.png",
+      "size": [
+        490,
+        501
+      ],
+      "anchor_bottom": [
+        245.0,
+        493
+      ],
+      "anchor_top": [
+        245.0,
+        37
+      ],
+      "source_atlas": 8,
+      "source_rect": [
+        119,
+        1423,
+        474,
+        485
+      ],
+      "component_count": 1,
+      "sha256": "09775af930a41ec87d7737546e72a02db371734e3ae3fb1ac645f25e156138c6",
+      "collision_hull": [
+        [
+          10,
+          265
+        ],
+        [
+          120,
+          80
+        ],
+        [
+          130,
+          75
+        ],
+        [
+          210,
+          40
+        ],
+        [
+          240,
+          30
+        ],
+        [
+          310,
+          15
+        ],
+        [
+          325,
+          15
+        ],
+        [
+          415,
+          85
+        ],
+        [
+          445,
+          110
+        ],
+        [
+          480,
+          340
+        ],
+        [
+          480,
+          360
+        ],
+        [
+          475,
+          375
+        ],
+        [
+          440,
+          470
+        ],
+        [
+          435,
+          475
+        ],
+        [
+          315,
+          490
+        ],
+        [
+          305,
+          490
+        ],
+        [
+          85,
+          485
+        ],
+        [
+          20,
+          465
+        ],
+        [
+          10,
+          270
+        ]
+      ],
+      "label": "Past",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/hazard.tscn",
+      "category": "Pasti"
+    },
+    {
+      "id": "garden/crumble_platform",
+      "biome": "garden",
+      "name": "crumble_platform",
+      "kind": "mechanics",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/crumble_platform.png",
+      "size": [
+        638,
+        270
+      ],
+      "anchor_bottom": [
+        319.0,
+        262
+      ],
+      "anchor_top": [
+        319.0,
+        14
+      ],
+      "source_atlas": 8,
+      "source_rect": [
+        713,
+        1583,
+        622,
+        254
+      ],
+      "component_count": 1,
+      "sha256": "04053a600b91a153581dc571397dcde218bd2d60432d66753f76f1dab234c7f4",
+      "label": "Rozpadající se plošina",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/crumble_platform.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "garden/repair_socket",
+      "biome": "garden",
+      "name": "repair_socket",
+      "kind": "mechanics",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/repair_socket.png",
+      "size": [
+        589,
+        560
+      ],
+      "anchor_bottom": [
+        294.5,
+        552
+      ],
+      "anchor_top": [
+        294.5,
+        78
+      ],
+      "source_atlas": 8,
+      "source_rect": [
+        1415,
+        1384,
+        573,
+        544
+      ],
+      "component_count": 1,
+      "sha256": "338ac23c00ba1b77467bcc202ce0ff4296b7376b46d4ee8733394a5e8a9de617",
+      "label": "Opravovaný mechanismus",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/repair_socket.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "garden/giant_flower",
+      "biome": "garden",
+      "name": "giant_flower",
+      "kind": "decor",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/giant_flower.png",
+      "size": [
+        667,
+        676
+      ],
+      "anchor_bottom": [
+        333.5,
+        668
+      ],
+      "anchor_top": [
+        333.5,
+        26
+      ],
+      "source_atlas": 9,
+      "source_rect": [
+        37,
+        61,
+        651,
+        660
+      ],
+      "component_count": 1,
+      "sha256": "be3f142460014e6eb2566553bab67c285c6b316cc50c86ca3ca4b1c73289769c",
+      "label": "Obří květina",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/giant_flower.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "garden/leaf_arch",
+      "biome": "garden",
+      "name": "leaf_arch",
+      "kind": "decor",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/leaf_arch.png",
+      "size": [
+        685,
+        583
+      ],
+      "anchor_bottom": [
+        342.5,
+        575
+      ],
+      "anchor_top": [
+        342.5,
+        42
+      ],
+      "source_atlas": 9,
+      "source_rect": [
+        703,
+        143,
+        669,
+        567
+      ],
+      "component_count": 2,
+      "sha256": "524f366887e3cbf1e9617b693f1174199581270db200f429c13de1cef3fbc936",
+      "label": "Kapradinový průchod",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/leaf_arch.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "garden/irrigation_pipe",
+      "biome": "garden",
+      "name": "irrigation_pipe",
+      "kind": "decor",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/irrigation_pipe.png",
+      "size": [
+        547,
+        569
+      ],
+      "anchor_bottom": [
+        273.5,
+        561
+      ],
+      "anchor_top": [
+        273.5,
+        48
+      ],
+      "source_atlas": 9,
+      "source_rect": [
+        1473,
+        148,
+        531,
+        553
+      ],
+      "component_count": 1,
+      "sha256": "ac9d8dfb6960600d4b27bd8e84faf62f0d4f0a9b3ffe5fbc54d8d8f36a268ac9",
+      "label": "Zavlažovací potrubí",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/irrigation_pipe.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "garden/reservoir",
+      "biome": "garden",
+      "name": "reservoir",
+      "kind": "decor",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/reservoir.png",
+      "size": [
+        647,
+        372
+      ],
+      "anchor_bottom": [
+        323.5,
+        364
+      ],
+      "anchor_top": [
+        323.5,
+        13
+      ],
+      "source_atlas": 9,
+      "source_rect": [
+        41,
+        856,
+        631,
+        356
+      ],
+      "component_count": 1,
+      "sha256": "9485733bb7cf0d7502604875b697d8a2a65b4f4385416c8412d089bef1c1fd51",
+      "label": "Vodní nádrž",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/reservoir.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "garden/seed_bed",
+      "biome": "garden",
+      "name": "seed_bed",
+      "kind": "decor",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/seed_bed.png",
+      "size": [
+        628,
+        458
+      ],
+      "anchor_bottom": [
+        314.0,
+        450
+      ],
+      "anchor_top": [
+        314.0,
+        42
+      ],
+      "source_atlas": 9,
+      "source_rect": [
+        735,
+        841,
+        612,
+        442
+      ],
+      "component_count": 1,
+      "sha256": "28d669fe66cd4ddf6996880eb3bdeb4fdcb2986c8cd968f737c28ec3610b196a",
+      "label": "Záhon pro semínko",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/seed_bed.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "garden/dew_leaf",
+      "biome": "garden",
+      "name": "dew_leaf",
+      "kind": "decor",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/dew_leaf.png",
+      "size": [
+        572,
+        437
+      ],
+      "anchor_bottom": [
+        286.0,
+        429
+      ],
+      "anchor_top": [
+        286.0,
+        20
+      ],
+      "source_atlas": 9,
+      "source_rect": [
+        1435,
+        840,
+        556,
+        421
+      ],
+      "component_count": 1,
+      "sha256": "928e603e24686b5dee796de29f41ff15a13dd1883981c9e2d7c42400e2d685a1",
+      "label": "List s rosou",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/dew_leaf.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "garden/root_bundle",
+      "biome": "garden",
+      "name": "root_bundle",
+      "kind": "decor",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/root_bundle.png",
+      "size": [
+        622,
+        635
+      ],
+      "anchor_bottom": [
+        311.0,
+        627
+      ],
+      "anchor_top": [
+        311.0,
+        130
+      ],
+      "source_atlas": 9,
+      "source_rect": [
+        89,
+        1360,
+        606,
+        619
+      ],
+      "component_count": 1,
+      "sha256": "78febc0dd3a5d88f9a02a0ce8facd87e8f5d150355b613da2daa32dee7fd4acb",
+      "label": "Živé kořeny",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/root_bundle.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "garden/thorn_vine",
+      "biome": "garden",
+      "name": "thorn_vine",
+      "kind": "decor",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/thorn_vine.png",
+      "size": [
+        335,
+        679
+      ],
+      "anchor_bottom": [
+        167.5,
+        671
+      ],
+      "anchor_top": [
+        167.5,
+        32
+      ],
+      "source_atlas": 9,
+      "source_rect": [
+        857,
+        1335,
+        319,
+        663
+      ],
+      "component_count": 1,
+      "sha256": "7d76bf343015710dd05ff7ce25460926597df465945370855ae19b9c674fb674",
+      "label": "Trnitá liána",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/thorn_vine.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "garden/garden_shrine",
+      "biome": "garden",
+      "name": "garden_shrine",
+      "kind": "decor",
+      "levels": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "path": "assets/environment/worlds/garden/garden_shrine.png",
+      "size": [
+        572,
+        628
+      ],
+      "anchor_bottom": [
+        286.0,
+        620
+      ],
+      "anchor_top": [
+        286.0,
+        89
+      ],
+      "source_atlas": 9,
+      "source_rect": [
+        1402,
+        1360,
+        556,
+        612
+      ],
+      "component_count": 1,
+      "sha256": "b3aeddcde944f835d79d6ff41870d17333b6f5a0d2d36cc510d81e13bf788327",
+      "label": "Zahradní svatyně",
+      "biome_label": "Zahrady obrů",
+      "scene": "scenes/world_assets/garden/garden_shrine.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "memory/platform_long",
+      "biome": "memory",
+      "name": "platform_long",
+      "kind": "mechanics",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/platform_long.png",
+      "size": [
+        707,
+        274
+      ],
+      "anchor_bottom": [
+        353.5,
+        266
+      ],
+      "anchor_top": [
+        353.5,
+        12
+      ],
+      "source_atlas": 10,
+      "source_rect": [
+        52,
+        374,
+        691,
+        258
+      ],
+      "component_count": 1,
+      "sha256": "39fb5bf101e75ad857de249b931682ea4738c705f0b5338e5d34eda56f26961f",
+      "label": "Dlouhá plošina",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/platform_long.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "memory/ledge",
+      "biome": "memory",
+      "name": "ledge",
+      "kind": "mechanics",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/ledge.png",
+      "size": [
+        428,
+        271
+      ],
+      "anchor_bottom": [
+        214.0,
+        263
+      ],
+      "anchor_top": [
+        214.0,
+        10
+      ],
+      "source_atlas": 10,
+      "source_rect": [
+        840,
+        380,
+        412,
+        255
+      ],
+      "component_count": 1,
+      "sha256": "df8ff754c4e916c4cd8b40b3f6a5955780d71f29f7f0da08fd7d1f2514df7071",
+      "label": "Krátká římsa",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/ledge.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "memory/lift_deck",
+      "biome": "memory",
+      "name": "lift_deck",
+      "kind": "mechanics",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/lift_deck.png",
+      "size": [
+        646,
+        155
+      ],
+      "anchor_bottom": [
+        323.0,
+        147
+      ],
+      "anchor_top": [
+        323.0,
+        13
+      ],
+      "source_atlas": 10,
+      "source_rect": [
+        1362,
+        433,
+        630,
+        139
+      ],
+      "component_count": 1,
+      "sha256": "4ab73568d7366c41731e904ec971543655ecc2c99b29e261c09680c362fba696",
+      "label": "Pohyblivá podlaha",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/lift_deck.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "memory/lift_header",
+      "biome": "memory",
+      "name": "lift_header",
+      "kind": "mechanics",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/lift_header.png",
+      "size": [
+        629,
+        212
+      ],
+      "anchor_bottom": [
+        314.5,
+        204
+      ],
+      "anchor_top": [
+        314.5,
+        43
+      ],
+      "source_atlas": 10,
+      "source_rect": [
+        83,
+        879,
+        613,
+        196
+      ],
+      "component_count": 1,
+      "sha256": "431ed9cd5f1e64902b8da6feb2005f4cba02673a93681ad1123f8481ee8af6d3",
+      "label": "Horní kladky",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/lift_header.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "memory/pressure_plate",
+      "biome": "memory",
+      "name": "pressure_plate",
+      "kind": "mechanics",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/pressure_plate.png",
+      "size": [
+        511,
+        236
+      ],
+      "anchor_bottom": [
+        255.5,
+        228
+      ],
+      "anchor_top": [
+        255.5,
+        13
+      ],
+      "source_atlas": 10,
+      "source_rect": [
+        796,
+        934,
+        495,
+        220
+      ],
+      "component_count": 1,
+      "sha256": "1a97d34cedb1617c9837be88171aa13ca8f961b5d6bd5a2020ec366ee48bdd03",
+      "label": "Nášlapný spínač",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/pressure_plate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "memory/gate",
+      "biome": "memory",
+      "name": "gate",
+      "kind": "mechanics",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/gate.png",
+      "size": [
+        363,
+        509
+      ],
+      "anchor_bottom": [
+        181.5,
+        501
+      ],
+      "anchor_top": [
+        181.5,
+        12
+      ],
+      "source_atlas": 10,
+      "source_rect": [
+        1509,
+        762,
+        347,
+        493
+      ],
+      "component_count": 6,
+      "sha256": "aa36a0b0f965023f0156670d51c9a3220ebd220646d1f6a62d2036f106dbf02d",
+      "label": "Posuvná brána",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/gate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "memory/hazard",
+      "biome": "memory",
+      "name": "hazard",
+      "kind": "mechanics",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/hazard.png",
+      "size": [
+        442,
+        504
+      ],
+      "anchor_bottom": [
+        221.0,
+        496
+      ],
+      "anchor_top": [
+        221.0,
+        67
+      ],
+      "source_atlas": 10,
+      "source_rect": [
+        152,
+        1453,
+        426,
+        488
+      ],
+      "component_count": 1,
+      "sha256": "0ddfc356533068e2427a8b8acbc69f450851ff3065df37c6fc08fb27a6df730d",
+      "collision_hull": [
+        [
+          10,
+          380
+        ],
+        [
+          35,
+          270
+        ],
+        [
+          50,
+          220
+        ],
+        [
+          60,
+          190
+        ],
+        [
+          70,
+          170
+        ],
+        [
+          180,
+          20
+        ],
+        [
+          190,
+          10
+        ],
+        [
+          200,
+          10
+        ],
+        [
+          220,
+          25
+        ],
+        [
+          245,
+          45
+        ],
+        [
+          280,
+          80
+        ],
+        [
+          380,
+          185
+        ],
+        [
+          385,
+          195
+        ],
+        [
+          425,
+          300
+        ],
+        [
+          430,
+          315
+        ],
+        [
+          430,
+          415
+        ],
+        [
+          415,
+          450
+        ],
+        [
+          410,
+          460
+        ],
+        [
+          390,
+          470
+        ],
+        [
+          320,
+          485
+        ],
+        [
+          290,
+          490
+        ],
+        [
+          185,
+          490
+        ],
+        [
+          145,
+          485
+        ],
+        [
+          60,
+          470
+        ],
+        [
+          45,
+          465
+        ],
+        [
+          35,
+          460
+        ],
+        [
+          15,
+          425
+        ],
+        [
+          10,
+          390
+        ]
+      ],
+      "label": "Past",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/hazard.tscn",
+      "category": "Pasti"
+    },
+    {
+      "id": "memory/crumble_platform",
+      "biome": "memory",
+      "name": "crumble_platform",
+      "kind": "mechanics",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/crumble_platform.png",
+      "size": [
+        668,
+        323
+      ],
+      "anchor_bottom": [
+        334.0,
+        315
+      ],
+      "anchor_top": [
+        334.0,
+        11
+      ],
+      "source_atlas": 10,
+      "source_rect": [
+        699,
+        1559,
+        652,
+        307
+      ],
+      "component_count": 1,
+      "sha256": "689634b0328222266712768d2da74f80702efd7a937062f768572cb596ff9714",
+      "label": "Rozpadající se plošina",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/crumble_platform.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "memory/repair_socket",
+      "biome": "memory",
+      "name": "repair_socket",
+      "kind": "mechanics",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/repair_socket.png",
+      "size": [
+        507,
+        610
+      ],
+      "anchor_bottom": [
+        253.5,
+        602
+      ],
+      "anchor_top": [
+        253.5,
+        112
+      ],
+      "source_atlas": 10,
+      "source_rect": [
+        1439,
+        1358,
+        491,
+        594
+      ],
+      "component_count": 1,
+      "sha256": "e213588879b3a0452a0ded178d0b88b0b7542a5527aef02e00f5b5fad7b9f117",
+      "label": "Opravovaný mechanismus",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/repair_socket.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "memory/mirror_gate",
+      "biome": "memory",
+      "name": "mirror_gate",
+      "kind": "decor",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/mirror_gate.png",
+      "size": [
+        604,
+        679
+      ],
+      "anchor_bottom": [
+        302.0,
+        671
+      ],
+      "anchor_top": [
+        302.0,
+        102
+      ],
+      "source_atlas": 11,
+      "source_rect": [
+        51,
+        24,
+        588,
+        663
+      ],
+      "component_count": 1,
+      "sha256": "8dc8e3db903dda2927683f99712858bdd8772feee0e51732771168f523ce3ca9",
+      "label": "Zrcadlová brána",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/mirror_gate.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "memory/crystal_cluster",
+      "biome": "memory",
+      "name": "crystal_cluster",
+      "kind": "decor",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/crystal_cluster.png",
+      "size": [
+        474,
+        572
+      ],
+      "anchor_bottom": [
+        237.0,
+        564
+      ],
+      "anchor_top": [
+        237.0,
+        82
+      ],
+      "source_atlas": 11,
+      "source_rect": [
+        805,
+        129,
+        458,
+        556
+      ],
+      "component_count": 1,
+      "sha256": "03e4bec1a87d58b13629bcabed0fcd2eaae2dab2afa54b992344527f55654f02",
+      "label": "Jeskynní krystaly",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/crystal_cluster.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "memory/river_stone",
+      "biome": "memory",
+      "name": "river_stone",
+      "kind": "decor",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/river_stone.png",
+      "size": [
+        611,
+        358
+      ],
+      "anchor_bottom": [
+        305.5,
+        350
+      ],
+      "anchor_top": [
+        305.5,
+        41
+      ],
+      "source_atlas": 11,
+      "source_rect": [
+        1406,
+        342,
+        595,
+        342
+      ],
+      "component_count": 1,
+      "sha256": "76d790f3cc3a543865c20f533b6a47cf0be693d4130db9b5a8fd1faef65d0eb3",
+      "label": "Říční kámen",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/river_stone.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "memory/memory_obelisk",
+      "biome": "memory",
+      "name": "memory_obelisk",
+      "kind": "decor",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/memory_obelisk.png",
+      "size": [
+        352,
+        715
+      ],
+      "anchor_bottom": [
+        176.0,
+        707
+      ],
+      "anchor_top": [
+        176.0,
+        62
+      ],
+      "source_atlas": 11,
+      "source_rect": [
+        175,
+        707,
+        336,
+        699
+      ],
+      "component_count": 1,
+      "sha256": "005d192d4a6d862e0468c2b442bf038f2fdd3ec82d62184708b2323209b1505b",
+      "label": "Obelisk vzpomínek",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/memory_obelisk.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "memory/ruined_arch",
+      "biome": "memory",
+      "name": "ruined_arch",
+      "kind": "decor",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/ruined_arch.png",
+      "size": [
+        653,
+        667
+      ],
+      "anchor_bottom": [
+        326.5,
+        659
+      ],
+      "anchor_top": [
+        326.5,
+        64
+      ],
+      "source_atlas": 11,
+      "source_rect": [
+        720,
+        756,
+        637,
+        651
+      ],
+      "component_count": 1,
+      "sha256": "739eca4e7cb5f93ea88d140d40aadb51c32314e7d7aad9ff83155138d509fad8",
+      "label": "Zřícený oblouk",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/ruined_arch.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "memory/glowing_reeds",
+      "biome": "memory",
+      "name": "glowing_reeds",
+      "kind": "decor",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/glowing_reeds.png",
+      "size": [
+        305,
+        618
+      ],
+      "anchor_bottom": [
+        152.5,
+        610
+      ],
+      "anchor_top": [
+        152.5,
+        57
+      ],
+      "source_atlas": 11,
+      "source_rect": [
+        1565,
+        807,
+        289,
+        602
+      ],
+      "component_count": 1,
+      "sha256": "f2c0b057eb0849dfe049029330a09f0e20d912ec39035d645a830302782d1d9a",
+      "label": "Svítící rákosí",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/glowing_reeds.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "memory/memory_fountain",
+      "biome": "memory",
+      "name": "memory_fountain",
+      "kind": "decor",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/memory_fountain.png",
+      "size": [
+        638,
+        456
+      ],
+      "anchor_bottom": [
+        319.0,
+        448
+      ],
+      "anchor_top": [
+        319.0,
+        128
+      ],
+      "source_atlas": 11,
+      "source_rect": [
+        37,
+        1539,
+        622,
+        440
+      ],
+      "component_count": 1,
+      "sha256": "afa6297c8aca6316e931ae40b989199b065fe0ea95a6d04e0082158b026ccdd1",
+      "label": "Fontána vzpomínek",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/memory_fountain.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "memory/reflection_frame",
+      "biome": "memory",
+      "name": "reflection_frame",
+      "kind": "decor",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/reflection_frame.png",
+      "size": [
+        392,
+        620
+      ],
+      "anchor_bottom": [
+        196.0,
+        612
+      ],
+      "anchor_top": [
+        196.0,
+        51
+      ],
+      "source_atlas": 11,
+      "source_rect": [
+        835,
+        1410,
+        376,
+        604
+      ],
+      "component_count": 1,
+      "sha256": "2710850e19812b968042e591f12d0a3900589ee3e29302a63e03b02fdc873f48",
+      "label": "Prázdný rám zrcadla",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/reflection_frame.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "memory/water_lily",
+      "biome": "memory",
+      "name": "water_lily",
+      "kind": "decor",
+      "levels": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "path": "assets/environment/worlds/memory/water_lily.png",
+      "size": [
+        636,
+        406
+      ],
+      "anchor_bottom": [
+        318.0,
+        398
+      ],
+      "anchor_top": [
+        318.0,
+        50
+      ],
+      "source_atlas": 11,
+      "source_rect": [
+        1372,
+        1595,
+        620,
+        390
+      ],
+      "component_count": 1,
+      "sha256": "c01ee8517914e46e99883bbe68fb10c81eb754f06b51de2df5ea2fef04324976",
+      "label": "Leknín",
+      "biome_label": "Řeka vzpomínek",
+      "scene": "scenes/world_assets/memory/water_lily.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "stars/platform_long",
+      "biome": "stars",
+      "name": "platform_long",
+      "kind": "mechanics",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/platform_long.png",
+      "size": [
+        716,
+        239
+      ],
+      "anchor_bottom": [
+        358.0,
+        231
+      ],
+      "anchor_top": [
+        358.0,
+        10
+      ],
+      "source_atlas": 12,
+      "source_rect": [
+        51,
+        377,
+        700,
+        223
+      ],
+      "component_count": 1,
+      "sha256": "619764b5a0aa759318a86cedc01a447c5a0e3a9f5b213405e0e482a9254d61cc",
+      "label": "Dlouhá plošina",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/platform_long.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "stars/ledge",
+      "biome": "stars",
+      "name": "ledge",
+      "kind": "mechanics",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/ledge.png",
+      "size": [
+        398,
+        230
+      ],
+      "anchor_bottom": [
+        199.0,
+        222
+      ],
+      "anchor_top": [
+        199.0,
+        9
+      ],
+      "source_atlas": 12,
+      "source_rect": [
+        863,
+        384,
+        382,
+        214
+      ],
+      "component_count": 1,
+      "sha256": "1de6c571388736ea344553ee418d465b6b868ca383272f8e91e71ea38ff3dbaa",
+      "label": "Krátká římsa",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/ledge.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "stars/lift_deck",
+      "biome": "stars",
+      "name": "lift_deck",
+      "kind": "mechanics",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/lift_deck.png",
+      "size": [
+        660,
+        106
+      ],
+      "anchor_bottom": [
+        330.0,
+        98
+      ],
+      "anchor_top": [
+        330.0,
+        10
+      ],
+      "source_atlas": 12,
+      "source_rect": [
+        1355,
+        424,
+        644,
+        90
+      ],
+      "component_count": 1,
+      "sha256": "3dc493dab7fe17ae4498a747ee040b8d0da962ce3db8a461fb0859810e9b6ecf",
+      "label": "Pohyblivá podlaha",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/lift_deck.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "stars/lift_header",
+      "biome": "stars",
+      "name": "lift_header",
+      "kind": "mechanics",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/lift_header.png",
+      "size": [
+        621,
+        226
+      ],
+      "anchor_bottom": [
+        310.5,
+        218
+      ],
+      "anchor_top": [
+        310.5,
+        19
+      ],
+      "source_atlas": 12,
+      "source_rect": [
+        101,
+        883,
+        605,
+        210
+      ],
+      "component_count": 1,
+      "sha256": "9f8446142f09ba882deaa11b3fa3d8307345c906eacb190d8267a91cbee65765",
+      "label": "Horní kladky",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/lift_header.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "stars/pressure_plate",
+      "biome": "stars",
+      "name": "pressure_plate",
+      "kind": "mechanics",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/pressure_plate.png",
+      "size": [
+        488,
+        210
+      ],
+      "anchor_bottom": [
+        244.0,
+        202
+      ],
+      "anchor_top": [
+        244.0,
+        14
+      ],
+      "source_atlas": 12,
+      "source_rect": [
+        819,
+        963,
+        472,
+        194
+      ],
+      "component_count": 1,
+      "sha256": "e25dc64444ec7e94166fd8a9e8eab91ac099ff2075523dff5a3a52987fd9a619",
+      "label": "Nášlapný spínač",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/pressure_plate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "stars/gate",
+      "biome": "stars",
+      "name": "gate",
+      "kind": "mechanics",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/gate.png",
+      "size": [
+        396,
+        464
+      ],
+      "anchor_bottom": [
+        198.0,
+        456
+      ],
+      "anchor_top": [
+        198.0,
+        10
+      ],
+      "source_atlas": 12,
+      "source_rect": [
+        1516,
+        792,
+        380,
+        448
+      ],
+      "component_count": 1,
+      "sha256": "9a2b78944292bbfdf311ea79ff2400813083b6a8903cc97e9beba33ebbe57d70",
+      "label": "Posuvná brána",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/gate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "stars/hazard",
+      "biome": "stars",
+      "name": "hazard",
+      "kind": "mechanics",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/hazard.png",
+      "size": [
+        472,
+        263
+      ],
+      "anchor_bottom": [
+        236.0,
+        255
+      ],
+      "anchor_top": [
+        236.0,
+        12
+      ],
+      "source_atlas": 12,
+      "source_rect": [
+        117,
+        1563,
+        456,
+        247
+      ],
+      "component_count": 1,
+      "sha256": "bcbe04f239ae2f750d5aaa0c20f257bfc65170619355ddfb2d2fe5b161f5fbb1",
+      "collision_hull": [
+        [
+          10,
+          35
+        ],
+        [
+          15,
+          25
+        ],
+        [
+          25,
+          20
+        ],
+        [
+          50,
+          15
+        ],
+        [
+          300,
+          10
+        ],
+        [
+          355,
+          10
+        ],
+        [
+          445,
+          15
+        ],
+        [
+          455,
+          25
+        ],
+        [
+          460,
+          35
+        ],
+        [
+          460,
+          40
+        ],
+        [
+          410,
+          170
+        ],
+        [
+          405,
+          180
+        ],
+        [
+          320,
+          245
+        ],
+        [
+          155,
+          250
+        ],
+        [
+          145,
+          250
+        ],
+        [
+          55,
+          180
+        ],
+        [
+          50,
+          170
+        ],
+        [
+          10,
+          40
+        ]
+      ],
+      "label": "Past",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/hazard.tscn",
+      "category": "Pasti"
+    },
+    {
+      "id": "stars/crumble_platform",
+      "biome": "stars",
+      "name": "crumble_platform",
+      "kind": "mechanics",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/crumble_platform.png",
+      "size": [
+        693,
+        272
+      ],
+      "anchor_bottom": [
+        346.5,
+        264
+      ],
+      "anchor_top": [
+        346.5,
+        9
+      ],
+      "source_atlas": 12,
+      "source_rect": [
+        692,
+        1571,
+        677,
+        256
+      ],
+      "component_count": 1,
+      "sha256": "e0df783648245fa7dd94dd0abba9f608f0847a2f3e080f61967ab140978be27b",
+      "label": "Rozpadající se plošina",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/crumble_platform.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "stars/repair_socket",
+      "biome": "stars",
+      "name": "repair_socket",
+      "kind": "mechanics",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/repair_socket.png",
+      "size": [
+        493,
+        570
+      ],
+      "anchor_bottom": [
+        246.5,
+        562
+      ],
+      "anchor_top": [
+        246.5,
+        72
+      ],
+      "source_atlas": 12,
+      "source_rect": [
+        1490,
+        1365,
+        477,
+        554
+      ],
+      "component_count": 1,
+      "sha256": "db5efc9d858d9a75e9166abc08f4c28c519a09106935ed10e56b42727fb029fb",
+      "label": "Opravovaný mechanismus",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/repair_socket.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "stars/observatory",
+      "biome": "stars",
+      "name": "observatory",
+      "kind": "decor",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/observatory.png",
+      "size": [
+        519,
+        608
+      ],
+      "anchor_bottom": [
+        259.5,
+        600
+      ],
+      "anchor_top": [
+        259.5,
+        72
+      ],
+      "source_atlas": 13,
+      "source_rect": [
+        134,
+        111,
+        503,
+        592
+      ],
+      "component_count": 1,
+      "sha256": "36e0ca2433e34555d3c1290d69a62788ef32775449d8ddc28af8029c63e052b5",
+      "label": "Hvězdárna",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/observatory.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "stars/telescope",
+      "biome": "stars",
+      "name": "telescope",
+      "kind": "decor",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/telescope.png",
+      "size": [
+        546,
+        630
+      ],
+      "anchor_bottom": [
+        273.0,
+        622
+      ],
+      "anchor_top": [
+        273.0,
+        129
+      ],
+      "source_atlas": 13,
+      "source_rect": [
+        782,
+        84,
+        530,
+        614
+      ],
+      "component_count": 1,
+      "sha256": "2541eda96f1ecdce8766dc0b0a8d76af342071f8c9a7b5d0b338d688a4ba0bbb",
+      "label": "Dalekohled",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/telescope.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "stars/lantern_house",
+      "biome": "stars",
+      "name": "lantern_house",
+      "kind": "decor",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/lantern_house.png",
+      "size": [
+        495,
+        609
+      ],
+      "anchor_bottom": [
+        247.5,
+        601
+      ],
+      "anchor_top": [
+        247.5,
+        102
+      ],
+      "source_atlas": 13,
+      "source_rect": [
+        1434,
+        119,
+        479,
+        593
+      ],
+      "component_count": 1,
+      "sha256": "c679fdccc1e4401a572bb2a0dbd3603e91511eb353a6b77b0aaced4e9914c514",
+      "label": "Horský domek",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/lantern_house.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "stars/star_lamp",
+      "biome": "stars",
+      "name": "star_lamp",
+      "kind": "decor",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/star_lamp.png",
+      "size": [
+        216,
+        629
+      ],
+      "anchor_bottom": [
+        108.0,
+        621
+      ],
+      "anchor_top": [
+        108.0,
+        28
+      ],
+      "source_atlas": 13,
+      "source_rect": [
+        281,
+        753,
+        200,
+        613
+      ],
+      "component_count": 1,
+      "sha256": "d48bf0583596cec1edb2b08cf2c4fb5ce2132391fd2a9b537f334c7b559ec6c5",
+      "label": "Hvězdná lucerna",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/star_lamp.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "stars/alpine_rock",
+      "biome": "stars",
+      "name": "alpine_rock",
+      "kind": "decor",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/alpine_rock.png",
+      "size": [
+        627,
+        541
+      ],
+      "anchor_bottom": [
+        313.5,
+        533
+      ],
+      "anchor_top": [
+        313.5,
+        48
+      ],
+      "source_atlas": 13,
+      "source_rect": [
+        722,
+        844,
+        611,
+        525
+      ],
+      "component_count": 1,
+      "sha256": "3cd5b5e15ace3c357b0249eaa4bf02efa8ac2376ccf4f98f6142c4481dc802ce",
+      "label": "Horská skála",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/alpine_rock.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "stars/pine",
+      "biome": "stars",
+      "name": "pine",
+      "kind": "decor",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/pine.png",
+      "size": [
+        392,
+        557
+      ],
+      "anchor_bottom": [
+        196.0,
+        549
+      ],
+      "anchor_top": [
+        196.0,
+        84
+      ],
+      "source_atlas": 13,
+      "source_rect": [
+        1508,
+        849,
+        376,
+        541
+      ],
+      "component_count": 1,
+      "sha256": "53a31370d35f9499084e1c86263d66a50991de1233ccd709ecd69ee690cc4d35",
+      "label": "Zasněžený smrk",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/pine.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "stars/constellation_table",
+      "biome": "stars",
+      "name": "constellation_table",
+      "kind": "decor",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/constellation_table.png",
+      "size": [
+        535,
+        480
+      ],
+      "anchor_bottom": [
+        267.5,
+        472
+      ],
+      "anchor_top": [
+        267.5,
+        29
+      ],
+      "source_atlas": 13,
+      "source_rect": [
+        106,
+        1493,
+        519,
+        464
+      ],
+      "component_count": 2,
+      "sha256": "ed2694758fd8d15f9d2a7382aba737e8f1c3eb66f0085255cc5448a6b5d40295",
+      "label": "Hvězdná mapa",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/constellation_table.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "stars/empty_lanterns",
+      "biome": "stars",
+      "name": "empty_lanterns",
+      "kind": "decor",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/empty_lanterns.png",
+      "size": [
+        675,
+        447
+      ],
+      "anchor_bottom": [
+        337.5,
+        439
+      ],
+      "anchor_top": [
+        337.5,
+        70
+      ],
+      "source_atlas": 13,
+      "source_rect": [
+        695,
+        1501,
+        659,
+        431
+      ],
+      "component_count": 1,
+      "sha256": "683f0ff9777df5851698a4d78cecfe4c8d7a29dac66860adbaf945e0cbdcdd38",
+      "label": "Prázdné lucerny",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/empty_lanterns.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "stars/star_shrine",
+      "biome": "stars",
+      "name": "star_shrine",
+      "kind": "decor",
+      "levels": [
+        21,
+        22,
+        23,
+        24,
+        25
+      ],
+      "path": "assets/environment/worlds/stars/star_shrine.png",
+      "size": [
+        470,
+        487
+      ],
+      "anchor_bottom": [
+        235.0,
+        479
+      ],
+      "anchor_top": [
+        235.0,
+        71
+      ],
+      "source_atlas": 13,
+      "source_rect": [
+        1485,
+        1489,
+        454,
+        471
+      ],
+      "component_count": 1,
+      "sha256": "5aa8710f78fc195998edb5838c556ea57efca209927283117a18bd97161338ba",
+      "label": "Hvězdná svatyně",
+      "biome_label": "Hvězdné hory",
+      "scene": "scenes/world_assets/stars/star_shrine.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "heart/platform_long",
+      "biome": "heart",
+      "name": "platform_long",
+      "kind": "mechanics",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/platform_long.png",
+      "size": [
+        696,
+        256
+      ],
+      "anchor_bottom": [
+        348.0,
+        248
+      ],
+      "anchor_top": [
+        348.0,
+        28
+      ],
+      "source_atlas": 14,
+      "source_rect": [
+        61,
+        356,
+        680,
+        240
+      ],
+      "component_count": 1,
+      "sha256": "6194478d5aea5cd76c76dd49577778790ffd2644b0d854b02715d4a49f4d27e9",
+      "label": "Dlouhá plošina",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/platform_long.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "heart/ledge",
+      "biome": "heart",
+      "name": "ledge",
+      "kind": "mechanics",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/ledge.png",
+      "size": [
+        417,
+        240
+      ],
+      "anchor_bottom": [
+        208.5,
+        232
+      ],
+      "anchor_top": [
+        208.5,
+        10
+      ],
+      "source_atlas": 14,
+      "source_rect": [
+        861,
+        376,
+        401,
+        224
+      ],
+      "component_count": 1,
+      "sha256": "2d1345df7e7c15f5c0be3fe8972c4cc0c3e71bf69212a7ddec9eee96d6d5cc11",
+      "label": "Krátká římsa",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/ledge.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "heart/lift_deck",
+      "biome": "heart",
+      "name": "lift_deck",
+      "kind": "mechanics",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/lift_deck.png",
+      "size": [
+        650,
+        133
+      ],
+      "anchor_bottom": [
+        325.0,
+        125
+      ],
+      "anchor_top": [
+        325.0,
+        9
+      ],
+      "source_atlas": 14,
+      "source_rect": [
+        1373,
+        430,
+        634,
+        117
+      ],
+      "component_count": 1,
+      "sha256": "e64f7dc2b91dc12bfbce8549289355da4b4380da8c8df5f31efdc61e5cc20a09",
+      "label": "Pohyblivá podlaha",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/lift_deck.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "heart/lift_header",
+      "biome": "heart",
+      "name": "lift_header",
+      "kind": "mechanics",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/lift_header.png",
+      "size": [
+        622,
+        268
+      ],
+      "anchor_bottom": [
+        311.0,
+        260
+      ],
+      "anchor_top": [
+        311.0,
+        11
+      ],
+      "source_atlas": 14,
+      "source_rect": [
+        75,
+        899,
+        606,
+        252
+      ],
+      "component_count": 1,
+      "sha256": "c2e959a823f3e4ecf568a2e4bc3d49e138591f265b0cfaa388bd03cd5d246b77",
+      "label": "Horní kladky",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/lift_header.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "heart/pressure_plate",
+      "biome": "heart",
+      "name": "pressure_plate",
+      "kind": "mechanics",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/pressure_plate.png",
+      "size": [
+        551,
+        209
+      ],
+      "anchor_bottom": [
+        275.5,
+        201
+      ],
+      "anchor_top": [
+        275.5,
+        18
+      ],
+      "source_atlas": 14,
+      "source_rect": [
+        768,
+        964,
+        535,
+        193
+      ],
+      "component_count": 1,
+      "sha256": "f4eab8837797098471bf648e7edd4f41c2449340bfb32f03142564f1dfcdbb2a",
+      "label": "Nášlapný spínač",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/pressure_plate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "heart/gate",
+      "biome": "heart",
+      "name": "gate",
+      "kind": "mechanics",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/gate.png",
+      "size": [
+        349,
+        509
+      ],
+      "anchor_bottom": [
+        174.5,
+        501
+      ],
+      "anchor_top": [
+        174.5,
+        25
+      ],
+      "source_atlas": 14,
+      "source_rect": [
+        1540,
+        783,
+        333,
+        493
+      ],
+      "component_count": 1,
+      "sha256": "37e4ae431481080eb6fb7409d7af417a0a45e55e4c1905942b381fc5d8dc94c2",
+      "label": "Posuvná brána",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/gate.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "heart/hazard",
+      "biome": "heart",
+      "name": "hazard",
+      "kind": "mechanics",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/hazard.png",
+      "size": [
+        430,
+        645
+      ],
+      "anchor_bottom": [
+        215.0,
+        637
+      ],
+      "anchor_top": [
+        215.0,
+        134
+      ],
+      "source_atlas": 14,
+      "source_rect": [
+        127,
+        1369,
+        414,
+        629
+      ],
+      "component_count": 1,
+      "sha256": "13f574cd92c7335f30c9b19db50bc89b39d52b437e5a345d1a5251072c9dde3c",
+      "collision_hull": [
+        [
+          10,
+          605
+        ],
+        [
+          70,
+          310
+        ],
+        [
+          135,
+          100
+        ],
+        [
+          145,
+          70
+        ],
+        [
+          165,
+          40
+        ],
+        [
+          170,
+          35
+        ],
+        [
+          190,
+          20
+        ],
+        [
+          210,
+          10
+        ],
+        [
+          215,
+          10
+        ],
+        [
+          355,
+          150
+        ],
+        [
+          365,
+          165
+        ],
+        [
+          375,
+          185
+        ],
+        [
+          415,
+          345
+        ],
+        [
+          420,
+          370
+        ],
+        [
+          420,
+          615
+        ],
+        [
+          415,
+          620
+        ],
+        [
+          405,
+          625
+        ],
+        [
+          340,
+          630
+        ],
+        [
+          255,
+          635
+        ],
+        [
+          240,
+          635
+        ],
+        [
+          75,
+          630
+        ],
+        [
+          20,
+          620
+        ],
+        [
+          10,
+          615
+        ]
+      ],
+      "label": "Past",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/hazard.tscn",
+      "category": "Pasti"
+    },
+    {
+      "id": "heart/crumble_platform",
+      "biome": "heart",
+      "name": "crumble_platform",
+      "kind": "mechanics",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/crumble_platform.png",
+      "size": [
+        654,
+        301
+      ],
+      "anchor_bottom": [
+        327.0,
+        293
+      ],
+      "anchor_top": [
+        327.0,
+        9
+      ],
+      "source_atlas": 14,
+      "source_rect": [
+        709,
+        1618,
+        638,
+        285
+      ],
+      "component_count": 1,
+      "sha256": "c633d306e7dfdf3324a0bd560da2fec73175f7a42340ae23d7a84fdb86514148",
+      "label": "Rozpadající se plošina",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/crumble_platform.tscn",
+      "category": "Plošiny"
+    },
+    {
+      "id": "heart/repair_socket",
+      "biome": "heart",
+      "name": "repair_socket",
+      "kind": "mechanics",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/repair_socket.png",
+      "size": [
+        473,
+        631
+      ],
+      "anchor_bottom": [
+        236.5,
+        623
+      ],
+      "anchor_top": [
+        236.5,
+        66
+      ],
+      "source_atlas": 14,
+      "source_rect": [
+        1479,
+        1391,
+        457,
+        615
+      ],
+      "component_count": 1,
+      "sha256": "50dbc7a2e36b6f837649033c7eb9e54a73f4d43eb8a13720c8839eaa951d0e92",
+      "label": "Opravovaný mechanismus",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/repair_socket.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "heart/heart_altar",
+      "biome": "heart",
+      "name": "heart_altar",
+      "kind": "decor",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/heart_altar.png",
+      "size": [
+        636,
+        337
+      ],
+      "anchor_bottom": [
+        318.0,
+        329
+      ],
+      "anchor_top": [
+        318.0,
+        13
+      ],
+      "source_atlas": 15,
+      "source_rect": [
+        51,
+        360,
+        620,
+        321
+      ],
+      "component_count": 1,
+      "sha256": "de52a5bc0324d6367a1bda5efba6879d0a698fc582e39aff4a134c82f7d34418",
+      "label": "Oltář tří esencí",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/heart_altar.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "heart/root_arch",
+      "biome": "heart",
+      "name": "root_arch",
+      "kind": "decor",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/root_arch.png",
+      "size": [
+        738,
+        657
+      ],
+      "anchor_bottom": [
+        369.0,
+        649
+      ],
+      "anchor_top": [
+        369.0,
+        53
+      ],
+      "source_atlas": 15,
+      "source_rect": [
+        703,
+        63,
+        722,
+        641
+      ],
+      "component_count": 1,
+      "sha256": "ddfca39661af255c47f9c2eb3fdcd70a9f686b52d5c4281bdda852f15cc659a2",
+      "label": "Kořenový oblouk",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/root_arch.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "heart/magic_conduit",
+      "biome": "heart",
+      "name": "magic_conduit",
+      "kind": "decor",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/magic_conduit.png",
+      "size": [
+        293,
+        656
+      ],
+      "anchor_bottom": [
+        146.5,
+        648
+      ],
+      "anchor_top": [
+        146.5,
+        18
+      ],
+      "source_atlas": 15,
+      "source_rect": [
+        1585,
+        83,
+        277,
+        640
+      ],
+      "component_count": 1,
+      "sha256": "94293025907223fa48f2633dc5421a028854736a675a03af6b40089bfe16931c",
+      "label": "Přívod magie",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/magic_conduit.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "heart/shadow_root",
+      "biome": "heart",
+      "name": "shadow_root",
+      "kind": "decor",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/shadow_root.png",
+      "size": [
+        630,
+        461
+      ],
+      "anchor_bottom": [
+        315.0,
+        453
+      ],
+      "anchor_top": [
+        315.0,
+        94
+      ],
+      "source_atlas": 15,
+      "source_rect": [
+        63,
+        874,
+        614,
+        445
+      ],
+      "component_count": 1,
+      "sha256": "1123252d62c0d9a34c118d73e897c2ffb1dd1f3e2f1fb66a5382b0bcfd5949ef",
+      "label": "Temný kořen",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/shadow_root.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "heart/royal_ruin",
+      "biome": "heart",
+      "name": "royal_ruin",
+      "kind": "decor",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/royal_ruin.png",
+      "size": [
+        356,
+        518
+      ],
+      "anchor_bottom": [
+        178.0,
+        510
+      ],
+      "anchor_top": [
+        178.0,
+        23
+      ],
+      "source_atlas": 15,
+      "source_rect": [
+        868,
+        828,
+        340,
+        502
+      ],
+      "component_count": 1,
+      "sha256": "f6cef6b235f220b43f1c7c370480f596fdea631608f07de6b770326794f5b877",
+      "label": "Zbytek hradního sloupu",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/royal_ruin.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "heart/heart_pedestal",
+      "biome": "heart",
+      "name": "heart_pedestal",
+      "kind": "decor",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/heart_pedestal.png",
+      "size": [
+        639,
+        481
+      ],
+      "anchor_bottom": [
+        319.5,
+        473
+      ],
+      "anchor_top": [
+        319.5,
+        179
+      ],
+      "source_atlas": 15,
+      "source_rect": [
+        1376,
+        861,
+        623,
+        465
+      ],
+      "component_count": 1,
+      "sha256": "bd9d3dcab72c570dd5632a79fee68acbf01f71dc8b2803fe786b064d6e17c6bd",
+      "label": "Podstavec Srdce",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/heart_pedestal.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "heart/service_hatch",
+      "biome": "heart",
+      "name": "service_hatch",
+      "kind": "decor",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/service_hatch.png",
+      "size": [
+        538,
+        491
+      ],
+      "anchor_bottom": [
+        269.0,
+        483
+      ],
+      "anchor_top": [
+        269.0,
+        19
+      ],
+      "source_atlas": 15,
+      "source_rect": [
+        98,
+        1471,
+        522,
+        475
+      ],
+      "component_count": 1,
+      "sha256": "8739e0dc8086f286f090fda91cf4b5d896b3206185d141a558c321f30d4add6c",
+      "label": "Servisní poklop",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/service_hatch.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "heart/light_beacon",
+      "biome": "heart",
+      "name": "light_beacon",
+      "kind": "decor",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/light_beacon.png",
+      "size": [
+        480,
+        592
+      ],
+      "anchor_bottom": [
+        240.0,
+        584
+      ],
+      "anchor_top": [
+        240.0,
+        105
+      ],
+      "source_atlas": 15,
+      "source_rect": [
+        783,
+        1392,
+        464,
+        576
+      ],
+      "component_count": 1,
+      "sha256": "33c8572d8763fd17e659035014c4864cdbbf87d6d38367c3bf1d4cfb1efd64db",
+      "label": "Zachráněné světlo",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/light_beacon.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "heart/root_knot",
+      "biome": "heart",
+      "name": "root_knot",
+      "kind": "decor",
+      "levels": [
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/heart/root_knot.png",
+      "size": [
+        579,
+        490
+      ],
+      "anchor_bottom": [
+        289.5,
+        482
+      ],
+      "anchor_top": [
+        289.5,
+        23
+      ],
+      "source_atlas": 15,
+      "source_rect": [
+        1413,
+        1484,
+        563,
+        474
+      ],
+      "component_count": 1,
+      "sha256": "33ac60190e4013a4c7d8b5d626824de0dffb4013a8c4fd63ea8dd40420b8a334",
+      "label": "Kořenový uzel",
+      "biome_label": "Temnota a Srdce",
+      "scene": "scenes/world_assets/heart/root_knot.tscn",
+      "category": "Dekorace"
+    },
+    {
+      "id": "common/lever_base",
+      "biome": "common",
+      "name": "lever_base",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/common/lever_base.png",
+      "size": [
+        525,
+        441
+      ],
+      "anchor_bottom": [
+        262.5,
+        433
+      ],
+      "anchor_top": [
+        262.5,
+        26
+      ],
+      "source_atlas": 16,
+      "source_rect": [
+        134,
+        242,
+        509,
+        425
+      ],
+      "component_count": 1,
+      "sha256": "8f6014d8b2c0f954b32a442545c5008b1341b1ae5156706d5a4e321afb2f3e0f",
+      "label": "Základna páky",
+      "biome_label": "Společné mechanismy",
+      "scene": "scenes/world_assets/common/lever_base.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "common/lever_handle",
+      "biome": "common",
+      "name": "lever_handle",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/common/lever_handle.png",
+      "size": [
+        179,
+        612
+      ],
+      "anchor_bottom": [
+        89.5,
+        604
+      ],
+      "anchor_top": [
+        89.5,
+        12
+      ],
+      "source_atlas": 16,
+      "source_rect": [
+        942,
+        90,
+        163,
+        596
+      ],
+      "component_count": 1,
+      "sha256": "7601918d647e11691460ab637205cac8b6440a5fac789768e86f167d899945d6",
+      "label": "Rukojeť páky",
+      "biome_label": "Společné mechanismy",
+      "scene": "scenes/world_assets/common/lever_handle.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "common/gear",
+      "biome": "common",
+      "name": "gear",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/common/gear.png",
+      "size": [
+        532,
+        533
+      ],
+      "anchor_bottom": [
+        266.0,
+        525
+      ],
+      "anchor_top": [
+        266.0,
+        58
+      ],
+      "source_atlas": 16,
+      "source_rect": [
+        1388,
+        163,
+        516,
+        517
+      ],
+      "component_count": 1,
+      "sha256": "413c951cbf63ca3b0084dd056758285fbc2e16dccf976bf4682c462238111c7d",
+      "label": "Ozubení pro opravu",
+      "biome_label": "Společné mechanismy",
+      "scene": "scenes/world_assets/common/gear.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "common/chain_link",
+      "biome": "common",
+      "name": "chain_link",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/common/chain_link.png",
+      "size": [
+        189,
+        591
+      ],
+      "anchor_bottom": [
+        94.5,
+        583
+      ],
+      "anchor_top": [
+        94.5,
+        12
+      ],
+      "source_atlas": 16,
+      "source_rect": [
+        300,
+        767,
+        173,
+        575
+      ],
+      "component_count": 1,
+      "sha256": "37e494b50c992e5df8e61214669843194b69cd8bd7838bed4b386dc06c28ebda",
+      "label": "Část řetězu",
+      "biome_label": "Společné mechanismy",
+      "scene": "scenes/world_assets/common/chain_link.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "common/wind_rotor",
+      "biome": "common",
+      "name": "wind_rotor",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/common/wind_rotor.png",
+      "size": [
+        570,
+        579
+      ],
+      "anchor_bottom": [
+        285.0,
+        571
+      ],
+      "anchor_top": [
+        285.0,
+        25
+      ],
+      "source_atlas": 16,
+      "source_rect": [
+        743,
+        766,
+        554,
+        563
+      ],
+      "component_count": 1,
+      "sha256": "928b96e180099df2e4bf7c3a66a23e50c085156d994797b8971fb06703f1f6a0",
+      "label": "Větrná vrtule",
+      "biome_label": "Společné mechanismy",
+      "scene": "scenes/world_assets/common/wind_rotor.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "common/spring_pad",
+      "biome": "common",
+      "name": "spring_pad",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/common/spring_pad.png",
+      "size": [
+        370,
+        569
+      ],
+      "anchor_bottom": [
+        185.0,
+        561
+      ],
+      "anchor_top": [
+        185.0,
+        13
+      ],
+      "source_atlas": 16,
+      "source_rect": [
+        1481,
+        789,
+        354,
+        553
+      ],
+      "component_count": 1,
+      "sha256": "a0cdd2d08fa4a268c03123c9d132634763a37498bb0d4486cbf627532ee4827d",
+      "label": "Pružinový mechanismus",
+      "biome_label": "Společné mechanismy",
+      "scene": "scenes/world_assets/common/spring_pad.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "common/valve_wheel",
+      "biome": "common",
+      "name": "valve_wheel",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/common/valve_wheel.png",
+      "size": [
+        499,
+        504
+      ],
+      "anchor_bottom": [
+        249.5,
+        496
+      ],
+      "anchor_top": [
+        249.5,
+        17
+      ],
+      "source_atlas": 16,
+      "source_rect": [
+        142,
+        1445,
+        483,
+        488
+      ],
+      "component_count": 1,
+      "sha256": "a6aeb11e41f7ab860154a652f7eb6f1fc1e6862041a0c14444f4e2f5815e3ae8",
+      "label": "Kolo ventilu",
+      "biome_label": "Společné mechanismy",
+      "scene": "scenes/world_assets/common/valve_wheel.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "common/shadow_lock",
+      "biome": "common",
+      "name": "shadow_lock",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/common/shadow_lock.png",
+      "size": [
+        435,
+        533
+      ],
+      "anchor_bottom": [
+        217.5,
+        525
+      ],
+      "anchor_top": [
+        217.5,
+        20
+      ],
+      "source_atlas": 16,
+      "source_rect": [
+        813,
+        1441,
+        419,
+        517
+      ],
+      "component_count": 1,
+      "sha256": "a4b8a5a1fdd0cec754f4d45dd27af50118db1bb9c8118d50c6755e413ba372b9",
+      "label": "Stínový zámek",
+      "biome_label": "Společné mechanismy",
+      "scene": "scenes/world_assets/common/shadow_lock.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "common/checkpoint_lantern",
+      "biome": "common",
+      "name": "checkpoint_lantern",
+      "kind": "mechanics",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/common/checkpoint_lantern.png",
+      "size": [
+        409,
+        605
+      ],
+      "anchor_bottom": [
+        204.5,
+        597
+      ],
+      "anchor_top": [
+        204.5,
+        80
+      ],
+      "source_atlas": 16,
+      "source_rect": [
+        1457,
+        1384,
+        393,
+        589
+      ],
+      "component_count": 1,
+      "sha256": "6d1ebbe04aa273031c973fe02a11dc2547bc2cfe092a9052370dc42495d91cc4",
+      "label": "Lucerna checkpointu",
+      "biome_label": "Společné mechanismy",
+      "scene": "scenes/world_assets/common/checkpoint_lantern.tscn",
+      "category": "Mechanismy"
+    },
+    {
+      "id": "story/life_drop",
+      "biome": "story",
+      "name": "life_drop",
+      "kind": "items",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/story/life_drop.png",
+      "size": [
+        386,
+        601
+      ],
+      "anchor_bottom": [
+        193.0,
+        593
+      ],
+      "anchor_top": [
+        193.0,
+        66
+      ],
+      "source_atlas": 17,
+      "source_rect": [
+        193,
+        106,
+        370,
+        585
+      ],
+      "component_count": 1,
+      "sha256": "8ad720724ea0dc0314d7ad2fa134c868577d26fa394018f858b952a0a66ddcd4",
+      "label": "Kapka života",
+      "biome_label": "Příběhové předměty",
+      "scene": "scenes/world_assets/story/life_drop.tscn",
+      "category": "Předměty"
+    },
+    {
+      "id": "story/memory_pearl",
+      "biome": "story",
+      "name": "memory_pearl",
+      "kind": "items",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/story/memory_pearl.png",
+      "size": [
+        471,
+        450
+      ],
+      "anchor_bottom": [
+        235.5,
+        442
+      ],
+      "anchor_top": [
+        235.5,
+        21
+      ],
+      "source_atlas": 17,
+      "source_rect": [
+        794,
+        234,
+        455,
+        434
+      ],
+      "component_count": 1,
+      "sha256": "fbcccc10f326c675669f23a84e2354cf8cd048674d72cd04dc29f2c7730dada9",
+      "label": "Perla vzpomínek",
+      "biome_label": "Příběhové předměty",
+      "scene": "scenes/world_assets/story/memory_pearl.tscn",
+      "category": "Předměty"
+    },
+    {
+      "id": "story/hope_star",
+      "biome": "story",
+      "name": "hope_star",
+      "kind": "items",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/story/hope_star.png",
+      "size": [
+        490,
+        487
+      ],
+      "anchor_bottom": [
+        245.0,
+        479
+      ],
+      "anchor_top": [
+        245.0,
+        79
+      ],
+      "source_atlas": 17,
+      "source_rect": [
+        1432,
+        188,
+        474,
+        471
+      ],
+      "component_count": 1,
+      "sha256": "ea8aec62ba88322f4b62ae38df2503a08bd29298e684b1a439a44671be786912",
+      "label": "Hvězda naděje",
+      "biome_label": "Příběhové předměty",
+      "scene": "scenes/world_assets/story/hope_star.tscn",
+      "category": "Předměty"
+    },
+    {
+      "id": "story/essence_lantern",
+      "biome": "story",
+      "name": "essence_lantern",
+      "kind": "items",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/story/essence_lantern.png",
+      "size": [
+        382,
+        604
+      ],
+      "anchor_bottom": [
+        191.0,
+        596
+      ],
+      "anchor_top": [
+        191.0,
+        31
+      ],
+      "source_atlas": 17,
+      "source_rect": [
+        191,
+        739,
+        366,
+        588
+      ],
+      "component_count": 1,
+      "sha256": "f03411bd7a80b227f907abc100280a0e77cb40668016b43804281f1d10d10780",
+      "label": "Lucerna esencí",
+      "biome_label": "Příběhové předměty",
+      "scene": "scenes/world_assets/story/essence_lantern.tscn",
+      "category": "Předměty"
+    },
+    {
+      "id": "story/last_seed",
+      "biome": "story",
+      "name": "last_seed",
+      "kind": "items",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/story/last_seed.png",
+      "size": [
+        481,
+        505
+      ],
+      "anchor_bottom": [
+        240.5,
+        497
+      ],
+      "anchor_top": [
+        240.5,
+        88
+      ],
+      "source_atlas": 17,
+      "source_rect": [
+        778,
+        814,
+        465,
+        489
+      ],
+      "component_count": 1,
+      "sha256": "0f783a6e4b178e434134df3913c8c284a8532de40ce8c78ef40d94b5813bbd40",
+      "label": "Poslední semínko",
+      "biome_label": "Příběhové předměty",
+      "scene": "scenes/world_assets/story/last_seed.tscn",
+      "category": "Předměty"
+    },
+    {
+      "id": "story/wind_core",
+      "biome": "story",
+      "name": "wind_core",
+      "kind": "items",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/story/wind_core.png",
+      "size": [
+        525,
+        537
+      ],
+      "anchor_bottom": [
+        262.5,
+        529
+      ],
+      "anchor_top": [
+        262.5,
+        46
+      ],
+      "source_atlas": 17,
+      "source_rect": [
+        1413,
+        806,
+        509,
+        521
+      ],
+      "component_count": 1,
+      "sha256": "ca84ba96e461e604294bbc7335c846bedf8a08bbc2b203c6d57174a8e5bac607",
+      "label": "Větrné jádro",
+      "biome_label": "Příběhové předměty",
+      "scene": "scenes/world_assets/story/wind_core.tscn",
+      "category": "Předměty"
+    },
+    {
+      "id": "story/mirror_shard",
+      "biome": "story",
+      "name": "mirror_shard",
+      "kind": "items",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/story/mirror_shard.png",
+      "size": [
+        397,
+        426
+      ],
+      "anchor_bottom": [
+        198.5,
+        418
+      ],
+      "anchor_top": [
+        198.5,
+        54
+      ],
+      "source_atlas": 17,
+      "source_rect": [
+        198,
+        1496,
+        381,
+        410
+      ],
+      "component_count": 1,
+      "sha256": "7ffca337e028d5ae991cbff53257c66846b97eeb0850e0795b3e2d530c3dac48",
+      "label": "Střep zrcadla",
+      "biome_label": "Příběhové předměty",
+      "scene": "scenes/world_assets/story/mirror_shard.tscn",
+      "category": "Předměty"
+    },
+    {
+      "id": "story/star_shard",
+      "biome": "story",
+      "name": "star_shard",
+      "kind": "items",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/story/star_shard.png",
+      "size": [
+        326,
+        431
+      ],
+      "anchor_bottom": [
+        163.0,
+        423
+      ],
+      "anchor_top": [
+        163.0,
+        48
+      ],
+      "source_atlas": 17,
+      "source_rect": [
+        869,
+        1479,
+        310,
+        415
+      ],
+      "component_count": 1,
+      "sha256": "9a5d9f868c8c0a7e4ac70ddb75ed0b19696b6562397fb84a3ddfc429f46179dc",
+      "label": "Hvězdný úlomek",
+      "biome_label": "Příběhové předměty",
+      "scene": "scenes/world_assets/story/star_shard.tscn",
+      "category": "Předměty"
+    },
+    {
+      "id": "story/heart_core",
+      "biome": "story",
+      "name": "heart_core",
+      "kind": "items",
+      "levels": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      "path": "assets/environment/worlds/story/heart_core.png",
+      "size": [
+        492,
+        592
+      ],
+      "anchor_bottom": [
+        246.0,
+        584
+      ],
+      "anchor_top": [
+        246.0,
+        32
+      ],
+      "source_atlas": 17,
+      "source_rect": [
+        1419,
+        1375,
+        476,
+        576
+      ],
+      "component_count": 1,
+      "sha256": "c27d4fa1c350a0c21fbf782413e9780ab21c059d84331e6ea22f9aa5fd38c281",
+      "label": "Srdce království",
+      "biome_label": "Příběhové předměty",
+      "scene": "scenes/world_assets/story/heart_core.tscn",
+      "category": "Předměty"
+    }
+  ],
+  "levels": [
+    {
+      "level": 1,
+      "title": "Probuzení pod kořeny",
+      "biome": "forest",
+      "key_assets": "root_workshop,root_arch,repair_socket,common/gear",
+      "purpose": "Dílna, první sběr součástky a oprava."
+    },
+    {
+      "level": 2,
+      "title": "Les, který zabloudil",
+      "biome": "forest",
+      "key_assets": "signpost,root_vine,hazard,pressure_plate",
+      "purpose": "Rozcestí, falešné cesty a první stíny."
+    },
+    {
+      "level": 3,
+      "title": "Ztichlá vesnice",
+      "biome": "village",
+      "key_assets": "cottage,lantern_post,repair_socket",
+      "purpose": "Znovurozsvícení vesnice."
+    },
+    {
+      "level": 4,
+      "title": "Medvědí stezka",
+      "biome": "village",
+      "key_assets": "watchtower,guardian_marker,crumble_platform",
+      "purpose": "Opuštěná stanoviště strážců."
+    },
+    {
+      "level": 5,
+      "title": "Brúčounova brána",
+      "biome": "village",
+      "key_assets": "guardian_arch,gate,guardian_marker",
+      "purpose": "Aréna a odemknutí cesty k obloze."
+    },
+    {
+      "level": 6,
+      "title": "První kroky v oblacích",
+      "biome": "sky",
+      "key_assets": "Lift,cloud_island,windmill,common/wind_rotor",
+      "purpose": "Pohyblivé ostrovy a Zipův dvojskok."
+    },
+    {
+      "level": 7,
+      "title": "Roztržené nebe",
+      "biome": "sky",
+      "key_assets": "sky_cottage,crumble_platform,bell_tower",
+      "purpose": "Rozpadající se ostrovy a evakuace."
+    },
+    {
+      "level": 8,
+      "title": "Poslední větrná brána",
+      "biome": "sky",
+      "key_assets": "wind_arch,repair_socket,story/wind_core",
+      "purpose": "Větrný mechanismus a rozloučení se Zipem."
+    },
+    {
+      "level": 9,
+      "title": "Hrad bez světel",
+      "biome": "castle",
+      "key_assets": "royal_arch,Lift,gate,common/lever_base",
+      "purpose": "Rozbité průchody; odtud běžný skok bez Zipa."
+    },
+    {
+      "level": 10,
+      "title": "Jiskřino vězení",
+      "biome": "castle",
+      "key_assets": "prison_cage,common/shadow_lock,portal_frame,story/essence_lantern",
+      "purpose": "Vysvobození Jiskry a předání lucerny."
+    },
+    {
+      "level": 11,
+      "title": "Zahrady obrů",
+      "biome": "garden",
+      "key_assets": "giant_flower,dew_leaf,leaf_arch",
+      "purpose": "Velké rostliny a kapky rosy."
+    },
+    {
+      "level": 12,
+      "title": "Ukradená řeka",
+      "biome": "garden",
+      "key_assets": "reservoir,irrigation_pipe,repair_socket,common/valve_wheel",
+      "purpose": "Obnovení ukradeného toku vody."
+    },
+    {
+      "level": 13,
+      "title": "Kořeny v zajetí",
+      "biome": "garden",
+      "key_assets": "root_bundle,thorn_vine,hazard",
+      "purpose": "Podzemní kořeny; pozadí root_depths."
+    },
+    {
+      "level": 14,
+      "title": "Poslední semínko",
+      "biome": "garden",
+      "key_assets": "seed_bed,story/last_seed,garden_shrine",
+      "purpose": "Záchrana a zasazení semínka."
+    },
+    {
+      "level": 15,
+      "title": "Trnový obr",
+      "biome": "garden",
+      "key_assets": "thorn_vine,garden_shrine,story/life_drop",
+      "purpose": "Aréna zahradního strážce a Kapka života."
+    },
+    {
+      "level": 16,
+      "title": "Řeka pod světem",
+      "biome": "memory",
+      "key_assets": "river_stone,glowing_reeds,water_lily",
+      "purpose": "Podzemní řeka vzpomínek."
+    },
+    {
+      "level": 17,
+      "title": "Zrcadlové břehy",
+      "biome": "memory",
+      "key_assets": "reflection_frame,mirror_gate,crystal_cluster",
+      "purpose": "Pravé a falešné odrazy."
+    },
+    {
+      "level": 18,
+      "title": "Falešný návrat",
+      "biome": "memory",
+      "key_assets": "mirror_gate,castle/royal_arch,castle/mirror",
+      "purpose": "Iluze návratu do hradu."
+    },
+    {
+      "level": 19,
+      "title": "Čaroděj před vyhnáním",
+      "biome": "memory",
+      "key_assets": "memory_obelisk,ruined_arch,memory_fountain",
+      "purpose": "Vzpomínka na Morousovu minulost."
+    },
+    {
+      "level": 20,
+      "title": "Strážce zrcadel",
+      "biome": "memory",
+      "key_assets": "mirror_gate,repair_socket,story/memory_pearl",
+      "purpose": "Aréna a Perla vzpomínek."
+    },
+    {
+      "level": 21,
+      "title": "Hory zhaslých hvězd",
+      "biome": "stars",
+      "key_assets": "alpine_rock,pine,Lift",
+      "purpose": "Výstup do hvězdných hor."
+    },
+    {
+      "level": 22,
+      "title": "Vesnice prázdných luceren",
+      "biome": "stars",
+      "key_assets": "lantern_house,star_lamp,empty_lanterns",
+      "purpose": "Oprava světel a bezpečné cesty."
+    },
+    {
+      "level": 23,
+      "title": "Opuštěná hvězdárna",
+      "biome": "stars",
+      "key_assets": "observatory,telescope,constellation_table,repair_socket",
+      "purpose": "Oprava hvězdárny."
+    },
+    {
+      "level": 24,
+      "title": "Světlo pro druhé",
+      "biome": "stars",
+      "key_assets": "lantern_house,star_lamp,common/checkpoint_lantern",
+      "purpose": "Ochrana vesnice a obnovená naděje."
+    },
+    {
+      "level": 25,
+      "title": "Požírač hvězd",
+      "biome": "stars",
+      "key_assets": "star_shrine,empty_lanterns,story/hope_star",
+      "purpose": "Obrana vesnice a Hvězda naděje."
+    },
+    {
+      "level": 26,
+      "title": "Návrat do temnoty",
+      "biome": "heart",
+      "key_assets": "shadow_root,village/cottage,light_beacon",
+      "purpose": "Pozadí shadow_kingdom; zachráněná světla dál svítí."
+    },
+    {
+      "level": 27,
+      "title": "Cesta pod hradem",
+      "biome": "heart",
+      "key_assets": "service_hatch,root_arch,Lift",
+      "purpose": "Starý servisní vstup pod hradem."
+    },
+    {
+      "level": 28,
+      "title": "Morous",
+      "biome": "heart",
+      "key_assets": "heart_altar,root_arch,gate",
+      "purpose": "První osobní setkání s Morousem."
+    },
+    {
+      "level": 29,
+      "title": "Temné kořeny",
+      "biome": "heart",
+      "key_assets": "magic_conduit,repair_socket,root_knot",
+      "purpose": "Obnovení čistých přívodů magie."
+    },
+    {
+      "level": 30,
+      "title": "Srdce království",
+      "biome": "heart",
+      "key_assets": "heart_pedestal,heart_altar,story/heart_core,story/life_drop,story/memory_pearl,story/hope_star",
+      "purpose": "Aktivace tří esencí a uzdravení Srdce."
+    }
+  ],
+  "backgrounds": [
+    {
+      "key": "giant_garden",
+      "title": "Zahrady obrů",
+      "path": "assets/environment/worlds/backgrounds/giant_garden.png",
+      "size": [
+        2688,
+        1520
+      ],
+      "source_atlas": 18,
+      "sha256": "e35a5d3729790874f73129a5c8946cf23f34353c6ed94d548f9d4948c930ae33"
+    },
+    {
+      "key": "root_depths",
+      "title": "Kořeny v zajetí",
+      "path": "assets/environment/worlds/backgrounds/root_depths.png",
+      "size": [
+        2688,
+        1520
+      ],
+      "source_atlas": 19,
+      "sha256": "a2137b5429d563030822da07de258547ea5af3d61e55228f7ec265d3cc807b4d"
+    },
+    {
+      "key": "memory_lakes",
+      "title": "Zrcadlová jezera",
+      "path": "assets/environment/worlds/backgrounds/memory_lakes.png",
+      "size": [
+        2688,
+        1520
+      ],
+      "source_atlas": 20,
+      "sha256": "18e390ecc8f0e94b2d9897590af3037c1f0c35d5b804de26d472ec2cc4e7c870"
+    },
+    {
+      "key": "star_mountains",
+      "title": "Hory zhaslých hvězd",
+      "path": "assets/environment/worlds/backgrounds/star_mountains.png",
+      "size": [
+        2688,
+        1520
+      ],
+      "source_atlas": 21,
+      "sha256": "77c5d20d64712b6a2981aa952114ed7a8016fd1dbf9ea5043a5cd1d2af651f0c"
+    },
+    {
+      "key": "shadow_kingdom",
+      "title": "Návrat do temnoty",
+      "path": "assets/environment/worlds/backgrounds/shadow_kingdom.png",
+      "size": [
+        2688,
+        1520
+      ],
+      "source_atlas": 22,
+      "sha256": "e24363f4db08f945ec4da709daadd07c61a9db9a3fa5f9f9e646247be9b95e2d"
+    },
+    {
+      "key": "kingdom_heart",
+      "title": "Srdce království",
+      "path": "assets/environment/worlds/backgrounds/kingdom_heart.png",
+      "size": [
+        2688,
+        1520
+      ],
+      "source_atlas": 23,
+      "sha256": "c87e7ba94ed9866ae91dffefa7661fdc6dca8581f3bfb4901463b6f67ccd251a"
+    }
+  ]
+}

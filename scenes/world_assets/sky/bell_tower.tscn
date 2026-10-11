@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Texture2D" path="res://assets/environment/worlds/sky/bell_tower.png" id="tex"]
+
+
+[node name="BellTower" type="Node2D"]
+
+[node name="Visual" type="Sprite2D" parent="."]
+texture = ExtResource("tex")
+centered = false
+position = Vector2(-73.27907, -227.14729)
+scale = Vector2(0.35659, 0.35659)

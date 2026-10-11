@@ -9,6 +9,7 @@ extends Node2D
 @export var fall_limit := 2700.0
 @export var fouk_at_start := false
 @export var use_hearts := false
+var bonus_active := false
 var inventory: Dictionary = {}
 var completed_actions: Dictionary = {}
 var arena_active:=false
@@ -49,6 +50,9 @@ func set_checkpoint(point:Vector2) -> void:
   player.health=3
   player.last_safe_position=point
 func respawn_player() -> void:
+ if bonus_active and has_node("BonusRoom"):
+  $BonusRoom.retry_room()
+  return
  _set_arena(false)
  player.global_position=checkpoint+Vector2(0,-5)
  player.velocity=Vector2.ZERO
@@ -60,8 +64,7 @@ func respawn_player() -> void:
   boss.reset_encounter()
 
 func check_portal_contact(previous:Vector2,current:Vector2) -> bool:
- if not star_collected or boss_alive:return false
- if number==3 and not player.has_fouk:return false
+ if bonus_active or not star_collected or boss_alive:return false
  for object in get_tree().get_nodes_in_group("objects"):
   if object.kind=="goal" and object.touches_portal(previous,current):
    get_tree().call_group("game","enter_portal")
@@ -72,7 +75,7 @@ func _set_arena(active:bool) -> void:
  for wall in arena_walls:wall.collision_layer=1 if active else 0
  queue_redraw()
 func _physics_process(_delta:float) -> void:
- if Engine.is_editor_hint() or player==null:return
+ if Engine.is_editor_hint() or player==null or bonus_active:return
  var boss=get_node_or_null("Boss")
  if boss==null:return
  if boss.defeated:
