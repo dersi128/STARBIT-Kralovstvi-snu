@@ -1,65 +1,64 @@
 [gd_scene format=3 uid="uid://cgp8up2figoii"]
 
-[ext_resource type="Script" path="res://scripts/awakening_level.gd" id="level"]
-
-[ext_resource type="Script" path="res://scripts/castle_platform.gd" id="platform"]
-
-[ext_resource type="Script" path="res://scripts/forest_bank.gd" id="bank"]
-
-[ext_resource type="Texture2D" path="res://assets/environment/forest/higgsfield/grass_lip.tres" id="grass"]
-
-[ext_resource type="Texture2D" path="res://assets/environment/forest/higgsfield/wood.tres" id="wood"]
-
-[ext_resource type="Texture2D" path="res://assets/environment/forest/higgsfield/forest_glade.png" id="glade"]
-
-[ext_resource type="Texture2D" path="res://assets/environment/forest/higgsfield/tree.tres" id="tree"]
-
-[ext_resource type="Texture2D" path="res://assets/environment/forest/higgsfield/ferns.tres" id="ferns"]
-
-[ext_resource type="Script" path="res://scripts/object.gd" id="object"]
-
-[ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole"]
-
+[ext_resource type="Shader" uid="uid://dan1ttd4eiihb" path="res://shaders/forest_mirror_repeat.gdshader" id="3_is5vl"]
+[ext_resource type="Script" uid="uid://bn2r71lkbsur6" path="res://scripts/forest_bank.gd" id="bank"]
+[ext_resource type="Script" uid="uid://c06yjv6pk1tkb" path="res://scripts/repair_bridge.gd" id="bridge"]
 [ext_resource type="PackedScene" path="res://scenes/worldkit/PushCrate.tscn" id="crate"]
-
-[ext_resource type="PackedScene" path="res://scenes/Enemy_rock_enemy.tscn" id="enemy"]
-
-[ext_resource type="Script" path="res://scripts/tutorial_trigger.gd" id="hint"]
-
-[ext_resource type="Script" path="res://scripts/story_interaction.gd" id="interaction"]
-
-[ext_resource type="Script" path="res://scripts/repair_bridge.gd" id="bridge"]
-
-[ext_resource type="Texture2D" path="res://assets/environment/forest/awakening/workshop.png" id="workshop"]
-
-[ext_resource type="Texture2D" path="res://assets/environment/forest/awakening/winch.png" id="winch"]
-
-[ext_resource type="Texture2D" path="res://assets/environment/forest/awakening/lever.png" id="lever"]
-
-[ext_resource type="Texture2D" path="res://assets/environment/forest/awakening/gear.png" id="gear"]
-
+[ext_resource type="PackedScene" uid="uid://b1be2t40wr3mo" path="res://scenes/Enemy_rock_enemy.tscn" id="enemy"]
+[ext_resource type="Texture2D" uid="uid://bus6amcwoior0" path="res://assets/environment/forest/higgsfield/ferns.tres" id="ferns"]
+[ext_resource type="Texture2D" uid="uid://bel4kuk7x0hop" path="res://assets/environment/forest/awakening/gear.png" id="gear"]
+[ext_resource type="Texture2D" uid="uid://bvs7tg3twjmry" path="res://assets/environment/forest/higgsfield/forest_glade.png" id="glade"]
+[ext_resource type="Texture2D" uid="uid://cvsri2ylq5fu2" path="res://assets/environment/forest/awakening/grass_rim.png" id="grass"]
+[ext_resource type="Script" uid="uid://7ar7rlidggqf" path="res://scripts/forest_ground_surface.gd" id="ground"]
+[ext_resource type="Script" uid="uid://c2svy4eaj02wn" path="res://scripts/tutorial_trigger.gd" id="hint"]
+[ext_resource type="Script" uid="uid://c20jb7enlv43a" path="res://scripts/story_interaction.gd" id="interaction"]
 [ext_resource type="PackedScene" path="res://scenes/worldkit/Lantern.tscn" id="lantern"]
-
+[ext_resource type="Script" uid="uid://cjw0pmkvpq271" path="res://scripts/awakening_level.gd" id="level"]
+[ext_resource type="Texture2D" uid="uid://irmyg4rq5pfp" path="res://assets/environment/forest/awakening/lever.png" id="lever"]
+[ext_resource type="PackedScene" path="res://scenes/mole.tscn" id="mole"]
+[ext_resource type="Script" uid="uid://cueha53tp0240" path="res://scripts/object.gd" id="object"]
+[ext_resource type="Script" uid="uid://sobj37yd18t3" path="res://scripts/castle_platform.gd" id="platform"]
 [ext_resource type="PackedScene" path="res://scenes/animated_water/AnimatedPool.tscn" id="pool"]
+[ext_resource type="Texture2D" uid="uid://bxlo32d1jwxrf" path="res://assets/environment/forest/higgsfield/tree.tres" id="tree"]
+[ext_resource type="Texture2D" uid="uid://dkckjoqyt5maj" path="res://assets/environment/forest/awakening/winch.png" id="winch"]
+[ext_resource type="Texture2D" uid="uid://t7apj2xt8ht0" path="res://assets/environment/forest/higgsfield/wood.tres" id="wood"]
+[ext_resource type="Texture2D" uid="uid://brkv3m5ub5kx2" path="res://assets/environment/forest/awakening/workshop.png" id="workshop"]
 
-[ext_resource type="Shader" path="res://shaders/forest_ground_blend.gdshader" id="blend"]
-
-[sub_resource type="ShaderMaterial" id="grass_blend"]
-shader = ExtResource("blend")
-shader_parameter/blend_start = 16.0
-shader_parameter/blend_end = 34.0
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4bgdj"]
+shader = ExtResource("3_is5vl")
 
 [sub_resource type="RectangleShape2D" id="s_WorkshopBank"]
 size = Vector2(3200, 805)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ctdx4"]
+shader = ExtResource("3_is5vl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_la4bl"]
+shader = ExtResource("3_is5vl")
+
 [sub_resource type="RectangleShape2D" id="s_FarBank"]
 size = Vector2(880, 805)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fsmxb"]
+shader = ExtResource("3_is5vl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b6rjf"]
+shader = ExtResource("3_is5vl")
 
 [sub_resource type="RectangleShape2D" id="s_MiddleBank"]
 size = Vector2(610, 805)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s4hsh"]
+shader = ExtResource("3_is5vl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l2m6v"]
+shader = ExtResource("3_is5vl")
+
 [sub_resource type="RectangleShape2D" id="s_ExitBank"]
 size = Vector2(1260, 805)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7pjk"]
+shader = ExtResource("3_is5vl")
 
 [sub_resource type="RectangleShape2D" id="s_LowRoot"]
 size = Vector2(150, 55)
@@ -82,9 +81,8 @@ size = Vector2(140, 30)
 [sub_resource type="RectangleShape2D" id="s_StarShelf"]
 size = Vector2(270, 30)
 
-[node name="Level_01" type="Node2D"]
+[node name="Level_01" type="Node2D" unique_id=251339197]
 script = ExtResource("level")
-number = 1
 title = "Probuzení pod kořeny"
 spawn = Vector2(350, 550)
 width = 7000.0
@@ -93,10 +91,10 @@ camera_bottom = 1140
 fall_limit = 1080.0
 use_hearts = true
 
-[node name="DistantForest" type="CanvasLayer" parent="."]
+[node name="DistantForest" type="CanvasLayer" parent="." unique_id=680942865]
 layer = -100
 
-[node name="Glade" type="TextureRect" parent="DistantForest"]
+[node name="Glade" type="TextureRect" parent="DistantForest" unique_id=1871650220]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -107,226 +105,235 @@ texture = ExtResource("glade")
 expand_mode = 1
 stretch_mode = 6
 
-[node name="WorkshopBank" type="AnimatableBody2D" parent="."]
+[node name="WorkshopBank" type="AnimatableBody2D" parent="." unique_id=1839754126]
+texture_filter = 2
+material = SubResource("ShaderMaterial_4bgdj")
 position = Vector2(0, 550)
-script = ExtResource("platform")
 collision_mask = 0
+script = ExtResource("ground")
 surface_texture = ExtResource("grass")
-surface_walk_y = 88.0
-surface_height = 55.0
+surface_walk_y = 35.0
+surface_height = 119.0
 width = 3200.0
 depth = 820.0
-material = SubResource("grass_blend")
-surface_repeat = Vector2(0.32, 0.68)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorkshopBank"]
-position = Vector2(1600.0, 402.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorkshopBank" unique_id=114031527]
+position = Vector2(1600, 402.5)
 shape = SubResource("s_WorkshopBank")
-one_way_collision = false
 
-[node name="WorkshopBankEarth" type="Node2D" parent="."]
+[node name="WorkshopBankEarth" type="Node2D" parent="." unique_id=446519932]
+z_index = -1
+texture_filter = 2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_ctdx4")
 position = Vector2(0, 550)
 script = ExtResource("bank")
+surface_overlap = 0.0
+texture_span = 401.0
 width = 3200.0
 bottom = 1400.0
-z_index = -1
 
-[node name="FarBank" type="AnimatableBody2D" parent="."]
+[node name="FarBank" type="AnimatableBody2D" parent="." unique_id=979467519]
+texture_filter = 2
+material = SubResource("ShaderMaterial_la4bl")
 position = Vector2(3920, 550)
-script = ExtResource("platform")
 collision_mask = 0
+script = ExtResource("ground")
 surface_texture = ExtResource("grass")
-surface_walk_y = 88.0
-surface_height = 55.0
+surface_walk_y = 35.0
+surface_height = 44.0
 width = 880.0
 depth = 820.0
-material = SubResource("grass_blend")
-surface_repeat = Vector2(0.32, 0.68)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FarBank"]
-position = Vector2(440.0, 402.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FarBank" unique_id=1714437118]
+position = Vector2(440, 402.5)
 shape = SubResource("s_FarBank")
-one_way_collision = false
 
-[node name="FarBankEarth" type="Node2D" parent="."]
+[node name="FarBankEarth" type="Node2D" parent="." unique_id=1989335209]
+z_index = -1
+texture_filter = 2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_fsmxb")
 position = Vector2(3920, 550)
 script = ExtResource("bank")
+surface_overlap = 5.0
 width = 880.0
 bottom = 1400.0
-z_index = -1
 
-[node name="MiddleBank" type="AnimatableBody2D" parent="."]
+[node name="MiddleBank" type="AnimatableBody2D" parent="." unique_id=970867613]
+texture_filter = 2
+material = SubResource("ShaderMaterial_b6rjf")
 position = Vector2(4970, 550)
-script = ExtResource("platform")
 collision_mask = 0
+script = ExtResource("ground")
 surface_texture = ExtResource("grass")
-surface_walk_y = 88.0
-surface_height = 55.0
+surface_walk_y = 35.0
+surface_height = 44.0
 width = 610.0
 depth = 820.0
-material = SubResource("grass_blend")
-surface_repeat = Vector2(0.32, 0.68)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleBank"]
-position = Vector2(305.0, 402.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MiddleBank" unique_id=382348282]
+position = Vector2(305, 402.5)
 shape = SubResource("s_MiddleBank")
-one_way_collision = false
 
-[node name="MiddleBankEarth" type="Node2D" parent="."]
+[node name="MiddleBankEarth" type="Node2D" parent="." unique_id=1508113335]
+z_index = -1
+texture_filter = 2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_s4hsh")
 position = Vector2(4970, 550)
 script = ExtResource("bank")
+surface_overlap = 5.0
 width = 610.0
 bottom = 1400.0
-z_index = -1
 
-[node name="ExitBank" type="AnimatableBody2D" parent="."]
+[node name="ExitBank" type="AnimatableBody2D" parent="." unique_id=73879177]
+texture_filter = 2
+material = SubResource("ShaderMaterial_l2m6v")
 position = Vector2(5740, 550)
-script = ExtResource("platform")
 collision_mask = 0
+script = ExtResource("ground")
 surface_texture = ExtResource("grass")
-surface_walk_y = 88.0
-surface_height = 55.0
+surface_walk_y = 35.0
+surface_height = 44.0
 width = 1260.0
 depth = 820.0
-material = SubResource("grass_blend")
-surface_repeat = Vector2(0.32, 0.68)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitBank"]
-position = Vector2(630.0, 402.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitBank" unique_id=1399935487]
+position = Vector2(630, 402.5)
 shape = SubResource("s_ExitBank")
-one_way_collision = false
 
-[node name="ExitBankEarth" type="Node2D" parent="."]
+[node name="ExitBankEarth" type="Node2D" parent="." unique_id=1155534066]
+z_index = -1
+texture_filter = 2
+texture_repeat = 2
+material = SubResource("ShaderMaterial_y7pjk")
 position = Vector2(5740, 550)
 script = ExtResource("bank")
+surface_overlap = 5.0
 width = 1260.0
 bottom = 1400.0
-z_index = -1
 
-[node name="LowRoot" type="AnimatableBody2D" parent="."]
+[node name="LowRoot" type="AnimatableBody2D" parent="." unique_id=1386689634]
 position = Vector2(870, 495)
-script = ExtResource("platform")
 collision_mask = 0
+script = ExtResource("platform")
 surface_texture = ExtResource("wood")
 surface_walk_y = 64.0
 surface_height = 55.0
 width = 150.0
 depth = 70.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LowRoot"]
-position = Vector2(75.0, 27.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LowRoot" unique_id=678759342]
+position = Vector2(75, 27.5)
 shape = SubResource("s_LowRoot")
-one_way_collision = false
 
-[node name="TallRoot" type="AnimatableBody2D" parent="."]
+[node name="TallRoot" type="AnimatableBody2D" parent="." unique_id=1647558462]
 position = Vector2(1270, 455)
-script = ExtResource("platform")
 collision_mask = 0
+script = ExtResource("platform")
 surface_texture = ExtResource("wood")
 surface_walk_y = 64.0
 surface_height = 55.0
 width = 180.0
 depth = 110.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TallRoot"]
-position = Vector2(90.0, 47.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TallRoot" unique_id=1058873903]
+position = Vector2(90, 47.5)
 shape = SubResource("s_TallRoot")
-one_way_collision = false
 
-[node name="FernLookout" type="AnimatableBody2D" parent="."]
+[node name="FernLookout" type="AnimatableBody2D" parent="." unique_id=1167422007]
 position = Vector2(1640, 420)
-script = ExtResource("platform")
 collision_mask = 0
+script = ExtResource("platform")
 surface_texture = ExtResource("wood")
 surface_walk_y = 64.0
 surface_height = 55.0
 width = 180.0
 depth = 45.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="FernLookout"]
-position = Vector2(90.0, 15.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FernLookout" unique_id=704182026]
+position = Vector2(90, 15)
 shape = SubResource("s_FernLookout")
 one_way_collision = true
 
-[node name="GearShelf" type="AnimatableBody2D" parent="."]
+[node name="GearShelf" type="AnimatableBody2D" parent="." unique_id=92699127]
 position = Vector2(2250, 355)
-script = ExtResource("platform")
 collision_mask = 0
+script = ExtResource("platform")
 surface_texture = ExtResource("wood")
 surface_walk_y = 64.0
 surface_height = 55.0
 width = 280.0
 depth = 45.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GearShelf"]
-position = Vector2(140.0, 15.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GearShelf" unique_id=1097239331]
+position = Vector2(140, 15)
 shape = SubResource("s_GearShelf")
 one_way_collision = true
 
-[node name="RestingBranch" type="AnimatableBody2D" parent="."]
+[node name="RestingBranch" type="AnimatableBody2D" parent="." unique_id=2071453476]
 position = Vector2(4580, 440)
-script = ExtResource("platform")
 collision_mask = 0
+script = ExtResource("platform")
 surface_texture = ExtResource("wood")
 surface_walk_y = 64.0
 surface_height = 55.0
 width = 140.0
 depth = 45.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RestingBranch"]
-position = Vector2(70.0, 15.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RestingBranch" unique_id=936082632]
+position = Vector2(70, 15)
 shape = SubResource("s_RestingBranch")
 one_way_collision = true
 
-[node name="StarStep" type="AnimatableBody2D" parent="."]
+[node name="StarStep" type="AnimatableBody2D" parent="." unique_id=1915034409]
 position = Vector2(5970, 485)
-script = ExtResource("platform")
 collision_mask = 0
+script = ExtResource("platform")
 surface_texture = ExtResource("wood")
 surface_walk_y = 64.0
 surface_height = 55.0
 width = 140.0
 depth = 45.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StarStep"]
-position = Vector2(70.0, 15.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StarStep" unique_id=1520638003]
+position = Vector2(70, 15)
 shape = SubResource("s_StarStep")
 one_way_collision = true
 
-[node name="StarShelf" type="AnimatableBody2D" parent="."]
+[node name="StarShelf" type="AnimatableBody2D" parent="." unique_id=1969105960]
 position = Vector2(6190, 420)
-script = ExtResource("platform")
 collision_mask = 0
+script = ExtResource("platform")
 surface_texture = ExtResource("wood")
 surface_walk_y = 64.0
 surface_height = 55.0
 width = 270.0
 depth = 45.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StarShelf"]
-position = Vector2(135.0, 15.0)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StarShelf" unique_id=990506184]
+position = Vector2(135, 15)
 shape = SubResource("s_StarShelf")
 one_way_collision = true
 
-[node name="PuzzleCrate" parent="." instance=ExtResource("crate")]
+[node name="PuzzleCrate" parent="." unique_id=468050801 instance=ExtResource("crate")]
 position = Vector2(2080, 548)
 
-[node name="RepairBridge" type="StaticBody2D" parent="."]
+[node name="RepairBridge" type="StaticBody2D" parent="." unique_id=1350541135]
 position = Vector2(3190, 550)
+collision_mask = 0
 script = ExtResource("bridge")
-width = 740.0
 
-[node name="Gear" type="Node2D" parent="."]
+[node name="Gear" type="Node2D" parent="." unique_id=46768155]
 position = Vector2(2385, 355)
 script = ExtResource("interaction")
-action = "pickup"
-item_id = "bridge_gear"
 picture = ExtResource("gear")
 picture_height = 43.0
 caption = "Sebrat ozubené kolo"
 duration = 0.85
 
-[node name="Winch" type="Node2D" parent="."]
+[node name="Winch" type="Node2D" parent="." unique_id=715975355]
 position = Vector2(2855, 550)
 script = ExtResource("interaction")
 action = "repair"
@@ -338,7 +345,7 @@ caption = "Opravit naviják"
 locked_caption = "Chybí ozubené kolo"
 duration = 2.0
 
-[node name="Lever" type="Node2D" parent="."]
+[node name="Lever" type="Node2D" parent="." unique_id=2064422096]
 position = Vector2(3070, 550)
 script = ExtResource("interaction")
 action = "activate"
@@ -351,299 +358,279 @@ caption = "Spustit most"
 locked_caption = "Nejdřív oprav naviják"
 duration = 0.7
 
-[node name="CheckpointWorkshop" type="Node2D" parent="."]
+[node name="CheckpointWorkshop" type="Node2D" parent="." unique_id=820691864]
 position = Vector2(1890, 550)
 script = ExtResource("object")
 kind = "checkpoint"
 
-[node name="CheckpointBridge" type="Node2D" parent="."]
+[node name="CheckpointBridge" type="Node2D" parent="." unique_id=1477306867]
 position = Vector2(4035, 550)
 script = ExtResource("object")
 kind = "checkpoint"
 
-[node name="CheckpointExit" type="Node2D" parent="."]
+[node name="CheckpointExit" type="Node2D" parent="." unique_id=621322696]
 position = Vector2(5845, 550)
 script = ExtResource("object")
 kind = "checkpoint"
 
-[node name="FirstCreature" parent="." instance=ExtResource("enemy")]
+[node name="FirstCreature" parent="." unique_id=1608711094 instance=ExtResource("enemy")]
 position = Vector2(4330, 550)
 patrol = 220.0
 speed = 48.0
 
-[node name="Krtecek" parent="." instance=ExtResource("mole")]
+[node name="Krtecek" parent="." unique_id=69669369 instance=ExtResource("mole")]
 position = Vector2(505, 550)
-message = "Bite, probuď se! Jiskra mě poslala pro tebe. Království se mění a potřebuje tvoji pomoc.\n\nNejdřív rozhýbej klouby. Pak opravíme cestu přes potok a vyrazíš za Jiskrou do hradu."
+message = "Bite, probuď se! Jiskra mě poslala pro tebe. Království se mění a potřebuje tvoji pomoc.
 
-[node name="WalkLesson" type="Marker2D" parent="."]
+Nejdřív rozhýbej klouby. Pak opravíme cestu přes potok a vyrazíš za Jiskrou do hradu."
+
+[node name="WalkLesson" type="Marker2D" parent="." unique_id=2015178611]
 position = Vector2(710, 510)
 script = ExtResource("hint")
 title = "Zpátky do formy"
 message = "Pohyb: A / D nebo šipky. Přes kořeny skoč mezerníkem."
 touch_message = "Šipkami se rozběhni. Tlačítkem ↑ přeskoč kořeny."
 activation_size = Vector2(340, 240)
-display_seconds = 7.0
 
-[node name="JumpLesson" type="Marker2D" parent="."]
+[node name="JumpLesson" type="Marker2D" parent="." unique_id=1924685149]
 position = Vector2(1190, 460)
 script = ExtResource("hint")
 title = "Krátký a dlouhý skok"
 message = "Krátký stisk = malý skok. Podrž mezerník pro vyšší skok."
 touch_message = "Krátký stisk ↑ = malý skok. Podrž ↑ pro vyšší skok."
 activation_size = Vector2(340, 240)
-display_seconds = 7.0
 
-[node name="CrateLesson" type="Marker2D" parent="."]
+[node name="CrateLesson" type="Marker2D" parent="." unique_id=1140390068]
 position = Vector2(1970, 510)
 script = ExtResource("hint")
 title = "Malý opravář"
 message = "Kolo je vysoko. Přisuň bednu, vyskoč na ni a pak na polici. U kola stiskni E."
 touch_message = "Přisuň bednu pod polici. Přes bednu vyskoč ke kolu a stiskni Akce."
 activation_size = Vector2(340, 240)
-display_seconds = 7.0
 
-[node name="RepairLesson" type="Marker2D" parent="."]
+[node name="RepairLesson" type="Marker2D" parent="." unique_id=305454398]
 position = Vector2(2740, 510)
 script = ExtResource("hint")
 title = "Oprava cesty"
 message = "Se součástkou dojdi k navijáku a stiskni E. Pak zatáhni za páku."
 touch_message = "U navijáku stiskni Akce. Po opravě stejně použij páku."
 activation_size = Vector2(340, 240)
-display_seconds = 7.0
 
-[node name="EnemyLesson" type="Marker2D" parent="."]
+[node name="EnemyLesson" type="Marker2D" parent="." unique_id=1198547820]
 position = Vector2(4140, 510)
 script = ExtResource("hint")
 title = "Pozor na Šutříka"
 message = "Z boku tě zraní. Přeskoč ho, nebo mu při pádu dopadni na hlavu."
-touch_message = ""
 activation_size = Vector2(340, 240)
-display_seconds = 7.0
 
-[node name="HeartsLesson" type="Marker2D" parent="."]
+[node name="HeartsLesson" type="Marker2D" parent="." unique_id=1170372841]
 position = Vector2(5070, 510)
 script = ExtResource("hint")
 title = "Každá chyba tě něco naučí"
 message = "Máš tři srdíčka. Po pádu se vrátíš na bezpečné místo. Opravený most zůstane hotový."
-touch_message = ""
 activation_size = Vector2(340, 240)
-display_seconds = 7.0
 
-[node name="StarLesson" type="Marker2D" parent="."]
+[node name="StarLesson" type="Marker2D" parent="." unique_id=1567971420]
 position = Vector2(6030, 500)
 script = ExtResource("hint")
 title = "Cesta za Jiskrou"
 message = "Hvězda na větvi otevře bránu. Diamanty v odbočkách jsou dobrovolné."
-touch_message = ""
 activation_size = Vector2(340, 240)
-display_seconds = 7.0
 
-[node name="Crystal01" type="Node2D" parent="."]
+[node name="Crystal01" type="Node2D" parent="." unique_id=631557346]
 position = Vector2(725, 506)
 script = ExtResource("object")
-kind = "crystal"
 
-[node name="Crystal02" type="Node2D" parent="."]
+[node name="Crystal02" type="Node2D" parent="." unique_id=1101539535]
 position = Vector2(948, 445)
 script = ExtResource("object")
-kind = "crystal"
 
-[node name="Crystal03" type="Node2D" parent="."]
+[node name="Crystal03" type="Node2D" parent="." unique_id=1600824724]
 position = Vector2(1380, 406)
 script = ExtResource("object")
-kind = "crystal"
 
-[node name="Crystal04" type="Node2D" parent="."]
+[node name="Crystal04" type="Node2D" parent="." unique_id=88061069]
 position = Vector2(1730, 382)
 script = ExtResource("object")
-kind = "crystal"
 
-[node name="Crystal05" type="Node2D" parent="."]
+[node name="Crystal05" type="Node2D" parent="." unique_id=1450905064]
 position = Vector2(2320, 310)
 script = ExtResource("object")
-kind = "crystal"
 
-[node name="Crystal06" type="Node2D" parent="."]
+[node name="Crystal06" type="Node2D" parent="." unique_id=50744439]
 position = Vector2(4120, 506)
 script = ExtResource("object")
-kind = "crystal"
 
-[node name="Crystal07" type="Node2D" parent="."]
+[node name="Crystal07" type="Node2D" parent="." unique_id=1424784236]
 position = Vector2(4660, 400)
 script = ExtResource("object")
-kind = "crystal"
 
-[node name="Crystal08" type="Node2D" parent="."]
+[node name="Crystal08" type="Node2D" parent="." unique_id=2118928747]
 position = Vector2(5200, 500)
 script = ExtResource("object")
-kind = "crystal"
 
-[node name="Crystal09" type="Node2D" parent="."]
+[node name="Crystal09" type="Node2D" parent="." unique_id=1302439311]
 position = Vector2(5510, 500)
 script = ExtResource("object")
-kind = "crystal"
 
-[node name="Crystal10" type="Node2D" parent="."]
+[node name="Crystal10" type="Node2D" parent="." unique_id=1046472216]
 position = Vector2(6035, 447)
 script = ExtResource("object")
-kind = "crystal"
 
-[node name="Crystal11" type="Node2D" parent="."]
+[node name="Crystal11" type="Node2D" parent="." unique_id=171156957]
 position = Vector2(6230, 380)
 script = ExtResource("object")
-kind = "crystal"
 
-[node name="Crystal12" type="Node2D" parent="."]
+[node name="Crystal12" type="Node2D" parent="." unique_id=1843703753]
 position = Vector2(6550, 506)
 script = ExtResource("object")
-kind = "crystal"
 
-[node name="StarKey" type="Node2D" parent="."]
+[node name="StarKey" type="Node2D" parent="." unique_id=943434814]
 position = Vector2(6380, 380)
 script = ExtResource("object")
 kind = "star_key"
 
-[node name="Gate" type="Node2D" parent="."]
+[node name="Gate" type="Node2D" parent="." unique_id=1923833509]
 position = Vector2(6720, 550)
 script = ExtResource("object")
 kind = "goal"
 
-[node name="RootWorkshop" type="Sprite2D" parent="."]
-position = Vector2(290, 561)
-texture = ExtResource("workshop")
-scale = Vector2(0.8037825059101655, 0.8037825059101655)
-offset = Vector2(0, -211.5)
+[node name="RootWorkshop" type="Sprite2D" parent="." unique_id=1547456698]
 z_index = -2
+position = Vector2(284, 568)
+scale = Vector2(0.8037825, 0.8037825)
+texture = ExtResource("workshop")
+offset = Vector2(0, -211.5)
 
-[node name="Oak0" type="Sprite2D" parent="."]
+[node name="Oak0" type="Sprite2D" parent="." unique_id=1740521822]
+z_index = -3
 position = Vector2(1510, 568)
+scale = Vector2(0.4834254, 0.4834254)
 texture = ExtResource("tree")
-scale = Vector2(0.48342541436464087, 0.48342541436464087)
-offset = Vector2(0, -362.0)
-z_index = -3
+offset = Vector2(0, -362)
 
-[node name="Oak1" type="Sprite2D" parent="."]
+[node name="Oak1" type="Sprite2D" parent="." unique_id=1498041128]
+z_index = -3
 position = Vector2(2480, 562)
+scale = Vector2(0.5248619, 0.5248619)
 texture = ExtResource("tree")
-scale = Vector2(0.5248618784530387, 0.5248618784530387)
-offset = Vector2(0, -362.0)
-z_index = -3
+offset = Vector2(0, -362)
 
-[node name="Oak2" type="Sprite2D" parent="."]
+[node name="Oak2" type="Sprite2D" parent="." unique_id=936627826]
+z_index = -3
 position = Vector2(4140, 565)
+scale = Vector2(0.4834254, 0.4834254)
 texture = ExtResource("tree")
-scale = Vector2(0.48342541436464087, 0.48342541436464087)
-offset = Vector2(0, -362.0)
-z_index = -3
+offset = Vector2(0, -362)
 
-[node name="Oak3" type="Sprite2D" parent="."]
+[node name="Oak3" type="Sprite2D" parent="." unique_id=764011245]
+z_index = -3
 position = Vector2(5900, 565)
+scale = Vector2(0.51104975, 0.51104975)
 texture = ExtResource("tree")
-scale = Vector2(0.511049723756906, 0.511049723756906)
-offset = Vector2(0, -362.0)
-z_index = -3
+offset = Vector2(0, -362)
 
-[node name="Oak4" type="Sprite2D" parent="."]
+[node name="Oak4" type="Sprite2D" parent="." unique_id=2090874596]
+z_index = -3
 position = Vector2(6550, 565)
+scale = Vector2(0.53867406, 0.53867406)
 texture = ExtResource("tree")
-scale = Vector2(0.5386740331491713, 0.5386740331491713)
-offset = Vector2(0, -362.0)
-z_index = -3
+offset = Vector2(0, -362)
 
-[node name="Fern0" type="Sprite2D" parent="."]
-position = Vector2(60, 560)
-texture = ExtResource("ferns")
-scale = Vector2(0.19935691318327975, 0.19935691318327975)
-offset = Vector2(0, -155.5)
+[node name="Fern0" type="Sprite2D" parent="." unique_id=1248221053]
 z_index = -1
+position = Vector2(173, 518)
+scale = Vector2(0.19935691, 0.19935691)
+texture = ExtResource("ferns")
+offset = Vector2(0, -155.5)
 
-[node name="Fern1" type="Sprite2D" parent="."]
+[node name="Fern1" type="Sprite2D" parent="." unique_id=719892683]
+z_index = -1
 position = Vector2(630, 560)
+scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
-scale = Vector2(0.19935691318327975, 0.19935691318327975)
 offset = Vector2(0, -155.5)
-z_index = -1
 
-[node name="Fern2" type="Sprite2D" parent="."]
+[node name="Fern2" type="Sprite2D" parent="." unique_id=538694902]
+z_index = -1
 position = Vector2(1110, 560)
+scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
-scale = Vector2(0.19935691318327975, 0.19935691318327975)
 offset = Vector2(0, -155.5)
-z_index = -1
 
-[node name="Fern3" type="Sprite2D" parent="."]
+[node name="Fern3" type="Sprite2D" parent="." unique_id=1822861276]
+z_index = -1
 position = Vector2(1770, 560)
+scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
-scale = Vector2(0.19935691318327975, 0.19935691318327975)
 offset = Vector2(0, -155.5)
-z_index = -1
 
-[node name="Fern4" type="Sprite2D" parent="."]
+[node name="Fern4" type="Sprite2D" parent="." unique_id=355044594]
+z_index = -1
 position = Vector2(2670, 560)
+scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
-scale = Vector2(0.19935691318327975, 0.19935691318327975)
 offset = Vector2(0, -155.5)
-z_index = -1
 
-[node name="Fern5" type="Sprite2D" parent="."]
+[node name="Fern5" type="Sprite2D" parent="." unique_id=451051230]
+z_index = -1
 position = Vector2(3160, 560)
+scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
-scale = Vector2(0.19935691318327975, 0.19935691318327975)
 offset = Vector2(0, -155.5)
-z_index = -1
 
-[node name="Fern6" type="Sprite2D" parent="."]
+[node name="Fern6" type="Sprite2D" parent="." unique_id=111829259]
+z_index = -1
 position = Vector2(3940, 560)
+scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
-scale = Vector2(0.19935691318327975, 0.19935691318327975)
 offset = Vector2(0, -155.5)
-z_index = -1
 
-[node name="Fern7" type="Sprite2D" parent="."]
+[node name="Fern7" type="Sprite2D" parent="." unique_id=1204648213]
+z_index = -1
 position = Vector2(4750, 560)
+scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
-scale = Vector2(0.19935691318327975, 0.19935691318327975)
 offset = Vector2(0, -155.5)
-z_index = -1
 
-[node name="Fern8" type="Sprite2D" parent="."]
+[node name="Fern8" type="Sprite2D" parent="." unique_id=263555905]
+z_index = -1
 position = Vector2(5350, 560)
+scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
-scale = Vector2(0.19935691318327975, 0.19935691318327975)
 offset = Vector2(0, -155.5)
-z_index = -1
 
-[node name="Fern9" type="Sprite2D" parent="."]
+[node name="Fern9" type="Sprite2D" parent="." unique_id=1703983934]
+z_index = -1
 position = Vector2(5780, 560)
+scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
-scale = Vector2(0.19935691318327975, 0.19935691318327975)
 offset = Vector2(0, -155.5)
-z_index = -1
 
-[node name="Fern10" type="Sprite2D" parent="."]
+[node name="Fern10" type="Sprite2D" parent="." unique_id=1035584113]
+z_index = -1
 position = Vector2(6530, 560)
+scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
-scale = Vector2(0.19935691318327975, 0.19935691318327975)
 offset = Vector2(0, -155.5)
-z_index = -1
 
-[node name="Fern11" type="Sprite2D" parent="."]
+[node name="Fern11" type="Sprite2D" parent="." unique_id=484281850]
+z_index = -1
 position = Vector2(6930, 560)
+scale = Vector2(0.19935691, 0.19935691)
 texture = ExtResource("ferns")
-scale = Vector2(0.19935691318327975, 0.19935691318327975)
 offset = Vector2(0, -155.5)
-z_index = -1
 
-[node name="Lantern0" parent="." instance=ExtResource("lantern")]
+[node name="Lantern0" parent="." unique_id=1743093301 instance=ExtResource("lantern")]
 position = Vector2(1830, 550)
 
-[node name="Lantern1" parent="." instance=ExtResource("lantern")]
+[node name="Lantern1" parent="." unique_id=1770193486 instance=ExtResource("lantern")]
 position = Vector2(4100, 550)
 
-[node name="Lantern2" parent="." instance=ExtResource("lantern")]
+[node name="Lantern2" parent="." unique_id=1793793691 instance=ExtResource("lantern")]
 position = Vector2(6650, 550)
 
-[node name="Stream" parent="." instance=ExtResource("pool")]
+[node name="Stream" parent="." unique_id=485702773 instance=ExtResource("pool")]
+z_index = -3
 position = Vector2(3535, 900)
 width = 710.0
-z_index = -3

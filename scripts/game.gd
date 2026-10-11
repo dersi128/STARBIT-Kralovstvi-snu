@@ -25,7 +25,7 @@ var current_scene_path:=""
 var mode := "menu"
 var ui:CanvasLayer
 var screen:Control
-var hud:COLLECTIBLE_HUD
+var hud:Control
 var tip:Label
 var tip_time:=0.0
 var music_time:=0.0
@@ -265,11 +265,14 @@ func release_input() -> void:
  for a in ["left","right","jump","interact"]:Input.action_release(a)
 func game_ui() -> void:
  clear_ui()
- hud=COLLECTIBLE_HUD.new();hud.position=Vector2(22,16);screen.add_child(hud)
- hud.update_values(crystals,level.star_collected,total_crystals,false)
  if level.use_hearts:
-  var adventure:=ADVENTURE_HUD.new();adventure.name="AdventureHUD";adventure.level=level;screen.add_child(adventure)
+  var adventure:=ADVENTURE_HUD.new();adventure.level=level;hud=adventure
+ else:
+  hud=COLLECTIBLE_HUD.new();hud.position=Vector2(22,16)
+ screen.add_child(hud)
+ hud.update_values(crystals,level.star_collected,total_crystals,false)
  var pause_button:=button("Ⅱ",pause_game);pause_button.custom_minimum_size=Vector2(64,50);pause_button.position=Vector2(1188,16);screen.add_child(pause_button)
+ if level.use_hearts:ADVENTURE_HUD.style_pause(pause_button)
  build_bubble()
  touch=Control.new();screen.add_child(touch)
  for spec in [["←","left",32],["→","right",140],["Akce","interact",1034],["↑","jump",1140]]:

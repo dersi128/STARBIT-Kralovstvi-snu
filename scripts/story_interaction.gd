@@ -12,6 +12,9 @@ extends Node2D
 @export var caption := "Sebrat součástku"
 @export var locked_caption := "Nejdřív najdi součástku"
 @export var duration := 0.8
+## Anchors in the source winch image, not hard-coded screen rectangles.
+@export var repair_socket_uv := Vector2(0.4965, 0.475)
+@export_range(0.1, 0.5, 0.005) var repair_gear_width := 0.24
 const FONT = preload("res://assets/ui/fonts/Nunito.ttf")
 const GEAR = preload("res://assets/environment/forest/awakening/gear.png")
 const LEVER_BASE = preload("res://assets/environment/forest/awakening/lever_base.png")
@@ -46,6 +49,21 @@ func interact(player: CharacterBody2D) -> bool:
 	if not player.begin_interaction(self, action, duration):return false
 	actor = player
 	return true
+
+func repair_stand_x(player: CharacterBody2D) -> float:
+	var side := signf(player.global_position.x - global_position.x)
+	if is_zero_approx(side):side = -player.facing
+	return global_position.x + side * 62.0
+
+func socket_position() -> Vector2:
+	if picture == null:return Vector2.ZERO
+	var width := picture_height * picture.get_width() / float(picture.get_height())
+	return Vector2((repair_socket_uv.x - 0.5) * width, (repair_socket_uv.y - 1.0) * picture_height)
+
+func fitted_gear_size() -> Vector2:
+	if picture == null:return Vector2.ZERO
+	var width := picture_height * picture.get_width() / float(picture.get_height()) * repair_gear_width
+	return Vector2(width, width * GEAR.get_height() / float(GEAR.get_width()))
 
 func complete_interaction(player: CharacterBody2D) -> void:
 	if used or actor != player or not is_unlocked():return
@@ -97,9 +115,7 @@ func _draw() -> void:
 		draw_set_transform(Vector2(0, bob))
 		draw_texture_rect(picture, Rect2(-width * 0.5, -picture_height, width, picture_height), false)
 	draw_set_transform(Vector2.ZERO)
-	if action == "repair" and used:
-		draw_texture_rect(GEAR, Rect2(-21, -73, 42, 42), false)
-		draw_circle(Vector2(0, -picture_height + 7), 6, Color("93ffe0"))
+	if action == "repair":_draw_repair()
 	if progress > 0:
 		draw_rect(Rect2(-42, -picture_height - 17, 84, 7), Color("234755"))
 		draw_rect(Rect2(-42, -picture_height - 17, 84 * progress, 7), Color("9cf3cc"))
@@ -110,6 +126,31 @@ func _draw() -> void:
 		var box := Rect2(-size.x * 0.5 - 12, -picture_height - 58, size.x + 24, 32)
 		draw_style_box(_prompt_style(), box)
 		draw_string(FONT, box.position + Vector2(12, 23), text, HORIZONTAL_ALIGNMENT_LEFT, -1, 18, Color("fff8de"))
+
+func _draw_repair() -> void:
+	if not used and (not is_instance_valid(actor) or progress < 0.18):return
+	var socket := socket_position()
+	var fitted := fitted_gear_size()
+	# A spindle closes the empty centre; the toothed rim sits inside the brass ring.
+	draw_circle(socket, fitted.x * 0.27, Color("54371c"))
+	draw_circle(socket, fitted.x * 0.20, Color("d4a54b"))
+	var center := socket
+	var size := fitted
+	var rotation := 0.0
+	var opacity := 1.0
+	if not used:
+		var insert := smoothstep(0.34, 0.82, progress)
+		var hand := to_local(actor.global_position) + Vector2(actor.facing * 27, -44)
+		center = hand.lerp(socket, insert) + Vector2(0, -sin(insert * PI) * 10)
+		size = (fitted * 1.15).lerp(fitted, insert)
+		rotation = -actor.facing * 0.35 * (1.0 - insert)
+		opacity = smoothstep(0.18, 0.28, progress)
+	draw_set_transform(center, rotation)
+	draw_texture_rect(GEAR, Rect2(-size * 0.5, size), false, Color(1, 1, 1, opacity))
+	draw_set_transform(Vector2.ZERO)
+	if used or progress >= 0.82:
+		draw_circle(socket, fitted.x * 0.105, Color("ffe0a0"))
+		draw_line(socket + Vector2(-1.5, 1.5), socket + Vector2(1.5, -1.5), Color("795029"), 1.5, true)
 
 func _prompt_style() -> StyleBoxFlat:
 	var style := StyleBoxFlat.new()

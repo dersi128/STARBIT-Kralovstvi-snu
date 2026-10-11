@@ -46,6 +46,8 @@ var interaction_candidate: Node2D
 var interaction_kind := ""
 var interaction_clock := 0.0
 var interaction_duration := 0.0
+var interaction_approaching := false
+var interaction_stand_x := 0.0
 var health := 3
 var last_safe_position := Vector2.ZERO
 var has_fouk := false
@@ -138,6 +140,8 @@ func begin_interaction(target:Node2D,kind:String,duration:float) -> bool:
  interaction_target=target;interaction_kind=kind;interaction_clock=0.0
  interaction_duration=maxf(duration,0.1)
  if absf(target.global_position.x-global_position.x)>4:facing=signf(target.global_position.x-global_position.x)
+ interaction_approaching=kind=="repair" and target.has_method("repair_stand_x")
+ if interaction_approaching:interaction_stand_x=target.repair_stand_x(self)
  happy=0;previous_happy=0;land_time=0;hurt_time=0;pushing=false;pickup_pose_active=false
  frozen=true;velocity=Vector2.ZERO
  return true
@@ -145,10 +149,22 @@ func begin_interaction(target:Node2D,kind:String,duration:float) -> bool:
 func cancel_interaction() -> void:
  if interaction_kind.is_empty():return
  interaction_target=null;interaction_kind="";interaction_clock=0.0;frozen=false
+ interaction_approaching=false;ground_speed=0.0;ground_distance=0.0
 
 func _update_interaction(delta:float) -> void:
  if not interaction_kind.is_empty():
   if not is_instance_valid(interaction_target):cancel_interaction();return
+  if interaction_approaching:
+   var distance:=interaction_stand_x-global_position.x
+   if absf(distance)>0.5:
+    var shift:=clampf(distance,-180.0*delta,180.0*delta)
+    # Walk beside the mechanism through collision checks, never through a wall.
+    if move_and_collide(Vector2(shift,0))!=null:cancel_interaction();return
+    facing=signf(shift)
+    run_phase=fposmod(run_phase+absf(shift)/RUN_CYCLE_DISTANCE,1.0)
+    return
+   interaction_approaching=false
+   facing=signf(interaction_target.global_position.x-global_position.x)
   interaction_clock+=delta
   if interaction_clock>=interaction_duration:
    var target:=interaction_target
@@ -510,6 +526,9 @@ func _crate_surface_x(crate:Node2D,hand_world:Vector2) -> float:
 func get_sheet_texture() -> Texture2D:
  sheet_animation="";sheet_frame=0
  if not interaction_kind.is_empty():
+  if interaction_approaching and sheet_frames!=null:
+   sheet_animation="run";sheet_frame=run_sheet_frame()
+   return sheet_frames.get_frame_texture(sheet_animation,sheet_frame)
   sheet_animation=interaction_kind
   var progress:=interaction_clock/interaction_duration
   sheet_frame=int(interaction_clock*6.0)%4 if interaction_kind=="repair" else mini(3,int(progress*4.0))
@@ -622,8 +641,10 @@ func _draw() -> void:
   var t:float=clampf(echo.age/0.42,0,1)
   var eased:=1.0-pow(1.0-t,3)
   var center:Vector2=to_local(echo.origin).lerp(Vector2(0,-55),eased)+Vector2(0,-sin(t*PI)*22)
-  var size:=lerpf(30,8,eased)
-  draw_texture_rect(PICKUP_TEXTURES[echo.kind],Rect2(center-Vector2.ONE*size*0.5,Vector2.ONE*size),false,Color(1,1,1,1.0-t))
+  var height:=lerpf(30,8,eased)
+  var texture:Texture2D=PICKUP_TEXTURES[echo.kind]
+  var size:=Vector2(height*texture.get_width()/float(texture.get_height()),height)
+  draw_texture_rect(texture,Rect2(center-size*0.5,size),false,Color(1,1,1,1.0-t))
  for particle in sparkles:
   var t:float=particle.age/particle.life
   var radius:float=particle.radius*sin(minf(1.0,t*5.0)*PI*0.5)*(1.0-t)

@@ -10,15 +10,19 @@ extends "res://scripts/terrain_body.gd"
 	set(value): cool_stone = value; queue_redraw()
 
 const EARTH := preload("res://assets/environment/forest/higgsfield/forest_soil.png")
+const MIRROR := preload("res://shaders/forest_mirror_repeat.gdshader")
 
 func _ready() -> void:
 	super._ready()
-	texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
+	var seamless := ShaderMaterial.new()
+	seamless.shader = MIRROR
+	material = seamless
+	texture_filter = CanvasItem.TEXTURE_FILTER_LINEAR
 
 func _edge(y: float, right: bool) -> float:
 	# Stay within four pixels of the real wall; never imply a walkable shelf.
 	var inset := 2.0 + sin(y * 0.033 + (1.7 if right else 0.0)) * 1.6
-	if y < 44.0: inset += (44.0 - y) * 0.34
+	if y < 32.0: inset += (32.0 - y) * 0.08
 	return width - inset if right else inset
 
 func _shade(y: float) -> Color:

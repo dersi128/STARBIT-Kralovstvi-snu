@@ -18,4 +18,16 @@ Všechny akční snímky používají společné měřítko a zarovnaná chodidl
 Páka má samostatnou základnu a rukojeť; základna se při aktivaci nepohybuje.
 
 Původní barevnost: zelená a tyrkysová, teplé dřevo a mosaz, tmavé kreslené
-obrysy. Průchodné plochy používají existující lesní a dřevěné textury.
+obrysy. Dřevěné plošiny používají existující lesní textury.
+
+## Oprava návaznosti terénu
+
+- Travnatý lem: Higgsfield GPT Image 2.5, job
+  `8de4faad-2fc0-44dd-9205-76c703f8cc63`, 10. října 2026.
+  Stejná reference lesních rekvizit. Zadání: rovný travnatý pás s převislými
+  listy, bez kmenů, keřů a hlíny, bílé pozadí pro extrakci průhlednosti.
+- `grass_rim.png`: ořez výšky a odstranění bílého pozadí, 1344 × 197 px.
+  Návaznost se řeší zrcadleným vzorkováním textury ve shaderu, není závislá
+  na tom, zda generátor vytvořil totožné pixely na obou stranách obrázku.
+- Srdíčka a ikona pauzy jsou nové vektorové SVG v `assets/ui/adventure`.
+  Kolečka, diamanty a hvězda zachovávají původní ilustrace a poměr stran.

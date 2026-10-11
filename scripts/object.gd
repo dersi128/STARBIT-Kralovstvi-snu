@@ -252,8 +252,9 @@ func _draw() -> void:
 			if used: draw_circle(Vector2(5,-120),7,Color("fff49b"))
 		"star_key","crystal":
 			var texture:Texture2D=COLLECTIBLE_TEXTURES[kind]
-			var size:=64.0 if kind=="star_key" else 56.0
-			draw_texture_rect(texture,Rect2(-size/2,-size/2+sin(time*3)*3,size,size),false)
+			var height:=64.0 if kind=="star_key" else 56.0
+			var size:=Vector2(height*texture.get_width()/float(texture.get_height()),height)
+			draw_texture_rect(texture,Rect2(-size*0.5+Vector2(0,sin(time*3)*3),size),false)
 		"goal":
 			draw_set_transform(Vector2.ZERO,0,Vector2(-gate_scale if gate_flip else gate_scale,gate_scale))
 			var color:=Color.WHITE if gate_open else Color(0.62,0.67,0.78)

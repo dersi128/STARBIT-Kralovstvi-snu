@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 96 96">
+ <defs><linearGradient id="heart" x1="0" y1="0" x2=".25" y2="1"><stop stop-color="#ffc1ad"/><stop offset=".45" stop-color="#f46f7c"/><stop offset="1" stop-color="#d13e66"/></linearGradient></defs>
+ <path d="M48 83C37 75 9 56 9 33 9 12 35 7 48 25 61 7 87 12 87 33 87 56 59 75 48 83Z" fill="#45614c" opacity=".24" transform="translate(0 5)"/>
+ <path d="M48 83C37 75 9 56 9 33 9 12 35 7 48 25 61 7 87 12 87 33 87 56 59 75 48 83Z" fill="url(#heart)" stroke="#803e52" stroke-width="4" stroke-linejoin="round"/>
+ <path d="M19 33C20 20 31 18 39 26" fill="none" stroke="#ffe7cc" stroke-width="7" stroke-linecap="round"/>
+ <path d="M57 26C66 18 76 22 77 31" fill="none" stroke="#ffd6bd" stroke-width="4" stroke-linecap="round"/>
+ <path d="M48 74C61 64 72 54 76 43" fill="none" stroke="#c44464" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+</svg>

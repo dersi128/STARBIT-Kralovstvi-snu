@@ -51,6 +51,23 @@ vlastností `use_hearts` na kořenovém levelu.
 Všech 12 obrázků má společné měřítko, plátno 384 × 384 a chodidla na y=356.
 Animace mění jen kresbu Bita, nikoli jeho kolizní tvar.
 
+## Grafické opravy po prvním hraní
+
+- Nový pás `awakening/grass_rim.png` obsahuje jen mechem porostlý okraj.
+  `forest_ground_surface.gd` ho kreslí v jednom celistvém pruhu, bez dělení
+  na natažené konce a opakované ústřižky atlasu. Zrcadlené UV souřadnice
+  navazují na stejný krajní texel; stejný shader používá i textura hlíny.
+  Listy přirozeně překrývají hlínu, nepoužívá se vodorovný průhledný přechod.
+- Životy, diamanty, hvězda a součástka jsou v jedné krémové liště se zeleným
+  rámem. Srdíčka mají plný a prázdný stav. Součástka svítí v inventáři a po
+  použití dostane značku dokončení. Lišta se obnoví také po pauze.
+- Diamanty a hvězda zachovávají poměr stran ve světě i při sbírání.
+- Před opravou Bit krátce dojde vedle navijáku s kontrolou kolizí.
+  Kolo putuje od ruky do otvoru a během poslední části opravy už drží na ose.
+  Opravený mechanismus používá stejný střed i velikost jako konec animace.
+  Kotva `repair_socket_uv` je normalizovaná vůči obrázku a funguje i při
+  změně `picture_height`; velikost kola řídí `repair_gear_width`.
+
 ## Ověření
 
 V Godotu 4.7.2 je přidaný `tests/awakening_playthrough.gd`. Projde autorskou
@@ -58,6 +75,7 @@ cestu skutečným vstupem pro pohyb, skok a interakci: posune bednu, vyskočí
 na polici, sebere kolo, opraví naviják, otevře most, překoná nepřítele a
 mezery, sebere hvězdu a odemkne druhý level. Kontroluje také ochranu po zásahu,
 checkpointy, zachování úkolů, pauzu a přerušení rozpracované opravy.
+Kontroluje i opravu z pravé strany, pozici kola v otvoru a aktualizaci HUDu.
 
 Spouštěj testy s odděleným adresářem uživatelských dat, aby neovlivnily uloženou hru:
 
